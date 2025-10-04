@@ -3,30 +3,25 @@ Anchor browser provider module.
 Handles session creation, URL retrieval, and cleanup for Anchor browser automation.
 """
 
-from anchorbrowser import Anchorbrowser
 import os
+
+from anchorbrowser import Anchorbrowser
 
 
 ##Anchor Mobile Proxy
 def create_session():
     """Create an Anchor session and return the client, session, and CDP URL"""
-    anchor_client = Anchorbrowser(
-        api_key=os.getenv("ANCHOR_API_KEY")
-    )
+    anchor_client = Anchorbrowser(api_key=os.getenv("ANCHOR_API_KEY"))
 
     anchor_session = anchor_client.sessions.create(
-        browser={
-            "captcha_solver": {
-                "active": True
+        browser={"captcha_solver": {"active": True}},
+        session={
+            "proxy": {
+                "active": True,
+                "country_code": "us",
+                "type": "anchor_residential",
             }
         },
-        session={
-            'proxy': {
-                'active': True,
-                'country_code': 'us',
-                'type': 'anchor_residential'
-            }
-        }
     )
     cdp_url = anchor_session.data.cdp_url
 
@@ -46,7 +41,7 @@ def get_session_url(anchor_client, anchor_session):
 
         # Extract just the file_link from the first recording
         if recordings.data and recordings.data.items and len(recordings.data.items) > 0:
-            session_url = recordings.data.items[0].get('file_link')
+            session_url = recordings.data.items[0].get("file_link")
             print(f"Anchor recording URL: {session_url}")
             return session_url
         else:

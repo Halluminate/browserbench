@@ -3,9 +3,10 @@ Hyperbrowser provider module.
 Handles session creation, URL retrieval, and cleanup for Hyperbrowser browser automation.
 """
 
-import os
-import requests
 import json
+import os
+
+import requests
 
 
 def create_session(stealth=True):
@@ -18,19 +19,18 @@ def create_session(stealth=True):
     try:
         if stealth:
             print("Creating Hyperbrowser session with stealth features...")
-            payload = {
-                "useStealth": True,
-                "useProxy": True,
-                "solveCaptchas": True
-            }
+            payload = {"useStealth": True, "useProxy": True, "solveCaptchas": True}
         else:
             print("Creating standard Hyperbrowser session...")
             payload = {}
 
         response = requests.post(
             "https://api.hyperbrowser.ai/api/session",
-            headers={"x-api-key": hyperbrowser_api_key, "Content-Type": "application/json"},
-            data=json.dumps(payload)
+            headers={
+                "x-api-key": hyperbrowser_api_key,
+                "Content-Type": "application/json",
+            },
+            data=json.dumps(payload),
         )
 
         response.raise_for_status()
@@ -76,11 +76,10 @@ def cleanup_session(session_id):
 
         response = requests.put(
             f"https://api.hyperbrowser.ai/api/session/{session_id}/stop",
-            headers={"x-api-key": hyperbrowser_api_key, "Accept": "*/*"}
+            headers={"x-api-key": hyperbrowser_api_key, "Accept": "*/*"},
         )
 
         response.raise_for_status()
-        data = response.json()
         print(f"Hyperbrowser session {session_id} stopped successfully")
 
         # Use session URL from API response if available, otherwise generate it

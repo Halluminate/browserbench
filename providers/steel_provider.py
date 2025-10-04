@@ -4,6 +4,7 @@ Handles session creation, URL retrieval, and cleanup for Steel browser automatio
 """
 
 import os
+
 import requests
 
 
@@ -19,20 +20,17 @@ def create_session(starting_url="https://www.google.com/", stealth=True):
             print("Creating Steel session with advanced stealth features...")
             # Create a new Steel session with enhanced features
             payload = {
-                "useProxy": True,   # Enable proxy usage
+                "useProxy": True,  # Enable proxy usage
                 "solveCaptcha": True,  # Enable captcha solving  # Block ads for better performance
                 "stealthConfig": {
                     "humanizeInteractions": True,  # Make interactions more human-like
-                    "skipFingerprintInjection": False  # Keep fingerprint protection
-                }
+                    "skipFingerprintInjection": False,  # Keep fingerprint protection
+                },
             }
         else:
             print("Creating standard Steel session...")
             # Create a standard session without advanced features
-            payload = {
-                "useProxy": False,
-                "solveCaptcha": False
-            }
+            payload = {"useProxy": False, "solveCaptcha": False}
 
         url = "https://api.steel.dev/v1/sessions"
         headers = {"Content-Type": "application/json", "steel-api-key": steel_api_key}
@@ -46,11 +44,13 @@ def create_session(starting_url="https://www.google.com/", stealth=True):
             raise ValueError("No session ID returned from Steel API")
 
         # Create the WebSocket CDP URL
-        cdp_url = f"wss://connect.steel.dev?apiKey={steel_api_key}&sessionId={session_id}"
+        cdp_url = (
+            f"wss://connect.steel.dev?apiKey={steel_api_key}&sessionId={session_id}"
+        )
 
         print(f"Steel session created with ID: {session_id}")
         if stealth:
-            print(f"Features enabled: solveCaptcha=True, useProxy=True, blockAds=True")
+            print("Features enabled: solveCaptcha=True, useProxy=True, blockAds=True")
         else:
             print("Features: Standard session (no advanced stealth)")
         print(f"CDP URL: {cdp_url}")

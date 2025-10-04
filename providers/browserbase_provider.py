@@ -3,8 +3,9 @@ Browserbase provider module.
 Handles session creation, URL retrieval, and cleanup for Browserbase browser automation.
 """
 
-from browserbase import Browserbase
 import os
+
+from browserbase import Browserbase
 
 
 def create_session(stealth=True):
@@ -47,12 +48,14 @@ def cleanup_session(bb_client, session_id):
     try:
         # Sessions typically end automatically, but we can try to close it
         # The SDK might not have a delete method, sessions may auto-expire
-        if hasattr(bb_client.sessions, 'close'):
+        if hasattr(bb_client.sessions, "close"):
             bb_client.sessions.close(session_id)
-        elif hasattr(bb_client.sessions, 'end'):
+        elif hasattr(bb_client.sessions, "end"):
             bb_client.sessions.end(session_id)
         else:
-            print(f"Browserbase session {session_id} - no manual close method available, session will auto-expire")
+            print(
+                f"Browserbase session {session_id} - no manual close method available, session will auto-expire"
+            )
 
         print(f"Browserbase session {session_id} closed successfully")
 

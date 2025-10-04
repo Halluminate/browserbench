@@ -18,24 +18,34 @@ Environment variables required:
 - For all: OPENAI_API_KEY
 """
 
+import argparse
+import asyncio
+import os
+
 from browser_use import Agent, Controller
 from browser_use.browser import BrowserProfile, BrowserSession
 from browser_use.llm import ChatOpenAI
-import os
-import asyncio
-import argparse
+from dotenv import load_dotenv
 
 # Import provider modules
-from providers.anchor_provider import create_session as anchor_create, cleanup_session as anchor_cleanup
-from providers.browserbase_provider import create_session as browserbase_create, cleanup_session as browserbase_cleanup
-from providers.steel_provider import create_session as steel_create, cleanup_session as steel_cleanup
-from providers.hyperbrowser_provider import create_session as hyperbrowser_create, cleanup_session as hyperbrowser_cleanup
+from providers.anchor_provider import cleanup_session as anchor_cleanup
+from providers.anchor_provider import create_session as anchor_create
+from providers.browserbase_provider import \
+    cleanup_session as browserbase_cleanup
+from providers.browserbase_provider import create_session as browserbase_create
+from providers.hyperbrowser_provider import \
+    cleanup_session as hyperbrowser_cleanup
+from providers.hyperbrowser_provider import \
+    create_session as hyperbrowser_create
+from providers.steel_provider import cleanup_session as steel_cleanup
+from providers.steel_provider import create_session as steel_create
 
-from dotenv import load_dotenv
 load_dotenv()
 
 
-async def main(provider="anchor", stealth=True, task="Check the score of the last 3 patriots games"):
+async def main(
+    provider="anchor", stealth=True, task="Check the score of the last 3 patriots games"
+):
     """Main function to run browser automation with the specified provider"""
     # Create session based on provider
     if provider == "anchor":
@@ -45,22 +55,24 @@ async def main(provider="anchor", stealth=True, task="Check the score of the las
     elif provider == "steelbrowser":
         steel_session_id, cdp_url = steel_create(stealth=stealth)
     elif provider == "hyperbrowser":
-        hyperbrowser_session_id, cdp_url, hyperbrowser_session_url = hyperbrowser_create(stealth=stealth)
+        hyperbrowser_session_id, cdp_url, hyperbrowser_session_url = (
+            hyperbrowser_create(stealth=stealth)
+        )
     else:
-        raise ValueError(f"Unknown provider: {provider}. Use 'anchor', 'browserbase', 'steelbrowser', or 'hyperbrowser'")
+        raise ValueError(
+            f"Unknown provider: {provider}. Use 'anchor', 'browserbase', 'steelbrowser', or 'hyperbrowser'"
+        )
 
     # Configure your LLM (example with OpenAI)
     llm = ChatOpenAI(
-        model='gpt-oss-120b',
-        api_key=os.getenv('OPENAI_API_KEY'),
+        model="gpt-oss-120b",
+        api_key=os.getenv("OPENAI_API_KEY"),
     )
 
     # Initialize browser session with Anchor
     profile = BrowserProfile(keep_alive=True)
     browser_session = BrowserSession(
-        headless=False,
-        cdp_url=cdp_url,
-        browser_profile=profile
+        headless=False, cdp_url=cdp_url, browser_profile=profile
     )
 
     # Create controller and agent
@@ -77,34 +89,37 @@ async def main(provider="anchor", stealth=True, task="Check the score of the las
     # Run the agent
     history = await agent.run(max_steps=40)
     print("History:", history)
-    
+
     # Debug: Check what attributes the history object has
     print("History type:", type(history))
     print("History attributes:", dir(history))
-    
+
     # Extract final result using the proper method
     final_message = ""
     try:
         # Use the proper final_result() method
-        if hasattr(history, 'final_result'):
+        if hasattr(history, "final_result"):
             final_message = history.final_result()
         else:
             print("final_result() method not found, falling back to manual extraction")
             # Fallback to manual extraction if the method doesn't exist
-            if hasattr(history, 'extracted_content'):
+            if hasattr(history, "extracted_content"):
                 contents = history.extracted_content()
                 if contents:
                     final_message = contents[-1]  # Get the last extracted content
-            elif hasattr(history, '__iter__'):
+            elif hasattr(history, "__iter__"):
                 # If history is iterable, get the last item with extracted content
                 for action_result in reversed(list(history)):
-                    if hasattr(action_result, 'extracted_content') and action_result.extracted_content:
+                    if (
+                        hasattr(action_result, "extracted_content")
+                        and action_result.extracted_content
+                    ):
                         final_message = action_result.extracted_content
                         break
     except Exception as e:
         print(f"Error extracting final message: {e}")
         final_message = "Could not extract final message"
-    
+
     # Clean up - stop browser session and terminate provider session
     try:
         print("Stopping browser session...")
@@ -115,50 +130,73 @@ async def main(provider="anchor", stealth=True, task="Check the score of the las
 
     # Provider-specific cleanup using the provider modules
     session_url = None
-    if provider == "anchor" and 'anchor_client' in locals() and 'anchor_session' in locals():
+    if (
+        provider == "anchor"
+        and "anchor_client" in locals()
+        and "anchor_session" in locals()
+    ):
         session_url = anchor_cleanup(anchor_client, anchor_session)
-    elif provider == "browserbase" and 'browserbase_session_id' in locals() and 'bb_client' in locals():
+    elif (
+        provider == "browserbase"
+        and "browserbase_session_id" in locals()
+        and "bb_client" in locals()
+    ):
         session_url = browserbase_cleanup(bb_client, browserbase_session_id)
-    elif provider == "steelbrowser" and 'steel_session_id' in locals():
+    elif provider == "steelbrowser" and "steel_session_id" in locals():
         session_url = steel_cleanup(steel_session_id)
-    elif provider == "hyperbrowser" and 'hyperbrowser_session_id' in locals():
+    elif provider == "hyperbrowser" and "hyperbrowser_session_id" in locals():
         session_url = hyperbrowser_cleanup(hyperbrowser_session_id)
 
     # Return both the final result and session URL (or recording for Anchor)
     return final_message, session_url
 
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run browser automation with different providers")
+    parser = argparse.ArgumentParser(
+        description="Run browser automation with different providers"
+    )
     parser.add_argument(
         "--provider",
         choices=["anchor", "browserbase", "steelbrowser", "hyperbrowser"],
         default="anchor",
-        help="Browser provider to use (default: anchor)"
+        help="Browser provider to use (default: anchor)",
     )
     parser.add_argument(
         "--no-stealth",
         action="store_true",
-        help="Disable advanced stealth mode for Browserbase, Steel, and Hyperbrowser (stealth is enabled by default)"
+        help="Disable advanced stealth mode for Browserbase, Steel, and Hyperbrowser (stealth is enabled by default)",
     )
     parser.add_argument(
         "--task",
         type=str,
         default="Check the score of the last 3 patriots games",
-        help="Custom task for the browser agent (default: 'Check the score of the last 3 patriots games')"
+        help="Custom task for the browser agent (default: 'Check the score of the last 3 patriots games')",
     )
     args = parser.parse_args()
-    
+
     # Validate no-stealth option
-    if args.no_stealth and args.provider not in ["browserbase", "steelbrowser", "hyperbrowser"]:
-        print("Warning: --no-stealth option only works with --provider browserbase, --provider steelbrowser, or --provider hyperbrowser. Ignoring option.")
-    
+    if args.no_stealth and args.provider not in [
+        "browserbase",
+        "steelbrowser",
+        "hyperbrowser",
+    ]:
+        print(
+            "Warning: --no-stealth option only works with --provider browserbase, --provider steelbrowser, or --provider hyperbrowser. Ignoring option."
+        )
+
     # For Browserbase, Steel, and Hyperbrowser, stealth is enabled by default, disabled only with --no-stealth
-    stealth_enabled = not args.no_stealth if args.provider in ["browserbase", "steelbrowser", "hyperbrowser"] else False
-    
-    final_result, session_data = asyncio.run(main(provider=args.provider, stealth=stealth_enabled, task=args.task))
+    stealth_enabled = (
+        not args.no_stealth
+        if args.provider in ["browserbase", "steelbrowser", "hyperbrowser"]
+        else False
+    )
+
+    final_result, session_data = asyncio.run(
+        main(provider=args.provider, stealth=stealth_enabled, task=args.task)
+    )
     print("\n=== Final Results ===")
     print("Final Result (from history.final_result()):", final_result)
-    
+
     if args.provider == "browserbase" and session_data:
         print("Browserbase Session URL:", session_data)
     elif args.provider == "anchor" and session_data:
