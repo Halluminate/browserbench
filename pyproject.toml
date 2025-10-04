@@ -1,0 +1,31 @@
+[project]
+name = "browserbench"
+version = "0.1.0"
+description = "Browser benchmark tool for testing multiple hosted Chromium providers against autonomous web-browsing tasks"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anchorbrowser>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "browser-use>=0.1.0",
+    "openai>=1.0.0",
+    "requests>=2.31.0",
+    "browserbase>=0.1.0",
+    "steel-sdk>=0.1.0",
+    "hyperbrowser>=0.1.0",
+]
+
+[project.scripts]
+browserbench = "run_browserbench:main"
+browser-test = "browser_test:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+

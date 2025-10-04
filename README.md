@@ -8,23 +8,72 @@ BrowserBench exercises multiple hosted Chromium providers against a shared set o
 - `providers/` – lightweight adapters for Anchor, Browserbase, SteelBrowser, and Hyperbrowser. Each exposes `create_session(...)` and `cleanup_session(...)` so the runner never touches SDK details.
 - `browserbench.csv` / `test_tasks.csv` – canonical and sandbox task lists. Each row describes the start URL, natural-language instruction, and ground-truth expectation.
 - `results/` – auto-created folder containing `browserbench_results_<provider>_<timestamp>.csv` exports for every run.
-- `requirements.txt` – Python dependencies required by the runner and provider adapters.
-
-A pre-created `venv/` is checked in for convenience, but feel free to recreate it if needed.
+- `pyproject.toml` – Project configuration and dependencies for uv package management.
+- `requirements.txt` – Python dependencies (maintained for pip compatibility).
 
 ## Prerequisites
-1. **Python environment** – Use the repo's virtualenv (`source venv/bin/activate`) or create a fresh one (`python -m venv venv && source venv/bin/activate`).
-2. **Install dependencies** – `pip install -r requirements.txt`.
-3. **Environment variables** – Load from `.env` or export manually:
-   - `OPENAI_API_KEY`
-   - `ANCHOR_API_KEY`
-   - `BROWSERBASE_API_KEY`, `BROWSERBASE_PROJECT_ID`
-   - `STEEL_API_KEY`
-   - `HYPERBROWSER_API_KEY`
 
-`run_browserbench.py` and `browser_test.py` both call `python-dotenv.load_dotenv()`, so a local `.env` file is respected automatically.
+### Installation with uv (Recommended)
+[uv](https://github.com/astral-sh/uv) is a fast Python package installer and resolver. If you don't have it installed:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Then install dependencies:
+```bash
+# Install all dependencies
+uv sync
+
+# Run commands with uv
+uv run python run_browserbench.py --help
+uv run python browser_test.py --help
+```
+
+### Installation with pip (Alternative)
+If you prefer traditional pip:
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Environment Variables
+Create a `.env` file in the project root with the following variables:
+```bash
+# OpenAI API Key (required for all providers)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Anchor Browser API Key
+ANCHOR_API_KEY=your_anchor_api_key_here
+
+# Browserbase API credentials
+BROWSERBASE_API_KEY=your_browserbase_api_key_here
+BROWSERBASE_PROJECT_ID=your_browserbase_project_id_here
+
+# Steel Browser API Key
+STEEL_API_KEY=your_steel_api_key_here
+
+# Hyperbrowser API Key
+HYPERBROWSER_API_KEY=your_hyperbrowser_api_key_here
+```
+
+Alternatively, export them manually in your shell. Both `run_browserbench.py` and `browser_test.py` call `python-dotenv.load_dotenv()`, so a local `.env` file is respected automatically.
 
 ## Running the Benchmark Suite
+
+### With uv:
+```bash
+uv run python run_browserbench.py \
+  --provider browserbase \
+  --concurrency 5 \
+  --tasks 20 \
+  --csv-file browserbench.csv
+```
+
+### With pip/virtualenv:
 ```bash
 python run_browserbench.py \
   --provider browserbase \
@@ -48,6 +97,13 @@ The runner validates that required environment variables exist, loads tasks, dis
 
 ## Running a Single Task
 Use `browser_test.py` when you need to debug prompts or provider wiring:
+
+### With uv:
+```bash
+uv run python browser_test.py --provider steelbrowser --task "Find the latest pricing for the Oculus Quest 3" --no-stealth
+```
+
+### With pip/virtualenv:
 ```bash
 python browser_test.py --provider steelbrowser --task "Find the latest pricing for the Oculus Quest 3" --no-stealth
 ```
