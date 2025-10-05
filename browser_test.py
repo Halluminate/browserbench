@@ -18,20 +18,25 @@ Environment variables required:
 - For all: OPENAI_API_KEY
 """
 
+import argparse
+import asyncio
+import os
+
 from browser_use import Agent, Controller
 from browser_use.browser import BrowserProfile, BrowserSession
 from browser_use.llm import ChatOpenAI
-import os
-import asyncio
-import argparse
+from dotenv import load_dotenv
 
 # Import provider modules
-from providers.anchor_provider import create_session as anchor_create, cleanup_session as anchor_cleanup
-from providers.browserbase_provider import create_session as browserbase_create, cleanup_session as browserbase_cleanup
-from providers.steel_provider import create_session as steel_create, cleanup_session as steel_cleanup
-from providers.hyperbrowser_provider import create_session as hyperbrowser_create, cleanup_session as hyperbrowser_cleanup
+from providers.anchor_provider import cleanup_session as anchor_cleanup
+from providers.anchor_provider import create_session as anchor_create
+from providers.browserbase_provider import cleanup_session as browserbase_cleanup
+from providers.browserbase_provider import create_session as browserbase_create
+from providers.hyperbrowser_provider import cleanup_session as hyperbrowser_cleanup
+from providers.hyperbrowser_provider import create_session as hyperbrowser_create
+from providers.steel_provider import cleanup_session as steel_cleanup
+from providers.steel_provider import create_session as steel_create
 
-from dotenv import load_dotenv
 load_dotenv()
 
 
@@ -51,7 +56,8 @@ async def main(provider="anchor", stealth=True, task="Check the score of the las
 
     # Configure your LLM (example with OpenAI)
     llm = ChatOpenAI(
-        model='gpt-oss-120b',
+        # model='gpt-oss-120b',
+        model='gpt-4o',
         api_key=os.getenv('OPENAI_API_KEY'),
     )
 
