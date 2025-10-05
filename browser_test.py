@@ -62,8 +62,9 @@ async def main(
 
     # Configure your LLM (example with OpenAI)
     llm = ChatOpenAI(
-        model="gpt-oss-120b",
-        api_key=os.getenv("OPENAI_API_KEY"),
+        # model='gpt-oss-120b',
+        model='gpt-4o',
+        api_key=os.getenv('OPENAI_API_KEY'),
     )
 
     # Initialize browser session with Anchor
