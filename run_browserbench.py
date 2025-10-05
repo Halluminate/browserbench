@@ -6,6 +6,10 @@ This script runs browser automation tasks from browserbench.csv using various br
 with configurable concurrency and task selection. It reuses the core session management logic
 from browser_test.py for consistency and maintainability.
 
+Output:
+- Results are saved to results/browserbench_results_{provider}[_no_stealth].csv
+- Per-task logs are saved to logs/browserbench_results_{provider}[_no_stealth]/task_id_{N}.log
+
 Usage:
     python run_browserbench.py --provider anchor --concurrency 3 --tasks 10
     python run_browserbench.py --provider browserbase --concurrency 5 --tasks 50
@@ -25,6 +29,7 @@ import asyncio
 import csv
 import logging
 import os
+import sys
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
@@ -39,6 +44,65 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
+
+
+class TaskLogger:
+    """Context manager for capturing all logs and stdout/stderr for a task"""
+    
+    def __init__(self, log_file_path: Path):
+        self.log_file_path = log_file_path
+        self.log_file = None
+        self.file_handler = None
+        self.stdout_buffer = None
+        self.stderr_buffer = None
+        
+    def __enter__(self):
+        # Open log file
+        self.log_file = open(self.log_file_path, 'w', encoding='utf-8')
+        
+        # Create file handler for logging
+        self.file_handler = logging.FileHandler(self.log_file_path, mode='a')
+        self.file_handler.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        self.file_handler.setFormatter(formatter)
+        
+        # Add handler to root logger to capture all logging
+        logging.root.addHandler(self.file_handler)
+        
+        # Create buffers that write to both file and capture output
+        self.stdout_buffer = TeeFile(sys.stdout, self.log_file)
+        self.stderr_buffer = TeeFile(sys.stderr, self.log_file)
+        
+        return self
+        
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        # Remove file handler from root logger
+        if self.file_handler:
+            logging.root.removeHandler(self.file_handler)
+            self.file_handler.close()
+        
+        # Close log file
+        if self.log_file:
+            self.log_file.close()
+        
+        return False
+
+
+class TeeFile:
+    """Helper class to write to both original stream and log file"""
+    
+    def __init__(self, original_stream, log_file):
+        self.original_stream = original_stream
+        self.log_file = log_file
+        
+    def write(self, data):
+        self.original_stream.write(data)
+        self.log_file.write(data)
+        self.log_file.flush()
+        
+    def flush(self):
+        self.original_stream.flush()
+        self.log_file.flush()
 
 
 @dataclass
@@ -78,6 +142,10 @@ class BrowserBenchmarkRunner:
         self.results_dir.mkdir(exist_ok=True)
         self.output_file = output_file
         self._write_lock = asyncio.Lock()  # Lock for thread-safe CSV writes
+        
+        # Set up logs directory structure
+        self.logs_base_dir = Path("logs")
+        self.logs_base_dir.mkdir(exist_ok=True)
 
     def load_tasks(self, csv_file: str, max_tasks: Optional[int] = None) -> List[Dict]:
         """Load tasks from CSV file"""
@@ -208,7 +276,7 @@ class BrowserBenchmarkRunner:
         return f"{task['task_description']}. Begin task on the following url: {task['starting_url']}"
 
     async def run_task_background(
-        self, task: Dict, output_filepath: Path, worker_id: int
+        self, task: Dict, output_filepath: Path, log_directory: Path, worker_id: int
     ) -> BenchmarkResult:
         """Run a single task in background, writing initial row and updating when complete"""
         # Import the working browser_test main function
@@ -241,49 +309,57 @@ class BrowserBenchmarkRunner:
             task_duration=None,
         )
 
+        # Set up log file for this task
+        log_file = log_directory / f"task_id_{task['task_id']}.log"
+
         try:
-            logger.info(f"Worker {worker_id}: Starting task {task['task_id']}")
+            # Use TaskLogger context manager to capture all output to log file
+            with TaskLogger(log_file):
+                logger.info(f"Worker {worker_id}: Starting task {task['task_id']}")
 
-            # Write initial row to file (before running task)
-            await self.write_initial_task_row(output_filepath, result)
+                # Write initial row to file (before running task)
+                await self.write_initial_task_row(output_filepath, result)
 
-            # Use the working browser_test.main() function
-            formatted_task = self.format_task_with_url(task)
-            agent_result, session_url, is_successful, error_msg = await run_single_browser_task(
-                provider=self.provider,
-                stealth=stealth_enabled,
-                task=formatted_task
-            )
+                # Use the working browser_test.main() function
+                formatted_task = self.format_task_with_url(task)
+                agent_result, session_url, is_successful, error_msg = await run_single_browser_task(
+                    provider=self.provider,
+                    stealth=stealth_enabled,
+                    task=formatted_task
+                )
 
-            # Calculate duration
-            end_time = datetime.now()
-            duration = (end_time - start_time).total_seconds()
+                # Calculate duration
+                end_time = datetime.now()
+                duration = (end_time - start_time).total_seconds()
 
-            # Update result with completion info
-            result.agent_result = agent_result or ""
-            result.success = is_successful
-            result.error_message = error_msg
-            result.task_duration = duration
-            result.status = "completed" if is_successful else "failed"
-            result.session_url = session_url or ""
-            
-            # Extract session_id from session_url if possible
-            if session_url and "sessions/" in session_url:
-                result.session_id = session_url.split("sessions/")[-1].split("?")[0].split("/")[0]
+                # Update result with completion info
+                result.agent_result = agent_result or ""
+                result.success = is_successful
+                result.error_message = error_msg
+                result.task_duration = duration
+                result.status = "completed" if is_successful else "failed"
+                result.session_url = session_url or ""
+                
+                # Extract session_id from session_url if possible
+                if session_url and "sessions/" in session_url:
+                    result.session_id = session_url.split("sessions/")[-1].split("?")[0].split("/")[0]
 
-            # Update row in file
-            await self.update_task_row(output_filepath, result)
+                # Update row in file
+                await self.update_task_row(output_filepath, result)
 
-            logger.info(
-                f"Worker {worker_id}: Task {task['task_id']} completed in {duration:.2f}s"
-            )
+                logger.info(
+                    f"Worker {worker_id}: Task {task['task_id']} completed in {duration:.2f}s"
+                )
 
-            return result
+                return result
 
         except Exception as e:
-            logger.error(
-                f"Worker {worker_id}: Error running task {task['task_id']}: {e}"
-            )
+            # Log to file even in case of exception
+            with TaskLogger(log_file):
+                logger.error(
+                    f"Worker {worker_id}: Error running task {task['task_id']}: {e}"
+                )
+            
             end_time = datetime.now()
             duration = (end_time - start_time).total_seconds()
             
@@ -306,6 +382,10 @@ class BrowserBenchmarkRunner:
         """Launch benchmark tasks in background with concurrency control"""
         # Initialize output file with headers
         self.initialize_output_file(output_filepath)
+
+        # Get log directory for this run
+        log_directory = self.get_log_directory(output_filepath)
+        logger.info(f"Logs will be written to: {log_directory}")
 
         # Get existing task IDs to skip
         existing_task_ids = self.get_existing_task_ids(output_filepath)
@@ -334,7 +414,7 @@ class BrowserBenchmarkRunner:
 
         async def run_with_semaphore(task: Dict, worker_id: int) -> BenchmarkResult:
             async with semaphore:
-                return await self.run_task_background(task, output_filepath, worker_id)
+                return await self.run_task_background(task, output_filepath, log_directory, worker_id)
 
         # Launch all tasks as background tasks
         background_tasks = []
@@ -360,11 +440,20 @@ class BrowserBenchmarkRunner:
         return final_results
 
     def get_output_filepath(self, filename: Optional[str] = None) -> Path:
-        """Get the output file path, using provider name if not provided"""
+        """Get the output file path, using provider name and stealth mode if not provided"""
         if filename is None:
-            filename = f"browserbench_results_{self.provider}.csv"
+            stealth_suffix = "_no_stealth" if self.no_stealth else ""
+            filename = f"browserbench_results_{self.provider}{stealth_suffix}.csv"
 
         return self.results_dir / filename
+
+    def get_log_directory(self, output_filepath: Path) -> Path:
+        """Get the log directory for this run based on output filename"""
+        # Use the output filename (without .csv) as the log directory name
+        log_dir_name = output_filepath.stem  # Gets filename without extension
+        log_dir = self.logs_base_dir / log_dir_name
+        log_dir.mkdir(exist_ok=True)
+        return log_dir
 
 
 def main():
@@ -398,7 +487,7 @@ def main():
         "--output",
         type=str,
         default=None,
-        help="Output CSV filename (default: browserbench_results_{provider}.csv)",
+        help="Output CSV filename (default: browserbench_results_{provider}[_no_stealth].csv)",
     )
     parser.add_argument(
         "--no-stealth",
@@ -468,6 +557,9 @@ def main():
     failed_tasks = sum(1 for r in results if r.status == "failed")
     total_duration = sum(r.task_duration for r in results if r.task_duration)
     avg_duration = total_duration / len(results) if results else 0
+    
+    # Get log directory path for display
+    log_directory = runner.get_log_directory(output_filepath)
 
     print("\n=== Benchmark Summary ===")
     print(f"Provider: {args.provider}")
@@ -478,6 +570,7 @@ def main():
     print(f"Total time: {total_duration:.2f}s")
     print(f"Average time per task: {avg_duration:.2f}s")
     print(f"\nResults saved to: {output_filepath}")
+    print(f"Task logs saved to: {log_directory}/")
     print("\nView session recordings at the session_url column in the CSV")
 
     return 0
