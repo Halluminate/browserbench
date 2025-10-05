@@ -301,7 +301,7 @@ class BrowserBenchmarkRunner:
             return result
 
     async def launch_benchmark(
-        self, tasks: List[Dict], output_filepath: Path
+        self, tasks: List[Dict], output_filepath: Path, max_new_tasks: Optional[int] = None
     ) -> List[BenchmarkResult]:
         """Launch benchmark tasks in background with concurrency control"""
         # Initialize output file with headers
@@ -312,6 +312,11 @@ class BrowserBenchmarkRunner:
 
         # Filter to only new tasks
         new_tasks = [t for t in tasks if t["task_id"] not in existing_task_ids]
+        
+        # Apply max_new_tasks limit if specified
+        if max_new_tasks is not None and len(new_tasks) > max_new_tasks:
+            new_tasks = new_tasks[:max_new_tasks]
+            logger.info(f"Limited to first {max_new_tasks} unrun tasks")
         
         if not new_tasks:
             logger.info("All tasks already exist in output file, nothing to run")
@@ -434,9 +439,9 @@ def main():
         output_file=args.output,
     )
 
-    # Load tasks
+    # Load tasks (load all tasks, we'll filter and limit later)
     try:
-        tasks = runner.load_tasks(args.csv_file, args.tasks)
+        tasks = runner.load_tasks(args.csv_file, max_tasks=None)
         logger.info(f"Loaded {len(tasks)} tasks from {args.csv_file}")
     except Exception as e:
         logger.error(f"Error loading tasks: {e}")
@@ -450,9 +455,9 @@ def main():
     output_filepath = runner.get_output_filepath(args.output)
     logger.info(f"Output will be written to: {output_filepath}")
 
-    # Run benchmark tasks
+    # Run benchmark tasks (apply --tasks limit to unrun tasks)
     try:
-        results = asyncio.run(runner.launch_benchmark(tasks, output_filepath))
+        results = asyncio.run(runner.launch_benchmark(tasks, output_filepath, max_new_tasks=args.tasks))
         logger.info(f"Completed {len(results)} tasks")
     except Exception as e:
         logger.error(f"Error running benchmark: {e}")
