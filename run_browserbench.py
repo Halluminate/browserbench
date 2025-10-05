@@ -249,7 +249,7 @@ class BrowserBenchmarkRunner:
 
             # Use the working browser_test.main() function
             formatted_task = self.format_task_with_url(task)
-            agent_result, session_url = await run_single_browser_task(
+            agent_result, session_url, is_successful, error_msg = await run_single_browser_task(
                 provider=self.provider,
                 stealth=stealth_enabled,
                 task=formatted_task
@@ -261,10 +261,10 @@ class BrowserBenchmarkRunner:
 
             # Update result with completion info
             result.agent_result = agent_result or ""
-            result.success = True
-            result.error_message = None
+            result.success = is_successful
+            result.error_message = error_msg
             result.task_duration = duration
-            result.status = "completed"
+            result.status = "completed" if is_successful else "failed"
             result.session_url = session_url or ""
             
             # Extract session_id from session_url if possible

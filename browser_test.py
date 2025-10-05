@@ -30,13 +30,10 @@ from dotenv import load_dotenv
 # Import provider modules
 from providers.anchor_provider import cleanup_session as anchor_cleanup
 from providers.anchor_provider import create_session as anchor_create
-from providers.browserbase_provider import \
-    cleanup_session as browserbase_cleanup
+from providers.browserbase_provider import cleanup_session as browserbase_cleanup
 from providers.browserbase_provider import create_session as browserbase_create
-from providers.hyperbrowser_provider import \
-    cleanup_session as hyperbrowser_cleanup
-from providers.hyperbrowser_provider import \
-    create_session as hyperbrowser_create
+from providers.hyperbrowser_provider import cleanup_session as hyperbrowser_cleanup
+from providers.hyperbrowser_provider import create_session as hyperbrowser_create
 from providers.steel_provider import cleanup_session as steel_cleanup
 from providers.steel_provider import create_session as steel_create
 
@@ -94,6 +91,20 @@ async def main(
     print("History type:", type(history))
     print("History attributes:", dir(history))
 
+    # Check if the task was successful
+    is_successful = False
+    error_message = None
+    
+    if hasattr(history, "is_successful"):
+        is_successful = history.is_successful
+    
+    if hasattr(history, "has_errors") and history.has_errors:
+        # Extract error messages
+        if hasattr(history, "errors"):
+            errors = history.errors()
+            if errors:
+                error_message = "; ".join(str(e) for e in errors)
+    
     # Extract final result using the proper method
     final_message = ""
     try:
@@ -119,6 +130,7 @@ async def main(
     except Exception as e:
         print(f"Error extracting final message: {e}")
         final_message = "Could not extract final message"
+        error_message = str(e) if not error_message else f"{error_message}; {e}"
 
     # Clean up - stop browser session and terminate provider session
     try:
@@ -147,8 +159,8 @@ async def main(
     elif provider == "hyperbrowser" and "hyperbrowser_session_id" in locals():
         session_url = hyperbrowser_cleanup(hyperbrowser_session_id)
 
-    # Return both the final result and session URL (or recording for Anchor)
-    return final_message, session_url
+    # Return the final result, session URL, success status, and error message
+    return final_message, session_url, is_successful, error_message
 
 
 if __name__ == "__main__":
@@ -191,11 +203,14 @@ if __name__ == "__main__":
         else False
     )
 
-    final_result, session_data = asyncio.run(
+    final_result, session_data, is_successful, error_message = asyncio.run(
         main(provider=args.provider, stealth=stealth_enabled, task=args.task)
     )
     print("\n=== Final Results ===")
+    print("Success:", is_successful)
     print("Final Result (from history.final_result()):", final_result)
+    if error_message:
+        print("Error Message:", error_message)
 
     if args.provider == "browserbase" and session_data:
         print("Browserbase Session URL:", session_data)
