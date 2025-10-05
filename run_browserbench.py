@@ -25,15 +25,11 @@ import asyncio
 import csv
 import logging
 import os
-import time
 from dataclasses import asdict, dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-# Import browser automation components (only LLM needed for configuration)
-# Import the main function from browser_test.py to reuse session management logic
-from browser_test import main as run_single_browser_task
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -54,26 +50,34 @@ class BenchmarkResult:
     task_description: str
     ground_truth_url: str
     ground_truth: str
+    status: str
     provider: str
-    agent_result: str
+    session_id: Optional[str]
     session_url: Optional[str]
-    success: bool
+    launched_at: str
+    agent_result: Optional[str]
+    success: Optional[bool]
     error_message: Optional[str]
-    execution_time: float
-    timestamp: str
+    task_duration: Optional[float]
 
 
 class BrowserBenchmarkRunner:
     """Main class for running browser benchmarks"""
 
     def __init__(
-        self, provider: str = "anchor", concurrency: int = 3, no_stealth: bool = False
+        self,
+        provider: str = "anchor",
+        concurrency: int = 3,
+        no_stealth: bool = False,
+        output_file: Optional[str] = None,
     ):
         self.provider = provider
         self.concurrency = concurrency
         self.no_stealth = no_stealth
         self.results_dir = Path("results")
         self.results_dir.mkdir(exist_ok=True)
+        self.output_file = output_file
+        self._write_lock = asyncio.Lock()  # Lock for thread-safe CSV writes
 
     def load_tasks(self, csv_file: str, max_tasks: Optional[int] = None) -> List[Dict]:
         """Load tasks from CSV file"""
@@ -85,135 +89,277 @@ class BrowserBenchmarkRunner:
                     break
                 tasks.append(
                     {
-                        "task_id": i,
+                        "task_id": int(row["task_id"]),
                         "starting_url": row["starting_url"],
-                        "task_description": row["Task"],
+                        "task_description": row["task_description"],
                         "ground_truth_url": row["ground_truth_url"],
-                        "ground_truth": row["Ground Truth"],
+                        "ground_truth": row["ground_truth"],
                     }
                 )
         return tasks
+
+    def get_existing_task_ids(self, filepath: Path) -> set:
+        """Get set of task_ids already in the output file"""
+        if not filepath.exists():
+            return set()
+        
+        existing_ids = set()
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    if row.get("task_id"):
+                        existing_ids.add(int(row["task_id"]))
+            logger.info(f"Found {len(existing_ids)} existing tasks in {filepath}")
+        except Exception as e:
+            logger.error(f"Error reading existing task IDs: {e}")
+        
+        return existing_ids
+
+    def initialize_output_file(self, filepath: Path):
+        """Create output CSV with headers if it doesn't exist"""
+        if not filepath.exists():
+            fieldnames = [
+                "task_id",
+                "starting_url",
+                "task_description",
+                "ground_truth_url",
+                "ground_truth",
+                "status",
+                "provider",
+                "session_id",
+                "session_url",
+                "launched_at",
+                "agent_result",
+                "success",
+                "error_message",
+                "task_duration",
+            ]
+            with open(filepath, "w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+            logger.info(f"Created output file with headers: {filepath}")
+
+    async def write_initial_task_row(self, filepath: Path, result: BenchmarkResult):
+        """Write initial task row to CSV (thread-safe)"""
+        async with self._write_lock:
+            try:
+                fieldnames = [
+                    "task_id",
+                    "starting_url",
+                    "task_description",
+                    "ground_truth_url",
+                    "ground_truth",
+                    "status",
+                    "provider",
+                    "session_id",
+                    "session_url",
+                    "launched_at",
+                    "agent_result",
+                    "success",
+                    "error_message",
+                    "task_duration",
+                ]
+                with open(filepath, "a", newline="", encoding="utf-8") as f:
+                    writer = csv.DictWriter(f, fieldnames=fieldnames)
+                    writer.writerow(asdict(result))
+                logger.info(f"Wrote initial row for task {result.task_id}")
+            except Exception as e:
+                logger.error(f"Error writing initial row for task {result.task_id}: {e}")
+                raise
+
+    async def update_task_row(self, filepath: Path, result: BenchmarkResult):
+        """Update a task row in the CSV file (thread-safe)"""
+        async with self._write_lock:
+            try:
+                # Read all rows
+                rows = []
+                fieldnames = []
+                with open(filepath, "r", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    fieldnames = reader.fieldnames
+                    rows = list(reader)
+                
+                # Update the matching row
+                updated = False
+                for i, row in enumerate(rows):
+                    if int(row["task_id"]) == result.task_id:
+                        rows[i] = asdict(result)
+                        updated = True
+                        break
+                
+                if not updated:
+                    logger.warning(f"Task {result.task_id} not found in file, appending")
+                    rows.append(asdict(result))
+                
+                # Write back
+                with open(filepath, "w", newline="", encoding="utf-8") as f:
+                    writer = csv.DictWriter(f, fieldnames=fieldnames)
+                    writer.writeheader()
+                    writer.writerows(rows)
+                
+                logger.info(f"Updated row for task {result.task_id}")
+            except Exception as e:
+                logger.error(f"Error updating row for task {result.task_id}: {e}")
+                raise
 
     def format_task_with_url(self, task: Dict) -> str:
         """Format task with starting URL"""
         return f"{task['task_description']}. Begin task on the following url: {task['starting_url']}"
 
-    async def run_single_task(self, task: Dict, worker_id: int) -> BenchmarkResult:
-        """Run a single task using the browser_test.py main function"""
-        start_time = time.time()
+    async def run_task_background(
+        self, task: Dict, output_filepath: Path, worker_id: int
+    ) -> BenchmarkResult:
+        """Run a single task in background, writing initial row and updating when complete"""
+        # Import the working browser_test main function
+        from browser_test import main as run_single_browser_task
+
+        launched_at = datetime.now().isoformat()
+        start_time = datetime.now()
+
+        # Determine stealth setting
+        stealth_enabled = (
+            self.provider in ["browserbase", "steelbrowser", "hyperbrowser"]
+            and not self.no_stealth
+        )
+
+        # Create initial result object
         result = BenchmarkResult(
             task_id=task["task_id"],
             starting_url=task["starting_url"],
             task_description=task["task_description"],
             ground_truth_url=task["ground_truth_url"],
             ground_truth=task["ground_truth"],
+            status="running",
             provider=self.provider,
-            agent_result="",
+            session_id=None,
             session_url=None,
-            success=False,
+            launched_at=launched_at,
+            agent_result=None,
+            success=None,
             error_message=None,
-            execution_time=0.0,
-            timestamp=datetime.now().isoformat(),
+            task_duration=None,
         )
 
         try:
             logger.info(f"Worker {worker_id}: Starting task {task['task_id']}")
 
-            # Use the main function from browser_test.py
-            # Determine stealth setting based on provider and no_stealth flag
-            stealth_enabled = (
-                self.provider in ["browserbase", "steelbrowser", "hyperbrowser"]
-                and not self.no_stealth
-            )
+            # Write initial row to file (before running task)
+            await self.write_initial_task_row(output_filepath, result)
 
+            # Use the working browser_test.main() function
             formatted_task = self.format_task_with_url(task)
             agent_result, session_url = await run_single_browser_task(
-                provider=self.provider, stealth=stealth_enabled, task=formatted_task
+                provider=self.provider,
+                stealth=stealth_enabled,
+                task=formatted_task
             )
 
-            result.agent_result = agent_result
-            result.session_url = session_url
+            # Calculate duration
+            end_time = datetime.now()
+            duration = (end_time - start_time).total_seconds()
+
+            # Update result with completion info
+            result.agent_result = agent_result or ""
             result.success = True
+            result.error_message = None
+            result.task_duration = duration
+            result.status = "completed"
+            result.session_url = session_url or ""
+            
+            # Extract session_id from session_url if possible
+            if session_url and "sessions/" in session_url:
+                result.session_id = session_url.split("sessions/")[-1].split("?")[0].split("/")[0]
+
+            # Update row in file
+            await self.update_task_row(output_filepath, result)
+
+            logger.info(
+                f"Worker {worker_id}: Task {task['task_id']} completed in {duration:.2f}s"
+            )
+
+            return result
 
         except Exception as e:
             logger.error(
                 f"Worker {worker_id}: Error running task {task['task_id']}: {e}"
             )
+            end_time = datetime.now()
+            duration = (end_time - start_time).total_seconds()
+            
+            result.status = "failed"
             result.error_message = str(e)
             result.success = False
+            result.task_duration = duration
 
-        result.execution_time = time.time() - start_time
-        return result
+            # Update row in file with error
+            try:
+                await self.update_task_row(output_filepath, result)
+            except Exception as update_error:
+                logger.error(f"Failed to update error status: {update_error}")
 
-    async def run_benchmark(self, tasks: List[Dict]) -> List[BenchmarkResult]:
-        """Run benchmark with concurrency control"""
-        semaphore = asyncio.Semaphore(self.concurrency)
-        results = []
+            return result
 
-        async def run_task_with_semaphore(
-            task: Dict, worker_id: int
-        ) -> BenchmarkResult:
-            async with semaphore:
-                return await self.run_single_task(task, worker_id)
+    async def launch_benchmark(
+        self, tasks: List[Dict], output_filepath: Path
+    ) -> List[BenchmarkResult]:
+        """Launch benchmark tasks in background with concurrency control"""
+        # Initialize output file with headers
+        self.initialize_output_file(output_filepath)
 
-        # Create tasks with worker IDs
-        benchmark_tasks = []
-        for i, task in enumerate(tasks):
-            worker_id = i % self.concurrency
-            benchmark_tasks.append(run_task_with_semaphore(task, worker_id))
+        # Get existing task IDs to skip
+        existing_task_ids = self.get_existing_task_ids(output_filepath)
 
-        # Execute all tasks concurrently
+        # Filter to only new tasks
+        new_tasks = [t for t in tasks if t["task_id"] not in existing_task_ids]
+        
+        if not new_tasks:
+            logger.info("All tasks already exist in output file, nothing to run")
+            return []
+        
         logger.info(
-            f"Starting benchmark with {len(tasks)} tasks using {self.concurrency} concurrent workers"
+            f"Skipping {len(existing_task_ids)} existing tasks, running {len(new_tasks)} new tasks"
         )
-        results = await asyncio.gather(*benchmark_tasks, return_exceptions=True)
+        logger.info(
+            f"Running {len(new_tasks)} tasks using {self.concurrency} concurrent workers"
+        )
 
-        # Handle any exceptions
+        # Create semaphore for concurrency control
+        semaphore = asyncio.Semaphore(self.concurrency)
+
+        async def run_with_semaphore(task: Dict, worker_id: int) -> BenchmarkResult:
+            async with semaphore:
+                return await self.run_task_background(task, output_filepath, worker_id)
+
+        # Launch all tasks as background tasks
+        background_tasks = []
+        for i, task in enumerate(new_tasks):
+            worker_id = i % self.concurrency
+            bg_task = asyncio.create_task(run_with_semaphore(task, worker_id))
+            background_tasks.append(bg_task)
+
+        # Wait for all tasks to complete
+        logger.info("All tasks launched, waiting for completion...")
+        results = await asyncio.gather(*background_tasks, return_exceptions=True)
+
+        # Process results
         final_results = []
         for i, result in enumerate(results):
             if isinstance(result, Exception):
-                logger.error(f"Task {i} failed with exception: {result}")
-                # Create a failed result
-                failed_result = BenchmarkResult(
-                    task_id=tasks[i]["task_id"],
-                    starting_url=tasks[i]["starting_url"],
-                    task_description=tasks[i]["task_description"],
-                    ground_truth_url=tasks[i]["ground_truth_url"],
-                    ground_truth=tasks[i]["ground_truth"],
-                    provider=self.provider,
-                    agent_result="",
-                    session_url=None,
-                    success=False,
-                    error_message=str(result),
-                    execution_time=0.0,
-                    timestamp=datetime.now().isoformat(),
-                )
-                final_results.append(failed_result)
+                logger.error(f"Task {new_tasks[i]['task_id']} failed: {result}")
+                # Results already written by run_task_background, just track it
             else:
                 final_results.append(result)
 
+        logger.info(f"Completed {len(final_results)} tasks")
         return final_results
 
-    def save_results_to_csv(
-        self, results: List[BenchmarkResult], filename: Optional[str] = None
-    ):
-        """Save results to CSV file"""
+    def get_output_filepath(self, filename: Optional[str] = None) -> Path:
+        """Get the output file path, using provider name if not provided"""
         if filename is None:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"browserbench_results_{self.provider}_{timestamp}.csv"
+            filename = f"browserbench_results_{self.provider}.csv"
 
-        filepath = self.results_dir / filename
-
-        with open(filepath, "w", newline="", encoding="utf-8") as f:
-            if results:
-                fieldnames = results[0].__dataclass_fields__.keys()
-                writer = csv.DictWriter(f, fieldnames=fieldnames)
-                writer.writeheader()
-                for result in results:
-                    writer.writerow(asdict(result))
-
-        logger.info(f"Results saved to {filepath}")
-        return filepath
+        return self.results_dir / filename
 
 
 def main():
@@ -247,7 +393,7 @@ def main():
         "--output",
         type=str,
         default=None,
-        help="Output CSV filename (default: auto-generated with timestamp)",
+        help="Output CSV filename (default: browserbench_results_{provider}.csv)",
     )
     parser.add_argument(
         "--no-stealth",
@@ -282,7 +428,10 @@ def main():
 
     # Initialize runner
     runner = BrowserBenchmarkRunner(
-        provider=args.provider, concurrency=args.concurrency, no_stealth=args.no_stealth
+        provider=args.provider,
+        concurrency=args.concurrency,
+        no_stealth=args.no_stealth,
+        output_file=args.output,
     )
 
     # Load tasks
@@ -297,37 +446,34 @@ def main():
         logger.error("No tasks loaded")
         return 1
 
-    # Run benchmark
+    # Get output file path
+    output_filepath = runner.get_output_filepath(args.output)
+    logger.info(f"Output will be written to: {output_filepath}")
+
+    # Run benchmark tasks
     try:
-        results = asyncio.run(runner.run_benchmark(tasks))
+        results = asyncio.run(runner.launch_benchmark(tasks, output_filepath))
         logger.info(f"Completed {len(results)} tasks")
     except Exception as e:
         logger.error(f"Error running benchmark: {e}")
         return 1
 
-    # Save results
-    try:
-        output_file = runner.save_results_to_csv(results, args.output)
-        logger.info(f"Benchmark completed successfully. Results saved to {output_file}")
-    except Exception as e:
-        logger.error(f"Error saving results: {e}")
-        return 1
-
     # Print summary
-    successful_tasks = sum(1 for r in results if r.success)
-    total_time = sum(r.execution_time for r in results)
-    avg_time = total_time / len(results) if results else 0
+    completed_tasks = sum(1 for r in results if r.status == "completed")
+    failed_tasks = sum(1 for r in results if r.status == "failed")
+    total_duration = sum(r.task_duration for r in results if r.task_duration)
+    avg_duration = total_duration / len(results) if results else 0
 
     print("\n=== Benchmark Summary ===")
     print(f"Provider: {args.provider}")
     print(f"Concurrency: {args.concurrency}")
-    print(f"Tasks completed: {len(results)}")
-    print(
-        f"Successful: {successful_tasks} ({successful_tasks / len(results) * 100:.1f}%)"
-    )
-    print(f"Total time: {total_time:.2f}s")
-    print(f"Average time per task: {avg_time:.2f}s")
-    print(f"Results saved to: {output_file}")
+    print(f"Total tasks: {len(results)}")
+    print(f"Completed successfully: {completed_tasks}")
+    print(f"Failed: {failed_tasks}")
+    print(f"Total time: {total_duration:.2f}s")
+    print(f"Average time per task: {avg_duration:.2f}s")
+    print(f"\nResults saved to: {output_filepath}")
+    print("\nView session recordings at the session_url column in the CSV")
 
     return 0
 
