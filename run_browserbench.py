@@ -27,6 +27,7 @@ Environment variables required:
 import argparse
 import asyncio
 import csv
+import json
 import logging
 import os
 import sys
@@ -46,63 +47,29 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-class TaskLogger:
-    """Context manager for capturing all logs and stdout/stderr for a task"""
+async def run_single_task_subprocess(
+    provider: str,
+    stealth: bool,
+    task_description: str,
+    starting_url: str,
+) -> tuple[Optional[str], Optional[str], Optional[bool], Optional[str]]:
+    """
+    Run a single browser task - this function is called by subprocess.
+    Returns: (agent_result, session_url, is_successful, error_msg)
+    """
+    from browser_test import main as run_single_browser_task
     
-    def __init__(self, log_file_path: Path):
-        self.log_file_path = log_file_path
-        self.log_file = None
-        self.file_handler = None
-        self.stdout_buffer = None
-        self.stderr_buffer = None
-        
-    def __enter__(self):
-        # Open log file
-        self.log_file = open(self.log_file_path, 'w', encoding='utf-8')
-        
-        # Create file handler for logging
-        self.file_handler = logging.FileHandler(self.log_file_path, mode='a')
-        self.file_handler.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        self.file_handler.setFormatter(formatter)
-        
-        # Add handler to root logger to capture all logging
-        logging.root.addHandler(self.file_handler)
-        
-        # Create buffers that write to both file and capture output
-        self.stdout_buffer = TeeFile(sys.stdout, self.log_file)
-        self.stderr_buffer = TeeFile(sys.stderr, self.log_file)
-        
-        return self
-        
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        # Remove file handler from root logger
-        if self.file_handler:
-            logging.root.removeHandler(self.file_handler)
-            self.file_handler.close()
-        
-        # Close log file
-        if self.log_file:
-            self.log_file.close()
-        
-        return False
-
-
-class TeeFile:
-    """Helper class to write to both original stream and log file"""
+    formatted_task = f"{task_description}. Begin task on the following url: {starting_url}"
     
-    def __init__(self, original_stream, log_file):
-        self.original_stream = original_stream
-        self.log_file = log_file
-        
-    def write(self, data):
-        self.original_stream.write(data)
-        self.log_file.write(data)
-        self.log_file.flush()
-        
-    def flush(self):
-        self.original_stream.flush()
-        self.log_file.flush()
+    try:
+        agent_result, session_url, is_successful, error_msg = await run_single_browser_task(
+            provider=provider,
+            stealth=stealth,
+            task=formatted_task
+        )
+        return agent_result, session_url, is_successful, error_msg
+    except Exception as e:
+        return None, None, False, str(e)
 
 
 @dataclass
@@ -278,10 +245,7 @@ class BrowserBenchmarkRunner:
     async def run_task_background(
         self, task: Dict, output_filepath: Path, log_directory: Path, worker_id: int
     ) -> BenchmarkResult:
-        """Run a single task in background, writing initial row and updating when complete"""
-        # Import the working browser_test main function
-        from browser_test import main as run_single_browser_task
-
+        """Run a single task in background via subprocess, writing initial row and updating when complete"""
         launched_at = datetime.now().isoformat()
         start_time = datetime.now()
 
@@ -312,54 +276,80 @@ class BrowserBenchmarkRunner:
         # Set up log file for this task
         log_file = log_directory / f"task_id_{task['task_id']}.log"
 
+        # Print high-level progress message
+        print(f"🚀 Launching task {task['task_id']}: {task['task_description'][:80]}...")
+
         try:
-            # Use TaskLogger context manager to capture all output to log file
-            with TaskLogger(log_file):
-                logger.info(f"Worker {worker_id}: Starting task {task['task_id']}")
+            # Write initial row to file (before running task)
+            await self.write_initial_task_row(output_filepath, result)
 
-                # Write initial row to file (before running task)
-                await self.write_initial_task_row(output_filepath, result)
-
-                # Use the working browser_test.main() function
-                formatted_task = self.format_task_with_url(task)
-                agent_result, session_url, is_successful, error_msg = await run_single_browser_task(
-                    provider=self.provider,
-                    stealth=stealth_enabled,
-                    task=formatted_task
+            # Run task in subprocess with output redirected to log file
+            result_file = log_directory / f"task_id_{task['task_id']}_result.json"
+            
+            # Create subprocess command to run the task
+            cmd = [
+                sys.executable,
+                __file__,
+                "--run-single-task",
+                "--provider", self.provider,
+                "--stealth" if stealth_enabled else "--no-stealth",
+                "--task-description", task["task_description"],
+                "--starting-url", task["starting_url"],
+                "--result-file", str(result_file),
+            ]
+            
+            # Run subprocess with stdout/stderr redirected to log file
+            with open(log_file, 'w') as log_f:
+                process = await asyncio.create_subprocess_exec(
+                    *cmd,
+                    stdout=log_f,
+                    stderr=asyncio.subprocess.STDOUT,
+                    env=os.environ.copy()
                 )
+                await process.wait()
 
-                # Calculate duration
-                end_time = datetime.now()
-                duration = (end_time - start_time).total_seconds()
+            # Read result from file
+            if result_file.exists():
+                with open(result_file, 'r') as f:
+                    task_result = json.load(f)
+                agent_result = task_result.get("agent_result")
+                session_url = task_result.get("session_url")
+                is_successful = task_result.get("is_successful")
+                error_msg = task_result.get("error_msg")
+                # Clean up result file
+                result_file.unlink()
+            else:
+                agent_result = None
+                session_url = None
+                is_successful = False
+                error_msg = "Subprocess did not produce result file"
 
-                # Update result with completion info
-                result.agent_result = agent_result or ""
-                result.success = is_successful
-                result.error_message = error_msg
-                result.task_duration = duration
-                result.status = "completed" if is_successful else "failed"
-                result.session_url = session_url or ""
-                
-                # Extract session_id from session_url if possible
-                if session_url and "sessions/" in session_url:
-                    result.session_id = session_url.split("sessions/")[-1].split("?")[0].split("/")[0]
+            # Calculate duration
+            end_time = datetime.now()
+            duration = (end_time - start_time).total_seconds()
 
-                # Update row in file
-                await self.update_task_row(output_filepath, result)
+            # Update result with completion info
+            result.agent_result = agent_result or ""
+            result.success = is_successful
+            result.error_message = error_msg
+            result.task_duration = duration
+            result.status = "completed" if is_successful else "failed"
+            result.session_url = session_url or ""
+            
+            # Extract session_id from session_url if possible
+            if session_url and "sessions/" in session_url:
+                result.session_id = session_url.split("sessions/")[-1].split("?")[0].split("/")[0]
 
-                logger.info(
-                    f"Worker {worker_id}: Task {task['task_id']} completed in {duration:.2f}s"
-                )
+            # Update row in file
+            await self.update_task_row(output_filepath, result)
 
-                return result
+            # Print completion message
+            status_icon = "✅" if is_successful else "❌"
+            print(f"{status_icon} Task {task['task_id']} {result.status} in {duration:.1f}s")
+
+            return result
 
         except Exception as e:
-            # Log to file even in case of exception
-            with TaskLogger(log_file):
-                logger.error(
-                    f"Worker {worker_id}: Error running task {task['task_id']}: {e}"
-                )
-            
             end_time = datetime.now()
             duration = (end_time - start_time).total_seconds()
             
@@ -373,6 +363,9 @@ class BrowserBenchmarkRunner:
                 await self.update_task_row(output_filepath, result)
             except Exception as update_error:
                 logger.error(f"Failed to update error status: {update_error}")
+
+            # Print error message
+            print(f"❌ Task {task['task_id']} failed in {duration:.1f}s: {str(e)[:60]}")
 
             return result
 
@@ -405,9 +398,15 @@ class BrowserBenchmarkRunner:
         logger.info(
             f"Skipping {len(existing_task_ids)} existing tasks, running {len(new_tasks)} new tasks"
         )
-        logger.info(
-            f"Running {len(new_tasks)} tasks using {self.concurrency} concurrent workers"
-        )
+        
+        # Print high-level execution summary
+        stealth_mode = "enabled" if not self.no_stealth else "disabled"
+        print(f"\n{'='*70}")
+        print(f"🎯 Executing {len(new_tasks)} tasks for {self.provider}")
+        print(f"⚙️  Concurrency: {self.concurrency} workers | Stealth: {stealth_mode}")
+        print(f"📁 Results: {output_filepath}")
+        print(f"📝 Logs: {log_directory}/")
+        print(f"{'='*70}\n")
 
         # Create semaphore for concurrency control
         semaphore = asyncio.Semaphore(self.concurrency)
@@ -424,7 +423,6 @@ class BrowserBenchmarkRunner:
             background_tasks.append(bg_task)
 
         # Wait for all tasks to complete
-        logger.info("All tasks launched, waiting for completion...")
         results = await asyncio.gather(*background_tasks, return_exceptions=True)
 
         # Process results
@@ -436,7 +434,10 @@ class BrowserBenchmarkRunner:
             else:
                 final_results.append(result)
 
-        logger.info(f"Completed {len(final_results)} tasks")
+        print(f"\n{'='*70}")
+        print("✨ All tasks completed!")
+        print(f"{'='*70}\n")
+        
         return final_results
 
     def get_output_filepath(self, filename: Optional[str] = None) -> Path:
@@ -456,9 +457,63 @@ class BrowserBenchmarkRunner:
         return log_dir
 
 
+def run_single_task_main(
+    provider: str,
+    stealth: bool,
+    task_description: str,
+    starting_url: str,
+    result_file: str,
+) -> int:
+    """Entry point for subprocess that runs a single task"""
+    async def _run():
+        try:
+            agent_result, session_url, is_successful, error_msg = await run_single_task_subprocess(
+                provider=provider,
+                stealth=stealth,
+                task_description=task_description,
+                starting_url=starting_url,
+            )
+            
+            # Write result to file
+            result_data = {
+                "agent_result": agent_result,
+                "session_url": session_url,
+                "is_successful": is_successful,
+                "error_msg": error_msg,
+            }
+            
+            with open(result_file, 'w') as f:
+                json.dump(result_data, f)
+            
+            return 0
+        except Exception as e:
+            # Write error result
+            result_data = {
+                "agent_result": None,
+                "session_url": None,
+                "is_successful": False,
+                "error_msg": str(e),
+            }
+            
+            with open(result_file, 'w') as f:
+                json.dump(result_data, f)
+            
+            return 1
+    
+    return asyncio.run(_run())
+
+
 def main():
     """Main function"""
     parser = argparse.ArgumentParser(description="Run browser benchmark tests")
+    
+    # Hidden argument for subprocess mode
+    parser.add_argument("--run-single-task", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--task-description", type=str, help=argparse.SUPPRESS)
+    parser.add_argument("--starting-url", type=str, help=argparse.SUPPRESS)
+    parser.add_argument("--result-file", type=str, help=argparse.SUPPRESS)
+    parser.add_argument("--stealth", action="store_true", help=argparse.SUPPRESS)
+    
     parser.add_argument(
         "--provider",
         choices=["anchor", "browserbase", "steelbrowser", "hyperbrowser"],
@@ -496,6 +551,16 @@ def main():
     )
 
     args = parser.parse_args()
+    
+    # Handle subprocess mode for running a single task
+    if args.run_single_task:
+        return run_single_task_main(
+            provider=args.provider,
+            stealth=args.stealth,
+            task_description=args.task_description,
+            starting_url=args.starting_url,
+            result_file=args.result_file,
+        )
 
     # Validate provider environment variables
     required_env_vars = {
@@ -553,25 +618,29 @@ def main():
         return 1
 
     # Print summary
-    completed_tasks = sum(1 for r in results if r.status == "completed")
-    failed_tasks = sum(1 for r in results if r.status == "failed")
-    total_duration = sum(r.task_duration for r in results if r.task_duration)
-    avg_duration = total_duration / len(results) if results else 0
-    
-    # Get log directory path for display
-    log_directory = runner.get_log_directory(output_filepath)
+    if results:
+        completed_tasks = sum(1 for r in results if r.status == "completed")
+        failed_tasks = sum(1 for r in results if r.status == "failed")
+        total_duration = sum(r.task_duration for r in results if r.task_duration)
+        avg_duration = total_duration / len(results) if results else 0
+        success_rate = (completed_tasks / len(results) * 100) if results else 0
+        
+        # Get log directory path for display
+        log_directory = runner.get_log_directory(output_filepath)
 
-    print("\n=== Benchmark Summary ===")
-    print(f"Provider: {args.provider}")
-    print(f"Concurrency: {args.concurrency}")
-    print(f"Total tasks: {len(results)}")
-    print(f"Completed successfully: {completed_tasks}")
-    print(f"Failed: {failed_tasks}")
-    print(f"Total time: {total_duration:.2f}s")
-    print(f"Average time per task: {avg_duration:.2f}s")
-    print(f"\nResults saved to: {output_filepath}")
-    print(f"Task logs saved to: {log_directory}/")
-    print("\nView session recordings at the session_url column in the CSV")
+        print("📊 Benchmark Summary")
+        print("─"*70)
+        print(f"Provider:        {args.provider}")
+        print(f"Tasks run:       {len(results)}")
+        print(f"✅ Successful:   {completed_tasks}")
+        print(f"❌ Failed:       {failed_tasks}")
+        print(f"Success rate:    {success_rate:.1f}%")
+        print(f"Total time:      {total_duration:.1f}s")
+        print(f"Avg per task:    {avg_duration:.1f}s")
+        print(f"\n📁 Results:      {output_filepath}")
+        print(f"📝 Logs:         {log_directory}/")
+        print("🎥 Recordings:   See session_url column in CSV")
+        print(f"{'─'*70}\n")
 
     return 0
 
