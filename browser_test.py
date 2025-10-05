@@ -96,14 +96,24 @@ async def main(
     error_message = None
     
     if hasattr(history, "is_successful"):
-        is_successful = history.is_successful
+        # is_successful is a method, not a property - must call it
+        is_successful_attr = getattr(history, "is_successful")
+        if callable(is_successful_attr):
+            is_successful = is_successful_attr()
+        else:
+            is_successful = is_successful_attr
     
-    if hasattr(history, "has_errors") and history.has_errors:
-        # Extract error messages
-        if hasattr(history, "errors"):
-            errors = history.errors()
-            if errors:
-                error_message = "; ".join(str(e) for e in errors)
+    # Check for errors - has_errors might also be a method
+    if hasattr(history, "has_errors"):
+        has_errors_attr = getattr(history, "has_errors")
+        has_errors_value = has_errors_attr() if callable(has_errors_attr) else has_errors_attr
+        
+        if has_errors_value:
+            # Extract error messages
+            if hasattr(history, "errors"):
+                errors = history.errors()
+                if errors:
+                    error_message = "; ".join(str(e) for e in errors)
     
     # Extract final result using the proper method
     final_message = ""
