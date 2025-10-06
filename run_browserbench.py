@@ -10,6 +10,10 @@ Output:
 - Results are saved to results/browserbench_results_{provider}[_no_stealth].csv
 - Per-task logs are saved to logs/browserbench_results_{provider}[_no_stealth]/task_id_{N}.log
 
+Important: The 'success' column in results indicates whether the agent run completed without
+technical errors (crashes, exceptions, timeouts), NOT whether the agent got the correct answer.
+To evaluate answer correctness, compare 'agent_result' to 'ground_truth' separately.
+
 Usage:
     python run_browserbench.py --provider anchor --concurrency 3 --tasks 10
     python run_browserbench.py --provider anchor --no-stealth --concurrency 3 --tasks 10
@@ -75,7 +79,28 @@ async def run_single_task_subprocess(
 
 @dataclass
 class BenchmarkResult:
-    """Data class to store benchmark results"""
+    """Data class to store benchmark results
+    
+    Fields:
+        task_id: Unique identifier for the task
+        starting_url: URL where the task begins
+        task_description: Description of the task to complete
+        ground_truth_url: Expected URL (for validation)
+        ground_truth: Expected answer (for validation)
+        status: 'running', 'completed', or 'failed'
+        provider: Browser provider used ('anchor', 'browserbase', 'steelbrowser', 'hyperbrowser')
+        session_id: Provider's session ID
+        session_url: URL to view session recording
+        launched_at: ISO timestamp when task was launched
+        agent_result: Final output from the agent
+        success: Whether the run completed without technical errors (True/False)
+                 NOTE: This indicates execution success, NOT answer correctness.
+                 True = Agent finished without crashes/exceptions
+                 False = Agent encountered errors during execution
+                 To evaluate correctness, compare agent_result to ground_truth separately.
+        error_message: Error details if success=False
+        task_duration: Time taken in seconds
+    """
 
     task_id: int
     starting_url: str

@@ -25,7 +25,7 @@ import os
 
 from browser_use import Agent, Controller
 from browser_use.browser import BrowserProfile, BrowserSession
-from browser_use.llm import ChatOpenAI
+from browser_use.llm import ChatGroq
 from dotenv import load_dotenv
 
 # Import provider modules
@@ -60,12 +60,10 @@ async def main(
         raise ValueError(
             f"Unknown provider: {provider}. Use 'anchor', 'browserbase', 'steelbrowser', or 'hyperbrowser'"
         )
-
-    # Configure your LLM (example with OpenAI)
-    llm = ChatOpenAI(
-        # model='gpt-oss-120b',
-        model='gpt-4o',
-        api_key=os.getenv('OPENAI_API_KEY'),
+    llm = ChatGroq(
+        model='openai/gpt-oss-120b',
+        temperature=0.0,
+        api_key=os.environ.get("GROQ_API_KEY"),
     )
 
     # Initialize browser session with Anchor
@@ -93,24 +91,20 @@ async def main(
     print("History type:", type(history))
     print("History attributes:", dir(history))
 
-    # Check if the task was successful
-    is_successful = False
+    # Determine if the agent run completed successfully (no technical errors)
+    # Note: This indicates whether the run finished without crashes/exceptions,
+    # NOT whether the agent got the correct answer. Answer correctness should be
+    # evaluated separately by comparing agent_result to ground_truth.
+    execution_successful = True  # Assume success unless we find errors
     error_message = None
     
-    if hasattr(history, "is_successful"):
-        # is_successful is a method, not a property - must call it
-        is_successful_attr = getattr(history, "is_successful")
-        if callable(is_successful_attr):
-            is_successful = is_successful_attr()
-        else:
-            is_successful = is_successful_attr
-    
-    # Check for errors - has_errors might also be a method
+    # Check for errors during execution
     if hasattr(history, "has_errors"):
         has_errors_attr = getattr(history, "has_errors")
         has_errors_value = has_errors_attr() if callable(has_errors_attr) else has_errors_attr
         
         if has_errors_value:
+            execution_successful = False
             # Extract error messages
             if hasattr(history, "errors"):
                 errors = history.errors()
@@ -171,8 +165,10 @@ async def main(
     elif provider == "hyperbrowser" and "hyperbrowser_session_id" in locals():
         session_url = hyperbrowser_cleanup(hyperbrowser_session_id)
 
-    # Return the final result, session URL, success status, and error message
-    return final_message, session_url, is_successful, error_message
+    # Return the final result, session URL, execution success status, and error message
+    # execution_successful indicates whether the run completed without technical errors,
+    # NOT whether the agent got the correct answer
+    return final_message, session_url, execution_successful, error_message
 
 
 if __name__ == "__main__":
@@ -201,11 +197,11 @@ if __name__ == "__main__":
     # For all providers, stealth is enabled by default, disabled only with --no-stealth
     stealth_enabled = not args.no_stealth
 
-    final_result, session_data, is_successful, error_message = asyncio.run(
+    final_result, session_data, execution_successful, error_message = asyncio.run(
         main(provider=args.provider, stealth=stealth_enabled, task=args.task)
     )
     print("\n=== Final Results ===")
-    print("Success:", is_successful)
+    print("Execution Successful (no technical errors):", execution_successful)
     print("Final Result (from history.final_result()):", final_result)
     if error_message:
         print("Error Message:", error_message)
