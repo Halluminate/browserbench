@@ -444,6 +444,8 @@ class BrowserBenchmarkRunner:
             worker_id = i % self.concurrency
             bg_task = asyncio.create_task(run_with_semaphore(task, worker_id))
             background_tasks.append(bg_task)
+            # Add a small delay between launching tasks to avoid overwhelming the system
+            await asyncio.sleep(0.5)
 
         # Wait for all tasks to complete
         results = await asyncio.gather(*background_tasks, return_exceptions=True)
