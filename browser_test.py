@@ -2,7 +2,8 @@
 Browser automation script supporting multiple providers.
 
 Usage:
-  python browser_test.py --provider anchor      # Use Anchor browser (default)
+  python browser_test.py --provider anchor      # Use Anchor browser with advanced stealth (default)
+  python browser_test.py --provider anchor --no-stealth # Use Anchor without stealth
   python browser_test.py --provider browserbase # Use Browserbase with advanced stealth (default)
   python browser_test.py --provider browserbase --no-stealth # Use Browserbase without stealth
   python browser_test.py --provider steelbrowser # Use Steel browser with advanced stealth (default)
@@ -46,7 +47,7 @@ async def main(
     """Main function to run browser automation with the specified provider"""
     # Create session based on provider
     if provider == "anchor":
-        anchor_client, anchor_session, cdp_url = anchor_create()
+        anchor_client, anchor_session, cdp_url = anchor_create(stealth=stealth)
     elif provider == "browserbase":
         browserbase_session_id, cdp_url, bb_client = browserbase_create(stealth=stealth)
     elif provider == "steelbrowser":
@@ -197,22 +198,8 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    # Validate no-stealth option
-    if args.no_stealth and args.provider not in [
-        "browserbase",
-        "steelbrowser",
-        "hyperbrowser",
-    ]:
-        print(
-            "Warning: --no-stealth option only works with --provider browserbase, --provider steelbrowser, or --provider hyperbrowser. Ignoring option."
-        )
-
-    # For Browserbase, Steel, and Hyperbrowser, stealth is enabled by default, disabled only with --no-stealth
-    stealth_enabled = (
-        not args.no_stealth
-        if args.provider in ["browserbase", "steelbrowser", "hyperbrowser"]
-        else False
-    )
+    # For all providers, stealth is enabled by default, disabled only with --no-stealth
+    stealth_enabled = not args.no_stealth
 
     final_result, session_data, is_successful, error_message = asyncio.run(
         main(provider=args.provider, stealth=stealth_enabled, task=args.task)

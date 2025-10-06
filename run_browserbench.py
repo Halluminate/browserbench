@@ -12,6 +12,7 @@ Output:
 
 Usage:
     python run_browserbench.py --provider anchor --concurrency 3 --tasks 10
+    python run_browserbench.py --provider anchor --no-stealth --concurrency 3 --tasks 10
     python run_browserbench.py --provider browserbase --concurrency 5 --tasks 50
     python run_browserbench.py --provider browserbase --no-stealth --concurrency 3
     python run_browserbench.py --help
@@ -249,11 +250,8 @@ class BrowserBenchmarkRunner:
         launched_at = datetime.now().isoformat()
         start_time = datetime.now()
 
-        # Determine stealth setting
-        stealth_enabled = (
-            self.provider in ["browserbase", "steelbrowser", "hyperbrowser"]
-            and not self.no_stealth
-        )
+        # Determine stealth setting - enabled by default for all providers unless --no-stealth is passed
+        stealth_enabled = not self.no_stealth
 
         # Create initial result object
         result = BenchmarkResult(
@@ -547,7 +545,7 @@ def main():
     parser.add_argument(
         "--no-stealth",
         action="store_true",
-        help="Disable advanced stealth mode for Browserbase, Steel, and Hyperbrowser (stealth is enabled by default)",
+        help="Disable advanced stealth mode for all providers (stealth is enabled by default)",
     )
 
     args = parser.parse_args()
