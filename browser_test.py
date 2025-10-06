@@ -91,22 +91,42 @@ async def main(
     print("History type:", type(history))
     print("History attributes:", dir(history))
 
-    # Determine if the agent run completed successfully (no technical errors)
-    # Note: This indicates whether the run finished without crashes/exceptions,
-    # NOT whether the agent got the correct answer. Answer correctness should be
+    # Determine if the agent run completed successfully
+    # Note: This checks if the agent completed the task (is_done) and whether it
+    # reported success. This does NOT verify answer correctness - that should be
     # evaluated separately by comparing agent_result to ground_truth.
-    execution_successful = True  # Assume success unless we find errors
+    # 
+    # We check final success, not whether there were any errors along the way,
+    # since agents often encounter and recover from errors during execution.
+    execution_successful = False  # Default to failure
     error_message = None
     
-    # Check for errors during execution
-    if hasattr(history, "has_errors"):
-        has_errors_attr = getattr(history, "has_errors")
-        has_errors_value = has_errors_attr() if callable(has_errors_attr) else has_errors_attr
+    # Check if task completed successfully
+    if hasattr(history, "is_done") and hasattr(history, "is_successful"):
+        is_done_attr = getattr(history, "is_done")
+        is_successful_attr = getattr(history, "is_successful")
         
-        if has_errors_value:
-            execution_successful = False
-            # Extract error messages
-            if hasattr(history, "errors"):
+        is_done_value = is_done_attr() if callable(is_done_attr) else is_done_attr
+        is_successful_value = is_successful_attr() if callable(is_successful_attr) else is_successful_attr
+        
+        # Task succeeded if it's done AND successful
+        execution_successful = is_done_value and is_successful_value
+        
+        # If not successful, collect error messages for debugging
+        if not execution_successful and hasattr(history, "errors"):
+            errors = history.errors()
+            if errors:
+                error_message = "; ".join(str(e) for e in errors)
+    else:
+        # Fallback: if is_done/is_successful not available, check for errors
+        if hasattr(history, "has_errors"):
+            has_errors_attr = getattr(history, "has_errors")
+            has_errors_value = has_errors_attr() if callable(has_errors_attr) else has_errors_attr
+            
+            # If no errors, assume success; if errors, mark as failed
+            execution_successful = not has_errors_value
+            
+            if has_errors_value and hasattr(history, "errors"):
                 errors = history.errors()
                 if errors:
                     error_message = "; ".join(str(e) for e in errors)
