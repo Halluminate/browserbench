@@ -76,7 +76,6 @@ def create_session(stealth=False, max_retries=3, retry_delay_seconds=5):
                         "proxy": {
                             "active": True,
                             "country_code": "us",
-                            "type": "anchor_residential",
                         }
                     },
                 )
