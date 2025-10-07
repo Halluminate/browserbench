@@ -1,0 +1,374 @@
+2025-10-07 12:59:19,395 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 12:59:19,402 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 12:59:19,414 - INFO - 🔗 Found URL in task: https://www.mlb.com, adding as initial action...
+2025-10-07 12:59:19,417 - INFO - [34m🚀 Task: Who is the top baseball player in MLB's Top 100 Prospect Rankings in 2024? You must complete the task only using the starting website. Begin task on the following url: https://www.mlb.com[0m
+2025-10-07 12:59:19,455 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 12:59:19,463 - INFO - ────────────────────────────────────────
+2025-10-07 12:59:19,463 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 12:59:19,463 - INFO -     👉  browser-use auth
+2025-10-07 12:59:19,463 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 12:59:19,463 - INFO - ────────────────────────────────────────
+
+2025-10-07 12:59:19,668 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 12:59:19,711 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.iaDeZT0TQjlDrqf-JA1y7lJVObmV7DcYb5KEiejqA3DPjBSklMhOtQ.VOyxPqaTfS4d1JOb.a7KNxlh09GwNAzo-Z8NWcewc31ui-2PvpoP3eOcTNNOPqG9IxYFJBSzHD-shsNpWywHrzv_7Xxjf3ZDAFlQH0O85mU6OX_VFuJ3eI-avEMvEV68C9ZyIYA8_ot9l5ly0Op54rOV3BBt6y94ZUqrVdOOQJ3-2ZuJS_vIO8FPuI44UPgrejKBR7Z7S8j-lG5vkvx9kN1v23ZOikAti46UvO7vhgF-lASJ4o0TZGF0Jg-LnzZtHR7sa3T3XZB0xhUh09KqWBl-yVudapbhYm9Sy7WXNacCXimnoOTH6oJUGlS-3xd78G-gR20FXYb3jcchRrj0AxXQrSBksJAbsGJ7UIHkuTvBcnag_CZ1ju6RjpLnVNMLbmH9reAsUWM3Litt9QHBjXMA1xsGOTGAnwHYxCvPF5rQRtxoaQHaVzoPyUwgQcd8xTaT51yBKtDQkaA.ebEcP896SG3Cv4RloISTTg
+2025-10-07 12:59:20,714 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.mlb.com, new_tab: False
+2025-10-07 12:59:21,243 - INFO - 🔗 Navigated to https://www.mlb.com
+2025-10-07 12:59:30,036 - INFO - 
+
+2025-10-07 12:59:30,036 - INFO - 📍 Step 1:
+2025-10-07 12:59:30,071 - WARNING - Received duplicate response for request 61 - ignoring
+2025-10-07 12:59:32,741 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:59:32,746 - INFO -   [34m🎯 Next goal: Navigate to the MLB Top 100 prospects page and extract the name of the #1 ranked player.[0m
+2025-10-07 12:59:32,747 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.mlb.com/prospects/top-100, new_tab: False
+2025-10-07 12:59:35,114 - INFO - 🔗 Navigated to https://www.mlb.com/prospects/top-100
+2025-10-07 12:59:35,615 - INFO -   🦾 [34m[ACTION 2/3][0m extract_structured_data: query: Who is ranked #1 in the 2024 MLB Top 100 Prospect Rankings?, extract_links: False, start_from_cha
+2025-10-07 12:59:36,542 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:59:36,572 - INFO - 📄 <url>
+https://www.mlb.com/milb/prospects/top-100
+</url>
+<query>
+Who is ranked #1 in the 2024 MLB Top 100 Prospect Rankings?
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-07 12:59:37,073 - INFO -   🦾 [34m[ACTION 3/3][0m write_file: file_name: results.md, content: # MLB 2024 Top 100 Prospect Rankings\n\n**#1 Prospect:** extracted_answer\n, ap
+2025-10-07 12:59:37,103 - INFO - 💾 Data written to file results.md successfully.
+2025-10-07 12:59:40,592 - INFO - 
+
+2025-10-07 12:59:40,592 - INFO - 📍 Step 2:
+2025-10-07 12:59:42,568 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:59:42,570 - INFO -   ❔ Eval: Previous navigation landed on the 2025 rankings page; did not retrieve the answer.
+2025-10-07 12:59:42,570 - INFO -   [34m🎯 Next goal: Open the 2024 Top 100 prospects page in a new tab.[0m
+2025-10-07 12:59:42,571 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.mlb.com/milb/prospects/top-100?year=2024, new_tab: True
+2025-10-07 12:59:43,147 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.iaDeZT0TQjlDrqf-JA1y7lJVObmV7DcYb5KEiejqA3DPjBSklMhOtQ.VOyxPqaTfS4d1JOb.a7KNxlh09GwNAzo-Z8NWcewc31ui-2PvpoP3eOcTNNOPqG9IxYFJBSzHD-shsNpWywHrzv_7Xxjf3ZDAFlQH0O85mU6OX_VFuJ3eI-avEMvEV68C9ZyIYA8_ot9l5ly0Op54rOV3BBt6y94ZUqrVdOOQJ3-2ZuJS_vIO8FPuI44UPgrejKBR7Z7S8j-lG5vkvx9kN1v23ZOikAti46UvO7vhgF-lASJ4o0TZGF0Jg-LnzZtHR7sa3T3XZB0xhUh09KqWBl-yVudapbhYm9Sy7WXNacCXimnoOTH6oJUGlS-3xd78G-gR20FXYb3jcchRrj0AxXQrSBksJAbsGJ7UIHkuTvBcnag_CZ1ju6RjpLnVNMLbmH9reAsUWM3Litt9QHBjXMA1xsGOTGAnwHYxCvPF5rQRtxoaQHaVzoPyUwgQcd8xTaT51yBKtDQkaA.ebEcP896SG3Cv4RloISTTg
+2025-10-07 12:59:49,750 - INFO - 🔗  Opened new tab with url https://www.mlb.com/milb/prospects/top-100?year=2024
+2025-10-07 13:00:03,252 - WARNING - ================================================================================
+2025-10-07 13:00:03,253 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#cc1c ✅)
+2025-10-07 13:00:03,253 - WARNING - ================================================================================
+2025-10-07 13:00:03,253 - WARNING - 📣 BrowserStateRequestEvent#1a2d                                       [93m13s[0m
+2025-10-07 13:00:03,253 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#1a2d)    [92m 1s[0m/30s   ✓
+2025-10-07 13:00:03,253 - WARNING -       📣 NavigationCompleteEvent#a733                                  [93m 9s[0m
+2025-10-07 13:00:03,253 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#a733)    [92m 1s[0m/30s   ✓
+2025-10-07 13:00:03,253 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#a733)    [92m 0s[0m/30s   ✓
+2025-10-07 13:00:03,253 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#1a2d) ⏳ [93m13s[0m/30s  
+2025-10-07 13:00:03,253 - WARNING -       📣 ScreenshotEvent#cc1c                                          [91m 8s[0m
+2025-10-07 13:00:03,253 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#cc1c) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:00:03,253 - WARNING - 
+================================================================================
+
+2025-10-07 13:00:03,254 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 13:00:03,254 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#8608(?▶ ScreenshotEvent#cc1c 🏃) timed out after 8.0s
+2025-10-07 13:00:05,264 - INFO - 
+
+2025-10-07 13:00:05,265 - INFO - 📍 Step 3:
+2025-10-07 13:00:06,520 - WARNING - Received duplicate response for request 138 - ignoring
+2025-10-07 13:00:07,017 - WARNING - Received duplicate response for request 39 - ignoring
+2025-10-07 13:00:07,046 - WARNING - Received duplicate response for request 40 - ignoring
+2025-10-07 13:00:07,564 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 13:00:07,566 - INFO -   ❔ Eval: Previous step opened the 2024 URL but page still displayed 2025 rankings; need to locate year selector or scroll to reveal 2024 list.
+2025-10-07 13:00:07,566 - INFO -   [34m🎯 Next goal: Scroll down the page to reveal more content and locate a year selector or the 2024 rankings list.[0m
+2025-10-07 13:00:07,567 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 13:00:28,884 - WARNING - ================================================================================
+2025-10-07 13:00:28,885 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#4c55 ✅)
+2025-10-07 13:00:28,885 - WARNING - ================================================================================
+2025-10-07 13:00:28,885 - WARNING - 📣 ScrollEvent#4c55                                                    [91m 8s[0m
+2025-10-07 13:00:28,886 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#4c55) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:00:28,886 - WARNING - 
+================================================================================
+
+2025-10-07 13:00:28,887 - WARNING - Scroll 1/1 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#7488(?▶ ScrollEvent#4c55 🏃) timed out after 8.0s
+2025-10-07 13:00:28,887 - INFO - 🔍 Scrolled down the page by one page (1440px)
+2025-10-07 13:00:30,960 - WARNING - Received duplicate response for request 49 - ignoring
+2025-10-07 13:00:46,533 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 1 | ▶️ 1 | ✅ 37 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#ce0c 🏃)
+2025-10-07 13:00:58,890 - ERROR - ❌ Result failed 1/4 times:
+ 
+2025-10-07 13:01:01,532 - WARNING - ================================================================================
+2025-10-07 13:01:01,532 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#ce0c ✅)
+2025-10-07 13:01:01,532 - WARNING - ================================================================================
+2025-10-07 13:01:01,532 - WARNING - 📣 BrowserStateRequestEvent#ce0c                                       [93m33s[0m
+2025-10-07 13:01:01,532 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#ce0c)    [92m 3s[0m/30s   ✓
+2025-10-07 13:01:01,532 - WARNING -       📣 NavigationCompleteEvent#850a                                  [93m13s[0m
+2025-10-07 13:01:01,533 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#850a)    [93m 5s[0m/30s   ✓
+2025-10-07 13:01:01,533 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#850a)    [92m 0s[0m/30s   ✓
+2025-10-07 13:01:01,533 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#ce0c) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:01:01,533 - WARNING -       📣 ScreenshotEvent#4a58                                          [91m 8s[0m
+2025-10-07 13:01:01,533 - WARNING -          ➡️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#4a58) ⏳ [93m 8s[0m/ 8s  
+2025-10-07 13:01:01,533 - WARNING - 
+================================================================================
+
+2025-10-07 13:01:04,202 - WARNING - Received duplicate response for request 63 - ignoring
+2025-10-07 13:01:06,401 - ERROR - CDP Error for request 67: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 13:01:08,827 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 1 | ▶️ 2 | ✅ 39 ➡️ 30 👂) handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#4a58 🏃)
+2025-10-07 13:01:21,318 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 1 | ▶️ 2 | ✅ 39 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#00b2 🏃)
+2025-10-07 13:01:28,893 - ERROR - ❌ Result failed 2/4 times:
+ 
+2025-10-07 13:01:30,628 - WARNING - ================================================================================
+2025-10-07 13:01:30,628 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#4a58 ✅)
+2025-10-07 13:01:30,629 - WARNING - ================================================================================
+2025-10-07 13:01:30,629 - WARNING - 📣 BrowserStateRequestEvent#ce0c                                       [91m62s[0m
+2025-10-07 13:01:30,629 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#ce0c)    [92m 3s[0m/30s   ✓
+2025-10-07 13:01:30,629 - WARNING -       📣 NavigationCompleteEvent#850a                                  [93m42s[0m
+2025-10-07 13:01:30,629 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#850a)    [93m 5s[0m/30s   ✓
+2025-10-07 13:01:30,629 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#850a)    [92m 0s[0m/30s   ✓
+2025-10-07 13:01:30,629 - WARNING -    ❌ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#ce0c) ⌛️ [91m30s[0m/[91m30s[0m   ☠️ [95mTimeoutError[0m
+2025-10-07 13:01:30,629 - WARNING -       📣 ScreenshotEvent#4a58                                          [91m37s[0m
+2025-10-07 13:01:30,629 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#4a58) ⌛️ [91m37s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:01:30,629 - WARNING - 
+================================================================================
+
+2025-10-07 13:01:30,630 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 13:01:36,318 - WARNING - ================================================================================
+2025-10-07 13:01:36,319 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#00b2 ✅)
+2025-10-07 13:01:36,319 - WARNING - ================================================================================
+2025-10-07 13:01:36,319 - WARNING - 📣 BrowserStateRequestEvent#00b2                                       [93m35s[0m
+2025-10-07 13:01:36,319 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#00b2)    [93m 5s[0m/30s   ✓
+2025-10-07 13:01:36,319 - WARNING -       📣 NavigationCompleteEvent#1782                                  [91m30s[0m
+2025-10-07 13:01:36,319 - WARNING -          🔜 browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#1782) 🔜    /30s  
+2025-10-07 13:01:36,319 - WARNING -          🔜 browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#1782) 🔜    /30s  
+2025-10-07 13:01:36,319 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#00b2) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:01:36,319 - WARNING - 
+================================================================================
+
+2025-10-07 13:01:41,748 - WARNING - Received duplicate response for request 72 - ignoring
+2025-10-07 13:01:52,152 - WARNING - Received duplicate response for request 76 - ignoring
+2025-10-07 13:01:58,896 - ERROR - ❌ Result failed 3/4 times:
+ 
+2025-10-07 13:02:07,155 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 2 | ▶️ 2 | ✅ 42 ➡️ 30 👂) handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#1d0a 🏃)
+2025-10-07 13:02:09,674 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 2 | ▶️ 2 | ✅ 42 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#6a57 🏃)
+2025-10-07 13:02:20,663 - WARNING - Received duplicate response for request 79 - ignoring
+2025-10-07 13:02:22,918 - WARNING - Received duplicate response for request 81 - ignoring
+2025-10-07 13:02:24,673 - WARNING - ================================================================================
+2025-10-07 13:02:24,673 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#6a57 ✅)
+2025-10-07 13:02:24,674 - WARNING - ================================================================================
+2025-10-07 13:02:24,674 - WARNING - 📣 BrowserStateRequestEvent#6a57                                       [93m40s[0m
+2025-10-07 13:02:24,674 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#6a57)    [93m10s[0m/30s   ✓
+2025-10-07 13:02:24,674 - WARNING -       📣 NavigationCompleteEvent#a14c                                  [91m30s[0m
+2025-10-07 13:02:24,674 - WARNING -          🔜 browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#a14c) 🔜    /30s  
+2025-10-07 13:02:24,674 - WARNING -          🔜 browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#a14c) 🔜    /30s  
+2025-10-07 13:02:24,674 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#6a57) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:02:24,674 - WARNING - 
+================================================================================
+
+2025-10-07 13:02:28,898 - ERROR - ❌ Result failed 4/4 times:
+ 
+2025-10-07 13:02:28,898 - ERROR - ❌ Stopping due to 3 consecutive failures
+2025-10-07 13:02:31,901 - WARNING - ⌛️ Agent_392b🟢(⏳ 1 | ▶️ 0 | ✅ 5 ➡️ 1 👂) Timeout waiting for event bus to be idle after 3.0s (processing: 0)
+2025-10-07 13:02:34,760 - WARNING - Received duplicate response for request 156 - ignoring
+2025-10-07 13:02:42,759 - WARNING - Received duplicate response for request 84 - ignoring
+2025-10-07 13:02:48,223 - WARNING - ================================================================================
+2025-10-07 13:02:48,223 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#1d0a ✅)
+2025-10-07 13:02:48,224 - WARNING - ================================================================================
+2025-10-07 13:02:48,224 - WARNING - 📣 BrowserStateRequestEvent#00b2                                       [91m107s[0m
+2025-10-07 13:02:48,224 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#00b2)    [93m 5s[0m/30s   ✓
+2025-10-07 13:02:48,224 - WARNING -       📣 NavigationCompleteEvent#1782                                  [91m72s[0m
+2025-10-07 13:02:48,224 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#1782)    [93m 8s[0m/30s   ✓
+2025-10-07 13:02:48,224 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#1782)    [92m 0s[0m/30s   ✓
+2025-10-07 13:02:48,225 - WARNING -    ❌ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#00b2) ⌛️ [91m30s[0m/[91m30s[0m   ☠️ [95mTimeoutError[0m
+2025-10-07 13:02:48,225 - WARNING -       📣 ScreenshotEvent#1d0a                                          [91m56s[0m
+2025-10-07 13:02:48,225 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#1d0a) ⌛️ [91m56s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:02:48,225 - WARNING - 
+================================================================================
+
+2025-10-07 13:02:48,226 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 13:03:00,108 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 2 | ▶️ 1 | ✅ 45 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#3d82 🏃)
+2025-10-07 13:03:15,107 - WARNING - ================================================================================
+2025-10-07 13:03:15,108 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_20642d5d.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#3d82 ✅)
+2025-10-07 13:03:15,108 - WARNING - ================================================================================
+2025-10-07 13:03:15,108 - WARNING - 📣 BrowserStateRequestEvent#3d82                                       [93m37s[0m
+2025-10-07 13:03:15,108 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#3d82)    [93m 7s[0m/30s   ✓
+2025-10-07 13:03:15,108 - WARNING -       📣 NavigationCompleteEvent#15e3                                  [91m30s[0m
+2025-10-07 13:03:15,109 - WARNING -          🔜 browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#15e3) 🔜    /30s  
+2025-10-07 13:03:15,109 - WARNING -          🔜 browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#15e3) 🔜    /30s  
+2025-10-07 13:03:15,109 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#3d82) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 13:03:15,109 - WARNING - 
+================================================================================
+
+2025-10-07 13:03:20,764 - WARNING - Received duplicate response for request 162 - ignoring
+2025-10-07 13:03:30,113 - WARNING - ⚠️ EventBus_20642d5d🟢(⏳ 1 | ▶️ 1 | ✅ 46 ➡️ 30 👂) handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#149f 🏃)
+2025-10-07 13:03:51,095 - WARNING - Received duplicate response for request 89 - ignoring
+Creating standard Browserbase session...
+Browserbase session created with ID: 9dc5648e-db88-4b9c-a780-91bddae8f971
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.iaDeZT0TQjlDrqf-JA1y7lJVObmV7DcYb5KEiejqA3DPjBSklMhOtQ.VOyxPqaTfS4d1JOb.a7KNxlh09GwNAzo-Z8NWcewc31ui-2PvpoP3eOcTNNOPqG9IxYFJBSzHD-shsNpWywHrzv_7Xxjf3ZDAFlQH0O85mU6OX_VFuJ3eI-avEMvEV68C9ZyIYA8_ot9l5ly0Op54rOV3BBt6y94ZUqrVdOOQJ3-2ZuJS_vIO8FPuI44UPgrejKBR7Z7S8j-lG5vkvx9kN1v23ZOikAti46UvO7vhgF-lASJ4o0TZGF0Jg-LnzZtHR7sa3T3XZB0xhUh09KqWBl-yVudapbhYm9Sy7WXNacCXimnoOTH6oJUGlS-3xd78G-gR20FXYb3jcchRrj0AxXQrSBksJAbsGJ7UIHkuTvBcnag_CZ1ju6RjpLnVNMLbmH9reAsUWM3Litt9QHBjXMA1xsGOTGAnwHYxCvPF5rQRtxoaQHaVzoPyUwgQcd8xTaT51yBKtDQkaA.ebEcP896SG3Cv4RloISTTg
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.mlb.com', extracted_content='🔗 Navigated to https://www.mlb.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.mlb.com/prospects/top-100', extracted_content='🔗 Navigated to https://www.mlb.com/prospects/top-100', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.mlb.com/milb/prospects/top-100\n</url>\n<query>\nWho is ranked #1 in the 2024 MLB Top 100 Prospect Rankings?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.mlb.com/milb/prospects/top-100\n</url>\n<query>\nWho is ranked #1 in the 2024 MLB Top 100 Prospect Rankings?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Opened new tab with URL https://www.mlb.com/milb/prospects/top-100?year=2024', extracted_content='🔗  Opened new tab with url https://www.mlb.com/milb/prospects/top-100?year=2024', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (1440px)', extracted_content='🔍 Scrolled down the page by one page (1440px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.mlb.com', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.mlb.com/prospects/top-100', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is ranked #1 in the 2024 MLB Top 100 Prospect Rankings?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'results.md', 'content': '# MLB 2024 Top 100 Prospect Rankings\n\n**#1 Prospect:** {{extracted_answer}}\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.mlb.com/milb/prospects/top-100?year=2024', 'new_tab': True}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 9dc5648e-db88-4b9c-a780-91bddae8f971 - no manual close method available, session will auto-expire
+Browserbase session 9dc5648e-db88-4b9c-a780-91bddae8f971 closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/9dc5648e-db88-4b9c-a780-91bddae8f971
+2025-10-07 13:03:54,791 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-1339' coro=<DOMWatchdog._capture_clean_screenshot() done, defined at /Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/utils.py:360> exception=TimeoutError('Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#8608(?▶ ScreenshotEvent#1d0a 🏃) timed out after 8.0s')>
+Traceback (most recent call last):
+  File "/Users/wyatt/.pyenv/versions/3.13.5/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/watchdog_base.py", line 118, in unique_handler
+    result = await actual_handler(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/observability.py", line 73, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/watchdogs/screenshot_watchdog.py", line 39, in on_ScreenshotEvent
+    cdp_session = await self.browser_session.get_or_create_cdp_session()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/session.py", line 1020, in get_or_create_cdp_session
+    await session.cdp_client.send.Runtime.runIfWaitingForDebugger(session_id=session.session_id)
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/cdp_use/cdp/runtime/library.py", line 225, in runIfWaitingForDebugger
+    return cast("Dict[str, Any]", await self._client.send_raw(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    ))
+    ^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/cdp_use/client.py", line 378, in send_raw
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/service.py", line 1128, in execute_handler
+    result_value: Any = await asyncio.wait_for(handler_task, timeout=event_result.timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/.pyenv/versions/3.13.5/lib/python3.13/asyncio/tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/wyatt/.pyenv/versions/3.13.5/lib/python3.13/asyncio/timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/utils.py", line 363, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/observability.py", line 73, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/watchdogs/dom_watchdog.py", line 430, in _capture_clean_screenshot
+    screenshot_b64 = await screenshot_event.event_result(raise_if_any=True, raise_if_none=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 574, in event_result
+    valid_results = await self.event_results_filtered(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        timeout=timeout, include=include, raise_if_any=raise_if_any, raise_if_none=raise_if_none
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 516, in event_results_filtered
+    raise original_error
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 490, in event_results_filtered
+    await event_result
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 889, in wait_for_handler_to_complete_and_return_result
+    raise self.error if isinstance(self.error, BaseException) else Exception(self.error)  # pyright: ignore[reportUnnecessaryIsInstance]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/service.py", line 1070, in _execute_handlers
+    await self.execute_handler(event, handler, timeout=timeout)
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/service.py", line 1194, in execute_handler
+    raise handler_timeout_error from e
+TimeoutError: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#8608(?▶ ScreenshotEvent#1d0a 🏃) timed out after 8.0s
+2025-10-07 13:03:54,796 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-1032' coro=<DOMWatchdog._capture_clean_screenshot() done, defined at /Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/utils.py:360> exception=TimeoutError('Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#8608(?▶ ScreenshotEvent#4a58 🏃) timed out after 8.0s')>
+Traceback (most recent call last):
+  File "/Users/wyatt/.pyenv/versions/3.13.5/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/watchdog_base.py", line 118, in unique_handler
+    result = await actual_handler(event)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/observability.py", line 73, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/watchdogs/screenshot_watchdog.py", line 39, in on_ScreenshotEvent
+    cdp_session = await self.browser_session.get_or_create_cdp_session()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/session.py", line 1020, in get_or_create_cdp_session
+    await session.cdp_client.send.Runtime.runIfWaitingForDebugger(session_id=session.session_id)
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/cdp_use/cdp/runtime/library.py", line 225, in runIfWaitingForDebugger
+    return cast("Dict[str, Any]", await self._client.send_raw(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    ))
+    ^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/cdp_use/client.py", line 378, in send_raw
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/service.py", line 1128, in execute_handler
+    result_value: Any = await asyncio.wait_for(handler_task, timeout=event_result.timeout)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/.pyenv/versions/3.13.5/lib/python3.13/asyncio/tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/wyatt/.pyenv/versions/3.13.5/lib/python3.13/asyncio/timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/utils.py", line 363, in wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/observability.py", line 73, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/browser/watchdogs/dom_watchdog.py", line 430, in _capture_clean_screenshot
+    screenshot_b64 = await screenshot_event.event_result(raise_if_any=True, raise_if_none=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 574, in event_result
+    valid_results = await self.event_results_filtered(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        timeout=timeout, include=include, raise_if_any=raise_if_any, raise_if_none=raise_if_none
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 516, in event_results_filtered
+    raise original_error
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 490, in event_results_filtered
+    await event_result
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/models.py", line 889, in wait_for_handler_to_complete_and_return_result
+    raise self.error if isinstance(self.error, BaseException) else Exception(self.error)  # pyright: ignore[reportUnnecessaryIsInstance]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/service.py", line 1070, in _execute_handlers
+    await self.execute_handler(event, handler, timeout=timeout)
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/bubus/service.py", line 1194, in execute_handler
+    raise handler_timeout_error from e
+TimeoutError: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#8608(?▶ ScreenshotEvent#4a58 🏃) timed out after 8.0s
+2025-10-07 13:03:54,797 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-1036' coro=<DomService._get_ax_tree_for_all_frames() done, defined at /Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/dom/service.py:254> exception=RuntimeError({'code': -32602, 'message': 'Frame with the given frameId is not found.'})>
+Traceback (most recent call last):
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/browser_use/dom/service.py", line 282, in _get_ax_tree_for_all_frames
+    ax_trees = await asyncio.gather(*ax_tree_requests)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/cdp_use/cdp/accessibility/library.py", line 75, in getFullAXTree
+    return cast("GetFullAXTreeReturns", await self._client.send_raw(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    ))
+    ^
+  File "/Users/wyatt/coding/GIT/halluminate-monorepo/customer_scripts/browserbench/.venv/lib/python3.13/site-packages/cdp_use/client.py", line 378, in send_raw
+    return await future
+           ^^^^^^^^^^^^
+RuntimeError: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}

@@ -1,0 +1,102 @@
+2025-10-07 12:58:07,130 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 12:58:07,145 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 12:58:07,159 - INFO - 🔗 Found URL in task: https://www.kayak.com, adding as initial action...
+2025-10-07 12:58:07,164 - INFO - [34m🚀 Task: In what year KAYAK was acquired by Booking Holdings? You must complete the task only using the starting website. Begin task on the following url: https://www.kayak.com[0m
+2025-10-07 12:58:07,205 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 12:58:07,214 - INFO - ────────────────────────────────────────
+2025-10-07 12:58:07,214 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 12:58:07,214 - INFO -     👉  browser-use auth
+2025-10-07 12:58:07,214 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 12:58:07,214 - INFO - ────────────────────────────────────────
+
+2025-10-07 12:58:07,418 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 12:58:07,460 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.k6Vz1QdqBoRbn0O_oF_CGi1EqJB1f7lM7XJ3o4n-K67PzeWMvr1fXg.fJnARtONLopuXYND.LKSBOa33bJvdwl-FtDlaBq-Fr7-6VDA9dXVQpalF2P3fltz9OAuui7E6oSxM-PJMrc9yw4jBBZgyPIoB9GHxMGc-zk4GiBInbKo1DTZPD96GgeWwuMRGa5-QAzdVKX03j1PtLtjzphUaJUrwXS8jEzTHbEh09OGA8nKQHMmZHhjQOROsrRMjOa0Ygqtcm8Olspa5oc77Nc8rNkdu-KKrymhiktFBeAGGeMOK72wAicF-S8Gl2jtEuQH4D7g3DbaR0PWMR_AiyWR2TiPTP8l4MXqBwbL1SroSgnfoYgIFZAWo_EsJkXgt3p3wlIJzzT4xBg53IojjoBPcXtJx4wex5S6WZmiHVTuYymhD2UmGJbIKQGp8zSn8jaGtPLY2Vjf2ecnI0DD3JhB0AGk4YbfLLB9fOGkkvjfqAFYsFunI94oTThQtlI95BOtNDm9iuA.IEZI-kMlfHHnlnyczNyaIA
+2025-10-07 12:58:08,869 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.kayak.com, new_tab: False
+2025-10-07 12:58:10,114 - INFO - 🔗 Navigated to https://www.kayak.com
+2025-10-07 12:58:14,773 - ERROR - CDP Error for request 53: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 12:58:14,774 - ERROR - CDP Error for request 57: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 12:58:14,775 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 12:58:14,775 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 12:58:14,775 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 12:58:16,258 - INFO - 
+
+2025-10-07 12:58:16,259 - INFO - 📍 Step 1:
+2025-10-07 12:58:17,927 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:17,934 - INFO -   [31m⚠️ Eval: The initial navigation succeeded but the page content has not loaded yet (empty DOM). Verdict: Failure to obtain needed content.[0m
+2025-10-07 12:58:17,934 - INFO -   [34m🎯 Next goal: Wait for the Kayak homepage to fully load so that content becomes available for extraction.[0m
+2025-10-07 12:58:17,934 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-07 12:58:17,978 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 12:58:22,680 - INFO - 
+
+2025-10-07 12:58:22,680 - INFO - 📍 Step 2:
+2025-10-07 12:58:25,019 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:25,021 - INFO -   [31m⚠️ Eval: Previous wait action did not load the necessary corporate information; the homepage content remained insufficient. Verdict: Failure.[0m
+2025-10-07 12:58:25,022 - INFO -   [34m🎯 Next goal: Scroll down to reveal footer/FAQ section and then extract the acquisition year of KAYAK by Booking Holdings.[0m
+2025-10-07 12:58:25,024 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 12:58:25,601 - INFO - 🔍 Scrolled down the page by one page (1440px)
+2025-10-07 12:58:26,103 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: In what year was KAYAK acquired by Booking Holdings?, extract_links: False, start_from_char: 0
+2025-10-07 12:58:27,667 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:27,697 - INFO - 📄 <url>
+https://www.kayak.com/
+</url>
+<query>
+In what year was KAYAK acquired by Booking Holdings?
+</query>
+<result>
+Information about the year KAYAK was acquired by Booking Holdings is not available in the provided webpage content.
+</result>
+2025-10-07 12:58:30,062 - INFO - 
+
+2025-10-07 12:58:30,062 - INFO - 📍 Step 3:
+2025-10-07 12:58:31,786 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:31,788 - INFO -   ❔ Eval: Previous actions (scroll and extract) did not find the acquisition year; need to navigate to a more relevant page.
+2025-10-07 12:58:31,788 - INFO -   [34m🎯 Next goal: Click the 'About' link (index 273) to navigate to the company about page where acquisition information may be found.[0m
+2025-10-07 12:58:31,790 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 273, while_holding_ctrl: None
+2025-10-07 12:58:33,716 - INFO - 🖱️ Clicked element
+2025-10-07 12:58:35,547 - ERROR - CDP Error for request 197: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 12:58:35,547 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 12:58:35,547 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 12:58:35,548 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 12:58:37,009 - INFO - 
+
+2025-10-07 12:58:37,009 - INFO - 📍 Step 4:
+2025-10-07 12:58:39,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:39,423 - INFO -   ❔ Eval: Clicked the 'About' link but the page content remained empty, so the goal of reaching acquisition info was not achieved.
+2025-10-07 12:58:39,423 - INFO -   [34m🎯 Next goal: Wait for the About page to load fully and then extract the acquisition year of KAYAK by Booking Holdings.[0m
+2025-10-07 12:58:39,423 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 12:58:39,451 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 12:58:41,953 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: In what year was KAYAK acquired by Booking Holdings?, extract_links: False, start_from_char: 0
+2025-10-07 12:58:42,777 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:42,809 - INFO - 📄 <url>
+https://www.kayak.com/about
+</url>
+<query>
+In what year was KAYAK acquired by Booking Holdings?
+</query>
+<result>
+2013
+</result>
+2025-10-07 12:58:45,436 - INFO - 
+
+2025-10-07 12:58:45,436 - INFO - 📍 Step 5:
+2025-10-07 12:58:46,774 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 12:58:46,775 - INFO -   [32m👍 Eval: Successfully extracted the acquisition year (2013) from the About page. Verdict: Success[0m
+2025-10-07 12:58:46,775 - INFO -   [34m🎯 Next goal: Provide the answer to the user and finish the task.[0m
+2025-10-07 12:58:46,776 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: KAYAK was acquired by Booking Holdings in 2013., success: True, files_to_display: []
+2025-10-07 12:58:46,803 - INFO - 
+📄 [32m Final Result:[0m 
+KAYAK was acquired by Booking Holdings in 2013.
+
+
+2025-10-07 12:58:46,810 - INFO - ✅ Task completed successfully
+Creating standard Browserbase session...
+Browserbase session created with ID: 5929af84-0d87-4115-809e-481c598d342a
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.k6Vz1QdqBoRbn0O_oF_CGi1EqJB1f7lM7XJ3o4n-K67PzeWMvr1fXg.fJnARtONLopuXYND.LKSBOa33bJvdwl-FtDlaBq-Fr7-6VDA9dXVQpalF2P3fltz9OAuui7E6oSxM-PJMrc9yw4jBBZgyPIoB9GHxMGc-zk4GiBInbKo1DTZPD96GgeWwuMRGa5-QAzdVKX03j1PtLtjzphUaJUrwXS8jEzTHbEh09OGA8nKQHMmZHhjQOROsrRMjOa0Ygqtcm8Olspa5oc77Nc8rNkdu-KKrymhiktFBeAGGeMOK72wAicF-S8Gl2jtEuQH4D7g3DbaR0PWMR_AiyWR2TiPTP8l4MXqBwbL1SroSgnfoYgIFZAWo_EsJkXgt3p3wlIJzzT4xBg53IojjoBPcXtJx4wex5S6WZmiHVTuYymhD2UmGJbIKQGp8zSn8jaGtPLY2Vjf2ecnI0DD3JhB0AGk4YbfLLB9fOGkkvjfqAFYsFunI94oTThQtlI95BOtNDm9iuA.IEZI-kMlfHHnlnyczNyaIA
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.kayak.com', extracted_content='🔗 Navigated to https://www.kayak.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (1440px)', extracted_content='🔍 Scrolled down the page by one page (1440px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.kayak.com/\n</url>\n<query>\nIn what year was KAYAK acquired by Booking Holdings?\n</query>\n<result>\nInformation about the year KAYAK was acquired by Booking Holdings is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.kayak.com/\n</url>\n<query>\nIn what year was KAYAK acquired by Booking Holdings?\n</query>\n<result>\nInformation about the year KAYAK was acquired by Booking Holdings is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 651.4375, 'click_y': 1359.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.kayak.com/about\n</url>\n<query>\nIn what year was KAYAK acquired by Booking Holdings?\n</query>\n<result>\n2013\n</result>', extracted_content='<url>\nhttps://www.kayak.com/about\n</url>\n<query>\nIn what year was KAYAK acquired by Booking Holdings?\n</query>\n<result>\n2013\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - KAYAK was acquired by Booking Holdings in 2013.', extracted_content='KAYAK was acquired by Booking Holdings in 2013.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.kayak.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'In what year was KAYAK acquired by Booking Holdings?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 273}, 'interacted_element': DOMInteractedElement(node_id=14065, backend_node_id=5801, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/about', 'class': 'JCQa JCQa-pres-size-regular JCQa-pres-weight-regular JCQa-pres-theme-base JCQa-pres-alignment-default JCQa-mod-underline-always JCQa-mod-no-paddings'}, bounds=DOMRect(x=632.5, y=1350.5, width=37.875, height=18.0), x_path='html/body/div[2]/div/div/div[3]/div/footer/div[1]/nav[1]/ul/li[1]/a', element_hash=8720006029367927303)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'In what year was KAYAK acquired by Booking Holdings?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'KAYAK was acquired by Booking Holdings in 2013.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 5929af84-0d87-4115-809e-481c598d342a - no manual close method available, session will auto-expire
+Browserbase session 5929af84-0d87-4115-809e-481c598d342a closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/5929af84-0d87-4115-809e-481c598d342a
