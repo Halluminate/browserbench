@@ -1,0 +1,393 @@
+2025-10-06 19:16:14,820 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 19:16:14,826 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 19:16:14,837 - INFO - 🔗 Found URL in task: https://testbook.com, adding as initial action...
+2025-10-06 19:16:14,841 - INFO - [34m🚀 Task: In which year was 'Course Download' launched on the Testbook site? You must complete the task only using the starting website. Begin task on the following url: testbook.com[0m
+2025-10-06 19:16:14,882 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 19:16:14,891 - INFO - ────────────────────────────────────────
+2025-10-06 19:16:14,891 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 19:16:14,891 - INFO -     👉  browser-use auth
+2025-10-06 19:16:14,891 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 19:16:14,891 - INFO - ────────────────────────────────────────
+
+2025-10-06 19:16:15,117 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 19:16:15,169 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0
+2025-10-06 19:16:17,040 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://testbook.com, new_tab: False
+2025-10-06 19:16:19,365 - INFO - 🔗 Navigated to https://testbook.com
+2025-10-06 19:16:23,332 - ERROR - CDP Error for request 53: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-06 19:16:23,334 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-06 19:16:23,334 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-06 19:16:23,334 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-06 19:16:27,872 - INFO - 
+
+2025-10-06 19:16:27,872 - INFO - 📍 Step 1:
+2025-10-06 19:16:29,202 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:16:29,212 - INFO -   ❔ Eval: The previous step only loaded the homepage but no content is visible yet. Verdict: Uncertain (page likely still loading).
+2025-10-06 19:16:29,212 - INFO -   [34m🎯 Next goal: Wait for the homepage to load and then extract the launch year of 'Course Download' from the page.[0m
+2025-10-06 19:16:29,212 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-06 19:16:29,281 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 19:16:31,784 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: In which year was the Course Download launched on Testbook?, extract_links: False, start_from_c
+2025-10-06 19:16:33,356 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:16:33,425 - INFO - 📄 <url>
+https://testbook.com/
+</url>
+<query>
+In which year was the 'Course Download' launched on Testbook?
+</query>
+<result>
+Information about the launch year of the “Course Download” feature on Testbook is not available in the provided webpage content.
+</result>
+2025-10-06 19:16:37,173 - INFO - 
+
+2025-10-06 19:16:37,173 - INFO - 📍 Step 2:
+2025-10-06 19:16:38,748 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:16:38,750 - INFO -   [31m⚠️ Eval: Previous attempt to extract launch year from the homepage failed; the information was not present. Verdict: Failure[0m
+2025-10-06 19:16:38,750 - INFO -   [34m🎯 Next goal: Search for "Course Download" using the site's search bar and then extract the launch year from the resulting page.[0m
+2025-10-06 19:16:38,750 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 15, text: Course Download, clear_existing: True
+2025-10-06 19:16:44,084 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 19:16:44,084 - INFO - ⌨️ Typed "Course Download" into element with index 15
+2025-10-06 19:16:44,586 - INFO -   🦾 [34m[ACTION 2/2][0m send_keys: keys: Enter
+2025-10-06 19:16:45,556 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 19:16:45,656 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 19:16:51,292 - INFO - 
+
+2025-10-06 19:16:51,294 - INFO - 📍 Step 3:
+2025-10-06 19:16:52,840 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:16:52,842 - INFO -   ❔ Eval: Previous action (input and Enter) likely triggered a search, but we have not yet verified the result page.
+2025-10-06 19:16:52,842 - INFO -   [34m🎯 Next goal: Wait for the search results page to load and extract the launch year of the 'Course Download' feature.[0m
+2025-10-06 19:16:52,842 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-06 19:16:52,926 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 19:16:53,428 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: In which year was the Course Download feature launched on Testbook?, extract_links: False, star
+2025-10-06 19:16:55,137 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:16:55,231 - INFO - 📄 <url>
+https://testbook.com/
+</url>
+<query>
+In which year was the 'Course Download' feature launched on Testbook?
+</query>
+<result>
+Information about the launch year of the “Course Download” feature on Testbook is not available in the provided webpage content.
+</result>
+2025-10-06 19:16:59,369 - INFO - 
+
+2025-10-06 19:16:59,369 - INFO - 📍 Step 4:
+2025-10-06 19:17:01,186 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:01,187 - INFO -   [31m⚠️ Eval: Previous attempt to extract launch year after searching failed; the information was not present on the homepage. Verdict: Failure[0m
+2025-10-06 19:17:01,187 - INFO -   [34m🎯 Next goal: Switch to the search results tab (Cddd) and extract the launch year of the 'Course Download' feature.[0m
+2025-10-06 19:17:01,187 - INFO -   🦾 [34m[ACTION 1/2][0m switch_tab: tab_id: CDDD
+2025-10-06 19:17:01,423 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0
+2025-10-06 19:17:02,900 - INFO - 🔄  Switched to tab #CDDD
+2025-10-06 19:17:03,401 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: In which year was the Course Download feature launched on Testbook?, extract_links: False, star
+2025-10-06 19:17:04,868 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:04,958 - INFO - 📄 <url>
+https://testbook.com/search/Course%20Download
+</url>
+<query>
+In which year was the 'Course Download' feature launched on Testbook?
+</query>
+<result>
+The webpage does not provide information about the year the “Course Download” feature was launched on Testbook.
+</result>
+2025-10-06 19:17:08,948 - INFO - 
+
+2025-10-06 19:17:08,948 - INFO - 📍 Step 5:
+2025-10-06 19:17:10,872 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:10,874 - INFO -   [31m⚠️ Eval: Previous attempts to extract the launch year after searching failed; the information was not present. Verdict: Failure[0m
+2025-10-06 19:17:10,874 - INFO -   [34m🎯 Next goal: Click the 'Articles' filter (index 21) to view article results, then extract the launch year of the 'Course Download' feature.[0m
+2025-10-06 19:17:10,875 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 21, while_holding_ctrl: None
+2025-10-06 19:17:12,649 - INFO - 🖱️ Clicked element
+2025-10-06 19:17:16,778 - INFO - 
+
+2025-10-06 19:17:16,778 - INFO - 📍 Step 6:
+2025-10-06 19:17:18,612 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:18,614 - INFO -   ❔ Eval: Clicked the 'Articles' filter, but we have not confirmed the resulting content; status uncertain.
+2025-10-06 19:17:18,614 - INFO -   [34m🎯 Next goal: Scroll down to load more article results and extract the launch year of the 'Course Download' feature.[0m
+2025-10-06 19:17:18,615 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-06 19:17:19,586 - INFO - 🔍 Scrolled down the page by one page (900px)
+2025-10-06 19:17:20,086 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: In which year was the Course Download feature launched on Testbook?, extract_links: False, star
+2025-10-06 19:17:21,275 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:21,356 - INFO - 📄 <url>
+https://testbook.com/search/Course%20Download?resultsTab=articles&pagination=%7B%22global%22:%7B%22skip%22:0,%22limit%22:15%7D,%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e47812302f9ae512343fae&trig=url&q=Course%20Download
+</url>
+<query>
+In which year was the 'Course Download' feature launched on Testbook?
+</query>
+<result>
+The webpage does not provide information about the year the “Course Download” feature was launched on Testbook.
+</result>
+2025-10-06 19:17:25,324 - INFO - 
+
+2025-10-06 19:17:25,325 - INFO - 📍 Step 7:
+2025-10-06 19:17:27,719 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:27,720 - INFO -   [31m⚠️ Eval: Previous attempt to find launch year by scrolling article results failed; no relevant information found. Verdict: Failure[0m
+2025-10-06 19:17:27,720 - INFO -   [34m🎯 Next goal: Click the recent search entry for 'Course Download' (element 200) to open its page, then extract the launch year.[0m
+2025-10-06 19:17:27,721 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Todo for Course Download launch year\n\n- [ ] Click recent search result for Course D
+2025-10-06 19:17:27,805 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 19:17:31,144 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 200, while_holding_ctrl: None
+2025-10-06 19:17:31,697 - WARNING - No visible quad found, using first quad
+2025-10-06 19:17:32,830 - INFO - 🖱️ Clicked element
+2025-10-06 19:17:36,517 - INFO - 
+
+2025-10-06 19:17:36,517 - INFO - 📍 Step 8:
+2025-10-06 19:17:38,912 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:38,913 - INFO -   ❔ Eval: Previous step clicked a recent search entry (element 200) but did not navigate to the feature page; the recent searches list still shows element 143, so we need to click it now.
+2025-10-06 19:17:38,914 - INFO -   [34m🎯 Next goal: Click the recent search entry for 'Course Download' (element 143), wait for the page to load, extract the launch year, and update the todo file.[0m
+2025-10-06 19:17:38,914 - INFO -   🦾 [34m[ACTION 1/4][0m click_element_by_index: index: 143, while_holding_ctrl: None
+2025-10-06 19:17:40,824 - INFO - 🖱️ Clicked element
+2025-10-06 19:17:41,326 - INFO -   🦾 [34m[ACTION 2/4][0m wait: seconds: 3
+2025-10-06 19:17:41,400 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 19:17:41,902 - INFO -   🦾 [34m[ACTION 3/4][0m extract_structured_data: query: In which year was the Course Download feature launched on Testbook?, extract_links: False, star
+2025-10-06 19:17:43,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:43,493 - INFO - 📄 <url>
+https://testbook.com/search/Course%20Download?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22RecentSearch%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&trig=click&q=Course%20Download
+</url>
+<query>
+In which year was the 'Course Download' feature launched on Testbook?
+</query>
+<result>
+The webpage does not provide information about the year the “Course Download” feature was launched on Testbook.
+</result>
+2025-10-06 19:17:43,994 - INFO -   🦾 [34m[ACTION 4/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Click recent search result for Course Download, new_str: - [x] Click r
+2025-10-06 19:17:44,068 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Click recent search result for 'Course Download'" with "- [x] Click recent search result for 'Course Download'" in file todo.md
+2025-10-06 19:17:48,006 - INFO - 
+
+2025-10-06 19:17:48,006 - INFO - 📍 Step 9:
+2025-10-06 19:17:50,317 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:50,318 - INFO -   [31m⚠️ Eval: Failure - clicking the recent search entry did not yield the launch year information.[0m
+2025-10-06 19:17:50,318 - INFO -   [34m🎯 Next goal: Open the 'Course Download' page by clicking element 143 and wait for it to load.[0m
+2025-10-06 19:17:50,318 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 143, while_holding_ctrl: None
+2025-10-06 19:17:52,042 - INFO - 🖱️ Clicked element
+2025-10-06 19:17:52,544 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-06 19:17:52,617 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 19:17:56,718 - INFO - 
+
+2025-10-06 19:17:56,719 - INFO - 📍 Step 10:
+2025-10-06 19:17:58,418 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:17:58,419 - INFO -   ❔ Eval: Previous attempts to click recent search entries did not navigate to a page containing the launch year; still no information found.
+2025-10-06 19:17:58,419 - INFO -   [34m🎯 Next goal: Search for "Course Download launched" using the search input (index 12) and then wait for results to extract the launch year.[0m
+2025-10-06 19:17:58,420 - INFO -   🦾 [34m[ACTION 1/3][0m input_text: index: 12, text: Course Download launched, clear_existing: True
+2025-10-06 19:17:58,960 - ERROR - CDP Error for request 313: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 19:17:58,960 - ERROR - Failed to input text via CDP: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 19:17:58,960 - WARNING - Failed to type to element 12: Failed to input text into element: <input type=text, ng-focus=searchBar.expand(), ng-blur=searchBar.onBlur(), class=searchbox input ng-pristine ng-untouched ng-valid ng-not-empty, ng-model=searchBar.partialQuery, ng-keyup=searchBar.onTyping($event), placeholder=Search in Articles is_scrollable=None num_children=0 ></input>. Falling back to page typing.
+2025-10-06 19:18:07,255 - INFO - ⌨️ Typed "Course Download launched" to the page as fallback
+2025-10-06 19:18:07,756 - INFO -   🦾 [34m[ACTION 2/3][0m send_keys: keys: Enter
+2025-10-06 19:18:08,289 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 19:18:08,391 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 19:18:08,892 - INFO -   🦾 [34m[ACTION 3/3][0m wait: seconds: 5
+2025-10-06 19:18:08,971 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 19:18:14,820 - INFO - 
+
+2025-10-06 19:18:14,820 - INFO - 📍 Step 11:
+2025-10-06 19:18:16,723 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:18:16,723 - INFO -   ❔ Eval: Previous attempts to find the launch year via search and clicking recent entries failed; no information was found.
+2025-10-06 19:18:16,723 - INFO -   [34m🎯 Next goal: Scroll down to load more search results and then extract the launch year information from the page.[0m
+2025-10-06 19:18:16,724 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-06 19:18:18,365 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)
+2025-10-06 19:18:18,867 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What year was the Course Download feature launched on Testbook?, extract_links: False, start_from
+2025-10-06 19:18:20,106 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:18:20,176 - INFO - 📄 <url>
+https://testbook.com/search/Course%20DownloadCourse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&trig=enterKey&q=Course%20DownloadCourse%20Download%20launched
+</url>
+<query>
+What year was the Course Download feature launched on Testbook?
+</query>
+<result>
+Information about the year the Course Download feature was launched on Testbook is not available in the provided webpage content.
+</result>
+2025-10-06 19:18:23,669 - INFO - 
+
+2025-10-06 19:18:23,669 - INFO - 📍 Step 12:
+2025-10-06 19:18:25,692 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:18:25,693 - INFO -   ❔ Eval: Previous attempts to locate launch year via search and clicking recent entries failed; no relevant information found.
+2025-10-06 19:18:25,693 - INFO -   [34m🎯 Next goal: Scroll down to load more search results and extract the launch year from the page content.[0m
+2025-10-06 19:18:25,694 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 19:18:29,286 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 19:18:29,786 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What year was the Course Download feature launched on Testbook?, extract_links: False, start_from
+2025-10-06 19:18:31,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:18:31,123 - INFO - 📄 <url>
+https://testbook.com/search/Course%20DownloadCourse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:30,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e47861569dd9e225769b3a&trig=enterKey&q=Course%20DownloadCourse%20Download%20launched
+</url>
+<query>
+What year was the Course Download feature launched on Testbook?
+</query>
+<result>
+Information about the year the Course Download feature was launched on Testbook is not available in the provided webpage content.
+</result>
+2025-10-06 19:18:35,221 - INFO - 
+
+2025-10-06 19:18:35,221 - INFO - 📍 Step 13:
+2025-10-06 19:18:37,202 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:18:37,204 - INFO -   ❔ Eval: Previous attempts to find launch year via various searches and clicking recent entries failed; no relevant information was found.
+2025-10-06 19:18:37,204 - INFO -   [34m🎯 Next goal: Enter a new search query 'Course Download Testbook launch year' into the search field and submit to find the launch year.[0m
+2025-10-06 19:18:37,205 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 12, text: Course Download Testbook launch year, clear_existing: True
+2025-10-06 19:18:38,126 - ERROR - CDP Error for request 346: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 19:18:38,126 - ERROR - Failed to input text via CDP: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 19:18:38,126 - WARNING - Failed to type to element 12: Failed to input text into element: <input type=text, ng-focus=searchBar.expand(), ng-blur=searchBar.onBlur(), class=searchbox input ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse, ng-model=searchBar.partialQuery, ng-keyup=searchBar.onTyping($event), placeholder=Search in Articles is_scrollable=None num_children=0 ></input>. Falling back to page typing.
+2025-10-06 19:18:49,268 - INFO - ⌨️ Typed "Course Download Testbook launch year" to the page as fallback
+2025-10-06 19:18:49,772 - INFO -   🦾 [34m[ACTION 2/4][0m send_keys: keys: Enter
+2025-10-06 19:18:50,228 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 19:18:50,331 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 19:18:50,833 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-06 19:18:50,905 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 19:18:53,408 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: What year was the Course Download feature launched on Testbook?, extract_links: False, start_from
+2025-10-06 19:18:54,733 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:18:54,815 - INFO - 📄 <url>
+https://testbook.com/search/Course%20DownloadCourCourse%20Download%20Testbook%20launch%20yearse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:30,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520DownloadCourse%2520Download%2520launched%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e4788a06e358e50ff863c0&trig=enterKey&q=Course%20DownloadCourCourse%20Download%20Testbook%20launch%20yearse%20Download%20launched
+</url>
+<query>
+What year was the Course Download feature launched on Testbook?
+</query>
+<result>
+The webpage does not provide the year when the Course Download feature was launched on Testbook.
+</result>
+2025-10-06 19:18:58,840 - INFO - 
+
+2025-10-06 19:18:58,841 - INFO - 📍 Step 14:
+2025-10-06 19:19:00,667 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:00,669 - INFO -   ❔ Eval: Previous attempts to locate the launch year via search and clicking recent entries failed; no relevant information was found.
+2025-10-06 19:19:00,669 - INFO -   [34m🎯 Next goal: Navigate directly to https://testbook.com/course-download to see if the feature page contains the launch year.[0m
+2025-10-06 19:19:00,670 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://testbook.com/course-download, new_tab: False
+2025-10-06 19:19:02,416 - INFO - 🔗 Navigated to https://testbook.com/course-download
+2025-10-06 19:19:05,503 - INFO - 
+
+2025-10-06 19:19:05,504 - INFO - 📍 Step 15:
+2025-10-06 19:19:07,688 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:07,689 - INFO -   [31m⚠️ Eval: Failure - navigating directly to /course-download resulted in a 404 page with no launch year information.[0m
+2025-10-06 19:19:07,689 - INFO -   [34m🎯 Next goal: Open the Blog page by clicking the Blog link (index 36) to search for an article about the Course Download launch.[0m
+2025-10-06 19:19:07,689 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 36, while_holding_ctrl: None
+2025-10-06 19:19:08,306 - WARNING - No visible quad found, using first quad
+2025-10-06 19:19:09,394 - INFO - 🖱️ Clicked element
+2025-10-06 19:19:12,403 - INFO - 
+
+2025-10-06 19:19:12,403 - INFO - 📍 Step 16:
+2025-10-06 19:19:13,873 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:13,875 - INFO -   ❔ Eval: Previous step clicked Blog link but we have not yet verified navigation; need to proceed.
+2025-10-06 19:19:13,876 - INFO -   [34m🎯 Next goal: Click the Blog link (index 36) to open the blog, then search for "Course Download launch" within the blog.[0m
+2025-10-06 19:19:13,876 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 36, while_holding_ctrl: None
+2025-10-06 19:19:16,073 - INFO - 🖱️ Clicked element
+2025-10-06 19:19:21,788 - INFO - 
+
+2025-10-06 19:19:21,789 - INFO - 📍 Step 17:
+2025-10-06 19:19:24,220 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:24,221 - INFO -   [32m👍 Eval: Success - navigation to the Blog page was confirmed (current URL shows testbook.com/blog/).[0m
+2025-10-06 19:19:24,221 - INFO -   [34m🎯 Next goal: Search the blog for "Course Download launch" and extract the launch year from the resulting article.[0m
+2025-10-06 19:19:24,222 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 4, text: Course Download launch, clear_existing: True
+2025-10-06 19:19:24,661 - ERROR - CDP Error for request 393: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 19:19:24,661 - ERROR - Failed to input text via CDP: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 19:19:24,662 - WARNING - Failed to type to element 4: Failed to input text into element: <input type=text, value=, name=s, id=s, class=form-control, placeholder=Search is_scrollable=None num_children=0 ></input>. Falling back to page typing.
+2025-10-06 19:19:31,400 - INFO - ⌨️ Typed "Course Download launch" to the page as fallback
+2025-10-06 19:19:33,979 - INFO - Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed
+2025-10-06 19:19:37,757 - INFO - 
+
+2025-10-06 19:19:37,757 - INFO - 📍 Step 18:
+2025-10-06 19:19:39,871 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:39,874 - INFO -   [31m⚠️ Eval: Failure - the previous step only entered text into the search field without submitting, so no search results were generated.[0m
+2025-10-06 19:19:39,874 - INFO -   [34m🎯 Next goal: Submit the blog search for 'Course Download launch', wait for results, and extract the launch year information.[0m
+2025-10-06 19:19:39,875 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 5, while_holding_ctrl: None
+2025-10-06 19:19:41,730 - INFO - 🖱️ Clicked element
+2025-10-06 19:19:42,232 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-06 19:19:42,301 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 19:19:42,802 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: What year was the Course Download feature launched on Testbook?, extract_links: False, start_from
+2025-10-06 19:19:43,945 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:44,014 - INFO - 📄 <url>
+https://testbook.com/blog/
+</url>
+<query>
+What year was the Course Download feature launched on Testbook?
+</query>
+<result>
+Information about the launch year of the Course Download feature on Testbook is not available in the provided webpage content.
+</result>
+2025-10-06 19:19:47,901 - INFO - 
+
+2025-10-06 19:19:47,901 - INFO - 📍 Step 19:
+2025-10-06 19:19:50,014 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:50,016 - INFO -   ❔ Eval: Previous attempts to locate the launch year via site and blog searches failed; no relevant information found.
+2025-10-06 19:19:50,016 - INFO -   [34m🎯 Next goal: Extract any occurrence of 'Course Download' and associated year from the current blog page using structured data extraction.[0m
+2025-10-06 19:19:50,017 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Course Download launch year, extract_links: False, start_from_char: 0
+2025-10-06 19:19:51,229 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:51,303 - INFO - 📄 <url>
+https://testbook.com/blog/
+</url>
+<query>
+Course Download launch year
+</query>
+<result>
+Information on the launch year of “Course Download” is not available in the provided webpage content.
+</result>
+2025-10-06 19:19:55,195 - INFO - 
+
+2025-10-06 19:19:55,195 - INFO - 📍 Step 20:
+2025-10-06 19:19:57,172 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:19:57,174 - INFO -   ❔ Eval: Previous step attempted blog search but did not find the launch year; still missing information.
+2025-10-06 19:19:57,174 - INFO -   [34m🎯 Next goal: Switch to the main Testbook tab (0712), search for 'Course Download launch year', and extract the launch year from the results.[0m
+2025-10-06 19:19:57,175 - INFO -   🦾 [34m[ACTION 1/4][0m switch_tab: tab_id: 0712
+2025-10-06 19:19:57,913 - INFO - 🔄  Switched to tab #0712
+2025-10-06 19:20:03,994 - INFO - Page changed after action: actions input_text, click_element_by_index, wait are not yet executed
+2025-10-06 19:20:09,489 - INFO - 
+
+2025-10-06 19:20:09,489 - INFO - 📍 Step 21:
+2025-10-06 19:20:11,465 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:20:11,467 - INFO -   ❔ Eval: The previous step attempted to switch tabs but the input and click actions were not yet executed, so no progress was made.
+2025-10-06 19:20:11,468 - INFO -   [34m🎯 Next goal: Search for "Course Download launch year" using the homepage search bar and extract the launch year from the results.[0m
+2025-10-06 19:20:11,468 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 15, text: Course Download launch year, clear_existing: True
+2025-10-06 19:20:19,530 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 19:20:19,531 - INFO - ⌨️ Typed "Course Download launch year" into element with index 15
+2025-10-06 19:20:25,071 - INFO -   🦾 [34m[ACTION 2/4][0m click_element_by_index: index: 16, while_holding_ctrl: None
+2025-10-06 19:20:26,881 - INFO - 🖱️ Clicked element
+2025-10-06 19:20:27,384 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-06 19:20:27,461 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 19:20:29,963 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: What year was the Course Download feature launched on Testbook?, extract_links: False, start_from
+2025-10-06 19:20:32,128 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:20:32,204 - INFO - 📄 <url>
+https://testbook.com/
+</url>
+<query>
+What year was the Course Download feature launched on Testbook?
+</query>
+<result>
+Information about the launch year of the Course Download feature on Testbook is not available in the provided webpage content.
+</result>
+2025-10-06 19:20:37,185 - INFO - 
+
+2025-10-06 19:20:37,186 - INFO - 📍 Step 22:
+2025-10-06 19:20:39,171 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:20:39,172 - INFO -   ❔ Eval: Previous attempts to locate the launch year on the site failed; no relevant information was found.
+2025-10-06 19:20:39,172 - INFO -   [34m🎯 Next goal: Navigate to the Features page on testbook.com to look for information about the Course Download launch year.[0m
+2025-10-06 19:20:39,172 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://testbook.com/features, new_tab: False
+2025-10-06 19:20:40,838 - INFO - 🔗 Navigated to https://testbook.com/features
+2025-10-06 19:20:43,850 - INFO - 
+
+2025-10-06 19:20:43,850 - INFO - 📍 Step 23:
+2025-10-06 19:20:46,128 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:20:46,130 - INFO -   ❔ Eval: Previous attempts to locate the launch year via internal searches and navigation failed; no relevant information found.
+2025-10-06 19:20:46,131 - INFO -   [34m🎯 Next goal: Navigate to the potential feature page at https://testbook.com/features/course-download to locate the launch year.[0m
+2025-10-06 19:20:46,131 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://testbook.com/features/course-download, new_tab: False
+2025-10-06 19:20:47,695 - INFO - 🔗 Navigated to https://testbook.com/features/course-download
+2025-10-06 19:20:50,780 - INFO - 
+
+2025-10-06 19:20:50,780 - INFO - 📍 Step 24:
+2025-10-06 19:20:53,399 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:20:53,401 - INFO -   [31m⚠️ Eval: All attempted searches and navigations failed to locate the launch year; verdict: Failure to find information.[0m
+2025-10-06 19:20:53,401 - INFO -   [34m🎯 Next goal: Provide the final answer indicating that the launch year could not be found on the Testbook site.[0m
+2025-10-06 19:20:53,402 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: After extensive searching on testbook.com—including the main site search, article filters, recent searches, direct URL at
+2025-10-06 19:20:53,474 - INFO - 
+📄 [32m Final Result:[0m 
+After extensive searching on testbook.com—including the main site search, article filters, recent searches, direct URL attempts, and the blog—I could not locate any information about the year the 'Course Download' feature was launched. Therefore, the launch year is not publicly available on the Testbook website.
+
+
+2025-10-06 19:20:53,480 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0
+Session created with CAPTCHA solver and proxy: 8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://testbook.com', extracted_content='🔗 Navigated to https://testbook.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://testbook.com/\n</url>\n<query>\nIn which year was the 'Course Download' launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the “Course Download” feature on Testbook is not available in the provided webpage content.\n</result>", extracted_content="<url>\nhttps://testbook.com/\n</url>\n<query>\nIn which year was the 'Course Download' launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the “Course Download” feature on Testbook is not available in the provided webpage content.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Course Download' into element 15.", extracted_content="Input 'Course Download' into element 15.", include_extracted_content_only_once=False, metadata={'input_x': 994.1171875, 'input_y': 30.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://testbook.com/\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the “Course Download” feature on Testbook is not available in the provided webpage content.\n</result>", extracted_content="<url>\nhttps://testbook.com/\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the “Course Download” feature on Testbook is not available in the provided webpage content.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #CDDD', extracted_content='Switched to tab #CDDD', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://testbook.com/search/Course%20Download\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide information about the year the “Course Download” feature was launched on Testbook.\n</result>", extracted_content="<url>\nhttps://testbook.com/search/Course%20Download\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide information about the year the “Course Download” feature was launched on Testbook.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 902.9375, 'click_y': 188.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (900px)', extracted_content='🔍 Scrolled down the page by one page (900px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://testbook.com/search/Course%20Download?resultsTab=articles&pagination=%7B%22global%22:%7B%22skip%22:0,%22limit%22:15%7D,%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e47812302f9ae512343fae&trig=url&q=Course%20Download\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide information about the year the “Course Download” feature was launched on Testbook.\n</result>", extracted_content="<url>\nhttps://testbook.com/search/Course%20Download?resultsTab=articles&pagination=%7B%22global%22:%7B%22skip%22:0,%22limit%22:15%7D,%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e47812302f9ae512343fae&trig=url&q=Course%20Download\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide information about the year the “Course Download” feature was launched on Testbook.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1093.375, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1093.375, 'click_y': 204.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://testbook.com/search/Course%20Download?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22RecentSearch%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&trig=click&q=Course%20Download\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide information about the year the “Course Download” feature was launched on Testbook.\n</result>", extracted_content="<url>\nhttps://testbook.com/search/Course%20Download?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22RecentSearch%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&trig=click&q=Course%20Download\n</url>\n<query>\nIn which year was the 'Course Download' feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide information about the year the “Course Download” feature was launched on Testbook.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Click recent search result for \'Course Download\'" with "- [x] Click recent search result for \'Course Download\'" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Click recent search result for \'Course Download\'" with "- [x] Click recent search result for \'Course Download\'" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1093.375, 'click_y': 204.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Course Download launched' into element 12.", extracted_content="Input 'Course Download launched' into element 12.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://testbook.com/search/Course%20DownloadCourse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&trig=enterKey&q=Course%20DownloadCourse%20Download%20launched\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the year the Course Download feature was launched on Testbook is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://testbook.com/search/Course%20DownloadCourse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:0,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&trig=enterKey&q=Course%20DownloadCourse%20Download%20launched\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the year the Course Download feature was launched on Testbook is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://testbook.com/search/Course%20DownloadCourse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:30,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e47861569dd9e225769b3a&trig=enterKey&q=Course%20DownloadCourse%20Download%20launched\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the year the Course Download feature was launched on Testbook is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://testbook.com/search/Course%20DownloadCourse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:30,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520Download%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e47861569dd9e225769b3a&trig=enterKey&q=Course%20DownloadCourse%20Download%20launched\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the year the Course Download feature was launched on Testbook is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Course Download Testbook launch year' into element 12.", extracted_content="Input 'Course Download Testbook launch year' into element 12.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://testbook.com/search/Course%20DownloadCourCourse%20Download%20Testbook%20launch%20yearse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:30,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520DownloadCourse%2520Download%2520launched%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e4788a06e358e50ff863c0&trig=enterKey&q=Course%20DownloadCourCourse%20Download%20Testbook%20launch%20yearse%20Download%20launched\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide the year when the Course Download feature was launched on Testbook.\n</result>', extracted_content='<url>\nhttps://testbook.com/search/Course%20DownloadCourCourse%20Download%20Testbook%20launch%20yearse%20Download%20launched?resultsTab=articles&pagination=%7B%22articles%22:%7B%22skip%22:30,%22limit%22:15%7D%7D&source=%7B%22component%22:%22SearchBox%22,%22page%22:%7B%22name%22:%22SearchResults%22,%22url%22:%22%252Fsearch%252FCourse%2520DownloadCourse%2520Download%2520launched%22%7D%7D&origin=%252Fsearch%252FCourse%252520Download&srid=68e4788a06e358e50ff863c0&trig=enterKey&q=Course%20DownloadCourCourse%20Download%20Testbook%20launch%20yearse%20Download%20launched\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nThe webpage does not provide the year when the Course Download feature was launched on Testbook.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://testbook.com/course-download', extracted_content='🔗 Navigated to https://testbook.com/course-download', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 840.75, 'click_y': 899, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 840.75, 'click_y': 552.09375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Course Download launch' into element 4.", extracted_content="Input 'Course Download launch' into element 4.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed', extracted_content='Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1153.8125, 'click_y': 30.375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://testbook.com/blog/\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the Course Download feature on Testbook is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://testbook.com/blog/\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the Course Download feature on Testbook is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://testbook.com/blog/\n</url>\n<query>\nCourse Download launch year\n</query>\n<result>\nInformation on the launch year of “Course Download” is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://testbook.com/blog/\n</url>\n<query>\nCourse Download launch year\n</query>\n<result>\nInformation on the launch year of “Course Download” is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #0712', extracted_content='Switched to tab #0712', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions input_text, click_element_by_index, wait are not yet executed', extracted_content='Page changed after action: actions input_text, click_element_by_index, wait are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Course Download launch year' into element 15.", extracted_content="Input 'Course Download launch year' into element 15.", include_extracted_content_only_once=False, metadata={'input_x': 994.1171875, 'input_y': 30.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1123.0, 'click_y': 29.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://testbook.com/\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the Course Download feature on Testbook is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://testbook.com/\n</url>\n<query>\nWhat year was the Course Download feature launched on Testbook?\n</query>\n<result>\nInformation about the launch year of the Course Download feature on Testbook is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://testbook.com/features', extracted_content='🔗 Navigated to https://testbook.com/features', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://testbook.com/features/course-download', extracted_content='🔗 Navigated to https://testbook.com/features/course-download', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - After extensive searching on testbook.com—including the main site search, article filters, recent se - 213 more characters', extracted_content="After extensive searching on testbook.com—including the main site search, article filters, recent searches, direct URL attempts, and the blog—I could not locate any information about the year the 'Course Download' feature was launched. Therefore, the launch year is not publicly available on the Testbook website.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://testbook.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': "In which year was the 'Course Download' launched on Testbook?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 15, 'text': 'Course Download', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=3834, backend_node_id=5751, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'_ngcontent-serverapp-c44': '', 'type': 'text', 'placeholder': 'Search', 'class': 'searchbox input searchbox--loggedout ng-untouched ng-pristine ng-valid'}, bounds=DOMRect(x=850.234375, y=11.5, width=287.765625, height=37.0), x_path='html/body/app-root/div/app-header/div/app-header-logged-out/header/div[1]/div[2]/ul/li[18]/global-search-bar/div/input', element_hash=4141779788562337572)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': "In which year was the 'Course Download' feature launched on Testbook?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'switch_tab': {'tab_id': 'CDDD'}, 'interacted_element': None}, {'extract_structured_data': {'query': "In which year was the 'Course Download' feature launched on Testbook?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 21}, 'interacted_element': DOMInteractedElement(node_id=1949, backend_node_id=9678, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '#', 'ng-class': "{'active':searchContext.resultsTab === tab.key}", 'ng-click': 'goToTab(tab)', 'class': 'ng-binding'}, bounds=DOMRect(x=853.09375, y=163.0, width=99.6875, height=51.0), x_path='html/body/div[3]/div/div/div[1]/div[1]/div[3]/div[4]/div[2]/a', element_hash=947617283685663484)}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': "In which year was the 'Course Download' feature launched on Testbook?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': "# Todo for Course Download launch year\n\n- [ ] Click recent search result for 'Course Download'\n- [ ] Extract launch year of the feature\n- [ ] Provide answer", 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 200}, 'interacted_element': DOMInteractedElement(node_id=10334, backend_node_id=15079, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'class': 'cursor-pointer ng-binding ng-scope', 'ng-repeat': 'query in relatedSearch.termsArr track by $index', 'ng-if': '$index < 4', 'ng-click': 'relatedSearch.open(query)'}, bounds=DOMRect(x=997.75, y=-721.0, width=191.25, height=51.0), x_path='html/body/div[3]/div/div/div[2]/div/div/ul/li', element_hash=14008735170353556)}, {'click_element_by_index': {'index': 143}, 'interacted_element': DOMInteractedElement(node_id=17486, backend_node_id=15079, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'class': 'cursor-pointer ng-binding ng-scope', 'ng-repeat': 'query in relatedSearch.termsArr track by $index', 'ng-if': '$index < 4', 'ng-click': 'relatedSearch.open(query)'}, bounds=DOMRect(x=997.75, y=179.0, width=191.25, height=51.0), x_path='html/body/div[3]/div/div/div[2]/div/div/ul/li', element_hash=14008735170353556)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': "In which year was the 'Course Download' feature launched on Testbook?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': "- [ ] Click recent search result for 'Course Download'", 'new_str': "- [x] Click recent search result for 'Course Download'"}, 'interacted_element': None}, {'click_element_by_index': {'index': 143}, 'interacted_element': DOMInteractedElement(node_id=21082, backend_node_id=16136, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'class': 'cursor-pointer ng-binding ng-scope', 'ng-repeat': 'query in relatedSearch.termsArr track by $index', 'ng-if': '$index < 4', 'ng-click': 'relatedSearch.open(query)'}, bounds=DOMRect(x=997.75, y=179.0, width=191.25, height=51.0), x_path='html/body/div[3]/div/div/div[2]/div/div/ul/li', element_hash=14008735170353556)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'input_text': {'index': 12, 'text': 'Course Download launched', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=23806, backend_node_id=7669, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'text', 'ng-focus': 'searchBar.expand()', 'ng-blur': 'searchBar.onBlur()', 'class': 'searchbox input ng-pristine ng-untouched ng-valid ng-not-empty', 'ng-model': 'searchBar.partialQuery', 'ng-keyup': 'searchBar.onTyping($event)', 'placeholder': 'Search in Articles'}, bounds=DOMRect(x=835.875, y=11.5, width=297.046875, height=37.0), x_path='html/body/div[1]/div[2]/div/div[3]/ul/li[7]/div/input', element_hash=4811218940590330689)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was the Course Download feature launched on Testbook?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was the Course Download feature launched on Testbook?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 12, 'text': 'Course Download Testbook launch year', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=34620, backend_node_id=7669, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'text', 'ng-focus': 'searchBar.expand()', 'ng-blur': 'searchBar.onBlur()', 'class': 'searchbox input ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse', 'ng-model': 'searchBar.partialQuery', 'ng-keyup': 'searchBar.onTyping($event)', 'placeholder': 'Search in Articles'}, bounds=DOMRect(x=835.875, y=11.5, width=297.046875, height=37.0), x_path='html/body/div[1]/div[2]/div/div[3]/ul/li[7]/div/input', element_hash=2184111328086430165)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was the Course Download feature launched on Testbook?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://testbook.com/course-download', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 36}, 'interacted_element': DOMInteractedElement(node_id=43077, backend_node_id=22761, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'_ngcontent-serverapp-c14': '', 'target': '_self', 'href': '/blog/'}, bounds=DOMRect(x=728.0, y=976.59375, width=225.5, height=21.0), x_path='html/body/app-root/app-footer/footer/div/div[1]/div[3]/div[2]/a[7]', element_hash=1345281364111684690)}, {'click_element_by_index': {'index': 36}, 'interacted_element': DOMInteractedElement(node_id=43799, backend_node_id=22761, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'_ngcontent-serverapp-c14': '', 'target': '_self', 'href': '/blog/'}, bounds=DOMRect(x=728.0, y=541.59375, width=225.5, height=21.0), x_path='html/body/app-root/app-footer/footer/div/div[1]/div[3]/div[2]/a[7]', element_hash=1345281364111684690)}, {'input_text': {'index': 4, 'text': 'Course Download launch', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=44157, backend_node_id=23289, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'text', 'value': '', 'name': 's', 'id': 's', 'class': 'form-control', 'placeholder': 'Search'}, bounds=DOMRect(x=847.875, y=13.1875, width=292.25, height=34.0), x_path='html/body/nav/section/div[3]/form/div/input[4]', element_hash=8178524645110288007)}, {'click_element_by_index': {'index': 5}, 'interacted_element': DOMInteractedElement(node_id=44163, backend_node_id=23293, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'btn btn-default', 'type': 'submit', 'id': 'searchsubmit'}, bounds=DOMRect(x=1139.125, y=13.1875, width=29.375, height=34.375), x_path='html/body/nav/section/div[3]/form/div/span/button', element_hash=6376145953589028285)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was the Course Download feature launched on Testbook?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 5}, 'interacted_element': DOMInteractedElement(node_id=48387, backend_node_id=23293, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'btn btn-default', 'type': 'submit', 'id': 'searchsubmit'}, bounds=DOMRect(x=1139.125, y=13.1875, width=29.375, height=34.375), x_path='html/body/nav/section/div[3]/form/div/span/button', element_hash=6376145953589028285)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was the Course Download feature launched on Testbook?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Course Download launch year', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'switch_tab': {'tab_id': '0712'}, 'interacted_element': None}, {'input_text': {'index': 15, 'text': 'Course Download launch year', 'clear_existing': True}, 'interacted_element': None}, {'click_element_by_index': {'index': 16}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'input_text': {'index': 15, 'text': 'Course Download launch year', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=18207, backend_node_id=5751, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'_ngcontent-serverapp-c44': '', 'type': 'text', 'placeholder': 'Search', 'class': 'searchbox input searchbox--loggedout ng-untouched ng-valid ng-dirty'}, bounds=DOMRect(x=850.234375, y=11.5, width=287.765625, height=37.0), x_path='html/body/app-root/div/app-header/div/app-header-logged-out/header/div[1]/div[2]/ul/li[18]/global-search-bar/div/input', element_hash=459232324132316501)}, {'click_element_by_index': {'index': 16}, 'interacted_element': DOMInteractedElement(node_id=18213, backend_node_id=5752, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='svg', attributes={'_ngcontent-serverApp-c44': '', 'height': '20px', 'width': '20px', 'class': 'searchicon'}, bounds=DOMRect(x=1113.0, y=19.5, width=20.0, height=20.0), x_path='html/body/app-root/div/app-header/div/app-header-logged-out/header/div[1]/div[2]/ul/li[18]/global-search-bar/div/svg', element_hash=274519356496506225)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was the Course Download feature launched on Testbook?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://testbook.com/features', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://testbook.com/features/course-download', 'new_tab': False}, 'interacted_element': None}, {'done': {'text': "After extensive searching on testbook.com—including the main site search, article filters, recent searches, direct URL attempts, and the blog—I could not locate any information about the year the 'Course Download' feature was launched. Therefore, the launch year is not publicly available on the Testbook website.", 'success': True, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 19:20:56,854 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0 "HTTP/1.1 200 OK"
+2025-10-06 19:20:56,978 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/8fe0dba6-434b-4998-96d1-fc6d9ac8d9c0/recordings/3fa59802-2794-445d-b8ac-de406ffa72bd/fetch

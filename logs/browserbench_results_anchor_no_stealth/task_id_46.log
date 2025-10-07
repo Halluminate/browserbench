@@ -1,0 +1,113 @@
+2025-10-06 15:42:29,058 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 15:42:29,074 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 15:42:29,090 - INFO - 🔗 Found URL in task: https://www.bls.gov, adding as initial action...
+2025-10-06 15:42:29,095 - INFO - [34m🚀 Task: How far back does the US Bureau of Labor Statistics' occupational data go? You must complete the task only using the starting website. Begin task on the following url: https://www.bls.gov[0m
+2025-10-06 15:42:29,131 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 15:42:29,139 - INFO - ────────────────────────────────────────
+2025-10-06 15:42:29,139 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 15:42:29,139 - INFO -     👉  browser-use auth
+2025-10-06 15:42:29,139 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 15:42:29,139 - INFO - ────────────────────────────────────────
+
+2025-10-06 15:42:29,375 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 15:42:29,426 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=daf75459-3a89-4691-8800-cb03cc4f4557
+2025-10-06 15:42:30,818 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.bls.gov, new_tab: False
+2025-10-06 15:42:32,716 - INFO - 🔗 Navigated to https://www.bls.gov
+2025-10-06 15:42:35,294 - INFO - 
+
+2025-10-06 15:42:35,295 - INFO - 📍 Step 1:
+2025-10-06 15:42:37,500 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:42:37,511 - INFO -   [31m⚠️ Eval: The page failed to load, showing a connection error. Verdict: Failure[0m
+2025-10-06 15:42:37,511 - INFO -   [34m🎯 Next goal: Create a todo list with the plan and retry loading the BLS homepage.[0m
+2025-10-06 15:42:37,511 - INFO -   🦾 [34m[ACTION 1/3][0m write_file: file_name: todo.md, content: # Task: Determine earliest year of US BLS occupational data\n\n## Plan\n- [ ] Load the B
+2025-10-06 15:42:37,578 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 15:42:38,079 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-06 15:42:38,155 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 15:42:40,657 - INFO -   🦾 [34m[ACTION 3/3][0m go_to_url: url: https://www.bls.gov, new_tab: False
+2025-10-06 15:42:42,487 - INFO - 🔗 Navigated to https://www.bls.gov
+2025-10-06 15:42:45,117 - INFO - 
+
+2025-10-06 15:42:45,118 - INFO - 📍 Step 2:
+2025-10-06 15:42:45,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:42:45,422 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:42:47,855 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:42:47,857 - INFO -   [31m⚠️ Eval: Failure: The BLS homepage did not load, showing a connection error.[0m
+2025-10-06 15:42:47,857 - INFO -   [34m🎯 Next goal: Successfully load the BLS homepage so we can begin navigating to occupational data sections.[0m
+2025-10-06 15:42:47,857 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.bls.gov, new_tab: False
+2025-10-06 15:42:49,603 - INFO - 🔗 Navigated to https://www.bls.gov
+2025-10-06 15:42:50,105 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-06 15:42:50,173 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 15:42:54,228 - INFO - 
+
+2025-10-06 15:42:54,228 - INFO - 📍 Step 3:
+2025-10-06 15:42:54,356 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:42:54,356 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:42:57,463 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:42:57,465 - INFO -   [31m⚠️ Eval: Previous attempts to load the BLS homepage failed with ERR_TUNNEL_CONNECTION_FAILED. Verdict: Failure[0m
+2025-10-06 15:42:57,465 - INFO -   [34m🎯 Next goal: Retry loading the BLS homepage using the HTTP URL.[0m
+2025-10-06 15:42:57,465 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: http://www.bls.gov, new_tab: False
+2025-10-06 15:42:59,291 - INFO - 🔗 Navigated to http://www.bls.gov
+2025-10-06 15:43:01,613 - INFO - 
+
+2025-10-06 15:43:01,613 - INFO - 📍 Step 4:
+2025-10-06 15:43:02,991 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:43:02,993 - INFO -   [31m⚠️ Eval: Previous attempts to load the homepage failed with HTTP 503; no content was retrieved. Verdict: Failure[0m
+2025-10-06 15:43:02,993 - INFO -   [34m🎯 Next goal: Click the reload button to attempt reloading the homepage and wait for the page to load.[0m
+2025-10-06 15:43:02,993 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 1, while_holding_ctrl: None
+2025-10-06 15:43:05,464 - INFO - 🖱️ Clicked element
+2025-10-06 15:43:05,966 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-06 15:43:06,030 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 15:43:10,378 - INFO - 
+
+2025-10-06 15:43:10,379 - INFO - 📍 Step 5:
+2025-10-06 15:43:11,862 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:43:11,864 - INFO -   ❔ Eval: Previous step failed to load the homepage; clicking reload did not resolve the 503 error.
+2025-10-06 15:43:11,865 - INFO -   [34m🎯 Next goal: Navigate to the OES section at https://www.bls.gov/oes/ to find the earliest year of occupational data.[0m
+2025-10-06 15:43:11,865 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.bls.gov/oes/, new_tab: False
+2025-10-06 15:43:13,837 - INFO - 🔗 Navigated to https://www.bls.gov/oes/
+2025-10-06 15:43:16,252 - INFO - 
+
+2025-10-06 15:43:16,252 - INFO - 📍 Step 6:
+2025-10-06 15:43:17,973 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:43:17,975 - INFO -   ❔ Eval: Previous attempts to load https://www.bls.gov/oes/ failed with ERR_TUNNEL_CONNECTION_FAILED, so we have not yet accessed any occupational data page.
+2025-10-06 15:43:17,975 - INFO -   [34m🎯 Next goal: Navigate to https://download.bls.gov/pub/time.series/oes/ to locate the earliest year of occupational data.[0m
+2025-10-06 15:43:17,975 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://download.bls.gov/pub/time.series/oes/, new_tab: False
+2025-10-06 15:43:19,949 - INFO - 🔗 Navigated to https://download.bls.gov/pub/time.series/oes/
+2025-10-06 15:43:22,299 - INFO - 
+
+2025-10-06 15:43:22,299 - INFO - 📍 Step 7:
+2025-10-06 15:43:22,470 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:43:22,471 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:43:25,195 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:43:25,197 - INFO -   [31m⚠️ Eval: Previous attempts to load the BLS homepage and OES directory failed with connection errors. Verdict: Failure[0m
+2025-10-06 15:43:25,197 - INFO -   [34m🎯 Next goal: Load the OES annual data page to locate the earliest year of occupational data.[0m
+2025-10-06 15:43:25,197 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.bls.gov/oes/oes_annual.htm, new_tab: False
+2025-10-06 15:43:27,256 - INFO - 🔗 Navigated to https://www.bls.gov/oes/oes_annual.htm
+2025-10-06 15:43:29,786 - INFO - 
+
+2025-10-06 15:43:29,786 - INFO - 📍 Step 8:
+2025-10-06 15:43:31,840 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:43:31,844 - INFO -   ❔ Eval: All attempts to load BLS pages failed with connection errors; unable to access any content.
+2025-10-06 15:43:31,844 - INFO -   [34m🎯 Next goal: Terminate the task, reporting inability to retrieve the information due to site inaccessibility.[0m
+2025-10-06 15:43:31,844 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: I was unable to access any pages on the US Bureau of Labor Statistics website (bls.gov) due to persistent connection erro
+2025-10-06 15:43:31,921 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to access any pages on the US Bureau of Labor Statistics website (bls.gov) due to persistent connection errors (ERR_TUNNEL_CONNECTION_FAILED / HTTP 503). Consequently, I could not locate the historical occupational data archive or determine the earliest year for which occupational data is available. As the task requires using only the starting website, and the site is currently unreachable, I cannot provide the requested information.
+
+
+2025-10-06 15:43:31,924 - INFO - ❌ Task completed without success
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=daf75459-3a89-4691-8800-cb03cc4f4557
+Session created with CAPTCHA solver and proxy: daf75459-3a89-4691-8800-cb03cc4f4557
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.bls.gov', extracted_content='🔗 Navigated to https://www.bls.gov', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.bls.gov', extracted_content='🔗 Navigated to https://www.bls.gov', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.bls.gov', extracted_content='🔗 Navigated to https://www.bls.gov', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to http://www.bls.gov', extracted_content='🔗 Navigated to http://www.bls.gov', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 983.2265625, 'click_y': 416.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.bls.gov/oes/', extracted_content='🔗 Navigated to https://www.bls.gov/oes/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://download.bls.gov/pub/time.series/oes/', extracted_content='🔗 Navigated to https://download.bls.gov/pub/time.series/oes/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.bls.gov/oes/oes_annual.htm', extracted_content='🔗 Navigated to https://www.bls.gov/oes/oes_annual.htm', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to access any pages on the US Bureau of Labor Statistics website (bls.gov) due to persi - 350 more characters', extracted_content='I was unable to access any pages on the US Bureau of Labor Statistics website (bls.gov) due to persistent connection errors (ERR_TUNNEL_CONNECTION_FAILED / HTTP 503). Consequently, I could not locate the historical occupational data archive or determine the earliest year for which occupational data is available. As the task requires using only the starting website, and the site is currently unreachable, I cannot provide the requested information.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.bls.gov', 'new_tab': False}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Task: Determine earliest year of US BLS occupational data\n\n## Plan\n- [ ] Load the BLS homepage (https://www.bls.gov)\n- [ ] Navigate to the Occupational Employment Statistics (OES) or Occupational Outlook Handbook section\n- [ ] Locate the historical data archive or documentation page\n- [ ] Identify the earliest year for which occupational data is available\n- [ ] Record the answer in results.md\n- [ ] Verify the information and finalize the response', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.bls.gov', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.bls.gov', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'http://www.bls.gov', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 1}, 'interacted_element': DOMInteractedElement(node_id=235, backend_node_id=657, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'id': 'reload-button', 'class': 'blue-button text-button', 'data-url': 'http://www.bls.gov/'}, bounds=DOMRect(x=946.453125, y=401.0, width=73.546875, height=31.0), x_path='html/body/div[1]/div[1]/div[2]/div/button', element_hash=2228744774482474968)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.bls.gov/oes/', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://download.bls.gov/pub/time.series/oes/', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.bls.gov/oes/oes_annual.htm', 'new_tab': False}, 'interacted_element': None}, {'done': {'text': 'I was unable to access any pages on the US Bureau of Labor Statistics website (bls.gov) due to persistent connection errors (ERR_TUNNEL_CONNECTION_FAILED / HTTP 503). Consequently, I could not locate the historical occupational data archive or determine the earliest year for which occupational data is available. As the task requires using only the starting website, and the site is currently unreachable, I cannot provide the requested information.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']2025-10-06 15:43:33,968 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/daf75459-3a89-4691-8800-cb03cc4f4557 "HTTP/1.1 200 OK"
+2025-10-06 15:43:34,087 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/daf75459-3a89-4691-8800-cb03cc4f4557/recordings "HTTP/1.1 200 OK"
+
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/daf75459-3a89-4691-8800-cb03cc4f4557/recordings/80177fa7-4537-415c-bc3a-15727e110d61/fetch

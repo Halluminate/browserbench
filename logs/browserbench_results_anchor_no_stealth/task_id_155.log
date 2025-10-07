@@ -1,0 +1,127 @@
+2025-10-06 18:34:54,876 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 18:34:54,890 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 18:34:54,906 - INFO - 🔗 Found URL in task: https://www.indiamart.com, adding as initial action...
+2025-10-06 18:34:54,911 - INFO - [34m🚀 Task: What is the address of the registered office of IndiaMART? You must complete the task only using the starting website. Begin task on the following url: https://www.indiamart.com[0m
+2025-10-06 18:34:54,950 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 18:34:54,960 - INFO - ────────────────────────────────────────
+2025-10-06 18:34:54,961 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 18:34:54,961 - INFO -     👉  browser-use auth
+2025-10-06 18:34:54,961 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 18:34:54,961 - INFO - ────────────────────────────────────────
+
+2025-10-06 18:34:55,189 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 18:34:55,238 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b58baeeb-a0dd-485d-84f3-d38807487ffc
+2025-10-06 18:34:56,603 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.indiamart.com, new_tab: False
+2025-10-06 18:35:02,422 - INFO - 🔗 Navigated to https://www.indiamart.com
+2025-10-06 18:35:10,249 - INFO - 
+
+2025-10-06 18:35:10,249 - INFO - 📍 Step 1:
+2025-10-06 18:35:11,371 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:11,384 - INFO -   ❔ Eval: The navigation to the URL succeeded but the page content was not yet loaded. Verdict: Uncertain
+2025-10-06 18:35:11,384 - INFO -   [34m🎯 Next goal: Wait for the page to load fully.[0m
+2025-10-06 18:35:11,384 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-06 18:35:11,452 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 18:35:17,421 - INFO - 
+
+2025-10-06 18:35:17,422 - INFO - 📍 Step 2:
+2025-10-06 18:35:18,845 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:18,848 - INFO -   ❔ Eval: Previous wait action resulted in uncertain page load; no content was verified.
+2025-10-06 18:35:18,848 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the homepage to reveal the footer containing the registered office address.[0m
+2025-10-06 18:35:18,849 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-06 18:35:24,830 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 900px per page)
+2025-10-06 18:35:27,971 - INFO - 
+
+2025-10-06 18:35:27,971 - INFO - 📍 Step 3:
+2025-10-06 18:35:29,353 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:29,354 - INFO -   [32m👍 Eval: Scrolled down near the bottom of the page, but address not visible in interactive elements. Verdict: Success in scrolling, but address not yet obtained.[0m
+2025-10-06 18:35:29,354 - INFO -   [34m🎯 Next goal: Extract the registered office address from the page using structured data extraction.[0m
+2025-10-06 18:35:29,355 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the registered office address of IndiaMART?, extract_links: False, start_from_char: 0
+2025-10-06 18:35:30,730 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:30,797 - INFO - 📄 <url>
+https://www.indiamart.com/
+</url>
+<query>
+What is the registered office address of IndiaMART?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-06 18:35:34,319 - INFO - 
+
+2025-10-06 18:35:34,320 - INFO - 📍 Step 4:
+2025-10-06 18:35:35,839 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:35,841 - INFO -   [32m👍 Eval: Scrolled 10 pages successfully, but address not yet obtained.[0m
+2025-10-06 18:35:35,841 - INFO -   [34m🎯 Next goal: Scroll slightly further down to ensure footer text is visible, then extract the registered office address using structured data extraction.[0m
+2025-10-06 18:35:35,842 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 0.5, frame_element_index: None
+2025-10-06 18:35:36,378 - INFO - 🔍 Scrolled down the page by 0.5 pages (900px per page)
+2025-10-06 18:35:36,879 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the registered office address of IndiaMART?, extract_links: False, start_from_char: 0
+2025-10-06 18:35:38,369 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:38,438 - INFO - 📄 <url>
+https://www.indiamart.com/
+</url>
+<query>
+What is the registered office address of IndiaMART?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-06 18:35:42,938 - INFO - 
+
+2025-10-06 18:35:42,938 - INFO - 📍 Step 5:
+2025-10-06 18:35:44,827 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:44,829 - INFO -   ❔ Eval: Failed to obtain the address from the homepage using extract_structured_data.
+2025-10-06 18:35:44,829 - INFO -   [34m🎯 Next goal: Navigate to the Contact Us page by clicking the link with index 92, then extract the registered office address.[0m
+2025-10-06 18:35:44,829 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 92, while_holding_ctrl: None
+2025-10-06 18:35:47,280 - INFO - 🖱️ Clicked element
+2025-10-06 18:35:55,659 - INFO - 
+
+2025-10-06 18:35:55,660 - INFO - 📍 Step 6:
+2025-10-06 18:35:57,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:35:57,055 - INFO -   ❔ Eval: Clicked Contact Us link; page loaded but content not yet visible. Verdict: Uncertain
+2025-10-06 18:35:57,055 - INFO -   [34m🎯 Next goal: Wait for the Contact Us page to load fully, then extract the registered office address.[0m
+2025-10-06 18:35:57,055 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-06 18:35:57,122 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 18:35:59,626 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the registered office address of IndiaMART?, extract_links: False, start_from_char: 0
+2025-10-06 18:36:00,774 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:36:00,843 - INFO - 📄 <url>
+https://corporate.indiamart.com/branch-offices/
+</url>
+<query>
+What is the registered office address of IndiaMART?
+</query>
+<result>
+IndiaMART InterMESH Limited  
+1st Floor, 29 Daryaganj, Netaji Subash Marg, New Delhi, Delhi – 110002
+</result>
+2025-10-06 18:36:04,817 - INFO - 
+
+2025-10-06 18:36:04,817 - INFO - 📍 Step 7:
+2025-10-06 18:36:06,076 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:36:06,078 - INFO -   [32m👍 Eval: Success: extracted the registered office address.[0m
+2025-10-06 18:36:06,078 - INFO -   [34m🎯 Next goal: Provide the extracted address to the user and finish.[0m
+2025-10-06 18:36:06,079 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The registered office address of IndiaMART is:\n\nIndiaMART InterMESH Limited\n1st Floor, 29 Daryaganj, Netaji Subash Mar
+2025-10-06 18:36:06,145 - INFO - 
+📄 [32m Final Result:[0m 
+The registered office address of IndiaMART is:
+
+IndiaMART InterMESH Limited
+1st Floor, 29 Daryaganj, Netaji Subash Marg
+New Delhi, Delhi – 110002
+
+
+2025-10-06 18:36:06,149 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b58baeeb-a0dd-485d-84f3-d38807487ffc
+Session created with CAPTCHA solver and proxy: b58baeeb-a0dd-485d-84f3-d38807487ffc
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.indiamart.com', extracted_content='🔗 Navigated to https://www.indiamart.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.indiamart.com/\n</url>\n<query>\nWhat is the registered office address of IndiaMART?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.indiamart.com/\n</url>\n<query>\nWhat is the registered office address of IndiaMART?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 0.5 pages (900px per page)', extracted_content='🔍 Scrolled down the page by 0.5 pages (900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.indiamart.com/\n</url>\n<query>\nWhat is the registered office address of IndiaMART?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.indiamart.com/\n</url>\n<query>\nWhat is the registered office address of IndiaMART?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 497.0, 'click_y': 793.671875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://corporate.indiamart.com/branch-offices/\n</url>\n<query>\nWhat is the registered office address of IndiaMART?\n</query>\n<result>\nIndiaMART InterMESH Limited  \n1st Floor, 29 Daryaganj, Netaji Subash Marg, New Delhi, Delhi\u202f–\u202f110002\n</result>', extracted_content='<url>\nhttps://corporate.indiamart.com/branch-offices/\n</url>\n<query>\nWhat is the registered office address of IndiaMART?\n</query>\n<result>\nIndiaMART InterMESH Limited  \n1st Floor, 29 Daryaganj, Netaji Subash Marg, New Delhi, Delhi\u202f–\u202f110002\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The registered office address of IndiaMART is:\n\nIndiaMART InterMESH Limited\n1st Floor, 29 Daryaganj, - 45 more characters', extracted_content='The registered office address of IndiaMART is:\n\nIndiaMART InterMESH Limited\n1st Floor, 29 Daryaganj, Netaji Subash Marg\nNew Delhi, Delhi – 110002', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.indiamart.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the registered office address of IndiaMART?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 0.5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the registered office address of IndiaMART?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 92}, 'interacted_element': DOMInteractedElement(node_id=19739, backend_node_id=2749, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://corporate.indiamart.com/branch-offices/'}, bounds=DOMRect(x=402.0, y=783.171875, width=190.0, height=21.0), x_path='html/body/div[1]/div[2]/ul/li[2]/a[6]', element_hash=2982036291034125984)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the registered office address of IndiaMART?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The registered office address of IndiaMART is:\n\nIndiaMART InterMESH Limited\n1st Floor, 29 Daryaganj, Netaji Subash Marg\nNew Delhi, Delhi – 110002', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']2025-10-06 18:36:08,294 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/b58baeeb-a0dd-485d-84f3-d38807487ffc "HTTP/1.1 200 OK"
+2025-10-06 18:36:08,441 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/b58baeeb-a0dd-485d-84f3-d38807487ffc/recordings "HTTP/1.1 200 OK"
+
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/b58baeeb-a0dd-485d-84f3-d38807487ffc/recordings/35a1ccd3-ce5f-4e6b-b556-dec52c9aff8c/fetch

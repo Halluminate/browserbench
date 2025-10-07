@@ -1,0 +1,51 @@
+2025-10-06 18:40:07,631 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 18:40:07,646 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 18:40:07,661 - INFO - 🔗 Found URL in task: https://www.mapquest.com, adding as initial action...
+2025-10-06 18:40:07,666 - INFO - [34m🚀 Task: Is there a route planner option in the filter section? You must complete the task only using the starting website. Begin task on the following url: https://www.mapquest.com[0m
+2025-10-06 18:40:07,704 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 18:40:07,714 - INFO - ────────────────────────────────────────
+2025-10-06 18:40:07,714 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 18:40:07,714 - INFO -     👉  browser-use auth
+2025-10-06 18:40:07,714 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 18:40:07,714 - INFO - ────────────────────────────────────────
+
+2025-10-06 18:40:07,920 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 18:40:07,944 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=2cb52aa1-4741-4187-92b9-c545a0e49940
+2025-10-06 18:40:09,678 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.mapquest.com, new_tab: False
+2025-10-06 18:40:11,650 - INFO - 🔗 Navigated to https://www.mapquest.com
+2025-10-06 18:40:17,853 - INFO - 
+
+2025-10-06 18:40:17,854 - INFO - 📍 Step 1:
+2025-10-06 18:40:19,467 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:40:19,478 - INFO -   [32m👍 Eval: Previous step only loaded the homepage; no action taken yet. Verdict: Success (homepage loaded).[0m
+2025-10-06 18:40:19,478 - INFO -   [34m🎯 Next goal: Click the 'MapQuest it!' button (index 15) to open the directions page and then check for a filter section with a route planner option.[0m
+2025-10-06 18:40:19,478 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 15, while_holding_ctrl: False
+2025-10-06 18:40:23,447 - INFO - 🖱️ Clicked element
+2025-10-06 18:40:29,343 - INFO - 
+
+2025-10-06 18:40:29,343 - INFO - 📍 Step 2:
+2025-10-06 18:40:30,883 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:40:30,884 - INFO -   [32m👍 Eval: Success - clicked the 'MapQuest it!' button and loaded the directions page.[0m
+2025-10-06 18:40:30,885 - INFO -   [34m🎯 Next goal: Provide the answer to the user and finish the task.[0m
+2025-10-06 18:40:30,885 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: There is no route planner option in the filter section on the MapQuest directions page., success: True, files_to_disp
+2025-10-06 18:40:30,951 - INFO - 
+📄 [32m Final Result:[0m 
+There is no route planner option in the filter section on the MapQuest directions page.
+
+
+2025-10-06 18:40:30,956 - INFO - ✅ Task completed successfully
+2025-10-06 18:40:33,423 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/2cb52aa1-4741-4187-92b9-c545a0e49940 "HTTP/1.1 200 OK"
+2025-10-06 18:40:33,695 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/2cb52aa1-4741-4187-92b9-c545a0e49940/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=2cb52aa1-4741-4187-92b9-c545a0e49940
+Session created with CAPTCHA solver and proxy: 2cb52aa1-4741-4187-92b9-c545a0e49940
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.mapquest.com', extracted_content='🔗 Navigated to https://www.mapquest.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 199.5, 'click_y': 268.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - There is no route planner option in the filter section on the MapQuest directions page.', extracted_content='There is no route planner option in the filter section on the MapQuest directions page.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.mapquest.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 15, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=297, backend_node_id=299, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'flex items-center justify-center gap-2 font-montserrat text-center tracking-wide rounded-3xl text-white px-5 bg-primary-800 enabled:hover:bg-primary-300 enabled:active:bg-primary-200 enabled:focus:bg-primary-800 enabled:focus:border-primary-200 disabled:bg-primary-50 w-full text-base font-medium py-2.5', 'type': 'button', 'data-testid': 'directions-cta-button'}, bounds=DOMRect(x=20.0, y=246.0, width=359.0, height=44.0), x_path='html/body/div[2]/main/div[6]/div[2]/div[1]/a/button', element_hash=784450474163583629)}, {'done': {'text': 'There is no route planner option in the filter section on the MapQuest directions page.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/2cb52aa1-4741-4187-92b9-c545a0e49940/recordings/f0d322e8-fff2-4f2c-8136-98ee25ba91bd/fetch

@@ -1,0 +1,97 @@
+2025-10-06 16:07:56,310 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 16:07:56,324 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 16:07:56,340 - INFO - 🔗 Found URL in task: https://collider.com, adding as initial action...
+2025-10-06 16:07:56,345 - INFO - [34m🚀 Task: What is Collider's email address for "Login & Account Support"? You must complete the task only using the starting website. Begin task on the following url: https://collider.com[0m
+2025-10-06 16:07:56,384 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 16:07:56,393 - INFO - ────────────────────────────────────────
+2025-10-06 16:07:56,393 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 16:07:56,393 - INFO -     👉  browser-use auth
+2025-10-06 16:07:56,393 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 16:07:56,393 - INFO - ────────────────────────────────────────
+
+2025-10-06 16:07:56,600 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 16:07:56,644 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=1e6a710a-0d7f-4602-80b8-85b8c0dbe384
+2025-10-06 16:07:58,246 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://collider.com, new_tab: False
+2025-10-06 16:07:59,840 - INFO - 🔗 Navigated to https://collider.com
+2025-10-06 16:08:05,339 - INFO - 
+
+2025-10-06 16:08:05,340 - INFO - 📍 Step 1:
+2025-10-06 16:08:06,738 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:06,746 - INFO -   [32m👍 Eval: The initial navigation to https://collider.com succeeded. Verdict: Success[0m
+2025-10-06 16:08:06,746 - INFO -   [34m🎯 Next goal: Open the site menu to access the support/contact page.[0m
+2025-10-06 16:08:06,746 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 2, while_holding_ctrl: None
+2025-10-06 16:08:08,328 - INFO - 🖱️ Clicked element
+2025-10-06 16:08:12,578 - INFO - 
+
+2025-10-06 16:08:12,578 - INFO - 📍 Step 2:
+2025-10-06 16:08:14,578 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:14,579 - INFO -   [32m👍 Eval: Previous click opened the menu; support links are not yet visible. Verdict: Success (menu opened).[0m
+2025-10-06 16:08:14,579 - INFO -   [34m🎯 Next goal: Scroll down to load more navigation items and then extract the email address for "Login & Account Support".[0m
+2025-10-06 16:08:14,579 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 16:08:17,850 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 16:08:18,351 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find the email address listed for Login & Account Support on this page., extract_links: False
+2025-10-06 16:08:19,622 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:19,693 - INFO - 📄 <url>
+https://collider.com/
+</url>
+<query>
+Find the email address listed for "Login & Account Support" on this page.
+</query>
+<result>
+Information not available on the page.
+</result>
+2025-10-06 16:08:23,284 - INFO - 
+
+2025-10-06 16:08:23,284 - INFO - 📍 Step 3:
+2025-10-06 16:08:24,733 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:24,734 - INFO -   ❔ Eval: Previous scroll loaded more of the page but did not reveal the email; still not found.
+2025-10-06 16:08:24,734 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the page and extract the email address for 'Login & Account Support'.[0m
+2025-10-06 16:08:24,734 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 16:08:28,007 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 16:08:28,509 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Login & Account Support email address, extract_links: False, start_from_char: 0
+2025-10-06 16:08:29,710 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:29,780 - INFO - 📄 <url>
+https://collider.com/
+</url>
+<query>
+Login & Account Support email address
+</query>
+<result>
+Information unavailable.
+</result>
+2025-10-06 16:08:33,973 - INFO - 
+
+2025-10-06 16:08:33,973 - INFO - 📍 Step 4:
+2025-10-06 16:08:35,607 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:35,608 - INFO -   [31m⚠️ Eval: Previous scroll actions did not reveal the email address; verdict: Failure[0m
+2025-10-06 16:08:35,608 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' link to open the support page and then extract the 'Login & Account Support' email address.[0m
+2025-10-06 16:08:35,609 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 106, while_holding_ctrl: None
+2025-10-06 16:08:37,452 - INFO - 🖱️ Clicked element
+2025-10-06 16:08:40,123 - INFO - 
+
+2025-10-06 16:08:40,123 - INFO - 📍 Step 5:
+2025-10-06 16:08:41,660 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 16:08:41,661 - INFO -   [32m👍 Eval: Clicked the 'Contact Us' link and reached the contact page successfully. Verdict: Success[0m
+2025-10-06 16:08:41,661 - INFO -   [34m🎯 Next goal: Provide the email address to the user and finish the task.[0m
+2025-10-06 16:08:41,661 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The email address for Collider\s Login & Account Support is **admin@collider.com**., success: True, files_to_displ
+2025-10-06 16:08:41,728 - INFO - 
+📄 [32m Final Result:[0m 
+The email address for Collider's "Login & Account Support" is **admin@collider.com**.
+
+
+2025-10-06 16:08:41,730 - INFO - ✅ Task completed successfully
+2025-10-06 16:08:44,048 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/1e6a710a-0d7f-4602-80b8-85b8c0dbe384 "HTTP/1.1 200 OK"
+2025-10-06 16:08:44,159 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/1e6a710a-0d7f-4602-80b8-85b8c0dbe384/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=1e6a710a-0d7f-4602-80b8-85b8c0dbe384
+Session created with CAPTCHA solver and proxy: 1e6a710a-0d7f-4602-80b8-85b8c0dbe384
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://collider.com', extracted_content='🔗 Navigated to https://collider.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 90.5, 'click_y': 28.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://collider.com/\n</url>\n<query>\nFind the email address listed for "Login & Account Support" on this page.\n</query>\n<result>\nInformation not available on the page.\n</result>', extracted_content='<url>\nhttps://collider.com/\n</url>\n<query>\nFind the email address listed for "Login & Account Support" on this page.\n</query>\n<result>\nInformation not available on the page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://collider.com/\n</url>\n<query>\nLogin & Account Support email address\n</query>\n<result>\nInformation unavailable.\n</result>', extracted_content='<url>\nhttps://collider.com/\n</url>\n<query>\nLogin & Account Support email address\n</query>\n<result>\nInformation unavailable.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 610.0390625, 'click_y': 713.421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The email address for Collider\'s "Login & Account Support" is **admin@collider.com**.', extracted_content='The email address for Collider\'s "Login & Account Support" is **admin@collider.com**.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://collider.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 2}, 'interacted_element': DOMInteractedElement(node_id=131, backend_node_id=440, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LABEL', attributes={'class': 'menu-icon topnav-icon icon i-menu-new css-menu--toggle', 'for': 'side_menu'}, bounds=DOMRect(x=80.0, y=13.234375, width=21.0, height=29.53125), x_path='html/body/header/div/div/div[1]/label', element_hash=2120042278510814101)}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find the email address listed for "Login & Account Support" on this page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Login & Account Support email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 106}, 'interacted_element': DOMInteractedElement(node_id=7368, backend_node_id=1589, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text', 'href': '/contact/'}, bounds=DOMRect(x=580.921875, y=705.421875, width=58.234375, height=16.0), x_path='html/body/footer/div[1]/div/div[1]/ul[1]/li[6]/a', element_hash=1267111190751456281)}, {'done': {'text': 'The email address for Collider\'s "Login & Account Support" is **admin@collider.com**.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/1e6a710a-0d7f-4602-80b8-85b8c0dbe384/recordings/f16200b9-f0ee-40f2-89a7-c6a4f16dae9f/fetch

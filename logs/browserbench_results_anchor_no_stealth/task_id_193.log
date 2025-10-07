@@ -1,0 +1,210 @@
+2025-10-06 18:58:55,713 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 18:58:55,727 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 18:58:55,744 - INFO - 🔗 Found URL in task: https://www.uptodown.com/mac, adding as initial action...
+2025-10-06 18:58:55,749 - INFO - [34m🚀 Task: Where is Uptodown headquartered? You must complete the task only using the starting website. Begin task on the following url: https://www.uptodown.com/mac[0m
+2025-10-06 18:58:55,787 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 18:58:55,794 - INFO - ────────────────────────────────────────
+2025-10-06 18:58:55,794 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 18:58:55,794 - INFO -     👉  browser-use auth
+2025-10-06 18:58:55,794 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 18:58:55,794 - INFO - ────────────────────────────────────────
+
+2025-10-06 18:58:56,025 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 18:58:56,074 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=ec0beae0-dfad-466a-8836-78d33819b90e
+2025-10-06 18:58:57,476 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.uptodown.com/mac, new_tab: False
+2025-10-06 18:58:58,897 - INFO - 🔗 Navigated to https://www.uptodown.com/mac
+2025-10-06 18:59:03,734 - INFO - 
+
+2025-10-06 18:59:03,734 - INFO - 📍 Step 1:
+2025-10-06 18:59:05,482 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:05,488 - INFO -   [32m👍 Eval: Successfully navigated to https://www.uptodown.com/mac and loaded the page. Verdict: Success[0m
+2025-10-06 18:59:05,488 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to reveal the footer where the headquarters information is likely displayed.[0m
+2025-10-06 18:59:05,489 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 18:59:08,779 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 18:59:14,311 - INFO - 
+
+2025-10-06 18:59:14,312 - INFO - 📍 Step 2:
+2025-10-06 18:59:15,963 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:15,966 - INFO -   ❔ Eval: Previous scroll action succeeded in moving the page down, but the headquarters information was not yet visible. Verdict: Uncertain
+2025-10-06 18:59:15,966 - INFO -   [34m🎯 Next goal: Scroll further down to reveal the footer containing the headquarters address, then extract the headquarters location.[0m
+2025-10-06 18:59:15,968 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-06 18:59:16,829 - INFO - 🔍 Scrolled down the page by one page (900px)
+2025-10-06 18:59:17,331 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the headquarters location of Uptodown?, extract_links: False, start_from_char: 0
+2025-10-06 18:59:18,790 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:18,858 - INFO - 📄 <url>
+https://www.uptodown.com/mac
+</url>
+<query>
+What is the headquarters location of Uptodown?
+</query>
+<result>
+Information about the headquarters location of Uptodown is not available in the provided webpage content.
+</result>
+2025-10-06 18:59:23,732 - INFO - 
+
+2025-10-06 18:59:23,732 - INFO - 📍 Step 3:
+2025-10-06 18:59:25,942 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:25,944 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters info; need to navigate via the About link.
+2025-10-06 18:59:25,944 - INFO -   [34m🎯 Next goal: Create a todo.md with the plan and click the 'Sobre nosotros' link (index 425) to navigate to the About page.[0m
+2025-10-06 18:59:25,946 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Uptodown Headquarters Retrieval Task\n\n## Goal: Find the headquarters location of Upt
+2025-10-06 18:59:26,014 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 18:59:30,184 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 425, while_holding_ctrl: None
+2025-10-06 18:59:31,899 - INFO - 🖱️ Clicked element
+2025-10-06 18:59:34,412 - INFO - 
+
+2025-10-06 18:59:34,413 - INFO - 📍 Step 4:
+2025-10-06 18:59:35,992 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:35,994 - INFO -   [32m👍 Eval: Clicked the 'Sobre nosotros' link and arrived at the About Us page. Verdict: Success[0m
+2025-10-06 18:59:35,994 - INFO -   [34m🎯 Next goal: Extract the headquarters address from the About Us page using extract_structured_data.[0m
+2025-10-06 18:59:35,994 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the headquarters address of Uptodown?, extract_links: False, start_from_char: 0
+2025-10-06 18:59:36,721 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:36,790 - INFO - 📄 <url>
+https://en.uptodown.com/about-us
+</url>
+<query>
+What is the headquarters address of Uptodown?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-06 18:59:39,288 - INFO - 
+
+2025-10-06 18:59:39,288 - INFO - 📍 Step 5:
+2025-10-06 18:59:40,845 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:40,847 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters info; we are still above the footer.
+2025-10-06 18:59:40,847 - INFO -   [34m🎯 Next goal: Scroll further down to reveal the footer where the headquarters address is likely displayed.[0m
+2025-10-06 18:59:40,847 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-06 18:59:42,277 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)
+2025-10-06 18:59:44,887 - INFO - 
+
+2025-10-06 18:59:44,888 - INFO - 📍 Step 6:
+2025-10-06 18:59:46,598 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:46,600 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters information; the address remains hidden. Verdict: Uncertain
+2025-10-06 18:59:46,601 - INFO -   [34m🎯 Next goal: Scroll further down to reveal the footer containing the headquarters address.[0m
+2025-10-06 18:59:46,601 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-06 18:59:47,462 - INFO - 🔍 Scrolled down the page by one page (900px)
+2025-10-06 18:59:49,881 - INFO - 
+
+2025-10-06 18:59:49,881 - INFO - 📍 Step 7:
+2025-10-06 18:59:51,681 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:51,683 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters address; still missing.
+2025-10-06 18:59:51,683 - INFO -   [34m🎯 Next goal: Click the 'Contact us' link (element 4) to open the contact page where the headquarters address should be displayed.[0m
+2025-10-06 18:59:51,683 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 4, while_holding_ctrl: None
+2025-10-06 18:59:52,162 - WARNING - No visible quad found, using first quad
+2025-10-06 18:59:53,207 - INFO - 🖱️ Clicked element
+2025-10-06 18:59:56,082 - INFO - 
+
+2025-10-06 18:59:56,082 - INFO - 📍 Step 8:
+2025-10-06 18:59:58,661 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:59:58,665 - INFO -   [32m👍 Eval: Clicked the 'Contact us' link successfully; page navigation pending.[0m
+2025-10-06 18:59:58,665 - INFO -   [34m🎯 Next goal: Wait for the contact page to load and extract the headquarters address.[0m
+2025-10-06 18:59:58,665 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-06 18:59:58,733 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 18:59:59,236 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the headquarters address of Uptodown?, extract_links: False, start_from_char: 0
+2025-10-06 19:00:00,100 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:00,168 - INFO - 📄 <url>
+https://en.uptodown.com/about-us
+</url>
+<query>
+What is the headquarters address of Uptodown?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-06 19:00:03,004 - INFO - 
+
+2025-10-06 19:00:03,004 - INFO - 📍 Step 9:
+2025-10-06 19:00:04,383 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:04,384 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters address; still 0.8 pages remaining. Verdict: Uncertain
+2025-10-06 19:00:04,384 - INFO -   [34m🎯 Next goal: Scroll down to reveal the footer containing the headquarters address.[0m
+2025-10-06 19:00:04,384 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-06 19:00:05,242 - INFO - 🔍 Scrolled down the page by one page (900px)
+2025-10-06 19:00:07,644 - INFO - 
+
+2025-10-06 19:00:07,644 - INFO - 📍 Step 10:
+2025-10-06 19:00:09,911 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:09,912 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters address; we are still missing it. Verdict: Uncertain
+2025-10-06 19:00:09,912 - INFO -   [34m🎯 Next goal: Open the Contact us page in a new tab, extract the headquarters address, and save it to results.md.[0m
+2025-10-06 19:00:09,913 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 4, while_holding_ctrl: True
+2025-10-06 19:00:10,387 - WARNING - No visible quad found, using first quad
+2025-10-06 19:00:11,432 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-06 19:00:11,935 - INFO -   🦾 [34m[ACTION 2/2][0m switch_tab: tab_id: ????
+2025-10-06 19:00:12,069 - WARNING - Tab switch may have failed: No TargetID found ending in tab_id=...????
+2025-10-06 19:00:14,886 - INFO - 
+
+2025-10-06 19:00:14,886 - INFO - 📍 Step 11:
+2025-10-06 19:00:16,906 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:16,907 - INFO -   ❔ Eval: Previous scroll actions have not yet revealed the headquarters address; still 0.8 pages remaining. Verdict: Uncertain
+2025-10-06 19:00:16,907 - INFO -   [34m🎯 Next goal: Scroll down the remaining portion of the page to reveal the footer containing the headquarters address.[0m
+2025-10-06 19:00:16,908 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-06 19:00:17,760 - INFO - 🔍 Scrolled down the page by one page (900px)
+2025-10-06 19:00:20,250 - INFO - 
+
+2025-10-06 19:00:20,250 - INFO - 📍 Step 12:
+2025-10-06 19:00:22,027 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:22,029 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters address; still missing.
+2025-10-06 19:00:22,029 - INFO -   [34m🎯 Next goal: Click the 'Contact us' link (index 4) to navigate to the contact page where the headquarters address should be displayed.[0m
+2025-10-06 19:00:22,030 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 4, while_holding_ctrl: None
+2025-10-06 19:00:22,514 - WARNING - No visible quad found, using first quad
+2025-10-06 19:00:23,556 - INFO - 🖱️ Clicked element
+2025-10-06 19:00:26,517 - INFO - 
+
+2025-10-06 19:00:26,517 - INFO - 📍 Step 13:
+2025-10-06 19:00:27,982 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:27,984 - INFO -   ❔ Eval: Previous scroll actions did not reveal the headquarters address; still missing.
+2025-10-06 19:00:27,984 - INFO -   [34m🎯 Next goal: Navigate to the Contact us page by clicking element 4 and wait for it to load.[0m
+2025-10-06 19:00:27,984 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 4, while_holding_ctrl: None
+2025-10-06 19:00:29,636 - INFO - 🖱️ Clicked element
+2025-10-06 19:00:30,137 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-06 19:00:30,206 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 19:00:33,471 - INFO - 
+
+2025-10-06 19:00:33,472 - INFO - 📍 Step 14:
+2025-10-06 19:00:36,229 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:36,231 - INFO -   [32m👍 Eval: Success – the headquarters location was found in the page text.[0m
+2025-10-06 19:00:36,231 - INFO -   [34m🎯 Next goal: Write the headquarters address to results.md and mark all todo items as completed.[0m
+2025-10-06 19:00:36,231 - INFO -   🦾 [34m[ACTION 1/5][0m write_file: file_name: results.md, content: Uptodown is headquartered in Malaga, Spain., append: False, trailing_newline: Tr
+2025-10-06 19:00:36,302 - INFO - 💾 Data written to file results.md successfully.
+2025-10-06 19:00:36,805 - INFO -   🦾 [34m[ACTION 2/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Click Sobre nosotros (About us) link (index 425), new_str: - [x] Click
+2025-10-06 19:00:36,873 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Click "Sobre nosotros" (About us) link (index 425)" with "- [x] Click "Sobre nosotros" (About us) link (index 425)" in file todo.md
+2025-10-06 19:00:37,374 - INFO -   🦾 [34m[ACTION 3/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Locate headquarters address on the resulting page, new_str: - [x] Locate
+2025-10-06 19:00:37,442 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Locate headquarters address on the resulting page" with "- [x] Locate headquarters address on the resulting page" in file todo.md
+2025-10-06 19:00:37,942 - INFO -   🦾 [34m[ACTION 4/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Record the address in results.md, new_str: - [x] Record the address in r
+2025-10-06 19:00:38,012 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Record the address in results.md" with "- [x] Record the address in results.md" in file todo.md
+2025-10-06 19:00:38,513 - INFO -   🦾 [34m[ACTION 5/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Mark task as complete, new_str: - [x] Mark task as complete
+2025-10-06 19:00:38,581 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Mark task as complete" with "- [x] Mark task as complete" in file todo.md
+2025-10-06 19:00:42,029 - INFO - 
+
+2025-10-06 19:00:42,029 - INFO - 📍 Step 15:
+2025-10-06 19:00:43,273 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:00:43,275 - INFO -   [32m👍 Eval: Successfully recorded the headquarters address and updated todo.md. Verdict: Success[0m
+2025-10-06 19:00:43,275 - INFO -   [34m🎯 Next goal: Return the final answer to the user with the recorded headquarters location.[0m
+2025-10-06 19:00:43,275 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Uptodown is headquartered in Malaga, Spain., success: True, files_to_display: [results.md]
+2025-10-06 19:00:43,344 - INFO - 
+📄 [32m Final Result:[0m 
+Uptodown is headquartered in Malaga, Spain.
+
+Attachments:
+
+results.md:
+Uptodown is headquartered in Malaga, Spain.
+
+
+
+2025-10-06 19:00:43,345 - INFO - 👉 Attachment : /var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e473d-fbb3-781d-8000-5babe812c54c_1759802335/browseruse_agent_data/results.md
+2025-10-06 19:00:43,350 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=ec0beae0-dfad-466a-8836-78d33819b90e
+Session created with CAPTCHA solver and proxy: ec0beae0-dfad-466a-8836-78d33819b90e
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.uptodown.com/mac', extracted_content='🔗 Navigated to https://www.uptodown.com/mac', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (900px)', extracted_content='🔍 Scrolled down the page by one page (900px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.uptodown.com/mac\n</url>\n<query>\nWhat is the headquarters location of Uptodown?\n</query>\n<result>\nInformation about the headquarters location of Uptodown is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.uptodown.com/mac\n</url>\n<query>\nWhat is the headquarters location of Uptodown?\n</query>\n<result>\nInformation about the headquarters location of Uptodown is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 922.0, 'click_y': 610.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://en.uptodown.com/about-us\n</url>\n<query>\nWhat is the headquarters address of Uptodown?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://en.uptodown.com/about-us\n</url>\n<query>\nWhat is the headquarters address of Uptodown?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (900px)', extracted_content='🔍 Scrolled down the page by one page (900px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 712.5, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://en.uptodown.com/about-us\n</url>\n<query>\nWhat is the headquarters address of Uptodown?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://en.uptodown.com/about-us\n</url>\n<query>\nWhat is the headquarters address of Uptodown?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (900px)', extracted_content='🔍 Scrolled down the page by one page (900px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 712.5, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Attempted to switch to tab #????', extracted_content='Attempted to switch to tab #????', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (900px)', extracted_content='🔍 Scrolled down the page by one page (900px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 712.5, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 712.5, 'click_y': 450.265625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Click "Sobre nosotros" (About us) link (index 425)" with "- [x] Click "Sobre nosotros" (About us) link (index 425)" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Click "Sobre nosotros" (About us) link (index 425)" with "- [x] Click "Sobre nosotros" (About us) link (index 425)" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Locate headquarters address on the resulting page" with "- [x] Locate headquarters address on the resulting page" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Locate headquarters address on the resulting page" with "- [x] Locate headquarters address on the resulting page" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Record the address in results.md" with "- [x] Record the address in results.md" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Record the address in results.md" with "- [x] Record the address in results.md" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Mark task as complete" with "- [x] Mark task as complete" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Mark task as complete" with "- [x] Mark task as complete" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=['/var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e473d-fbb3-781d-8000-5babe812c54c_1759802335/browseruse_agent_data/results.md'], long_term_memory='Task completed: True - Uptodown is headquartered in Malaga, Spain.', extracted_content='Uptodown is headquartered in Malaga, Spain.\n\nAttachments:\n\nresults.md:\nUptodown is headquartered in Malaga, Spain.\n', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.uptodown.com/mac', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the headquarters location of Uptodown?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Uptodown Headquarters Retrieval Task\n\n## Goal: Find the headquarters location of Uptodown using the site https://www.uptodown.com/mac\n\n## Steps:\n- [ ] Click "Sobre nosotros" (About us) link (index 425)\n- [ ] Locate headquarters address on the resulting page\n- [ ] Record the address in results.md\n- [ ] Mark task as complete', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 425}, 'interacted_element': DOMInteractedElement(node_id=9803, backend_node_id=2950, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://en.uptodown.com/about-us'}, bounds=DOMRect(x=772.5, y=596.0, width=299.0, height=28.0), x_path='html/body/div/footer/div[2]/ul/li[1]/a', element_hash=5783548439325378665)}, {'extract_structured_data': {'query': 'What is the headquarters address of Uptodown?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=899, backend_node_id=6987, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'button center', 'href': 'https://en.uptodown.com/about-us/our-company'}, bounds=DOMRect(x=555.65625, y=-265.734375, width=313.6875, height=38.0), x_path='html/body/div/main/section[3]/a', element_hash=8322298495995048241)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the headquarters address of Uptodown?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 4, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=1678, backend_node_id=6987, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'button center', 'href': 'https://en.uptodown.com/about-us/our-company'}, bounds=DOMRect(x=555.65625, y=-265.734375, width=313.6875, height=38.0), x_path='html/body/div/main/section[3]/a', element_hash=8322298495995048241)}, {'switch_tab': {'tab_id': '????'}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=2194, backend_node_id=6987, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'button center', 'href': 'https://en.uptodown.com/about-us/our-company'}, bounds=DOMRect(x=555.65625, y=-265.734375, width=313.6875, height=38.0), x_path='html/body/div/main/section[3]/a', element_hash=8322298495995048241)}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=2452, backend_node_id=6987, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'button center', 'href': 'https://en.uptodown.com/about-us/our-company'}, bounds=DOMRect(x=555.65625, y=431.265625, width=313.6875, height=38.0), x_path='html/body/div/main/section[3]/a', element_hash=8322298495995048241)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'write_file': {'file_name': 'results.md', 'content': 'Uptodown is headquartered in Malaga, Spain.', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Click "Sobre nosotros" (About us) link (index 425)', 'new_str': '- [x] Click "Sobre nosotros" (About us) link (index 425)'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Locate headquarters address on the resulting page', 'new_str': '- [x] Locate headquarters address on the resulting page'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Record the address in results.md', 'new_str': '- [x] Record the address in results.md'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Mark task as complete', 'new_str': '- [x] Mark task as complete'}, 'interacted_element': None}, {'done': {'text': 'Uptodown is headquartered in Malaga, Spain.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}])2025-10-06 19:00:47,255 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/ec0beae0-dfad-466a-8836-78d33819b90e "HTTP/1.1 200 OK"
+2025-10-06 19:00:47,399 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/ec0beae0-dfad-466a-8836-78d33819b90e/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/ec0beae0-dfad-466a-8836-78d33819b90e/recordings/62f8f698-318d-4ab6-b872-c776bc0543cc/fetch

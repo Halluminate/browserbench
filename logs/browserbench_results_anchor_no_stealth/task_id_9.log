@@ -1,0 +1,118 @@
+2025-10-06 15:17:07,885 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 15:17:07,891 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 15:17:07,903 - INFO - 🔗 Found URL in task: https://streeteasy.com, adding as initial action...
+2025-10-06 15:17:07,907 - INFO - [34m🚀 Task: Who wrote the article "How to Find the Perfect Roommate in NYC" in the resources section of Streeteasy? You must complete the task only using the starting website. Begin task on the following url: https://streeteasy.com[0m
+2025-10-06 15:17:07,944 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 15:17:07,951 - INFO - ────────────────────────────────────────
+2025-10-06 15:17:07,951 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 15:17:07,951 - INFO -     👉  browser-use auth
+2025-10-06 15:17:07,951 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 15:17:07,951 - INFO - ────────────────────────────────────────
+
+2025-10-06 15:17:08,186 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 15:17:08,207 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=894d2a87-03e5-414b-9af4-7ac2c5f0bb85
+2025-10-06 15:17:10,179 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://streeteasy.com, new_tab: False
+2025-10-06 15:17:19,253 - INFO - 🔗 Navigated to https://streeteasy.com
+2025-10-06 15:17:26,359 - INFO - 
+
+2025-10-06 15:17:26,360 - INFO - 📍 Step 1:
+2025-10-06 15:17:27,396 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:17:27,407 - INFO -   [34m🎯 Next goal: Click the Resources button to open the resources page.[0m
+2025-10-06 15:17:27,407 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 8, while_holding_ctrl: None
+2025-10-06 15:17:29,620 - INFO - 🖱️ Clicked element
+2025-10-06 15:17:33,515 - INFO - 
+
+2025-10-06 15:17:33,516 - INFO - 📍 Step 2:
+2025-10-06 15:17:34,907 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:17:34,908 - INFO -   ❔ Eval: Clicked Resources button but page content not yet updated; need to wait for navigation.
+2025-10-06 15:17:34,908 - INFO -   [34m🎯 Next goal: Wait for the resources page to load, then extract the author of the specified article.[0m
+2025-10-06 15:17:34,909 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-06 15:17:34,978 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 15:17:35,480 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who is the author of the article titled \\How to Find the Perfect Roommate in NYC\\ on the Streetea
+2025-10-06 15:17:36,622 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:17:36,697 - INFO - 📄 <url>
+https://streeteasy.com/
+</url>
+<query>
+Who is the author of the article titled \"How to Find the Perfect Roommate in NYC\" on the Streeteasy resources page?
+</query>
+<result>
+Information not available in the provided page content.
+</result>
+2025-10-06 15:17:40,599 - INFO - 
+
+2025-10-06 15:17:40,599 - INFO - 📍 Step 3:
+2025-10-06 15:17:42,155 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:17:42,159 - INFO -   [31m⚠️ Eval: Failure – clicking Resources did not result in navigation to the resources page.[0m
+2025-10-06 15:17:42,159 - INFO -   [34m🎯 Next goal: Click the Resources button (index 8) and wait for the resources page to load.[0m
+2025-10-06 15:17:42,159 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 8, while_holding_ctrl: None
+2025-10-06 15:17:43,803 - INFO - 🖱️ Clicked element
+2025-10-06 15:17:44,304 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-06 15:17:44,374 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 15:17:48,505 - INFO - 
+
+2025-10-06 15:17:48,505 - INFO - 📍 Step 4:
+2025-10-06 15:17:50,111 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:17:50,113 - INFO -   [32m👍 Eval: Successfully expanded Resources and located the article link; the Resources button click was effective. Verdict: Success[0m
+2025-10-06 15:17:50,113 - INFO -   [34m🎯 Next goal: Open the article page by clicking index 23, wait for load, then extract the author name.[0m
+2025-10-06 15:17:50,113 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 23, while_holding_ctrl: None
+2025-10-06 15:17:53,021 - INFO - 🖱️ Clicked element
+2025-10-06 15:17:53,522 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-06 15:17:53,608 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 15:17:54,109 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Who is the author of the article titled \\How to Find the Perfect Roommate in NYC\\?, extract_lin
+2025-10-06 15:17:57,011 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:17:57,099 - INFO - 📄 <url>
+https://streeteasy.com/blog/how-to-find-a-roommate-in-nyc/
+</url>
+<query>
+Who is the author of the article titled \"How to Find the Perfect Roommate in NYC\"?
+</query>
+<result>
+Kathryn O'Shea‑Evans
+</result>
+2025-10-06 15:18:06,808 - INFO - 
+
+2025-10-06 15:18:06,808 - INFO - 📍 Step 5:
+2025-10-06 15:18:06,947 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:06,947 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:09,037 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:09,037 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:11,130 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:11,131 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:13,227 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:13,228 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:15,310 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:15,311 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:17,428 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:17,428 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:19,507 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:19,508 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:21,590 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:21,590 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:23,671 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:23,671 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:18:27,003 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:18:27,006 - INFO -   [32m👍 Eval: Success[0m
+2025-10-06 15:18:27,006 - INFO -   [34m🎯 Next goal: Provide the answer to the user and finish the task.[0m
+2025-10-06 15:18:27,007 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The article How to Find the Perfect Roommate in NYC was written by Kathryn O\Shea‑Evans., success: True, files_to_
+2025-10-06 15:18:27,079 - INFO - 
+📄 [32m Final Result:[0m 
+The article "How to Find the Perfect Roommate in NYC" was written by Kathryn O'Shea‑Evans.
+
+
+2025-10-06 15:18:27,089 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=894d2a87-03e5-414b-9af4-7ac2c5f0bb85
+Session created with CAPTCHA solver and proxy: 894d2a87-03e5-414b-9af4-7ac2c5f0bb85
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://streeteasy.com', extracted_content='🔗 Navigated to https://streeteasy.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 408.5078125, 'click_y': 74.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://streeteasy.com/\n</url>\n<query>\nWho is the author of the article titled \\"How to Find the Perfect Roommate in NYC\\" on the Streeteasy resources page?\n</query>\n<result>\nInformation not available in the provided page content.\n</result>', extracted_content='<url>\nhttps://streeteasy.com/\n</url>\n<query>\nWho is the author of the article titled \\"How to Find the Perfect Roommate in NYC\\" on the Streeteasy resources page?\n</query>\n<result>\nInformation not available in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 408.5078125, 'click_y': 75.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 650.21875, 'click_y': 249.5625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://streeteasy.com/blog/how-to-find-a-roommate-in-nyc/\n</url>\n<query>\nWho is the author of the article titled \\"How to Find the Perfect Roommate in NYC\\"?\n</query>\n<result>\nKathryn O\'Shea‑Evans\n</result>', extracted_content='<url>\nhttps://streeteasy.com/blog/how-to-find-a-roommate-in-nyc/\n</url>\n<query>\nWho is the author of the article titled \\"How to Find the Perfect Roommate in NYC\\"?\n</query>\n<result>\nKathryn O\'Shea‑Evans\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The article "How to Find the Perfect Roommate in NYC" was written by Kathryn O\'Shea‑Evans.', extracted_content='The article "How to Find the Perfect Roommate in NYC" was written by Kathryn O\'Shea‑Evans.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://streeteasy.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 8}, 'interacted_element': DOMInteractedElement(node_id=398, backend_node_id=392, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'text-action_baseTextAction_QUkYk text-action_bodyStyles_VRnQz text-action_underlined_V8zgO text-action_brandColor_twufp Button_linkBase_K0HjM', 'color': '#1876DB', 'type': 'button', 'aria-expanded': 'false', 'aria-haspopup': 'true', 'aria-label': 'Resources', 'data-qa': 'resources-dropdown-button'}, bounds=DOMRect(x=368.265625, y=50.0, width=80.484375, height=48.0), x_path='html/body/div/div[1]/div/div[2]/div/div[1]/header/nav/div/div/nav/ul/li[5]/button', element_hash=121801286983554018)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the author of the article titled \\"How to Find the Perfect Roommate in NYC\\" on the Streeteasy resources page?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 8}, 'interacted_element': DOMInteractedElement(node_id=3104, backend_node_id=392, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'text-action_baseTextAction_QUkYk text-action_bodyStyles_VRnQz text-action_underlined_V8zgO text-action_brandColor_twufp Button_linkBase_K0HjM', 'color': '#1876DB', 'type': 'button', 'aria-expanded': 'false', 'aria-haspopup': 'true', 'aria-label': 'Resources', 'data-qa': 'resources-dropdown-button'}, bounds=DOMRect(x=368.265625, y=50.0, width=80.484375, height=50.0), x_path='html/body/div[1]/div[1]/div/div[2]/div/div[1]/header/nav/div/div/nav/ul/li[5]/button', element_hash=121801286983554018)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 23}, 'interacted_element': DOMInteractedElement(node_id=4516, backend_node_id=437, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'ListItemLink_listItemLink_36yJM', 'href': '//streeteasy.com/guides/renters-guide/how-to-find-a-roommate-in-nyc/', 'data-gtm-header-menu': 'Resources'}, bounds=DOMRect(x=576.5, y=240.5625, width=147.4375, height=18.0), x_path='html/body/div[1]/div[1]/div/div[2]/div/div[1]/header/nav/div/div/nav/ul/li[5]/div/div/div[3]/ul/li[4]/a', element_hash=3762873515972304320)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the author of the article titled \\"How to Find the Perfect Roommate in NYC\\"?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The article "How to Find the Perfect Roommate in NYC" was written by Kathryn O\'Shea‑Evans.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']2025-10-06 15:18:33,140 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/894d2a87-03e5-414b-9af4-7ac2c5f0bb85 "HTTP/1.1 200 OK"
+2025-10-06 15:18:33,254 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/894d2a87-03e5-414b-9af4-7ac2c5f0bb85/recordings "HTTP/1.1 200 OK"
+
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/894d2a87-03e5-414b-9af4-7ac2c5f0bb85/recordings/33ba7985-8f8c-4fe0-9cd9-9bbd2db300df/fetch

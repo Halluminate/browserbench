@@ -1,0 +1,303 @@
+2025-10-06 15:18:41,871 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 15:18:41,886 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 15:18:41,901 - INFO - 🔗 Found URL in task: https://www.viator.com, adding as initial action...
+2025-10-06 15:18:41,905 - INFO - [34m🚀 Task: What is Viator's email address? You must complete the task only using the starting website. Begin task on the following url: https://www.viator.com[0m
+2025-10-06 15:18:41,945 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 15:18:41,953 - INFO - ────────────────────────────────────────
+2025-10-06 15:18:41,953 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 15:18:41,953 - INFO -     👉  browser-use auth
+2025-10-06 15:18:41,953 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 15:18:41,953 - INFO - ────────────────────────────────────────
+
+2025-10-06 15:18:42,158 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 15:18:42,189 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=cbd7eb86-ea68-4078-8c59-15275095eb37
+2025-10-06 15:18:43,534 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.viator.com, new_tab: False
+2025-10-06 15:18:45,189 - INFO - 🔗 Navigated to https://www.viator.com
+2025-10-06 15:18:49,374 - INFO - 
+
+2025-10-06 15:18:49,374 - INFO - 📍 Step 1:
+2025-10-06 15:18:49,523 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:18:49,524 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:18:51,976 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:18:51,989 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the page to reveal footer and then extract the email address.[0m
+2025-10-06 15:18:51,989 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 15:18:55,138 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 15:18:55,642 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is Viators email address?, extract_links: False, start_from_char: 0
+2025-10-06 15:18:56,631 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:18:56,698 - INFO - 📄 <url>
+https://www.viator.com/
+</url>
+<query>
+What is Viator's email address?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-06 15:18:59,870 - INFO - 
+
+2025-10-06 15:18:59,870 - INFO - 📍 Step 2:
+2025-10-06 15:19:00,034 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:00,035 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:03,442 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:19:03,444 - INFO -   ❔ Eval: Failed to locate email address after scrolling to the footer.
+2025-10-06 15:19:03,445 - INFO -   [34m🎯 Next goal: Click the 'Help Center' button (index 83) to navigate to the contact page and locate Viator's email address.[0m
+2025-10-06 15:19:03,446 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 83, while_holding_ctrl: None
+2025-10-06 15:19:04,978 - INFO - 🖱️ Clicked element
+2025-10-06 15:19:08,775 - INFO - 
+
+2025-10-06 15:19:08,775 - INFO - 📍 Step 3:
+2025-10-06 15:19:08,935 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:08,937 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:12,604 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:19:12,771 - INFO -   [32m👍 Eval: Success: Clicked the Help Center button and navigated to the help page.[0m
+2025-10-06 15:19:12,771 - INFO -   [34m🎯 Next goal: Extract the email address from the Help Center page.[0m
+2025-10-06 15:19:12,772 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-06 15:19:12,838 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 15:19:13,339 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is Viators email address?, extract_links: False, start_from_char: 0
+2025-10-06 15:19:14,680 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:19:14,752 - INFO - 📄 <url>
+https://www.viator.com/
+</url>
+<query>
+What is Viator's email address?
+</query>
+<result>
+The webpage does not provide Viator’s email address.
+</result>
+2025-10-06 15:19:18,257 - INFO - 
+
+2025-10-06 15:19:18,257 - INFO - 📍 Step 4:
+2025-10-06 15:19:18,434 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:18,435 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:19:19,530 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:19,532 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:21,767 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:21,768 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:23,880 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:23,881 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:19:26,978 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:26,979 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:29,065 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:29,065 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:19:30,145 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:30,146 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:32,224 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:32,225 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:19:35,314 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:35,316 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:37,405 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:37,406 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:39,490 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:39,491 - ERROR - ❌ Result failed 1/4 times:
+ {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 247938, Requested 9799. Please try again in 1.856879999s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}
+
+2025-10-06 15:19:43,096 - INFO - 
+
+2025-10-06 15:19:43,097 - INFO - 📍 Step 5:
+2025-10-06 15:19:43,244 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:43,244 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:19:44,332 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:44,333 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:46,433 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:46,433 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:19:50,287 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:19:50,288 - INFO -   [32m👍 Eval: Previous action clicked Help Center button; page loaded but no email found. Verdict: Partial success (navigation succeeded, but email not yet located).[0m
+2025-10-06 15:19:50,289 - INFO -   [34m🎯 Next goal: Click the "See all articles" button to display all help articles, then locate Viator's email address.[0m
+2025-10-06 15:19:50,289 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 106, while_holding_ctrl: None
+2025-10-06 15:19:51,806 - INFO - 🖱️ Clicked element
+2025-10-06 15:19:52,308 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-06 15:19:52,373 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 15:19:56,669 - INFO - 
+
+2025-10-06 15:19:56,670 - INFO - 📍 Step 6:
+2025-10-06 15:19:56,828 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:56,829 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:19:57,930 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:19:57,931 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:00,031 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:00,032 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:02,138 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:02,139 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:04,247 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:04,249 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:06,362 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:06,363 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:08,433 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:08,434 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:10,517 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:10,517 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:12,594 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:12,594 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:14,691 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:14,692 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:20:15,786 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:15,787 - ERROR - ❌ Result failed 1/4 times:
+ {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 247351, Requested 10164. Please try again in 1.80352s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}
+
+2025-10-06 15:20:19,919 - INFO - 
+
+2025-10-06 15:20:19,919 - INFO - 📍 Step 7:
+2025-10-06 15:20:20,059 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:20,060 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:20:21,163 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:21,164 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:23,261 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:23,262 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:25,359 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:25,359 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:27,496 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:27,497 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:20:30,583 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:30,584 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:34,267 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:20:34,271 - INFO -   [32m👍 Eval: Previous step successfully opened the Help Center but did not locate the email address.[0m
+2025-10-06 15:20:34,271 - INFO -   [34m🎯 Next goal: Search for 'email' in the Help Center and extract the email address from the results.[0m
+2025-10-06 15:20:34,272 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 103, text: email, clear_existing: True
+2025-10-06 15:20:35,965 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 15:20:35,966 - INFO - ⌨️ Typed "email" into element with index 103
+2025-10-06 15:20:36,468 - INFO -   🦾 [34m[ACTION 2/4][0m send_keys: keys: Enter
+2025-10-06 15:20:36,868 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 15:20:36,971 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 15:20:37,473 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 3
+2025-10-06 15:20:37,538 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 15:20:38,038 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Extract any email address present on the page., extract_links: False, start_from_char: 0
+2025-10-06 15:20:39,397 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:20:39,464 - INFO - 📄 <url>
+https://www.viator.com/
+</url>
+<query>
+Extract any email address present on the page.
+</query>
+<result>
+No email address is present in the provided page content.
+</result>
+2025-10-06 15:20:43,182 - INFO - 
+
+2025-10-06 15:20:43,182 - INFO - 📍 Step 8:
+2025-10-06 15:20:43,341 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:43,341 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:20:44,458 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:44,460 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:46,577 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:46,577 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:48,669 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:48,669 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:20:51,804 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:51,805 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:53,888 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:53,888 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:55,969 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:55,970 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:20:57,061 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:57,062 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:20:59,195 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:20:59,195 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:21:02,277 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:02,278 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:04,377 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:04,379 - ERROR - ❌ Result failed 1/4 times:
+ {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 245710, Requested 10617. Please try again in 1.51836s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}
+
+2025-10-06 15:21:08,714 - INFO - 
+
+2025-10-06 15:21:08,715 - INFO - 📍 Step 9:
+2025-10-06 15:21:08,916 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:08,916 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:21:10,013 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:10,014 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:12,107 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:12,107 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:21:15,199 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:15,199 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:17,297 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:17,298 - INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+2025-10-06 15:21:20,423 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:20,424 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:22,534 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:22,536 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:24,638 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:24,639 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:26,722 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:26,722 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:21:27,804 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:27,804 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:29,899 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:29,900 - ERROR - ❌ Result failed 2/4 times:
+ {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 247667, Requested 10742. Please try again in 2.017999999s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}
+
+2025-10-06 15:21:33,468 - INFO - 
+
+2025-10-06 15:21:33,469 - INFO - 📍 Step 10:
+2025-10-06 15:21:33,646 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:33,647 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:35,729 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:35,730 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:37,923 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:37,924 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:40,027 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:40,028 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:42,118 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:42,118 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:44,213 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:44,214 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:46,302 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:46,302 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:48,386 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:48,386 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:21:49,466 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:49,467 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:21:53,690 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:21:53,691 - INFO -   [32m👍 Eval: Previous actions navigated to the Help Center but did not locate the email address; they were partially successful in opening the overlay.[0m
+2025-10-06 15:21:53,691 - INFO -   [34m🎯 Next goal: Open the "Contacting the local tour provider" article (index 126) and then extract the email address from the article content.[0m
+2025-10-06 15:21:53,692 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 126, while_holding_ctrl: None
+2025-10-06 15:21:55,264 - INFO - 🖱️ Clicked element
+2025-10-06 15:21:59,351 - INFO - 
+
+2025-10-06 15:21:59,351 - INFO - 📍 Step 11:
+2025-10-06 15:21:59,520 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:21:59,521 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:22:01,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:22:01,618 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:22:02,741 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:22:02,742 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:22:04,830 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:22:04,831 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:22:06,934 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:22:06,935 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:22:09,029 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:22:09,030 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:22:13,991 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:22:13,995 - INFO -   [32m👍 Eval: Clicked the 'Contacting the local tour provider' article (index 126); no email address was found. Verdict: Partial success.[0m
+2025-10-06 15:22:13,995 - INFO -   [34m🎯 Next goal: Click the 'About Viator' link (index 79) to open the About page where the email address may be listed.[0m
+2025-10-06 15:22:13,996 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Viator Email Retrieval Task\n\n## Steps\n- [ ] Click About Viator link (index 79)\n- [
+2025-10-06 15:22:14,065 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 15:22:17,716 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 79, while_holding_ctrl: None
+2025-10-06 15:22:19,432 - INFO - 🖱️ Clicked element
+2025-10-06 15:22:22,264 - INFO - 
+
+2025-10-06 15:22:22,264 - INFO - 📍 Step 12:
+2025-10-06 15:22:23,882 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:22:23,885 - INFO -   [32m👍 Eval: Success: The About page was opened and the email address is visible in the page content.[0m
+2025-10-06 15:22:23,887 - INFO -   [34m🎯 Next goal: Return the found email address to the user and finish the task.[0m
+2025-10-06 15:22:23,887 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Viators email address is CSEU@Viator.com., success: True, files_to_display: []
+2025-10-06 15:22:23,958 - INFO - 
+📄 [32m Final Result:[0m 
+Viator's email address is CSEU@Viator.com.
+
+
+2025-10-06 15:22:23,964 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=cbd7eb86-ea68-4078-8c59-15275095eb37
+Session created with CAPTCHA solver and proxy: cbd7eb86-ea68-4078-8c59-15275095eb37
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.viator.com', extracted_content='🔗 Navigated to https://www.viator.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://www.viator.com/\n</url>\n<query>\nWhat is Viator's email address?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>", extracted_content="<url>\nhttps://www.viator.com/\n</url>\n<query>\nWhat is Viator's email address?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 222.0, 'click_y': 648.515625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://www.viator.com/\n</url>\n<query>\nWhat is Viator's email address?\n</query>\n<result>\nThe webpage does not provide Viator’s email address.\n</result>", extracted_content="<url>\nhttps://www.viator.com/\n</url>\n<query>\nWhat is Viator's email address?\n</query>\n<result>\nThe webpage does not provide Viator’s email address.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='{"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 247938, Requested 9799. Please try again in 1.856879999s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}\n', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1237.5, 'click_y': 467.359375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='{"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 247351, Requested 10164. Please try again in 1.80352s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}\n', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'email' into element 103.", extracted_content="Input 'email' into element 103.", include_extracted_content_only_once=False, metadata={'input_x': 1254.5, 'input_y': 183.796875}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.viator.com/\n</url>\n<query>\nExtract any email address present on the page.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.viator.com/\n</url>\n<query>\nExtract any email address present on the page.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='{"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 245710, Requested 10617. Please try again in 1.51836s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}\n', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='{"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01hwqj49qdeyrv4mkj7d7h8fa5` service tier `on_demand` on tokens per minute (TPM): Limit 250000, Used 247667, Requested 10742. Please try again in 2.017999999s. Need more tokens? Visit https://groq.com/self-serve-support/ to request higher limits.","type":"tokens","code":"rate_limit_exceeded"}}\n', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1205.15625, 'click_y': 515.109375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 222.0, 'click_y': 752.515625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory="Task completed: True - Viator's email address is CSEU@Viator.com.", extracted_content="Viator's email address is CSEU@Viator.com.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.viator.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': "What is Viator's email address?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 83}, 'interacted_element': DOMInteractedElement(node_id=3653, backend_node_id=1330, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'button', 'class': 'footerLink__ryvy buttonLink__pPie'}, bounds=DOMRect(x=78.5, y=634.515625, width=287.0, height=28.0), x_path='html/body/div[1]/div[2]/footer/div/div/div/div/div/div[3]/button', element_hash=1936420339815869013)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': "What is Viator's email address?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': "What is Viator's email address?", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 106}, 'interacted_element': DOMInteractedElement(node_id=11337, backend_node_id=4357, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'hc-faq__collapsed-see-all-button', 'type': 'button'}, bounds=DOMRect(x=1087.0, y=447.359375, width=301.0, height=40.0), x_path='html/body/div[1]/hc-help-shell/div/div/div[2]/div[1]/hc-faq/div/div/section/div[3]/div/button', element_hash=8672295473866801547)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 106}, 'interacted_element': DOMInteractedElement(node_id=13989, backend_node_id=5537, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={}, bounds=DOMRect(x=1066.0, y=265.1875, width=179.109375, height=18.0), x_path='html/body/div[1]/hc-help-shell/div/div/div[2]/div[1]/hc-faq/div/div/section/div[4]/elevio-element/div/div[2]/div[1]/div/div', element_hash=2119616425621499014)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'input_text': {'index': 103, 'text': 'email', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=16734, backend_node_id=5426, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'id': '_elev_io_placebo', 'type': 'search', 'name': 'search-input', 'aria-label': 'Search', 'placeholder': 'Search for help', 'value': '', 'autocomplete': 'off', 'tabindex': '-1', 'class': '_1gzja _jta9z _elevio_search_input'}, bounds=DOMRect(x=1101.0, y=157.0, width=307.0, height=53.59375), x_path='html/body/div[1]/hc-help-shell/div/div/div[2]/div[1]/hc-faq/div/div/section/div[3]/elevio-element/span/div[1]/input', element_hash=271724684458818043)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Extract any email address present on the page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 103, 'text': 'email', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=19506, backend_node_id=5426, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'id': '_elev_io_placebo', 'type': 'search', 'name': 'search-input', 'aria-label': 'Search', 'placeholder': 'Search for help', 'value': 'email', 'autocomplete': 'off', 'tabindex': '-1', 'class': '_1gzja _jta9z _elevio_search_input'}, bounds=DOMRect(x=1101.0, y=157.0, width=307.0, height=53.59375), x_path='html/body/div[1]/hc-help-shell/div/div/div[2]/div[1]/hc-faq/div/div/section/div[3]/elevio-element/span/div[1]/input', element_hash=271724684458818043)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Extract any email address present on the page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 103, 'text': 'email', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=22316, backend_node_id=5426, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'id': '_elev_io_placebo', 'type': 'search', 'name': 'search-input', 'aria-label': 'Search', 'placeholder': 'Search for help', 'value': 'email', 'autocomplete': 'off', 'tabindex': '-1', 'class': '_1gzja _jta9z _elevio_search_input'}, bounds=DOMRect(x=1101.0, y=157.0, width=307.0, height=53.59375), x_path='html/body/div[1]/hc-help-shell/div/div/div[2]/div[1]/hc-faq/div/div/section/div[3]/elevio-element/span/div[1]/input', element_hash=271724684458818043)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Extract any email address present on the page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 126}, 'interacted_element': DOMInteractedElement(node_id=25176, backend_node_id=6497, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={}, bounds=DOMRect(x=1086.0, y=506.109375, width=238.3125, height=18.0), x_path='html/body/div[1]/hc-help-shell/div/div/div[2]/div[1]/hc-faq/div/div/section/div[3]/elevio-element/span/div[2]/div/div/div[9]/div/div', element_hash=4057269463788016256)}, {'write_file': {'file_name': 'todo.md', 'content': '# Viator Email Retrieval Task\n\n## Steps\n- [ ] Click About Viator link (index 79)\n- [ ] Extract email address from About page\n- [ ] Return result', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 79}, 'interacted_element': DOMInteractedElement(node_id=27830, backend_node_id=1332, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'data-automation': 'about-viator-link', 'href': '/support/about', 'class': 'footerLink__ryvy'}, bounds=DOMRect(x=78.5, y=738.515625, width=287.0, height=28.0), x_path='html/body/div[1]/div[2]/footer/div/div/div/div/div/div[3]/a[2]', element_hash=163943022438441232)}, {'done': {'text': "Viator's email address is CSEU@Viator.com.", 'success': True, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 15:22:26,414 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/cbd7eb86-ea68-4078-8c59-15275095eb37 "HTTP/1.1 200 OK"
+2025-10-06 15:22:26,533 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/cbd7eb86-ea68-4078-8c59-15275095eb37/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/cbd7eb86-ea68-4078-8c59-15275095eb37/recordings/bb6e60fd-0a40-482e-af5d-2d4e56bd9f84/fetch

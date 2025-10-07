@@ -1,0 +1,242 @@
+2025-10-06 18:53:02,749 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 18:53:02,765 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 18:53:02,781 - INFO - 🔗 Found URL in task: https://www.telegraph.co.uk/us, adding as initial action...
+2025-10-06 18:53:02,785 - INFO - [34m🚀 Task: When did the Daily Telegraph paper move from The Strand to 135 Fleet Street? You must complete the task only using the starting website. Begin task on the following url: https://www.telegraph.co.uk/us[0m
+2025-10-06 18:53:02,824 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 18:53:02,830 - INFO - ────────────────────────────────────────
+2025-10-06 18:53:02,830 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 18:53:02,830 - INFO -     👉  browser-use auth
+2025-10-06 18:53:02,830 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 18:53:02,830 - INFO - ────────────────────────────────────────
+
+2025-10-06 18:53:03,042 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 18:53:03,082 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=4a0b35e2-b0e8-4b2f-a7c0-467c3e288182
+2025-10-06 18:53:04,933 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.telegraph.co.uk/us, new_tab: False
+2025-10-06 18:53:07,239 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/us
+2025-10-06 18:53:14,979 - INFO - 
+
+2025-10-06 18:53:14,980 - INFO - 📍 Step 1:
+2025-10-06 18:53:16,212 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:53:16,217 - INFO -   ❔ Eval: Previous step only loaded the initial URL; no action taken yet.
+2025-10-06 18:53:16,217 - INFO -   [34m🎯 Next goal: Open the site search by clicking the search link (index 20).[0m
+2025-10-06 18:53:16,217 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:53:21,378 - INFO - 🖱️ Clicked element
+2025-10-06 18:53:25,373 - INFO - 
+
+2025-10-06 18:53:25,373 - INFO - 📍 Step 2:
+2025-10-06 18:53:26,842 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:53:26,844 - INFO -   [32m👍 Eval: Previous step opened the search page but no query was entered. Verdict: Success (search page ready).[0m
+2025-10-06 18:53:26,844 - INFO -   [34m🎯 Next goal: Enter a query about the Telegraph moving from The Strand to 135 Fleet Street and submit the search.[0m
+2025-10-06 18:53:26,845 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: Telegraph moved from The Strand to 135 Fleet Street, clear_existing: True
+2025-10-06 18:53:40,012 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:53:40,014 - INFO - ⌨️ Typed "Telegraph moved from The Strand to 135 Fleet Street" into element with index 19
+2025-10-06 18:53:42,295 - INFO - Something new appeared after action 1 / 2: actions click_element_by_index were not executed
+2025-10-06 18:53:45,711 - INFO - 
+
+2025-10-06 18:53:45,711 - INFO - 📍 Step 3:
+2025-10-06 18:53:47,377 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:53:47,379 - INFO -   [32m👍 Eval: Partial success: query text entered but search not submitted.[0m
+2025-10-06 18:53:47,379 - INFO -   [34m🎯 Next goal: Click the Search button to run the query and load the results page.[0m
+2025-10-06 18:53:47,380 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:53:49,099 - INFO - 🖱️ Clicked element
+2025-10-06 18:53:49,600 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-06 18:53:49,671 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 18:53:52,727 - INFO - 
+
+2025-10-06 18:53:52,727 - INFO - 📍 Step 4:
+2025-10-06 18:53:54,138 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:53:54,139 - INFO -   [32m👍 Eval: Partial success: query entered and search button clicked, results page loaded but relevant info not yet found.[0m
+2025-10-06 18:53:54,140 - INFO -   [34m🎯 Next goal: Extract the date of the move from the search results page using extract_structured_data.[0m
+2025-10-06 18:53:54,140 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: When did the Daily Telegraph move from The Strand to 135 Fleet Street?, extract_links: False, sta
+2025-10-06 18:53:55,456 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:53:55,529 - INFO - 📄 <url>
+https://www.telegraph.co.uk/search/
+</url>
+<query>
+When did the Daily Telegraph move from The Strand to 135 Fleet Street?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-06 18:53:59,010 - INFO - 
+
+2025-10-06 18:53:59,011 - INFO - 📍 Step 5:
+2025-10-06 18:54:00,827 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:54:00,829 - INFO -   ❔ Eval: Previous step partially succeeded: query entered and search button clicked, but no relevant info found.
+2025-10-06 18:54:00,829 - INFO -   [34m🎯 Next goal: Enter a new search query about the Telegraph move date and submit the search.[0m
+2025-10-06 18:54:00,830 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: Telegraph move to 135 Fleet Street date, clear_existing: True
+2025-10-06 18:54:11,112 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:54:11,113 - INFO - ⌨️ Typed "Telegraph move to 135 Fleet Street date" into element with index 19
+2025-10-06 18:54:13,994 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:54:15,940 - INFO - 🖱️ Clicked element
+2025-10-06 18:54:21,746 - INFO - 
+
+2025-10-06 18:54:21,746 - INFO - 📍 Step 6:
+2025-10-06 18:54:23,149 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:54:23,151 - INFO -   ❔ Eval: Previous step partially succeeded: new query entered but search not submitted, so no results yet.
+2025-10-06 18:54:23,151 - INFO -   [34m🎯 Next goal: Enter a new search query "135 Fleet Street Telegraph" and submit it to retrieve relevant articles.[0m
+2025-10-06 18:54:23,151 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: 135 Fleet Street Telegraph, clear_existing: True
+2025-10-06 18:54:30,590 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:54:30,591 - INFO - ⌨️ Typed "135 Fleet Street Telegraph" into element with index 19
+2025-10-06 18:54:33,615 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:54:35,430 - INFO - 🖱️ Clicked element
+2025-10-06 18:54:38,956 - INFO - 
+
+2025-10-06 18:54:38,956 - INFO - 📍 Step 7:
+2025-10-06 18:54:40,771 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:54:40,774 - INFO -   [32m👍 Eval: Previous step entered a query but did not submit; search not executed. Verdict: Partial success.[0m
+2025-10-06 18:54:40,774 - INFO -   [34m🎯 Next goal: Enter a new concise search query "Telegraph moved to 135 Fleet Street" into element 19 and click the search button (index 20) to retrieve relevant results.[0m
+2025-10-06 18:54:40,775 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: Telegraph moved to 135 Fleet Street, clear_existing: True
+2025-10-06 18:54:50,422 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:54:50,422 - INFO - ⌨️ Typed "Telegraph moved to 135 Fleet Street" into element with index 19
+2025-10-06 18:54:53,752 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:54:55,453 - INFO - 🖱️ Clicked element
+2025-10-06 18:54:59,104 - INFO - 
+
+2025-10-06 18:54:59,104 - INFO - 📍 Step 8:
+2025-10-06 18:55:00,626 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:55:00,628 - INFO -   ❔ Eval: Previous attempt did not yield results; need a new query.
+2025-10-06 18:55:00,629 - INFO -   [34m🎯 Next goal: Enter a new search query "Telegraph headquarters Fleet Street" into element 19 and click the search button (20) to retrieve relevant results.[0m
+2025-10-06 18:55:00,630 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: Telegraph headquarters Fleet Street, clear_existing: True
+2025-10-06 18:55:09,645 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:55:09,645 - INFO - ⌨️ Typed "Telegraph headquarters Fleet Street" into element with index 19
+2025-10-06 18:55:12,891 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:55:14,487 - INFO - 🖱️ Clicked element
+2025-10-06 18:55:17,955 - INFO - 
+
+2025-10-06 18:55:17,955 - INFO - 📍 Step 9:
+2025-10-06 18:55:19,553 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:55:19,555 - INFO -   [32m👍 Eval: Previous step entered a query but did not submit; search not executed. Verdict: Partial success.[0m
+2025-10-06 18:55:19,556 - INFO -   [34m🎯 Next goal: Enter a broader search query "135 Fleet Street" into element 19 and click the search button (index 20) to retrieve any relevant articles.[0m
+2025-10-06 18:55:19,557 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: 135 Fleet Street, clear_existing: True
+2025-10-06 18:55:24,116 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:55:24,117 - INFO - ⌨️ Typed "135 Fleet Street" into element with index 19
+2025-10-06 18:55:27,224 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:55:28,811 - INFO - 🖱️ Clicked element
+2025-10-06 18:55:32,546 - INFO - 
+
+2025-10-06 18:55:32,546 - INFO - 📍 Step 10:
+2025-10-06 18:55:34,171 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:55:34,173 - INFO -   [32m👍 Eval: Previous step entered a query but did not submit; search not executed. Verdict: Partial success.[0m
+2025-10-06 18:55:34,173 - INFO -   [34m🎯 Next goal: Enter a broader search query "Telegraph Strand" into element 19 and click the search button (index 20) to retrieve any relevant results.[0m
+2025-10-06 18:55:34,174 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: Telegraph Strand, clear_existing: True
+2025-10-06 18:55:38,501 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:55:38,501 - INFO - ⌨️ Typed "Telegraph Strand" into element with index 19
+2025-10-06 18:55:42,257 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:55:43,949 - INFO - 🖱️ Clicked element
+2025-10-06 18:55:48,804 - INFO - 
+
+2025-10-06 18:55:48,804 - INFO - 📍 Step 11:
+2025-10-06 18:55:50,527 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:55:50,529 - INFO -   ❔ Eval: Previous attempts failed to retrieve relevant results; need a new query.
+2025-10-06 18:55:50,529 - INFO -   [34m🎯 Next goal: Enter query "Telegraph Fleet Street move" into element 19 and click search button 20.[0m
+2025-10-06 18:55:50,530 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: Telegraph Fleet Street move, clear_existing: True
+2025-10-06 18:55:57,146 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:55:57,147 - INFO - ⌨️ Typed "Telegraph Fleet Street move" into element with index 19
+2025-10-06 18:56:00,726 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:56:02,331 - INFO - 🖱️ Clicked element
+2025-10-06 18:56:06,105 - INFO - 
+
+2025-10-06 18:56:06,105 - INFO - 📍 Step 12:
+2025-10-06 18:56:08,192 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:08,193 - INFO -   ❔ Eval: Previous attempts to search for move information failed; no results were found.
+2025-10-06 18:56:08,193 - INFO -   [34m🎯 Next goal: Enter the query "The Strand Telegraph" into element 19 and click the search button (index 20) to retrieve any relevant results.[0m
+2025-10-06 18:56:08,194 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 19, text: The Strand Telegraph, clear_existing: True
+2025-10-06 18:56:13,186 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:56:13,186 - INFO - ⌨️ Typed "The Strand Telegraph" into element with index 19
+2025-10-06 18:56:16,472 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 18:56:18,021 - INFO - 🖱️ Clicked element
+2025-10-06 18:56:21,654 - INFO - 
+
+2025-10-06 18:56:21,655 - INFO - 📍 Step 13:
+2025-10-06 18:56:23,617 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:23,618 - INFO -   [32m👍 Eval: Previous attempts to find the move date via search queries were unsuccessful; no relevant results were found.[0m
+2025-10-06 18:56:23,618 - INFO -   [34m🎯 Next goal: Click the 'About us' link (index 110) to navigate to the newspaper's history page where the move date may be found.[0m
+2025-10-06 18:56:23,618 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 110, while_holding_ctrl: None
+2025-10-06 18:56:24,094 - WARNING - No visible quad found, using first quad
+2025-10-06 18:56:25,191 - INFO - 🖱️ Clicked element
+2025-10-06 18:56:28,354 - INFO - 
+
+2025-10-06 18:56:28,354 - INFO - 📍 Step 14:
+2025-10-06 18:56:30,400 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:30,402 - INFO -   ❔ Eval: Uncertain – clicked 'About us' but have not confirmed the new page content yet.
+2025-10-06 18:56:30,402 - INFO -   [34m🎯 Next goal: Wait for the About us page to load, then extract the date of the move from The Strand to 135 Fleet Street.[0m
+2025-10-06 18:56:30,403 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-06 18:56:30,472 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 18:56:30,973 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When did the Daily Telegraph move from The Strand to 135 Fleet Street?, extract_links: False, sta
+2025-10-06 18:56:32,258 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:32,327 - INFO - 📄 <url>
+https://www.telegraph.co.uk/search/?q=The+Strand+Telegraph
+</url>
+<query>
+When did the Daily Telegraph move from The Strand to 135 Fleet Street?
+</query>
+<result>
+Information not available in the provided page.
+</result>
+2025-10-06 18:56:35,517 - INFO - 
+
+2025-10-06 18:56:35,518 - INFO - 📍 Step 15:
+2025-10-06 18:56:37,835 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:37,836 - INFO -   ❔ Eval: Previous attempts to search within the site failed to locate the move date; no relevant information was found.
+2025-10-06 18:56:37,837 - INFO -   [34m🎯 Next goal: Navigate to the Telegraph About Us page and extract the date of the move from The Strand to 135 Fleet Street.[0m
+2025-10-06 18:56:37,837 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.telegraph.co.uk/about-us/, new_tab: False
+2025-10-06 18:56:40,182 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/about-us/
+2025-10-06 18:56:40,684 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When did the Daily Telegraph move from The Strand to 135 Fleet Street?, extract_links: False, sta
+2025-10-06 18:56:41,571 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:41,641 - INFO - 📄 <url>
+https://telegraphmediagroup.com/about-us/
+</url>
+<query>
+When did the Daily Telegraph move from The Strand to 135 Fleet Street?
+</query>
+<result>
+1860
+</result>
+2025-10-06 18:56:44,694 - INFO - 
+
+2025-10-06 18:56:44,694 - INFO - 📍 Step 16:
+2025-10-06 18:56:46,342 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:46,343 - INFO -   [32m👍 Eval: Previous step successfully navigated to the About Us page and extracted a tentative answer (1860) but did not verify the context.[0m
+2025-10-06 18:56:46,343 - INFO -   [34m🎯 Next goal: Scroll down to reveal more content and then extract the specific sentence about the move date.[0m
+2025-10-06 18:56:46,344 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-06 18:56:47,767 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)
+2025-10-06 18:56:48,269 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When did The Daily Telegraph move from The Strand to 135 Fleet Street? Provide the year mentioned in
+2025-10-06 18:56:49,061 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:49,133 - INFO - 📄 <url>
+https://telegraphmediagroup.com/about-us/
+</url>
+<query>
+When did The Daily Telegraph move from The Strand to 135 Fleet Street? Provide the year mentioned in the page.
+</query>
+<result>
+1860
+</result>
+2025-10-06 18:56:51,829 - INFO - 
+
+2025-10-06 18:56:51,829 - INFO - 📍 Step 17:
+2025-10-06 18:56:53,400 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:56:53,402 - INFO -   [32m👍 Eval: Success – the scroll revealed the historical timeline containing the move date (1860).[0m
+2025-10-06 18:56:53,402 - INFO -   [34m🎯 Next goal: Task completed; provide the answer to the user.[0m
+2025-10-06 18:56:53,402 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The Daily Telegraph moved from The Strand to 135 Fleet Street in **1860**., success: True, files_to_display: []
+2025-10-06 18:56:53,469 - INFO - 
+📄 [32m Final Result:[0m 
+The Daily Telegraph moved from The Strand to 135 Fleet Street in **1860**.
+
+
+2025-10-06 18:56:53,474 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=4a0b35e2-b0e8-4b2f-a7c0-467c3e288182
+Session created with CAPTCHA solver and proxy: 4a0b35e2-b0e8-4b2f-a7c0-467c3e288182
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.telegraph.co.uk/us', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1045.640625, 'click_y': 117.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph moved from The Strand to 135 Fleet Street' into element 19.", extracted_content="Input 'Telegraph moved from The Strand to 135 Fleet Street' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.telegraph.co.uk/search/\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.telegraph.co.uk/search/\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph move to 135 Fleet Street date' into element 19.", extracted_content="Input 'Telegraph move to 135 Fleet Street date' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input '135 Fleet Street Telegraph' into element 19.", extracted_content="Input '135 Fleet Street Telegraph' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph moved to 135 Fleet Street' into element 19.", extracted_content="Input 'Telegraph moved to 135 Fleet Street' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph headquarters Fleet Street' into element 19.", extracted_content="Input 'Telegraph headquarters Fleet Street' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input '135 Fleet Street' into element 19.", extracted_content="Input '135 Fleet Street' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph Strand' into element 19.", extracted_content="Input 'Telegraph Strand' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph Fleet Street move' into element 19.", extracted_content="Input 'Telegraph Fleet Street move' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'The Strand Telegraph' into element 19.", extracted_content="Input 'The Strand Telegraph' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1135.3671875, 'click_y': 240.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 713.2265625, 'click_y': 899, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.telegraph.co.uk/search/?q=The+Strand+Telegraph\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\nInformation not available in the provided page.\n</result>', extracted_content='<url>\nhttps://www.telegraph.co.uk/search/?q=The+Strand+Telegraph\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\nInformation not available in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/about-us/', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/about-us/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://telegraphmediagroup.com/about-us/\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\n1860\n</result>', extracted_content='<url>\nhttps://telegraphmediagroup.com/about-us/\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\n1860\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://telegraphmediagroup.com/about-us/\n</url>\n<query>\nWhen did The Daily Telegraph move from The Strand to 135 Fleet Street? Provide the year mentioned in the page.\n</query>\n<result>\n1860\n</result>', extracted_content='<url>\nhttps://telegraphmediagroup.com/about-us/\n</url>\n<query>\nWhen did The Daily Telegraph move from The Strand to 135 Fleet Street? Provide the year mentioned in the page.\n</query>\n<result>\n1860\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The Daily Telegraph moved from The Strand to 135 Fleet Street in **1860**.', extracted_content='The Daily Telegraph moved from The Strand to 135 Fleet Street in **1860**.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.telegraph.co.uk/us', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=328, backend_node_id=1123, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/search/', 'class': 'e-site-header-button__link', 'aria-label': 'Search The Telegraph', 'data-test': 'site-header-search-link'}, bounds=DOMRect(x=1015.140625, y=344.0, width=61.0, height=64.0), x_path='html/body/div[1]/header/div/div/div[4]/div[1]/a', element_hash=6521141979943205417)}, {'input_text': {'index': 19, 'text': 'Telegraph moved from The Strand to 135 Fleet Street', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=941, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': ''}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=949, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_searchBtn_mtln6_35', 'disabled': ''}, bounds=DOMRect(x=1082.25, y=223.0, width=106.234375, height=34.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=1153615984958325019)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=4162, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_searchBtn_mtln6_35'}, bounds=DOMRect(x=1082.25, y=223.0, width=106.234375, height=34.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=1885458410111050687)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 19, 'text': 'Telegraph move to 135 Fleet Street date', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=7456, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph moved from The Strand to 135 Fleet Street'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=7461, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_searchBtn_mtln6_35'}, bounds=DOMRect(x=1082.25, y=223.0, width=106.234375, height=34.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=1885458410111050687)}, {'input_text': {'index': 19, 'text': '135 Fleet Street Telegraph', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=10596, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph move to 135 Fleet Street date'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=10601, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'input_text': {'index': 19, 'text': 'Telegraph moved to 135 Fleet Street', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=14467, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': '135 Fleet Street Telegraph'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=14472, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'input_text': {'index': 19, 'text': 'Telegraph headquarters Fleet Street', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=18340, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph moved to 135 Fleet Street'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=18345, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'input_text': {'index': 19, 'text': '135 Fleet Street', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=22217, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph headquarters Fleet Street'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=22222, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'input_text': {'index': 19, 'text': 'Telegraph Strand', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=26098, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': '135 Fleet Street'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=26103, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'input_text': {'index': 19, 'text': 'Telegraph Fleet Street move', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=29983, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph Strand'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=29988, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'input_text': {'index': 19, 'text': 'The Strand Telegraph', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=33872, backend_node_id=9998, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph Fleet Street move'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=33877, backend_node_id=10004, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'click_element_by_index': {'index': 110}, 'interacted_element': DOMInteractedElement(node_id=38534, backend_node_id=10461, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'site-footer__navigation-link', 'href': 'https://telegraphmediagroup.com/about-us/', 'data-track-txt': ''}, bounds=DOMRect(x=586.578125, y=1554.046875, width=253.296875, height=16.0), x_path='html/body/footer/div[2]/div/nav/ul/li[11]/a', element_hash=6659540449076254170)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/about-us/', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did The Daily Telegraph move from The Strand to 135 Fleet Street? Provide the year mentioned in the page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The Daily Telegraph moved from The Strand to 135 Fleet Street in **1860**.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 18:56:56,144 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/4a0b35e2-b0e8-4b2f-a7c0-467c3e288182 "HTTP/1.1 200 OK"
+2025-10-06 18:56:56,299 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/4a0b35e2-b0e8-4b2f-a7c0-467c3e288182/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/4a0b35e2-b0e8-4b2f-a7c0-467c3e288182/recordings/1dff06ca-d4b7-4082-b8e3-ba307d6d148f/fetch

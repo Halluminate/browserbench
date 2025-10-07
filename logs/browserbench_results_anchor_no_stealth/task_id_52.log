@@ -1,0 +1,99 @@
+2025-10-06 15:45:27,205 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 15:45:27,221 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 15:45:27,238 - INFO - 🔗 Found URL in task: https://discover.hubpages.com/, adding as initial action...
+2025-10-06 15:45:27,243 - INFO - [34m🚀 Task: Is HubPages on Facebook? You must complete the task only using the starting website. Begin task on the following url: https://discover.hubpages.com/[0m
+2025-10-06 15:45:27,283 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 15:45:27,291 - INFO - ────────────────────────────────────────
+2025-10-06 15:45:27,291 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 15:45:27,291 - INFO -     👉  browser-use auth
+2025-10-06 15:45:27,291 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 15:45:27,291 - INFO - ────────────────────────────────────────
+
+2025-10-06 15:45:27,492 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 15:45:27,541 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=727f4ce3-32c2-41fc-8d16-dc431ad4b49c
+2025-10-06 15:45:28,941 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://discover.hubpages.com/, new_tab: False
+2025-10-06 15:45:30,148 - INFO - 🔗 Navigated to https://discover.hubpages.com/
+2025-10-06 15:45:33,482 - INFO - 
+
+2025-10-06 15:45:33,482 - INFO - 📍 Step 1:
+2025-10-06 15:45:33,649 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:45:33,650 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:45:35,782 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:45:35,784 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:45:38,326 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:45:38,336 - INFO -   [32m👍 Eval: Successfully navigated to the starting URL and loaded the HubPages discover page. Verdict: Success[0m
+2025-10-06 15:45:38,336 - INFO -   [34m🎯 Next goal: Extract the Facebook link URL from the page to determine if HubPages has a Facebook page.[0m
+2025-10-06 15:45:38,337 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the href URL of the link with aria-label=facebook on this page?, extract_links: True, s
+2025-10-06 15:45:39,707 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:45:39,775 - INFO - 📄 <url>
+https://discover.hubpages.com/
+</url>
+<query>
+What is the href URL of the link with aria-label='facebook' on this page?
+</query>
+<result>
+Information unavailable – the filtered markdown does not contain any link with an aria-label of 'facebook', so the href URL cannot be determined from the provided content.
+</result>
+2025-10-06 15:45:43,522 - INFO - 
+
+2025-10-06 15:45:43,524 - INFO - 📍 Step 2:
+2025-10-06 15:45:45,231 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:45:45,233 - INFO -   ❔ Eval: Failed to obtain the Facebook link URL with the prior query; no href was returned.
+2025-10-06 15:45:45,233 - INFO -   [34m🎯 Next goal: Extract the href URL of element [2] (the Facebook link) from the current page.[0m
+2025-10-06 15:45:45,235 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Provide the href attribute of the <a> element with aria-label=facebook on this page., extract_lin
+2025-10-06 15:45:46,104 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:45:46,105 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:45:47,539 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:45:47,608 - INFO - 📄 <url>
+https://discover.hubpages.com/
+</url>
+<query>
+Provide the href attribute of the <a> element with aria-label='facebook' on this page.
+</query>
+<result>
+Information unavailable: the page content does not contain an <a> element with aria-label='facebook', so its href attribute cannot be provided.
+</result>
+2025-10-06 15:45:51,259 - INFO - 
+
+2025-10-06 15:45:51,259 - INFO - 📍 Step 3:
+2025-10-06 15:45:51,458 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:45:51,458 - INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+2025-10-06 15:45:52,571 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:45:52,572 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:45:56,491 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:45:56,494 - INFO -   [31m⚠️ Eval: Failure – previous extract_structured_data queries did not return the href for the Facebook link.[0m
+2025-10-06 15:45:56,494 - INFO -   [34m🎯 Next goal: Execute JavaScript to get the href attribute of the element with aria-label='facebook' and capture the result.[0m
+2025-10-06 15:45:56,494 - INFO -   🦾 [34m[ACTION 1/1][0m execute_js: code: (function() try  var el = document.querySelector(\a[aria-label=facebook]\); return el ? el.href : \not found
+2025-10-06 15:45:56,760 - INFO - Code: (function(){ try { var el = document.querySelector('a[aria-label="facebook"]'); return el ? el.href : 'not found'; } catch(e){ return 'error: '+e.message; } })()
+
+Result: https://www.facebook.com/discover.hubpages
+2025-10-06 15:46:00,373 - INFO - 
+
+2025-10-06 15:46:00,373 - INFO - 📍 Step 4:
+2025-10-06 15:46:00,559 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-10-06 15:46:00,560 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-10-06 15:46:03,779 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 15:46:03,780 - INFO -   [32m👍 Eval: Successfully retrieved the Facebook link URL via JavaScript. Verdict: Success[0m
+2025-10-06 15:46:03,780 - INFO -   [34m🎯 Next goal: Provide the answer to the user confirming HubPages' Facebook presence and include the URL.[0m
+2025-10-06 15:46:03,780 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, HubPages is on Facebook. Their Facebook page can be found at https://www.facebook.com/discover.hubpages, success:
+2025-10-06 15:46:03,846 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, HubPages is on Facebook. Their Facebook page can be found at https://www.facebook.com/discover.hubpages
+
+
+2025-10-06 15:46:03,848 - INFO - ✅ Task completed successfully
+2025-10-06 15:46:06,632 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/727f4ce3-32c2-41fc-8d16-dc431ad4b49c "HTTP/1.1 200 OK"
+2025-10-06 15:46:06,756 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/727f4ce3-32c2-41fc-8d16-dc431ad4b49c/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=727f4ce3-32c2-41fc-8d16-dc431ad4b49c
+Session created with CAPTCHA solver and proxy: 727f4ce3-32c2-41fc-8d16-dc431ad4b49c
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://discover.hubpages.com/', extracted_content='🔗 Navigated to https://discover.hubpages.com/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://discover.hubpages.com/\n</url>\n<query>\nWhat is the href URL of the link with aria-label='facebook' on this page?\n</query>\n<result>\nInformation unavailable – the filtered markdown does not contain any link with an\u202faria-label\u202fof\u202f'facebook', so the href URL cannot be determined from the provided content.\n</result>", extracted_content="<url>\nhttps://discover.hubpages.com/\n</url>\n<query>\nWhat is the href URL of the link with aria-label='facebook' on this page?\n</query>\n<result>\nInformation unavailable – the filtered markdown does not contain any link with an\u202faria-label\u202fof\u202f'facebook', so the href URL cannot be determined from the provided content.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://discover.hubpages.com/\n</url>\n<query>\nProvide the href attribute of the <a> element with aria-label='facebook' on this page.\n</query>\n<result>\nInformation unavailable: the page content does not contain an\u202f<a>\u202felement with\u202faria-label='facebook', so its\u202fhref\u202fattribute cannot be provided.\n</result>", extracted_content="<url>\nhttps://discover.hubpages.com/\n</url>\n<query>\nProvide the href attribute of the <a> element with aria-label='facebook' on this page.\n</query>\n<result>\nInformation unavailable: the page content does not contain an\u202f<a>\u202felement with\u202faria-label='facebook', so its\u202fhref\u202fattribute cannot be provided.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Code: (function(){ try { var el = document.querySelector(\'a[aria-label="facebook"]\'); return el ? el.href : \'not found\'; } catch(e){ return \'error: \'+e.message; } })()\n\nResult: https://www.facebook.com/discover.hubpages', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, HubPages is on Facebook. Their Facebook page can be found at https://www.facebook.com/discover. - 8 more characters', extracted_content='Yes, HubPages is on Facebook. Their Facebook page can be found at https://www.facebook.com/discover.hubpages', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://discover.hubpages.com/', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': "What is the href URL of the link with aria-label='facebook' on this page?", 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': "Provide the href attribute of the <a> element with aria-label='facebook' on this page.", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'execute_js': {'code': '(function(){ try { var el = document.querySelector(\'a[aria-label="facebook"]\'); return el ? el.href : \'not found\'; } catch(e){ return \'error: \'+e.message; } })()'}, 'interacted_element': None}, {'done': {'text': 'Yes, HubPages is on Facebook. Their Facebook page can be found at https://www.facebook.com/discover.hubpages', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/727f4ce3-32c2-41fc-8d16-dc431ad4b49c/recordings/2bd787bd-ba65-4792-a7bc-da81c563c8a6/fetch

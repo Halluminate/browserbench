@@ -1,0 +1,192 @@
+2025-10-06 19:45:31,155 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 19:45:31,170 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 19:45:31,187 - INFO - 🔗 Found URL in task: https://www.dw.com, adding as initial action...
+2025-10-06 19:45:31,192 - INFO - [34m🚀 Task: What is the posted date of the DW Freedom of Speech Award? You must complete the task only using the starting website. Begin task on the following url: www.dw.com[0m
+2025-10-06 19:45:31,251 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 19:45:31,260 - INFO - ────────────────────────────────────────
+2025-10-06 19:45:31,260 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 19:45:31,260 - INFO -     👉  browser-use auth
+2025-10-06 19:45:31,260 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 19:45:31,260 - INFO - ────────────────────────────────────────
+
+2025-10-06 19:45:31,469 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 19:45:31,509 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=591d797f-3076-4470-bcda-8abf9df1d9b9
+2025-10-06 19:45:32,926 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dw.com, new_tab: False
+2025-10-06 19:45:34,300 - INFO - 🔗 Navigated to https://www.dw.com
+2025-10-06 19:45:39,598 - INFO - 
+
+2025-10-06 19:45:39,598 - INFO - 📍 Step 1:
+2025-10-06 19:45:40,980 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:45:40,990 - INFO -   [32m👍 Eval: Successfully navigated to https://www.dw.com (initial page load). Verdict: Success[0m
+2025-10-06 19:45:40,990 - INFO -   [34m🎯 Next goal: Open the DW site search field by clicking the search button.[0m
+2025-10-06 19:45:40,990 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 10, while_holding_ctrl: None
+2025-10-06 19:45:42,508 - INFO - 🖱️ Clicked element
+2025-10-06 19:45:46,437 - INFO - 
+
+2025-10-06 19:45:46,438 - INFO - 📍 Step 2:
+2025-10-06 19:45:47,866 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:45:47,866 - INFO -   ❔ Eval: Previous step clicked the cookie 'Agree' button but did not verify if the click succeeded; the page likely still shows the banner. However, we can proceed with a direct search URL.
+2025-10-06 19:45:47,867 - INFO -   [34m🎯 Next goal: Navigate to DW search results for "Freedom of Speech Award".[0m
+2025-10-06 19:45:47,867 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award, new_tab: False
+2025-10-06 19:45:48,995 - INFO - 🔗 Navigated to https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award
+2025-10-06 19:45:51,788 - INFO - 
+
+2025-10-06 19:45:51,789 - INFO - 📍 Step 3:
+2025-10-06 19:45:53,667 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:45:53,668 - INFO -   [32m👍 Eval: Navigated to the DW search results page successfully. Verdict: Success[0m
+2025-10-06 19:45:53,668 - INFO -   [34m🎯 Next goal: Scroll down to view the search results and extract the posted date of the Freedom of Speech Award article.[0m
+2025-10-06 19:45:53,668 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.5, frame_element_index: None
+2025-10-06 19:45:54,811 - INFO - 🔍 Scrolled down the page by 1.5 pages (requested: 1.5, 900px per page)
+2025-10-06 19:45:55,312 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find the article titled Freedom of Speech Award in the search results and provide its posted date.
+2025-10-06 19:45:56,305 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:45:56,373 - INFO - 📄 <url>
+https://www.dw.com/en/search/page-1?q=Freedom%20of%20Speech%20Award
+</url>
+<query>
+Find the article titled 'Freedom of Speech Award' in the search results and provide its posted date.
+</query>
+<result>
+The article titled **“Freedom of Speech Award”** does not appear in the displayed search results. The provided page excerpt lists only the first 20 results, and the requested title is not among them. Therefore, the posted date cannot be retrieved from the available content.
+</result>
+2025-10-06 19:45:59,521 - INFO - 
+
+2025-10-06 19:45:59,521 - INFO - 📍 Step 4:
+2025-10-06 19:46:01,500 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:01,503 - INFO -   ❔ Eval: Previous search did not locate the article; need a refined query.
+2025-10-06 19:46:01,503 - INFO -   [34m🎯 Next goal: Navigate to a refined DW search URL with query "Freedom of Speech Award DW" to locate the article and its posted date.[0m
+2025-10-06 19:46:01,504 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award%20DW, new_tab: False
+2025-10-06 19:46:02,723 - INFO - 🔗 Navigated to https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award%20DW
+2025-10-06 19:46:05,597 - INFO - 
+
+2025-10-06 19:46:05,598 - INFO - 📍 Step 5:
+2025-10-06 19:46:07,108 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:07,109 - INFO -   [32m👍 Eval: Previous step navigated to a refined search URL but did not locate the article; no success in finding the date.[0m
+2025-10-06 19:46:07,109 - INFO -   [34m🎯 Next goal: Click the 'Agree' button to dismiss the cookie consent banner.[0m
+2025-10-06 19:46:07,110 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 11, while_holding_ctrl: None
+2025-10-06 19:46:08,657 - INFO - 🖱️ Clicked element
+2025-10-06 19:46:11,509 - INFO - 
+
+2025-10-06 19:46:11,509 - INFO - 📍 Step 6:
+2025-10-06 19:46:12,953 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-10-06 19:46:12,953 - WARNING - Failed to parse model output: completion returned no choices Expecting value: line 1 column 1 (char 0)
+2025-10-06 19:46:12,954 - ERROR - ❌ Result failed 1/4 times:
+ Error code: 400 - {'error': {'message': "Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'json_validate_failed', 'failed_generation': 'completion returned no choices'}}
+2025-10-06 19:46:15,758 - INFO - 
+
+2025-10-06 19:46:15,758 - INFO - 📍 Step 7:
+2025-10-06 19:46:17,394 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:17,395 - INFO -   ❔ Eval: Previous step attempted to click the cookie consent 'Agree' button but failed due to JSON error; the search page remains with the cookie banner visible.
+2025-10-06 19:46:17,395 - INFO -   [34m🎯 Next goal: Scroll down the search results page by several pages to load more results and look for the article titled "Freedom of Speech Award".[0m
+2025-10-06 19:46:17,395 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 19:46:20,573 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 19:46:23,163 - INFO - 
+
+2025-10-06 19:46:23,164 - INFO - 📍 Step 8:
+2025-10-06 19:46:24,799 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:24,801 - INFO -   ❔ Eval: Previous scroll and attempts did not locate the article; no date found.
+2025-10-06 19:46:24,801 - INFO -   [34m🎯 Next goal: Navigate to a search URL with the exact phrase "Freedom of Speech Award" to locate the article and retrieve its posted date.[0m
+2025-10-06 19:46:24,801 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dw.com/en/search?q=%22Freedom+of+Speech+Award%22, new_tab: False
+2025-10-06 19:46:26,137 - INFO - 🔗 Navigated to https://www.dw.com/en/search?q=%22Freedom+of+Speech+Award%22
+2025-10-06 19:46:28,811 - INFO - 
+
+2025-10-06 19:46:28,811 - INFO - 📍 Step 9:
+2025-10-06 19:46:30,366 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:30,369 - INFO -   ❔ Eval: Previous scroll did not locate the article; still no date found.
+2025-10-06 19:46:30,369 - INFO -   [34m🎯 Next goal: Scroll further down the search results to load more entries, then extract structured data to find the article and its posted date.[0m
+2025-10-06 19:46:30,369 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-06 19:46:36,413 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 900px per page)
+2025-10-06 19:46:36,915 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: List all article titles and their posted dates from the current search results page., extract_links
+2025-10-06 19:46:40,470 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:40,540 - INFO - 📄 Extracted content from https://www.dw.com/en/search/page-1?q=%22Freedom+of+Speech+Award%22 for query: List all article titles and their posted dates from the current search results page.
+Content saved to file system: Extracted content saved to file extracted_content_0.md successfully. and displayed in <read_state>.
+2025-10-06 19:46:43,111 - INFO - 
+
+2025-10-06 19:46:43,111 - INFO - 📍 Step 10:
+2025-10-06 19:46:45,077 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:45,078 - INFO -   [31m⚠️ Eval: Previous step scrolled and extracted recent results but did not locate the target article. Verdict: Failure to find the date.[0m
+2025-10-06 19:46:45,078 - INFO -   [34m🎯 Next goal: Navigate to a later page of the search results (e.g., page-100) for the query "Freedom of Speech Award" and extract the list of article titles and dates to locate the target article.[0m
+2025-10-06 19:46:45,078 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dw.com/en/search/page-100?q=%22Freedom+of+Speech+Award%22, new_tab: False
+2025-10-06 19:46:46,280 - INFO - 🔗 Navigated to https://www.dw.com/en/search/page-100?q=%22Freedom+of+Speech+Award%22
+2025-10-06 19:46:49,071 - INFO - 
+
+2025-10-06 19:46:49,071 - INFO - 📍 Step 11:
+2025-10-06 19:46:51,348 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:51,351 - INFO -   [31m⚠️ Eval: Previous step navigated to page-100 of the search results; no target article found. Verdict: Failure to find date.[0m
+2025-10-06 19:46:51,351 - INFO -   [34m🎯 Next goal: Navigate to a deeper search results page (e.g., page-1000) for the query "Freedom of Speech Award" and extract titles and dates to locate the article.[0m
+2025-10-06 19:46:51,352 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22, new_tab: False
+2025-10-06 19:46:52,579 - INFO - 🔗 Navigated to https://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22
+2025-10-06 19:46:53,079 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: List all article titles and their posted dates from the current search results page., extract_links
+2025-10-06 19:46:53,908 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:53,977 - INFO - 📄 <url>
+https://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22
+</url>
+<query>
+List all article titles and their posted dates from the current search results page.
+</query>
+<result>
+The current page does not contain any article titles or posted dates; therefore this information is unavailable.
+</result>
+2025-10-06 19:46:56,376 - INFO - 
+
+2025-10-06 19:46:56,376 - INFO - 📍 Step 12:
+2025-10-06 19:46:58,213 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:46:58,215 - INFO -   ❔ Eval: Previous attempts to locate the article via search failed; no date found.
+2025-10-06 19:46:58,215 - INFO -   [34m🎯 Next goal: Navigate to a likely article URL https://www.dw.com/en/freedom-of-speech-award and check if the page loads to extract the posted date.[0m
+2025-10-06 19:46:58,216 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dw.com/en/freedom-of-speech-award, new_tab: False
+2025-10-06 19:46:59,365 - INFO - 🔗 Navigated to https://www.dw.com/en/freedom-of-speech-award
+2025-10-06 19:47:01,768 - INFO - 
+
+2025-10-06 19:47:01,768 - INFO - 📍 Step 13:
+2025-10-06 19:47:03,442 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:47:03,444 - INFO -   ❔ Eval: Previous action (scrolling deep pages) did not locate the article; still no date found.
+2025-10-06 19:47:03,444 - INFO -   [34m🎯 Next goal: Open DW search overlay, input "Freedom of Speech Award 2024", and submit to locate the article.[0m
+2025-10-06 19:47:03,444 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 10, while_holding_ctrl: None
+2025-10-06 19:47:04,977 - INFO - 🖱️ Clicked element
+2025-10-06 19:47:07,089 - INFO - Something new appeared after action 1 / 3: actions input_text, click_element_by_index were not executed
+2025-10-06 19:47:09,740 - INFO - 
+
+2025-10-06 19:47:09,740 - INFO - 📍 Step 14:
+2025-10-06 19:47:12,659 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:47:12,660 - INFO -   [31m⚠️ Eval: Previous attempt to open the search overlay and input a query failed (actions not executed). Verdict: Failure[0m
+2025-10-06 19:47:12,660 - INFO -   [34m🎯 Next goal: Enter "Freedom of Speech Award" into the search input (index 14) and click the search button (index 15) to obtain fresh results.[0m
+2025-10-06 19:47:12,660 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 14, text: Freedom of Speech Award, clear_existing: True
+2025-10-06 19:47:18,787 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 19:47:18,787 - INFO - ⌨️ Typed "Freedom of Speech Award" into element with index 14
+2025-10-06 19:47:20,935 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-06 19:47:23,704 - INFO - 
+
+2025-10-06 19:47:23,705 - INFO - 📍 Step 15:
+2025-10-06 19:47:29,651 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:47:29,652 - INFO -   [31m⚠️ Eval: Previous attempt to input the query did not execute the click; the search was not performed. Verdict: Failure[0m
+2025-10-06 19:47:29,652 - INFO -   [34m🎯 Next goal: Select the 'freedom of speech award' suggestion and submit the search to locate the article and its posted date.[0m
+2025-10-06 19:47:29,653 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 16, while_holding_ctrl: None
+2025-10-06 19:47:31,366 - INFO - 🖱️ Clicked element
+2025-10-06 19:47:33,597 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-06 19:47:36,361 - INFO - 
+
+2025-10-06 19:47:36,361 - INFO - 📍 Step 16:
+2025-10-06 19:47:37,991 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:47:37,993 - INFO -   [32m👍 Eval: Success - identified relevant article(s) with posted date.[0m
+2025-10-06 19:47:37,993 - INFO -   [34m🎯 Next goal: Provide the posted date to the user.[0m
+2025-10-06 19:47:37,994 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The DW Freedom of Speech Award article was posted on July 7, 2025., success: True, files_to_display: []
+2025-10-06 19:47:38,065 - INFO - 
+📄 [32m Final Result:[0m 
+The DW Freedom of Speech Award article was posted on July 7, 2025.
+
+
+2025-10-06 19:47:38,067 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=591d797f-3076-4470-bcda-8abf9df1d9b9
+Session created with CAPTCHA solver and proxy: 591d797f-3076-4470-bcda-8abf9df1d9b9
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.dw.com', extracted_content='🔗 Navigated to https://www.dw.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1350.0, 'click_y': 35.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award', extracted_content='🔗 Navigated to https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 1.5 pages (requested: 1.5, 900px per page)', extracted_content='🔍 Scrolled down the page by 1.5 pages (requested: 1.5, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://www.dw.com/en/search/page-1?q=Freedom%20of%20Speech%20Award\n</url>\n<query>\nFind the article titled 'Freedom of Speech Award' in the search results and provide its posted date.\n</query>\n<result>\nThe article titled **“Freedom of Speech Award”** does not appear in the displayed search results. The provided page excerpt lists only the first 20 results, and the requested title is not among them. Therefore, the posted date cannot be retrieved from the available content.\n</result>", extracted_content="<url>\nhttps://www.dw.com/en/search/page-1?q=Freedom%20of%20Speech%20Award\n</url>\n<query>\nFind the article titled 'Freedom of Speech Award' in the search results and provide its posted date.\n</query>\n<result>\nThe article titled **“Freedom of Speech Award”** does not appear in the displayed search results. The provided page excerpt lists only the first 20 results, and the requested title is not among them. Therefore, the posted date cannot be retrieved from the available content.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award%20DW', extracted_content='🔗 Navigated to https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award%20DW', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1005.6015625, 'click_y': 688.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error code: 400 - {\'error\': {\'message\': "Failed to generate JSON. Please adjust your prompt. See \'failed_generation\' for more details.", \'type\': \'invalid_request_error\', \'code\': \'json_validate_failed\', \'failed_generation\': \'completion returned no choices\'}}', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dw.com/en/search?q=%22Freedom+of+Speech+Award%22', extracted_content='🔗 Navigated to https://www.dw.com/en/search?q=%22Freedom+of+Speech+Award%22', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Extracted content from https://www.dw.com/en/search/page-1?q=%22Freedom+of+Speech+Award%22 for query: List all article titles and their posted dates from the current search results page.\nContent saved to file system: Extracted content saved to file extracted_content_0.md successfully. and displayed in <read_state>.', extracted_content="<url>\nhttps://www.dw.com/en/search/page-1?q=%22Freedom+of+Speech+Award%22\n</url>\n<query>\nList all article titles and their posted dates from the current search results page.\n</query>\n<result>\nUS in shutdown impasse as Senate again rejects funding bill – 37\u202fminutes ago  \nGermany news: Merz says Putin waging 'hybrid war' – 5\u202fhours ago  \nOutgoing French premier gets chance to salvage government – 6\u202fhours ago  \nUS: Illinois sues Trump over Chicago troop deployment – 8\u202fhours ago  \nTop stories in 90 seconds – 9\u202fhours ago  \n100 years of the Hindu nationalist RSS movement – 9\u202fhours ago  \nTechZity hub set to crown Lithuania's bustling startup scene – 10\u202fhours ago  \nSudanese warlord guilty of crimes against humanity – 10\u202fhours ago  \nMiddle East updates: Gaza ceasefire talks start in Egypt – 11\u202fhours ago  \nBrazil's Lula asks Trump to lift tariffs in video call – 11\u202fhours ago  \nIsrael presses on with Gaza offensive despite peace talks – 11\u202fhours ago  \nGermany's AfD seeks closer ties with the MAGA movement – 11\u202fhours ago  \nWarsaw's new underground cultural hub: the metro library – 11\u202fhours ago  \nA new therapy for hemophilia is changing kids' lives – 11\u202fhours ago  \n2 years after October\u202f7: What has changed in Germany? – 11\u202fhours ago  \nUkraine updates: Kyiv says ammo plant hit deep inside Russia – 12\u202fhours ago  \nSanae Takaichi: What to Expect from Japan's New 'Iron Lady' – 12\u202fhours ago  \nDarfur militia leader convicted by ICC for war crimes – 13\u202fhours ago  \nWhat's powering gold and bitcoin surges? – 13\u202fhours ago  \nIndia bets big on drones in push for military dominance – 13\u202fhours ago\n</result>", include_extracted_content_only_once=True, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dw.com/en/search/page-100?q=%22Freedom+of+Speech+Award%22', extracted_content='🔗 Navigated to https://www.dw.com/en/search/page-100?q=%22Freedom+of+Speech+Award%22', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22', extracted_content='🔗 Navigated to https://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22\n</url>\n<query>\nList all article titles and their posted dates from the current search results page.\n</query>\n<result>\nThe current page does not contain any article titles or posted dates; therefore this information is unavailable.\n</result>', extracted_content='<url>\nhttps://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22\n</url>\n<query>\nList all article titles and their posted dates from the current search results page.\n</query>\n<result>\nThe current page does not contain any article titles or posted dates; therefore this information is unavailable.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dw.com/en/freedom-of-speech-award', extracted_content='🔗 Navigated to https://www.dw.com/en/freedom-of-speech-award', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1335.0, 'click_y': 35.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 3: actions input_text, click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 3: actions input_text, click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Freedom of Speech Award' into element 14.", extracted_content="Input 'Freedom of Speech Award' into element 14.", include_extracted_content_only_once=False, metadata={'input_x': 682.203125, 'input_y': 151.296875}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 278.9921875, 'click_y': 196.59375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The DW Freedom of Speech Award article was posted on July 7, 2025.', extracted_content='The DW Freedom of Speech Award article was posted on July 7, 2025.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.dw.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=320, backend_node_id=253, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/en/search/page-1', 'title': 'Search DW', 'role': 'button', 'tabindex': '0', 'aria-label': 'Search DW', 'rel': 'nofollow', 'data-tracking-name': 'go-to-search', 'class': 'search-btn b1yws3tm cx4rgdt ih9bob8 sngcpkw w128axg5 b1fzgn0z b1fzgn0z'}, bounds=DOMRect(x=1315.0, y=15.0, width=40.0, height=40.0), x_path='html/body/div/div[4]/div[1]/div[4]/a[2]', element_hash=981239366833807410)}, {'go_to_url': {'url': 'https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.5}, 'interacted_element': None}, {'extract_structured_data': {'query': "Find the article titled 'Freedom of Speech Award' in the search results and provide its posted date.", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dw.com/en/search?q=Freedom%20of%20Speech%20Award%20DW', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 11}, 'interacted_element': DOMInteractedElement(node_id=201, backend_node_id=7277, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'cmpboxbtn cmpboxbtnyes cmptxt_btn_yes', 'role': 'button', 'tabindex': '0', 'href': '#', 'draggable': 'false'}, bounds=DOMRect(x=883.203125, y=665.0, width=244.796875, height=46.0), x_path='html/body/div[1]/div[1]/div[1]/div[2]/span[2]/a', element_hash=1879574113422168418)}, {'click_element_by_index': {'index': 11}, 'interacted_element': DOMInteractedElement(node_id=1680, backend_node_id=6445, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={'class': 'search-header c1800ln c1s1fclw'}, bounds=DOMRect(x=142.5, y=128.5, width=1140.0, height=136.28125), x_path='html/body/div[2]/div[4]/div[3]/div/section/div/div/div[2]/div[1]', element_hash=6192404432942483790)}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dw.com/en/search?q=%22Freedom+of+Speech+Award%22', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'List all article titles and their posted dates from the current search results page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dw.com/en/search/page-100?q=%22Freedom+of+Speech+Award%22', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dw.com/en/search/page-1000?q=%22Freedom+of+Speech+Award%22', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'List all article titles and their posted dates from the current search results page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dw.com/en/freedom-of-speech-award', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=219, backend_node_id=11973, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/en/search/page-1', 'title': 'Search DW', 'role': 'button', 'tabindex': '0', 'aria-label': 'Search DW', 'rel': 'nofollow', 'data-tracking-name': 'go-to-search', 'class': 'search-btn b1yws3tm cx4rgdt ih9bob8 sngcpkw w128axg5 b1fzgn0z b1fzgn0z'}, bounds=DOMRect(x=1315.0, y=15.0, width=40.0, height=40.0), x_path='html/body/div[2]/div[4]/div[1]/div[4]/a[2]', element_hash=981239366833807410)}, {'input_text': {'index': 0, 'text': 'Freedom of Speech Award 2024', 'clear_existing': True}, 'interacted_element': None}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=219, backend_node_id=11973, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/en/search/page-1', 'title': 'Search DW', 'role': 'button', 'tabindex': '0', 'aria-label': 'Search DW', 'rel': 'nofollow', 'data-tracking-name': 'go-to-search', 'class': 'search-btn b1yws3tm cx4rgdt ih9bob8 sngcpkw w128axg5 b1fzgn0z b1fzgn0z'}, bounds=DOMRect(x=1315.0, y=15.0, width=40.0, height=40.0), x_path='html/body/div[2]/div[4]/div[1]/div[4]/a[2]', element_hash=981239366833807410)}, {'input_text': {'index': 14, 'text': 'Freedom of Speech Award', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=2114, backend_node_id=12789, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'id': 'downshift-0-input', 'aria-autocomplete': 'list', 'aria-labelledby': 'downshift-0-label', 'autocomplete': 'off', 'data-transaction-name': 'search input', 'placeholder': 'Enter a topic, location, or person', 'aria-label': 'Search for topics, locations, or people', 'type': 'search', 'maxlength': '128', 'class': 'sui-search-box__text-input  i1d6p1b1 iwnyhqo iqvimss'}, bounds=DOMRect(x=157.5, y=128.5, width=1049.40625, height=45.59375), x_path='html/body/div[2]/div[4]/div[3]/div/section/div/div/div[2]/div[1]/form/div/div/div/input', element_hash=1877197620222140234)}, {'click_element_by_index': {'index': 15}, 'interacted_element': DOMInteractedElement(node_id=2122, backend_node_id=12797, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'role': 'button', 'tabindex': '0', 'data-transaction-name': 'search submit', 'type': 'submit', 'aria-label': 'Search content', 'title': 'Search content', 'class': 'search-button p5plic6 b1yws3tm cx4rgdt ih9bob8 sngcpkw w128axg5 b1fzgn0z', 'value': 'Search'}, bounds=DOMRect(x=1221.90625, y=128.5, width=45.59375, height=45.59375), x_path='html/body/div[2]/div[4]/div[3]/div/section/div/div/div[2]/div[1]/form/div/div/button', element_hash=183888586547325526)}, {'click_element_by_index': {'index': 16}, 'interacted_element': DOMInteractedElement(node_id=4651, backend_node_id=13802, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='SPAN', attributes={'class': 'l1evdo4u blt0baw s16w0xvi rcjjkz7 w128axg5 b1fzgn0z'}, bounds=DOMRect(x=172.5, y=185.09375, width=212.984375, height=23.0), x_path='html/body/div[2]/div[4]/div[3]/div/section/div/div/div[2]/div[1]/form/div/div/div/div/div/ul/li[1]/span', element_hash=2264205775839049842)}, {'click_element_by_index': {'index': 35}, 'interacted_element': DOMInteractedElement(node_id=4680, backend_node_id=12797, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'role': 'button', 'tabindex': '0', 'data-transaction-name': 'search submit', 'type': 'submit', 'aria-label': 'Search content', 'title': 'Search content', 'class': 'search-button p5plic6 b1yws3tm cx4rgdt ih9bob8 sngcpkw w128axg5 b1fzgn0z', 'value': 'Search'}, bounds=DOMRect(x=1221.90625, y=128.5, width=45.59375, height=45.59375), x_path='html/body/div[2]/div[4]/div[3]/div/section/div/div/div[2]/div[1]/form/div/div/button', element_hash=183888586547325526)}, {'done': {'text': 'The DW Freedom of Speech Award article was posted on July 7, 2025.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 19:47:41,539 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/591d797f-3076-4470-bcda-8abf9df1d9b9 "HTTP/1.1 200 OK"
+2025-10-06 19:47:41,675 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/591d797f-3076-4470-bcda-8abf9df1d9b9/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/591d797f-3076-4470-bcda-8abf9df1d9b9/recordings/7eed8092-5e8c-4a6f-b947-544764f9952e/fetch

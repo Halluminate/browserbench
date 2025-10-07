@@ -1,0 +1,211 @@
+2025-10-06 18:44:25,714 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 18:44:25,728 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 18:44:25,744 - INFO - 🔗 Found URL in task: https://www.pcgamer.com, adding as initial action...
+2025-10-06 18:44:25,749 - INFO - [34m🚀 Task: To which email can you send confidential tips? You must complete the task only using the starting website. Begin task on the following url: https://www.pcgamer.com[0m
+2025-10-06 18:44:25,787 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 18:44:25,795 - INFO - ────────────────────────────────────────
+2025-10-06 18:44:25,795 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 18:44:25,795 - INFO -     👉  browser-use auth
+2025-10-06 18:44:25,795 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 18:44:25,795 - INFO - ────────────────────────────────────────
+
+2025-10-06 18:44:25,999 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 18:44:26,020 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b191fb66-e4be-4ae4-a85f-b67908d4f6d2
+2025-10-06 18:44:27,441 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-06 18:44:29,237 - INFO - 🔗 Navigated to https://www.pcgamer.com
+2025-10-06 18:44:33,079 - INFO - 
+
+2025-10-06 18:44:33,079 - INFO - 📍 Step 1:
+2025-10-06 18:44:34,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:44:34,432 - INFO -   [32m👍 Eval: Successfully navigated to https://www.pcgamer.com and loaded the homepage. Verdict: Success[0m
+2025-10-06 18:44:34,433 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to view the footer where the contact email may be listed.[0m
+2025-10-06 18:44:34,433 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 12.0, frame_element_index: None
+2025-10-06 18:44:41,637 - INFO - 🔍 Scrolled down the page by 12.0 pages (requested: 12.0, 900px per page)
+2025-10-06 18:44:45,015 - INFO - 
+
+2025-10-06 18:44:45,015 - INFO - 📍 Step 2:
+2025-10-06 18:44:46,658 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:44:46,661 - INFO -   [32m👍 Eval: Scrolled down the page by 12.0 pages – success.[0m
+2025-10-06 18:44:46,661 - INFO -   [34m🎯 Next goal: Click the 'Contact Future's experts' link (index 45) to open the contact page and find the confidential tips email address.[0m
+2025-10-06 18:44:46,662 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 45, while_holding_ctrl: None
+2025-10-06 18:44:48,192 - INFO - 🖱️ Clicked element
+2025-10-06 18:44:52,333 - INFO - 
+
+2025-10-06 18:44:52,334 - INFO - 📍 Step 3:
+2025-10-06 18:44:53,941 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:44:53,942 - INFO -   [31m⚠️ Eval: Clicked the external contact link, which navigated away from the required domain. Verdict: Failure (off-site navigation).[0m
+2025-10-06 18:44:53,942 - INFO -   [34m🎯 Next goal: Extract the email address for confidential tips from the PC Gamer page using extract_structured_data.[0m
+2025-10-06 18:44:53,943 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Find any email address on this page, especially for sending confidential tips., extract_links: Fal
+2025-10-06 18:44:55,771 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:44:55,839 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+Find any email address on this page, especially for sending confidential tips.
+</query>
+<result>
+No email address is present in the provided page content.
+</result>
+2025-10-06 18:45:00,187 - INFO - 
+
+2025-10-06 18:45:00,187 - INFO - 📍 Step 4:
+2025-10-06 18:45:02,314 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:02,316 - INFO -   [31m⚠️ Eval: Previous attempt to find email on the homepage footer failed; no email was found and the external link was unsuitable. Verdict: Failure[0m
+2025-10-06 18:45:02,316 - INFO -   [34m🎯 Next goal: Navigate to the PC Gamer contact page (https://www.pcgamer.com/contact/) and extract the confidential tips email address.[0m
+2025-10-06 18:45:02,317 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.pcgamer.com/contact/, new_tab: False
+2025-10-06 18:45:04,620 - INFO - 🔗 Navigated to https://www.pcgamer.com/contact/
+2025-10-06 18:45:05,122 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find any email address on this page, especially one for sending confidential tips., extract_links:
+2025-10-06 18:45:06,079 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:06,147 - INFO - 📄 <url>
+https://www.pcgamer.com/contact/
+</url>
+<query>
+Find any email address on this page, especially one for sending confidential tips.
+</query>
+<result>
+No email address is present on this page.
+</result>
+2025-10-06 18:45:08,905 - INFO - 
+
+2025-10-06 18:45:08,906 - INFO - 📍 Step 5:
+2025-10-06 18:45:10,744 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:10,746 - INFO -   ❔ Eval: Previous actions (scrolling, clicking external link, navigating to /contact/) did not yield an email; current state is on a 404 page with no email.
+2025-10-06 18:45:10,746 - INFO -   [34m🎯 Next goal: Search the site for "tips" using the search box (index 38) and submit (index 39) to find any page containing the confidential tips email address.[0m
+2025-10-06 18:45:10,747 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 38, text: tips, clear_existing: True
+2025-10-06 18:45:12,287 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:45:12,287 - INFO - ⌨️ Typed "tips" into element with index 38
+2025-10-06 18:45:14,447 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-06 18:45:17,152 - INFO - 
+
+2025-10-06 18:45:17,152 - INFO - 📍 Step 6:
+2025-10-06 18:45:18,945 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:18,947 - INFO -   [32m👍 Eval: Partial success: entered search term into input 39 but did not submit, so the search was not executed.[0m
+2025-10-06 18:45:18,947 - INFO -   [34m🎯 Next goal: Submit a search for "confidential tips" using the search box and then extract the email address from the results page.[0m
+2025-10-06 18:45:18,948 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 39, text: confidential tips, clear_existing: True
+2025-10-06 18:45:23,154 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 18:45:23,154 - INFO - ⌨️ Typed "confidential tips" into element with index 39
+2025-10-06 18:45:25,797 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 40, while_holding_ctrl: False
+2025-10-06 18:45:29,597 - INFO - 🖱️ Clicked element
+2025-10-06 18:45:33,198 - INFO - 
+
+2025-10-06 18:45:33,198 - INFO - 📍 Step 7:
+2025-10-06 18:45:35,116 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:35,118 - INFO -   [32m👍 Eval: Previous step entered search term and clicked, resulting in a search results page without email. Verdict: Partial success (search performed) but email not found.[0m
+2025-10-06 18:45:35,118 - INFO -   [34m🎯 Next goal: Navigate to https://www.pcgamer.com/search/?searchTerm=tips+email and extract any email address from the page.[0m
+2025-10-06 18:45:35,119 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.pcgamer.com/search/?searchTerm=tips+email, new_tab: False
+2025-10-06 18:45:39,052 - INFO - 🔗 Navigated to https://www.pcgamer.com/search/?searchTerm=tips+email
+2025-10-06 18:45:39,555 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find any email address on this page, especially one for sending confidential tips., extract_links:
+2025-10-06 18:45:40,870 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:40,938 - INFO - 📄 <url>
+https://www.pcgamer.com/search/?searchTerm=tips+email
+</url>
+<query>
+Find any email address on this page, especially one for sending confidential tips.
+</query>
+<result>
+No email address is present in the provided page content.
+</result>
+2025-10-06 18:45:44,296 - INFO - 
+
+2025-10-06 18:45:44,296 - INFO - 📍 Step 8:
+2025-10-06 18:45:46,345 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:46,348 - INFO -   ❔ Eval: Previous attempts to find email via homepage footer, contact page, and specific search terms failed; no email found.
+2025-10-06 18:45:46,348 - INFO -   [34m🎯 Next goal: Navigate to https://www.pcgamer.com/search/?searchTerm=tips%40 and extract any email address from the page.[0m
+2025-10-06 18:45:46,348 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.pcgamer.com/search/?searchTerm=tips%40, new_tab: False
+2025-10-06 18:45:53,364 - INFO - 🔗 Navigated to https://www.pcgamer.com/search/?searchTerm=tips%40
+2025-10-06 18:45:53,867 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find any email address on this page, especially one for sending confidential tips., extract_links:
+2025-10-06 18:45:54,556 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:54,623 - INFO - 📄 <url>
+https://www.pcgamer.com/search/?searchTerm=tips%40
+</url>
+<query>
+Find any email address on this page, especially one for sending confidential tips.
+</query>
+<result>
+No email address is present on the page.
+</result>
+2025-10-06 18:45:57,491 - INFO - 
+
+2025-10-06 18:45:57,491 - INFO - 📍 Step 9:
+2025-10-06 18:45:59,056 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:45:59,058 - INFO -   ❔ Eval: Previous navigation and search attempts failed to locate an email; current page is empty but we can still extract hidden data.
+2025-10-06 18:45:59,058 - INFO -   [34m🎯 Next goal: Extract any email address from the current page source using extract_structured_data.[0m
+2025-10-06 18:45:59,058 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Find any email address (e.g., mailto links) on this page., extract_links: True, start_from_char:
+2025-10-06 18:46:00,385 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:46:00,453 - INFO - 📄 <url>
+https://www.pcgamer.com/search/?searchTerm=tips%40
+</url>
+<query>
+Find any email address (e.g., mailto links) on this page.
+</query>
+<result>
+No email address (mailto link) is present in the provided page content.
+</result>
+2025-10-06 18:46:04,396 - INFO - 
+
+2025-10-06 18:46:04,396 - INFO - 📍 Step 10:
+2025-10-06 18:46:06,542 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:46:06,544 - INFO -   [32m👍 Eval: Previous attempts to find email via footer, contact page, and searches were unsuccessful; no email found.[0m
+2025-10-06 18:46:06,544 - INFO -   [34m🎯 Next goal: Navigate to the PC Gamer homepage, scroll to the bottom to reveal the footer, and extract any email address present.[0m
+2025-10-06 18:46:06,545 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-06 18:46:07,770 - INFO - 🔗 Navigated to https://www.pcgamer.com
+2025-10-06 18:46:08,272 - INFO -   🦾 [34m[ACTION 2/3][0m scroll: down: True, num_pages: 12.0, frame_element_index: None
+2025-10-06 18:46:16,926 - INFO - 🔍 Scrolled down the page by 12.0 pages (requested: 12.0, 900px per page)
+2025-10-06 18:46:17,429 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Find any email address on this page, especially one for sending confidential tips., extract_links:
+2025-10-06 18:46:19,610 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:46:19,679 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+Find any email address on this page, especially one for sending confidential tips.
+</query>
+<result>
+No email address is present in the provided page content.
+</result>
+2025-10-06 18:46:25,227 - INFO - 
+
+2025-10-06 18:46:25,227 - INFO - 📍 Step 11:
+2025-10-06 18:46:27,408 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:46:27,410 - INFO -   ❔ Eval: Previous actions (search attempts) did not locate an email; current page shows no email.
+2025-10-06 18:46:27,410 - INFO -   [34m🎯 Next goal: Scroll further down the search results page to load more content, then extract any email address from the page.[0m
+2025-10-06 18:46:27,410 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 18:46:30,572 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 18:46:31,075 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find any email address on this page, especially one containing the word tips., extract_links: Fa
+2025-10-06 18:46:33,074 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:46:33,147 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+Find any email address on this page, especially one containing the word 'tips'.
+</query>
+<result>
+No email address is present on the page, including none containing the word “tips”.
+</result>
+2025-10-06 18:46:38,664 - INFO - 
+
+2025-10-06 18:46:38,664 - INFO - 📍 Step 12:
+2025-10-06 18:46:41,296 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 18:46:41,298 - INFO -   ❔ Eval: All previous attempts to locate an email address on pcgamer.com failed; no email was found.
+2025-10-06 18:46:41,298 - INFO - 
+2025-10-06 18:46:41,298 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: I was unable to locate an email address on pcgamer.com for sending confidential tips. All searches of the homepage, conta
+2025-10-06 18:46:41,463 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to locate an email address on pcgamer.com for sending confidential tips. All searches of the homepage, contact page, and site search results did not reveal any email address. Therefore, the requested information is not available on the specified website.
+
+
+2025-10-06 18:46:41,467 - INFO - ❌ Task completed without success
+Anchor Session's CDP_URL for later use
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b191fb66-e4be-4ae4-a85f-b67908d4f6d2
+Session created with CAPTCHA solver and proxy: b191fb66-e4be-4ae4-a85f-b67908d4f6d2
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.pcgamer.com', extracted_content='🔗 Navigated to https://www.pcgamer.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 12.0 pages (requested: 12.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 12.0 pages (requested: 12.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 564.140625, 'click_y': 695.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind any email address on this page, especially for sending confidential tips.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind any email address on this page, especially for sending confidential tips.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com/contact/', extracted_content='🔗 Navigated to https://www.pcgamer.com/contact/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/contact/\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present on this page.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/contact/\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present on this page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'tips' into element 38.", extracted_content="Input 'tips' into element 38.", include_extracted_content_only_once=False, metadata={'input_x': 527.5, 'input_y': 401.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'confidential tips' into element 39.", extracted_content="Input 'confidential tips' into element 39.", include_extracted_content_only_once=False, metadata={'input_x': 527.5, 'input_y': 401.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 756.0, 'click_y': 400.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com/search/?searchTerm=tips+email', extracted_content='🔗 Navigated to https://www.pcgamer.com/search/?searchTerm=tips+email', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/search/?searchTerm=tips+email\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/search/?searchTerm=tips+email\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com/search/?searchTerm=tips%40', extracted_content='🔗 Navigated to https://www.pcgamer.com/search/?searchTerm=tips%40', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/search/?searchTerm=tips%40\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present on the page.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/search/?searchTerm=tips%40\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present on the page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/search/?searchTerm=tips%40\n</url>\n<query>\nFind any email address (e.g., mailto links) on this page.\n</query>\n<result>\nNo email address (mailto link) is present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/search/?searchTerm=tips%40\n</url>\n<query>\nFind any email address (e.g., mailto links) on this page.\n</query>\n<result>\nNo email address (mailto link) is present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com', extracted_content='🔗 Navigated to https://www.pcgamer.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 12.0 pages (requested: 12.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 12.0 pages (requested: 12.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind any email address on this page, especially one for sending confidential tips.\n</query>\n<result>\nNo email address is present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind any email address on this page, especially one containing the word 'tips'.\n</query>\n<result>\nNo email address is present on the page, including none containing the word “tips”.\n</result>", extracted_content="<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind any email address on this page, especially one containing the word 'tips'.\n</query>\n<result>\nNo email address is present on the page, including none containing the word “tips”.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to locate an email address on pcgamer.com for sending confidential tips. All searches o - 167 more characters', extracted_content='I was unable to locate an email address on pcgamer.com for sending confidential tips. All searches of the homepage, contact page, and site search results did not reveal any email address. Therefore, the requested information is not available on the specified website.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 12.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 45}, 'interacted_element': DOMInteractedElement(node_id=3279, backend_node_id=2938, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=484.5, y=686.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'extract_structured_data': {'query': 'Find any email address on this page, especially for sending confidential tips.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact/', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find any email address on this page, especially one for sending confidential tips.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 38, 'text': 'tips', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=9605, backend_node_id=5824, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'search', 'size': '50', 'name': 'searchTerm', 'autocomplete': 'off', 'placeholder': 'Type to search...', 'class': 'search__term'}, bounds=DOMRect(x=275.5, y=377.0, width=504.0, height=48.0), x_path='html/body/div[2]/div[2]/article/form/input', element_hash=1240765269966430268)}, {'click_element_by_index': {'index': 39}, 'interacted_element': DOMInteractedElement(node_id=9613, backend_node_id=5830, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'submit', 'class': 'search-submit'}, bounds=DOMRect(x=732.5, y=377.0, width=47.0, height=47.0), x_path='html/body/div[2]/div[2]/article/form/button', element_hash=1437001753580650287)}, {'input_text': {'index': 39, 'text': 'confidential tips', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=10633, backend_node_id=5824, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'search', 'size': '50', 'name': 'searchTerm', 'autocomplete': 'off', 'placeholder': 'Type to search...', 'class': 'search__term'}, bounds=DOMRect(x=275.5, y=377.0, width=504.0, height=48.0), x_path='html/body/div[2]/div[2]/article/form/input', element_hash=1240765269966430268)}, {'click_element_by_index': {'index': 40, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=10642, backend_node_id=5830, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'submit', 'class': 'search-submit'}, bounds=DOMRect(x=732.5, y=377.0, width=47.0, height=47.0), x_path='html/body/div[2]/div[2]/article/form/button', element_hash=1437001753580650287)}, {'go_to_url': {'url': 'https://www.pcgamer.com/search/?searchTerm=tips+email', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find any email address on this page, especially one for sending confidential tips.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/search/?searchTerm=tips%40', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find any email address on this page, especially one for sending confidential tips.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find any email address (e.g., mailto links) on this page.', 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 12.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find any email address on this page, especially one for sending confidential tips.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': "Find any email address on this page, especially one containing the word 'tips'.", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to locate an email address on pcgamer.com for sending confidential tips. All searches of the homepage, contact page, and site search results did not reveal any email address. Therefore, the requested information is not available on the specified website.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 18:46:45,976 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/b191fb66-e4be-4ae4-a85f-b67908d4f6d2 "HTTP/1.1 200 OK"
+2025-10-06 18:46:46,180 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/b191fb66-e4be-4ae4-a85f-b67908d4f6d2/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/b191fb66-e4be-4ae4-a85f-b67908d4f6d2/recordings/c0c60272-0245-476a-a065-9121db63c853/fetch
