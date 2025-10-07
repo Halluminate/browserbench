@@ -1,0 +1,343 @@
+2025-10-06 21:34:01,651 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 21:34:01,665 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 21:34:01,683 - INFO - 🔗 Found URL in task: https://www.pcgamer.com, adding as initial action...
+2025-10-06 21:34:01,687 - INFO - [34m🚀 Task: To which email can you send confidential tips? You must complete the task only using the starting website. Begin task on the following url: https://www.pcgamer.com[0m
+2025-10-06 21:34:01,729 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 21:34:01,737 - INFO - ────────────────────────────────────────
+2025-10-06 21:34:01,737 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 21:34:01,737 - INFO -     👉  browser-use auth
+2025-10-06 21:34:01,737 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 21:34:01,737 - INFO - ────────────────────────────────────────
+
+2025-10-06 21:34:01,972 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 21:34:02,009 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=e109cb0d-e568-4cfe-8ee6-2e7152d5f729
+2025-10-06 21:34:03,815 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-06 21:34:06,293 - INFO - 🔗 Navigated to https://www.pcgamer.com
+2025-10-06 21:34:11,030 - INFO - 
+
+2025-10-06 21:34:11,030 - INFO - 📍 Step 1:
+2025-10-06 21:34:12,597 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:12,613 - INFO -   ❔ Eval: N/A
+2025-10-06 21:34:12,613 - INFO -   [34m🎯 Next goal: Scroll down to load the footer and then extract the confidential tips email address.[0m
+2025-10-06 21:34:12,614 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 21:34:15,941 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 885px per page)
+2025-10-06 21:34:16,443 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find the email address provided for sending confidential tips on the PC Gamer website., extract_lin
+2025-10-06 21:34:18,037 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:18,106 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+Find the email address provided for sending confidential tips on the PC Gamer website.
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-06 21:34:21,405 - INFO - 
+
+2025-10-06 21:34:21,405 - INFO - 📍 Step 2:
+2025-10-06 21:34:22,843 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:22,844 - INFO -   [32m👍 Eval: Previous scroll action moved down 5 pages but did not reach the footer; email not found. Verdict: Partial success (page moved closer).[0m
+2025-10-06 21:34:22,844 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the page to reveal the footer containing the confidential tips email address.[0m
+2025-10-06 21:34:22,845 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 21:34:26,163 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 885px per page)
+2025-10-06 21:34:29,552 - INFO - 
+
+2025-10-06 21:34:29,552 - INFO - 📍 Step 3:
+2025-10-06 21:34:31,138 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:31,139 - INFO -   [32m👍 Eval: Previous scroll moved the page closer to the footer but did not reach it; email not found yet. Verdict: Partial success.[0m
+2025-10-06 21:34:31,139 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to reveal the footer, then extract the confidential tips email address.[0m
+2025-10-06 21:34:31,140 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-06 21:34:32,591 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 885px per page)
+2025-10-06 21:34:33,093 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tips email address, extract_links: False, start_from_char: 0
+2025-10-06 21:34:34,715 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:34,789 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+confidential tips email address
+</query>
+<result>
+Information on a confidential tips email address is not available in the provided webpage content.
+</result>
+2025-10-06 21:34:38,238 - INFO - 
+
+2025-10-06 21:34:38,238 - INFO - 📍 Step 4:
+2025-10-06 21:34:39,572 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:39,573 - INFO -   ❔ Eval: Previous scroll actions moved closer to the footer but did not reveal the email; email not found yet.
+2025-10-06 21:34:39,573 - INFO -   [34m🎯 Next goal: Click the 'Contact Future's experts' link (index 49) to open the contact page and then locate the confidential tips email address.[0m
+2025-10-06 21:34:39,573 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 49, while_holding_ctrl: False
+2025-10-06 21:34:41,131 - INFO - 🖱️ Clicked element
+2025-10-06 21:34:44,476 - INFO - 
+
+2025-10-06 21:34:44,476 - INFO - 📍 Step 5:
+2025-10-06 21:34:46,335 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:46,336 - INFO -   [31m⚠️ Eval: Previous click on the contact link did not navigate to a new page; email not found. Verdict: Failure[0m
+2025-10-06 21:34:46,336 - INFO -   [34m🎯 Next goal: Open the 'Contact Future's experts' page in a new tab and extract the confidential tips email address.[0m
+2025-10-06 21:34:46,336 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 49, while_holding_ctrl: True
+2025-10-06 21:34:47,881 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-06 21:34:51,455 - INFO - 
+
+2025-10-06 21:34:51,455 - INFO - 📍 Step 6:
+2025-10-06 21:34:53,107 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:53,108 - INFO -   [31m⚠️ Eval: Previous click on the contact link did not navigate; email not found. Verdict: Failure[0m
+2025-10-06 21:34:53,108 - INFO -   [34m🎯 Next goal: Click the 'Contact Future's experts' link (index 49) and then extract the confidential tips email address from the resulting page.[0m
+2025-10-06 21:34:53,109 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 49, while_holding_ctrl: None
+2025-10-06 21:34:54,665 - INFO - 🖱️ Clicked element
+2025-10-06 21:34:55,166 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tips email address, extract_links: False, start_from_char: 0
+2025-10-06 21:34:56,849 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:34:56,916 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+confidential tips email address
+</query>
+<result>
+Information on a confidential tips email address is not available in the provided webpage content.
+</result>
+2025-10-06 21:35:00,873 - INFO - 
+
+2025-10-06 21:35:00,874 - INFO - 📍 Step 7:
+2025-10-06 21:35:02,204 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:02,204 - INFO -   [31m⚠️ Eval: Previous click on index 49 did not navigate; email not found. Verdict: Failure[0m
+2025-10-06 21:35:02,204 - INFO -   [34m🎯 Next goal: Open the 'Contact Future's experts' page in a new tab and locate the confidential tips email address.[0m
+2025-10-06 21:35:02,205 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 49, while_holding_ctrl: True
+2025-10-06 21:35:03,753 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-06 21:35:08,017 - INFO - 
+
+2025-10-06 21:35:08,017 - INFO - 📍 Step 8:
+2025-10-06 21:35:09,344 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:09,344 - INFO -   [31m⚠️ Eval: Previous attempts to click the contact link did not navigate; email not found. Verdict: Failure[0m
+2025-10-06 21:35:09,345 - INFO -   [34m🎯 Next goal: Open the contact page in a new tab by Ctrl-clicking link index 49 and then extract the confidential tips email address.[0m
+2025-10-06 21:35:09,345 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 49, while_holding_ctrl: True
+2025-10-06 21:35:10,894 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-06 21:35:15,576 - INFO - 
+
+2025-10-06 21:35:15,576 - INFO - 📍 Step 9:
+2025-10-06 21:35:16,971 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:16,972 - INFO -   ❔ Eval: Previous attempts to click the contact link failed to navigate; email not found yet.
+2025-10-06 21:35:16,972 - INFO -   [34m🎯 Next goal: Extract the confidential tips email address from the current page using extract_structured_data.[0m
+2025-10-06 21:35:16,972 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: confidential tips email address, extract_links: False, start_from_char: 0
+2025-10-06 21:35:18,858 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:18,925 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+confidential tips email address
+</query>
+<result>
+Information on a confidential tips email address is not available in the provided webpage content.
+</result>
+2025-10-06 21:35:24,622 - INFO - 
+
+2025-10-06 21:35:24,622 - INFO - 📍 Step 10:
+2025-10-06 21:35:27,386 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:27,387 - INFO -   [31m⚠️ Eval: Failure – prior clicks on link index 49 did not navigate to a new page, so the email was not found.[0m
+2025-10-06 21:35:27,387 - INFO -   [34m🎯 Next goal: Navigate to the contact page by clicking link index 49, wait for load, then extract the confidential tips email address.[0m
+2025-10-06 21:35:27,387 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 49, while_holding_ctrl: None
+2025-10-06 21:35:28,873 - INFO - 🖱️ Clicked element
+2025-10-06 21:35:29,375 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-06 21:35:29,442 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 21:35:29,944 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: confidential tips email address, extract_links: False, start_from_char: 0
+2025-10-06 21:35:31,875 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:31,945 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+confidential tips email address
+</query>
+<result>
+Information on a confidential tips email address is not available in the provided webpage content.
+</result>
+2025-10-06 21:35:36,340 - INFO - 
+
+2025-10-06 21:35:36,340 - INFO - 📍 Step 11:
+2025-10-06 21:35:38,600 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:38,602 - INFO -   ❔ Eval: Previous attempts to click the contact link failed to navigate; email not found.
+2025-10-06 21:35:38,602 - INFO -   [34m🎯 Next goal: Navigate to the contact page URL and extract the confidential tips email address.[0m
+2025-10-06 21:35:38,603 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.pcgamer.com/contact/, new_tab: False
+2025-10-06 21:35:41,724 - INFO - 🔗 Navigated to https://www.pcgamer.com/contact/
+2025-10-06 21:35:43,613 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=e109cb0d-e568-4cfe-8ee6-2e7152d5f729
+2025-10-06 21:35:45,893 - INFO - 
+
+2025-10-06 21:35:45,893 - INFO - 📍 Step 12:
+2025-10-06 21:35:47,963 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:47,966 - INFO -   ❔ Eval: No previous action in this step yet.
+2025-10-06 21:35:47,966 - INFO -   [34m🎯 Next goal: Search the site for 'confidential tips' using the search bar and then extract the email address from the results.[0m
+2025-10-06 21:35:47,967 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 36, text: confidential tips, clear_existing: True
+2025-10-06 21:35:48,332 - ERROR - CDP Error for request 28: {'code': -32000, 'message': 'No node found for given backend id'}
+2025-10-06 21:35:48,332 - WARNING - ⚠️ Failed to focus the page cdp_client=<cdp_use.client.CDPClient object at 0x11509bed0> target_id='5176ED674C4B33F2F2D10F9F942C43D2' session_id='BC71DF009C50BB76A5BF2D04EF57F9BF' title='https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1384262&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1' url='https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1384262&consentUUID=null&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&version=v1' owns_cdp_client=True and scroll element [<input>#?:36] into view before typing in text: RuntimeError: {'code': -32000, 'message': 'No node found for given backend id'}
+2025-10-06 21:35:48,404 - ERROR - CDP Error for request 657: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:35:48,404 - ERROR - Failed to input text via CDP: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:35:48,404 - WARNING - Failed to type to element 36: Failed to input text into element: <input type=search, size=50, name=searchTerm, autocomplete=off, placeholder=Type to search..., class=search__term is_scrollable=None num_children=0 ></input>. Falling back to page typing.
+2025-10-06 21:35:48,759 - ERROR - CDP Error for request 32: {'code': -32000, 'message': 'No node found for given backend id'}
+2025-10-06 21:35:48,834 - ERROR - CDP Error for request 33: {'code': -32000, 'message': 'No node found for given backend id'}
+2025-10-06 21:35:48,903 - ERROR - CDP Error for request 34: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-06 21:35:48,903 - WARNING - ⚠️ Could not get element geometry from any method, falling back to JavaScript click
+2025-10-06 21:35:48,978 - ERROR - CDP Error for request 35: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-06 21:35:48,978 - ERROR - CDP JavaScript click also failed: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-06 21:35:53,132 - INFO - ⌨️ Typed "confidential tips" to the page as fallback
+2025-10-06 21:35:54,993 - ERROR - CDP Error for request 102: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:35:54,997 - INFO - Page changed after action: actions click_element_by_index, wait, extract_structured_data are not yet executed
+2025-10-06 21:35:56,306 - ERROR - CDP Error for request 111: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:35:56,519 - ERROR - CDP Error for request 117: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:35:56,519 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:35:56,733 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#1f8e)]         ❌ Failed (0.43s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-06 21:35:56,812 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#1f8e ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-06 21:35:56,813 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:35:56,813 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:35:57,098 - INFO - 
+
+2025-10-06 21:35:57,098 - INFO - 📍 Step 13:
+2025-10-06 21:35:58,904 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:35:58,906 - INFO -   ❔ Eval: Previous attempts to click the contact link failed; email not found.
+2025-10-06 21:35:58,906 - INFO -   [34m🎯 Next goal: Navigate to the search results page for 'confidential tips' and extract the email address.[0m
+2025-10-06 21:35:58,906 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com/search?q=confidential+tips, new_tab: False
+2025-10-06 21:35:59,800 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:35:59,940 - ERROR - CDP Error for request 126: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:35:59,940 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#dccf)]      ❌ Failed (0.14s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:36:00,011 - ERROR - CDP Error for request 127: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:00,011 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#dccf)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#dccf)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:00,014 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#dccf ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:36:00,016 - INFO - 🔗 Navigated to https://www.pcgamer.com/search?q=confidential+tips
+2025-10-06 21:36:00,518 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-06 21:36:00,584 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 21:36:01,086 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: confidential tips email address, extract_links: False, start_from_char: 0
+2025-10-06 21:36:01,225 - ERROR - CDP Error for request 128: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:01,225 - ERROR - Action 'extract_structured_data' failed with error: Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError
+2025-10-06 21:36:01,579 - ERROR - CDP Error for request 129: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:01,660 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:01,661 - INFO - 
+
+2025-10-06 21:36:01,661 - INFO - 📍 Step 14:
+2025-10-06 21:36:03,848 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:36:03,849 - INFO -   ❔ Eval: Previous actions failed to navigate to a functional contact page and did not retrieve the email.
+2025-10-06 21:36:03,849 - INFO -   [34m🎯 Next goal: Navigate to https://www.pcgamer.com/contact-us/, wait for load, then extract the confidential tips email address.[0m
+2025-10-06 21:36:03,849 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com/contact-us/, new_tab: False
+2025-10-06 21:36:04,000 - ERROR - CDP Error for request 130: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:04,067 - ERROR - CDP Error for request 131: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:04,067 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:04,138 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:04,277 - ERROR - CDP Error for request 132: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:04,277 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#c5ff)]      ❌ Failed (0.14s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:36:04,348 - ERROR - CDP Error for request 133: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:04,348 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#c5ff)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#c5ff)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:04,349 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#c5ff ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:36:04,350 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#ae3c)]          ❌ Failed (0.43s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-06 21:36:04,418 - ERROR - CDP Error for request 134: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:04,418 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#ae3c)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#ae3c)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:04,420 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#ae3c 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-06 21:36:04,422 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:04,765 - ERROR - CDP Error for request 135: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:04,840 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:04,841 - INFO - 
+
+2025-10-06 21:36:04,841 - INFO - 📍 Step 15:
+2025-10-06 21:36:06,729 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:36:06,731 - INFO -   [31m⚠️ Eval: Previous attempts to click the contact link and extract data failed; page content was empty. Verdict: Failure[0m
+2025-10-06 21:36:06,732 - INFO -   [34m🎯 Next goal: Reload the PC Gamer homepage, wait for load, scroll to the bottom, and extract the confidential tips email address.[0m
+2025-10-06 21:36:06,732 - INFO -   🦾 [34m[ACTION 1/4][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-06 21:36:06,938 - ERROR - CDP Error for request 136: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:06,939 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:07,009 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:07,150 - ERROR - CDP Error for request 137: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:07,150 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#2792)]      ❌ Failed (0.14s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:36:07,218 - ERROR - CDP Error for request 138: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:07,218 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#2792)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#2792)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:07,219 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#2792 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:36:07,219 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#a227)]          ❌ Failed (0.42s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-06 21:36:07,288 - ERROR - CDP Error for request 139: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:07,288 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#a227)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#a227)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:07,289 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#a227 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-06 21:36:07,289 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:07,626 - ERROR - CDP Error for request 140: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:07,706 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:07,710 - INFO - 
+
+2025-10-06 21:36:07,710 - INFO - 📍 Step 16:
+2025-10-06 21:36:09,603 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:36:09,604 - INFO -   ❔ Eval: Previous step failed to load any content; no email found.
+2025-10-06 21:36:09,604 - INFO -   [34m🎯 Next goal: Load the PC Gamer homepage, wait for it to render, scroll to the bottom, and extract the confidential tips email address.[0m
+2025-10-06 21:36:09,604 - INFO -   🦾 [34m[ACTION 1/4][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-06 21:36:09,806 - ERROR - CDP Error for request 141: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:09,806 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:09,873 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:10,010 - ERROR - CDP Error for request 142: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:10,010 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#f810)]      ❌ Failed (0.14s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:36:10,079 - ERROR - CDP Error for request 143: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:10,079 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#f810)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#f810)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:10,080 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#f810 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:36:10,080 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#b7a2)]          ❌ Failed (0.41s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-06 21:36:10,148 - ERROR - CDP Error for request 144: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:10,148 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#b7a2)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#b7a2)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:10,149 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#b7a2 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-06 21:36:10,150 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:36:10,492 - ERROR - CDP Error for request 145: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:10,576 - WARNING - [DownloadsWatchdog] No target info found for 5176ED674C4B33F2F2D10F9F942C43D2
+2025-10-06 21:36:10,577 - INFO - 
+
+2025-10-06 21:36:10,577 - INFO - 📍 Step 17:
+2025-10-06 21:36:11,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:36:11,618 - INFO -   ❔ Eval: Failed to retrieve the confidential tips email after multiple attempts; no email found.
+2025-10-06 21:36:11,618 - INFO - 
+2025-10-06 21:36:11,618 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to locate the email address for sending confidential tips on the PC Gamer website. All attempts to find it (scrolling to the footer, clicking the contact link, navigating to contact pages, and searching the site) were unsuccessful, and the page content could not be loaded. Therefore, I cannot provide the requested email address.' success=False files_to_display=[]
+2025-10-06 21:36:11,686 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to locate the email address for sending confidential tips on the PC Gamer website. All attempts to find it (scrolling to the footer, clicking the contact link, navigating to contact pages, and searching the site) were unsuccessful, and the page content could not be loaded. Therefore, I cannot provide the requested email address.
+
+
+2025-10-06 21:36:11,686 - INFO - ❌ Task completed without success
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=e109cb0d-e568-4cfe-8ee6-2e7152d5f729
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: e109cb0d-e568-4cfe-8ee6-2e7152d5f729
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.pcgamer.com', extracted_content='🔗 Navigated to https://www.pcgamer.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 885px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 885px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind the email address provided for sending confidential tips on the PC Gamer website.\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nFind the email address provided for sending confidential tips on the PC Gamer website.\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 885px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 885px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 885px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 885px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 556.640625, 'click_y': 732.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 556.640625, 'click_y': 732.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 556.640625, 'click_y': 732.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 556.640625, 'click_y': 732.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 556.640625, 'click_y': 732.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 556.640625, 'click_y': 732.609375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nconfidential tips email address\n</query>\n<result>\nInformation on a confidential tips email address is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com/contact/', extracted_content='🔗 Navigated to https://www.pcgamer.com/contact/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'confidential tips' into element 36.", extracted_content="Input 'confidential tips' into element 36.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index, wait, extract_structured_data are not yet executed', extracted_content='Page changed after action: actions click_element_by_index, wait, extract_structured_data are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com/search?q=confidential+tips', extracted_content='🔗 Navigated to https://www.pcgamer.com/search?q=confidential+tips', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to locate the email address for sending confidential tips on the PC Gamer website. All  - 243 more characters', extracted_content='I was unable to locate the email address for sending confidential tips on the PC Gamer website. All attempts to find it (scrolling to the footer, clicking the contact link, navigating to contact pages, and searching the site) were unsuccessful, and the page content could not be loaded. Therefore, I cannot provide the requested email address.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find the email address provided for sending confidential tips on the PC Gamer website.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 49, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=11422, backend_node_id=2670, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=477.0, y=723.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'click_element_by_index': {'index': 49, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=14295, backend_node_id=2670, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=477.0, y=723.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'click_element_by_index': {'index': 49}, 'interacted_element': DOMInteractedElement(node_id=17168, backend_node_id=2670, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=477.0, y=723.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 49, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=20046, backend_node_id=2670, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=477.0, y=723.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'click_element_by_index': {'index': 49, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=22919, backend_node_id=2670, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=477.0, y=723.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 49}, 'interacted_element': DOMInteractedElement(node_id=28670, backend_node_id=2670, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text-inherit hover:underline hover:underline-offset-2', 'href': 'https://futureplc.com/contact/', 'target': '_blank'}, bounds=DOMRect(x=477.0, y=723.109375, width=159.28125, height=19.0), x_path='html/body/footer/section/nav/ul/li[2]/a', element_hash=1159928705422501543)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact/', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 36, 'text': 'confidential tips', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=31995, backend_node_id=5793, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'search', 'size': '50', 'name': 'searchTerm', 'autocomplete': 'off', 'placeholder': 'Type to search...', 'class': 'search__term'}, bounds=DOMRect(x=283.0, y=377.0, width=504.0, height=48.0), x_path='html/body/div[2]/div[2]/article/form/input', element_hash=1240765269966430268)}, {'click_element_by_index': {'index': 37}, 'interacted_element': DOMInteractedElement(node_id=32003, backend_node_id=5799, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'submit', 'class': 'search-submit'}, bounds=DOMRect(x=740.0, y=377.0, width=47.0, height=47.0), x_path='html/body/div[2]/div[2]/article/form/button', element_hash=1437001753580650287)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'email address for confidential tips', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/search?q=confidential+tips', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact-us/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 20.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to locate the email address for sending confidential tips on the PC Gamer website. All attempts to find it (scrolling to the footer, clicking the contact link, navigating to contact pages, and searching the site) were unsuccessful, and the page content could not be loaded. Therefore, I cannot provide the requested email address.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 21:36:11,901 - ERROR - CDP Error for request 146: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:11,901 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#2171)] ❌ Failed (0.07s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:36:11,969 - ERROR - CDP Error for request 147: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:36:11,969 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#2171)] ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_SaveStorageStateEvent(SaveStorageStateEvent#2171)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:36:11,971 - ERROR - ❌ EventBus_c351eec1🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#2171 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:36:13,713 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/e109cb0d-e568-4cfe-8ee6-2e7152d5f729 "HTTP/1.1 200 OK"
+2025-10-06 21:36:13,841 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/e109cb0d-e568-4cfe-8ee6-2e7152d5f729/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/e109cb0d-e568-4cfe-8ee6-2e7152d5f729/recordings/dd882f5c-8217-43f0-a598-1ef46453ace2/fetch

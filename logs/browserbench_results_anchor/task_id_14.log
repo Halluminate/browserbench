@@ -1,0 +1,92 @@
+2025-10-06 19:58:17,398 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 19:58:17,408 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 19:58:17,426 - INFO - [34m🚀 Task: Does Etsy.com have a "Toys and Games" section under its Categories? You must complete the task only using the starting website. Begin task on the following url: https://www.etsy.com[0m
+2025-10-06 19:58:17,463 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 19:58:17,470 - INFO - ────────────────────────────────────────
+2025-10-06 19:58:17,470 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 19:58:17,470 - INFO -     👉  browser-use auth
+2025-10-06 19:58:17,470 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 19:58:17,470 - INFO - ────────────────────────────────────────
+
+2025-10-06 19:58:17,678 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 19:58:17,725 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=d69344a4-bb63-49d1-90d9-93b7eba36157
+2025-10-06 19:58:19,485 - INFO - 🧠 Starting a browser-use version 0.7.10 with model=openai/gpt-oss-120b
+2025-10-06 19:58:20,178 - INFO - 
+
+2025-10-06 19:58:20,179 - INFO - 📍 Step 1:
+2025-10-06 19:58:21,459 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:58:21,462 - INFO -   [34m🎯 Next goal: Navigate to https://www.etsy.com and wait for the page to load.[0m
+2025-10-06 19:58:21,462 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.etsy.com, new_tab: False
+2025-10-06 19:58:24,119 - INFO - 🔗 Navigated to https://www.etsy.com
+2025-10-06 19:58:28,818 - INFO - 
+
+2025-10-06 19:58:28,819 - INFO - 📍 Step 2:
+2025-10-06 19:58:29,949 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-10-06 19:58:29,951 - WARNING - Failed to parse model output: completion returned no choices Expecting value: line 1 column 1 (char 0)
+2025-10-06 19:58:29,951 - ERROR - ❌ Result failed 1/4 times:
+ Error code: 400 - {'error': {'message': "Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'json_validate_failed', 'failed_generation': 'completion returned no choices'}}
+2025-10-06 19:58:35,029 - INFO - 
+
+2025-10-06 19:58:35,029 - INFO - 📍 Step 3:
+2025-10-06 19:58:39,042 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:58:39,044 - INFO -   [31m⚠️ Eval: Previous navigation to Etsy homepage failed due to JSON generation error. Verdict: Failure[0m
+2025-10-06 19:58:39,044 - INFO -   [34m🎯 Next goal: Open the Categories dropdown and extract the list of category names to see if "Toys and Games" is present.[0m
+2025-10-06 19:58:39,046 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 6, while_holding_ctrl: None
+2025-10-06 19:58:40,613 - INFO - 🖱️ Clicked element
+2025-10-06 19:58:41,115 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-06 19:58:41,179 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 19:58:41,681 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: list all category names shown in the Categories dropdown menu, extract_links: False, start_from_c
+2025-10-06 19:58:43,524 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:58:43,592 - INFO - 📄 <url>
+https://www.etsy.com/
+</url>
+<query>
+list all category names shown in the Categories dropdown menu
+</query>
+<result>
+Accessories  
+Art & Collectibles  
+Baby  
+Bags & Purses  
+Bath & Beauty  
+Books, Films & Music  
+Clothing  
+Craft Supplies & Tools  
+Electronics & Accessories  
+Gifts  
+Home & Living  
+Jewellery  
+Paper & Party Supplies  
+Pet Supplies  
+Shoes  
+Toys & Games  
+Weddings
+</result>
+2025-10-06 19:58:49,751 - INFO - 
+
+2025-10-06 19:58:49,751 - INFO - 📍 Step 4:
+2025-10-06 19:58:51,324 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 19:58:51,331 - INFO -   [32m👍 Eval: Success - Category list was extracted and includes "Toys & Games".[0m
+2025-10-06 19:58:51,331 - INFO -   [34m🎯 Next goal: Provide the answer to the user and finish the task.[0m
+2025-10-06 19:58:51,334 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, Etsy.com has a Toys & Games section under its Categories., success: True, files_to_display: []
+2025-10-06 19:58:51,401 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, Etsy.com has a "Toys & Games" section under its Categories.
+
+
+2025-10-06 19:58:51,410 - INFO - ✅ Task completed successfully
+2025-10-06 19:58:54,310 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/d69344a4-bb63-49d1-90d9-93b7eba36157 "HTTP/1.1 200 OK"
+2025-10-06 19:58:54,510 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/d69344a4-bb63-49d1-90d9-93b7eba36157/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=d69344a4-bb63-49d1-90d9-93b7eba36157
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: d69344a4-bb63-49d1-90d9-93b7eba36157
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.etsy.com', extracted_content='🔗 Navigated to https://www.etsy.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error code: 400 - {\'error\': {\'message\': "Failed to generate JSON. Please adjust your prompt. See \'failed_generation\' for more details.", \'type\': \'invalid_request_error\', \'code\': \'json_validate_failed\', \'failed_generation\': \'completion returned no choices\'}}', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 195.7890625, 'click_y': 35.9921875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.etsy.com/\n</url>\n<query>\nlist all category names shown in the Categories dropdown menu\n</query>\n<result>\nAccessories  \nArt & Collectibles  \nBaby  \nBags & Purses  \nBath & Beauty  \nBooks, Films & Music  \nClothing  \nCraft Supplies & Tools  \nElectronics & Accessories  \nGifts  \nHome & Living  \nJewellery  \nPaper & Party Supplies  \nPet Supplies  \nShoes  \nToys & Games  \nWeddings\n</result>', extracted_content='<url>\nhttps://www.etsy.com/\n</url>\n<query>\nlist all category names shown in the Categories dropdown menu\n</query>\n<result>\nAccessories  \nArt & Collectibles  \nBaby  \nBags & Purses  \nBath & Beauty  \nBooks, Films & Music  \nClothing  \nCraft Supplies & Tools  \nElectronics & Accessories  \nGifts  \nHome & Living  \nJewellery  \nPaper & Party Supplies  \nPet Supplies  \nShoes  \nToys & Games  \nWeddings\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, Etsy.com has a "Toys & Games" section under its Categories.', extracted_content='Yes, Etsy.com has a "Toys & Games" section under its Categories.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.etsy.com', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.etsy.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 6}, 'interacted_element': DOMInteractedElement(node_id=2262, backend_node_id=1176, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'button', 'class': 'wt-menu__trigger wt-btn wt-btn--transparent header-button wt-mr-xs-1 wt-btn--small', 'aria-haspopup': 'true', 'aria-expanded': 'false', 'data-wt-menu-trigger': '', 'data-level': '0', 'data-overlay-trigger-selector': 'overlay-trigger-ele'}, bounds=DOMRect(x=134.5, y=17.90625, width=122.578125, height=36.171875), x_path='html/body/div[2]/div/header/nav/div/button', element_hash=86716963092892632)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'list all category names shown in the Categories dropdown menu', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'Yes, Etsy.com has a "Toys & Games" section under its Categories.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/d69344a4-bb63-49d1-90d9-93b7eba36157/recordings/7ae9f40d-4ca2-4dcd-8730-4fa93496193c/fetch

@@ -1,0 +1,156 @@
+2025-10-06 20:06:26,306 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 20:06:26,319 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 20:06:26,334 - INFO - 🔗 Found URL in task: https://stackoverflow.com/questions, adding as initial action...
+2025-10-06 20:06:26,339 - INFO - [34m🚀 Task: Can Active Questions be filtered by number of Days old? You must complete the task only using the starting website. Begin task on the following url: https://stackoverflow.com/questions[0m
+2025-10-06 20:06:26,379 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 20:06:26,385 - INFO - ────────────────────────────────────────
+2025-10-06 20:06:26,385 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 20:06:26,386 - INFO -     👉  browser-use auth
+2025-10-06 20:06:26,386 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 20:06:26,386 - INFO - ────────────────────────────────────────
+
+2025-10-06 20:06:26,594 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 20:06:26,629 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=70c12537-5f7a-412d-ad99-43bc3115bf5c
+2025-10-06 20:06:27,966 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://stackoverflow.com/questions, new_tab: False
+2025-10-06 20:06:30,497 - INFO - 🔗 Navigated to https://stackoverflow.com/questions
+2025-10-06 20:06:33,312 - INFO - 
+
+2025-10-06 20:06:33,312 - INFO - 📍 Step 1:
+2025-10-06 20:06:34,173 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:06:34,183 - INFO -   ❔ Eval: The previous navigation resulted in an empty page, likely due to loading delay. Verdict: Uncertain
+2025-10-06 20:06:34,184 - INFO -   [34m🎯 Next goal: Wait for the page to load fully and then verify that question listings are visible.[0m
+2025-10-06 20:06:34,184 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-06 20:06:34,248 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 20:06:41,403 - INFO - 
+
+2025-10-06 20:06:41,403 - INFO - 📍 Step 2:
+2025-10-06 20:06:43,223 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:06:43,223 - INFO -   ❔ Eval: Uncertain – waited for page load, and elements are now visible, but cannot confirm full page readiness.
+2025-10-06 20:06:43,223 - INFO -   [34m🎯 Next goal: Click the Filter button to open filter options and inspect if a days-old filter can be applied.[0m
+2025-10-06 20:06:43,224 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 33, while_holding_ctrl: None
+2025-10-06 20:06:44,704 - INFO - 🖱️ Clicked element
+2025-10-06 20:06:49,966 - INFO - 
+
+2025-10-06 20:06:49,966 - INFO - 📍 Step 3:
+2025-10-06 20:06:51,949 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:06:51,950 - INFO -   [32m👍 Eval: Clicked the Filter button successfully, opening the filter panel with new elements.[0m
+2025-10-06 20:06:51,951 - INFO -   [34m🎯 Next goal: Enter a value into the 'Days old' field and apply the filter to see if Active Questions can be filtered by days.[0m
+2025-10-06 20:06:51,951 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 46, text: 1, clear_existing: True
+2025-10-06 20:06:52,821 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 20:06:52,821 - INFO - ⌨️ Typed "1" into element with index 46
+2025-10-06 20:06:57,984 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 76, while_holding_ctrl: None
+2025-10-06 20:07:00,390 - INFO - 🖱️ Clicked element
+2025-10-06 20:07:05,753 - INFO - 
+
+2025-10-06 20:07:05,754 - INFO - 📍 Step 4:
+2025-10-06 20:07:07,844 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:07:07,844 - INFO -   [32m👍 Eval: Successfully applied a days-old filter on the Newest questions view; URL includes days=1. Verdict: Success[0m
+2025-10-06 20:07:07,844 - INFO -   [34m🎯 Next goal: Click the Active tab (index 29) to check if the days-old filter is applied to Active Questions.[0m
+2025-10-06 20:07:07,845 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 29, while_holding_ctrl: None
+2025-10-06 20:07:10,058 - INFO - 🖱️ Clicked element
+2025-10-06 20:07:15,695 - INFO - 
+
+2025-10-06 20:07:15,696 - INFO - 📍 Step 5:
+2025-10-06 20:07:18,228 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:07:18,229 - INFO -   ❔ Eval: Uncertain – need to verify if the days filter remains after switching to Active.
+2025-10-06 20:07:18,229 - INFO -   [34m🎯 Next goal: Change the Days old filter to 2 on the Active tab and apply it, then verify the URL includes the days parameter.[0m
+2025-10-06 20:07:18,230 - INFO -   🦾 [34m[ACTION 1/3][0m input_text: index: 46, text: 2, clear_existing: True
+2025-10-06 20:07:18,696 - ERROR - CDP Error for request 282: {'code': -32000, 'message': 'Element is not focusable'}
+2025-10-06 20:07:19,243 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 20:07:19,243 - INFO - ⌨️ Typed "2" into element with index 46
+2025-10-06 20:07:24,082 - INFO -   🦾 [34m[ACTION 2/3][0m click_element_by_index: index: 76, while_holding_ctrl: None
+2025-10-06 20:07:26,696 - INFO - 🖱️ Clicked element
+2025-10-06 20:07:27,198 - INFO -   🦾 [34m[ACTION 3/3][0m wait: seconds: 5
+2025-10-06 20:07:27,264 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 20:07:33,988 - INFO - 
+
+2025-10-06 20:07:33,989 - INFO - 📍 Step 6:
+2025-10-06 20:07:35,787 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:07:35,788 - INFO -   ❔ Eval: Uncertain – after inputting '2' and clicking Apply on the Active tab, we have not confirmed if the filter was applied.
+2025-10-06 20:07:35,788 - INFO -   [34m🎯 Next goal: Extract page data to check if the Active tab filter by days is applied (e.g., URL contains days=2 or filter panel shows the value).[0m
+2025-10-06 20:07:35,788 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Check if the current page URL contains days= or if the filter panel shows the value entered., ext
+2025-10-06 20:07:37,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:07:37,795 - INFO - 📄 <url>
+https://stackoverflow.com/questions/tagged/linux
+</url>
+<query>
+Check if the current page URL contains 'days=' or if the filter panel shows the value entered.
+</query>
+<result>
+The provided page content does not include the current URL, so it cannot be determined whether the URL contains “days=”. The filter panel only shows the label “Days old” and does not display any entered value.
+</result>
+2025-10-06 20:07:42,847 - INFO - 
+
+2025-10-06 20:07:42,848 - INFO - 📍 Step 7:
+2025-10-06 20:07:45,622 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:07:45,623 - INFO -   ❔ Eval: Previous step left the filter status on Active uncertain; no confirmation of URL change.
+2025-10-06 20:07:45,623 - INFO -   [34m🎯 Next goal: Apply a Days old filter on the Active tab and verify the URL contains the days parameter.[0m
+2025-10-06 20:07:45,624 - INFO -   🦾 [34m[ACTION 1/6][0m click_element_by_index: index: 30, while_holding_ctrl: None
+2025-10-06 20:07:58,922 - INFO - 🖱️ Clicked element
+2025-10-06 20:08:03,942 - INFO -   🦾 [34m[ACTION 2/6][0m click_element_by_index: index: 34, while_holding_ctrl: None
+2025-10-06 20:08:05,424 - INFO - 🖱️ Clicked element
+2025-10-06 20:08:09,927 - INFO - Page changed after action: actions input_text, click_element_by_index, wait, extract_structured_data are not yet executed
+2025-10-06 20:08:14,738 - INFO - 
+
+2025-10-06 20:08:14,739 - INFO - 📍 Step 8:
+2025-10-06 20:08:17,319 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:08:17,320 - INFO -   ❔ Eval: Previous attempt to apply a days filter on Active was inconclusive; URL did not show days parameter.
+2025-10-06 20:08:17,320 - INFO -   [34m🎯 Next goal: Input a days value (3) into the Days old field, apply the filter, wait, and extract the current URL to see if it includes 'days='.[0m
+2025-10-06 20:08:17,321 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 47, text: 3, clear_existing: True
+2025-10-06 20:08:18,189 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 20:08:18,189 - INFO - ⌨️ Typed "3" into element with index 47
+2025-10-06 20:08:23,074 - INFO -   🦾 [34m[ACTION 2/4][0m click_element_by_index: index: 78, while_holding_ctrl: None
+2025-10-06 20:08:26,591 - INFO - 🖱️ Clicked element
+2025-10-06 20:08:27,093 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 3
+2025-10-06 20:08:27,159 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 20:08:27,660 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: What is the current page URL?, extract_links: False, start_from_char: 0
+2025-10-06 20:08:28,433 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:08:28,499 - INFO - 📄 <url>
+https://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3&edited=true
+</url>
+<query>
+What is the current page URL?
+</query>
+<result>
+Information unavailable: the current page URL is not provided in the given content.
+</result>
+2025-10-06 20:08:32,815 - INFO - 
+
+2025-10-06 20:08:32,815 - INFO - 📍 Step 9:
+2025-10-06 20:08:34,818 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:08:34,819 - INFO -   ❔ Eval: Uncertain – applied a days filter on Active tab but did not verify if the URL changed.
+2025-10-06 20:08:34,819 - INFO -   [34m🎯 Next goal: Retrieve the current page URL via JavaScript to see if it contains a 'days=' parameter.[0m
+2025-10-06 20:08:34,819 - INFO -   🦾 [34m[ACTION 1/1][0m execute_js: code: (function() try  return window.location.href;  catch(e) return Error: +e.message;  )()
+2025-10-06 20:08:35,077 - INFO - Code: (function(){ try { return window.location.href; } catch(e){ return 'Error: '+e.message; } })()
+
+Result: https://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3&edited=true
+2025-10-06 20:08:39,148 - INFO - 
+
+2025-10-06 20:08:39,149 - INFO - 📍 Step 10:
+2025-10-06 20:08:41,161 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:08:41,162 - INFO -   [32m👍 Eval: Success – JavaScript returned a URL containing a 'days' parameter after applying the filter on the Active tab.[0m
+2025-10-06 20:08:41,162 - INFO -   [34m🎯 Next goal: Provide the final answer to the user confirming that Active Questions can be filtered by days old, including the observed URL as evidence.[0m
+2025-10-06 20:08:41,162 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, Active Questions can be filtered by the number of Days old. After opening the filter panel on the Active tab, enteri
+2025-10-06 20:08:41,228 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, Active Questions can be filtered by the number of Days old. After opening the filter panel on the Active tab, entering a value (e.g., 3) into the 'Days old' field and clicking **Apply**, the page URL updates to include a `days` query parameter (e.g., `https://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3...`). This confirms that the filter works for Active Questions.
+
+**Evidence:** The URL after applying the filter contains `days=` indicating the filter was applied.
+
+
+2025-10-06 20:08:41,230 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=70c12537-5f7a-412d-ad99-43bc3115bf5c
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 70c12537-5f7a-412d-ad99-43bc3115bf5c
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://stackoverflow.com/questions', extracted_content='🔗 Navigated to https://stackoverflow.com/questions', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 961.1015625, 'click_y': 159.546875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input '1' into element 46.", extracted_content="Input '1' into element 46.", include_extracted_content_only_once=False, metadata={'input_x': 314.5, 'input_y': 358.15625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 323.6640625, 'click_y': 609.53125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 619.515625, 'click_y': 164.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input '2' into element 46.", extracted_content="Input '2' into element 46.", include_extracted_content_only_once=False, metadata={'input_x': 846.140625, 'input_y': 284.640625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 427.6875, 'click_y': 554.6796875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://stackoverflow.com/questions/tagged/linux\n</url>\n<query>\nCheck if the current page URL contains 'days=' or if the filter panel shows the value entered.\n</query>\n<result>\nThe provided page content does not include the current URL, so it cannot be determined whether the URL contains “days=”. The filter panel only shows the label “Days old” and does not display any entered value.\n</result>", extracted_content="<url>\nhttps://stackoverflow.com/questions/tagged/linux\n</url>\n<query>\nCheck if the current page URL contains 'days=' or if the filter panel shows the value entered.\n</query>\n<result>\nThe provided page content does not include the current URL, so it cannot be determined whether the URL contains “days=”. The filter panel only shows the label “Days old” and does not display any entered value.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 642.375, 'click_y': 360.640625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 961.1015625, 'click_y': 360.640625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions input_text, click_element_by_index, wait, extract_structured_data are not yet executed', extracted_content='Page changed after action: actions input_text, click_element_by_index, wait, extract_structured_data are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input '3' into element 47.", extracted_content="Input '3' into element 47.", include_extracted_content_only_once=False, metadata={'input_x': 314.5, 'input_y': 559.25}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 323.6640625, 'click_y': 810.625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3&edited=true\n</url>\n<query>\nWhat is the current page URL?\n</query>\n<result>\nInformation unavailable: the current page URL is not provided in the given content.\n</result>', extracted_content='<url>\nhttps://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3&edited=true\n</url>\n<query>\nWhat is the current page URL?\n</query>\n<result>\nInformation unavailable: the current page URL is not provided in the given content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content="Code: (function(){ try { return window.location.href; } catch(e){ return 'Error: '+e.message; } })()\n\nResult: https://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3&edited=true", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, Active Questions can be filtered by the number of Days old. After opening the filter panel on t - 397 more characters', extracted_content="Yes, Active Questions can be filtered by the number of Days old. After opening the filter panel on the Active tab, entering a value (e.g., 3) into the 'Days old' field and clicking **Apply**, the page URL updates to include a `days` query parameter (e.g., `https://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3...`). This confirms that the filter works for Active Questions.\n\n**Evidence:** The URL after applying the filter contains `days=` indicating the filter was applied.", include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://stackoverflow.com/questions', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 33}, 'interacted_element': DOMInteractedElement(node_id=3182, backend_node_id=427, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 's-btn s-btn__outlined s-btn__sm s-btn__icon ws-nowrap', 'role': 'button', 'data-controller': 's-expandable-control', 'data-s-expandable-control-toggle-class': 'is-selected', 'data-se-uql-target': 'toggleFormButton', 'aria-expanded': 'false', 'aria-controls': 'uql-form'}, bounds=DOMRect(x=925.703125, y=142.03125, width=70.796875, height=35.03125), x_path='html/body/div[5]/div[3]/div[1]/div[2]/div/div[2]/div/div[3]/button', element_hash=7076743121640013835)}, {'input_text': {'index': 46, 'text': '1', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=7723, backend_node_id=462, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': 's-input d-block w64', 'type': 'number', 'name': 'days', 'value': '', 'min': '1', 'id': '54497344-8621-406c-935d-6e1ee834176b'}, bounds=DOMRect(x=282.5, y=340.359375, width=64.0, height=35.59375), x_path='html/body/div[5]/div[3]/div[1]/div[2]/form/div/div/div[1]/div/div[1]/fieldset/div[5]/div/div/input', element_hash=287148437635002376)}, {'click_element_by_index': {'index': 76}, 'interacted_element': DOMInteractedElement(node_id=7810, backend_node_id=520, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 's-btn s-btn__sm s-btn__filled flex--item js-gps-track', 'type': 'submit', 'data-se-uql-target': 'applyButton', 'data-gps-track': 'question.list.apply_filter.clicked'}, bounds=DOMRect(x=282.5, y=592.015625, width=82.328125, height=35.03125), x_path='html/body/div[5]/div[3]/div[1]/div[2]/form/div/div/div[2]/div/div[1]/button', element_hash=2077314032759833028)}, {'click_element_by_index': {'index': 29}, 'interacted_element': DOMInteractedElement(node_id=3083, backend_node_id=7685, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 's-btn s-btn__muted s-btn__sm js-gps-track', 'href': '/questions?tab=Active', 'data-nav-value': 'Active', 'data-gps-track': "question.list.sort.clicked({ SortBy: 'Active' })", 'data-shortcut': 'A'}, bounds=DOMRect(x=590.890625, y=150.234375, width=57.25, height=27.53125), x_path='html/body/div[5]/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/a[2]', element_hash=1265097901633212163)}, {'input_text': {'index': 46, 'text': '2', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=3296, backend_node_id=14274, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='UL', attributes={'class': 's-user-card--awards'}, bounds=DOMRect(x=835.84375, y=278.640625, width=20.59375, height=12.0), x_path='html/body/div[5]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/div[2]/div/ul', element_hash=5107600455090300392)}, {'click_element_by_index': {'index': 76}, 'interacted_element': DOMInteractedElement(node_id=3391, backend_node_id=14417, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'class': 'd-inline mr4 js-post-tag-list-item'}, bounds=DOMRect(x=407.671875, y=545.171875, width=42.03125, height=18.0), x_path='html/body/div[5]/div[3]/div[1]/div[3]/div[3]/div[2]/div[2]/div[1]/ul/li[2]', element_hash=1841538442161110744)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': "Check if the current page URL contains 'days=' or if the filter panel shows the value entered.", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 30}, 'interacted_element': DOMInteractedElement(node_id=7669, backend_node_id=20940, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 's-btn s-btn__muted s-btn__sm is-selected js-gps-track', 'href': '/questions/tagged/linux?tab=Active', 'aria-current': 'page', 'data-nav-value': 'Active', 'data-gps-track': "question.list.sort.clicked({ SortBy: 'Active' })", 'data-shortcut': 'A'}, bounds=DOMRect(x=613.75, y=346.875, width=57.25, height=27.53125), x_path='html/body/div[5]/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/a[2]', element_hash=1847068724431086954)}, {'click_element_by_index': {'index': 34}, 'interacted_element': DOMInteractedElement(node_id=7717, backend_node_id=20970, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 's-btn s-btn__outlined s-btn__sm s-btn__icon ws-nowrap', 'role': 'button', 'data-controller': 's-expandable-control', 'data-s-expandable-control-toggle-class': 'is-selected', 'data-se-uql-target': 'toggleFormButton', 'aria-expanded': 'false', 'aria-controls': 'uql-form'}, bounds=DOMRect(x=925.703125, y=343.125, width=70.796875, height=35.03125), x_path='html/body/div[5]/div[3]/div[1]/div[2]/div/div[2]/div/div[3]/button', element_hash=7076743121640013835)}, {'input_text': {'index': 46, 'text': '2', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=7894, backend_node_id=21093, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'class': 'd-inline mr4 js-post-tag-list-item'}, bounds=DOMRect(x=542.21875, y=497.453125, width=38.9375, height=18.0), x_path='html/body/div[5]/div[3]/div[1]/div[3]/div[1]/div[2]/div[2]/div[1]/ul/li[4]', element_hash=1841538442161110744)}, {'click_element_by_index': {'index': 76}, 'interacted_element': DOMInteractedElement(node_id=7980, backend_node_id=21149, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='SPAN', attributes={'class': 'todo-no-class-here', 'title': 'reputation score ', 'dir': 'ltr'}, bounds=DOMRect(x=824.875, y=606.359375, width=30.890625, height=17.0), x_path='html/body/div[5]/div[3]/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div/ul/li/span', element_hash=1533773920718476383)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the current page URL?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 47, 'text': '3', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=12249, backend_node_id=28022, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': 's-input d-block w64', 'type': 'number', 'name': 'days', 'value': '', 'min': '1', 'id': 'a4dec214-21c2-4fcf-b2fd-91b27dc3fd45'}, bounds=DOMRect(x=282.5, y=541.453125, width=64.0, height=35.59375), x_path='html/body/div[5]/div[3]/div[1]/div[2]/form/div/div/div[1]/div/div[1]/fieldset/div[5]/div/div/input', element_hash=8205923327134945452)}, {'click_element_by_index': {'index': 78}, 'interacted_element': DOMInteractedElement(node_id=12341, backend_node_id=28127, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 's-btn s-btn__sm s-btn__filled flex--item js-gps-track', 'type': 'submit', 'data-se-uql-target': 'applyButton', 'data-gps-track': 'question.list.apply_filter.clicked'}, bounds=DOMRect(x=282.5, y=793.109375, width=82.328125, height=35.03125), x_path='html/body/div[5]/div[3]/div[1]/div[2]/form/div/div/div[2]/div/div[1]/button', element_hash=2077314032759833028)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the current page URL?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'execute_js': {'code': "(function(){ try { return window.location.href; } catch(e){ return 'Error: '+e.message; } })()"}, 'interacted_element': None}, {'done': {'text': "Yes, Active Questions can be filtered by the number of Days old. After opening the filter panel on the Active tab, entering a value (e.g., 3) into the 'Days old' field and clicking **Apply**, the page URL updates to include a `days` query parameter (e.g., `https://stackoverflow.com/questions/tagged/linux?sort=RecentActivity&days=3...`). This confirms that the filter works for Active Questions.\n\n**Evidence:** The URL after applying the filter contains `days=` indicating the filter was applied.", 'success': True, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 20:08:44,737 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/70c12537-5f7a-412d-ad99-43bc3115bf5c "HTTP/1.1 200 OK"
+2025-10-06 20:08:44,867 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/70c12537-5f7a-412d-ad99-43bc3115bf5c/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/70c12537-5f7a-412d-ad99-43bc3115bf5c/recordings/756c9aa7-1661-44a2-96b7-e9813413f317/fetch

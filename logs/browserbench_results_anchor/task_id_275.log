@@ -1,0 +1,57 @@
+2025-10-06 22:24:38,287 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 22:24:38,294 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 22:24:38,306 - INFO - 🔗 Found URL in task: https://www.caranddriver.com, adding as initial action...
+2025-10-06 22:24:38,310 - INFO - [34m🚀 Task: Where is the Car and Driver office located? You must complete the task only using the starting website. Begin task on the following url: www.caranddriver.com[0m
+2025-10-06 22:24:38,348 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 22:24:38,355 - INFO - ────────────────────────────────────────
+2025-10-06 22:24:38,355 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 22:24:38,355 - INFO -     👉  browser-use auth
+2025-10-06 22:24:38,355 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 22:24:38,355 - INFO - ────────────────────────────────────────
+
+2025-10-06 22:24:38,582 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 22:24:38,618 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=e1fcaae8-56ac-4135-b770-8de2d29e19c2
+2025-10-06 22:24:40,002 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.caranddriver.com, new_tab: False
+2025-10-06 22:24:41,833 - INFO - 🔗 Navigated to https://www.caranddriver.com
+2025-10-06 22:24:45,647 - INFO - 
+
+2025-10-06 22:24:45,647 - INFO - 📍 Step 1:
+2025-10-06 22:24:47,043 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:24:47,055 - INFO -   [32m👍 Eval: Successfully loaded the Car and Driver homepage. Verdict: Success[0m
+2025-10-06 22:24:47,055 - INFO -   [34m🎯 Next goal: Navigate to the Car and Driver contact page to locate the office address.[0m
+2025-10-06 22:24:47,055 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.caranddriver.com/contact-us, new_tab: False
+2025-10-06 22:24:49,853 - INFO - 🔗 Navigated to https://www.caranddriver.com/contact-us
+2025-10-06 22:24:52,627 - INFO - 
+
+2025-10-06 22:24:52,628 - INFO - 📍 Step 2:
+2025-10-06 22:24:54,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:24:54,054 - INFO -   [32m👍 Eval: Successfully navigated to the contact page and located the office address. Verdict: Success[0m
+2025-10-06 22:24:54,054 - INFO - 
+2025-10-06 22:24:54,055 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Car and Driver’s office is located at:\n\nCustomer Service Dept.\nCar and Driver\nP.O. Box 6000\nHarlan, IA 51593\nUnited
+2025-10-06 22:24:54,124 - INFO - 
+📄 [32m Final Result:[0m 
+Car and Driver’s office is located at:
+
+Customer Service Dept.
+Car and Driver
+P.O. Box 6000
+Harlan, IA 51593
+United States
+
+
+2025-10-06 22:24:54,129 - INFO - ✅ Task completed successfully
+2025-10-06 22:24:55,933 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/e1fcaae8-56ac-4135-b770-8de2d29e19c2 "HTTP/1.1 200 OK"
+2025-10-06 22:24:56,052 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/e1fcaae8-56ac-4135-b770-8de2d29e19c2/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=e1fcaae8-56ac-4135-b770-8de2d29e19c2
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: e1fcaae8-56ac-4135-b770-8de2d29e19c2
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.caranddriver.com', extracted_content='🔗 Navigated to https://www.caranddriver.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.caranddriver.com/contact-us', extracted_content='🔗 Navigated to https://www.caranddriver.com/contact-us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Car and Driver’s office is located at:\n\nCustomer Service Dept.\nCar and Driver\nP.O. Box 6000\nHarlan,  - 22 more characters', extracted_content='Car and Driver’s office is located at:\n\nCustomer Service Dept.\nCar and Driver\nP.O. Box 6000\nHarlan, IA 51593\nUnited States', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.caranddriver.com', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.caranddriver.com/contact-us', 'new_tab': False}, 'interacted_element': None}, {'done': {'text': 'Car and Driver’s office is located at:\n\nCustomer Service Dept.\nCar and Driver\nP.O. Box 6000\nHarlan, IA 51593\nUnited States', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/e1fcaae8-56ac-4135-b770-8de2d29e19c2/recordings/bdc6dceb-c7e5-488e-981c-36ea8aa701fd/fetch

@@ -1,0 +1,107 @@
+2025-10-06 20:32:56,062 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 20:32:56,069 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 20:32:56,080 - INFO - 🔗 Found URL in task: https://www.bbcgoodfood.com, adding as initial action...
+2025-10-06 20:32:56,083 - INFO - [34m🚀 Task: Are there any salad recipe ideas in Good Food? You must complete the task only using the starting website. Begin task on the following url: https://www.bbcgoodfood.com[0m
+2025-10-06 20:32:56,124 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 20:32:56,135 - INFO - ────────────────────────────────────────
+2025-10-06 20:32:56,135 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 20:32:56,135 - INFO -     👉  browser-use auth
+2025-10-06 20:32:56,136 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 20:32:56,136 - INFO - ────────────────────────────────────────
+
+2025-10-06 20:32:56,337 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 20:32:56,370 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b50f17cc-2de2-4737-b84c-6437a01d61d2
+2025-10-06 20:32:57,713 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.bbcgoodfood.com, new_tab: False
+2025-10-06 20:32:59,496 - INFO - 🔗 Navigated to https://www.bbcgoodfood.com
+2025-10-06 20:33:03,867 - INFO - 
+
+2025-10-06 20:33:03,867 - INFO - 📍 Step 1:
+2025-10-06 20:33:05,511 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:33:05,519 - INFO -   [32m👍 Eval: Successfully navigated to the Good Food homepage. Verdict: Success[0m
+2025-10-06 20:33:05,519 - INFO -   [34m🎯 Next goal: Search for "salad" using the search box to find salad recipe ideas.[0m
+2025-10-06 20:33:05,521 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 29, text: salad, clear_existing: True
+2025-10-06 20:33:07,236 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 20:33:07,237 - INFO - ⌨️ Typed "salad" into element with index 29
+2025-10-06 20:33:07,739 - INFO -   🦾 [34m[ACTION 2/2][0m send_keys: keys: Enter
+2025-10-06 20:33:08,154 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 20:33:08,257 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 20:33:13,866 - INFO - 
+
+2025-10-06 20:33:13,866 - INFO - 📍 Step 2:
+2025-10-06 20:33:16,243 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:33:16,244 - INFO -   [32m👍 Eval: Successfully entered 'salad' and navigated to the search results page showing many salad recipes. Verdict: Success[0m
+2025-10-06 20:33:16,244 - INFO -   [34m🎯 Next goal: Extract the titles, short descriptions, and ratings of the first 10 salad recipes shown on the page.[0m
+2025-10-06 20:33:16,245 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Extract the titles, brief description, and rating of the first 10 salad recipes displayed on this pag
+2025-10-06 20:33:20,537 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:33:20,606 - INFO - 📄 Extracted content from https://www.bbcgoodfood.com/search?q=salad for query: Extract the titles, brief description, and rating of the first 10 salad recipes displayed on this page.
+Content saved to file system: Extracted content saved to file extracted_content_0.md successfully. and displayed in <read_state>.
+2025-10-06 20:33:25,862 - INFO - 
+
+2025-10-06 20:33:25,863 - INFO - 📍 Step 3:
+2025-10-06 20:33:28,895 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:33:28,900 - INFO -   ❔ Eval: Extraction of the first 10 salad recipes succeeded; data is present in read_state.
+2025-10-06 20:33:28,900 - INFO -   [34m🎯 Next goal: Provide the extracted salad recipe ideas to the user and complete the task.[0m
+2025-10-06 20:33:28,902 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Here are the first 10 salad recipe ideas found on Good Food (BBC Good Food):\n\n1. **Chicken satay salad**\n   - *Brief d
+2025-10-06 20:33:28,972 - INFO - 
+📄 [32m Final Result:[0m 
+Here are the first 10 salad recipe ideas found on Good Food (BBC Good Food):
+
+1. **Chicken satay salad**
+   - *Brief description*: Try this no‑fuss, midweek meal that's high in protein and big on flavour. Marinate chicken breasts, then drizzle with a punchy peanut satay sauce.
+   - *Rating*: 4.8 / 5
+
+2. **Chickpea salad** (App only)
+   - *Brief description*: Use a touch of harissa to liven up a healthy chickpea salad. It takes just 10 minutes to whip up and makes an ideal side dish for slow‑cooked Greek lamb.
+   - *Rating*: 4.7 / 5
+
+3. **Epic summer salad**
+   - *Brief description*: Perfect for BBQs and buffets, our epic salad is an assembly job of gorgeous ingredients – no cooking required. Serve it with lamb kebabs for an impressive summer feast.
+   - *Rating*: 4.8 / 5
+
+4. **10‑minute couscous salad**
+   - *Brief description*: This makes a great lunchbox filler for a day out and is equally good at home from the fridge.
+   - *Rating*: 4.7 / 5
+
+5. **Salade niçoise**
+   - *Brief description*: Make salade niçoise your go‑to salad for summer. With crunchy lettuce, ripe tomatoes, potatoes, tuna and soft‑boiled eggs, it's full of flavour and texture.
+   - *Rating*: 4.9 / 5
+
+6. **Greek salad**
+   - *Brief description*: Make a fresh and colourful Greek salad in no time. It's great with grilled meats at a barbecue, or on its own as a veggie main.
+   - *Rating*: 4.8 / 5
+
+7. **Next level potato salad** (premium)
+   - *Brief description*: Take the humble potato salad to the next level with our ultimate version of this ever‑versatile side dish. It's perfect for picnics, barbecues and more.
+   - *Rating*: 4.6 / 5
+
+8. **Halloumi, carrot & orange salad**
+   - *Brief description*: Serve this halloumi, carrot, orange and watercress salad with a mustard and honey dressing for an easy lunch or starter. It takes just 20 minutes to make and delivers one of your 5‑a‑day.
+   - *Rating*: 4.8 / 5
+
+9. **Fresh cucumber & apple salad** (premium)
+   - *Brief description*: Magic happens when you combine cool cucumbers and crunchy apples. This is a perfect side dish for summer picnics and barbecues. It's addictively good and takes just minutes to make.
+   - *Rating*: 4.9 / 5
+
+10. **Broccoli salad**
+    - *Brief description*: Enjoy this crunchy, vegan broccoli salad for lunch or as a side. It's sweet, sharp and full of different textures and colours.
+    - *Rating*: 4.8 / 5
+
+These recipes provide a variety of salad ideas ranging from quick weeknight meals to premium options. Let me know if you need more details or additional recipes!
+
+
+2025-10-06 20:33:28,976 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b50f17cc-2de2-4737-b84c-6437a01d61d2
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: b50f17cc-2de2-4737-b84c-6437a01d61d2
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.bbcgoodfood.com', extracted_content='🔗 Navigated to https://www.bbcgoodfood.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'salad' into element 29.", extracted_content="Input 'salad' into element 29.", include_extracted_content_only_once=False, metadata={'input_x': 1086.0, 'input_y': 187.5}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Extracted content from https://www.bbcgoodfood.com/search?q=salad for query: Extract the titles, brief description, and rating of the first 10 salad recipes displayed on this page.\nContent saved to file system: Extracted content saved to file extracted_content_0.md successfully. and displayed in <read_state>.', extracted_content="<url>\nhttps://www.bbcgoodfood.com/search?q=salad\n</url>\n<query>\nExtract the titles, brief description, and rating of the first 10 salad recipes displayed on this page.\n</query>\n<result>\nChicken satay salad  \nBrief description: Try this no‑fuss, midweek meal that's high in protein and big on flavour. Marinate chicken breasts, then drizzle with a punchy peanut satay sauce.  \nRating: 4.8\u202f/\u202f5  \n\nApp only Chickpea salad  \nBrief description: Use a touch of harissa to liven up a healthy chickpea salad. It takes just 10\u202fminutes to whip up and makes an ideal side dish for slow‑cooked Greek lamb.  \nRating: 4.7\u202f/\u202f5  \n\nEpic summer salad  \nBrief description: Perfect for BBQs and buffets, our epic salad is an assembly job of gorgeous ingredients – no cooking required. Serve it with lamb kebabs for an impressive summer feast.  \nRating: 4.8\u202f/\u202f5  \n\n10‑minute couscous salad  \nBrief description: This makes a great lunchbox filler for a day out and is equally good at home from the fridge.  \nRating: 4.7\u202f/\u202f5  \n\nSalade niçoise  \nBrief description: Make salade niçoise your go‑to salad for summer. With crunchy lettuce, ripe tomatoes, potatoes, tuna and soft‑boiled eggs, it's full of flavour and texture.  \nRating: 4.9\u202f/\u202f5  \n\nGreek salad  \nBrief description: Make a fresh and colourful Greek salad in no time. It's great with grilled meats at a barbecue, or on its own as a veggie main.  \nRating: 4.8\u202f/\u202f5  \n\nNext level potato salad (premium)  \nBrief description: Take the humble potato salad to the next level with our ultimate version of this ever‑versatile side dish. It's perfect for picnics, barbecues and more.  \nRating: 4.6\u202f/\u202f5  \n\nHalloumi, carrot & orange salad  \nBrief description: Serve this halloumi, carrot, orange and watercress salad with a mustard and honey dressing for an easy lunch or starter. It takes just 20\u202fminutes to make and delivers one of your 5‑a‑day.  \nRating: 4.8\u202f/\u202f5  \n\nFresh cucumber & apple salad (premium)  \nBrief description: Magic happens when you combine cool cucumbers and crunchy apples. This is a perfect side dish for summer picnics and barbecues. It's addictively good and takes just minutes to make.  \nRating: 4.9\u202f/\u202f5  \n\nBroccoli salad  \nBrief description: Enjoy this crunchy, vegan broccoli salad for lunch or as a side. It's sweet, sharp and full of different textures and colours.  \nRating: 4.8\u202f/\u202f5\n</result>", include_extracted_content_only_once=True, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Here are the first 10 salad recipe ideas found on Good Food (BBC Good Food):\n\n1. **Chicken satay sal - 2447 more characters', extracted_content="Here are the first 10 salad recipe ideas found on Good Food (BBC Good Food):\n\n1. **Chicken satay salad**\n   - *Brief description*: Try this no‑fuss, midweek meal that's high in protein and big on flavour. Marinate chicken breasts, then drizzle with a punchy peanut satay sauce.\n   - *Rating*: 4.8\u202f/\u202f5\n\n2. **Chickpea salad** (App only)\n   - *Brief description*: Use a touch of harissa to liven up a healthy chickpea salad. It takes just 10\u202fminutes to whip up and makes an ideal side dish for slow‑cooked Greek lamb.\n   - *Rating*: 4.7\u202f/\u202f5\n\n3. **Epic summer salad**\n   - *Brief description*: Perfect for BBQs and buffets, our epic salad is an assembly job of gorgeous ingredients – no cooking required. Serve it with lamb kebabs for an impressive summer feast.\n   - *Rating*: 4.8\u202f/\u202f5\n\n4. **10‑minute couscous salad**\n   - *Brief description*: This makes a great lunchbox filler for a day out and is equally good at home from the fridge.\n   - *Rating*: 4.7\u202f/\u202f5\n\n5. **Salade niçoise**\n   - *Brief description*: Make salade niçoise your go‑to salad for summer. With crunchy lettuce, ripe tomatoes, potatoes, tuna and soft‑boiled eggs, it's full of flavour and texture.\n   - *Rating*: 4.9\u202f/\u202f5\n\n6. **Greek salad**\n   - *Brief description*: Make a fresh and colourful Greek salad in no time. It's great with grilled meats at a barbecue, or on its own as a veggie main.\n   - *Rating*: 4.8\u202f/\u202f5\n\n7. **Next level potato salad** (premium)\n   - *Brief description*: Take the humble potato salad to the next level with our ultimate version of this ever‑versatile side dish. It's perfect for picnics, barbecues and more.\n   - *Rating*: 4.6\u202f/\u202f5\n\n8. **Halloumi, carrot & orange salad**\n   - *Brief description*: Serve this halloumi, carrot, orange and watercress salad with a mustard and honey dressing for an easy lunch or starter. It takes just 20\u202fminutes to make and delivers one of your 5‑a‑day.\n   - *Rating*: 4.8\u202f/\u202f5\n\n9. **Fresh cucumber & apple salad** (premium)\n   - *Brief description*: Magic happens when you combine cool cucumbers and crunchy apples. This is a perfect side dish for summer picnics and barbecues. It's addictively good and takes just minutes to make.\n   - *Rating*: 4.9\u202f/\u202f5\n\n10. **Broccoli salad**\n    - *Brief description*: Enjoy this crunchy, vegan broccoli salad for lunch or as a side. It's sweet, sharp and full of different textures and colours.\n    - *Rating*: 4.8\u202f/\u202f5\n\nThese recipes provide a variety of salad ideas ranging from quick weeknight meals to premium options. Let me know if you need more details or additional recipes!", include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.bbcgoodfood.com', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 29, 'text': 'salad', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=1067, backend_node_id=793, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'autocomplete': 'off', 'class': 'form-input form-input-group__input form-input-group__item form-input--borderless form-input--mobile-square-borders', 'id': 'branded-section-search-input', 'type': 'text', 'placeholder': 'Search recipes...', 'name': 'q', 'aria-invalid': 'false', 'value': ''}, bounds=DOMRect(x=990.5, y=162.0, width=191.0, height=51.0), x_path='html/body/div/div[5]/div[7]/nav/div[1]/div/form/div/div/div/input', element_hash=294682473605671472)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Extract the titles, brief description, and rating of the first 10 salad recipes displayed on this page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': "Here are the first 10 salad recipe ideas found on Good Food (BBC Good Food):\n\n1. **Chicken satay salad**\n   - *Brief description*: Try this no‑fuss, midweek meal that's high in protein and big on flavour. Marinate chicken breasts, then drizzle with a punchy peanut satay sauce.\n   - *Rating*: 4.8\u202f/\u202f5\n\n2. **Chickpea salad** (App only)\n   - *Brief description*: Use a touch of harissa to liven up a healthy chickpea salad. It takes just 10\u202fminutes to whip up and makes an ideal side dish for slow‑cooked Greek lamb.\n   - *Rating*: 4.7\u202f/\u202f5\n\n3. **Epic summer salad**\n   - *Brief description*: Perfect for BBQs and buffets, our epic salad is an assembly job of gorgeous ingredients – no cooking required. Serve it with lamb kebabs for an impressive summer feast.\n   - *Rating*: 4.8\u202f/\u202f5\n\n4. **10‑minute couscous salad**\n   - *Brief description*: This makes a great lunchbox filler for a day out and is equally good at home from the fridge.\n   - *Rating*: 4.7\u202f/\u202f5\n\n5. **Salade niçoise**\n   - *Brief description*: Make salade niçoise your go‑to salad for summer. With crunchy lettuce, ripe tomatoes, potatoes, tuna and soft‑boiled eggs, it's full of flavour and texture.\n   - *Rating*: 4.9\u202f/\u202f5\n\n6. **Greek salad**\n   - *Brief description*: Make a fresh and colourful Greek salad in no time. It's great with grilled meats at a barbecue, or on its own as a veggie main.\n   - *Rating*: 4.8\u202f/\u202f5\n\n7. **Next level potato salad** (premium)\n   - *Brief description*: Take the humble potato salad to the next level with our ultimate version of this ever‑versatile side dish. It's perfect for picnics, barbecues and more.\n   - *Rating*: 4.6\u202f/\u202f5\n\n8. **Halloumi, carrot & orange salad**\n   - *Brief description*: Serve this halloumi, carrot, orange and watercress salad with a mustard and honey dressing for an easy lunch or starter. It takes just 20\u202fminutes to make and delivers one of your 5‑a‑day.\n   - *Rating*: 4.8\u202f/\u202f5\n\n9. **Fresh cucumber & apple salad** (premium)\n   - *Brief description*: Magic happens when you combine cool cucumbers and crunchy apples. This is a perfect side dish for summer picnics and barbecues. It's addictively good and takes just minutes to make.\n   - *Rating*: 4.9\u202f/\u202f5\n\n10. **Broccoli salad**\n    - *Brief description*: Enjoy this crunchy, vegan broccoli salad for lunch or as a side. It's sweet, sharp and full of different textures and colours.\n    - *Rating*: 4.8\u202f/\u202f5\n\nThese recipes provide a variety of salad ideas ranging from quick weeknight meals to premium options. Let me know if you need more details or additional recipes!", 'success': True, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 20:33:31,503 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/b50f17cc-2de2-4737-b84c-6437a01d61d2 "HTTP/1.1 200 OK"
+2025-10-06 20:33:31,615 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/b50f17cc-2de2-4737-b84c-6437a01d61d2/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/b50f17cc-2de2-4737-b84c-6437a01d61d2/recordings/28dd77fd-40ae-44f6-9d15-7d270eefc2c5/fetch

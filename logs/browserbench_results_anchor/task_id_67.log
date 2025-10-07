@@ -1,0 +1,153 @@
+2025-10-06 20:31:48,584 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 20:31:48,590 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 20:31:48,600 - INFO - 🔗 Found URL in task: https://collider.com, adding as initial action...
+2025-10-06 20:31:48,604 - INFO - [34m🚀 Task: What is Collider's email address for "Login & Account Support"? You must complete the task only using the starting website. Begin task on the following url: https://collider.com[0m
+2025-10-06 20:31:48,645 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 20:31:48,652 - INFO - ────────────────────────────────────────
+2025-10-06 20:31:48,652 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 20:31:48,652 - INFO -     👉  browser-use auth
+2025-10-06 20:31:48,652 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 20:31:48,652 - INFO - ────────────────────────────────────────
+
+2025-10-06 20:31:48,882 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 20:31:48,932 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=0d7825a9-bd16-43ce-af6a-3d377c00109c
+2025-10-06 20:31:50,281 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://collider.com, new_tab: False
+2025-10-06 20:31:52,620 - INFO - 🔗 Navigated to https://collider.com
+2025-10-06 20:31:56,431 - INFO - 
+
+2025-10-06 20:31:56,431 - INFO - 📍 Step 1:
+2025-10-06 20:31:58,099 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:31:58,104 - INFO -   [32m👍 Eval: Previous step only initialized the session and loaded the homepage; no action taken yet. Verdict: Success (initial load).[0m
+2025-10-06 20:31:58,104 - INFO -   [34m🎯 Next goal: Create a todo.md file with the plan for this task.[0m
+2025-10-06 20:31:58,104 - INFO -   🦾 [34m[ACTION 1/1][0m write_file: file_name: todo.md, content: # Collider Support Email Retrieval Task\n\n## Goal: Find the email address for Login &
+2025-10-06 20:31:58,169 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 20:32:03,512 - INFO - 
+
+2025-10-06 20:32:03,512 - INFO - 📍 Step 2:
+2025-10-06 20:32:04,668 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:04,669 - INFO -   [32m👍 Eval: Previous step created todo.md successfully. Verdict: Success[0m
+2025-10-06 20:32:04,670 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to reveal the footer/contact section.[0m
+2025-10-06 20:32:04,670 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 8.0, frame_element_index: None
+2025-10-06 20:32:09,672 - INFO - 🔍 Scrolled down the page by 8.0 pages (requested: 8.0, 900px per page)
+2025-10-06 20:32:13,991 - INFO - 
+
+2025-10-06 20:32:13,991 - INFO - 📍 Step 3:
+2025-10-06 20:32:15,382 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:15,384 - INFO -   [32m👍 Eval: Scrolled down the page by 8.0 pages – success.[0m
+2025-10-06 20:32:15,384 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' link (index 65) to open the contact page where the support email can be extracted.[0m
+2025-10-06 20:32:15,385 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 65, while_holding_ctrl: None
+2025-10-06 20:32:16,865 - INFO - 🖱️ Clicked element
+2025-10-06 20:32:20,935 - INFO - 
+
+2025-10-06 20:32:20,935 - INFO - 📍 Step 4:
+2025-10-06 20:32:22,786 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:22,789 - INFO -   [32m👍 Eval: Clicked the 'Contact Us' link successfully; page likely changed to the contact page.[0m
+2025-10-06 20:32:22,789 - INFO -   [34m🎯 Next goal: Extract the Login & Account Support email address from the Contact Us page and record it.[0m
+2025-10-06 20:32:22,789 - INFO -   🦾 [34m[ACTION 1/2][0m replace_file_str: file_name: todo.md, old_str: - [ ] Scroll to the bottom of the homepage to reveal the footer/contact section
+2025-10-06 20:32:22,857 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Scroll to the bottom of the homepage to reveal the footer/contact section" with "- [x] Scroll to the bottom of the homepage to reveal the footer/contact section" in file todo.md
+2025-10-06 20:32:23,359 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the email address for Login & Account Support on this page?, extract_links: False, star
+2025-10-06 20:32:24,605 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:24,672 - INFO - 📄 <url>
+https://collider.com/
+</url>
+<query>
+What is the email address for "Login & Account Support" on this page?
+</query>
+<result>
+Information not available on the provided page.
+</result>
+2025-10-06 20:32:28,715 - INFO - 
+
+2025-10-06 20:32:28,715 - INFO - 📍 Step 5:
+2025-10-06 20:32:30,448 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:30,450 - INFO -   ❔ Eval: Previous click on 'Contact Us' was performed but the page did not change in the observed state; need to click again and wait for navigation.
+2025-10-06 20:32:30,450 - INFO -   [34m🎯 Next goal: Navigate to the Contact Us page and extract the Login & Account Support email address.[0m
+2025-10-06 20:32:30,450 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 65, while_holding_ctrl: False
+2025-10-06 20:32:31,931 - INFO - 🖱️ Clicked element
+2025-10-06 20:32:32,433 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-06 20:32:32,500 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 20:32:33,001 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: What is the email address for Login & Account Support on this page?, extract_links: False, star
+2025-10-06 20:32:34,366 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:34,432 - INFO - 📄 <url>
+https://collider.com/
+</url>
+<query>
+What is the email address for "Login & Account Support" on this page?
+</query>
+<result>
+Information not available on the provided page.
+</result>
+2025-10-06 20:32:38,281 - INFO - 
+
+2025-10-06 20:32:38,281 - INFO - 📍 Step 6:
+2025-10-06 20:32:40,325 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:40,326 - INFO -   [31m⚠️ Eval: The attempt to click 'Contact Us' did not result in navigation; verdict: failure/uncertain.[0m
+2025-10-06 20:32:40,326 - INFO -   [34m🎯 Next goal: Extract the Login & Account Support email address from the current page using extract_structured_data.[0m
+2025-10-06 20:32:40,326 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Login & Account Support email address, extract_links: False, start_from_char: 0
+2025-10-06 20:32:41,539 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:41,609 - INFO - 📄 <url>
+https://collider.com/
+</url>
+<query>
+Login & Account Support email address
+</query>
+<result>
+Information unavailable – the webpage does not provide a Login & Account Support email address.
+</result>
+2025-10-06 20:32:45,357 - INFO - 
+
+2025-10-06 20:32:45,357 - INFO - 📍 Step 7:
+2025-10-06 20:32:47,518 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:47,519 - INFO -   [31m⚠️ Eval: Failure – extract_structured_data on the homepage did not find the email address.[0m
+2025-10-06 20:32:47,519 - INFO -   [34m🎯 Next goal: Navigate to the Collider contact page to locate the 'Login & Account Support' email address.[0m
+2025-10-06 20:32:47,519 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://collider.com/contact/, new_tab: False
+2025-10-06 20:32:48,998 - INFO - 🔗 Navigated to https://collider.com/contact/
+2025-10-06 20:32:51,704 - INFO - 
+
+2025-10-06 20:32:51,704 - INFO - 📍 Step 8:
+2025-10-06 20:32:53,929 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:53,929 - INFO -   [32m👍 Eval: Successfully navigated to the contact page and located the Login & Account Support email address.[0m
+2025-10-06 20:32:53,929 - INFO -   [34m🎯 Next goal: Mark the remaining todo items as completed and record the email address in results.md.[0m
+2025-10-06 20:32:53,930 - INFO -   🦾 [34m[ACTION 1/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Extract the email address for Login & Account Support using extract_structur
+2025-10-06 20:32:53,996 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Extract the email address for Login & Account Support using extract_structured_data" with "- [x] Extract the email address for Login & Account Support using extract_structured_data" in file todo.md
+2025-10-06 20:32:54,497 - INFO -   🦾 [34m[ACTION 2/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Record the email address in results.md, new_str: - [x] Record the email
+2025-10-06 20:32:54,567 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Record the email address in results.md" with "- [x] Record the email address in results.md" in file todo.md
+2025-10-06 20:32:55,069 - INFO -   🦾 [34m[ACTION 3/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Mark task as completed, new_str: - [x] Mark task as completed
+2025-10-06 20:32:55,136 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Mark task as completed" with "- [x] Mark task as completed" in file todo.md
+2025-10-06 20:32:55,638 - INFO -   🦾 [34m[ACTION 4/4][0m write_file: file_name: results.md, content: Login & Account Support email: admin@collider.com, append: False, trailing_newlin
+2025-10-06 20:32:55,703 - INFO - 💾 Data written to file results.md successfully.
+2025-10-06 20:32:58,553 - INFO - 
+
+2025-10-06 20:32:58,553 - INFO - 📍 Step 9:
+2025-10-06 20:32:59,839 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:32:59,839 - INFO -   [32m👍 Eval: Success – email address retrieved and recorded.[0m
+2025-10-06 20:32:59,839 - INFO -   [34m🎯 Next goal: Call done to finalize the task and present the result.[0m
+2025-10-06 20:32:59,840 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The Login & Account Support email address for Collider is admin@collider.com., success: True, files_to_display: [re
+2025-10-06 20:32:59,907 - INFO - 
+📄 [32m Final Result:[0m 
+The Login & Account Support email address for Collider is admin@collider.com.
+
+Attachments:
+
+results.md:
+Login & Account Support email: admin@collider.com
+
+
+
+2025-10-06 20:32:59,907 - INFO - 👉 Attachment : /var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e489a-497a-797e-8000-f2438b79b2fc_1759807908/browseruse_agent_data/results.md
+2025-10-06 20:32:59,910 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=0d7825a9-bd16-43ce-af6a-3d377c00109c
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 0d7825a9-bd16-43ce-af6a-3d377c00109c
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://collider.com', extracted_content='🔗 Navigated to https://collider.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 8.0 pages (requested: 8.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 8.0 pages (requested: 8.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 638.8984375, 'click_y': 698.421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Scroll to the bottom of the homepage to reveal the footer/contact section" with "- [x] Scroll to the bottom of the homepage to reveal the footer/contact section" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Scroll to the bottom of the homepage to reveal the footer/contact section" with "- [x] Scroll to the bottom of the homepage to reveal the footer/contact section" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://collider.com/\n</url>\n<query>\nWhat is the email address for "Login & Account Support" on this page?\n</query>\n<result>\nInformation not available on the provided page.\n</result>', extracted_content='<url>\nhttps://collider.com/\n</url>\n<query>\nWhat is the email address for "Login & Account Support" on this page?\n</query>\n<result>\nInformation not available on the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 638.8984375, 'click_y': 698.421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://collider.com/\n</url>\n<query>\nWhat is the email address for "Login & Account Support" on this page?\n</query>\n<result>\nInformation not available on the provided page.\n</result>', extracted_content='<url>\nhttps://collider.com/\n</url>\n<query>\nWhat is the email address for "Login & Account Support" on this page?\n</query>\n<result>\nInformation not available on the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://collider.com/\n</url>\n<query>\nLogin & Account Support email address\n</query>\n<result>\nInformation unavailable – the webpage does not provide a Login & Account Support email address.\n</result>', extracted_content='<url>\nhttps://collider.com/\n</url>\n<query>\nLogin & Account Support email address\n</query>\n<result>\nInformation unavailable – the webpage does not provide a Login & Account Support email address.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://collider.com/contact/', extracted_content='🔗 Navigated to https://collider.com/contact/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Extract the email address for Login & Account Support using extract_structured_data" with "- [x] Extract the email address for Login & Account Support using extract_structured_data" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Extract the email address for Login & Account Support using extract_structured_data" with "- [x] Extract the email address for Login & Account Support using extract_structured_data" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Record the email address in results.md" with "- [x] Record the email address in results.md" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Record the email address in results.md" with "- [x] Record the email address in results.md" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Mark task as completed" with "- [x] Mark task as completed" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Mark task as completed" with "- [x] Mark task as completed" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=['/var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e489a-497a-797e-8000-f2438b79b2fc_1759807908/browseruse_agent_data/results.md'], long_term_memory='Task completed: True - The Login & Account Support email address for Collider is admin@collider.com.', extracted_content='The Login & Account Support email address for Collider is admin@collider.com.\n\nAttachments:\n\nresults.md:\nLogin & Account Support email: admin@collider.com\n', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://collider.com', 'new_tab': False}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Collider Support Email Retrieval Task\n\n## Goal: Find the email address for "Login & Account Support" on collider.com\n\n## Tasks:\n- [ ] Scroll to the bottom of the homepage to reveal the footer/contact section\n- [ ] Extract the email address for Login & Account Support using extract_structured_data\n- [ ] Record the email address in results.md\n- [ ] Mark task as completed\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 8.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 65}, 'interacted_element': DOMInteractedElement(node_id=5316, backend_node_id=3557, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text', 'href': '/contact/'}, bounds=DOMRect(x=609.78125, y=690.421875, width=58.234375, height=16.0), x_path='html/body/footer/div[1]/div/div[1]/ul[1]/li[6]/a', element_hash=1267111190751456281)}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Scroll to the bottom of the homepage to reveal the footer/contact section', 'new_str': '- [x] Scroll to the bottom of the homepage to reveal the footer/contact section'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for "Login & Account Support" on this page?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 65, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=9719, backend_node_id=3557, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'text', 'href': '/contact/'}, bounds=DOMRect(x=609.78125, y=690.421875, width=58.234375, height=16.0), x_path='html/body/footer/div[1]/div/div[1]/ul[1]/li[6]/a', element_hash=1267111190751456281)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for "Login & Account Support" on this page?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Login & Account Support email address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://collider.com/contact/', 'new_tab': False}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Extract the email address for Login & Account Support using extract_structured_data', 'new_str': '- [x] Extract the email address for Login & Account Support using extract_structured_data'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Record the email address in results.md', 'new_str': '- [x] Record the email address in results.md'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Mark task as completed', 'new_str': '- [x] Mark task as completed'}, 'interacted_element': None}, {'write_file': {'file_name': 'results.md', 'content': 'Login & Account Support email: admin@collider.com', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'done': {'text': 'The Login & Account Support email address for Collider is admin@collider.com.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}])2025-10-06 20:33:03,030 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/0d7825a9-bd16-43ce-af6a-3d377c00109c "HTTP/1.1 200 OK"
+2025-10-06 20:33:03,146 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/0d7825a9-bd16-43ce-af6a-3d377c00109c/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/0d7825a9-bd16-43ce-af6a-3d377c00109c/recordings/817f8222-5daf-4968-ab89-e1cd6e329f20/fetch

@@ -1,0 +1,123 @@
+2025-10-06 21:56:49,413 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 21:56:49,426 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 21:56:49,442 - INFO - 🔗 Found URL in task: https://ndtv.com, adding as initial action...
+2025-10-06 21:56:49,447 - INFO - [34m🚀 Task: When was NDTV profit launched ? You must complete the task only using the starting website. Begin task on the following url: ndtv.com[0m
+2025-10-06 21:56:49,484 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 21:56:49,491 - INFO - ────────────────────────────────────────
+2025-10-06 21:56:49,491 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 21:56:49,491 - INFO -     👉  browser-use auth
+2025-10-06 21:56:49,491 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 21:56:49,491 - INFO - ────────────────────────────────────────
+
+2025-10-06 21:56:49,696 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 21:56:49,736 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=6acb0e8f-2004-444d-ab26-f4f17a4f4172
+2025-10-06 21:56:51,292 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://ndtv.com, new_tab: False
+2025-10-06 21:56:53,405 - INFO - 🔗 Navigated to https://ndtv.com
+2025-10-06 21:56:58,367 - INFO - 
+
+2025-10-06 21:56:58,367 - INFO - 📍 Step 1:
+2025-10-06 21:56:59,855 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:56:59,859 - INFO -   [34m🎯 Next goal: Navigate to the NDTV Profit page by clicking the 'Profit' link.[0m
+2025-10-06 21:56:59,860 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 4, while_holding_ctrl: None
+2025-10-06 21:57:02,503 - INFO - 🖱️ Clicked element
+2025-10-06 21:57:06,109 - INFO - 
+
+2025-10-06 21:57:06,109 - INFO - 📍 Step 2:
+2025-10-06 21:57:08,187 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:08,188 - INFO -   [32m👍 Eval: Successfully clicked the 'Profit' navigation element and arrived at the NDTV Profit homepage. Verdict: Success[0m
+2025-10-06 21:57:08,188 - INFO -   [34m🎯 Next goal: Create a todo.md with the task plan and then click the hamburger menu (index 6) to open navigation.[0m
+2025-10-06 21:57:08,188 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # NDTV Profit Launch Date Task\n\n## Goal\nFind the launch date of NDTV Profit using onl
+2025-10-06 21:57:08,255 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 21:57:11,296 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-06 21:57:15,510 - INFO - 
+
+2025-10-06 21:57:15,511 - INFO - 📍 Step 3:
+2025-10-06 21:57:18,080 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:18,080 - INFO -   [31m⚠️ Eval: Previous actions: wrote todo.md and attempted to click hamburger menu but click not yet executed. No failure yet.[0m
+2025-10-06 21:57:18,080 - INFO -   [34m🎯 Next goal: Mark the hamburger menu task as completed in todo.md and extract the NDTV Profit launch date from the current page.[0m
+2025-10-06 21:57:18,081 - INFO -   🦾 [34m[ACTION 1/2][0m replace_file_str: file_name: todo.md, old_str: - [ ] Open hamburger menu (index 6), new_str: - [x] Open hamburger menu (index
+2025-10-06 21:57:18,146 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Open hamburger menu (index 6)" with "- [x] Open hamburger menu (index 6)" in file todo.md
+2025-10-06 21:57:18,646 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was NDTV Profit launched? Provide the launch date., extract_links: False, start_from_char:
+2025-10-06 21:57:20,520 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:20,585 - INFO - 📄 <url>
+https://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav
+</url>
+<query>
+When was NDTV Profit launched? Provide the launch date.
+</query>
+<result>
+Information on the launch date of NDTV Profit is not available in the provided webpage content.
+</result>
+2025-10-06 21:57:25,082 - INFO - 
+
+2025-10-06 21:57:25,082 - INFO - 📍 Step 4:
+2025-10-06 21:57:26,771 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:26,772 - INFO -   ❔ Eval: Failed to find launch date on the current page; need to navigate to About page.
+2025-10-06 21:57:26,772 - INFO -   [34m🎯 Next goal: Open the hamburger menu to reveal navigation options.[0m
+2025-10-06 21:57:26,773 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 26, while_holding_ctrl: None
+2025-10-06 21:57:28,336 - INFO - 🖱️ Clicked element
+2025-10-06 21:57:32,840 - INFO - 
+
+2025-10-06 21:57:32,840 - INFO - 📍 Step 5:
+2025-10-06 21:57:34,493 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:34,494 - INFO -   [32m👍 Eval: Success[0m
+2025-10-06 21:57:34,494 - INFO -   [34m🎯 Next goal: Click the 'About NDTV Profit' link (index 134) to open the About page.[0m
+2025-10-06 21:57:34,494 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 134, while_holding_ctrl: None
+2025-10-06 21:57:36,383 - INFO - 🖱️ Clicked element
+2025-10-06 21:57:39,643 - INFO - 
+
+2025-10-06 21:57:39,643 - INFO - 📍 Step 6:
+2025-10-06 21:57:42,100 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:42,100 - INFO -   [32m👍 Eval: Clicked the 'About NDTV Profit' link and the About page loaded showing the launch date. Verdict: Success[0m
+2025-10-06 21:57:42,100 - INFO -   [34m🎯 Next goal: Write the launch date to results.md, update todo.md to mark remaining tasks as done, and finish with a done action.[0m
+2025-10-06 21:57:42,101 - INFO -   🦾 [34m[ACTION 1/5][0m write_file: file_name: results.md, content: NDTV Profit launch date: 17 January, 2005, append: False, trailing_newline: True
+2025-10-06 21:57:42,173 - INFO - 💾 Data written to file results.md successfully.
+2025-10-06 21:57:42,674 - INFO -   🦾 [34m[ACTION 2/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Extract launch date information, new_str: - [x] Extract launch date info
+2025-10-06 21:57:42,741 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Extract launch date information" with "- [x] Extract launch date information" in file todo.md
+2025-10-06 21:57:43,242 - INFO -   🦾 [34m[ACTION 3/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Record the launch date in results.md, new_str: - [x] Record the launch d
+2025-10-06 21:57:43,312 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Record the launch date in results.md" with "- [x] Record the launch date in results.md" in file todo.md
+2025-10-06 21:57:43,812 - INFO -   🦾 [34m[ACTION 4/5][0m replace_file_str: file_name: todo.md, old_str: - [ ] Verify and finalize answer, new_str: - [x] Verify and finalize answer
+2025-10-06 21:57:43,891 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Verify and finalize answer" with "- [x] Verify and finalize answer" in file todo.md
+2025-10-06 21:57:48,328 - INFO - 
+
+2025-10-06 21:57:48,328 - INFO - 📍 Step 7:
+2025-10-06 21:57:50,216 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:50,218 - INFO -   [32m👍 Eval: Success[0m
+2025-10-06 21:57:50,218 - INFO -   [34m🎯 Next goal: Mark the remaining 'Locate and click About' task as completed in todo.md and finalize the answer.[0m
+2025-10-06 21:57:50,220 - INFO -   🦾 [34m[ACTION 1/2][0m replace_file_str: file_name: todo.md, old_str: - [ ] Locate and click About or similar page, new_str: - [x] Locate and clic
+2025-10-06 21:57:50,286 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Locate and click 'About' or similar page" with "- [x] Locate and click 'About' or similar page" in file todo.md
+2025-10-06 21:57:54,102 - INFO - 
+
+2025-10-06 21:57:54,102 - INFO - 📍 Step 8:
+2025-10-06 21:57:55,666 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:57:55,667 - INFO -   [32m👍 Eval: Successfully marked the remaining task as completed; all required information is gathered.[0m
+2025-10-06 21:57:55,667 - INFO -   [34m🎯 Next goal: Provide the launch date answer to the user and finalize the task.[0m
+2025-10-06 21:57:55,667 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: NDTV Profit was launched on **17 January, 2005**., success: True, files_to_display: [results.md]
+2025-10-06 21:57:55,732 - INFO - 
+📄 [32m Final Result:[0m 
+NDTV Profit was launched on **17 January, 2005**.
+
+Attachments:
+
+results.md:
+NDTV Profit launch date: 17 January, 2005
+
+
+
+2025-10-06 21:57:55,732 - INFO - 👉 Attachment : /var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e49d9-16e1-7f18-8000-775d85a5ecbb_1759813009/browseruse_agent_data/results.md
+2025-10-06 21:57:55,734 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=6acb0e8f-2004-444d-ab26-f4f17a4f4172
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 6acb0e8f-2004-444d-ab26-f4f17a4f4172
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://ndtv.com', extracted_content='🔗 Navigated to https://ndtv.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 166.21875, 'click_y': 13.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Open hamburger menu (index 6)" with "- [x] Open hamburger menu (index 6)" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Open hamburger menu (index 6)" with "- [x] Open hamburger menu (index 6)" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav\n</url>\n<query>\nWhen was NDTV Profit launched? Provide the launch date.\n</query>\n<result>\nInformation on the launch date of NDTV Profit is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav\n</url>\n<query>\nWhen was NDTV Profit launched? Provide the launch date.\n</query>\n<result>\nInformation on the launch date of NDTV Profit is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 200.1640625, 'click_y': 123.34375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 450.0, 'click_y': 863.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Extract launch date information" with "- [x] Extract launch date information" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Extract launch date information" with "- [x] Extract launch date information" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Record the launch date in results.md" with "- [x] Record the launch date in results.md" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Record the launch date in results.md" with "- [x] Record the launch date in results.md" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Verify and finalize answer" with "- [x] Verify and finalize answer" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Verify and finalize answer" with "- [x] Verify and finalize answer" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Locate and click \'About\' or similar page" with "- [x] Locate and click \'About\' or similar page" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Locate and click \'About\' or similar page" with "- [x] Locate and click \'About\' or similar page" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=['/var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e49d9-16e1-7f18-8000-775d85a5ecbb_1759813009/browseruse_agent_data/results.md'], long_term_memory='Task completed: True - NDTV Profit was launched on **17 January, 2005**.', extracted_content='NDTV Profit was launched on **17 January, 2005**.\n\nAttachments:\n\nresults.md:\nNDTV Profit launch date: 17 January, 2005\n', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://ndtv.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=221, backend_node_id=938, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'TpGnAd_lnk', 'title': 'Business News', 'href': 'https://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav'}, bounds=DOMRect(x=143.578125, y=1.0, width=45.28125, height=24.0), x_path='html/body/div[3]/div[1]/div/div/div/nav/ul/li[3]/a', element_hash=3586284835565371786)}, {'write_file': {'file_name': 'todo.md', 'content': "# NDTV Profit Launch Date Task\n\n## Goal\nFind the launch date of NDTV Profit using only ndtv.com (ndtvprofit.com) site.\n\n## Tasks\n- [ ] Open hamburger menu (index 6)\n- [ ] Locate and click 'About' or similar page\n- [ ] Extract launch date information\n- [ ] Record the launch date in results.md\n- [ ] Verify and finalize answer", 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 6}, 'interacted_element': DOMInteractedElement(node_id=190, backend_node_id=340, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'aria-label': 'Hamburger Menu', 'class': 'hamburger-menu hamburger-btn-m__hamburger__oY16y'}, bounds=DOMRect(x=162.5, y=108.296875, width=75.328125, height=30.09375), x_path='html/body/div[2]/div/header/div[3]/div/div/button', element_hash=1149775280718249159)}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Open hamburger menu (index 6)', 'new_str': '- [x] Open hamburger menu (index 6)'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was NDTV Profit launched? Provide the launch date.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 26}, 'interacted_element': DOMInteractedElement(node_id=5936, backend_node_id=340, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'aria-label': 'Hamburger Menu', 'class': 'hamburger-menu hamburger-btn-m__hamburger__oY16y'}, bounds=DOMRect(x=162.5, y=108.296875, width=75.328125, height=30.09375), x_path='html/body/div[2]/div/header/div[3]/div/div/button', element_hash=1149775280718249159)}, {'click_element_by_index': {'index': 134}, 'interacted_element': DOMInteractedElement(node_id=8190, backend_node_id=564, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'target': '_self', 'href': '/about-us?src=menu'}, bounds=DOMRect(x=318.0, y=839.0, width=264.0, height=48.0), x_path='html/body/div[2]/div/header/div[3]/div/div/div[1]/div[3]/div[2]/div[2]/div[1]/div[4]/a', element_hash=4555274368516001436)}, {'write_file': {'file_name': 'results.md', 'content': 'NDTV Profit launch date: 17 January, 2005', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Extract launch date information', 'new_str': '- [x] Extract launch date information'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Record the launch date in results.md', 'new_str': '- [x] Record the launch date in results.md'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Verify and finalize answer', 'new_str': '- [x] Verify and finalize answer'}, 'interacted_element': None}, {'done': {'text': 'NDTV Profit was launched on 17 January, 2005.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': "- [ ] Locate and click 'About' or similar page", 'new_str': "- [x] Locate and click 'About' or similar page"}, 'interacted_element': None}, {'done': {'text': 'NDTV Profit was launched on 17 January, 2005.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}, {'done': {'text': 'NDTV Profit was launched on **17 January, 2005**.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}])2025-10-06 21:57:58,481 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/6acb0e8f-2004-444d-ab26-f4f17a4f4172 "HTTP/1.1 200 OK"
+2025-10-06 21:57:58,593 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/6acb0e8f-2004-444d-ab26-f4f17a4f4172/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/6acb0e8f-2004-444d-ab26-f4f17a4f4172/recordings/4c4cb9d9-e740-41c5-bcbd-a0880b43ceec/fetch

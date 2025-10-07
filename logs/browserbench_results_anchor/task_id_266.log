@@ -1,0 +1,239 @@
+2025-10-06 22:18:58,660 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 22:18:58,669 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 22:18:58,681 - INFO - 🔗 Found URL in task: https://www.asos.com, adding as initial action...
+2025-10-06 22:18:58,685 - INFO - [34m🚀 Task: What is ASOS Company Registration Number? You must complete the task only using the starting website. Begin task on the following url: www.asos.com[0m
+2025-10-06 22:18:58,722 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 22:18:58,729 - INFO - ────────────────────────────────────────
+2025-10-06 22:18:58,729 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 22:18:58,729 - INFO -     👉  browser-use auth
+2025-10-06 22:18:58,729 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 22:18:58,729 - INFO - ────────────────────────────────────────
+
+2025-10-06 22:18:58,959 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 22:18:58,992 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=24435376-362d-4955-b99e-566e4688b179
+2025-10-06 22:19:00,381 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.asos.com, new_tab: False
+2025-10-06 22:19:03,242 - INFO - 🔗 Navigated to https://www.asos.com
+2025-10-06 22:19:05,942 - INFO - 
+
+2025-10-06 22:19:05,943 - INFO - 📍 Step 1:
+2025-10-06 22:19:07,404 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:07,409 - INFO -   ❔ Eval: Failed to see page content after navigation; page appears empty.
+2025-10-06 22:19:07,409 - INFO -   [34m🎯 Next goal: Wait for the page to load fully, then extract the company registration number from the page.[0m
+2025-10-06 22:19:07,409 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-06 22:19:07,476 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 22:19:09,978 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the ASOS company registration number? Look for legal or company information on the page., e
+2025-10-06 22:19:10,870 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:10,937 - INFO - 📄 <url>
+https://www.asos.com/
+</url>
+<query>
+What is the ASOS company registration number? Look for legal or company information on the page.
+</query>
+<result>
+The ASOS company registration number is not provided in the available page content.
+</result>
+2025-10-06 22:19:12,961 - ERROR - CDP Error for request 85: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-06 22:19:12,963 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-06 22:19:12,963 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-06 22:19:12,963 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-06 22:19:14,054 - INFO - 
+
+2025-10-06 22:19:14,054 - INFO - 📍 Step 2:
+2025-10-06 22:19:15,403 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:15,404 - INFO -   [31m⚠️ Eval: Previous wait of 5 seconds did not load page content; registration number not found. Verdict: Failure[0m
+2025-10-06 22:19:15,404 - INFO -   [34m🎯 Next goal: Wait for the page to fully load, then extract the ASOS company registration number using structured data extraction.[0m
+2025-10-06 22:19:15,405 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 10
+2025-10-06 22:19:15,473 - INFO - 🕒 waited for 7 seconds + 3 seconds for LLM call
+2025-10-06 22:19:22,976 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the ASOS company registration number? Look for legal or company information on the page., e
+2025-10-06 22:19:24,410 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:24,481 - INFO - 📄 <url>
+https://www.asos.com/
+</url>
+<query>
+What is the ASOS company registration number? Look for legal or company information on the page.
+</query>
+<result>
+Information on ASOS’s company registration number is not present in the provided page content.
+</result>
+2025-10-06 22:19:28,046 - INFO - 
+
+2025-10-06 22:19:28,046 - INFO - 📍 Step 3:
+2025-10-06 22:19:29,878 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:29,879 - INFO -   [31m⚠️ Eval: Failure: The homepage did not contain the registration number.[0m
+2025-10-06 22:19:29,879 - INFO -   [34m🎯 Next goal: Create a todo.md file outlining the steps to locate and extract the ASOS company registration number.[0m
+2025-10-06 22:19:29,880 - INFO -   🦾 [34m[ACTION 1/1][0m write_file: file_name: todo.md, content: # Task: Find ASOS Company Registration Number\n\n## Steps\n- [ ] Click Help & FAQs lin
+2025-10-06 22:19:29,949 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 22:19:33,594 - INFO - 
+
+2025-10-06 22:19:33,594 - INFO - 📍 Step 4:
+2025-10-06 22:19:34,952 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:34,953 - INFO -   [32m👍 Eval: Successfully created todo.md file outlining the required steps. Verdict: Success[0m
+2025-10-06 22:19:34,953 - INFO -   [34m🎯 Next goal: Click the 'Help & FAQs' link to navigate to the support page.[0m
+2025-10-06 22:19:34,954 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 2, while_holding_ctrl: None
+2025-10-06 22:19:36,936 - INFO - 🖱️ Clicked element
+2025-10-06 22:19:40,238 - INFO - 
+
+2025-10-06 22:19:40,239 - INFO - 📍 Step 5:
+2025-10-06 22:19:42,546 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:42,547 - INFO -   ❔ Eval: Previous click on Help & FAQs succeeded, page loaded to Customer Care. No registration number yet.
+2025-10-06 22:19:42,548 - INFO -   [34m🎯 Next goal: Open the Data Protection page and extract the ASOS company registration number.[0m
+2025-10-06 22:19:42,548 - INFO -   🦾 [34m[ACTION 1/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Click Help & FAQs link (index 2) to navigate to the support page., new_s
+2025-10-06 22:19:42,616 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Click "Help & FAQs" link (index 2) to navigate to the support page." with "- [x] Click "Help & FAQs" link (index 2) to navigate to the support page." in file todo.md
+2025-10-06 22:19:45,966 - INFO - Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed
+2025-10-06 22:19:49,951 - INFO - 
+
+2025-10-06 22:19:49,952 - INFO - 📍 Step 6:
+2025-10-06 22:19:52,017 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:19:52,018 - INFO -   [31m⚠️ Eval: Failure: The previous attempt to click the Data Protection link did not execute.[0m
+2025-10-06 22:19:52,018 - INFO -   [34m🎯 Next goal: Click the Data Protection link (index 97) to navigate to the legal information page.[0m
+2025-10-06 22:19:52,019 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 97, while_holding_ctrl: None
+2025-10-06 22:19:52,493 - WARNING - No visible quad found, using first quad
+2025-10-06 22:19:53,558 - INFO - 🖱️ Clicked element
+2025-10-06 22:19:57,191 - INFO - 
+
+2025-10-06 22:19:57,192 - INFO - 📍 Step 7:
+2025-10-06 22:20:00,064 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:00,065 - INFO -   [32m👍 Eval: Success: The previous click on the Data Protection link (index 94) was executed.[0m
+2025-10-06 22:20:00,066 - INFO -   [34m🎯 Next goal: Extract the ASOS company registration number from the Data Protection page using structured data extraction.[0m
+2025-10-06 22:20:00,066 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 94, while_holding_ctrl: None
+2025-10-06 22:20:02,515 - INFO - 🖱️ Clicked element
+2025-10-06 22:20:03,016 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-06 22:20:03,084 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 22:20:05,586 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: What is the ASOS company registration number? Look for legal or company information on this page.
+2025-10-06 22:20:07,060 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:07,130 - INFO - 📄 <url>
+https://www.asos.com/discover/data-protection-and-privacy/
+</url>
+<query>
+What is the ASOS company registration number? Look for legal or company information on this page.
+</query>
+<result>
+Information on the ASOS company registration number is not present in the provided page content.
+</result>
+2025-10-06 22:20:10,597 - INFO - 
+
+2025-10-06 22:20:10,597 - INFO - 📍 Step 8:
+2025-10-06 22:20:12,313 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:12,315 - INFO -   [32m👍 Eval: Previous step successfully clicked the Data Protection link and loaded the page, but the registration number was not found there.[0m
+2025-10-06 22:20:12,315 - INFO -   [34m🎯 Next goal: Search the ASOS site for "company registration number" using the search box (index 8) and submit the query.[0m
+2025-10-06 22:20:12,315 - INFO -   🦾 [34m[ACTION 1/3][0m input_text: index: 8, text: company registration number, clear_existing: True
+2025-10-06 22:20:18,838 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 22:20:18,839 - INFO - ⌨️ Typed "company registration number" into element with index 8
+2025-10-06 22:20:19,341 - INFO -   🦾 [34m[ACTION 2/3][0m send_keys: keys: Enter
+2025-10-06 22:20:19,814 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 22:20:19,914 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 22:20:20,416 - INFO -   🦾 [34m[ACTION 3/3][0m wait: seconds: 5
+2025-10-06 22:20:20,483 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 22:20:27,268 - INFO - 
+
+2025-10-06 22:20:27,269 - INFO - 📍 Step 9:
+2025-10-06 22:20:29,264 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:29,265 - INFO -   ❔ Eval: Previous search yielded no results; registration number not found.
+2025-10-06 22:20:29,265 - INFO -   [34m🎯 Next goal: Navigate to the Investors' site page and extract the ASOS company registration number.[0m
+2025-10-06 22:20:29,266 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 48, while_holding_ctrl: None
+2025-10-06 22:20:29,753 - WARNING - No visible quad found, using first quad
+2025-10-06 22:20:30,799 - INFO - 🖱️ Clicked element
+2025-10-06 22:20:31,300 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-06 22:20:31,367 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 22:20:33,870 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: What is the ASOS company registration number? Look for legal or company information on this page.
+2025-10-06 22:20:36,254 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:36,323 - INFO - 📄 <url>
+https://www.asos.com/discover/no-results-page/?WT.oss=company%20registration%20number
+</url>
+<query>
+What is the ASOS company registration number? Look for legal or company information on this page.
+</query>
+<result>
+Information not available on this page.
+</result>
+2025-10-06 22:20:40,531 - INFO - 
+
+2025-10-06 22:20:40,531 - INFO - 📍 Step 10:
+2025-10-06 22:20:42,767 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:42,768 - INFO -   ❔ Eval: Previous attempt to extract the registration number from the Data Protection page failed; the number was not present.
+2025-10-06 22:20:42,768 - INFO -   [34m🎯 Next goal: Click the 'Investors' site' link (index 48) and wait for the page to load, then extract the ASOS company registration number.[0m
+2025-10-06 22:20:42,768 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 48, while_holding_ctrl: None
+2025-10-06 22:20:44,340 - INFO - 🖱️ Clicked element
+2025-10-06 22:20:44,841 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-06 22:20:44,910 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 22:20:51,215 - INFO - 
+
+2025-10-06 22:20:51,215 - INFO - 📍 Step 11:
+2025-10-06 22:20:53,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:20:53,730 - INFO -   [31m⚠️ Eval: Previous attempt to click the Investors' site link did not navigate away from the no-results page, likely because it opened in a new tab which was not switched to. Verdict: Failure[0m
+2025-10-06 22:20:53,730 - INFO -   [34m🎯 Next goal: Open the Investors' site link in a new tab, switch to that tab, and extract the ASOS company registration number.[0m
+2025-10-06 22:20:53,730 - INFO -   🦾 [34m[ACTION 1/3][0m replace_file_str: file_name: todo.md, old_str: - [ ] Locate legal/company information section., new_str: - [x] Locate legal/c
+2025-10-06 22:20:53,799 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Locate legal/company information section." with "- [x] Locate legal/company information section." in file todo.md
+2025-10-06 22:20:57,614 - INFO -   🦾 [34m[ACTION 2/3][0m click_element_by_index: index: 48, while_holding_ctrl: True
+2025-10-06 22:20:59,151 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-06 22:20:59,653 - INFO -   🦾 [34m[ACTION 3/3][0m wait: seconds: 5
+2025-10-06 22:20:59,721 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 22:21:05,604 - INFO - 
+
+2025-10-06 22:21:05,604 - INFO - 📍 Step 12:
+2025-10-06 22:21:07,992 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:21:07,993 - INFO -   ❔ Eval: Previous attempt opened Investors' site in a new tab but did not switch to it; registration number not yet extracted.
+2025-10-06 22:21:07,993 - INFO -   [34m🎯 Next goal: Switch to the Investors' site tab (ID 8423) and extract the ASOS company registration number using structured data extraction.[0m
+2025-10-06 22:21:07,994 - INFO -   🦾 [34m[ACTION 1/2][0m switch_tab: tab_id: 8423
+2025-10-06 22:21:08,203 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=24435376-362d-4955-b99e-566e4688b179
+2025-10-06 22:21:09,370 - INFO - 🔄  Switched to tab #8423
+2025-10-06 22:21:09,872 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the ASOS company registration number? Look for legal or company information on this page.
+2025-10-06 22:21:10,909 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:21:10,980 - INFO - 📄 <url>
+https://www.asosplc.com/
+</url>
+<query>
+What is the ASOS company registration number? Look for legal or company information on this page.
+</query>
+<result>
+4006623
+</result>
+2025-10-06 22:21:14,301 - INFO - 
+
+2025-10-06 22:21:14,301 - INFO - 📍 Step 13:
+2025-10-06 22:21:16,163 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:21:16,165 - INFO -   [32m👍 Eval: Success: Registration number 4006623 obtained from Investors site.[0m
+2025-10-06 22:21:16,165 - INFO -   [34m🎯 Next goal: Write the registration number to results.md and mark all todo items as completed.[0m
+2025-10-06 22:21:16,165 - INFO -   🦾 [34m[ACTION 1/4][0m write_file: file_name: results.md, content: ASOS Company Registration Number: 4006623, append: False, trailing_newline: True
+2025-10-06 22:21:16,234 - INFO - 💾 Data written to file results.md successfully.
+2025-10-06 22:21:16,736 - INFO -   🦾 [34m[ACTION 2/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Extract the ASOS company registration number., new_str: - [x] Extract th
+2025-10-06 22:21:16,806 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Extract the ASOS company registration number." with "- [x] Extract the ASOS company registration number." in file todo.md
+2025-10-06 22:21:17,308 - INFO -   🦾 [34m[ACTION 3/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Write the registration number to results.md., new_str: - [x] Write the r
+2025-10-06 22:21:17,378 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Write the registration number to results.md." with "- [x] Write the registration number to results.md." in file todo.md
+2025-10-06 22:21:17,879 - INFO -   🦾 [34m[ACTION 4/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Mark all tasks as completed., new_str: - [x] Mark all tasks as completed
+2025-10-06 22:21:17,951 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Mark all tasks as completed." with "- [x] Mark all tasks as completed." in file todo.md
+2025-10-06 22:21:20,985 - INFO - 
+
+2025-10-06 22:21:20,985 - INFO - 📍 Step 14:
+2025-10-06 22:21:22,252 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:21:22,253 - INFO -   [32m👍 Eval: Success[0m
+2025-10-06 22:21:22,253 - INFO -   [34m🎯 Next goal: Finalize the task by returning the result to the user.[0m
+2025-10-06 22:21:22,253 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The ASOS Company Registration Number is 4006623., success: True, files_to_display: [results.md]
+2025-10-06 22:21:22,322 - INFO - 
+📄 [32m Final Result:[0m 
+The ASOS Company Registration Number is 4006623.
+
+Attachments:
+
+results.md:
+ASOS Company Registration Number: 4006623
+
+
+
+2025-10-06 22:21:22,322 - INFO - 👉 Attachment : /var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e4a2c-2ac1-7073-8000-1e263f1fa432_1759814338/browseruse_agent_data/results.md
+2025-10-06 22:21:22,326 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=24435376-362d-4955-b99e-566e4688b179
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 24435376-362d-4955-b99e-566e4688b179
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.asos.com', extracted_content='🔗 Navigated to https://www.asos.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.asos.com/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on the page.\n</query>\n<result>\nThe ASOS company registration number is not provided in the available page content.\n</result>', extracted_content='<url>\nhttps://www.asos.com/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on the page.\n</query>\n<result>\nThe ASOS company registration number is not provided in the available page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 10 seconds', extracted_content='Waited for 10 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.asos.com/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on the page.\n</query>\n<result>\nInformation on ASOS’s company registration number is not present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.asos.com/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on the page.\n</query>\n<result>\nInformation on ASOS’s company registration number is not present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1255.3984375, 'click_y': 15.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Click "Help & FAQs" link (index 2) to navigate to the support page." with "- [x] Click "Help & FAQs" link (index 2) to navigate to the support page." in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Click "Help & FAQs" link (index 2) to navigate to the support page." with "- [x] Click "Help & FAQs" link (index 2) to navigate to the support page." in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed', extracted_content='Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 217.0, 'click_y': 899, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 217.0, 'click_y': 771.9375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.asos.com/discover/data-protection-and-privacy/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on this page.\n</query>\n<result>\nInformation on the ASOS company registration number is not present in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.asos.com/discover/data-protection-and-privacy/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on this page.\n</query>\n<result>\nInformation on the ASOS company registration number is not present in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'company registration number' into element 8.", extracted_content="Input 'company registration number' into element 8.", include_extracted_content_only_once=False, metadata={'input_x': 803.328125, 'input_y': 60.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 544.0, 'click_y': 884, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.asos.com/discover/no-results-page/?WT.oss=company%20registration%20number\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on this page.\n</query>\n<result>\nInformation not available on this page.\n</result>', extracted_content='<url>\nhttps://www.asos.com/discover/no-results-page/?WT.oss=company%20registration%20number\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on this page.\n</query>\n<result>\nInformation not available on this page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 544.0, 'click_y': 667.359375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Locate legal/company information section." with "- [x] Locate legal/company information section." in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Locate legal/company information section." with "- [x] Locate legal/company information section." in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 544.0, 'click_y': 667.359375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #8423', extracted_content='Switched to tab #8423', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.asosplc.com/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on this page.\n</query>\n<result>\n4006623\n</result>', extracted_content='<url>\nhttps://www.asosplc.com/\n</url>\n<query>\nWhat is the ASOS company registration number? Look for legal or company information on this page.\n</query>\n<result>\n4006623\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Extract the ASOS company registration number." with "- [x] Extract the ASOS company registration number." in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Extract the ASOS company registration number." with "- [x] Extract the ASOS company registration number." in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Write the registration number to results.md." with "- [x] Write the registration number to results.md." in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Write the registration number to results.md." with "- [x] Write the registration number to results.md." in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Mark all tasks as completed." with "- [x] Mark all tasks as completed." in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Mark all tasks as completed." with "- [x] Mark all tasks as completed." in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=['/var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e4a2c-2ac1-7073-8000-1e263f1fa432_1759814338/browseruse_agent_data/results.md'], long_term_memory='Task completed: True - The ASOS Company Registration Number is 4006623.', extracted_content='The ASOS Company Registration Number is 4006623.\n\nAttachments:\n\nresults.md:\nASOS Company Registration Number: 4006623\n', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.asos.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the ASOS company registration number? Look for legal or company information on the page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the ASOS company registration number? Look for legal or company information on the page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Task: Find ASOS Company Registration Number\n\n## Steps\n- [ ] Click "Help & FAQs" link (index 2) to navigate to the support page.\n- [ ] Locate legal/company information section.\n- [ ] Extract the ASOS company registration number.\n- [ ] Write the registration number to results.md.\n- [ ] Mark all tasks as completed.\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 2}, 'interacted_element': DOMInteractedElement(node_id=9851, backend_node_id=139, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.asos.com/customer-care/', 'data-testid': 'help', 'class': 'R2BDZ6J TYb4J9A'}, bounds=DOMRect(x=1198.296875, y=0.0, width=114.203125, height=30.0), x_path='html/body/div[3]/div/div[2]/header/div[2]/div/ul/li[1]/a', element_hash=8675618812094117845)}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Click "Help & FAQs" link (index 2) to navigate to the support page.', 'new_str': '- [x] Click "Help & FAQs" link (index 2) to navigate to the support page.'}, 'interacted_element': None}, {'click_element_by_index': {'index': 94}, 'interacted_element': DOMInteractedElement(node_id=3627, backend_node_id=12935, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'XWRSfDm fVdHxMU TYb4J9A', 'href': 'https://www.asos.com/discover/data-protection-and-privacy/'}, bounds=DOMRect(x=56.5, y=1687.9375, width=321.0, height=30.0), x_path='html/body/div[1]/div/div[4]/footer/div[1]/div[3]/div/section[1]/ul/li[7]/a', element_hash=372073169730630456)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the ASOS company registration number? Look for legal or company information on this page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 97}, 'interacted_element': DOMInteractedElement(node_id=12113, backend_node_id=12935, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'XWRSfDm fVdHxMU TYb4J9A', 'href': 'https://www.asos.com/discover/data-protection-and-privacy/'}, bounds=DOMRect(x=56.5, y=1715.78125, width=321.0, height=30.0), x_path='html/body/div[1]/div/div[4]/footer/div[1]/div[3]/div/section[1]/ul/li[7]/a', element_hash=372073169730630456)}, {'click_element_by_index': {'index': 94}, 'interacted_element': DOMInteractedElement(node_id=16698, backend_node_id=12935, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'XWRSfDm fVdHxMU TYb4J9A', 'href': 'https://www.asos.com/discover/data-protection-and-privacy/'}, bounds=DOMRect(x=56.5, y=756.9375, width=321.0, height=30.0), x_path='html/body/div[1]/div/div[4]/footer/div[1]/div[3]/div/section[1]/ul/li[7]/a', element_hash=372073169730630456)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the ASOS company registration number? Look for legal or company information on this page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 8, 'text': 'company registration number', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=811, backend_node_id=18893, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'search', 'id': 'chrome-search', 'name': 'q', 'class': 'KRZT5cj fVdHxMU TYb4J9A', 'autocomplete': 'off', 'autocorrect': 'off', 'spellcheck': 'off', 'placeholder': 'Search for items and brands', 'data-testid': 'search-input', 'aria-autocomplete': 'list', 'aria-haspopup': 'listbox', 'aria-describedby': 'search-instructions', 'aria-label': 'Search for items and brands', 'maxlength': '150', 'value': ''}, bounds=DOMRect(x=408.15625, y=41.0, width=790.34375, height=38.0), x_path='html/body/div[3]/div/div[2]/header/div[3]/div/div[1]/div/div/div/form/div/input', element_hash=5026966669085812113)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 48}, 'interacted_element': DOMInteractedElement(node_id=4166, backend_node_id=30130, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'XWRSfDm fVdHxMU TYb4J9A', 'href': 'https://www.asosplc.com/', 'target': '_blank'}, bounds=DOMRect(x=383.5, y=1276.359375, width=321.0, height=30.0), x_path='html/body/div[3]/div/div[4]/footer/div[1]/div[3]/div/section[2]/ul/li[4]/a', element_hash=7943598999736435281)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the ASOS company registration number? Look for legal or company information on this page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 48}, 'interacted_element': DOMInteractedElement(node_id=8563, backend_node_id=30130, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'XWRSfDm fVdHxMU TYb4J9A', 'href': 'https://www.asosplc.com/', 'target': '_blank'}, bounds=DOMRect(x=383.5, y=652.359375, width=321.0, height=30.0), x_path='html/body/div[3]/div/div[4]/footer/div[1]/div[3]/div/section[2]/ul/li[4]/a', element_hash=7943598999736435281)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Locate legal/company information section.', 'new_str': '- [x] Locate legal/company information section.'}, 'interacted_element': None}, {'click_element_by_index': {'index': 48, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=12951, backend_node_id=30130, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'XWRSfDm fVdHxMU TYb4J9A', 'href': 'https://www.asosplc.com/', 'target': '_blank'}, bounds=DOMRect(x=383.5, y=652.359375, width=321.0, height=30.0), x_path='html/body/div[3]/div/div[4]/footer/div[1]/div[3]/div/section[2]/ul/li[4]/a', element_hash=7943598999736435281)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'switch_tab': {'tab_id': '8423'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the ASOS company registration number? Look for legal or company information on this page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'results.md', 'content': 'ASOS Company Registration Number: 4006623', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Extract the ASOS company registration number.', 'new_str': '- [x] Extract the ASOS company registration number.'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Write the registration number to results.md.', 'new_str': '- [x] Write the registration number to results.md.'}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Mark all tasks as completed.', 'new_str': '- [x] Mark all tasks as completed.'}, 'interacted_element': None}, {'done': {'text': 'The ASOS Company Registration Number is 4006623.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}])2025-10-06 22:21:27,246 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/24435376-362d-4955-b99e-566e4688b179 "HTTP/1.1 200 OK"
+2025-10-06 22:21:27,365 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/24435376-362d-4955-b99e-566e4688b179/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/24435376-362d-4955-b99e-566e4688b179/recordings/a7ea16be-a450-4083-8682-ecd6a7be3abb/fetch

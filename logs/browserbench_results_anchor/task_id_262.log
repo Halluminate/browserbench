@@ -1,0 +1,82 @@
+2025-10-06 22:16:49,500 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 22:16:49,514 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 22:16:49,527 - INFO - 🔗 Found URL in task: https://www.alamy.com, adding as initial action...
+2025-10-06 22:16:49,532 - INFO - [34m🚀 Task: When was the photo of King Charles III and Queen Camilla with US President Donald Trump and his wife taken? You must complete the task only using the starting website. Begin task on the following url: www.alamy.com[0m
+2025-10-06 22:16:49,568 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 22:16:49,576 - INFO - ────────────────────────────────────────
+2025-10-06 22:16:49,576 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 22:16:49,576 - INFO -     👉  browser-use auth
+2025-10-06 22:16:49,576 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 22:16:49,576 - INFO - ────────────────────────────────────────
+
+2025-10-06 22:16:49,778 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 22:16:49,803 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=60676b25-f7ec-4b95-a272-a428d43c8bfb
+2025-10-06 22:16:51,508 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.alamy.com, new_tab: False
+2025-10-06 22:16:53,591 - INFO - 🔗 Navigated to https://www.alamy.com
+2025-10-06 22:16:57,699 - INFO - 
+
+2025-10-06 22:16:57,700 - INFO - 📍 Step 1:
+2025-10-06 22:16:58,940 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:16:58,951 - INFO -   [34m🎯 Next goal: Enter search terms and submit the search to find the photo.[0m
+2025-10-06 22:16:58,952 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 119, text: King Charles III Queen Camilla Donald Trump Melania Trump, clear_existing: True
+2025-10-06 22:16:59,301 - ERROR - CDP Error for request 67: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-06 22:16:59,301 - WARNING - ⚠️ Failed to focus the page cdp_client=<cdp_use.client.CDPClient object at 0x11539be00> target_id='69640D8EAB9D9136ADBC7C15BC6621B8' session_id='D3C1CC8ABE96B9176DF33FC7B2E61B71' title='about:blank' url='about:blank' owns_cdp_client=False and scroll element [<input>#?:119] into view before typing in text: RuntimeError: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-06 22:16:59,466 - ERROR - CDP Error for request 69: {'code': -32000, 'message': 'Element is not focusable'}
+2025-10-06 22:17:12,645 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 22:17:12,647 - INFO - ⌨️ Typed "King Charles III Queen Camilla Donald Trump Melania Trump" into element with index 119
+2025-10-06 22:17:15,209 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-06 22:17:20,082 - INFO - 
+
+2025-10-06 22:17:20,083 - INFO - 📍 Step 2:
+2025-10-06 22:17:21,718 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:17:21,720 - INFO -   [32m👍 Eval: Partial success: search term entered but search not submitted.[0m
+2025-10-06 22:17:21,720 - INFO -   [34m🎯 Next goal: Click the search button to execute the query and load the results page.[0m
+2025-10-06 22:17:21,722 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 122, while_holding_ctrl: None
+2025-10-06 22:17:23,978 - INFO - 🖱️ Clicked element
+2025-10-06 22:17:28,026 - INFO - 
+
+2025-10-06 22:17:28,026 - INFO - 📍 Step 3:
+2025-10-06 22:17:29,466 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:17:29,469 - INFO -   [32m👍 Eval: Success: Search query submitted and results page loaded.[0m
+2025-10-06 22:17:29,469 - INFO -   [34m🎯 Next goal: Scroll down to reveal the photo details section and extract the capture date.[0m
+2025-10-06 22:17:29,470 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-06 22:17:32,643 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)
+2025-10-06 22:17:33,145 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the date the photo was taken? Provide the date in a clear format., extract_links: False
+2025-10-06 22:17:34,856 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:17:34,925 - INFO - 📄 <url>
+https://www.alamy.com/stock-photo/King-Charles-III-Queen-Camilla-Donald-Trump-Melania-Trump.html?sortBy=relevant
+</url>
+<query>
+What is the date the photo was taken? Provide the date in a clear format.
+</query>
+<result>
+17 September 2025
+</result>
+2025-10-06 22:17:40,618 - INFO - 
+
+2025-10-06 22:17:40,618 - INFO - 📍 Step 4:
+2025-10-06 22:17:42,630 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:17:42,631 - INFO -   ❔ Eval: The previous extraction gave an incorrect date (17 September 2025) while the page shows 18 September 2025, so the result was inaccurate.
+2025-10-06 22:17:42,631 - INFO -   [34m🎯 Next goal: Provide the correct capture date to the user and finish the task.[0m
+2025-10-06 22:17:42,632 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The photo of King Charles III and Queen Camilla with US President Donald Trump and his wife was taken on 18 September 202
+2025-10-06 22:17:42,699 - INFO - 
+📄 [32m Final Result:[0m 
+The photo of King Charles III and Queen Camilla with US President Donald Trump and his wife was taken on 18 September 2025.
+
+
+2025-10-06 22:17:42,703 - INFO - ✅ Task completed successfully
+2025-10-06 22:17:45,770 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/60676b25-f7ec-4b95-a272-a428d43c8bfb "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=60676b25-f7ec-4b95-a272-a428d43c8bfb
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 60676b25-f7ec-4b95-a272-a428d43c8bfb
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.alamy.com', extracted_content='🔗 Navigated to https://www.alamy.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'King Charles III Queen Camilla Donald Trump Melania Trump' into element 119.", extracted_content="Input 'King Charles III Queen Camilla Donald Trump Melania Trump' into element 119.", include_extracted_content_only_once=False, metadata={'input_x': 744.0390625, 'input_y': 245.140625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1083.0, 'click_y': 258.453125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.alamy.com/stock-photo/King-Charles-III-Queen-Camilla-Donald-Trump-Melania-Trump.html?sortBy=relevant\n</url>\n<query>\nWhat is the date the photo was taken? Provide the date in a clear format.\n</query>\n<result>\n17\u202fSeptember\u202f2025\n</result>', extracted_content='<url>\nhttps://www.alamy.com/stock-photo/King-Charles-III-Queen-Camilla-Donald-Trump-Melania-Trump.html?sortBy=relevant\n</url>\n<query>\nWhat is the date the photo was taken? Provide the date in a clear format.\n</query>\n<result>\n17\u202fSeptember\u202f2025\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The photo of King Charles III and Queen Camilla with US President Donald Trump and his wife was take - 23 more characters', extracted_content='The photo of King Charles III and Queen Camilla with US President Donald Trump and his wife was taken on 18 September 2025.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.alamy.com', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 119, 'text': 'King Charles III Queen Camilla Donald Trump Melania Trump', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=528, backend_node_id=461, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'role': 'searchbox', 'class': 'flex-auto w-0 h-full pl-4 pr-10 md:px-4 md:pr-10 focus:outline-none font-noto', 'maxlength': '250', 'type': 'text', 'name': 'qt', 'id': 'qt', 'autocomplete': 'off', 'aria-autocomplete': 'list', 'value': ''}, bounds=DOMRect(x=477.578125, y=225.140625, width=532.921875, height=40.0), x_path='html/body/div[1]/div[1]/div[3]/div[1]/div[1]/div/form/div/div/div/div/input', element_hash=1294608096470712275)}, {'click_element_by_index': {'index': 121}, 'interacted_element': DOMInteractedElement(node_id=540, backend_node_id=470, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'submit', 'title': 'Search', 'class': 'h-full px-4 text-xl text-black bg-white border-black rounded-r-full focus:outline-none md:bg-white hover:text-guppie'}, bounds=DOMRect(x=1054.5, y=222.140625, width=57.0, height=46.0), x_path='html/body/div[1]/div[1]/div[3]/div[1]/div[1]/div/form/div/div/button', element_hash=158701534249899880)}, {'click_element_by_index': {'index': 122}, 'interacted_element': DOMInteractedElement(node_id=3442, backend_node_id=1822, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'submit', 'title': 'Search', 'class': 'h-full px-4 text-xl text-black bg-white border-black rounded-r-full focus:outline-none md:bg-white hover:text-guppie'}, bounds=DOMRect(x=1054.5, y=235.453125, width=57.0, height=46.0), x_path='html/body/div[1]/div[1]/div[3]/div[1]/div[1]/div/form/div/div/button', element_hash=158701534249899880)}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the date the photo was taken? Provide the date in a clear format.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The photo of King Charles III and Queen Camilla with US President Donald Trump and his wife was taken on 18 September 2025.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully2025-10-06 22:17:45,881 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/60676b25-f7ec-4b95-a272-a428d43c8bfb/recordings "HTTP/1.1 200 OK"
+
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/60676b25-f7ec-4b95-a272-a428d43c8bfb/recordings/3a7448eb-6be0-4454-8257-98a842845b0e/fetch

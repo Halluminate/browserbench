@@ -1,0 +1,62 @@
+2025-10-06 21:56:31,520 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 21:56:31,532 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 21:56:31,549 - INFO - 🔗 Found URL in task: https://letterboxd.com, adding as initial action...
+2025-10-06 21:56:31,554 - INFO - [34m🚀 Task: Is there a 'Year in Review' section on Letterboxd? You must complete the task only using the starting website. Begin task on the following url: letterboxd.com[0m
+2025-10-06 21:56:31,603 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 21:56:31,611 - INFO - ────────────────────────────────────────
+2025-10-06 21:56:31,611 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 21:56:31,611 - INFO -     👉  browser-use auth
+2025-10-06 21:56:31,612 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 21:56:31,612 - INFO - ────────────────────────────────────────
+
+2025-10-06 21:56:31,895 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 21:56:31,933 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=319f69ef-a8f5-4bb5-ad9c-2898de03a2e5
+2025-10-06 21:56:33,285 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://letterboxd.com, new_tab: False
+2025-10-06 21:56:35,213 - INFO - 🔗 Navigated to https://letterboxd.com
+2025-10-06 21:56:39,060 - INFO - 
+
+2025-10-06 21:56:39,060 - INFO - 📍 Step 1:
+2025-10-06 21:56:40,772 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:56:40,782 - INFO -   ❔ Eval: Previous navigation succeeded but page content not visible; likely still loading. Verdict: Uncertain
+2025-10-06 21:56:40,782 - INFO -   [34m🎯 Next goal: Wait for the homepage to load fully, then extract structured data to check for a 'Year in Review' section.[0m
+2025-10-06 21:56:40,783 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-06 21:56:40,847 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 21:56:43,348 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find any link, menu item, or section on the page that mentions Year in Review, extract_links: Tr
+2025-10-06 21:56:44,835 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:56:44,912 - INFO - 📄 <url>
+https://letterboxd.com/
+</url>
+<query>
+Find any link, menu item, or section on the page that mentions 'Year in Review'
+</query>
+<result>
+[Year in Review](/year-in-review/)
+</result>
+2025-10-06 21:56:49,449 - INFO - 
+
+2025-10-06 21:56:49,450 - INFO - 📍 Step 2:
+2025-10-06 21:56:50,933 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:56:50,935 - INFO -   [32m👍 Eval: Success - the query returned a Year in Review link.[0m
+2025-10-06 21:56:50,935 - INFO -   [34m🎯 Next goal: Provide the user with a concise answer confirming the presence of the 'Year in Review' section and include the URL.[0m
+2025-10-06 21:56:50,936 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, Letterboxd has a Year in Review section. You can access it here: https://letterboxd.com/year-in-review/, success
+2025-10-06 21:56:51,005 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, Letterboxd has a 'Year in Review' section. You can access it here: https://letterboxd.com/year-in-review/
+
+
+2025-10-06 21:56:51,014 - INFO - ✅ Task completed successfully
+2025-10-06 21:56:53,118 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/319f69ef-a8f5-4bb5-ad9c-2898de03a2e5 "HTTP/1.1 200 OK"
+2025-10-06 21:56:53,230 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/319f69ef-a8f5-4bb5-ad9c-2898de03a2e5/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=319f69ef-a8f5-4bb5-ad9c-2898de03a2e5
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 319f69ef-a8f5-4bb5-ad9c-2898de03a2e5
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://letterboxd.com', extracted_content='🔗 Navigated to https://letterboxd.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://letterboxd.com/\n</url>\n<query>\nFind any link, menu item, or section on the page that mentions 'Year in Review'\n</query>\n<result>\n[Year in Review](/year-in-review/)\n</result>", extracted_content="<url>\nhttps://letterboxd.com/\n</url>\n<query>\nFind any link, menu item, or section on the page that mentions 'Year in Review'\n</query>\n<result>\n[Year in Review](/year-in-review/)\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory="Task completed: True - Yes, Letterboxd has a 'Year in Review' section. You can access it here: https://letterboxd.com/year- - 10 more characters", extracted_content="Yes, Letterboxd has a 'Year in Review' section. You can access it here: https://letterboxd.com/year-in-review/", include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://letterboxd.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': "Find any link, menu item, or section on the page that mentions 'Year in Review'", 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': "Yes, Letterboxd has a 'Year in Review' section. You can access it here: https://letterboxd.com/year-in-review/", 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/319f69ef-a8f5-4bb5-ad9c-2898de03a2e5/recordings/3b11bf7a-a0ff-42d0-bdf8-861cc3debc95/fetch

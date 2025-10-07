@@ -1,0 +1,95 @@
+2025-10-06 22:23:19,179 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 22:23:19,188 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 22:23:19,203 - INFO - [34m🚀 Task: What classes of flights can be booked through Booking.com? You must complete the task only using the starting website. Begin task on the following url: www.booking.com[0m
+2025-10-06 22:23:19,310 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 22:23:19,319 - INFO - ────────────────────────────────────────
+2025-10-06 22:23:19,319 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 22:23:19,319 - INFO -     👉  browser-use auth
+2025-10-06 22:23:19,319 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 22:23:19,319 - INFO - ────────────────────────────────────────
+
+2025-10-06 22:23:19,544 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 22:23:19,589 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=52d4b310-2199-4210-b8f8-9f14529f9dd4
+2025-10-06 22:23:20,946 - INFO - 🧠 Starting a browser-use version 0.7.10 with model=openai/gpt-oss-120b
+2025-10-06 22:23:21,543 - INFO - 
+
+2025-10-06 22:23:21,543 - INFO - 📍 Step 1:
+2025-10-06 22:23:23,057 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:23:23,064 - INFO -   [34m🎯 Next goal: Navigate to https://www.booking.com to load the homepage.[0m
+2025-10-06 22:23:23,064 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.booking.com, new_tab: False
+2025-10-06 22:23:25,420 - INFO - 🔗 Navigated to https://www.booking.com
+2025-10-06 22:23:29,767 - INFO - 
+
+2025-10-06 22:23:29,767 - INFO - 📍 Step 2:
+2025-10-06 22:23:30,957 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:23:30,959 - INFO -   ❔ Eval: Navigation succeeded but page content not yet loaded. Verdict: Uncertain
+2025-10-06 22:23:30,959 - INFO -   [34m🎯 Next goal: Wait for the homepage to load fully and then inspect interactive elements.[0m
+2025-10-06 22:23:30,959 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 7
+2025-10-06 22:23:31,025 - INFO - 🕒 waited for 4 seconds + 3 seconds for LLM call
+2025-10-06 22:23:38,778 - INFO - 
+
+2025-10-06 22:23:38,779 - INFO - 📍 Step 3:
+2025-10-06 22:23:40,555 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:23:40,556 - INFO -   ❔ Eval: Uncertain – waited for homepage to load but not confirmed content fully loaded.
+2025-10-06 22:23:40,556 - INFO -   [34m🎯 Next goal: Click the Flights navigation link (element 13) to open the Flights booking page.[0m
+2025-10-06 22:23:40,556 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Task: Identify flight classes on Booking.com\n\n## Steps\n- [ ] Click the Flights link
+2025-10-06 22:23:40,625 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 22:23:43,738 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 13, while_holding_ctrl: None
+2025-10-06 22:23:50,991 - INFO - 🖱️ Clicked element
+2025-10-06 22:23:54,045 - INFO - 
+
+2025-10-06 22:23:54,045 - INFO - 📍 Step 4:
+2025-10-06 22:23:55,733 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:23:55,734 - INFO -   [32m👍 Eval: Success: Clicked the Flights link and landed on the flights page.[0m
+2025-10-06 22:23:55,734 - INFO -   [34m🎯 Next goal: Scroll down slightly to reveal the cabin‑class selector options, then extract the list of available flight classes.[0m
+2025-10-06 22:23:55,734 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 0.3, frame_element_index: None
+2025-10-06 22:23:56,265 - INFO - 🔍 Scrolled down the page by 0.3 pages (900px per page)
+2025-10-06 22:23:56,767 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: List all flight cabin class options (e.g., Economy, Business, First, Premium Economy) available on th
+2025-10-06 22:23:58,038 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:23:58,105 - INFO - 📄 <url>
+https://www.booking.com/flights/index.en-us.html?sid=bc1e7e117158c3625c5b446831e1453e&aid=304142&lang=en-us&country=gb&adplat=www-index-web_shell_header-flight-missing_creative-30RSXjBxBTnOeVrz2d8gnJ&client_name=b-web-shell-bff&distribution_id=30RSXjBxBTnOeVrz2d8gnJ&etStateBlob=E1MA5L4sPhwn5QYk6EBd41x3sSg2i3OZej-jWva4aLF_VomaYJxY3ErwK9SmpYqqP&label=gen173nr-10CAEoggI46AdIM1gEaFCIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AtLHkscGwAIB0gIkMjczYWQyZWItNzlhNC00ZmE2LWFhNzYtMmFkYmU0NWQ0NGY52AIB4AIB
+</url>
+<query>
+List all flight cabin class options (e.g., Economy, Business, First, Premium Economy) available on this Booking.com flights page.
+</query>
+<result>
+Economy  
+Premium economy  
+Business  
+First‑class
+</result>
+2025-10-06 22:24:01,854 - INFO - 
+
+2025-10-06 22:24:01,854 - INFO - 📍 Step 5:
+2025-10-06 22:24:03,303 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 22:24:03,304 - INFO -   [32m👍 Eval: Success: extracted flight class options.[0m
+2025-10-06 22:24:03,304 - INFO -   [34m🎯 Next goal: Provide the list of flight classes to the user and finish the task.[0m
+2025-10-06 22:24:03,305 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Booking.com offers the following flight classes for booking:\n\n- Economy\n- Premium economy\n- Business\n- First‑class\n
+2025-10-06 22:24:03,374 - INFO - 
+📄 [32m Final Result:[0m 
+Booking.com offers the following flight classes for booking:
+
+- Economy
+- Premium economy
+- Business
+- First‑class
+
+These are the options available on the flights search page.
+
+
+2025-10-06 22:24:03,377 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=52d4b310-2199-4210-b8f8-9f14529f9dd4
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 52d4b310-2199-4210-b8f8-9f14529f9dd4
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.booking.com', extracted_content='🔗 Navigated to https://www.booking.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 7 seconds', extracted_content='Waited for 7 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 311.7109375, 'click_y': 90.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 0.3 pages (900px per page)', extracted_content='🔍 Scrolled down the page by 0.3 pages (900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.booking.com/flights/index.en-us.html?sid=bc1e7e117158c3625c5b446831e1453e&aid=304142&lang=en-us&country=gb&adplat=www-index-web_shell_header-flight-missing_creative-30RSXjBxBTnOeVrz2d8gnJ&client_name=b-web-shell-bff&distribution_id=30RSXjBxBTnOeVrz2d8gnJ&etStateBlob=E1MA5L4sPhwn5QYk6EBd41x3sSg2i3OZej-jWva4aLF_VomaYJxY3ErwK9SmpYqqP&label=gen173nr-10CAEoggI46AdIM1gEaFCIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AtLHkscGwAIB0gIkMjczYWQyZWItNzlhNC00ZmE2LWFhNzYtMmFkYmU0NWQ0NGY52AIB4AIB\n</url>\n<query>\nList all flight cabin class options (e.g., Economy, Business, First, Premium Economy) available on this Booking.com flights page.\n</query>\n<result>\nEconomy  \nPremium economy  \nBusiness  \nFirst‑class\n</result>', extracted_content='<url>\nhttps://www.booking.com/flights/index.en-us.html?sid=bc1e7e117158c3625c5b446831e1453e&aid=304142&lang=en-us&country=gb&adplat=www-index-web_shell_header-flight-missing_creative-30RSXjBxBTnOeVrz2d8gnJ&client_name=b-web-shell-bff&distribution_id=30RSXjBxBTnOeVrz2d8gnJ&etStateBlob=E1MA5L4sPhwn5QYk6EBd41x3sSg2i3OZej-jWva4aLF_VomaYJxY3ErwK9SmpYqqP&label=gen173nr-10CAEoggI46AdIM1gEaFCIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AtLHkscGwAIB0gIkMjczYWQyZWItNzlhNC00ZmE2LWFhNzYtMmFkYmU0NWQ0NGY52AIB4AIB\n</url>\n<query>\nList all flight cabin class options (e.g., Economy, Business, First, Premium Economy) available on this Booking.com flights page.\n</query>\n<result>\nEconomy  \nPremium economy  \nBusiness  \nFirst‑class\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Booking.com offers the following flight classes for booking:\n\n- Economy\n- Premium economy\n- Business - 75 more characters', extracted_content='Booking.com offers the following flight classes for booking:\n\n- Economy\n- Premium economy\n- Business\n- First‑class\n\nThese are the options available on the flights search page.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.booking.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 7}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Task: Identify flight classes on Booking.com\n\n## Steps\n- [ ] Click the Flights link on the homepage\n- [ ] Locate and record available flight classes (e.g., Economy, Business, etc.)\n- [ ] Summarize findings and complete the task', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 13}, 'interacted_element': DOMInteractedElement(node_id=287, backend_node_id=498, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'id': 'flights', 'tabindex': '0', 'href': 'https://ch.booking.com/c?st=RkxJR0hU&lt=TEFORElOR19QQUdF&si=Q2g1aUxXTjBMWEJzWVhSbWIzSnRMV1JwYzNSeWFXSjFkR2x2YmkxamRHUVFBaHBBRVBwUXQyL3JlNHlGY0xTOSsxRDlNQmRaK1dKVkk1R1FtVmk2MC9WNnloaHJ0M2J3ZEk0TDBuUHlqU05mLzBuZmxvdU5jWGVldE5RbmFJMU1tQnEzQlE9PQ%3D%3D&target=aHR0cHM6Ly9mbGlnaHRzLmJvb2tpbmcuY29tL3B4Z28_ZXRTdGF0ZUJsb2I9RTFNQTVMNHNQaHduNVFZazZFQmQ0MXgzc1NnMmkzT1plai1qV3ZhNGFMRl9Wb21hWUp4WTNFcndLOVNtcFlxcVAmYWRwbGF0PXd3dy1pbmRleC13ZWJfc2hlbGxfaGVhZGVyLWZsaWdodC1taXNzaW5nX2NyZWF0aXZlLTMwUlNYakJ4QlRuT2VWcnoyZDhnbkombGFiZWw9Z2VuMTczbnItMTBDQUVvZ2dJNDZBZElNMWdFYUZDSUFRR1lBVE80QVFmSUFRellBUVBvQVFINEFRR0lBZ0dvQWdHNEF0TEhrc2NHd0FJQjBnSWtNamN6WVdReVpXSXROemxoTkMwMFptRTJMV0ZoTnpZdE1tRmtZbVUwTldRME5HWTUyQUlCNEFJQiZsYW5nPWVuLXVzJmRpc3RyaWJ1dGlvbl9pZD0zMFJTWGpCeEJUbk9lVnJ6MmQ4Z25KJmFpZD0zMDQxNDImY2xpZW50X25hbWU9Yi13ZWItc2hlbGwtYmZmJnNpZD1iYzFlN2UxMTcxNThjMzYyNWM1YjQ0NjgzMWUxNDUzZQ%3D%3D', 'class': 'de576f5064 f63e3c83f3 e7f2b1a356'}, bounds=DOMRect(x=258.953125, y=68.0, width=105.515625, height=44.0), x_path='html/body/div[2]/div/div/header/div/nav[2]/div/ul/li[2]/a', element_hash=7917631642063650022)}, {'scroll': {'down': True, 'num_pages': 0.3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'List all flight cabin class options (e.g., Economy, Business, First, Premium Economy) available on this Booking.com flights page.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'Booking.com offers the following flight classes for booking:\n\n- Economy\n- Premium economy\n- Business\n- First‑class\n\nThese are the options available on the flights search page.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']2025-10-06 22:24:06,425 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/52d4b310-2199-4210-b8f8-9f14529f9dd4 "HTTP/1.1 200 OK"
+2025-10-06 22:24:06,534 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/52d4b310-2199-4210-b8f8-9f14529f9dd4/recordings "HTTP/1.1 200 OK"
+
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/52d4b310-2199-4210-b8f8-9f14529f9dd4/recordings/09e37658-3c1b-4e37-90b4-e046335f8d40/fetch

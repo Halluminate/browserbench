@@ -1,0 +1,61 @@
+2025-10-06 21:11:13,524 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 21:11:13,536 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 21:11:13,553 - INFO - 🔗 Found URL in task: https://en.wikipedia.org/wiki/Main_Page, adding as initial action...
+2025-10-06 21:11:13,558 - INFO - [34m🚀 Task: How many species does the genus Rafflesia have? You must complete the task only using the starting website. Begin task on the following url: https://en.wikipedia.org/wiki/Main_Page[0m
+2025-10-06 21:11:13,635 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 21:11:13,649 - INFO - ────────────────────────────────────────
+2025-10-06 21:11:13,649 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 21:11:13,649 - INFO -     👉  browser-use auth
+2025-10-06 21:11:13,649 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 21:11:13,649 - INFO - ────────────────────────────────────────
+
+2025-10-06 21:11:13,854 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 21:11:13,882 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=468bd0b3-7b32-4ec6-b4d1-93e1510ac5dd
+2025-10-06 21:11:15,283 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://en.wikipedia.org/wiki/Main_Page, new_tab: False
+2025-10-06 21:11:17,058 - INFO - 🔗 Navigated to https://en.wikipedia.org/wiki/Main_Page
+2025-10-06 21:11:21,829 - INFO - 
+
+2025-10-06 21:11:21,829 - INFO - 📍 Step 1:
+2025-10-06 21:11:23,547 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:11:23,558 - INFO -   [32m👍 Eval: Successfully loaded the Wikipedia Main Page as indicated by the browser state. Verdict: Success[0m
+2025-10-06 21:11:23,558 - INFO -   [34m🎯 Next goal: Search for "Rafflesia" using the search box and submit the query.[0m
+2025-10-06 21:11:23,559 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 8, text: Rafflesia, clear_existing: True
+2025-10-06 21:11:26,199 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 21:11:26,199 - INFO - ⌨️ Typed "Rafflesia" into element with index 8
+2025-10-06 21:11:29,332 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-06 21:11:32,895 - INFO - 
+
+2025-10-06 21:11:32,895 - INFO - 📍 Step 2:
+2025-10-06 21:11:34,599 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:11:34,600 - INFO -   ❔ Eval: Input of 'Rafflesia' into the search box succeeded.
+2025-10-06 21:11:34,600 - INFO -   [34m🎯 Next goal: Click the Rafflesia article link to open the page and later extract the number of species.[0m
+2025-10-06 21:11:34,601 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 13, while_holding_ctrl: None
+2025-10-06 21:11:36,838 - INFO - 🖱️ Clicked element
+2025-10-06 21:11:42,381 - INFO - 
+
+2025-10-06 21:11:42,381 - INFO - 📍 Step 3:
+2025-10-06 21:11:44,058 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:11:44,059 - INFO -   [32m👍 Eval: Clicked the Rafflesia article link successfully. Verdict: Success[0m
+2025-10-06 21:11:44,059 - INFO -   [34m🎯 Next goal: Return the species count answer to the user and complete the task.[0m
+2025-10-06 21:11:44,060 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The genus Rafflesia has up to 41 species., success: True, files_to_display: []
+2025-10-06 21:11:44,127 - INFO - 
+📄 [32m Final Result:[0m 
+The genus Rafflesia has up to 41 species.
+
+
+2025-10-06 21:11:44,131 - INFO - ✅ Task completed successfully
+2025-10-06 21:11:47,905 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/468bd0b3-7b32-4ec6-b4d1-93e1510ac5dd "HTTP/1.1 200 OK"
+2025-10-06 21:11:48,021 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/468bd0b3-7b32-4ec6-b4d1-93e1510ac5dd/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=468bd0b3-7b32-4ec6-b4d1-93e1510ac5dd
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 468bd0b3-7b32-4ec6-b4d1-93e1510ac5dd
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://en.wikipedia.org/wiki/Main_Page', extracted_content='🔗 Navigated to https://en.wikipedia.org/wiki/Main_Page', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Rafflesia' into element 8.", extracted_content="Input 'Rafflesia' into element 8.", include_extracted_content_only_once=False, metadata={'input_x': 508.0390625, 'input_y': 33.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 495.0390625, 'click_y': 80.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The genus Rafflesia has up to 41 species.', extracted_content='The genus Rafflesia has up to 41 species.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://en.wikipedia.org/wiki/Main_Page', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 8, 'text': 'Rafflesia', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=148, backend_node_id=843, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': 'cdx-text-input__input mw-searchInput', 'autocomplete': 'off', 'type': 'search', 'name': 'search', 'placeholder': 'Search Wikipedia', 'aria-label': 'Search Wikipedia', 'autocapitalize': 'sentences', 'spellcheck': 'false', 'title': 'Search Wikipedia [ctrl-option-f]', 'accesskey': 'f', 'id': 'searchInput'}, bounds=DOMRect(x=306.0, y=17.0, width=404.078125, height=32.0), x_path='html/body/div[1]/header/div[2]/div/div/div/form/div/div/input', element_hash=3149185101883626464)}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=158, backend_node_id=851, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'cdx-button cdx-search-input__end-button'}, bounds=DOMRect(x=709.078125, y=17.0, width=70.921875, height=32.0), x_path='html/body/div[1]/header/div[2]/div/div/div/form/button', element_hash=1415899384204450105)}, {'click_element_by_index': {'index': 13}, 'interacted_element': DOMInteractedElement(node_id=7222, backend_node_id=4548, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://en.wikipedia.org/w/index.php?title=Special%3ASearch&search=Rafflesia&wprov=acrw1_0', 'class': 'cdx-menu-item__content'}, bounds=DOMRect(x=281.0, y=50.0, width=428.078125, height=60.0), x_path='html/body/div[1]/header/div[2]/div/div/div/div/form/div/div/div[2]/ul/li[1]/a', element_hash=2081466127178829084)}, {'done': {'text': 'The genus Rafflesia has up to 41 species.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/468bd0b3-7b32-4ec6-b4d1-93e1510ac5dd/recordings/c5813bbd-4b41-415e-aa35-68035b8f7eb1/fetch

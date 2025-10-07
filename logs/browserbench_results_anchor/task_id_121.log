@@ -1,0 +1,101 @@
+2025-10-06 21:06:43,592 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 21:06:43,605 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 21:06:43,623 - INFO - 🔗 Found URL in task: https://www.uniqlo.com/us/en, adding as initial action...
+2025-10-06 21:06:43,629 - INFO - [34m🚀 Task: Where was Uniqlo founded? You must complete the task only using the starting website. Begin task on the following url: https://www.uniqlo.com/us/en[0m
+2025-10-06 21:06:43,669 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 21:06:43,677 - INFO - ────────────────────────────────────────
+2025-10-06 21:06:43,677 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 21:06:43,677 - INFO -     👉  browser-use auth
+2025-10-06 21:06:43,677 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 21:06:43,677 - INFO - ────────────────────────────────────────
+
+2025-10-06 21:06:43,909 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 21:06:43,949 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=d4c8f5f7-a129-48f3-a736-d47b8ef8ec3c
+2025-10-06 21:06:45,655 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.uniqlo.com/us/en, new_tab: False
+2025-10-06 21:06:51,738 - INFO - 🔗 Navigated to https://www.uniqlo.com/us/en
+2025-10-06 21:06:56,532 - INFO - 
+
+2025-10-06 21:06:56,532 - INFO - 📍 Step 1:
+2025-10-06 21:06:57,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:06:57,738 - INFO -   [31m⚠️ Eval: The page was empty, indicating the previous navigation did not yet load content. Verdict: Failure (content not loaded).[0m
+2025-10-06 21:06:57,738 - INFO -   [34m🎯 Next goal: Wait for the page to load and then extract the founding location of Uniqlo.[0m
+2025-10-06 21:06:57,738 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-06 21:06:57,805 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 21:07:00,308 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Where was Uniqlo founded?, extract_links: False, start_from_char: 0
+2025-10-06 21:07:01,825 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:07:01,905 - INFO - 📄 <url>
+https://www.uniqlo.com/us/en/
+</url>
+<query>
+Where was Uniqlo founded?
+</query>
+<result>
+Information about where Uniqlo was founded is not available in the provided webpage content.
+</result>
+2025-10-06 21:07:06,491 - INFO - 
+
+2025-10-06 21:07:06,492 - INFO - 📍 Step 2:
+2025-10-06 21:07:08,204 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:07:08,206 - INFO -   ❔ Eval: Previous step waited for page load but did not retrieve the founding location; the information was not present.
+2025-10-06 21:07:08,207 - INFO -   [34m🎯 Next goal: Click the search button (element 2) to open the search input field.[0m
+2025-10-06 21:07:08,207 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 2, while_holding_ctrl: None
+2025-10-06 21:07:14,936 - INFO - 🖱️ Clicked element
+2025-10-06 21:07:19,868 - INFO - 
+
+2025-10-06 21:07:19,868 - INFO - 📍 Step 3:
+2025-10-06 21:07:21,858 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:07:21,860 - INFO -   [31m⚠️ Eval: Previous click on the search button did not open any visible results; the search input is present but no query was submitted. Verdict: Failure.[0m
+2025-10-06 21:07:21,860 - INFO -   [34m🎯 Next goal: Enter a search query for Uniqlo's founding location, submit it, wait for results, and extract the location.[0m
+2025-10-06 21:07:21,861 - INFO -   🦾 [34m[ACTION 1/3][0m input_text: index: 9, text: Uniqlo founded, clear_existing: True
+2025-10-06 21:07:28,262 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 21:07:28,262 - INFO - ⌨️ Typed "Uniqlo founded" into element with index 9
+2025-10-06 21:07:28,764 - INFO -   🦾 [34m[ACTION 2/3][0m send_keys: keys: Enter
+2025-10-06 21:07:30,228 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 21:07:30,330 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 21:07:30,831 - INFO -   🦾 [34m[ACTION 3/3][0m wait: seconds: 3
+2025-10-06 21:07:30,909 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 21:07:39,133 - INFO - 
+
+2025-10-06 21:07:39,133 - INFO - 📍 Step 4:
+2025-10-06 21:07:40,713 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:07:40,714 - INFO -   [31m⚠️ Eval: Failure: Search did not provide founding location information.[0m
+2025-10-06 21:07:40,714 - INFO -   [34m🎯 Next goal: Click the 'About' link to open the company information page.[0m
+2025-10-06 21:07:40,715 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 78, while_holding_ctrl: None
+2025-10-06 21:07:41,243 - WARNING - No visible quad found, using first quad
+2025-10-06 21:07:42,967 - INFO - 🖱️ Clicked element
+2025-10-06 21:07:50,292 - INFO - 
+
+2025-10-06 21:07:50,293 - INFO - 📍 Step 5:
+2025-10-06 21:07:51,936 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:07:51,937 - INFO -   [31m⚠️ Eval: Failure: Clicking the generic 'About' link did not navigate to the company information page.[0m
+2025-10-06 21:07:51,937 - INFO -   [34m🎯 Next goal: Click the 'Company' link (index 95) to open the company information page.[0m
+2025-10-06 21:07:51,938 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 95, while_holding_ctrl: False
+2025-10-06 21:07:54,436 - INFO - 🖱️ Clicked element
+2025-10-06 21:07:59,612 - INFO - 
+
+2025-10-06 21:07:59,612 - INFO - 📍 Step 6:
+2025-10-06 21:08:01,072 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:08:01,073 - INFO -   [32m👍 Eval: Success: Clicking the 'Company' link navigated to the information page containing the founding location.[0m
+2025-10-06 21:08:01,074 - INFO -   [34m🎯 Next goal: Provide the founding location answer to the user and complete the task.[0m
+2025-10-06 21:08:01,074 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Uniqlo was founded in Yamaguchi, Japan., success: True, files_to_display: []
+2025-10-06 21:08:01,141 - INFO - 
+📄 [32m Final Result:[0m 
+Uniqlo was founded in Yamaguchi, Japan.
+
+
+2025-10-06 21:08:01,144 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=d4c8f5f7-a129-48f3-a736-d47b8ef8ec3c
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: d4c8f5f7-a129-48f3-a736-d47b8ef8ec3c
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.uniqlo.com/us/en', extracted_content='🔗 Navigated to https://www.uniqlo.com/us/en', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.uniqlo.com/us/en/\n</url>\n<query>\nWhere was Uniqlo founded?\n</query>\n<result>\nInformation about where Uniqlo was founded is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.uniqlo.com/us/en/\n</url>\n<query>\nWhere was Uniqlo founded?\n</query>\n<result>\nInformation about where Uniqlo was founded is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1110.0, 'click_y': 32.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Uniqlo founded' into element 9.", extracted_content="Input 'Uniqlo founded' into element 9.", include_extracted_content_only_once=False, metadata={'input_x': 720.0, 'input_y': 32.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 669.328125, 'click_y': 899, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 162.8515625, 'click_y': 517.515625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Uniqlo was founded in Yamaguchi, Japan.', extracted_content='Uniqlo was founded in Yamaguchi, Japan.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.uniqlo.com/us/en', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Where was Uniqlo founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 2}, 'interacted_element': DOMInteractedElement(node_id=180, backend_node_id=105, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'button-icon button-icon--medium ito-border-width-0 ito-transparent-background-color ito-white-border ito-hover-transparent-background-color hover-ito-gray100-border ec-button-icon-medium button-icon__shadow', 'target': '_self', 'aria-label': 'What are you looking for?', 'data-testid': 'ITOButtonIcon'}, bounds=DOMRect(x=1176.0, y=10.0, width=44.0, height=44.0), x_path='html/body/div/div/div/div/div[1]/div/header/div/div/div/div[2]/div/button', element_hash=3011222112403702488)}, {'input_text': {'index': 9, 'text': 'Uniqlo founded', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=8588, backend_node_id=5945, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': 'text-input__value ito-gray200-border ito-border-width-1 ito-ja-label-10 ito-font-size-16 ito-tertiary-text-color', 'id': 'search-flyout-input-sticky', 'type': 'text', 'placeholder': 'Search by keyword', 'autocomplete': 'off', 'maxlength': '60', 'tabindex': '-1', 'data-testid': 'ITOTextInput', 'value': ''}, bounds=DOMRect(x=263.0, y=11.0, width=914.0, height=42.0), x_path='html/body/div[1]/div/div/div[3]/div[2]/div[1]/div/header/div/div/div/div[1]/div/div/span/input', element_hash=1739395842874664181)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 78}, 'interacted_element': DOMInteractedElement(node_id=9542, backend_node_id=9901, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'fr-ec-link-navigation fr-ec-cursor-pointer', 'data-action': 'click', 'data-category': 'footer', 'data-label': 'Contact Us', 'href': 'https://faq-us.uniqlo.com/', 'target': '_self', '_type': 'CmsFooterLinkItem'}, bounds=DOMRect(x=604.140625, y=1205.875, width=130.375, height=18.1875), x_path='html/body/div[1]/div/div/div[1]/div[2]/footer/div/div[1]/div/div/div[1]/ul/li[5]/a', element_hash=1259650294718270035)}, {'click_element_by_index': {'index': 95, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=20635, backend_node_id=9912, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'fr-ec-link-navigation fr-ec-cursor-pointer', 'data-action': 'click', 'data-category': 'footer', 'data-label': 'Information', 'href': '/us/en/information', '_type': 'CmsFooterLinkItem'}, bounds=DOMRect(x=124.5, y=508.421875, width=76.703125, height=18.1875), x_path='html/body/div[1]/div/div/div[1]/div[2]/footer/div/div[1]/div/div/div[2]/ul/li[1]/a', element_hash=4705370027699679413)}, {'done': {'text': 'Uniqlo was founded in Yamaguchi, Japan.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']2025-10-06 21:08:04,772 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/d4c8f5f7-a129-48f3-a736-d47b8ef8ec3c "HTTP/1.1 200 OK"
+2025-10-06 21:08:04,880 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/d4c8f5f7-a129-48f3-a736-d47b8ef8ec3c/recordings "HTTP/1.1 200 OK"
+
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/d4c8f5f7-a129-48f3-a736-d47b8ef8ec3c/recordings/810ba84a-66d0-4bd3-a86e-7ebc9d2ddc2c/fetch

@@ -1,0 +1,336 @@
+2025-10-06 21:40:11,434 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 21:40:11,442 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 21:40:11,453 - INFO - 🔗 Found URL in task: https://www.telegraph.co.uk/us, adding as initial action...
+2025-10-06 21:40:11,457 - INFO - [34m🚀 Task: When did the Daily Telegraph paper move from The Strand to 135 Fleet Street? You must complete the task only using the starting website. Begin task on the following url: https://www.telegraph.co.uk/us[0m
+2025-10-06 21:40:11,491 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 21:40:11,499 - INFO - ────────────────────────────────────────
+2025-10-06 21:40:11,499 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 21:40:11,499 - INFO -     👉  browser-use auth
+2025-10-06 21:40:11,499 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 21:40:11,499 - INFO - ────────────────────────────────────────
+
+2025-10-06 21:40:11,704 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 21:40:11,740 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b3bb406a-1749-453e-99ee-e59c6023faa7
+2025-10-06 21:40:13,131 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.telegraph.co.uk/us, new_tab: False
+2025-10-06 21:40:21,322 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/us
+2025-10-06 21:40:24,186 - INFO - 
+
+2025-10-06 21:40:24,187 - INFO - 📍 Step 1:
+2025-10-06 21:40:25,961 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:40:25,968 - INFO -   [31m⚠️ Eval: Failure: The page is empty and not the intended /us URL.[0m
+2025-10-06 21:40:25,968 - INFO -   [34m🎯 Next goal: Navigate to https://www.telegraph.co.uk/us and wait for the page to load fully.[0m
+2025-10-06 21:40:25,968 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.telegraph.co.uk/us, new_tab: False
+2025-10-06 21:40:29,191 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/us
+2025-10-06 21:40:29,692 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-06 21:40:29,758 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 21:40:36,696 - INFO - 
+
+2025-10-06 21:40:36,696 - INFO - 📍 Step 2:
+2025-10-06 21:40:38,615 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:40:38,615 - INFO -   ❔ Eval: Navigation to the Telegraph homepage succeeded, but the page is not the specific US version; still need to locate the historical move information.
+2025-10-06 21:40:38,615 - INFO -   [34m🎯 Next goal: Open the site search by clicking element 20 and prepare to enter the query about the Telegraph's move.[0m
+2025-10-06 21:40:38,616 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-06 21:40:43,981 - INFO - 🖱️ Clicked element
+2025-10-06 21:40:44,483 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 2
+2025-10-06 21:40:44,550 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 21:40:47,384 - INFO - 
+
+2025-10-06 21:40:47,384 - INFO - 📍 Step 3:
+2025-10-06 21:40:49,190 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:40:49,191 - INFO -   ❔ Eval: Clicked the search icon, but no new input element is visible yet. Verdict: Uncertain
+2025-10-06 21:40:49,191 - INFO -   [34m🎯 Next goal: Scroll down to reveal the search input field so we can enter the query about the Telegraph's move.[0m
+2025-10-06 21:40:49,191 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 0.5, frame_element_index: None
+2025-10-06 21:40:49,765 - INFO - 🔍 Scrolled down the page by 0.5 pages (900px per page)
+2025-10-06 21:40:52,444 - INFO - 
+
+2025-10-06 21:40:52,444 - INFO - 📍 Step 4:
+2025-10-06 21:40:54,508 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:40:54,510 - INFO -   ❔ Eval: Uncertain – scrolling did not reveal a search input field after clicking the search icon.
+2025-10-06 21:40:54,510 - INFO -   [34m🎯 Next goal: Navigate to the search results page for "135 Fleet Street" and extract the date the Daily Telegraph moved from The Strand to 135 Fleet Street.[0m
+2025-10-06 21:40:54,511 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.telegraph.co.uk/search/?q=135+Fleet+Street, new_tab: False
+2025-10-06 21:41:04,166 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/search/?q=135+Fleet+Street
+2025-10-06 21:41:04,668 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When did the Daily Telegraph move from The Strand to 135 Fleet Street?, extract_links: False, sta
+2025-10-06 21:41:05,580 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:41:05,648 - INFO - 📄 <url>
+https://www.telegraph.co.uk/search/?q=135+Fleet+Street
+</url>
+<query>
+When did the Daily Telegraph move from The Strand to 135 Fleet Street?
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-06 21:41:08,420 - INFO - 
+
+2025-10-06 21:41:08,420 - INFO - 📍 Step 5:
+2025-10-06 21:41:09,957 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:41:09,958 - INFO -   ❔ Eval: Previous step was uncertain; we have not yet opened the search input field.
+2025-10-06 21:41:09,958 - INFO -   [34m🎯 Next goal: Click the search icon (element 14) to open the search input field.[0m
+2025-10-06 21:41:09,958 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 14, while_holding_ctrl: None
+2025-10-06 21:41:12,502 - INFO - 🖱️ Clicked element
+2025-10-06 21:41:15,961 - INFO - 
+
+2025-10-06 21:41:15,961 - INFO - 📍 Step 6:
+2025-10-06 21:41:17,509 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:41:17,510 - INFO -   [31m⚠️ Eval: Previous attempt to use search input failed; page shows no results. Verdict: Failure[0m
+2025-10-06 21:41:17,511 - INFO -   [34m🎯 Next goal: Navigate to a search URL with query 'Telegraph 135 Fleet Street' and extract the move date.[0m
+2025-10-06 21:41:17,511 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street, new_tab: False
+2025-10-06 21:41:19,423 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street
+2025-10-06 21:41:19,925 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find the date when the Daily Telegraph moved from The Strand to 135 Fleet Street., extract_links:
+2025-10-06 21:41:20,876 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:41:20,944 - INFO - 📄 <url>
+https://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street
+</url>
+<query>
+Find the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.
+</query>
+<result>
+Information on the date when the Daily Telegraph moved from The Strand to 135 Fleet Street is not available in the provided webpage content.
+</result>
+2025-10-06 21:41:24,091 - INFO - 
+
+2025-10-06 21:41:24,091 - INFO - 📍 Step 7:
+2025-10-06 21:41:25,670 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:41:25,672 - INFO -   ❔ Eval: Previous search queries returned no useful information; still need to locate the relevant article.
+2025-10-06 21:41:25,672 - INFO -   [34m🎯 Next goal: Navigate to a broader search URL with query '135 Fleet Street Telegraph history' and then extract the move date from the resulting page.[0m
+2025-10-06 21:41:25,673 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.telegraph.co.uk/search/?q=135+Fleet+Street+Telegraph+history, new_tab: False
+2025-10-06 21:41:27,933 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/search/?q=135+Fleet+Street+Telegraph+history
+2025-10-06 21:41:31,043 - INFO - 
+
+2025-10-06 21:41:31,044 - INFO - 📍 Step 8:
+2025-10-06 21:41:32,907 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:41:32,907 - INFO -   ❔ Eval: Previous attempts to locate a search input field failed; no input was visible after clicking the search icon earlier, so the goal remains unmet.
+2025-10-06 21:41:32,907 - INFO -   [34m🎯 Next goal: Click the search icon (element 14) to open the search input field, then wait for the input to appear.[0m
+2025-10-06 21:41:32,907 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 14, while_holding_ctrl: None
+2025-10-06 21:41:47,995 - WARNING - ⚠️ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ClickElementEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ClickElementEvent(?▶ ClickElementEvent#30d0 🏃)
+2025-10-06 21:41:48,011 - WARNING - ================================================================================
+2025-10-06 21:41:48,011 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 15.0s for EventBus_2efea794.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ClickElementEvent(?▶ ClickElementEvent#30d0 ✅)
+2025-10-06 21:41:48,011 - WARNING - ================================================================================
+2025-10-06 21:41:48,013 - WARNING - 📣 ClickElementEvent#30d0                                              [91m15s[0m
+2025-10-06 21:41:48,014 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ClickElementEvent(#30d0) ⌛️ [91m15s[0m/[91m15s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-06 21:41:48,014 - WARNING - 
+================================================================================
+
+2025-10-06 21:42:03,235 - WARNING - ⚠️ EventBus_2efea794🟢(⏳ 1 | ▶️ 1 | ✅ 48 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#79b2 🏃)
+2025-10-06 21:42:10,893 - WARNING - Received duplicate response for request 430 - ignoring
+2025-10-06 21:42:13,295 - INFO - 
+
+2025-10-06 21:42:13,296 - INFO - 📍 Step 9:
+2025-10-06 21:42:15,015 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:42:15,018 - INFO -   [31m⚠️ Eval: Failure – clicking element 14 timed out and did not open a search input field.[0m
+2025-10-06 21:42:15,018 - INFO -   [34m🎯 Next goal: Navigate to the Telegraph 'About us' page to locate historical information about the move.[0m
+2025-10-06 21:42:15,018 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.telegraph.co.uk/about-us/, new_tab: False
+2025-10-06 21:42:30,116 - WARNING - ⚠️ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#1baf 🏃)
+2025-10-06 21:42:30,116 - WARNING - ================================================================================
+2025-10-06 21:42:30,116 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 15.0s for EventBus_2efea794.browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#1baf 🏃)
+2025-10-06 21:42:30,116 - WARNING - ================================================================================
+2025-10-06 21:42:30,116 - WARNING - 📣 NavigateToUrlEvent#1baf                                             [93m15s[0m
+2025-10-06 21:42:30,116 - WARNING -    ⏰ browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(#1baf) ⌛️ [91m15s[0m/[91m15s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-06 21:42:30,116 - WARNING -       📣 NavigationStartedEvent#d6f9                                   [91m15s[0m
+2025-10-06 21:42:30,116 - WARNING -    🔜 browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigateToUrlEvent(#1baf) 🔜    /15s  
+2025-10-06 21:42:30,116 - WARNING - 
+================================================================================
+
+2025-10-06 21:42:30,118 - ERROR - ❌ Navigation failed: Event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent#7616(?▶ NavigateToUrlEvent#1baf 🏃) timed out after 15.0s and interrupted any processing of 1 child events
+2025-10-06 21:42:45,196 - WARNING - ⚠️ EventBus_2efea794🟢(⏳ 1 | ▶️ 1 | ✅ 48 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#67ce 🏃)
+2025-10-06 21:42:49,383 - WARNING - Received duplicate response for request 464 - ignoring
+2025-10-06 21:42:51,265 - INFO - 
+
+2025-10-06 21:42:51,265 - INFO - 📍 Step 10:
+2025-10-06 21:42:52,998 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:42:53,002 - INFO -   ❔ Eval: Previous attempts to locate a search input failed; no useful information retrieved.
+2025-10-06 21:42:53,002 - INFO -   [34m🎯 Next goal: Navigate to a broader search URL on telegraph.co.uk for the move and extract the date.[0m
+2025-10-06 21:42:53,002 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move, new_tab: False
+2025-10-06 21:42:54,915 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move
+2025-10-06 21:42:55,416 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-06 21:42:55,499 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 21:42:58,002 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Find the date when the Daily Telegraph moved from The Strand to 135 Fleet Street., extract_links:
+2025-10-06 21:42:59,413 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:42:59,488 - INFO - 📄 <url>
+https://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move
+</url>
+<query>
+Find the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-06 21:43:02,818 - INFO - 
+
+2025-10-06 21:43:02,818 - INFO - 📍 Step 11:
+2025-10-06 21:43:05,004 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:43:05,007 - INFO -   [32m👍 Eval: Previous attempt to retrieve the move date via direct URL queries was unsuccessful; no relevant information was found.[0m
+2025-10-06 21:43:05,007 - INFO -   [34m🎯 Next goal: Search the Telegraph site for the move date and extract the answer.[0m
+2025-10-06 21:43:05,008 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 19, text: Telegraph moved to 135 Fleet Street, clear_existing: True
+2025-10-06 21:43:13,599 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 21:43:13,599 - INFO - ⌨️ Typed "Telegraph moved to 135 Fleet Street" into element with index 19
+2025-10-06 21:43:15,780 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b3bb406a-1749-453e-99ee-e59c6023faa7
+2025-10-06 21:43:18,119 - INFO - Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed
+2025-10-06 21:43:19,442 - ERROR - CDP Error for request 31: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:43:19,654 - ERROR - CDP Error for request 37: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:43:19,655 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:43:19,869 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#1b05)]         ❌ Failed (0.42s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-06 21:43:19,950 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#1b05 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-06 21:43:19,950 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:43:19,950 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-06 21:43:20,244 - INFO - 
+
+2025-10-06 21:43:20,244 - INFO - 📍 Step 12:
+2025-10-06 21:43:22,455 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:43:22,456 - INFO -   ❔ Eval: N/A (starting new actions)
+2025-10-06 21:43:22,456 - INFO -   [34m🎯 Next goal: Navigate to a broader search URL and extract the move date from the resulting page.[0m
+2025-10-06 21:43:22,456 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.telegraph.co.uk/search/?q=Telegraph+history+Fleet+Street, new_tab: False
+2025-10-06 21:43:30,313 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:30,457 - ERROR - CDP Error for request 46: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:30,457 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#6601)]      ❌ Failed (0.14s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:43:30,526 - ERROR - CDP Error for request 47: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:30,527 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#6601)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#6601)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:30,530 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#6601 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:43:30,533 - INFO - 🔗 Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+history+Fleet+Street
+2025-10-06 21:43:31,034 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When did the Daily Telegraph move from The Strand to 135 Fleet Street?, extract_links: False, sta
+2025-10-06 21:43:31,211 - ERROR - CDP Error for request 48: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:31,212 - ERROR - Action 'extract_structured_data' failed with error: Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError
+2025-10-06 21:43:31,630 - ERROR - CDP Error for request 49: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:31,714 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:31,715 - INFO - 
+
+2025-10-06 21:43:31,715 - INFO - 📍 Step 13:
+2025-10-06 21:43:33,955 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:43:33,958 - INFO -   ❔ Eval: Previous actions failed to retrieve any content; the page is empty and no search input is available.
+2025-10-06 21:43:33,958 - INFO -   [34m🎯 Next goal: Navigate to the Telegraph 'About us' page to locate historical information about the move.[0m
+2025-10-06 21:43:33,959 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.telegraph.co.uk/about-us/, new_tab: False
+2025-10-06 21:43:34,176 - ERROR - CDP Error for request 50: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:34,176 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:34,251 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:34,411 - ERROR - CDP Error for request 51: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:34,411 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#001c)]      ❌ Failed (0.16s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:43:34,498 - ERROR - CDP Error for request 52: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:34,499 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#001c)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#001c)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:34,499 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#001c ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:43:34,500 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#2e88)]          ❌ Failed (0.47s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-06 21:43:34,591 - ERROR - CDP Error for request 53: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:34,592 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#2e88)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#2e88)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:34,593 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#2e88 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-06 21:43:34,595 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:34,984 - ERROR - CDP Error for request 54: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:35,074 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:35,076 - INFO - 
+
+2025-10-06 21:43:35,076 - INFO - 📍 Step 14:
+2025-10-06 21:43:36,591 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:43:36,593 - INFO -   [32m👍 Eval: Previous attempts to retrieve the move date via search URLs were unsuccessful; no relevant content was found.[0m
+2025-10-06 21:43:36,593 - INFO -   [34m🎯 Next goal: Navigate to the Telegraph 'About us' page and extract the move date.[0m
+2025-10-06 21:43:36,594 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.telegraph.co.uk/about-us/, new_tab: False
+2025-10-06 21:43:36,818 - ERROR - CDP Error for request 55: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:36,818 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:36,888 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:37,037 - ERROR - CDP Error for request 56: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:37,037 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#48bc)]      ❌ Failed (0.15s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:43:37,106 - ERROR - CDP Error for request 57: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:37,107 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#48bc)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#48bc)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:37,108 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#48bc ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:43:37,108 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#5b87)]          ❌ Failed (0.43s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-06 21:43:37,177 - ERROR - CDP Error for request 58: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:37,177 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#5b87)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#5b87)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:37,179 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#5b87 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-06 21:43:37,181 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:37,526 - ERROR - CDP Error for request 59: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:37,605 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:37,608 - INFO - 
+
+2025-10-06 21:43:37,608 - INFO - 📍 Step 15:
+2025-10-06 21:43:39,399 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:43:39,400 - INFO -   ❔ Eval: Previous attempts to retrieve the move date via search URLs and search icon failed; no content was loaded.
+2025-10-06 21:43:39,400 - INFO -   [34m🎯 Next goal: Navigate to the Telegraph 'About us' page and extract the move date.[0m
+2025-10-06 21:43:39,400 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.telegraph.co.uk/about-us/, new_tab: False
+2025-10-06 21:43:39,754 - ERROR - CDP Error for request 60: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:39,754 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:39,825 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:39,988 - ERROR - CDP Error for request 61: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:39,988 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#bf0b)]      ❌ Failed (0.16s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:43:40,146 - ERROR - CDP Error for request 62: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:40,147 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#bf0b)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#bf0b)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:40,148 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#bf0b ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:43:40,148 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#08b9)]          ❌ Failed (0.59s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-06 21:43:40,278 - ERROR - CDP Error for request 63: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:40,278 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#08b9)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#08b9)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:40,279 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#08b9 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-06 21:43:40,280 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-06 21:43:40,673 - ERROR - CDP Error for request 64: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:40,859 - WARNING - [DownloadsWatchdog] No target info found for 692431682CF3D955A2B4233F6612FD10
+2025-10-06 21:43:40,861 - INFO - 
+
+2025-10-06 21:43:40,861 - INFO - 📍 Step 16:
+2025-10-06 21:43:42,090 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 21:43:42,091 - INFO -   [31m⚠️ Eval: Failure – unable to retrieve any content containing the move date.[0m
+2025-10-06 21:43:42,091 - INFO - 
+2025-10-06 21:43:42,091 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to locate the date when the Daily Telegraph moved from The Strand to 135 Fleet Street using the provided Telegraph website. Multiple search attempts and navigation to potential history sections returned empty pages or no relevant information. Therefore, the requested information could not be retrieved.' success=False files_to_display=[]
+2025-10-06 21:43:42,158 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to locate the date when the Daily Telegraph moved from The Strand to 135 Fleet Street using the provided Telegraph website. Multiple search attempts and navigation to potential history sections returned empty pages or no relevant information. Therefore, the requested information could not be retrieved.
+
+
+2025-10-06 21:43:42,159 - INFO - ❌ Task completed without success
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=b3bb406a-1749-453e-99ee-e59c6023faa7
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: b3bb406a-1749-453e-99ee-e59c6023faa7
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.telegraph.co.uk/us', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/us', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1045.640625, 'click_y': 384.421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 2 seconds', extracted_content='Waited for 2 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 0.5 pages (900px per page)', extracted_content='🔍 Scrolled down the page by 0.5 pages (900px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/search/?q=135+Fleet+Street', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/search/?q=135+Fleet+Street', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.telegraph.co.uk/search/?q=135+Fleet+Street\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.telegraph.co.uk/search/?q=135+Fleet+Street\n</url>\n<query>\nWhen did the Daily Telegraph move from The Strand to 135 Fleet Street?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1045.640625, 'click_y': 288.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street\n</url>\n<query>\nFind the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.\n</query>\n<result>\nInformation on the date when the Daily\u202fTelegraph moved from The Strand to\u202f135\u202fFleet\u202fStreet is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street\n</url>\n<query>\nFind the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.\n</query>\n<result>\nInformation on the date when the Daily\u202fTelegraph moved from The Strand to\u202f135\u202fFleet\u202fStreet is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/search/?q=135+Fleet+Street+Telegraph+history', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/search/?q=135+Fleet+Street+Telegraph+history', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Failed to click element 14: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ClickElementEvent#4176(?▶ ClickElementEvent#30d0 🏃) timed out after 15.0s', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Navigation failed: Event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent#7616(?▶ NavigateToUrlEvent#1baf 🏃) timed out after 15.0s and interrupted any processing of 1 child events', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move\n</url>\n<query>\nFind the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move\n</url>\n<query>\nFind the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Telegraph moved to 135 Fleet Street' into element 19.", extracted_content="Input 'Telegraph moved to 135 Fleet Street' into element 19.", include_extracted_content_only_once=False, metadata={'input_x': 643.484375, 'input_y': 240.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed', extracted_content='Something new appeared after action 1 / 4: actions click_element_by_index, wait, extract_structured_data were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+history+Fleet+Street', extracted_content='🔗 Navigated to https://www.telegraph.co.uk/search/?q=Telegraph+history+Fleet+Street', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to locate the date when the Daily Telegraph moved from The Strand to 135 Fleet Street u - 216 more characters', extracted_content='I was unable to locate the date when the Daily Telegraph moved from The Strand to 135 Fleet Street using the provided Telegraph website. Multiple search attempts and navigation to potential history sections returned empty pages or no relevant information. Therefore, the requested information could not be retrieved.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.telegraph.co.uk/us', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/us', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=447, backend_node_id=2442, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/search/', 'class': 'e-site-header-button__link', 'aria-label': 'Search The Telegraph', 'data-test': 'site-header-search-link'}, bounds=DOMRect(x=1015.140625, y=352.421875, width=61.0, height=64.0), x_path='html/body/div/header/div/div/div[4]/div[1]/a', element_hash=6521141979943205417)}, {'wait': {'seconds': 2}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 0.5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/search/?q=135+Fleet+Street', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 14}, 'interacted_element': DOMInteractedElement(node_id=270, backend_node_id=11649, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/search/', 'class': 'e-site-header-button__link', 'aria-label': 'Search The Telegraph', 'data-test': 'site-header-search-link'}, bounds=DOMRect(x=1015.140625, y=260.0, width=61.0, height=56.0), x_path='html/body/div/header/div/div/div[4]/div[1]/a', element_hash=6521141979943205417)}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/search/?q=Telegraph+135+Fleet+Street', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/search/?q=135+Fleet+Street+Telegraph+history', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 14}, 'interacted_element': DOMInteractedElement(node_id=263, backend_node_id=20643, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/search/', 'class': 'e-site-header-button__link', 'aria-label': 'Search The Telegraph', 'data-test': 'site-header-search-link'}, bounds=DOMRect(x=1015.140625, y=260.0, width=61.0, height=56.0), x_path='html/body/div/header/div/div/div[4]/div[1]/a', element_hash=6521141979943205417)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/about-us/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/search/?q=Telegraph+Fleet+Street+move', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find the date when the Daily Telegraph moved from The Strand to 135 Fleet Street.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 19, 'text': 'Telegraph moved to 135 Fleet Street', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=1049, backend_node_id=436, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'class': '_input_mtln6_1', 'type': 'text', 'placeholder': '', 'autocomplete': 'off', 'name': 'search_input', 'id': 'search_input', 'value': 'Telegraph Fleet Street move'}, bounds=DOMRect(x=236.484375, y=228.0, width=814.0, height=24.0), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/input', element_hash=6619392925320138933)}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=1054, backend_node_id=688, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': '_clearBtn_mtln6_67'}, bounds=DOMRect(x=1142.484375, y=226.59375, width=46.0, height=26.796875), x_path='html/body/main/div/astro-island/main/div/div/div/div[1]/div/button', element_hash=6152019525586387458)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/search/?q=Telegraph+history+Fleet+Street', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/about-us/', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/about-us/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.telegraph.co.uk/about-us/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When did the Daily Telegraph move from The Strand to 135 Fleet Street?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to locate the date when the Daily Telegraph moved from The Strand to 135 Fleet Street using the provided Telegraph website. Multiple search attempts and navigation to potential history sections returned empty pages or no relevant information. Therefore, the requested information could not be retrieved.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-06 21:43:42,313 - ERROR - CDP Error for request 65: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:42,313 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#c471)] ❌ Failed (0.07s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-06 21:43:42,380 - ERROR - CDP Error for request 66: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-06 21:43:42,381 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#c471)] ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_SaveStorageStateEvent(SaveStorageStateEvent#c471)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-06 21:43:42,381 - ERROR - ❌ EventBus_2efea794🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#c471 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-06 21:43:44,734 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/b3bb406a-1749-453e-99ee-e59c6023faa7 "HTTP/1.1 200 OK"
+2025-10-06 21:43:44,861 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/b3bb406a-1749-453e-99ee-e59c6023faa7/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/b3bb406a-1749-453e-99ee-e59c6023faa7/recordings/282f37ca-d8a2-4bc1-99cc-392b5eda9682/fetch

@@ -1,0 +1,168 @@
+2025-10-06 20:17:41,816 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 20:17:41,828 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 20:17:41,843 - INFO - 🔗 Found URL in task: https://newyork.craigslist.org, adding as initial action...
+2025-10-06 20:17:41,848 - INFO - [34m🚀 Task: Are technical support jobs in Brooklyn, New York available on Craigslist? You must complete the task only using the starting website. Begin task on the following url: https://newyork.craigslist.org[0m
+2025-10-06 20:17:41,893 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 20:17:41,903 - INFO - ────────────────────────────────────────
+2025-10-06 20:17:41,903 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 20:17:41,903 - INFO -     👉  browser-use auth
+2025-10-06 20:17:41,903 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 20:17:41,903 - INFO - ────────────────────────────────────────
+
+2025-10-06 20:17:42,121 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 20:17:42,153 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=9841f572-b1a1-4ec5-a3d5-ccbefb30f671
+2025-10-06 20:17:43,540 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://newyork.craigslist.org, new_tab: False
+2025-10-06 20:17:46,605 - INFO - 🔗 Navigated to https://newyork.craigslist.org
+2025-10-06 20:17:49,077 - INFO - 
+
+2025-10-06 20:17:49,077 - INFO - 📍 Step 1:
+2025-10-06 20:17:50,078 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:17:50,082 - INFO -   ❔ Eval: The previous navigation to the base URL resulted in an empty page, likely not fully loaded. Verdict: Uncertain
+2025-10-06 20:17:50,082 - INFO -   [34m🎯 Next goal: Wait for the homepage to load so that job category links become available.[0m
+2025-10-06 20:17:50,082 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-06 20:17:50,147 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 20:17:55,020 - INFO - 
+
+2025-10-06 20:17:55,021 - INFO - 📍 Step 2:
+2025-10-06 20:17:57,213 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:17:57,216 - INFO -   [32m👍 Eval: Previous step waited for page load; page is now visible with Brooklyn link. Verdict: Success (page loaded).[0m
+2025-10-06 20:17:57,216 - INFO -   [34m🎯 Next goal: Create a todo.md with the navigation plan and click the Brooklyn link.[0m
+2025-10-06 20:17:57,218 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Craigslist Technical Support Jobs in Brooklyn\n\n## Goal: Determine if any technical s
+2025-10-06 20:17:57,288 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 20:18:00,021 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 8, while_holding_ctrl: None
+2025-10-06 20:18:02,422 - INFO - 🖱️ Clicked element
+2025-10-06 20:18:05,151 - INFO - 
+
+2025-10-06 20:18:05,151 - INFO - 📍 Step 3:
+2025-10-06 20:18:08,068 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:08,069 - INFO -   [32m👍 Eval: Previous step successfully created todo.md and clicked the Brooklyn link, landing on the Brooklyn page. Verdict: Success.[0m
+2025-10-06 20:18:08,069 - INFO -   [34m🎯 Next goal: Click the 'jobs' category link (index 221) on the Brooklyn page.[0m
+2025-10-06 20:18:08,073 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 221, while_holding_ctrl: None
+2025-10-06 20:18:11,268 - INFO - 🖱️ Clicked element
+2025-10-06 20:18:13,576 - INFO - 
+
+2025-10-06 20:18:13,577 - INFO - 📍 Step 4:
+2025-10-06 20:18:15,173 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:15,175 - INFO -   [31m⚠️ Eval: Failure: Clicking the jobs category led to an unexpected forum page instead of job listings.[0m
+2025-10-06 20:18:15,175 - INFO -   [34m🎯 Next goal: Return to the Brooklyn page and click the 'technical support' subcategory link.[0m
+2025-10-06 20:18:15,176 - INFO -   🦾 [34m[ACTION 1/1][0m go_back:
+2025-10-06 20:18:16,109 - INFO - 🔙 Navigated back to https://newyork.craigslist.org/brk/
+2025-10-06 20:18:16,110 - INFO - 🔙  Navigated back
+2025-10-06 20:18:18,855 - INFO - 
+
+2025-10-06 20:18:18,855 - INFO - 📍 Step 5:
+2025-10-06 20:18:20,401 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:20,402 - INFO -   [32m👍 Eval: Success: Brooklyn page loaded and jobs category identified.[0m
+2025-10-06 20:18:20,403 - INFO -   [34m🎯 Next goal: Click the 'technical support' subcategory link (index 443) to view listings.[0m
+2025-10-06 20:18:20,405 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 443, while_holding_ctrl: None
+2025-10-06 20:18:22,492 - INFO - 🖱️ Clicked element
+2025-10-06 20:18:25,032 - INFO - 
+
+2025-10-06 20:18:25,032 - INFO - 📍 Step 6:
+2025-10-06 20:18:27,045 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:27,047 - INFO -   [32m👍 Eval: Success: Clicked the technical support subcategory and navigated to the listings page.[0m
+2025-10-06 20:18:27,047 - INFO -   [34m🎯 Next goal: Wait for the page to load and extract data about any technical support job listings.[0m
+2025-10-06 20:18:27,047 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-06 20:18:27,114 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-06 20:18:29,616 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: How many technical support job listings are on this page? List the titles of the first few postings.
+2025-10-06 20:18:31,250 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:31,316 - INFO - 📄 <url>
+https://newyork.craigslist.org/search/brk/tch#search=2~thumb~0
+</url>
+<query>
+How many technical support job listings are on this page? List the titles of the first few postings.
+</query>
+<result>
+Technical support listings on this page: **12**
+
+Titles of the first few postings (in order as they appear):
+
+1. Device Repair & Soldering Technician  
+2. Cell Phone Repair Technician  
+3. Field Service Bearing Technician  
+4. Appliance Repair Technician (No Prior Experience Required)  
+5. IT Network Administrator  
+6. COMPUTER SUPPORT TEMPORARY  
+7. Installation and Maintenance Worker/Technician  
+8. Medical Equipment Installation Tech – 1099 $25/hr  
+9. Network Help Desk – Permanent Part Time – Remote  
+10. Network Engineer (NYC In house)  
+11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)  
+12. I.T. Project Manager
+</result>
+2025-10-06 20:18:33,737 - INFO - 
+
+2025-10-06 20:18:33,737 - INFO - 📍 Step 7:
+2025-10-06 20:18:36,716 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:36,719 - INFO -   [32m👍 Eval: Success: extracted the number of listings and titles from the technical support page.[0m
+2025-10-06 20:18:36,719 - INFO -   [34m🎯 Next goal: Create results.md with the findings and update todo.md to mark all steps as completed.[0m
+2025-10-06 20:18:36,720 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: results.md, content: # Technical Support Jobs in Brooklyn, NY (Craigslist)\n\n- **Total listings found:**
+2025-10-06 20:18:36,789 - INFO - 💾 Data written to file results.md successfully.
+2025-10-06 20:18:37,292 - INFO -   🦾 [34m[ACTION 2/2][0m write_file: file_name: todo.md, content: # Craigslist Technical Support Jobs in Brooklyn\n\n## Goal: Determine if any technical s
+2025-10-06 20:18:37,359 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-06 20:18:39,774 - INFO - 
+
+2025-10-06 20:18:39,775 - INFO - 📍 Step 8:
+2025-10-06 20:18:41,675 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:18:41,676 - INFO -   [32m👍 Eval: Success: Created results.md with the findings and updated todo.md.[0m
+2025-10-06 20:18:41,676 - INFO -   [34m🎯 Next goal: Provide the answer to the user and attach results.md.[0m
+2025-10-06 20:18:41,677 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, technical support jobs are available in Brooklyn, New York on Craigslist. There are 12 current listings. The titles
+2025-10-06 20:18:41,745 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, technical support jobs are available in Brooklyn, New York on Craigslist. There are 12 current listings. The titles of the first few postings are:
+1. Device Repair & Soldering Technician
+2. Cell Phone Repair Technician
+3. Field Service Bearing Technician
+4. Appliance Repair Technician (No Prior Experience Required)
+5. IT Network Administrator
+6. COMPUTER SUPPORT TEMPORARY
+7. Installation and Maintenance Worker/Technician
+8. Medical Equipment Installation Tech – 1099 $25/hr
+9. Network Help Desk – Permanent Part Time – Remote
+10. Network Engineer (NYC In house)
+11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)
+12. I.T. Project Manager
+
+For full details, see the attached results.md file.
+
+Attachments:
+
+results.md:
+# Technical Support Jobs in Brooklyn, NY (Craigslist)
+
+- **Total listings found:** 12
+- **Job titles (first few):**
+  1. Device Repair & Soldering Technician
+  2. Cell Phone Repair Technician
+  3. Field Service Bearing Technician
+  4. Appliance Repair Technician (No Prior Experience Required)
+  5. IT Network Administrator
+  6. COMPUTER SUPPORT TEMPORARY
+  7. Installation and Maintenance Worker/Technician
+  8. Medical Equipment Installation Tech – 1099 $25/hr
+  9. Network Help Desk – Permanent Part Time – Remote
+  10. Network Engineer (NYC In house)
+  11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)
+  12. I.T. Project Manager
+
+**Conclusion:** Technical support jobs are indeed available in Brooklyn, New York on Craigslist.
+
+
+
+2025-10-06 20:18:41,745 - INFO - 👉 Attachment : /var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e4865-5d4e-77ab-8000-08e8feb6dcdf_1759807061/browseruse_agent_data/results.md
+2025-10-06 20:18:41,748 - INFO - ✅ Task completed successfully
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=9841f572-b1a1-4ec5-a3d5-ccbefb30f671
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: 9841f572-b1a1-4ec5-a3d5-ccbefb30f671
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://newyork.craigslist.org', extracted_content='🔗 Navigated to https://newyork.craigslist.org', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 656.6875, 'click_y': 39.296875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 537.28125, 'click_y': 759.53125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Navigated back', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 980.8125, 'click_y': 678.8125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://newyork.craigslist.org/search/brk/tch#search=2~thumb~0\n</url>\n<query>\nHow many technical support job listings are on this page? List the titles of the first few postings.\n</query>\n<result>\nTechnical support listings on this page: **12**\n\nTitles of the first few postings (in order as they appear):\n\n1. Device Repair & Soldering Technician  \n2. Cell Phone Repair Technician  \n3. Field Service Bearing Technician  \n4. Appliance Repair Technician (No Prior Experience Required)  \n5. IT Network Administrator  \n6. COMPUTER SUPPORT TEMPORARY  \n7. Installation and Maintenance Worker/Technician  \n8. Medical Equipment Installation Tech – 1099 $25/hr  \n9. Network Help Desk – Permanent Part Time – Remote  \n10. Network Engineer (NYC In house)  \n11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)  \n12. I.T. Project Manager\n</result>', extracted_content='<url>\nhttps://newyork.craigslist.org/search/brk/tch#search=2~thumb~0\n</url>\n<query>\nHow many technical support job listings are on this page? List the titles of the first few postings.\n</query>\n<result>\nTechnical support listings on this page: **12**\n\nTitles of the first few postings (in order as they appear):\n\n1. Device Repair & Soldering Technician  \n2. Cell Phone Repair Technician  \n3. Field Service Bearing Technician  \n4. Appliance Repair Technician (No Prior Experience Required)  \n5. IT Network Administrator  \n6. COMPUTER SUPPORT TEMPORARY  \n7. Installation and Maintenance Worker/Technician  \n8. Medical Equipment Installation Tech – 1099 $25/hr  \n9. Network Help Desk – Permanent Part Time – Remote  \n10. Network Engineer (NYC In house)  \n11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)  \n12. I.T. Project Manager\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=['/var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e4865-5d4e-77ab-8000-08e8feb6dcdf_1759807061/browseruse_agent_data/results.md'], long_term_memory='Task completed: True - Yes, technical support jobs are available in Brooklyn, New York on Craigslist. There are 12 current  - 603 more characters', extracted_content='Yes, technical support jobs are available in Brooklyn, New York on Craigslist. There are 12 current listings. The titles of the first few postings are:\n1. Device Repair & Soldering Technician\n2. Cell Phone Repair Technician\n3. Field Service Bearing Technician\n4. Appliance Repair Technician (No Prior Experience Required)\n5. IT Network Administrator\n6. COMPUTER SUPPORT TEMPORARY\n7. Installation and Maintenance Worker/Technician\n8. Medical Equipment Installation Tech – 1099 $25/hr\n9. Network Help Desk – Permanent Part Time – Remote\n10. Network Engineer (NYC In house)\n11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)\n12. I.T. Project Manager\n\nFor full details, see the attached results.md file.\n\nAttachments:\n\nresults.md:\n# Technical Support Jobs in Brooklyn, NY (Craigslist)\n\n- **Total listings found:** 12\n- **Job titles (first few):**\n  1. Device Repair & Soldering Technician\n  2. Cell Phone Repair Technician\n  3. Field Service Bearing Technician\n  4. Appliance Repair Technician (No Prior Experience Required)\n  5. IT Network Administrator\n  6. COMPUTER SUPPORT TEMPORARY\n  7. Installation and Maintenance Worker/Technician\n  8. Medical Equipment Installation Tech – 1099 $25/hr\n  9. Network Help Desk – Permanent Part Time – Remote\n  10. Network Engineer (NYC In house)\n  11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)\n  12. I.T. Project Manager\n\n**Conclusion:** Technical support jobs are indeed available in Brooklyn, New York on Craigslist.\n', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://newyork.craigslist.org', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Craigslist Technical Support Jobs in Brooklyn\n\n## Goal: Determine if any technical support job postings exist in Brooklyn, NY.\n\n## Tasks:\n- [ ] Click the Brooklyn link (index 8) on the New York homepage.\n- [ ] On the Brooklyn page, click the "jobs" category.\n- [ ] Within jobs, select the "technical support" subcategory.\n- [ ] Verify if any listings are present.\n- [ ] Record the result in results.md.\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 8}, 'interacted_element': DOMInteractedElement(node_id=150, backend_node_id=107, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/brk/', 'title': 'brooklyn'}, bounds=DOMRect(x=647.3125, y=30.796875, width=18.75, height=17.0), x_path='html/body/section/div[1]/nav/div[2]/ul/li[2]/a', element_hash=6223387267437561945)}, {'click_element_by_index': {'index': 221}, 'interacted_element': DOMInteractedElement(node_id=652, backend_node_id=6571, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://forums.craigslist.org/?areaID=3&forumID=7'}, bounds=DOMRect(x=512.21875, y=750.71875, width=50.125, height=17.625), x_path='html/body/section/div[1]/div[3]/div[2]/div[3]/div/ul[2]/li[8]/a', element_hash=1230184016124989368)}, {'go_back': {}, 'interacted_element': None}, {'click_element_by_index': {'index': 443}, 'interacted_element': DOMInteractedElement(node_id=1220, backend_node_id=6934, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/search/brk/tch', 'class': 'tch', 'data-cat': 'tch'}, bounds=DOMRect(x=913.984375, y=668.09375, width=133.65625, height=21.4375), x_path='html/body/section/div[1]/div[3]/div[4]/div[1]/div/ul/li[27]/a', element_hash=6230901020498537889)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'How many technical support job listings are on this page? List the titles of the first few postings.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'results.md', 'content': '# Technical Support Jobs in Brooklyn, NY (Craigslist)\n\n- **Total listings found:** 12\n- **Job titles (first few):**\n  1. Device Repair & Soldering Technician\n  2. Cell Phone Repair Technician\n  3. Field Service Bearing Technician\n  4. Appliance Repair Technician (No Prior Experience Required)\n  5. IT Network Administrator\n  6. COMPUTER SUPPORT TEMPORARY\n  7. Installation and Maintenance Worker/Technician\n  8. Medical Equipment Installation Tech – 1099 $25/hr\n  9. Network Help Desk – Permanent Part Time – Remote\n  10. Network Engineer (NYC In house)\n  11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)\n  12. I.T. Project Manager\n\n**Conclusion:** Technical support jobs are indeed available in Brooklyn, New York on Craigslist.', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Craigslist Technical Support Jobs in Brooklyn\n\n## Goal: Determine if any technical support job postings exist in Brooklyn, NY.\n\n## Tasks:\n- [x] Click the Brooklyn link (index 8) on the New York homepage.\n- [x] On the Brooklyn page, click the "jobs" category.\n- [x] Within jobs, select the "technical support" subcategory.\n- [x] Verify if any listings are present.\n- [x] Record the result in results.md.\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'done': {'text': 'Yes, technical support jobs are available in Brooklyn, New York on Craigslist. There are 12 current listings. The titles of the first few postings are:\n1. Device Repair & Soldering Technician\n2. Cell Phone Repair Technician\n3. Field Service Bearing Technician\n4. Appliance Repair Technician (No Prior Experience Required)\n5. IT Network Administrator\n6. COMPUTER SUPPORT TEMPORARY\n7. Installation and Maintenance Worker/Technician\n8. Medical Equipment Installation Tech – 1099 $25/hr\n9. Network Help Desk – Permanent Part Time – Remote\n10. Network Engineer (NYC In house)\n11. Apple Mac Support Tech LV2 (NYC / Onsite + Remote)\n12. I.T. Project Manager\n\nFor full details, see the attached results.md file.', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}])2025-10-06 20:18:44,182 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/9841f572-b1a1-4ec5-a3d5-ccbefb30f671 "HTTP/1.1 200 OK"
+2025-10-06 20:18:44,311 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/9841f572-b1a1-4ec5-a3d5-ccbefb30f671/recordings "HTTP/1.1 200 OK"
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/9841f572-b1a1-4ec5-a3d5-ccbefb30f671/recordings/5007ab66-177f-4e0f-900b-2db0ad4e9da1/fetch

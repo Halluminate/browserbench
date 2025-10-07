@@ -1,0 +1,68 @@
+2025-10-06 20:57:48,334 - INFO - HTTP Request: POST https://api.anchorbrowser.io/v1/sessions "HTTP/1.1 200 OK"
+2025-10-06 20:57:48,345 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-06 20:57:48,359 - INFO - 🔗 Found URL in task: https://www.freepik.com, adding as initial action...
+2025-10-06 20:57:48,363 - INFO - [34m🚀 Task: What year was Freepik founded? You must complete the task only using the starting website. Begin task on the following url: https://www.freepik.com[0m
+2025-10-06 20:57:48,401 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-06 20:57:48,409 - INFO - ────────────────────────────────────────
+2025-10-06 20:57:48,409 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-06 20:57:48,409 - INFO -     👉  browser-use auth
+2025-10-06 20:57:48,409 - INFO -     or: python -m browser_use.cli auth
+2025-10-06 20:57:48,409 - INFO - ────────────────────────────────────────
+
+2025-10-06 20:57:48,640 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-06 20:57:48,679 - INFO - Connecting to wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=a1c3a278-e7db-4164-b202-b68e39254703
+2025-10-06 20:57:50,512 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.freepik.com, new_tab: False
+2025-10-06 20:57:52,395 - INFO - 🔗 Navigated to https://www.freepik.com
+2025-10-06 20:58:02,190 - INFO - 
+
+2025-10-06 20:58:02,190 - INFO - 📍 Step 1:
+2025-10-06 20:58:03,916 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:58:03,927 - INFO -   [32m👍 Eval: Previous navigation to the homepage succeeded. Verdict: Success[0m
+2025-10-06 20:58:03,927 - INFO -   [34m🎯 Next goal: Search the site for "Freepik founded" and extract the founding year from the results.[0m
+2025-10-06 20:58:03,928 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 8, text: Freepik founded, clear_existing: True
+2025-10-06 20:58:09,397 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-06 20:58:09,398 - INFO - ⌨️ Typed "Freepik founded" into element with index 8
+2025-10-06 20:58:09,899 - INFO -   🦾 [34m[ACTION 2/4][0m send_keys: keys: Enter
+2025-10-06 20:58:10,458 - INFO - ⌨️ Sent keys: Enter
+2025-10-06 20:58:10,559 - INFO - ⌨️  Sent keys: Enter
+2025-10-06 20:58:11,061 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 3
+2025-10-06 20:58:11,152 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-06 20:58:11,654 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: What year was Freepik founded?, extract_links: False, start_from_char: 0
+2025-10-06 20:58:13,049 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:58:13,123 - INFO - 📄 <url>
+https://www.freepik.com/search?format=search&last_filter=query&last_value=Freepik+founded&query=Freepik+founded
+</url>
+<query>
+What year was Freepik founded?
+</query>
+<result>
+2010
+</result>
+2025-10-06 20:58:16,942 - INFO - 
+
+2025-10-06 20:58:16,942 - INFO - 📍 Step 2:
+2025-10-06 20:58:18,283 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-06 20:58:18,285 - INFO -   [32m👍 Eval: Success - the search returned the founding year (2010).[0m
+2025-10-06 20:58:18,285 - INFO -   [34m🎯 Next goal: Provide the founding year to the user.[0m
+2025-10-06 20:58:18,286 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Freepik was founded in 2010., success: True, files_to_display: []
+2025-10-06 20:58:18,361 - INFO - 
+📄 [32m Final Result:[0m 
+Freepik was founded in 2010.
+
+
+2025-10-06 20:58:18,364 - INFO - ✅ Task completed successfully
+2025-10-06 20:58:21,938 - INFO - HTTP Request: DELETE https://api.anchorbrowser.io/v1/sessions/a1c3a278-e7db-4164-b202-b68e39254703 "HTTP/1.1 200 OK"
+2025-10-06 20:58:22,091 - INFO - HTTP Request: GET https://api.anchorbrowser.io/v1/sessions/a1c3a278-e7db-4164-b202-b68e39254703/recordings "HTTP/1.1 200 OK"
+Anchor Session's CDP_URL for later use (STEALTH MODE)
+ wss://connect.anchorbrowser.io?apiKey=sk-d2d9b2c7ab9df89cb29de82222be59a4&sessionId=a1c3a278-e7db-4164-b202-b68e39254703
+Session created with CAPTCHA solver, extra_stealth, and mobile proxy: a1c3a278-e7db-4164-b202-b68e39254703
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.freepik.com', extracted_content='🔗 Navigated to https://www.freepik.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Freepik founded' into element 8.", extracted_content="Input 'Freepik founded' into element 8.", include_extracted_content_only_once=False, metadata={'input_x': 1061.453125, 'input_y': 34.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.freepik.com/search?format=search&last_filter=query&last_value=Freepik+founded&query=Freepik+founded\n</url>\n<query>\nWhat year was Freepik founded?\n</query>\n<result>\n2010\n</result>', extracted_content='<url>\nhttps://www.freepik.com/search?format=search&last_filter=query&last_value=Freepik+founded&query=Freepik+founded\n</url>\n<query>\nWhat year was Freepik founded?\n</query>\n<result>\n2010\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Freepik was founded in 2010.', extracted_content='Freepik was founded in 2010.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.freepik.com', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 8, 'text': 'Freepik founded', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=523, backend_node_id=282, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'name': 'term', 'class': 'placeholder:text-text-neutral-600 w-full bg-transparent py-2 text-surface-foreground-0 !outline-none sm:h-10', 'type': 'text', 'placeholder': 'Search assets or start creating', 'autocomplete': 'off', 'autofocus': '', 'data-cy': 'search-pageSearch', 'value': ''}, bounds=DOMRect(x=821.953125, y=14.0, width=479.0, height=40.0), x_path='html/body/div/nav/header/div[2]/div/form/div/input', element_hash=494083176568017518)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What year was Freepik founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'Freepik was founded in 2010.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Deleting Anchor session...
+Anchor session deleted successfully
+Getting session recordings...
+Session recordings retrieved successfully
+Anchor recording URL: https://api.anchorbrowser.io/v1/sessions/a1c3a278-e7db-4164-b202-b68e39254703/recordings/49068b40-f60b-4af0-8399-104706fa6acd/fetch
