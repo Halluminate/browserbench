@@ -1,0 +1,130 @@
+2025-10-07 00:41:59,583 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 00:41:59,593 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 00:41:59,608 - INFO - 🔗 Found URL in task: https://www.cbsnews.com, adding as initial action...
+2025-10-07 00:41:59,612 - INFO - [34m🚀 Task: Is the CBS News app available for download in App Store and Google Play? You must complete the task only using the starting website. Begin task on the following url: https://www.cbsnews.com[0m
+2025-10-07 00:41:59,649 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 00:41:59,657 - INFO - ────────────────────────────────────────
+2025-10-07 00:41:59,658 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 00:41:59,658 - INFO -     👉  browser-use auth
+2025-10-07 00:41:59,658 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 00:41:59,658 - INFO - ────────────────────────────────────────
+
+2025-10-07 00:41:59,877 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 00:41:59,922 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.2QuSi9zHyjWZIVPOeyS-qjA120lMG5S322jDFqpf5ebZXPiSqiQaPw.Auu5zBgyAJ_wVQkh.Lw0Moh8BV3rSYvZa4g-Yi5Kpq3EN9uJ6jjq6L5zxF4112WMFGztAymutYmcjxoExSMUzIalrQB6DT-wHIafqYDwP0BkJIqGbUFzgU2GZmFQkr0cKj9woGJZa3KUNYua_HoThrFwfOYcpIL1ErEfDiqC6srnYGGiCZ3hJdLCHBQOdNS6_5ci5jfzvNl9SsdGSZNSZ_Abjqd_xp2ujnxVqVqip-N0sO93p0C86gL7fhMGoB-Ekh5xcRHjcTzG0YUHCIY8LIuJc54-iylHaxvmpWkk3SM0Pr2aCkpgfHsw1c8z2oZQKdcxqcsfi1rF4khhn2NStsIARhP9v4Q0KtVYAXjs7DD1jdUNcL6rNvYxZqO7sbDv82MXcFaoyVRI-ic099zBC9HWglTwS1WQPa08XhMlxem1eNyXDdP21a5SivCQD6bYBlTPi0GoeOWNV_Q.J0QUGyvmNbsUpJ2HE7n44g
+2025-10-07 00:42:03,156 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.cbsnews.com, new_tab: False
+2025-10-07 00:42:04,397 - INFO - 🔗 Navigated to https://www.cbsnews.com
+2025-10-07 00:42:07,168 - INFO - 
+
+2025-10-07 00:42:07,168 - INFO - 📍 Step 1:
+2025-10-07 00:42:08,980 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:08,986 - INFO -   [32m👍 Eval: Successfully loaded https://www.cbsnews.com as the initial page. Verdict: Success[0m
+2025-10-07 00:42:08,986 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page and extract information about App Store and Google Play availability.[0m
+2025-10-07 00:42:08,987 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 00:42:11,211 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 705px per page)
+2025-10-07 00:42:11,712 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Is the CBS News app available on the Apple App Store and Google Play? Provide the URLs for each store
+2025-10-07 00:42:13,323 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:13,355 - INFO - 📄 <url>
+https://www.cbsnews.com/
+</url>
+<query>
+Is the CBS News app available on the Apple App Store and Google Play? Provide the URLs for each store if they exist.
+</query>
+<result>
+The provided webpage does not contain direct URLs to the CBS News app on the Apple App Store or Google Play. The only related link present is “Download Our App” pointing to `/app/?ftag=CNM-16-10abd6g`, which may lead to store links, but those URLs are not included in the extracted content.  
+
+*Information on Apple App Store URL:* unavailable in the current page content.  
+*Information on Google Play URL:* unavailable in the current page content.  
+
+To obtain the store URLs, additional content from the “Download Our App” page would be needed.
+</result>
+2025-10-07 00:42:15,935 - INFO - 
+
+2025-10-07 00:42:15,935 - INFO - 📍 Step 2:
+2025-10-07 00:42:17,516 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:17,517 - INFO -   [32m👍 Eval: Previous scroll of 5 pages succeeded in moving down the page but did not reach the footer; the required app store links were not found. Verdict: Partial success, need more scrolling.[0m
+2025-10-07 00:42:17,517 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the page and extract the Apple App Store and Google Play URLs for the CBS News app.[0m
+2025-10-07 00:42:17,518 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 00:42:22,499 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 705px per page)
+2025-10-07 00:42:23,002 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Provide the direct URLs for the CBS News app on the Apple App Store and Google Play Store as found on
+2025-10-07 00:42:24,362 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:24,392 - INFO - 📄 <url>
+https://www.cbsnews.com/
+</url>
+<query>
+Provide the direct URLs for the CBS News app on the Apple App Store and Google Play Store as found on the CBS News website.
+</query>
+<result>
+The webpage excerpt does not contain the direct Apple App Store or Google Play Store URLs for the CBS News app. The only related link shown is “Download Our App” (/app/?ftag=CNM-16-10abd6g), which likely leads to a page with those store links, but those URLs are not present in the provided content. To obtain them, additional content from the “/app/” page is needed.
+</result>
+2025-10-07 00:42:28,372 - INFO - 
+
+2025-10-07 00:42:28,373 - INFO - 📍 Step 3:
+2025-10-07 00:42:29,868 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:29,868 - INFO -   [32m👍 Eval: Previous scroll moved us close to the bottom but did not yet reveal the footer; partial success.[0m
+2025-10-07 00:42:29,868 - INFO -   [34m🎯 Next goal: Scroll to the very bottom of the page and extract the Apple App Store and Google Play URLs for the CBS News app.[0m
+2025-10-07 00:42:29,869 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 00:42:32,085 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 705px per page)
+2025-10-07 00:42:32,587 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Find the direct URLs for the CBS News app on the Apple App Store and Google Play Store as listed on t
+2025-10-07 00:42:33,943 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:33,972 - INFO - 📄 <url>
+https://www.cbsnews.com/
+</url>
+<query>
+Find the direct URLs for the CBS News app on the Apple App Store and Google Play Store as listed on this page.
+</query>
+<result>
+The page does not contain the direct Apple App Store or Google Play Store URLs for the CBS News app.
+</result>
+2025-10-07 00:42:37,240 - INFO - 
+
+2025-10-07 00:42:37,241 - INFO - 📍 Step 4:
+2025-10-07 00:42:38,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:38,730 - INFO -   [32m👍 Eval: Previous scroll actions did not reach the footer and did not reveal the app store URLs. Verdict: Partial success, need further navigation.[0m
+2025-10-07 00:42:38,730 - INFO -   [34m🎯 Next goal: Click the "Download Our App" link to navigate to the app page and then extract the Apple App Store and Google Play URLs.[0m
+2025-10-07 00:42:38,731 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 82, while_holding_ctrl: None
+2025-10-07 00:42:40,291 - INFO - 🖱️ Clicked element
+2025-10-07 00:42:42,247 - INFO - 
+
+2025-10-07 00:42:42,247 - INFO - 📍 Step 5:
+2025-10-07 00:42:43,921 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:43,922 - INFO -   [32m👍 Eval: Success - clicked the "Download Our App" link and loaded the app page.[0m
+2025-10-07 00:42:43,922 - INFO -   [34m🎯 Next goal: Extract the Apple App Store and Google Play URLs from the current page.[0m
+2025-10-07 00:42:43,922 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Provide the href URLs for the Apple App Store link (download on the App Store) and the Google Play li
+2025-10-07 00:42:45,363 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:45,394 - INFO - 📄 <url>
+https://www.cbsnews.com/mobile/?ftag=CNM-16-10abc6g
+</url>
+<query>
+Provide the href URLs for the Apple App Store link (download on the App Store) and the Google Play link (Get it on Google Play) on this page.
+</query>
+<result>
+Apple App Store URL: https://apps.apple.com/us/app/cbs-news/id334256223  
+Google Play URL: https://play.google.com/store/apps/details?id=com.treemolabs.apps.cbsnews&hl=en
+</result>
+2025-10-07 00:42:47,827 - INFO - 
+
+2025-10-07 00:42:47,827 - INFO - 📍 Step 6:
+2025-10-07 00:42:49,595 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:42:49,597 - INFO -   [32m👍 Eval: Success - extract_structured_data returned both App Store and Google Play URLs.[0m
+2025-10-07 00:42:49,597 - INFO -   [34m🎯 Next goal: Provide the answer to the user confirming availability and list the URLs, then finish the task.[0m
+2025-10-07 00:42:49,598 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, the CBS News app is available for download on both platforms:\n- Apple App Store: https://apps.apple.com/us/app/cbs-
+2025-10-07 00:42:49,627 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, the CBS News app is available for download on both platforms:
+- Apple App Store: https://apps.apple.com/us/app/cbs-news/id334256223
+- Google Play Store: https://play.google.com/store/apps/details?id=com.treemolabs.apps.cbsnews&hl=en
+These links were obtained directly from the CBS News website (https://www.cbsnews.com/mobile/).
+
+
+2025-10-07 00:42:49,631 - INFO - ✅ Task completed successfully
+Creating Browserbase session with advanced stealth...
+Browserbase session created with ID: 24dc6460-034e-498f-9ade-0e5605740fff
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.2QuSi9zHyjWZIVPOeyS-qjA120lMG5S322jDFqpf5ebZXPiSqiQaPw.Auu5zBgyAJ_wVQkh.Lw0Moh8BV3rSYvZa4g-Yi5Kpq3EN9uJ6jjq6L5zxF4112WMFGztAymutYmcjxoExSMUzIalrQB6DT-wHIafqYDwP0BkJIqGbUFzgU2GZmFQkr0cKj9woGJZa3KUNYua_HoThrFwfOYcpIL1ErEfDiqC6srnYGGiCZ3hJdLCHBQOdNS6_5ci5jfzvNl9SsdGSZNSZ_Abjqd_xp2ujnxVqVqip-N0sO93p0C86gL7fhMGoB-Ekh5xcRHjcTzG0YUHCIY8LIuJc54-iylHaxvmpWkk3SM0Pr2aCkpgfHsw1c8z2oZQKdcxqcsfi1rF4khhn2NStsIARhP9v4Q0KtVYAXjs7DD1jdUNcL6rNvYxZqO7sbDv82MXcFaoyVRI-ic099zBC9HWglTwS1WQPa08XhMlxem1eNyXDdP21a5SivCQD6bYBlTPi0GoeOWNV_Q.J0QUGyvmNbsUpJ2HE7n44g
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.cbsnews.com', extracted_content='🔗 Navigated to https://www.cbsnews.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 705px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 705px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.cbsnews.com/\n</url>\n<query>\nIs the CBS News app available on the Apple App Store and Google Play? Provide the URLs for each store if they exist.\n</query>\n<result>\nThe provided webpage does not contain direct URLs to the CBS\u202fNews app on the Apple App Store or Google Play. The only related link present is\u202f“Download Our App”\u202fpointing to\u202f`/app/?ftag=CNM-16-10abd6g`, which may lead to store links, but those URLs are not included in the extracted content.  \n\n*Information on Apple App Store URL:* unavailable in the current page content.  \n*Information on Google Play URL:* unavailable in the current page content.  \n\nTo obtain the store URLs, additional content from the “Download Our App” page would be needed.\n</result>', extracted_content='<url>\nhttps://www.cbsnews.com/\n</url>\n<query>\nIs the CBS News app available on the Apple App Store and Google Play? Provide the URLs for each store if they exist.\n</query>\n<result>\nThe provided webpage does not contain direct URLs to the CBS\u202fNews app on the Apple App Store or Google Play. The only related link present is\u202f“Download Our App”\u202fpointing to\u202f`/app/?ftag=CNM-16-10abd6g`, which may lead to store links, but those URLs are not included in the extracted content.  \n\n*Information on Apple App Store URL:* unavailable in the current page content.  \n*Information on Google Play URL:* unavailable in the current page content.  \n\nTo obtain the store URLs, additional content from the “Download Our App” page would be needed.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 705px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 705px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.cbsnews.com/\n</url>\n<query>\nProvide the direct URLs for the CBS News app on the Apple App Store and Google Play Store as found on the CBS News website.\n</query>\n<result>\nThe webpage excerpt does not contain the direct Apple App Store or Google Play Store URLs for the CBS News app. The only related link shown is “Download Our App” (/app/?ftag=CNM-16-10abd6g), which likely leads to a page with those store links, but those URLs are not present in the provided content. To obtain them, additional content from the “/app/” page is needed.\n</result>', extracted_content='<url>\nhttps://www.cbsnews.com/\n</url>\n<query>\nProvide the direct URLs for the CBS News app on the Apple App Store and Google Play Store as found on the CBS News website.\n</query>\n<result>\nThe webpage excerpt does not contain the direct Apple App Store or Google Play Store URLs for the CBS News app. The only related link shown is “Download Our App” (/app/?ftag=CNM-16-10abd6g), which likely leads to a page with those store links, but those URLs are not present in the provided content. To obtain them, additional content from the “/app/” page is needed.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 705px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 705px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.cbsnews.com/\n</url>\n<query>\nFind the direct URLs for the CBS News app on the Apple App Store and Google Play Store as listed on this page.\n</query>\n<result>\nThe page does not contain the direct Apple App Store or Google Play Store URLs for the CBS News app.\n</result>', extracted_content='<url>\nhttps://www.cbsnews.com/\n</url>\n<query>\nFind the direct URLs for the CBS News app on the Apple App Store and Google Play Store as listed on this page.\n</query>\n<result>\nThe page does not contain the direct Apple App Store or Google Play Store URLs for the CBS News app.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 816.2578125, 'click_y': 490.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.cbsnews.com/mobile/?ftag=CNM-16-10abc6g\n</url>\n<query>\nProvide the href URLs for the Apple App Store link (download on the App Store) and the Google Play link (Get it on Google Play) on this page.\n</query>\n<result>\nApple App Store URL: https://apps.apple.com/us/app/cbs-news/id334256223  \nGoogle Play URL: https://play.google.com/store/apps/details?id=com.treemolabs.apps.cbsnews&hl=en\n</result>', extracted_content='<url>\nhttps://www.cbsnews.com/mobile/?ftag=CNM-16-10abc6g\n</url>\n<query>\nProvide the href URLs for the Apple App Store link (download on the App Store) and the Google Play link (Get it on Google Play) on this page.\n</query>\n<result>\nApple App Store URL: https://apps.apple.com/us/app/cbs-news/id334256223  \nGoogle Play URL: https://play.google.com/store/apps/details?id=com.treemolabs.apps.cbsnews&hl=en\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, the CBS News app is available for download on both platforms:\n- Apple App Store: https://apps.a - 233 more characters', extracted_content='Yes, the CBS News app is available for download on both platforms:\n- Apple App Store: https://apps.apple.com/us/app/cbs-news/id334256223\n- Google Play Store: https://play.google.com/store/apps/details?id=com.treemolabs.apps.cbsnews&hl=en\nThese links were obtained directly from the CBS News website (https://www.cbsnews.com/mobile/).', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.cbsnews.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Is the CBS News app available on the Apple App Store and Google Play? Provide the URLs for each store if they exist.', 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Provide the direct URLs for the CBS News app on the Apple App Store and Google Play Store as found on the CBS News website.', 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Find the direct URLs for the CBS News app on the Apple App Store and Google Play Store as listed on this page.', 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 82}, 'interacted_element': DOMInteractedElement(node_id=19342, backend_node_id=3339, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/app/', 'class': '', 'rel': 'nofollow'}, bounds=DOMRect(x=748.890625, y=482.5, width=134.734375, height=16.0), x_path='html/body/footer/div/nav/dl[4]/dd[3]/a', element_hash=640737795934180242)}, {'extract_structured_data': {'query': 'Provide the href URLs for the Apple App Store link (download on the App Store) and the Google Play link (Get it on Google Play) on this page.', 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'Yes, the CBS News app is available for download on both platforms:\n- Apple App Store: https://apps.apple.com/us/app/cbs-news/id334256223\n- Google Play Store: https://play.google.com/store/apps/details?id=com.treemolabs.apps.cbsnews&hl=en\nThese links were obtained directly from the CBS News website (https://www.cbsnews.com/mobile/).', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 24dc6460-034e-498f-9ade-0e5605740fff - no manual close method available, session will auto-expire
+Browserbase session 24dc6460-034e-498f-9ade-0e5605740fff closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/24dc6460-034e-498f-9ade-0e5605740fff

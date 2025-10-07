@@ -1,0 +1,371 @@
+2025-10-07 01:50:44,240 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 01:50:44,246 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 01:50:44,258 - INFO - 🔗 Found URL in task: https://ebay.com, adding as initial action...
+2025-10-07 01:50:44,263 - INFO - [34m🚀 Task: What is the name of eBay’s founder? You must complete the task only using the starting website. Begin task on the following url: ebay.com[0m
+2025-10-07 01:50:44,300 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 01:50:44,307 - INFO - ────────────────────────────────────────
+2025-10-07 01:50:44,307 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 01:50:44,307 - INFO -     👉  browser-use auth
+2025-10-07 01:50:44,307 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 01:50:44,307 - INFO - ────────────────────────────────────────
+
+2025-10-07 01:50:44,533 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 01:50:44,569 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.UmwLuMM8zveoswmega6WarZYTDBLmyBKSykMWHenKQmNPmStEVMAJA.srQXW1tTD2aRMCm2.3hAX9OnGBVShNg2LKX-Ki9RHel-xxrITgvRGJ7GX_KMmURDBNegBZTa3cBKJ_biqpbzlc0qRsOzDbo07Q2W_OYgN0W7nW6wM3t85SJjBfssT4Nc5Lv-hKVUYhsR_pXgKIG9DbrH5jeJt9Nr0B8W1IpG-cykF0e6qiA2zNSPDIwGfxWkTUcrlIeBB6kbOIaOf-ZNLSVLlqSJ0JpEqD_ANSomhDgiOjEH3QcBHTWScxnc9dUk_8INR8aeTc5FtimUTLBOFNxJQGwxlomVbDduAxFSxztaOCZcxJqdKDzjUMvgHNC0Xb9GcAjQmQQjFOz0hKmutRSTjWdWbB4yGu6vck6_aUOa5nKJmRhp2N5qDcT37lc0Y8bpMFqVHne2PRu-LP3gRg-8WoScSTHuJSdr5muxf5uNMtbO29TREIj_yxoEuNqpKIJvGEJPa7YCIwA._oCuDcqA-TFN_XJKYSs9bA
+2025-10-07 01:50:47,770 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://ebay.com, new_tab: False
+2025-10-07 01:50:51,313 - INFO - 🔗 Navigated to https://ebay.com
+2025-10-07 01:50:53,353 - INFO - 
+
+2025-10-07 01:50:53,353 - INFO - 📍 Step 1:
+2025-10-07 01:50:54,782 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:50:54,788 - INFO -   ❔ Eval: Failed to load visible content on eBay homepage; page appears empty.
+2025-10-07 01:50:54,789 - INFO -   [34m🎯 Next goal: Wait for the eBay homepage to load its content before attempting further navigation.[0m
+2025-10-07 01:50:54,789 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-07 01:50:54,817 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:50:58,613 - INFO - 
+
+2025-10-07 01:50:58,613 - INFO - 📍 Step 2:
+2025-10-07 01:51:00,308 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:00,309 - INFO -   [32m👍 Eval: Previous step waited for page load; no navigation performed. Verdict: Success (page is loaded).[0m
+2025-10-07 01:51:00,309 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the eBay homepage and then extract the founder's name.[0m
+2025-10-07 01:51:00,310 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 01:51:02,534 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)
+2025-10-07 01:51:03,035 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:51:03,880 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:03,908 - INFO - 📄 <url>
+https://www.ebay.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:51:05,901 - INFO - 
+
+2025-10-07 01:51:05,901 - INFO - 📍 Step 3:
+2025-10-07 01:51:07,392 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:07,393 - INFO -   [31m⚠️ Eval: Previous step scrolled down but did not retrieve founder info. Verdict: Failure (information not found).[0m
+2025-10-07 01:51:07,393 - INFO -   [34m🎯 Next goal: Click the 'About eBay' link to open the company information page.[0m
+2025-10-07 01:51:07,394 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 47, while_holding_ctrl: None
+2025-10-07 01:51:09,498 - INFO - 🖱️ Clicked element
+2025-10-07 01:51:11,506 - INFO - 
+
+2025-10-07 01:51:11,506 - INFO - 📍 Step 4:
+2025-10-07 01:51:13,073 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:13,075 - INFO -   [32m👍 Eval: Clicked the 'About eBay' link successfully, but the target page has not yet loaded its content.[0m
+2025-10-07 01:51:13,075 - INFO -   [34m🎯 Next goal: Wait for the About eBay page to load, then extract the founder's name using a structured data query.[0m
+2025-10-07 01:51:13,075 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 01:51:13,104 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:51:15,606 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:51:16,270 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:16,300 - INFO - 📄 <url>
+https://www.ebayinc.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:51:18,063 - INFO - 
+
+2025-10-07 01:51:18,063 - INFO - 📍 Step 5:
+2025-10-07 01:51:19,615 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:19,617 - INFO -   ❔ Eval: Previous action scrolled down the page but did not retrieve founder info; still missing founder name.
+2025-10-07 01:51:19,617 - INFO -   [34m🎯 Next goal: Scroll further down the About eBay page and then extract the founder's name.[0m
+2025-10-07 01:51:19,618 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 01:51:21,937 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)
+2025-10-07 01:51:22,438 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:51:23,214 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:23,243 - INFO - 📄 <url>
+https://www.ebayinc.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:51:24,989 - INFO - 
+
+2025-10-07 01:51:24,989 - INFO - 📍 Step 6:
+2025-10-07 01:51:26,702 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:26,703 - INFO -   ❔ Eval: Previous step clicked 'About eBay' and waited, but founder info not found.
+2025-10-07 01:51:26,703 - INFO -   [34m🎯 Next goal: Click the 'Company' link (index 32) to open the company information page, then extract the founder's name.[0m
+2025-10-07 01:51:26,703 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 32, while_holding_ctrl: None
+2025-10-07 01:51:26,899 - WARNING - No visible quad found, using first quad
+2025-10-07 01:51:27,509 - INFO - 🖱️ Clicked element
+2025-10-07 01:51:28,009 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 01:51:28,037 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:51:30,541 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:51:31,280 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:31,310 - INFO - 📄 <url>
+https://www.ebayinc.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:51:32,935 - INFO - 
+
+2025-10-07 01:51:32,935 - INFO - 📍 Step 7:
+2025-10-07 01:51:35,800 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:35,801 - INFO -   [31m⚠️ Eval: Failure – founder information not found on ebayinc.com and domain usage violated the requirement.[0m
+2025-10-07 01:51:35,801 - INFO -   [34m🎯 Next goal: Navigate to https://www.ebay.com, wait for load, and extract the founder's name using a structured data query.[0m
+2025-10-07 01:51:35,802 - INFO -   🦾 [34m[ACTION 1/4][0m write_file: file_name: todo.md, content: # Task: Find eBay founder name\n\n- [ ] Go to https://www.ebay.com\n- [ ] Wait for page
+2025-10-07 01:51:35,830 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 01:51:36,331 - INFO -   🦾 [34m[ACTION 2/4][0m go_to_url: url: https://www.ebay.com, new_tab: False
+2025-10-07 01:51:38,296 - INFO - 🔗 Navigated to https://www.ebay.com
+2025-10-07 01:51:38,797 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 01:51:38,828 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:51:41,330 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:51:42,425 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:42,454 - INFO - 📄 <url>
+https://www.ebay.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:51:44,756 - INFO - 
+
+2025-10-07 01:51:44,756 - INFO - 📍 Step 8:
+2025-10-07 01:51:46,256 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:46,256 - INFO -   ❔ Eval: Previous step scrolled but did not retrieve founder info; still missing.
+2025-10-07 01:51:46,256 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the ebay.com homepage to reveal footer links.[0m
+2025-10-07 01:51:46,256 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 4.5, frame_element_index: None
+2025-10-07 01:51:48,170 - INFO - 🔍 Scrolled down the page by 4.5 pages (requested: 4.5, 720px per page)
+2025-10-07 01:51:50,250 - INFO - 
+
+2025-10-07 01:51:50,250 - INFO - 📍 Step 9:
+2025-10-07 01:51:51,969 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:51:51,970 - INFO -   [31m⚠️ Eval: Failure – scrolling did not reveal founder information.[0m
+2025-10-07 01:51:51,970 - INFO -   [34m🎯 Next goal: Click the 'About eBay' link (index 47) to open the about page, then wait for it to load.[0m
+2025-10-07 01:51:51,971 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 47, while_holding_ctrl: None
+2025-10-07 01:51:54,238 - INFO - 🖱️ Clicked element
+2025-10-07 01:51:54,740 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 01:51:54,805 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:51:58,610 - INFO - 
+
+2025-10-07 01:51:58,610 - INFO - 📍 Step 10:
+2025-10-07 01:52:00,543 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:00,545 - INFO -   [31m⚠️ Eval: Failure – founder information not found and domain requirement violated.[0m
+2025-10-07 01:52:00,545 - INFO -   [34m🎯 Next goal: Navigate to https://www.ebay.com and wait for the page to load.[0m
+2025-10-07 01:52:00,545 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.ebay.com, new_tab: False
+2025-10-07 01:52:01,487 - INFO - 🔗 Navigated to https://www.ebay.com
+2025-10-07 01:52:01,989 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 01:52:02,026 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:52:05,887 - ERROR - CDP Error for request 551: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:52:05,888 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:52:05,888 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:52:05,889 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:52:06,185 - INFO - 
+
+2025-10-07 01:52:06,186 - INFO - 📍 Step 11:
+2025-10-07 01:52:07,890 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:07,892 - INFO -   [31m⚠️ Eval: Failure – page content did not load after navigation and wait, no interactive elements available.[0m
+2025-10-07 01:52:07,892 - INFO -   [34m🎯 Next goal: Extract the founder's name from the eBay homepage using a structured data query.[0m
+2025-10-07 01:52:07,892 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:52:08,939 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:08,971 - INFO - 📄 <url>
+https://www.ebay.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:52:10,996 - INFO - 
+
+2025-10-07 01:52:10,996 - INFO - 📍 Step 12:
+2025-10-07 01:52:12,991 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:12,993 - INFO -   ❔ Eval: Previous step scrolled but did not retrieve founder info; still missing.
+2025-10-07 01:52:12,993 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the eBay homepage and then extract the founder's name via structured data query.[0m
+2025-10-07 01:52:12,994 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 01:52:15,203 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)
+2025-10-07 01:52:15,704 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:52:16,665 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:16,695 - INFO - 📄 <url>
+https://www.ebay.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:52:18,723 - INFO - 
+
+2025-10-07 01:52:18,723 - INFO - 📍 Step 13:
+2025-10-07 01:52:20,008 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:20,009 - INFO -   [31m⚠️ Eval: Previous step scrolled to footer but did not retrieve founder info. Verdict: Failure[0m
+2025-10-07 01:52:20,010 - INFO -   [34m🎯 Next goal: Click the 'About eBay' link (index 47), wait for load, then extract founder name via structured data query.[0m
+2025-10-07 01:52:20,010 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 47, while_holding_ctrl: None
+2025-10-07 01:52:21,331 - INFO - 🖱️ Clicked element
+2025-10-07 01:52:21,833 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 01:52:21,874 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:52:24,375 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:52:25,047 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:25,077 - INFO - 📄 <url>
+https://www.ebayinc.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:52:26,900 - INFO - 
+
+2025-10-07 01:52:26,900 - INFO - 📍 Step 14:
+2025-10-07 01:52:29,242 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:29,244 - INFO -   [31m⚠️ Eval: Failure – founder information not found and domain requirement violated.[0m
+2025-10-07 01:52:29,244 - INFO -   [34m🎯 Next goal: Navigate to https://www.ebay.com and wait for the page to load.[0m
+2025-10-07 01:52:29,245 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.ebay.com, new_tab: False
+2025-10-07 01:52:30,012 - INFO - 🔗 Navigated to https://www.ebay.com
+2025-10-07 01:52:30,515 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 01:52:30,544 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:52:34,904 - ERROR - CDP Error for request 750: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:52:34,906 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:52:34,906 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:52:34,906 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:52:35,079 - INFO - 
+
+2025-10-07 01:52:35,079 - INFO - 📍 Step 15:
+2025-10-07 01:52:37,070 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:37,071 - INFO -   [31m⚠️ Eval: Failure – previous attempts on ebayinc.com did not yield founder information and violated the domain requirement.[0m
+2025-10-07 01:52:37,071 - INFO -   [34m🎯 Next goal: Navigate to https://www.ebay.com/about/ and extract the founder's name via structured data query.[0m
+2025-10-07 01:52:37,072 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.ebay.com/about/, new_tab: False
+2025-10-07 01:52:39,796 - INFO - 🔗 Navigated to https://www.ebay.com/about/
+2025-10-07 01:52:40,298 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 01:52:40,327 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:52:42,829 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:52:43,439 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:43,467 - INFO - 📄 <url>
+https://www.ebay.com/n/error
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-07 01:52:45,089 - INFO - 
+
+2025-10-07 01:52:45,089 - INFO - 📍 Step 16:
+2025-10-07 01:52:46,559 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:46,560 - INFO -   ❔ Eval: Previous step navigated to the error page; no founder info found.
+2025-10-07 01:52:46,560 - INFO -   [34m🎯 Next goal: Click the 'About eBay' link (index 40), wait for the page to load, then extract the founder's name via structured data query.[0m
+2025-10-07 01:52:46,560 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 40, while_holding_ctrl: None
+2025-10-07 01:52:47,903 - INFO - 🖱️ Clicked element
+2025-10-07 01:52:48,405 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 01:52:48,474 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:52:50,976 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:52:51,744 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:51,773 - INFO - 📄 <url>
+https://www.ebayinc.com/
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:52:53,540 - INFO - 
+
+2025-10-07 01:52:53,540 - INFO - 📍 Step 17:
+2025-10-07 01:52:57,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:52:57,130 - INFO -   [31m⚠️ Eval: Failure – previous attempts on ebayinc.com did not yield founder info and violated domain requirement.[0m
+2025-10-07 01:52:57,130 - INFO -   [34m🎯 Next goal: Navigate to https://www.ebay.com and wait for the page to load.[0m
+2025-10-07 01:52:57,130 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.ebay.com, new_tab: False
+2025-10-07 01:52:58,009 - INFO - 🔗 Navigated to https://www.ebay.com
+2025-10-07 01:52:58,510 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 01:52:58,589 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:53:02,522 - ERROR - CDP Error for request 903: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:53:02,523 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:53:02,523 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:53:02,524 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:53:03,012 - INFO - 
+
+2025-10-07 01:53:03,013 - INFO - 📍 Step 18:
+2025-10-07 01:53:05,035 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:53:05,037 - INFO -   ❔ Eval: Previous actions failed to load any content; no founder information obtained.
+2025-10-07 01:53:05,037 - INFO -   [34m🎯 Next goal: Navigate to https://www.ebay.com/about/company and extract the founder's name.[0m
+2025-10-07 01:53:05,038 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.ebay.com/about/company, new_tab: False
+2025-10-07 01:53:07,266 - INFO - 🔗 Navigated to https://www.ebay.com/about/company
+2025-10-07 01:53:07,767 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 7
+2025-10-07 01:53:07,794 - INFO - 🕒 waited for 4 seconds + 3 seconds for LLM call
+2025-10-07 01:53:12,295 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:53:12,933 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:53:12,962 - INFO - 📄 <url>
+https://www.ebay.com/n/error
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Information about the founder of eBay is not available in the provided webpage content.
+</result>
+2025-10-07 01:53:14,578 - INFO - 
+
+2025-10-07 01:53:14,578 - INFO - 📍 Step 19:
+2025-10-07 01:53:16,551 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:53:16,553 - INFO -   ❔ Eval: No previous action in this step yet.
+2025-10-07 01:53:16,553 - INFO -   [34m🎯 Next goal: Search for "eBay founder" on ebay.com and extract the founder's name from the results.[0m
+2025-10-07 01:53:16,554 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 31, text: eBay founder, clear_existing: True
+2025-10-07 01:53:18,044 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 01:53:18,045 - INFO - ⌨️ Typed "eBay founder" into element with index 31
+2025-10-07 01:53:19,510 - INFO - Page changed after action: actions click_element_by_index, wait, extract_structured_data are not yet executed
+2025-10-07 01:53:21,146 - INFO - 
+
+2025-10-07 01:53:21,146 - INFO - 📍 Step 20:
+2025-10-07 01:53:23,555 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:53:23,556 - INFO -   ❔ Eval: Previous step prepared to input search term but did not execute click or extraction; no result yet.
+2025-10-07 01:53:23,556 - INFO -   [34m🎯 Next goal: Search for "eBay founder" using the site's search box and extract the founder's name from the results.[0m
+2025-10-07 01:53:23,556 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 31, text: eBay founder, clear_existing: True
+2025-10-07 01:53:24,977 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 01:53:24,977 - INFO - ⌨️ Typed "eBay founder" into element with index 31
+2025-10-07 01:53:27,220 - INFO -   🦾 [34m[ACTION 2/4][0m click_element_by_index: index: 36, while_holding_ctrl: None
+2025-10-07 01:53:28,482 - INFO - 🖱️ Clicked element
+2025-10-07 01:53:28,982 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 01:53:29,011 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:53:31,514 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Who is the founder of eBay?, extract_links: False, start_from_char: 0
+2025-10-07 01:53:32,866 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:53:32,894 - INFO - 📄 <url>
+https://www.ebay.com/sch/i.html?_nkw=eBay+founder&_sacat=0&_from=R40&_trksid=p2510209.m570.l1313
+</url>
+<query>
+Who is the founder of eBay?
+</query>
+<result>
+Pierre Omidyar
+</result>
+2025-10-07 01:53:37,747 - INFO - 
+
+2025-10-07 01:53:37,747 - INFO - 📍 Step 21:
+2025-10-07 01:53:39,249 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:53:39,250 - INFO -   [32m👍 Eval: Success – extracted founder name Pierre Omidyar from eBay search results.[0m
+2025-10-07 01:53:39,250 - INFO -   [34m🎯 Next goal: Provide the founder's name to the user and complete the task.[0m
+2025-10-07 01:53:39,251 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The founder of eBay is Pierre Omidyar., success: True, files_to_display: []
+2025-10-07 01:53:39,280 - INFO - 
+📄 [32m Final Result:[0m 
+The founder of eBay is Pierre Omidyar.
+
+
+2025-10-07 01:53:39,282 - INFO - ✅ Task completed successfully
+Creating Browserbase session with advanced stealth...
+Browserbase session created with ID: 7103e3e2-1ab5-40a9-b01a-4deb2cb9454e
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.UmwLuMM8zveoswmega6WarZYTDBLmyBKSykMWHenKQmNPmStEVMAJA.srQXW1tTD2aRMCm2.3hAX9OnGBVShNg2LKX-Ki9RHel-xxrITgvRGJ7GX_KMmURDBNegBZTa3cBKJ_biqpbzlc0qRsOzDbo07Q2W_OYgN0W7nW6wM3t85SJjBfssT4Nc5Lv-hKVUYhsR_pXgKIG9DbrH5jeJt9Nr0B8W1IpG-cykF0e6qiA2zNSPDIwGfxWkTUcrlIeBB6kbOIaOf-ZNLSVLlqSJ0JpEqD_ANSomhDgiOjEH3QcBHTWScxnc9dUk_8INR8aeTc5FtimUTLBOFNxJQGwxlomVbDduAxFSxztaOCZcxJqdKDzjUMvgHNC0Xb9GcAjQmQQjFOz0hKmutRSTjWdWbB4yGu6vck6_aUOa5nKJmRhp2N5qDcT37lc0Y8bpMFqVHne2PRu-LP3gRg-8WoScSTHuJSdr5muxf5uNMtbO29TREIj_yxoEuNqpKIJvGEJPa7YCIwA._oCuDcqA-TFN_XJKYSs9bA
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://ebay.com', extracted_content='🔗 Navigated to https://ebay.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 755.7109375, 'click_y': 288.859375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 634.4375, 'click_y': 719, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.ebay.com', extracted_content='🔗 Navigated to https://www.ebay.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 4.5 pages (requested: 4.5, 720px per page)', extracted_content='🔍 Scrolled down the page by 4.5 pages (requested: 4.5, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 755.7109375, 'click_y': 268.859375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.ebay.com', extracted_content='🔗 Navigated to https://www.ebay.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebay.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 755.7109375, 'click_y': 268.859375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.ebay.com', extracted_content='🔗 Navigated to https://www.ebay.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.ebay.com/about/', extracted_content='🔗 Navigated to https://www.ebay.com/about/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/n/error\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.ebay.com/n/error\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 41.171875, 'click_y': 512.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebayinc.com/\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.ebay.com', extracted_content='🔗 Navigated to https://www.ebay.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.ebay.com/about/company', extracted_content='🔗 Navigated to https://www.ebay.com/about/company', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 7 seconds', extracted_content='Waited for 7 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/n/error\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ebay.com/n/error\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nInformation about the founder of eBay is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'eBay founder' into element 31.", extracted_content="Input 'eBay founder' into element 31.", include_extracted_content_only_once=False, metadata={'input_x': 285.0, 'input_y': 79.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index, wait, extract_structured_data are not yet executed', extracted_content='Page changed after action: actions click_element_by_index, wait, extract_structured_data are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'eBay founder' into element 31.", extracted_content="Input 'eBay founder' into element 31.", include_extracted_content_only_once=False, metadata={'input_x': 285.0, 'input_y': 79.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1094.21875, 'click_y': 79.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ebay.com/sch/i.html?_nkw=eBay+founder&_sacat=0&_from=R40&_trksid=p2510209.m570.l1313\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nPierre Omidyar\n</result>', extracted_content='<url>\nhttps://www.ebay.com/sch/i.html?_nkw=eBay+founder&_sacat=0&_from=R40&_trksid=p2510209.m570.l1313\n</url>\n<query>\nWho is the founder of eBay?\n</query>\n<result>\nPierre Omidyar\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The founder of eBay is Pierre Omidyar.', extracted_content='The founder of eBay is Pierre Omidyar.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://ebay.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 47}, 'interacted_element': DOMInteractedElement(node_id=7484, backend_node_id=2476, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.ebayinc.com/', '_exsp': 'm571.l2940'}, bounds=DOMRect(x=721.453125, y=281.859375, width=68.515625, height=14.0), x_path='html/body/div[3]/div/div[2]/div/footer/div[1]/div[4]/div/h3/a', element_hash=1470397736826109723)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 32}, 'interacted_element': DOMInteractedElement(node_id=4992, backend_node_id=1354, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.ebayinc.com/company/', 'class': 'svelte-1r3w1ks'}, bounds=DOMRect(x=598.515625, y=1203.5, width=71.84375, height=18.0), x_path='html/body/ebi-footer/svelte-retag/footer/div/div[1]/ul/li[2]/a', element_hash=4050982313327673975)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Task: Find eBay founder name\n\n- [ ] Go to https://www.ebay.com\n- [ ] Wait for page to load\n- [ ] Extract founder name via structured data query\n- [ ] If not found, scroll to footer and click "About eBay"\n- [ ] Extract founder name from About page\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.ebay.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 4.5}, 'interacted_element': None}, {'click_element_by_index': {'index': 47}, 'interacted_element': DOMInteractedElement(node_id=7687, backend_node_id=2459, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.ebayinc.com/', '_exsp': 'm571.l2940'}, bounds=DOMRect(x=721.453125, y=261.859375, width=68.515625, height=14.0), x_path='html/body/div[3]/div/div[2]/div/footer/div[1]/div[4]/div/h3/a', element_hash=1470397736826109723)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.ebay.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 47}, 'interacted_element': DOMInteractedElement(node_id=11641, backend_node_id=2460, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.ebayinc.com/', '_exsp': 'm571.l2940'}, bounds=DOMRect(x=721.453125, y=261.859375, width=68.515625, height=14.0), x_path='html/body/div[3]/div/div[2]/div/footer/div[1]/div[4]/div/h3/a', element_hash=1470397736826109723)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.ebay.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.ebay.com/about/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 40}, 'interacted_element': DOMInteractedElement(node_id=4826, backend_node_id=8198, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.ebayinc.com', '_exsp': 'm571.l2602'}, bounds=DOMRect(x=8.0, y=505.0, width=66.34375, height=14.0), x_path='html/body/main/div[2]/div/div[2]/div/footer/ul/li[1]/a', element_hash=9070888882018025355)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.ebay.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.ebay.com/about/company', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 7}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 31, 'text': 'eBay founder', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=4447, backend_node_id=7576, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'data-marko': '{"oninput":"handleTextUpdate s0-1-4-12-4 false","onfocusin":"handleMarkTimer s0-1-4-12-4 false","onkeydown":"handleMarkTimer s0-1-4-12-4 false"}', 'data-marko-key': '@input s0-1-4-12-4', 'id': 'gh-ac', 'class': 'gh-search-input gh-tb ui-autocomplete-input', 'title': 'Search', 'type': 'text', 'placeholder': 'Search for anything', 'aria-autocomplete': 'list', 'aria-expanded': 'false', 'size': '50', 'maxlength': '300', 'aria-label': 'Search for anything', 'name': '_nkw', 'autocapitalize': 'off', 'autocorrect': 'off', 'spellcheck': 'false', 'autocomplete': 'off', 'aria-haspopup': 'true', 'role': 'combobox', 'tabindex': '4', 'aria-controls': 'ebay-autocomplete'}, bounds=DOMRect(x=263.0, y=59.0, width=44.0, height=40.0), x_path='html/body/div[3]/div[1]/header/section/form/div[1]/div/div[1]/input', element_hash=5182321780262376923)}, {'click_element_by_index': {'index': 35}, 'interacted_element': DOMInteractedElement(node_id=4768, backend_node_id=7605, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'data-marko': '{"onclick":"handleClick s0-1-4-12-8-@btn false","onkeydown":"handleKeydown s0-1-4-12-8-@btn false","onfocus":"handleFocus s0-1-4-12-8-@btn false","onblur":"handleBlur s0-1-4-12-8-@btn false"}', 'class': 'gh-search-button btn btn--primary', 'data-ebayui': '', 'type': 'submit', 'id': 'gh-search-btn', 'role': 'button', 'value': 'Search', 'tabindex': '6'}, bounds=DOMRect(x=1010.21875, y=57.0, width=168.0, height=44.0), x_path='html/body/div[3]/div[1]/header/section/form/div[2]/button', element_hash=2052283371848643042)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 31, 'text': 'eBay founder', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=6633, backend_node_id=7576, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'data-marko': '{"oninput":"handleTextUpdate s0-1-4-12-4 false","onfocusin":"handleMarkTimer s0-1-4-12-4 false","onkeydown":"handleMarkTimer s0-1-4-12-4 false"}', 'data-marko-key': '@input s0-1-4-12-4', 'id': 'gh-ac', 'class': 'gh-search-input gh-tb ui-autocomplete-input', 'title': 'Search', 'type': 'text', 'placeholder': 'Search for anything', 'aria-autocomplete': 'list', 'aria-expanded': 'false', 'size': '50', 'maxlength': '300', 'aria-label': 'Search for anything', 'name': '_nkw', 'autocapitalize': 'off', 'autocorrect': 'off', 'spellcheck': 'false', 'autocomplete': 'off', 'aria-haspopup': 'true', 'role': 'combobox', 'tabindex': '4', 'aria-controls': 'ebay-autocomplete'}, bounds=DOMRect(x=263.0, y=59.0, width=44.0, height=40.0), x_path='html/body/div[3]/div[1]/header/section/form/div[1]/div/div[1]/input', element_hash=5182321780262376923)}, {'click_element_by_index': {'index': 36}, 'interacted_element': DOMInteractedElement(node_id=6955, backend_node_id=7605, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'data-marko': '{"onclick":"handleClick s0-1-4-12-8-@btn false","onkeydown":"handleKeydown s0-1-4-12-8-@btn false","onfocus":"handleFocus s0-1-4-12-8-@btn false","onblur":"handleBlur s0-1-4-12-8-@btn false"}', 'class': 'gh-search-button btn btn--primary', 'data-ebayui': '', 'type': 'submit', 'id': 'gh-search-btn', 'role': 'button', 'value': 'Search', 'tabindex': '6'}, bounds=DOMRect(x=1010.21875, y=57.0, width=168.0, height=44.0), x_path='html/body/div[3]/div[1]/header/section/form/div[2]/button', element_hash=2052283371848643042)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of eBay?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The founder of eBay is Pierre Omidyar.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 7103e3e2-1ab5-40a9-b01a-4deb2cb9454e - no manual close method available, session will auto-expire
+Browserbase session 7103e3e2-1ab5-40a9-b01a-4deb2cb9454e closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/7103e3e2-1ab5-40a9-b01a-4deb2cb9454e

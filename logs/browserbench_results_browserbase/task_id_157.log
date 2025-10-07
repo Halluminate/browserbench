@@ -1,0 +1,191 @@
+2025-10-07 00:52:58,890 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 00:52:58,899 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 00:52:58,912 - INFO - 🔗 Found URL in task: https://www.khanacademy.org, adding as initial action...
+2025-10-07 00:52:58,916 - INFO - [34m🚀 Task: What is the name of the Khan Academy founder? You must complete the task only using the starting website. Begin task on the following url: https://www.khanacademy.org[0m
+2025-10-07 00:52:58,953 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 00:52:58,960 - INFO - ────────────────────────────────────────
+2025-10-07 00:52:58,960 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 00:52:58,960 - INFO -     👉  browser-use auth
+2025-10-07 00:52:58,960 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 00:52:58,960 - INFO - ────────────────────────────────────────
+
+2025-10-07 00:52:59,186 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 00:52:59,254 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.pJW_TMtOZ3mHCLTgfPRXdtYFqJMnBSpcX85bSiZTvCMR8PvYGoDg6Q.XZYHh6VZxgHuzOzv.zb7mSr8XkznClcXtEZW6uAX4CMx93XjAxZ2494CDAKU7GeKwpIR3yYOAsS9XuVtQxTwfXpguob2dUv0C0-HLbHq_T5mbyAlfNtP6EDfrSa3GNPv6bRQlF4nfEDl9QuaCUBkAU3wA5lEOolNdZB6OnqjnA0bK1pRexOxgxJ_m1wkCCb83qU5BpiKyl-BSUvSoZ6d3L1j181lyv6fJhGksFAVc7Ri8QPzWgzqFN7udT_7lVnQOpw1r6ff3KPrQaxQPJXVUUhxYNWOgKeht_OyGgrG-4Szs_zAuAYFbIh0NznhdYOFM3pBoZnvsEmQBtfhBTVSsROAIyJZAxw72Y0jxuqlAOaTNE0I7qR65TMk8JVAdx68GgWky-pR8UHjqLGAq37oRio0oKNQEIMMkeOQW7vf427tV8CMs93HET-wOO-zd54B1VXCGbpfjXnnVmQ.h88rWsha9Uf5sFS-rSai5g
+2025-10-07 00:53:01,438 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.khanacademy.org, new_tab: False
+2025-10-07 00:53:02,529 - INFO - 🔗 Navigated to https://www.khanacademy.org
+2025-10-07 00:53:04,902 - INFO - 
+
+2025-10-07 00:53:04,902 - INFO - 📍 Step 1:
+2025-10-07 00:53:05,979 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:05,987 - INFO -   ❔ Eval: Page loaded but content not visible yet. Verdict: Uncertain
+2025-10-07 00:53:05,987 - INFO -   [34m🎯 Next goal: Wait for the page to load then extract the founder name from the page.[0m
+2025-10-07 00:53:05,987 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 00:53:06,017 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 00:53:08,520 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who is the founder of Khan Academy?, extract_links: False, start_from_char: 0
+2025-10-07 00:53:09,356 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:09,385 - INFO - 📄 <url>
+https://www.khanacademy.org/
+</url>
+<query>
+Who is the founder of Khan Academy?
+</query>
+<result>
+Information about the founder of Khan Academy is not available in the provided webpage content.
+</result>
+2025-10-07 00:53:11,125 - INFO - 
+
+2025-10-07 00:53:11,125 - INFO - 📍 Step 2:
+2025-10-07 00:53:12,629 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:12,630 - INFO -   [31m⚠️ Eval: Failure - founder information not found on the initial page.[0m
+2025-10-07 00:53:12,630 - INFO -   [34m🎯 Next goal: Open the site search input by clicking the search button.[0m
+2025-10-07 00:53:12,630 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 2, while_holding_ctrl: None
+2025-10-07 00:53:13,473 - INFO - 🖱️ Clicked element
+2025-10-07 00:53:15,249 - INFO - 
+
+2025-10-07 00:53:15,249 - INFO - 📍 Step 3:
+2025-10-07 00:53:16,794 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:16,795 - INFO -   ❔ Eval: Previous step clicked the search button but no founder info was found; we need to perform a proper search.
+2025-10-07 00:53:16,795 - INFO -   [34m🎯 Next goal: Accept cookies, then search for "founder" using the search input and submit the query.[0m
+2025-10-07 00:53:16,796 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 78, while_holding_ctrl: None
+2025-10-07 00:53:17,617 - INFO - 🖱️ Clicked element
+2025-10-07 00:53:19,660 - INFO -   🦾 [34m[ACTION 2/3][0m input_text: index: 2, text: founder, clear_existing: True
+2025-10-07 00:53:20,667 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 00:53:20,667 - INFO - ⌨️ Typed "founder" into element with index 2
+2025-10-07 00:53:21,170 - INFO -   🦾 [34m[ACTION 3/3][0m send_keys: keys: Enter
+2025-10-07 00:53:21,349 - INFO - ⌨️ Sent keys: Enter
+2025-10-07 00:53:21,452 - INFO - ⌨️  Sent keys: Enter
+2025-10-07 00:53:23,374 - INFO - 
+
+2025-10-07 00:53:23,374 - INFO - 📍 Step 4:
+2025-10-07 00:53:24,450 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:24,451 - INFO -   [32m👍 Eval: Previous actions successfully opened the search page and entered the query, but founder name not yet extracted.[0m
+2025-10-07 00:53:24,451 - INFO -   [34m🎯 Next goal: Extract the founder's name from the search results page.[0m
+2025-10-07 00:53:24,451 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the name of the founder of Khan Academy?, extract_links: False, start_from_char: 0
+2025-10-07 00:53:25,242 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:25,271 - INFO - 📄 <url>
+https://www.khanacademy.org/search?referer=%2F&page_search_query=founder
+</url>
+<query>
+What is the name of the founder of Khan Academy?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-07 00:53:26,986 - INFO - 
+
+2025-10-07 00:53:26,986 - INFO - 📍 Step 5:
+2025-10-07 00:53:28,515 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:28,518 - INFO -   ❔ Eval: Previous step did not retrieve founder info; need to navigate to About page.
+2025-10-07 00:53:28,518 - INFO -   [34m🎯 Next goal: Click the 'About' link to open the About page where founder information is likely present.[0m
+2025-10-07 00:53:28,519 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 83, while_holding_ctrl: None
+2025-10-07 00:53:28,721 - WARNING - No visible quad found, using first quad
+2025-10-07 00:53:29,334 - INFO - 🖱️ Clicked element
+2025-10-07 00:53:31,024 - INFO - 
+
+2025-10-07 00:53:31,024 - INFO - 📍 Step 6:
+2025-10-07 00:53:32,314 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:32,315 - INFO -   ❔ Eval: Previous attempt to find founder via search failed; no founder info retrieved.
+2025-10-07 00:53:32,315 - INFO -   [34m🎯 Next goal: Open the About page by clicking the 'About' link to locate the founder's name.[0m
+2025-10-07 00:53:32,316 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 69, while_holding_ctrl: None
+2025-10-07 00:53:33,364 - INFO - 🖱️ Clicked element
+2025-10-07 00:53:35,041 - INFO - 
+
+2025-10-07 00:53:35,041 - INFO - 📍 Step 7:
+2025-10-07 00:53:36,272 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:36,273 - INFO -   [32m👍 Eval: Successfully opened the About page but founder name not yet extracted.[0m
+2025-10-07 00:53:36,274 - INFO -   [34m🎯 Next goal: Extract the founder's name from the About page using structured data extraction.[0m
+2025-10-07 00:53:36,274 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the name of the founder of Khan Academy?, extract_links: False, start_from_char: 0
+2025-10-07 00:53:36,954 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:36,985 - INFO - 📄 <url>
+https://www.khanacademy.org/about
+</url>
+<query>
+What is the name of the founder of Khan Academy?
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-07 00:53:38,636 - INFO - 
+
+2025-10-07 00:53:38,636 - INFO - 📍 Step 8:
+2025-10-07 00:53:39,930 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:39,932 - INFO -   ❔ Eval: Previous extraction attempt failed to locate founder name on the About page.
+2025-10-07 00:53:39,932 - INFO -   [34m🎯 Next goal: Scroll down the About page to load more content and then extract the founder's name.[0m
+2025-10-07 00:53:39,932 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-07 00:53:40,884 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 720px per page)
+2025-10-07 00:53:42,614 - INFO - 
+
+2025-10-07 00:53:42,614 - INFO - 📍 Step 9:
+2025-10-07 00:53:44,005 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:44,006 - INFO -   [32m👍 Eval: Success: Scrolled down 2 pages on the About page.[0m
+2025-10-07 00:53:44,006 - INFO -   [34m🎯 Next goal: Scroll further down the About page to load more content where the founder information is likely present.[0m
+2025-10-07 00:53:44,006 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-07 00:53:44,971 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 720px per page)
+2025-10-07 00:53:46,591 - INFO - 
+
+2025-10-07 00:53:46,591 - INFO - 📍 Step 10:
+2025-10-07 00:53:47,854 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:47,856 - INFO -   ❔ Eval: Previous scroll actions moved the page down but founder name not yet found; still content remaining below.
+2025-10-07 00:53:47,856 - INFO -   [34m🎯 Next goal: Scroll down the remaining content on the About page and then extract the founder's name.[0m
+2025-10-07 00:53:47,857 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 00:53:48,395 - INFO - 🔍 Scrolled down the page by one page (720px)
+2025-10-07 00:53:48,896 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the name of the founder of Khan Academy?, extract_links: False, start_from_char: 0
+2025-10-07 00:53:49,600 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:49,631 - INFO - 📄 <url>
+https://www.khanacademy.org/about
+</url>
+<query>
+What is the name of the founder of Khan Academy?
+</query>
+<result>
+Information not available in the provided page.
+</result>
+2025-10-07 00:53:51,231 - INFO - 
+
+2025-10-07 00:53:51,231 - INFO - 📍 Step 11:
+2025-10-07 00:53:52,331 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:52,333 - INFO -   ❔ Eval: Previous scroll actions did not reveal founder info; need to navigate to leadership section.
+2025-10-07 00:53:52,333 - INFO -   [34m🎯 Next goal: Click the 'Our leadership' link to open the leadership page.[0m
+2025-10-07 00:53:52,334 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 18, while_holding_ctrl: None
+2025-10-07 00:53:53,210 - INFO - 🖱️ Clicked element
+2025-10-07 00:53:54,969 - INFO - 
+
+2025-10-07 00:53:54,969 - INFO - 📍 Step 12:
+2025-10-07 00:53:56,123 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:56,126 - INFO -   ❔ Eval: Previous action clicked the 'Our leadership' link, landing on the leadership page but founder name not yet extracted.
+2025-10-07 00:53:56,126 - INFO -   [34m🎯 Next goal: Extract the founder's name from the current leadership page using structured data extraction.[0m
+2025-10-07 00:53:56,127 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the name of the founder of Khan Academy?, extract_links: False, start_from_char: 0
+2025-10-07 00:53:57,006 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:53:57,036 - INFO - 📄 <url>
+https://www.khanacademy.org/about/our-board
+</url>
+<query>
+What is the name of the founder of Khan Academy?
+</query>
+<result>
+Sal Khan
+</result>
+2025-10-07 00:53:58,879 - INFO - 
+
+2025-10-07 00:53:58,879 - INFO - 📍 Step 13:
+2025-10-07 00:54:00,022 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 00:54:00,025 - INFO -   [32m👍 Eval: Success: Founder name extracted correctly.[0m
+2025-10-07 00:54:00,025 - INFO -   [34m🎯 Next goal: Provide the answer to the user and finish the task.[0m
+2025-10-07 00:54:00,025 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The founder of Khan Academy is Sal Khan., success: True, files_to_display: []
+2025-10-07 00:54:00,055 - INFO - 
+📄 [32m Final Result:[0m 
+The founder of Khan Academy is Sal Khan.
+
+
+2025-10-07 00:54:00,060 - INFO - ✅ Task completed successfully
+Creating Browserbase session with advanced stealth...
+Browserbase session created with ID: 9b8f98ad-7372-4437-b582-9e0c938a3090
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.pJW_TMtOZ3mHCLTgfPRXdtYFqJMnBSpcX85bSiZTvCMR8PvYGoDg6Q.XZYHh6VZxgHuzOzv.zb7mSr8XkznClcXtEZW6uAX4CMx93XjAxZ2494CDAKU7GeKwpIR3yYOAsS9XuVtQxTwfXpguob2dUv0C0-HLbHq_T5mbyAlfNtP6EDfrSa3GNPv6bRQlF4nfEDl9QuaCUBkAU3wA5lEOolNdZB6OnqjnA0bK1pRexOxgxJ_m1wkCCb83qU5BpiKyl-BSUvSoZ6d3L1j181lyv6fJhGksFAVc7Ri8QPzWgzqFN7udT_7lVnQOpw1r6ff3KPrQaxQPJXVUUhxYNWOgKeht_OyGgrG-4Szs_zAuAYFbIh0NznhdYOFM3pBoZnvsEmQBtfhBTVSsROAIyJZAxw72Y0jxuqlAOaTNE0I7qR65TMk8JVAdx68GgWky-pR8UHjqLGAq37oRio0oKNQEIMMkeOQW7vf427tV8CMs93HET-wOO-zd54B1VXCGbpfjXnnVmQ.h88rWsha9Uf5sFS-rSai5g
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.khanacademy.org', extracted_content='🔗 Navigated to https://www.khanacademy.org', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.khanacademy.org/\n</url>\n<query>\nWho is the founder of Khan Academy?\n</query>\n<result>\nInformation about the founder of Khan Academy is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.khanacademy.org/\n</url>\n<query>\nWho is the founder of Khan Academy?\n</query>\n<result>\nInformation about the founder of Khan Academy is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 292.59375, 'click_y': 31.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 203.5, 'click_y': 551.0625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'founder' into element 2.", extracted_content="Input 'founder' into element 2.", include_extracted_content_only_once=False, metadata={'input_x': 397.6875, 'input_y': 31.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.khanacademy.org/search?referer=%2F&page_search_query=founder\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.khanacademy.org/search?referer=%2F&page_search_query=founder\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 534.640625, 'click_y': 719, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 534.640625, 'click_y': 359.59375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.khanacademy.org/about\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.khanacademy.org/about\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (720px)', extracted_content='🔍 Scrolled down the page by one page (720px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.khanacademy.org/about\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nInformation not available in the provided page.\n</result>', extracted_content='<url>\nhttps://www.khanacademy.org/about\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nInformation not available in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 555.2109375, 'click_y': 295.328125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.khanacademy.org/about/our-board\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nSal Khan\n</result>', extracted_content='<url>\nhttps://www.khanacademy.org/about/our-board\n</url>\n<query>\nWhat is the name of the founder of Khan Academy?\n</query>\n<result>\nSal Khan\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The founder of Khan Academy is Sal Khan.', extracted_content='The founder of Khan Academy is Sal Khan.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.khanacademy.org', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who is the founder of Khan Academy?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 2}, 'interacted_element': DOMInteractedElement(node_id=273, backend_node_id=1855, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'type': 'button', 'data-testid': 'navbar-search-button', 'aria-label': 'Search for courses, skills, and videos', 'aria-disabled': 'false', 'class': '_m0g4q1d'}, bounds=DOMRect(x=192.59375, y=11.0, width=200.0, height=40.0), x_path='html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/nav/div[1]/div[1]/div[2]/button', element_hash=1241753090996278070)}, {'click_element_by_index': {'index': 78}, 'interacted_element': DOMInteractedElement(node_id=2998, backend_node_id=3561, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'id': 'onetrust-accept-btn-handler'}, bounds=DOMRect(x=41.0, y=528.875, width=325.0, height=44.375), x_path='html/body/div[2]/div[2]/div/div/div[2]/div/div/button[1]', element_hash=847458005660020642)}, {'input_text': {'index': 2, 'text': 'founder', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=1819, backend_node_id=4289, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'id': ':r4:', 'type': 'text', 'placeholder': 'Search for courses, skills, and videos', 'aria-disabled': 'false', 'aria-required': 'false', 'data-testid': 'page-search-box', 'aria-invalid': 'false', 'aria-label': 'Search for courses, skills, and videos', 'class': '_mpl1lk0', 'value': ''}, bounds=DOMRect(x=209.6875, y=11.0, width=376.0, height=40.0), x_path='html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[1]/nav/div[1]/div[1]/div/form/div/input', element_hash=343168539519225787)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the name of the founder of Khan Academy?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 83}, 'interacted_element': DOMInteractedElement(node_id=5906, backend_node_id=6478, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': '_1thyx6xi', 'href': '/about'}, bounds=DOMRect(x=516.5, y=1583.59375, width=36.28125, height=12.0), x_path='html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[2]/footer/div/div[1]/div[2]/div/ul/li[1]/h3/a', element_hash=1174276375162645097)}, {'click_element_by_index': {'index': 69}, 'interacted_element': DOMInteractedElement(node_id=7030, backend_node_id=6478, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': '_1thyx6xi', 'href': '/about'}, bounds=DOMRect(x=516.5, y=353.59375, width=36.28125, height=12.0), x_path='html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[2]/footer/div/div[1]/div[2]/div/ul/li[1]/h3/a', element_hash=1174276375162645097)}, {'extract_structured_data': {'query': 'What is the name of the founder of Khan Academy?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the name of the founder of Khan Academy?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 18}, 'interacted_element': DOMInteractedElement(node_id=11548, backend_node_id=8162, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': '_1thyx6xi', 'href': '/about/our-board'}, bounds=DOMRect(x=516.5, y=289.328125, width=77.421875, height=12.0), x_path='html/body/div[1]/div[2]/div/div[2]/div/div[2]/div[2]/footer/div/div[1]/div[2]/div/ul/li[1]/ul/li[6]/a', element_hash=660922444584537720)}, {'extract_structured_data': {'query': 'What is the name of the founder of Khan Academy?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The founder of Khan Academy is Sal Khan.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 9b8f98ad-7372-4437-b582-9e0c938a3090 - no manual close method available, session will auto-expire
+Browserbase session 9b8f98ad-7372-4437-b582-9e0c938a3090 closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/9b8f98ad-7372-4437-b582-9e0c938a3090

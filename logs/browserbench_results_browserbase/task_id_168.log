@@ -1,0 +1,85 @@
+2025-10-07 01:03:00,673 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 01:03:00,681 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 01:03:00,691 - INFO - 🔗 Found URL in task: https://www.nih.gov, adding as initial action...
+2025-10-07 01:03:00,695 - INFO - [34m🚀 Task: What is the phone number of the National Institutes of Health? You must complete the task only using the starting website. Begin task on the following url: https://www.nih.gov[0m
+2025-10-07 01:03:00,731 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 01:03:00,737 - INFO - ────────────────────────────────────────
+2025-10-07 01:03:00,737 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 01:03:00,737 - INFO -     👉  browser-use auth
+2025-10-07 01:03:00,737 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 01:03:00,737 - INFO - ────────────────────────────────────────
+
+2025-10-07 01:03:00,936 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 01:03:00,975 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.oI_XGcIoGzBycxjc3UyaY0fp7OeD5K5bVqmOAmoXes86C9rn4eYc4w.do0Gfggs0AsV_zYY.Z4MedVM-JjVltHgjnkoW30xOjastrP3SRUyoH2Q1oDYzqWbtjGsMvRzUx3y1_EOYgUhivpXmH1jmMJR6XDOyVghynnmUvBZNUZTV08u5Aut9Afr8aCUr6F-5-lK1ALH1tCeTI09b5M6yvqcgZ3Qq9CHVPfDCODGLaZB3LjayYOC1cqLFw7LoWEl2FTcxAABCZAkxwAbkk6by0NE5RawhP9EH9nJi1c2B94LIDsjKZKxrdtNTMMbzTiqJfZOMyeMqkxEc13JoE0JplXCWEksfqeL0VG-USok57bMH21sjAQJvyEecnZV2rCi6Er-O-R9CF35kiAOmj_nTkBLiikv0RSX_a7sn-rGnQYNv1QCwl_C3uwd_cXamTbbQB8m1VokXQfm3PeWT04dnB1yzp4VdcemCf_pu-GsO1NnUcPO77l54UHr18BAsJGEk7ilw0g.JD9HlUiOhOJaLDcQhxyBdA
+2025-10-07 01:03:03,184 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.nih.gov, new_tab: False
+2025-10-07 01:03:05,496 - INFO - 🔗 Navigated to https://www.nih.gov
+2025-10-07 01:03:07,581 - INFO - 
+
+2025-10-07 01:03:07,581 - INFO - 📍 Step 1:
+2025-10-07 01:03:08,758 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:03:08,770 - INFO -   [32m👍 Eval: Successfully loaded the NIH homepage but phone number not yet visible.[0m
+2025-10-07 01:03:08,770 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page and extract the NIH phone number.[0m
+2025-10-07 01:03:08,771 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 3.0, frame_element_index: None
+2025-10-07 01:03:10,191 - INFO - 🔍 Scrolled down the page by 3.0 pages (requested: 3.0, 720px per page)
+2025-10-07 01:03:10,692 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the phone number of the National Institutes of Health?, extract_links: False, start_from_
+2025-10-07 01:03:11,208 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:03:11,238 - INFO - 📄 <url>
+https://www.nih.gov/
+</url>
+<query>
+What is the phone number of the National Institutes of Health?
+</query>
+<result>
+The webpage does not provide a phone number for the National Institutes of Health.
+</result>
+2025-10-07 01:03:12,750 - INFO - 
+
+2025-10-07 01:03:12,750 - INFO - 📍 Step 2:
+2025-10-07 01:03:13,739 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:03:13,741 - INFO -   [31m⚠️ Eval: Previous scroll action completed but phone number not found. Verdict: Failure[0m
+2025-10-07 01:03:13,741 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' link to navigate to the contact page and then extract the NIH phone number.[0m
+2025-10-07 01:03:13,741 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 17, while_holding_ctrl: None
+2025-10-07 01:03:14,775 - INFO - 🖱️ Clicked element
+2025-10-07 01:03:16,368 - INFO - 
+
+2025-10-07 01:03:16,368 - INFO - 📍 Step 3:
+2025-10-07 01:03:17,549 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:03:17,550 - INFO -   [32m👍 Eval: Clicked the 'Contact Us' link successfully but phone number not yet found. Verdict: Partial success (navigation succeeded).[0m
+2025-10-07 01:03:17,550 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the Contact Us page and extract the NIH phone number.[0m
+2025-10-07 01:03:17,550 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.5, frame_element_index: None
+2025-10-07 01:03:18,639 - INFO - 🔍 Scrolled down the page by 2.5 pages (requested: 2.5, 720px per page)
+2025-10-07 01:03:19,141 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the phone number of the National Institutes of Health?, extract_links: False, start_from_
+2025-10-07 01:03:19,784 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:03:19,813 - INFO - 📄 <url>
+https://www.nih.gov/about-nih/contact-us
+</url>
+<query>
+What is the phone number of the National Institutes of Health?
+</query>
+<result>
+301-496-4000
+</result>
+2025-10-07 01:03:21,298 - INFO - 
+
+2025-10-07 01:03:21,298 - INFO - 📍 Step 4:
+2025-10-07 01:03:23,315 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:03:23,317 - INFO -   [32m👍 Eval: Success - phone number extracted from the Contact Us page.[0m
+2025-10-07 01:03:23,317 - INFO -   [34m🎯 Next goal: Provide the extracted phone number to the user and complete the task.[0m
+2025-10-07 01:03:23,317 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The phone number of the National Institutes of Health (NIH) is **301-496-4000**., success: True, files_to_display: [
+2025-10-07 01:03:23,346 - INFO - 
+📄 [32m Final Result:[0m 
+The phone number of the National Institutes of Health (NIH) is **301-496-4000**.
+
+
+2025-10-07 01:03:23,350 - INFO - ✅ Task completed successfully
+Creating Browserbase session with advanced stealth...
+Browserbase session created with ID: ed09c431-0c24-4208-a63e-2cefdb62bc60
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.oI_XGcIoGzBycxjc3UyaY0fp7OeD5K5bVqmOAmoXes86C9rn4eYc4w.do0Gfggs0AsV_zYY.Z4MedVM-JjVltHgjnkoW30xOjastrP3SRUyoH2Q1oDYzqWbtjGsMvRzUx3y1_EOYgUhivpXmH1jmMJR6XDOyVghynnmUvBZNUZTV08u5Aut9Afr8aCUr6F-5-lK1ALH1tCeTI09b5M6yvqcgZ3Qq9CHVPfDCODGLaZB3LjayYOC1cqLFw7LoWEl2FTcxAABCZAkxwAbkk6by0NE5RawhP9EH9nJi1c2B94LIDsjKZKxrdtNTMMbzTiqJfZOMyeMqkxEc13JoE0JplXCWEksfqeL0VG-USok57bMH21sjAQJvyEecnZV2rCi6Er-O-R9CF35kiAOmj_nTkBLiikv0RSX_a7sn-rGnQYNv1QCwl_C3uwd_cXamTbbQB8m1VokXQfm3PeWT04dnB1yzp4VdcemCf_pu-GsO1NnUcPO77l54UHr18BAsJGEk7ilw0g.JD9HlUiOhOJaLDcQhxyBdA
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.nih.gov', extracted_content='🔗 Navigated to https://www.nih.gov', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 3.0 pages (requested: 3.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 3.0 pages (requested: 3.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.nih.gov/\n</url>\n<query>\nWhat is the phone number of the National Institutes of Health?\n</query>\n<result>\nThe webpage does not provide a phone number for the National Institutes of Health.\n</result>', extracted_content='<url>\nhttps://www.nih.gov/\n</url>\n<query>\nWhat is the phone number of the National Institutes of Health?\n</query>\n<result>\nThe webpage does not provide a phone number for the National Institutes of Health.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 476.375, 'click_y': 143.0390625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.5 pages (requested: 2.5, 720px per page)', extracted_content='🔍 Scrolled down the page by 2.5 pages (requested: 2.5, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.nih.gov/about-nih/contact-us\n</url>\n<query>\nWhat is the phone number of the National Institutes of Health?\n</query>\n<result>\n301-496-4000\n</result>', extracted_content='<url>\nhttps://www.nih.gov/about-nih/contact-us\n</url>\n<query>\nWhat is the phone number of the National Institutes of Health?\n</query>\n<result>\n301-496-4000\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The phone number of the National Institutes of Health (NIH) is **301-496-4000**.', extracted_content='The phone number of the National Institutes of Health (NIH) is **301-496-4000**.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.nih.gov', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 3.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the phone number of the National Institutes of Health?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 17}, 'interacted_element': DOMInteractedElement(node_id=1419, backend_node_id=555, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/about-nih/contact-us', 'class': 'usa-footer__primary-link', 'data-drupal-link-system-path': 'node/1686'}, bounds=DOMRect(x=344.25, y=117.71875, width=264.25, height=50.640625), x_path='html/body/div[1]/footer/div[1]/div/div/div/nav/ul/li[2]/a', element_hash=1137999576705387041)}, {'scroll': {'down': True, 'num_pages': 2.5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the phone number of the National Institutes of Health?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The phone number of the National Institutes of Health (NIH) is **301-496-4000**.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session ed09c431-0c24-4208-a63e-2cefdb62bc60 - no manual close method available, session will auto-expire
+Browserbase session ed09c431-0c24-4208-a63e-2cefdb62bc60 closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/ed09c431-0c24-4208-a63e-2cefdb62bc60

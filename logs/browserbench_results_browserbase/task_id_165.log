@@ -1,0 +1,126 @@
+2025-10-07 01:00:49,779 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 01:00:49,786 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 01:00:49,799 - INFO - 🔗 Found URL in task: https://www.medicinenet.com, adding as initial action...
+2025-10-07 01:00:49,804 - INFO - [34m🚀 Task: When was the MedicineNet site founded? You must complete the task only using the starting website. Begin task on the following url: https://www.medicinenet.com[0m
+2025-10-07 01:00:49,851 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 01:00:49,859 - INFO - ────────────────────────────────────────
+2025-10-07 01:00:49,859 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 01:00:49,859 - INFO -     👉  browser-use auth
+2025-10-07 01:00:49,859 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 01:00:49,859 - INFO - ────────────────────────────────────────
+
+2025-10-07 01:00:50,094 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 01:00:50,141 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.9MeTDNHDy_QrefjcNCQWtS1KuYLsJGohk-kGaiBrL0sjLlWyH1gynA.LSJsC5Dd1jpEi4JH.5S6u_V9h0ZLjp-xL1oxLeavWbku14alq7HH3m3VqFsXrNk95wH8TZ1s1Yvd6pz37lV46jSf-LXy1kuUARRhVWI1uFsQTn8ShGd27deYfI02UnzOt8alzgr-9f5ECSqFWw_8JzRo9przvxs7la4ikdxERmXlqhwiLa8LFJC1RYRBWnV3IR27H54Ripjpp7dS4Bpk45jKuxEoXhPWJxMhgjTiiORcB1tjmQoI8Pss19VQEPzUnugV6wlnn8C3gJMxZsIxejlD3q21q-_aWP060kf_OPjLYmjVP094oabVmo1Vg8qWTWTIVOKGK-dHfIig_bq2IU7R6k9FN1BK_WDAP7IePePLI2Q9VGu7enO8f8sktCiuByi6sXYSUtVyJOckV1iKX2YTpQ32285aqhnEYF0ZaB8EBTpbK1D4W2P_gwodO_7C5LLOAOC0lIUYHvA.Pn41l7FeecBIEHdmUSHEdg
+2025-10-07 01:00:53,345 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.medicinenet.com, new_tab: False
+2025-10-07 01:00:54,617 - INFO - 🔗 Navigated to https://www.medicinenet.com
+2025-10-07 01:00:56,712 - INFO - 
+
+2025-10-07 01:00:56,712 - INFO - 📍 Step 1:
+2025-10-07 01:00:58,498 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:00:58,509 - INFO -   ❔ Eval: Previous navigation loaded the homepage but no content was visible, so the goal of seeing site information was not achieved.
+2025-10-07 01:00:58,509 - INFO -   [34m🎯 Next goal: Wait briefly then navigate to the About Us page to retrieve the founding date.[0m
+2025-10-07 01:00:58,509 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 01:00:58,538 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:01:01,040 - INFO -   🦾 [34m[ACTION 2/2][0m go_to_url: url: https://www.medicinenet.com/about_us.htm, new_tab: False
+2025-10-07 01:01:03,069 - INFO - 🔗 Navigated to https://www.medicinenet.com/about_us.htm
+2025-10-07 01:01:04,920 - INFO - 
+
+2025-10-07 01:01:04,920 - INFO - 📍 Step 2:
+2025-10-07 01:01:06,484 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:01:06,484 - INFO -   ❔ Eval: Failed to load the About Us page via direct URL; got a 404 page.
+2025-10-07 01:01:06,484 - INFO -   [34m🎯 Next goal: Click the 'About Us' link (index 53) to load the About Us page and then locate the founding date.[0m
+2025-10-07 01:01:06,485 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 53, while_holding_ctrl: False
+2025-10-07 01:01:06,692 - WARNING - No visible quad found, using first quad
+2025-10-07 01:01:07,340 - INFO - 🖱️ Clicked element
+2025-10-07 01:01:09,074 - INFO - 
+
+2025-10-07 01:01:09,074 - INFO - 📍 Step 3:
+2025-10-07 01:01:10,825 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:01:10,825 - INFO -   [31m⚠️ Eval: Failure: Clicking index 53 did not navigate to the About Us page.[0m
+2025-10-07 01:01:10,825 - INFO -   [34m🎯 Next goal: Click the About Us link (index 54) to load the About Us page.[0m
+2025-10-07 01:01:10,826 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 54, while_holding_ctrl: None
+2025-10-07 01:01:12,122 - INFO - 🖱️ Clicked element
+2025-10-07 01:01:22,753 - INFO - 
+
+2025-10-07 01:01:22,754 - INFO - 📍 Step 4:
+2025-10-07 01:01:22,806 - WARNING - Received duplicate response for request 214 - ignoring
+2025-10-07 01:01:24,206 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:01:24,208 - INFO -   [31m⚠️ Eval: Previous click on index 54 did not navigate away from the 404 page. Verdict: Failure[0m
+2025-10-07 01:01:24,208 - INFO -   [34m🎯 Next goal: Open the About Us page in a new tab by Ctrl+Clicking index 54, then switch to that tab to locate the founding date.[0m
+2025-10-07 01:01:24,209 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 54, while_holding_ctrl: True
+2025-10-07 01:01:26,818 - WARNING - No visible quad found, using first quad
+2025-10-07 01:01:30,182 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-07 01:01:42,714 - WARNING - ================================================================================
+2025-10-07 01:01:42,714 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_4f6e4c5a.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#a669 ✅)
+2025-10-07 01:01:42,714 - WARNING - ================================================================================
+2025-10-07 01:01:42,714 - WARNING - 📣 BrowserStateRequestEvent#f0d9                                       [93m13s[0m
+2025-10-07 01:01:42,714 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#f0d9)    [92m 0s[0m/30s   ✓
+2025-10-07 01:01:42,715 - WARNING -       📣 NavigationCompleteEvent#fe42                                  [93m 8s[0m
+2025-10-07 01:01:42,715 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#fe42)    [92m 0s[0m/30s   ✓
+2025-10-07 01:01:42,715 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#fe42)    [92m 0s[0m/30s   ✓
+2025-10-07 01:01:42,715 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#f0d9) ⏳ [93m12s[0m/30s  
+2025-10-07 01:01:42,715 - WARNING -       📣 ScreenshotEvent#a669                                          [91m 8s[0m
+2025-10-07 01:01:42,715 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#a669) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:01:42,715 - WARNING - 
+================================================================================
+
+2025-10-07 01:01:42,715 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 01:01:42,716 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#9648(?▶ ScreenshotEvent#a669 🏃) timed out after 8.0s
+2025-10-07 01:01:43,613 - WARNING - Received duplicate response for request 259 - ignoring
+2025-10-07 01:01:44,621 - INFO - 
+
+2025-10-07 01:01:44,621 - INFO - 📍 Step 5:
+2025-10-07 01:01:46,420 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:01:46,421 - INFO -   [32m👍 Eval: Partial success: new tab with About Us page opened, but not yet viewed.[0m
+2025-10-07 01:01:46,421 - INFO -   [34m🎯 Next goal: Switch to the About Us tab (DEA8) and extract the MedicineNet founding date.[0m
+2025-10-07 01:01:46,421 - INFO -   🦾 [34m[ACTION 1/2][0m switch_tab: tab_id: DEA8
+2025-10-07 01:01:46,424 - WARNING - Received duplicate response for request 262 - ignoring
+2025-10-07 01:01:50,210 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.9MeTDNHDy_QrefjcNCQWtS1KuYLsJGohk-kGaiBrL0sjLlWyH1gynA.LSJsC5Dd1jpEi4JH.5S6u_V9h0ZLjp-xL1oxLeavWbku14alq7HH3m3VqFsXrNk95wH8TZ1s1Yvd6pz37lV46jSf-LXy1kuUARRhVWI1uFsQTn8ShGd27deYfI02UnzOt8alzgr-9f5ECSqFWw_8JzRo9przvxs7la4ikdxERmXlqhwiLa8LFJC1RYRBWnV3IR27H54Ripjpp7dS4Bpk45jKuxEoXhPWJxMhgjTiiORcB1tjmQoI8Pss19VQEPzUnugV6wlnn8C3gJMxZsIxejlD3q21q-_aWP060kf_OPjLYmjVP094oabVmo1Vg8qWTWTIVOKGK-dHfIig_bq2IU7R6k9FN1BK_WDAP7IePePLI2Q9VGu7enO8f8sktCiuByi6sXYSUtVyJOckV1iKX2YTpQ32285aqhnEYF0ZaB8EBTpbK1D4W2P_gwodO_7C5LLOAOC0lIUYHvA.Pn41l7FeecBIEHdmUSHEdg
+2025-10-07 01:01:59,023 - WARNING - ================================================================================
+2025-10-07 01:01:59,023 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 10.0s for EventBus_4f6e4c5a.browser_use.browser.watchdog_base.BrowserSession.on_SwitchTabEvent(?▶ SwitchTabEvent#7c3b ✅)
+2025-10-07 01:01:59,023 - WARNING - ================================================================================
+2025-10-07 01:01:59,023 - WARNING - 📣 SwitchTabEvent#7c3b                                                 [91m10s[0m
+2025-10-07 01:01:59,023 - WARNING -    ⏰ browser_use.browser.watchdog_base.BrowserSession.on_SwitchTabEvent(#7c3b) ⌛️ [91m10s[0m/[91m10s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:01:59,023 - WARNING -       📣 AgentFocusChangedEvent#6077                                    1s
+2025-10-07 01:01:59,023 - WARNING -          ➡️ browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(#6077) ⏳ [93m 1s[0m/10s   ⬅️ [93mINTERRUPTED[0m ✂️
+2025-10-07 01:01:59,023 - WARNING - 
+================================================================================
+
+2025-10-07 01:01:59,024 - INFO - 🔄  Switched to tab #DEA8
+2025-10-07 01:01:59,314 - WARNING - Received duplicate response for request 271 - ignoring
+2025-10-07 01:01:59,526 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was MedicineNet founded? Provide the founding date., extract_links: False, start_from_char:
+2025-10-07 01:02:06,811 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:02:07,312 - INFO - 📄 <url>
+https://www.medicinenet.com/about_us/info.htm
+</url>
+<query>
+When was MedicineNet founded? Provide the founding date.
+</query>
+<result>
+Founded in 1996.
+</result>
+2025-10-07 01:02:17,755 - INFO - 
+
+2025-10-07 01:02:17,755 - INFO - 📍 Step 6:
+2025-10-07 01:02:19,157 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:02:19,158 - INFO -   [32m👍 Eval: Success: The founding date was retrieved from the About Us page.[0m
+2025-10-07 01:02:19,158 - INFO -   [34m🎯 Next goal: Provide the founding date to the user and finish the task.[0m
+2025-10-07 01:02:19,158 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: MedicineNet was founded in 1996., success: True, files_to_display: []
+2025-10-07 01:02:19,350 - INFO - 
+📄 [32m Final Result:[0m 
+MedicineNet was founded in 1996.
+
+
+2025-10-07 01:02:19,352 - INFO - ✅ Task completed successfully
+2025-10-07 01:02:24,681 - WARNING - ⌛️ EventBus_4f6e4c5a🟢(⏳ 0 | ▶️ 0 | ✅ 43 ➡️ 30 👂) Timeout waiting for event bus to be idle after 5s (processing: 0)
+Creating Browserbase session with advanced stealth...
+Browserbase session created with ID: 148eaf2e-ab95-4d28-9cd2-105faaadf784
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.9MeTDNHDy_QrefjcNCQWtS1KuYLsJGohk-kGaiBrL0sjLlWyH1gynA.LSJsC5Dd1jpEi4JH.5S6u_V9h0ZLjp-xL1oxLeavWbku14alq7HH3m3VqFsXrNk95wH8TZ1s1Yvd6pz37lV46jSf-LXy1kuUARRhVWI1uFsQTn8ShGd27deYfI02UnzOt8alzgr-9f5ECSqFWw_8JzRo9przvxs7la4ikdxERmXlqhwiLa8LFJC1RYRBWnV3IR27H54Ripjpp7dS4Bpk45jKuxEoXhPWJxMhgjTiiORcB1tjmQoI8Pss19VQEPzUnugV6wlnn8C3gJMxZsIxejlD3q21q-_aWP060kf_OPjLYmjVP094oabVmo1Vg8qWTWTIVOKGK-dHfIig_bq2IU7R6k9FN1BK_WDAP7IePePLI2Q9VGu7enO8f8sktCiuByi6sXYSUtVyJOckV1iKX2YTpQ32285aqhnEYF0ZaB8EBTpbK1D4W2P_gwodO_7C5LLOAOC0lIUYHvA.Pn41l7FeecBIEHdmUSHEdg
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.medicinenet.com', extracted_content='🔗 Navigated to https://www.medicinenet.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.medicinenet.com/about_us.htm', extracted_content='🔗 Navigated to https://www.medicinenet.com/about_us.htm', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 855.8359375, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 855.8359375, 'click_y': 132.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 855.8359375, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #DEA8', extracted_content='Switched to tab #DEA8', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.medicinenet.com/about_us/info.htm\n</url>\n<query>\nWhen was MedicineNet founded? Provide the founding date.\n</query>\n<result>\nFounded in 1996.\n</result>', extracted_content='<url>\nhttps://www.medicinenet.com/about_us/info.htm\n</url>\n<query>\nWhen was MedicineNet founded? Provide the founding date.\n</query>\n<result>\nFounded in 1996.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - MedicineNet was founded in 1996.', extracted_content='MedicineNet was founded in 1996.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.medicinenet.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.medicinenet.com/about_us.htm', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 53, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=362, backend_node_id=3164, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'flex', 'href': 'https://www.medicinenet.com/about_us/info.htm', 'target': '_blank'}, bounds=DOMRect(x=757.46875, y=-148.8125, width=196.734375, height=24.015625), x_path='html/body/div[2]/nav/div[4]/ul/li[5]/ul/li[2]/a', element_hash=1164701158112730518)}, {'click_element_by_index': {'index': 54}, 'interacted_element': DOMInteractedElement(node_id=1110, backend_node_id=3164, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'flex', 'href': 'https://www.medicinenet.com/about_us/info.htm', 'target': '_blank'}, bounds=DOMRect(x=757.46875, y=120.0, width=196.734375, height=24.0), x_path='html/body/div[2]/nav/div[4]/ul/li[5]/ul/li[2]/a', element_hash=1164701158112730518)}, {'click_element_by_index': {'index': 54, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=1894, backend_node_id=3164, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'flex', 'href': 'https://www.medicinenet.com/about_us/info.htm', 'target': '_blank'}, bounds=DOMRect(x=757.46875, y=120.0, width=196.734375, height=24.0), x_path='html/body/div[2]/nav/div[4]/ul/li[5]/ul/li[2]/a', element_hash=1164701158112730518)}, {'switch_tab': {'tab_id': 'DEA8'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was MedicineNet founded? Provide the founding date.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'MedicineNet was founded in 1996.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 148eaf2e-ab95-4d28-9cd2-105faaadf784 - no manual close method available, session will auto-expire
+Browserbase session 148eaf2e-ab95-4d28-9cd2-105faaadf784 closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/148eaf2e-ab95-4d28-9cd2-105faaadf784

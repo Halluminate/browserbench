@@ -1,0 +1,835 @@
+2025-10-07 01:13:00,506 - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-10-07 01:13:00,515 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 01:13:00,527 - INFO - 🔗 Found URL in task: https://www.pcgamer.com, adding as initial action...
+2025-10-07 01:13:00,531 - INFO - [34m🚀 Task: To which email can you send confidential tips? You must complete the task only using the starting website. Begin task on the following url: https://www.pcgamer.com[0m
+2025-10-07 01:13:00,566 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 01:13:00,574 - INFO - ────────────────────────────────────────
+2025-10-07 01:13:00,574 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 01:13:00,574 - INFO -     👉  browser-use auth
+2025-10-07 01:13:00,574 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 01:13:00,574 - INFO - ────────────────────────────────────────
+
+2025-10-07 01:13:00,806 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 01:13:00,851 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:13:03,039 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-07 01:13:04,044 - INFO - 🔗 Navigated to https://www.pcgamer.com
+2025-10-07 01:13:06,670 - INFO - 
+
+2025-10-07 01:13:06,670 - INFO - 📍 Step 1:
+2025-10-07 01:13:08,397 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:13:08,402 - INFO -   [32m👍 Eval: Successfully loaded the PC Gamer homepage. Verdict: Success[0m
+2025-10-07 01:13:08,402 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the page to reveal footer/contact information.[0m
+2025-10-07 01:13:08,402 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 01:13:14,128 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 720px per page)
+2025-10-07 01:13:17,305 - ERROR - CDP Error for request 134: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:13:17,305 - ERROR - CDP Error for request 135: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:13:17,305 - ERROR - CDP Error for request 141: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:13:17,306 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:13:17,306 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:13:17,307 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:13:17,940 - INFO - 
+
+2025-10-07 01:13:17,940 - INFO - 📍 Step 2:
+2025-10-07 01:13:19,418 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:13:19,419 - INFO -   ❔ Eval: Scrolled down 10 pages but page content remained empty, so the goal of revealing the footer was not achieved.
+2025-10-07 01:13:19,419 - INFO -   [34m🎯 Next goal: Wait for the page to finish loading before attempting to extract the confidential tips email.[0m
+2025-10-07 01:13:19,419 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-07 01:13:19,624 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:13:35,120 - ERROR - CDP Error for request 175: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:13:35,121 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:13:35,121 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:13:35,121 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:13:36,620 - WARNING - Received duplicate response for request 168 - ignoring
+2025-10-07 01:13:37,932 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 1 | ▶️ 2 | ✅ 30 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#8cad 🏃)
+2025-10-07 01:13:43,463 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 1 | ▶️ 2 | ✅ 30 ➡️ 30 👂) handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#6b56 🏃)
+2025-10-07 01:13:44,254 - WARNING - ================================================================================
+2025-10-07 01:13:44,254 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#6b56 ✅)
+2025-10-07 01:13:44,254 - WARNING - ================================================================================
+2025-10-07 01:13:44,254 - WARNING - 📣 BrowserStateRequestEvent#8cad                                       [93m23s[0m
+2025-10-07 01:13:44,254 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#8cad)    [92m 1s[0m/30s   ✓
+2025-10-07 01:13:44,254 - WARNING -       📣 NavigationCompleteEvent#1bd2                                  [93m17s[0m
+2025-10-07 01:13:44,254 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#1bd2)    [92m 1s[0m/30s   ✓
+2025-10-07 01:13:44,254 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#1bd2)    [92m 0s[0m/30s   ✓
+2025-10-07 01:13:44,254 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#8cad) ⏳ [93m21s[0m/30s  
+2025-10-07 01:13:44,254 - WARNING -       📣 ScreenshotEvent#6b56                                          [91m16s[0m
+2025-10-07 01:13:44,254 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#6b56) ⌛️ [91m16s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:13:44,254 - WARNING -       📣 BrowserErrorEvent#fd40                                        [91m 9s[0m
+2025-10-07 01:13:44,254 - WARNING - 
+================================================================================
+
+2025-10-07 01:13:44,255 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 01:13:44,255 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#7632(?▶ ScreenshotEvent#6b56 🏃) timed out after 8.0s
+2025-10-07 01:13:46,264 - INFO - 
+
+2025-10-07 01:13:46,264 - INFO - 📍 Step 3:
+2025-10-07 01:13:46,371 - WARNING - Received duplicate response for request 180 - ignoring
+2025-10-07 01:13:47,350 - WARNING - Received duplicate response for request 181 - ignoring
+2025-10-07 01:13:47,766 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:13:47,769 - INFO -   ❔ Eval: Failed to load page content after scrolling and waiting; the footer email was not found.
+2025-10-07 01:13:47,769 - INFO -   [34m🎯 Next goal: Reload the PC Gamer homepage, wait for it to load, then extract the confidential tips email address.[0m
+2025-10-07 01:13:47,769 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-07 01:14:04,186 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 34 ➡️ 30 👂) handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#30d7 🏃)
+2025-10-07 01:14:04,188 - WARNING - ================================================================================
+2025-10-07 01:14:04,188 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 15.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#30d7 🏃)
+2025-10-07 01:14:04,188 - WARNING - ================================================================================
+2025-10-07 01:14:04,188 - WARNING - 📣 NavigateToUrlEvent#30d7                                             [93m15s[0m
+2025-10-07 01:14:04,188 - WARNING -    ⏰ browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(#30d7) ⌛️ [91m15s[0m/[91m15s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:14:04,188 - WARNING -       📣 NavigationStartedEvent#1a4b                                   [91m13s[0m
+2025-10-07 01:14:04,188 - WARNING -    🔜 browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigateToUrlEvent(#30d7) 🔜    /15s  
+2025-10-07 01:14:04,188 - WARNING - 
+================================================================================
+
+2025-10-07 01:14:04,189 - ERROR - ❌ Navigation failed: Event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent#4048(?▶ NavigateToUrlEvent#30d7 🏃) timed out after 15.0s and interrupted any processing of 1 child events
+2025-10-07 01:14:10,527 - WARNING - Received duplicate response for request 185 - ignoring
+2025-10-07 01:14:14,019 - ERROR - CDP Error for request 215: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:14:14,021 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 01:14:14,021 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:14:14,021 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:14:14,168 - INFO - 
+
+2025-10-07 01:14:14,168 - INFO - 📍 Step 4:
+2025-10-07 01:14:15,374 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:14:15,375 - INFO -   [31m⚠️ Eval: Previous goal to load and scroll the homepage failed; page remained empty. Verdict: Failure[0m
+2025-10-07 01:14:15,375 - INFO -   [34m🎯 Next goal: Extract the confidential tips email address from the PC Gamer homepage using extract_structured_data.[0m
+2025-10-07 01:14:15,376 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the email address for sending confidential tips on PC Gamer?, extract_links: False, start
+2025-10-07 01:14:16,620 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:14:16,649 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+What is the email address for sending confidential tips on PC Gamer?
+</query>
+<result>
+Information unavailable – the webpage does not provide an email address for sending confidential tips to PC Gamer.
+</result>
+2025-10-07 01:14:19,447 - INFO - 
+
+2025-10-07 01:14:19,448 - INFO - 📍 Step 5:
+2025-10-07 01:14:20,783 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:14:20,784 - INFO -   [31m⚠️ Eval: Previous attempt to scroll 10 pages did not reveal new elements; footer email not found. Verdict: Failure[0m
+2025-10-07 01:14:20,784 - INFO -   [34m🎯 Next goal: Scroll further down the page to bring the footer into view where the confidential tips email address should be displayed.[0m
+2025-10-07 01:14:20,784 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 01:14:38,668 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)
+2025-10-07 01:14:51,736 - WARNING - ================================================================================
+2025-10-07 01:14:51,738 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#b101 ✅)
+2025-10-07 01:14:51,739 - WARNING - ================================================================================
+2025-10-07 01:14:51,739 - WARNING - 📣 BrowserStateRequestEvent#6011                                       [93m13s[0m
+2025-10-07 01:14:51,739 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#6011)    [92m 0s[0m/30s   ✓
+2025-10-07 01:14:51,739 - WARNING -       📣 NavigationCompleteEvent#fed2                                  [93m 9s[0m
+2025-10-07 01:14:51,739 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#fed2)    [92m 1s[0m/30s   ✓
+2025-10-07 01:14:51,739 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#fed2)    [92m 0s[0m/30s   ✓
+2025-10-07 01:14:51,739 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#6011) ⏳ [93m13s[0m/30s  
+2025-10-07 01:14:51,739 - WARNING -       📣 ScreenshotEvent#b101                                          [91m 8s[0m
+2025-10-07 01:14:51,739 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#b101) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:14:51,739 - WARNING - 
+================================================================================
+
+2025-10-07 01:14:51,739 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 01:14:51,740 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#7632(?▶ ScreenshotEvent#b101 🏃) timed out after 8.0s
+2025-10-07 01:14:53,339 - WARNING - Received duplicate response for request 321 - ignoring
+2025-10-07 01:14:53,648 - INFO - 
+
+2025-10-07 01:14:53,648 - INFO - 📍 Step 6:
+2025-10-07 01:14:54,610 - WARNING - Received duplicate response for request 324 - ignoring
+2025-10-07 01:14:55,279 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:14:55,281 - INFO -   [31m⚠️ Eval: Previous scroll actions did not reveal the footer email; extraction returned no result. Verdict: Failure[0m
+2025-10-07 01:14:55,281 - INFO -   [34m🎯 Next goal: Scroll further down the page to bring the footer into view where the confidential tips email should be displayed.[0m
+2025-10-07 01:14:55,282 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 01:15:12,476 - WARNING - ================================================================================
+2025-10-07 01:15:12,476 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#098f ✅)
+2025-10-07 01:15:12,476 - WARNING - ================================================================================
+2025-10-07 01:15:12,476 - WARNING - 📣 ScrollEvent#098f                                                    [91m 8s[0m
+2025-10-07 01:15:12,476 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#098f) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:15:12,476 - WARNING - 
+================================================================================
+
+2025-10-07 01:15:12,477 - WARNING - Scroll 2/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#098f 🏃) timed out after 8.0s
+2025-10-07 01:15:13,082 - WARNING - Received duplicate response for request 334 - ignoring
+2025-10-07 01:15:20,479 - WARNING - ================================================================================
+2025-10-07 01:15:20,480 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#1c99 ✅)
+2025-10-07 01:15:20,480 - WARNING - ================================================================================
+2025-10-07 01:15:20,480 - WARNING - 📣 ScrollEvent#1c99                                                    [91m 8s[0m
+2025-10-07 01:15:20,480 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#1c99) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:15:20,480 - WARNING - 
+================================================================================
+
+2025-10-07 01:15:20,481 - WARNING - Scroll 3/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#1c99 🏃) timed out after 8.0s
+2025-10-07 01:15:22,368 - WARNING - Received duplicate response for request 337 - ignoring
+2025-10-07 01:15:28,484 - WARNING - ================================================================================
+2025-10-07 01:15:28,485 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#55d8 ✅)
+2025-10-07 01:15:28,485 - WARNING - ================================================================================
+2025-10-07 01:15:28,485 - WARNING - 📣 ScrollEvent#55d8                                                    [91m 8s[0m
+2025-10-07 01:15:28,485 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#55d8) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:15:28,485 - WARNING - 
+================================================================================
+
+2025-10-07 01:15:28,487 - WARNING - Scroll 4/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#55d8 🏃) timed out after 8.0s
+2025-10-07 01:15:30,879 - WARNING - Received duplicate response for request 341 - ignoring
+2025-10-07 01:15:36,489 - WARNING - ================================================================================
+2025-10-07 01:15:36,489 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#76a0 ✅)
+2025-10-07 01:15:36,489 - WARNING - ================================================================================
+2025-10-07 01:15:36,489 - WARNING - 📣 ScrollEvent#76a0                                                    [91m 8s[0m
+2025-10-07 01:15:36,489 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#76a0) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:15:36,490 - WARNING - 
+================================================================================
+
+2025-10-07 01:15:36,490 - WARNING - Scroll 5/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#76a0 🏃) timed out after 8.0s
+2025-10-07 01:15:38,770 - WARNING - Received duplicate response for request 344 - ignoring
+2025-10-07 01:15:44,493 - WARNING - ================================================================================
+2025-10-07 01:15:44,493 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#611b ✅)
+2025-10-07 01:15:44,493 - WARNING - ================================================================================
+2025-10-07 01:15:44,493 - WARNING - 📣 ScrollEvent#611b                                                    [91m 8s[0m
+2025-10-07 01:15:44,494 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#611b) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:15:44,494 - WARNING - 
+================================================================================
+
+2025-10-07 01:15:44,495 - WARNING - Scroll 6/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#611b 🏃) timed out after 8.0s
+2025-10-07 01:15:50,476 - WARNING - Received duplicate response for request 347 - ignoring
+2025-10-07 01:15:52,497 - WARNING - ================================================================================
+2025-10-07 01:15:52,499 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#7694 ✅)
+2025-10-07 01:15:52,499 - WARNING - ================================================================================
+2025-10-07 01:15:52,499 - WARNING - 📣 ScrollEvent#7694                                                    [91m 8s[0m
+2025-10-07 01:15:52,499 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#7694) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:15:52,499 - WARNING - 
+================================================================================
+
+2025-10-07 01:15:52,501 - WARNING - Scroll 7/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#7694 🏃) timed out after 8.0s
+2025-10-07 01:15:59,411 - WARNING - Received duplicate response for request 349 - ignoring
+2025-10-07 01:16:00,503 - WARNING - ================================================================================
+2025-10-07 01:16:00,503 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#f6d4 ✅)
+2025-10-07 01:16:00,503 - WARNING - ================================================================================
+2025-10-07 01:16:00,504 - WARNING - 📣 ScrollEvent#f6d4                                                    [91m 8s[0m
+2025-10-07 01:16:00,504 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#f6d4) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:16:00,504 - WARNING - 
+================================================================================
+
+2025-10-07 01:16:00,505 - WARNING - Scroll 8/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#f6d4 🏃) timed out after 8.0s
+2025-10-07 01:16:03,309 - WARNING - Received duplicate response for request 351 - ignoring
+2025-10-07 01:16:08,509 - WARNING - ================================================================================
+2025-10-07 01:16:08,509 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#4396 ✅)
+2025-10-07 01:16:08,509 - WARNING - ================================================================================
+2025-10-07 01:16:08,509 - WARNING - 📣 ScrollEvent#4396                                                    [91m 8s[0m
+2025-10-07 01:16:08,509 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#4396) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:16:08,509 - WARNING - 
+================================================================================
+
+2025-10-07 01:16:08,512 - WARNING - Scroll 9/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#4396 🏃) timed out after 8.0s
+2025-10-07 01:16:11,461 - WARNING - Received duplicate response for request 353 - ignoring
+2025-10-07 01:16:16,515 - WARNING - ================================================================================
+2025-10-07 01:16:16,516 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(?▶ ScrollEvent#d688 ✅)
+2025-10-07 01:16:16,517 - WARNING - ================================================================================
+2025-10-07 01:16:16,517 - WARNING - 📣 ScrollEvent#d688                                                    [91m 8s[0m
+2025-10-07 01:16:16,517 - WARNING -    ⏰ browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent(#d688) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:16:16,517 - WARNING - 
+================================================================================
+
+2025-10-07 01:16:16,517 - WARNING - Scroll 10/10 failed: Event handler browser_use.browser.watchdog_base.DefaultActionWatchdog.on_ScrollEvent#6512(?▶ ScrollEvent#d688 🏃) timed out after 8.0s
+2025-10-07 01:16:16,517 - INFO - 🔍 Scrolled down the page by 1.0 pages (requested: 10.0, 720px per page)
+2025-10-07 01:16:18,546 - WARNING - Received duplicate response for request 355 - ignoring
+2025-10-07 01:16:33,763 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 2 | ✅ 48 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#e50b 🏃)
+2025-10-07 01:16:40,321 - WARNING - Received duplicate response for request 372 - ignoring
+2025-10-07 01:16:41,253 - WARNING - Received duplicate response for request 373 - ignoring
+2025-10-07 01:16:42,836 - WARNING - CDP request ax_tree timed out
+2025-10-07 01:16:42,837 - WARNING - CDP request device_pixel_ratio timed out
+2025-10-07 01:16:42,837 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree, device_pixel_ratio
+2025-10-07 01:16:42,837 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, device_pixel_ratio, using minimal state
+2025-10-07 01:16:44,315 - WARNING - Received duplicate response for request 374 - ignoring
+2025-10-07 01:16:44,748 - WARNING - Received duplicate response for request 375 - ignoring
+2025-10-07 01:16:44,762 - WARNING - Received duplicate response for request 376 - ignoring
+2025-10-07 01:16:44,762 - WARNING - Received duplicate response for request 377 - ignoring
+2025-10-07 01:16:44,762 - WARNING - Received duplicate response for request 378 - ignoring
+2025-10-07 01:16:44,762 - WARNING - Received duplicate response for request 379 - ignoring
+2025-10-07 01:16:44,762 - WARNING - Received duplicate response for request 380 - ignoring
+2025-10-07 01:16:44,762 - WARNING - Received duplicate response for request 381 - ignoring
+2025-10-07 01:16:44,763 - WARNING - Received duplicate response for request 382 - ignoring
+2025-10-07 01:16:44,763 - WARNING - Received duplicate response for request 383 - ignoring
+2025-10-07 01:16:44,925 - WARNING - Received duplicate response for request 384 - ignoring
+2025-10-07 01:16:44,934 - WARNING - Received duplicate response for request 387 - ignoring
+2025-10-07 01:16:45,009 - WARNING - Received duplicate response for request 389 - ignoring
+2025-10-07 01:16:45,959 - WARNING - ================================================================================
+2025-10-07 01:16:45,959 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#a657 ✅)
+2025-10-07 01:16:45,959 - WARNING - ================================================================================
+2025-10-07 01:16:45,959 - WARNING - 📣 BrowserStateRequestEvent#e50b                                       [93m29s[0m
+2025-10-07 01:16:45,959 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#e50b)    [92m 2s[0m/30s   ✓
+2025-10-07 01:16:45,959 - WARNING -       📣 NavigationCompleteEvent#a551                                  [93m17s[0m
+2025-10-07 01:16:45,959 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#a551)    [92m 3s[0m/30s   ✓
+2025-10-07 01:16:45,959 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#a551)    [92m 0s[0m/30s   ✓
+2025-10-07 01:16:45,959 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#e50b) ⏳ [93m27s[0m/30s  
+2025-10-07 01:16:45,959 - WARNING -       📣 ScreenshotEvent#a657                                          [91m14s[0m
+2025-10-07 01:16:45,959 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#a657) ⌛️ [91m14s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:16:45,959 - WARNING -       📣 BrowserErrorEvent#a032                                        [91m 3s[0m
+2025-10-07 01:16:45,959 - WARNING - 
+================================================================================
+
+2025-10-07 01:16:45,960 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 01:16:45,960 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#7632(?▶ ScreenshotEvent#a657 🏃) timed out after 8.0s
+2025-10-07 01:16:46,520 - ERROR - ❌ Result failed 1/4 times:
+ 
+2025-10-07 01:16:49,014 - WARNING - Received duplicate response for request 398 - ignoring
+2025-10-07 01:17:00,699 - WARNING - Received duplicate response for request 416 - ignoring
+2025-10-07 01:17:03,323 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 2 | ✅ 48 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#2ab6 🏃)
+2025-10-07 01:17:03,727 - WARNING - Received duplicate response for request 418 - ignoring
+2025-10-07 01:17:03,748 - WARNING - Received duplicate response for request 419 - ignoring
+2025-10-07 01:17:03,748 - WARNING - Received duplicate response for request 420 - ignoring
+2025-10-07 01:17:03,748 - WARNING - Received duplicate response for request 421 - ignoring
+2025-10-07 01:17:03,748 - WARNING - Received duplicate response for request 422 - ignoring
+2025-10-07 01:17:03,748 - WARNING - Received duplicate response for request 423 - ignoring
+2025-10-07 01:17:03,748 - WARNING - Received duplicate response for request 424 - ignoring
+2025-10-07 01:17:03,983 - WARNING - Received duplicate response for request 425 - ignoring
+2025-10-07 01:17:03,984 - WARNING - Received duplicate response for request 426 - ignoring
+2025-10-07 01:17:03,984 - WARNING - Received duplicate response for request 427 - ignoring
+2025-10-07 01:17:03,984 - WARNING - Received duplicate response for request 428 - ignoring
+2025-10-07 01:17:04,022 - WARNING - CDP request ax_tree timed out
+2025-10-07 01:17:04,022 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 01:17:04,022 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 01:17:04,162 - WARNING - Received duplicate response for request 431 - ignoring
+2025-10-07 01:17:04,511 - WARNING - ================================================================================
+2025-10-07 01:17:04,511 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#2f13 ✅)
+2025-10-07 01:17:04,512 - WARNING - ================================================================================
+2025-10-07 01:17:04,512 - WARNING - 📣 BrowserStateRequestEvent#2ab6                                       [93m17s[0m
+2025-10-07 01:17:04,512 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#2ab6)    [92m 1s[0m/30s   ✓
+2025-10-07 01:17:04,512 - WARNING -       📣 NavigationCompleteEvent#fed4                                  [93m13s[0m
+2025-10-07 01:17:04,512 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#fed4)    [92m 0s[0m/30s   ✓
+2025-10-07 01:17:04,512 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#fed4)    [92m 0s[0m/30s   ✓
+2025-10-07 01:17:04,512 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#2ab6) ⏳ [93m16s[0m/30s  
+2025-10-07 01:17:04,512 - WARNING -       📣 ScreenshotEvent#2f13                                          [91m13s[0m
+2025-10-07 01:17:04,512 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#2f13) ⌛️ [91m13s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:17:04,512 - WARNING -       📣 BrowserErrorEvent#ddc4                                        [91m 0s[0m
+2025-10-07 01:17:04,512 - WARNING - 
+================================================================================
+
+2025-10-07 01:17:04,513 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 01:17:04,513 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#7632(?▶ ScreenshotEvent#2f13 🏃) timed out after 8.0s
+2025-10-07 01:17:05,188 - INFO - 
+
+2025-10-07 01:17:05,188 - INFO - 📍 Step 8:
+2025-10-07 01:17:06,946 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:17:06,948 - INFO -   [31m⚠️ Eval: Previous scroll actions did not reveal the footer email; extraction returned no result. Verdict: Failure[0m
+2025-10-07 01:17:06,948 - INFO -   [34m🎯 Next goal: Reload the PC Gamer homepage, wait for it to fully load, then extract the confidential tips email address.[0m
+2025-10-07 01:17:06,948 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com, new_tab: False
+2025-10-07 01:17:22,439 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 2 | ✅ 48 ➡️ 30 👂) handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#52c0 🏃)
+2025-10-07 01:17:22,441 - WARNING - ================================================================================
+2025-10-07 01:17:22,441 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 15.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#52c0 🏃)
+2025-10-07 01:17:22,441 - WARNING - ================================================================================
+2025-10-07 01:17:22,441 - WARNING - 📣 NavigateToUrlEvent#52c0                                             [93m15s[0m
+2025-10-07 01:17:22,441 - WARNING -    ⏰ browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(#52c0) ⌛️ [91m15s[0m/[91m15s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:17:22,441 - WARNING -       📣 NavigationStartedEvent#4753                                   [91m15s[0m
+2025-10-07 01:17:22,441 - WARNING -       📣 NavigationCompleteEvent#694b                                  [92m 1s[0m
+2025-10-07 01:17:22,441 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#694b)    [92m 0s[0m/30s   ✓
+2025-10-07 01:17:22,441 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#694b)    [92m 0s[0m/30s   ✓
+2025-10-07 01:17:22,441 - WARNING -       📣 AgentFocusChangedEvent#fa65                                    1s
+2025-10-07 01:17:22,441 - WARNING -          ➡️ browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(#fa65) ⏳ [93m 1s[0m/10s   ⬅️ [93mINTERRUPTED[0m ✂️
+2025-10-07 01:17:22,441 - WARNING -    🔜 browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigateToUrlEvent(#52c0) 🔜    /15s  
+2025-10-07 01:17:22,441 - WARNING - 
+================================================================================
+
+2025-10-07 01:17:22,443 - ERROR - ❌ Navigation failed: Event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent#4048(?▶ NavigateToUrlEvent#52c0 🏃) timed out after 15.0s and interrupted any processing of 3 child events
+2025-10-07 01:17:27,433 - WARNING - Received duplicate response for request 444 - ignoring
+2025-10-07 01:17:30,873 - INFO - 
+
+2025-10-07 01:17:30,874 - INFO - 📍 Step 9:
+2025-10-07 01:17:32,392 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:17:32,394 - INFO -   [31m⚠️ Eval: Previous scroll actions did not reveal the footer; email not found. Verdict: Failure[0m
+2025-10-07 01:17:32,394 - INFO -   [34m🎯 Next goal: Scroll down near the bottom of the page and then extract the confidential tips email address.[0m
+2025-10-07 01:17:32,394 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 01:17:41,913 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 720px per page)
+2025-10-07 01:17:42,416 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the email address for sending confidential tips on PC Gamer?, extract_links: False, start
+2025-10-07 01:17:45,206 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:17:45,237 - INFO - 📄 <url>
+https://www.pcgamer.com/
+</url>
+<query>
+What is the email address for sending confidential tips on PC Gamer?
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-07 01:17:48,335 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:48,880 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:49,415 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:49,815 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:50,209 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:50,569 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:50,976 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:51,341 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:51,709 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:17:52,141 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:00,276 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#33bc 🏃)
+2025-10-07 01:18:09,539 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:14,139 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:15,243 - ERROR - ❌ Result failed 1/4 times:
+ 
+2025-10-07 01:18:15,277 - WARNING - ================================================================================
+2025-10-07 01:18:15,277 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#33bc ✅)
+2025-10-07 01:18:15,277 - WARNING - ================================================================================
+2025-10-07 01:18:15,277 - WARNING - 📣 BrowserStateRequestEvent#33bc                                       [93m30s[0m
+2025-10-07 01:18:15,277 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#33bc)    [92m 0s[0m/30s   ✓
+2025-10-07 01:18:15,277 - WARNING -       📣 NavigationCompleteEvent#dfb7                                  [93m29s[0m
+2025-10-07 01:18:15,277 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#dfb7)    [92m 0s[0m/30s   ✓
+2025-10-07 01:18:15,277 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#dfb7)    [92m 0s[0m/30s   ✓
+2025-10-07 01:18:15,277 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#33bc) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:18:15,278 - WARNING -       📣 ScreenshotEvent#424f                                          [91m29s[0m
+2025-10-07 01:18:15,278 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#424f)    [92m 2s[0m/ 8s   ✓
+2025-10-07 01:18:15,278 - WARNING - 
+================================================================================
+
+2025-10-07 01:18:15,549 - WARNING - Received duplicate response for request 8 - ignoring
+2025-10-07 01:18:21,701 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:22,993 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:23,511 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:23,919 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:24,312 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:24,740 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:25,140 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:25,515 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:25,941 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:26,330 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:26,825 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:27,332 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:27,757 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:28,219 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:28,639 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:29,041 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:29,442 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:29,853 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:30,317 - WARNING - ⚠️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#4c32 🏃)
+2025-10-07 01:18:30,318 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:30,742 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:32,076 - ERROR - CDP Error for request 621: {'code': -32000, 'message': 'Frame with the given id was not found.'}
+2025-10-07 01:18:33,322 - ERROR - CDP Error for request 644: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,351 - ERROR - CDP Error for request 645: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,380 - ERROR - CDP Error for request 646: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,413 - ERROR - CDP Error for request 647: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,445 - ERROR - CDP Error for request 648: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,474 - ERROR - CDP Error for request 649: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,512 - ERROR - CDP Error for request 650: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,545 - ERROR - CDP Error for request 651: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,574 - ERROR - CDP Error for request 652: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,608 - ERROR - CDP Error for request 653: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,638 - ERROR - CDP Error for request 654: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,669 - ERROR - CDP Error for request 655: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,709 - ERROR - CDP Error for request 656: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,741 - ERROR - CDP Error for request 657: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,769 - ERROR - CDP Error for request 658: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,809 - ERROR - CDP Error for request 659: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,839 - ERROR - CDP Error for request 660: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:33,971 - ERROR - CDP Error for request 663: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,009 - ERROR - CDP Error for request 664: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,039 - ERROR - CDP Error for request 665: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,069 - ERROR - CDP Error for request 666: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,109 - ERROR - CDP Error for request 667: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,143 - ERROR - CDP Error for request 668: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,173 - ERROR - CDP Error for request 669: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,210 - ERROR - CDP Error for request 670: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,239 - ERROR - CDP Error for request 671: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,270 - ERROR - CDP Error for request 672: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,312 - ERROR - CDP Error for request 673: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,341 - ERROR - CDP Error for request 674: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,370 - ERROR - CDP Error for request 675: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,409 - ERROR - CDP Error for request 676: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,438 - ERROR - CDP Error for request 677: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,466 - ERROR - CDP Error for request 678: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,509 - ERROR - CDP Error for request 679: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,621 - ERROR - CDP Error for request 682: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,650 - ERROR - CDP Error for request 683: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,679 - ERROR - CDP Error for request 684: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,709 - ERROR - CDP Error for request 685: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,737 - ERROR - CDP Error for request 686: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,769 - ERROR - CDP Error for request 687: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,809 - ERROR - CDP Error for request 688: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,839 - ERROR - CDP Error for request 689: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,868 - ERROR - CDP Error for request 690: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,910 - ERROR - CDP Error for request 691: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,938 - ERROR - CDP Error for request 692: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:34,968 - ERROR - CDP Error for request 693: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,009 - ERROR - CDP Error for request 694: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,039 - ERROR - CDP Error for request 695: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,069 - ERROR - CDP Error for request 696: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,109 - ERROR - CDP Error for request 697: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,137 - ERROR - CDP Error for request 698: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,646 - ERROR - CDP Error for request 711: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,676 - ERROR - CDP Error for request 712: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,710 - ERROR - CDP Error for request 713: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,738 - ERROR - CDP Error for request 714: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,767 - ERROR - CDP Error for request 715: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,810 - ERROR - CDP Error for request 716: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,839 - ERROR - CDP Error for request 717: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,868 - ERROR - CDP Error for request 718: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,909 - ERROR - CDP Error for request 719: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,944 - ERROR - CDP Error for request 720: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:35,973 - ERROR - CDP Error for request 721: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:36,011 - ERROR - CDP Error for request 722: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:36,040 - ERROR - CDP Error for request 723: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:37,126 - INFO - Connecting to wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+2025-10-07 01:18:39,470 - ERROR - CDP Error for request 765: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,508 - ERROR - CDP Error for request 766: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,537 - ERROR - CDP Error for request 767: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,567 - ERROR - CDP Error for request 768: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,611 - ERROR - CDP Error for request 769: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,641 - ERROR - CDP Error for request 770: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,672 - ERROR - CDP Error for request 771: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,709 - ERROR - CDP Error for request 772: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,741 - ERROR - CDP Error for request 773: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,771 - ERROR - CDP Error for request 774: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,809 - ERROR - CDP Error for request 775: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,841 - ERROR - CDP Error for request 776: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,870 - ERROR - CDP Error for request 777: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,910 - ERROR - CDP Error for request 778: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,940 - ERROR - CDP Error for request 779: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:39,970 - ERROR - CDP Error for request 780: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,112 - ERROR - CDP Error for request 783: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,141 - ERROR - CDP Error for request 784: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,170 - ERROR - CDP Error for request 785: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,210 - ERROR - CDP Error for request 786: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,240 - ERROR - CDP Error for request 787: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,271 - ERROR - CDP Error for request 788: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,311 - ERROR - CDP Error for request 789: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,343 - ERROR - CDP Error for request 790: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,373 - ERROR - CDP Error for request 791: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,408 - ERROR - CDP Error for request 792: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,436 - ERROR - CDP Error for request 793: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,465 - ERROR - CDP Error for request 794: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,508 - ERROR - CDP Error for request 795: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,537 - ERROR - CDP Error for request 796: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,565 - ERROR - CDP Error for request 797: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,608 - ERROR - CDP Error for request 798: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,713 - ERROR - CDP Error for request 801: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,741 - ERROR - CDP Error for request 802: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,770 - ERROR - CDP Error for request 803: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,809 - ERROR - CDP Error for request 804: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,838 - ERROR - CDP Error for request 805: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,867 - ERROR - CDP Error for request 806: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,909 - ERROR - CDP Error for request 807: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,939 - ERROR - CDP Error for request 808: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:40,969 - ERROR - CDP Error for request 809: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,012 - ERROR - CDP Error for request 810: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,041 - ERROR - CDP Error for request 811: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,073 - ERROR - CDP Error for request 812: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,109 - ERROR - CDP Error for request 813: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,138 - ERROR - CDP Error for request 814: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,167 - ERROR - CDP Error for request 815: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,210 - ERROR - CDP Error for request 816: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,744 - ERROR - CDP Error for request 831: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,775 - ERROR - CDP Error for request 832: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,809 - ERROR - CDP Error for request 833: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,839 - ERROR - CDP Error for request 834: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,869 - ERROR - CDP Error for request 835: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,910 - ERROR - CDP Error for request 836: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,939 - ERROR - CDP Error for request 837: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:41,968 - ERROR - CDP Error for request 838: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:42,010 - ERROR - CDP Error for request 839: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:42,039 - ERROR - CDP Error for request 840: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:42,073 - ERROR - CDP Error for request 841: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:42,110 - ERROR - CDP Error for request 842: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:42,140 - ERROR - CDP Error for request 843: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:18:45,246 - ERROR - ❌ Result failed 2/4 times:
+ 
+2025-10-07 01:18:45,317 - WARNING - ================================================================================
+2025-10-07 01:18:45,317 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_fd70ba30.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#4c32 ✅)
+2025-10-07 01:18:45,317 - WARNING - ================================================================================
+2025-10-07 01:18:45,317 - WARNING - 📣 BrowserStateRequestEvent#4c32                                       [93m30s[0m
+2025-10-07 01:18:45,317 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#4c32)    [92m 0s[0m/30s   ✓
+2025-10-07 01:18:45,317 - WARNING -       📣 NavigationCompleteEvent#12ab                                  [93m28s[0m
+2025-10-07 01:18:45,317 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#12ab)    [92m 0s[0m/30s   ✓
+2025-10-07 01:18:45,317 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#12ab)    [92m 0s[0m/30s   ✓
+2025-10-07 01:18:45,317 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#4c32) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 01:18:45,317 - WARNING -       📣 ScreenshotEvent#6e54                                          [91m28s[0m
+2025-10-07 01:18:45,317 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#6e54)    [93m 4s[0m/ 8s   ✓
+2025-10-07 01:18:45,317 - WARNING - 
+================================================================================
+
+2025-10-07 01:18:45,430 - WARNING - Received duplicate response for request 876 - ignoring
+2025-10-07 01:18:46,543 - ERROR - CDP Error for request 31: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:18:46,810 - ERROR - CDP Error for request 36: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:18:46,810 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:18:47,628 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#a7ca)]         ❌ Failed (1.08s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-07 01:18:47,665 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#a7ca ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-07 01:18:47,665 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:18:47,665 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:18:47,847 - INFO - 
+
+2025-10-07 01:18:47,847 - INFO - 📍 Step 12:
+2025-10-07 01:18:49,405 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:18:49,406 - INFO -   [31m⚠️ Eval: Previous scroll and extract attempts did not reveal the email; page content appears incomplete. Verdict: Failure[0m
+2025-10-07 01:18:49,406 - INFO -   [34m🎯 Next goal: Wait for the page to fully load, then extract the confidential tips email address from the PC Gamer homepage.[0m
+2025-10-07 01:18:49,407 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 15
+2025-10-07 01:18:49,440 - INFO - 🕒 waited for 12 seconds + 3 seconds for LLM call
+2025-10-07 01:19:01,941 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the email address for sending confidential tips on PC Gamer?, extract_links: False, start
+2025-10-07 01:19:02,569 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:02,616 - INFO - 📄 <url>
+https://763493e5cd4d44192db036922eff2059.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+</url>
+<query>
+What is the email address for sending confidential tips on PC Gamer?
+</query>
+<result>
+The webpage does not contain an email address for sending confidential tips on PC Gamer.
+</result>
+2025-10-07 01:19:03,684 - ERROR - CDP Error for request 62: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:19:03,778 - ERROR - CDP Error for request 67: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:19:03,778 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:19:03,912 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#bca7)]         ❌ Failed (0.22s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-07 01:19:03,941 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#bca7 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-07 01:19:03,942 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:19:03,942 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 01:19:04,121 - INFO - 
+
+2025-10-07 01:19:04,121 - INFO - 📍 Step 13:
+2025-10-07 01:19:06,445 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:06,446 - INFO -   ❔ Eval: Previous attempts to scroll and extract on the homepage failed; no email found.
+2025-10-07 01:19:06,446 - INFO -   [34m🎯 Next goal: Navigate to the PC Gamer contact page and extract the confidential tips email address.[0m
+2025-10-07 01:19:06,446 - INFO -   🦾 [34m[ACTION 1/4][0m write_file: file_name: todo.md, content: # Task: Find PC Gamer confidential tips email\n\n## Plan\n- [ ] Navigate to https://www.
+2025-10-07 01:19:06,487 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 01:19:06,988 - INFO -   🦾 [34m[ACTION 2/4][0m go_to_url: url: https://www.pcgamer.com/contact/, new_tab: False
+2025-10-07 01:19:10,175 - ERROR - CDP Error for request 77: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:10,175 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#cf22)]      ❌ Failed (0.11s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:10,216 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#cf22 ✅) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:10,220 - INFO - 🔗 Navigated to https://www.pcgamer.com/contact/
+2025-10-07 01:19:10,720 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 01:19:10,751 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 01:19:13,252 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: What is the email address for sending confidential tips on PC Gamer?, extract_links: False, start
+2025-10-07 01:19:13,312 - ERROR - CDP Error for request 79: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:13,313 - ERROR - Action 'extract_structured_data' failed with error: Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError
+2025-10-07 01:19:13,473 - ERROR - CDP Error for request 80: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:13,515 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:13,516 - INFO - 
+
+2025-10-07 01:19:13,516 - INFO - 📍 Step 14:
+2025-10-07 01:19:15,429 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:15,430 - INFO -   [31m⚠️ Eval: Previous attempt to navigate to the contact page resulted in an empty DOM and failed extraction; verdict: Failure[0m
+2025-10-07 01:19:15,431 - INFO -   [34m🎯 Next goal: Reload the PC Gamer contact page, wait sufficiently for it to load, then extract the confidential tips email address.[0m
+2025-10-07 01:19:15,431 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com/contact/, new_tab: False
+2025-10-07 01:19:15,541 - ERROR - CDP Error for request 81: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:15,541 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:15,574 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:15,641 - ERROR - CDP Error for request 82: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:15,642 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#cc41)]      ❌ Failed (0.06s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:15,670 - ERROR - CDP Error for request 83: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:15,671 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#cc41)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#cc41)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:15,675 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#cc41 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:15,676 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#b8e8)]          ❌ Failed (0.21s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:15,708 - ERROR - CDP Error for request 84: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:15,709 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#b8e8)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#b8e8)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:15,710 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#b8e8 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:15,713 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:15,880 - ERROR - CDP Error for request 85: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:15,922 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:15,923 - INFO - 
+
+2025-10-07 01:19:15,923 - INFO - 📍 Step 15:
+2025-10-07 01:19:17,844 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:17,846 - INFO -   [31m⚠️ Eval: Previous attempts to load pages resulted in empty DOM; no email found. Verdict: Failure[0m
+2025-10-07 01:19:17,846 - INFO -   [34m🎯 Next goal: Navigate to https://www.pcgamer.com/contact/, wait 30 seconds for full load, then extract the confidential tips email address.[0m
+2025-10-07 01:19:17,847 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com/contact/, new_tab: False
+2025-10-07 01:19:17,946 - ERROR - CDP Error for request 86: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:17,946 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:17,981 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:18,045 - ERROR - CDP Error for request 87: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:18,045 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#cdc1)]      ❌ Failed (0.06s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:18,073 - ERROR - CDP Error for request 88: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:18,074 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#cdc1)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#cdc1)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:18,076 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#cdc1 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:18,077 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#56be)]          ❌ Failed (0.19s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:18,111 - ERROR - CDP Error for request 89: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:18,111 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#56be)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#56be)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:18,113 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#56be 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:18,115 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:18,278 - ERROR - CDP Error for request 90: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:18,326 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:18,327 - INFO - 
+
+2025-10-07 01:19:18,327 - INFO - 📍 Step 16:
+2025-10-07 01:19:20,761 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:20,763 - INFO -   [31m⚠️ Eval: Previous attempts to load pages resulted in empty DOM; no email found. Verdict: Failure[0m
+2025-10-07 01:19:20,763 - INFO -   [34m🎯 Next goal: Open the PC Gamer contact page in a new tab, wait for it to load, and extract the confidential tips email address.[0m
+2025-10-07 01:19:20,764 - INFO -   🦾 [34m[ACTION 1/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Navigate to https://www.pcgamer.com/contact/, new_str: - [x] Navigate to
+2025-10-07 01:19:20,822 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Navigate to https://www.pcgamer.com/contact/" with "- [x] Navigate to https://www.pcgamer.com/contact/" in file todo.md
+2025-10-07 01:19:21,324 - INFO -   🦾 [34m[ACTION 2/4][0m go_to_url: url: https://www.pcgamer.com/contact/, new_tab: True
+2025-10-07 01:19:21,480 - ERROR - CDP Error for request 91: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:21,480 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:21,518 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:21,612 - ERROR - CDP Error for request 92: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:21,612 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#420f)]      ❌ Failed (0.09s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:21,641 - ERROR - CDP Error for request 93: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:21,641 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#420f)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#420f)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:21,643 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#420f ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:21,643 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#f66b)]          ❌ Failed (0.28s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:21,672 - ERROR - CDP Error for request 94: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:21,672 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#f66b)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#f66b)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:21,673 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#f66b 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:21,675 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:21,836 - ERROR - CDP Error for request 95: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:21,876 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:21,877 - INFO - 
+
+2025-10-07 01:19:21,877 - INFO - 📍 Step 17:
+2025-10-07 01:19:23,942 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:23,944 - INFO -   [31m⚠️ Eval: Previous attempts to load pages resulted in empty DOM; no email found. Verdict: Failure[0m
+2025-10-07 01:19:23,944 - INFO -   [34m🎯 Next goal: Open the PC Gamer internal search page for 'confidential tips' in a new tab, wait for it to load, then extract the confidential tips email address.[0m
+2025-10-07 01:19:23,944 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com/search?q=confidential+tips, new_tab: True
+2025-10-07 01:19:24,079 - ERROR - CDP Error for request 96: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:24,079 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:24,113 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:24,178 - ERROR - CDP Error for request 97: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:24,178 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#659e)]      ❌ Failed (0.06s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:24,209 - ERROR - CDP Error for request 98: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:24,209 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#659e)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#659e)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:24,211 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#659e ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:24,212 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#7386)]          ❌ Failed (0.23s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:24,241 - ERROR - CDP Error for request 99: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:24,241 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#7386)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#7386)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:24,243 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#7386 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:24,244 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:24,408 - ERROR - CDP Error for request 100: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:24,450 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:24,451 - INFO - 
+
+2025-10-07 01:19:24,451 - INFO - 📍 Step 18:
+2025-10-07 01:19:25,995 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:25,996 - INFO -   ❔ Eval: Previous attempts to load pages resulted in empty DOMs; no email found.
+2025-10-07 01:19:25,996 - INFO -   [34m🎯 Next goal: Open the internal search page for 'confidential tips' in a new tab and wait for it to load.[0m
+2025-10-07 01:19:25,996 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.pcgamer.com/search?q=confidential+tips, new_tab: True
+2025-10-07 01:19:26,117 - ERROR - CDP Error for request 101: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:26,117 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:26,149 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:26,210 - ERROR - CDP Error for request 102: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:26,210 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#b5c2)]      ❌ Failed (0.06s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:26,238 - ERROR - CDP Error for request 103: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:26,239 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#b5c2)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#b5c2)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:26,241 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#b5c2 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:26,241 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#bf65)]          ❌ Failed (0.21s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:26,269 - ERROR - CDP Error for request 104: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:26,270 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#bf65)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#bf65)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:26,272 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#bf65 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:26,274 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:26,440 - ERROR - CDP Error for request 105: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:26,480 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:26,481 - INFO - 
+
+2025-10-07 01:19:26,481 - INFO - 📍 Step 19:
+2025-10-07 01:19:28,018 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:28,021 - INFO -   [31m⚠️ Eval: Previous attempts to load pages timed out, resulting in empty DOMs. Verdict: Failure[0m
+2025-10-07 01:19:28,021 - INFO -   [34m🎯 Next goal: Navigate to the PC Gamer search page for 'confidential tips', wait for load, then extract the confidential tips email address.[0m
+2025-10-07 01:19:28,021 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.pcgamer.com/search?q=confidential+tips, new_tab: False
+2025-10-07 01:19:28,144 - ERROR - CDP Error for request 106: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:28,144 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:28,179 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:28,247 - ERROR - CDP Error for request 107: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:28,247 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#34bb)]      ❌ Failed (0.07s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:28,275 - ERROR - CDP Error for request 108: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:28,275 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#34bb)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#34bb)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:28,276 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#34bb ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:28,276 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#f17b)]          ❌ Failed (0.22s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 01:19:28,309 - ERROR - CDP Error for request 109: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:28,309 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#f17b)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#f17b)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:28,309 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#f17b 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 01:19:28,310 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 01:19:28,474 - ERROR - CDP Error for request 110: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:28,519 - WARNING - [DownloadsWatchdog] No target info found for 9EC40D8297B2E7934D2E9C437798FECE
+2025-10-07 01:19:28,520 - INFO - 
+
+2025-10-07 01:19:28,520 - INFO - 📍 Step 20:
+2025-10-07 01:19:29,688 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 01:19:29,689 - INFO -   [31m⚠️ Eval: The last navigation attempt to the contact page failed with a session timeout, resulting in no page content. Verdict: Failure[0m
+2025-10-07 01:19:29,689 - INFO - 
+2025-10-07 01:19:29,690 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to locate an email address for sending confidential tips on the PC Gamer website. All attempts to load the homepage, contact page, and perform searches resulted in empty pages or timeouts, and no email information could be extracted.' success=False files_to_display=[]
+2025-10-07 01:19:29,722 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to locate an email address for sending confidential tips on the PC Gamer website. All attempts to load the homepage, contact page, and perform searches resulted in empty pages or timeouts, and no email information could be extracted.
+
+
+2025-10-07 01:19:29,723 - INFO - ❌ Task completed without success
+Creating Browserbase session with advanced stealth...
+Browserbase session created with ID: 1272f504-6d5e-45aa-8bba-e83d9d9cf375
+CDP URL: wss://connect.usw2.browserbase.com?signingKey=eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIn0.3rTvaLB3nOQiMeOShgp_oWGu80bt1kXBLRrwE2OR0sySE1Q8-yiR5w.9yPteaHBGjNki2U3.cvWOF94ODwjwnfERiVXBAyHSLH-y7taG2hOsCqmJ4tHmhabeidltuEThawbK3ACVOVmYoWM2gqBdLiWz0sVaH7WjCoI6_XDNSCxoBmulAoth2STCgNm1Oewbp361nzL6AyvvbmtOfQYvYpPy6QFz3NnT7XSclfFo5HDxwSP_XHZl7-xY6mh8yVZ_op7BG2541AXKVlFocZqx0sR3o69vsDphAfEKEbH6dz1REfo2Qcr8slbBJyh6eB6s0uTqPpJIuAfmwE9Zl64Jni9qakORYr3otVnaCUVooXhLsG20LvkGu_thjWZKvihzMr8JwlfYfM78t1GbZX0q7nHikIo9veaFHdq_8jUGngvjKSQTxC9TEtbaT2IkjmTOXYiT8TnWXUel-t_cqN5_wfg5UQ3kVe_dEHbYkIb9Va4e80eysfKSYtMD2l6U_03K6_-qhQ.ugHaD6LRXNGMSnONiCX8Vw
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.pcgamer.com', extracted_content='🔗 Navigated to https://www.pcgamer.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Navigation failed: Event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent#4048(?▶ NavigateToUrlEvent#30d7 🏃) timed out after 15.0s and interrupted any processing of 1 child events', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nWhat is the email address for sending confidential tips on PC Gamer?\n</query>\n<result>\nInformation unavailable – the webpage does not provide an email address for sending confidential tips to PC Gamer.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nWhat is the email address for sending confidential tips on PC Gamer?\n</query>\n<result>\nInformation unavailable – the webpage does not provide an email address for sending confidential tips to PC Gamer.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 1.0 pages (requested: 10.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 1.0 pages (requested: 10.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Navigation failed: Event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent#4048(?▶ NavigateToUrlEvent#52c0 🏃) timed out after 15.0s and interrupted any processing of 3 child events', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 720px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 720px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nWhat is the email address for sending confidential tips on PC Gamer?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.pcgamer.com/\n</url>\n<query>\nWhat is the email address for sending confidential tips on PC Gamer?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 15 seconds', extracted_content='Waited for 15 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://763493e5cd4d44192db036922eff2059.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html\n</url>\n<query>\nWhat is the email address for sending confidential tips on PC Gamer?\n</query>\n<result>\nThe webpage does not contain an email address for sending confidential tips on PC Gamer.\n</result>', extracted_content='<url>\nhttps://763493e5cd4d44192db036922eff2059.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html\n</url>\n<query>\nWhat is the email address for sending confidential tips on PC Gamer?\n</query>\n<result>\nThe webpage does not contain an email address for sending confidential tips on PC Gamer.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.pcgamer.com/contact/', extracted_content='🔗 Navigated to https://www.pcgamer.com/contact/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Navigate to https://www.pcgamer.com/contact/" with "- [x] Navigate to https://www.pcgamer.com/contact/" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Navigate to https://www.pcgamer.com/contact/" with "- [x] Navigate to https://www.pcgamer.com/contact/" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to locate an email address for sending confidential tips on the PC Gamer website. All a - 146 more characters', extracted_content='I was unable to locate an email address for sending confidential tips on the PC Gamer website. All attempts to load the homepage, contact page, and perform searches resulted in empty pages or timeouts, and no email information could be extracted.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 8}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 15}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'wait': {'seconds': 15}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Task: Find PC Gamer confidential tips email\n\n## Plan\n- [ ] Navigate to https://www.pcgamer.com/contact/\n- [ ] Wait for page to load\n- [ ] Extract the confidential tips email address\n- [ ] Verify and record the email address\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 20}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 30}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Navigate to https://www.pcgamer.com/contact/', 'new_str': '- [x] Navigate to https://www.pcgamer.com/contact/'}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/contact/', 'new_tab': True}, 'interacted_element': None}, {'wait': {'seconds': 30}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/search?q=confidential+tips', 'new_tab': True}, 'interacted_element': None}, {'wait': {'seconds': 15}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/search?q=confidential+tips', 'new_tab': True}, 'interacted_element': None}, {'wait': {'seconds': 15}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.pcgamer.com/search?q=confidential+tips', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the email address for sending confidential tips on PC Gamer?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to locate an email address for sending confidential tips on the PC Gamer website. All attempts to load the homepage, contact page, and perform searches resulted in empty pages or timeouts, and no email information could be extracted.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-07 01:19:29,876 - ERROR - CDP Error for request 111: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:29,876 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#af8f)] ❌ Failed (0.03s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 01:19:29,909 - ERROR - CDP Error for request 112: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 01:19:29,909 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#af8f)] ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_SaveStorageStateEvent(SaveStorageStateEvent#af8f)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 01:19:29,911 - ERROR - ❌ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#af8f ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 01:19:34,916 - WARNING - ⌛️ EventBus_fd70ba30🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Timeout waiting for event bus to be idle after 5s (processing: 0)
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Browserbase session 1272f504-6d5e-45aa-8bba-e83d9d9cf375 - no manual close method available, session will auto-expire
+Browserbase session 1272f504-6d5e-45aa-8bba-e83d9d9cf375 closed successfully
+Browserbase session URL: https://www.browserbase.com/sessions/1272f504-6d5e-45aa-8bba-e83d9d9cf375
