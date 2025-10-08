@@ -1,0 +1,404 @@
+2025-10-08 15:59:53,389 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 15:59:53,402 - INFO - 🔗 Found URL in task: https://apnews.com, adding as initial action...
+2025-10-08 15:59:53,407 - INFO - [34m🚀 Task: Where can we submit confidential tips to AP News? You must complete the task only using the starting website. Begin task on the following url: apnews.com[0m
+2025-10-08 15:59:53,453 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 15:59:53,455 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 15:59:53,459 - INFO - ────────────────────────────────────────
+2025-10-08 15:59:53,459 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 15:59:53,459 - INFO -     👉  browser-use auth
+2025-10-08 15:59:53,459 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 15:59:53,459 - INFO - ────────────────────────────────────────
+
+2025-10-08 15:59:53,672 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 15:59:53,712 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 15:59:54,223 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://apnews.com, new_tab: False
+2025-10-08 15:59:56,614 - INFO - 🔗 Navigated to https://apnews.com
+2025-10-08 16:00:00,503 - INFO - 
+
+2025-10-08 16:00:00,503 - INFO - 📍 Step 1:
+2025-10-08 16:00:01,498 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:01,511 - INFO -   ❔ Eval: The page loaded but appears empty; likely still loading. Verdict: Uncertain
+2025-10-08 16:00:01,511 - INFO -   [34m🎯 Next goal: Wait for the homepage to fully load so interactive elements become available.[0m
+2025-10-08 16:00:01,512 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-08 16:00:01,530 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 16:00:07,178 - ERROR - CDP Error for request 82: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 16:00:07,180 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 16:00:07,180 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-08 16:00:07,180 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-08 16:00:07,768 - INFO - 
+
+2025-10-08 16:00:07,768 - INFO - 📍 Step 2:
+2025-10-08 16:00:09,228 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:09,231 - INFO -   ❔ Eval: Previous wait action completed but page still appears empty. Verdict: Uncertain
+2025-10-08 16:00:09,231 - INFO -   [34m🎯 Next goal: Wait for the homepage to fully load and then extract information about confidential tip submission.[0m
+2025-10-08 16:00:09,231 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 10
+2025-10-08 16:00:09,257 - INFO - 🕒 waited for 7 seconds + 3 seconds for LLM call
+2025-10-08 16:00:16,760 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tips submission AP News, extract_links: False, start_from_char: 0
+2025-10-08 16:00:17,984 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:18,007 - INFO - 📄 <url>
+https://apnews.com/
+</url>
+<query>
+confidential tips submission AP News
+</query>
+<result>
+Information on confidential tips submission for AP News is not available in the provided webpage content.
+</result>
+2025-10-08 16:00:20,361 - INFO - 
+
+2025-10-08 16:00:20,361 - INFO - 📍 Step 3:
+2025-10-08 16:00:22,132 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:22,135 - INFO -   ❔ Eval: Previous wait and search actions did not locate tip submission info; verdict: Uncertain
+2025-10-08 16:00:22,135 - INFO -   [34m🎯 Next goal: Open the AP News tips page and extract the confidential tip submission instructions.[0m
+2025-10-08 16:00:22,136 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://apnews.com/tips, new_tab: False
+2025-10-08 16:00:23,688 - INFO - 🔗 Navigated to https://apnews.com/tips
+2025-10-08 16:00:29,152 - INFO - 
+
+2025-10-08 16:00:29,152 - INFO - 📍 Step 4:
+2025-10-08 16:00:30,950 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:30,952 - INFO -   [31m⚠️ Eval: Previous navigation to https://apnews.com/tips resulted in a 'Page unavailable' message, so the tip info was not found. Verdict: Failure[0m
+2025-10-08 16:00:30,952 - INFO -   [34m🎯 Next goal: Open the site search overlay to allow entering a query for confidential tip submission.[0m
+2025-10-08 16:00:30,953 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 21, while_holding_ctrl: None
+2025-10-08 16:00:32,994 - INFO - 🖱️ Clicked element
+2025-10-08 16:00:33,496 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-08 16:00:33,522 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:00:35,400 - INFO - 
+
+2025-10-08 16:00:35,400 - INFO - 📍 Step 5:
+2025-10-08 16:00:37,267 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:37,270 - INFO -   ❔ Eval: Previous attempt to open the search overlay resulted in a click action but we have not verified if the overlay opened; we need to click the 'Show Search' button now.
+2025-10-08 16:00:37,270 - INFO -   [34m🎯 Next goal: Click the 'Show Search' button (index 29) to open the search overlay.[0m
+2025-10-08 16:00:37,270 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 29, while_holding_ctrl: None
+2025-10-08 16:00:39,268 - INFO - 🖱️ Clicked element
+2025-10-08 16:00:40,992 - INFO - 
+
+2025-10-08 16:00:40,993 - INFO - 📍 Step 6:
+2025-10-08 16:00:43,025 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:43,027 - INFO -   ❔ Eval: Previous step clicked the 'Show Search' button but we have not verified the overlay opened; no tip info yet.
+2025-10-08 16:00:43,027 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page and extract any information about confidential tip submission.[0m
+2025-10-08 16:00:43,027 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-08 16:00:48,423 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)
+2025-10-08 16:00:48,924 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tip submission AP News how to submit tip, extract_links: False, start_from_char: 0
+2025-10-08 16:00:50,142 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:50,164 - INFO - 📄 <url>
+https://apnews.com/tips
+</url>
+<query>
+confidential tip submission AP News how to submit tip
+</query>
+<result>
+Information on how to submit a confidential tip to AP News is not available in the provided webpage content.
+</result>
+2025-10-08 16:00:54,793 - INFO - 
+
+2025-10-08 16:00:54,793 - INFO - 📍 Step 7:
+2025-10-08 16:00:56,201 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:56,202 - INFO -   [31m⚠️ Eval: Previous scroll and search attempts did not yield tip information; page still appears empty. Verdict: Failure[0m
+2025-10-08 16:00:56,202 - INFO -   [34m🎯 Next goal: Navigate to https://apnews.com and extract structured data searching for "tip" or "confidential tip".[0m
+2025-10-08 16:00:56,202 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://apnews.com, new_tab: False
+2025-10-08 16:00:57,890 - INFO - 🔗 Navigated to https://apnews.com
+2025-10-08 16:00:58,392 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tip submission AP News, extract_links: False, start_from_char: 0
+2025-10-08 16:01:00,152 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:00,173 - INFO - 📄 <url>
+https://apnews.com/
+</url>
+<query>
+confidential tip submission AP News
+</query>
+<result>
+Information on confidential tip submission for AP News is not present in the provided webpage content.
+</result>
+2025-10-08 16:01:07,097 - INFO - 
+
+2025-10-08 16:01:07,097 - INFO - 📍 Step 8:
+2025-10-08 16:01:09,615 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:09,616 - INFO -   ❔ Eval: Previous scroll action moved down 10 pages but did not reach the footer; tip info still not found. Verdict: Uncertain
+2025-10-08 16:01:09,616 - INFO -   [34m🎯 Next goal: Scroll further down to reach the page footer where tip submission information is likely located.[0m
+2025-10-08 16:01:09,617 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-08 16:01:16,137 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)
+2025-10-08 16:01:19,428 - INFO - 
+
+2025-10-08 16:01:19,428 - INFO - 📍 Step 9:
+2025-10-08 16:01:20,859 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:20,861 - INFO -   ❔ Eval: Previous scroll actions moved the page down but did not yet reveal the footer; tip info still not found.
+2025-10-08 16:01:20,861 - INFO -   [34m🎯 Next goal: Scroll further down to reach the footer and then extract tip submission information.[0m
+2025-10-08 16:01:20,862 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-08 16:01:22,955 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)
+2025-10-08 16:01:23,456 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tip submission AP News, extract_links: False, start_from_char: 0
+2025-10-08 16:01:25,371 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:25,409 - INFO - 📄 <url>
+https://apnews.com/
+</url>
+<query>
+confidential tip submission AP News
+</query>
+<result>
+Information on confidential tip submission for AP News is not available in the provided webpage content.
+</result>
+2025-10-08 16:01:27,618 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:27,935 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:28,211 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:28,584 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:28,888 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:29,182 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:29,472 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:29,772 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:30,066 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:30,355 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:30,638 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:30,920 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:31,226 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:31,672 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:32,012 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:32,459 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:32,789 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:33,110 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+2025-10-08 16:01:34,485 - ERROR - CDP Error for request 594: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:01:34,507 - ERROR - CDP Error for request 595: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:01:34,528 - ERROR - CDP Error for request 596: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:01:34,926 - INFO - 
+
+2025-10-08 16:01:34,926 - INFO - 📍 Step 10:
+2025-10-08 16:01:36,640 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:36,642 - INFO -   ❔ Eval: Previous scroll actions moved the page down but did not yet reveal the footer; tip info still not found.
+2025-10-08 16:01:36,642 - INFO -   [34m🎯 Next goal: Scroll further down to reach the footer and then extract tip submission information.[0m
+2025-10-08 16:01:36,642 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-08 16:01:42,706 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)
+2025-10-08 16:01:43,208 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tip submission AP News, extract_links: False, start_from_char: 0
+2025-10-08 16:01:43,651 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:43,683 - INFO - 📄 <url>
+https://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0
+</url>
+<query>
+confidential tip submission AP News
+</query>
+<result>
+Information on confidential tip submission for AP News is not available in the provided webpage content.
+</result>
+2025-10-08 16:01:44,608 - ERROR - CDP Error for request 82: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:44,658 - ERROR - CDP Error for request 87: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:44,658 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:44,719 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#6a0d)]         ❌ Failed (0.11s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-08 16:01:44,743 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#6a0d ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-08 16:01:44,743 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:44,743 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:44,828 - INFO - 
+
+2025-10-08 16:01:44,828 - INFO - 📍 Step 11:
+2025-10-08 16:01:46,619 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:46,622 - INFO -   ❔ Eval: Previous scroll actions did not reach the footer; tip info not found. Verdict: Uncertain
+2025-10-08 16:01:46,622 - INFO -   [34m🎯 Next goal: Scroll further down to the page footer and extract any tip submission information.[0m
+2025-10-08 16:01:46,622 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:01:48,118 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:01:48,620 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: tip, extract_links: False, start_from_char: 0
+2025-10-08 16:01:49,147 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:49,175 - INFO - 📄 <url>
+https://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0
+</url>
+<query>
+tip
+</query>
+<result>
+Information on tips is not available in the provided webpage content.
+</result>
+2025-10-08 16:01:50,102 - ERROR - CDP Error for request 119: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:50,156 - ERROR - CDP Error for request 124: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:50,156 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:50,209 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#9236)]         ❌ Failed (0.10s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-08 16:01:50,228 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#9236 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-08 16:01:50,229 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:50,229 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:01:50,319 - INFO - 
+
+2025-10-08 16:01:50,319 - INFO - 📍 Step 12:
+2025-10-08 16:01:52,175 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:52,177 - INFO -   ❔ Eval: Previous scroll actions did not reach the footer; tip info still not found.
+2025-10-08 16:01:52,177 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page and extract any confidential tip submission instructions.[0m
+2025-10-08 16:01:52,177 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 20.0, frame_element_index: None
+2025-10-08 16:02:11,934 - INFO - 🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 992px per page)
+2025-10-08 16:02:12,437 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tip submission AP News, extract_links: False, start_from_char: 0
+2025-10-08 16:02:12,874 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:12,898 - INFO - 📄 <url>
+https://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0
+</url>
+<query>
+confidential tip submission AP News
+</query>
+<result>
+Information on confidential tip submission for AP News is not available in the provided webpage content.
+</result>
+2025-10-08 16:02:13,820 - ERROR - CDP Error for request 232: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:02:13,868 - ERROR - CDP Error for request 238: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:02:13,868 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:02:13,925 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#d099)]         ❌ Failed (0.10s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-08 16:02:13,943 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#d099 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-08 16:02:13,943 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:02:13,943 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 16:02:14,018 - INFO - 
+
+2025-10-08 16:02:14,018 - INFO - 📍 Step 13:
+2025-10-08 16:02:16,439 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:16,440 - INFO -   ❔ Eval: Previous attempts to locate tip info via scrolling and /tips page failed; no tip information found.
+2025-10-08 16:02:16,441 - INFO -   [34m🎯 Next goal: Navigate to the contact page and extract tip submission instructions.[0m
+2025-10-08 16:02:16,441 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # AP News Confidential Tip Submission Task\n\n## Goal\nFind where to submit confidential
+2025-10-08 16:02:16,464 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-08 16:02:16,965 - INFO -   🦾 [34m[ACTION 2/2][0m go_to_url: url: https://apnews.com/contact, new_tab: False
+2025-10-08 16:02:18,016 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:18,068 - ERROR - CDP Error for request 247: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:18,068 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#a4f4)]      ❌ Failed (0.05s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-08 16:02:18,092 - ERROR - CDP Error for request 248: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:18,092 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#a4f4)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#a4f4)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:18,097 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#a4f4 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-08 16:02:18,099 - INFO - 🔗 Navigated to https://apnews.com/contact
+2025-10-08 16:02:18,240 - ERROR - CDP Error for request 249: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:18,274 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:18,275 - INFO - 
+
+2025-10-08 16:02:18,276 - INFO - 📍 Step 14:
+2025-10-08 16:02:19,878 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:19,880 - INFO -   ❔ Eval: Navigation to the contact page succeeded (action result shows URL change), but page content is not yet visible, so outcome is uncertain.
+2025-10-08 16:02:19,880 - INFO -   [34m🎯 Next goal: Wait for the contact page to load, then extract structured data searching for tip submission information.[0m
+2025-10-08 16:02:19,880 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-08 16:02:19,906 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 16:02:22,411 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: confidential tip submission, extract_links: False, start_from_char: 0
+2025-10-08 16:02:22,450 - ERROR - CDP Error for request 250: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:22,451 - ERROR - Action 'extract_structured_data' failed with error: Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError
+2025-10-08 16:02:22,561 - ERROR - CDP Error for request 251: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:22,595 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:22,597 - INFO - 
+
+2025-10-08 16:02:22,597 - INFO - 📍 Step 15:
+2025-10-08 16:02:24,614 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:24,616 - INFO -   [31m⚠️ Eval: Previous attempts to load /contact and scroll the homepage did not reveal tip information; page content remained empty. Verdict: Failure[0m
+2025-10-08 16:02:24,616 - INFO -   [34m🎯 Next goal: Navigate to the AP News search results for "tip" and extract any confidential tip submission details.[0m
+2025-10-08 16:02:24,616 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://apnews.com/search?query=tip, new_tab: False
+2025-10-08 16:02:24,695 - ERROR - CDP Error for request 252: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:24,695 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:24,718 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:24,759 - ERROR - CDP Error for request 253: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:24,759 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#1b74)]      ❌ Failed (0.04s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-08 16:02:24,775 - ERROR - CDP Error for request 254: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:24,775 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#1b74)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#1b74)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:24,777 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#1b74 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-08 16:02:24,778 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#6b31)]          ❌ Failed (0.13s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-08 16:02:24,794 - ERROR - CDP Error for request 255: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:24,794 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#6b31)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#6b31)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:24,796 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#6b31 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-08 16:02:24,798 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:24,909 - ERROR - CDP Error for request 256: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:24,943 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:24,944 - INFO - 
+
+2025-10-08 16:02:24,944 - INFO - 📍 Step 16:
+2025-10-08 16:02:27,150 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:27,153 - INFO -   [31m⚠️ Eval: Failure – navigation to the contact page resulted in an empty DOM and extract_structured_data error, yielding no tip submission information.[0m
+2025-10-08 16:02:27,153 - INFO -   [34m🎯 Next goal: Navigate to the AP News search results for "tip" and extract any confidential tip submission information.[0m
+2025-10-08 16:02:27,154 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://apnews.com/search?query=tip, new_tab: False
+2025-10-08 16:02:27,236 - ERROR - CDP Error for request 257: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:27,237 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:27,266 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:27,315 - ERROR - CDP Error for request 258: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:27,316 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#e77e)]      ❌ Failed (0.05s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-08 16:02:27,334 - ERROR - CDP Error for request 259: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:27,335 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#e77e)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#e77e)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:27,341 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#e77e ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-08 16:02:27,342 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#0080)]          ❌ Failed (0.15s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-08 16:02:27,359 - ERROR - CDP Error for request 260: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:27,359 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#0080)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#0080)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:27,361 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#0080 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-08 16:02:27,363 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:27,482 - ERROR - CDP Error for request 261: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:27,512 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:27,513 - INFO - 
+
+2025-10-08 16:02:27,513 - INFO - 📍 Step 17:
+2025-10-08 16:02:29,342 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:29,344 - INFO -   ❔ Eval: Previous attempts to locate tip info via scrolling and direct pages failed; no tip submission details found.
+2025-10-08 16:02:29,344 - INFO -   [34m🎯 Next goal: Navigate to the AP News search results for "tip" and extract any confidential tip submission information.[0m
+2025-10-08 16:02:29,345 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://apnews.com/search?q=tip, new_tab: False
+2025-10-08 16:02:29,486 - ERROR - CDP Error for request 262: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:29,487 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:29,514 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:29,562 - ERROR - CDP Error for request 263: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:29,562 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#4162)]      ❌ Failed (0.04s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-08 16:02:29,581 - ERROR - CDP Error for request 264: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:29,581 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#4162)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#4162)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:29,583 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#4162 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-08 16:02:29,584 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#5cae)]          ❌ Failed (0.14s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-08 16:02:29,603 - ERROR - CDP Error for request 265: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:29,604 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#5cae)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#5cae)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:29,605 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#5cae 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-08 16:02:29,607 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 16:02:29,731 - ERROR - CDP Error for request 266: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:29,767 - WARNING - [DownloadsWatchdog] No target info found for 21E52A8EEC03E1FC2C535A84E8AA1088
+2025-10-08 16:02:29,768 - INFO - 
+
+2025-10-08 16:02:29,768 - INFO - 📍 Step 18:
+2025-10-08 16:02:30,925 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:30,927 - INFO -   [31m⚠️ Eval: Failure – unable to find any confidential tip submission information after multiple navigation and scrolling attempts.[0m
+2025-10-08 16:02:30,927 - INFO - 
+2025-10-08 16:02:30,927 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to locate any information on where to submit confidential tips to AP News using only the apnews.com website. All attempts to access a tips page, the contact page, scroll to the footer, or use the site search returned empty content or errors, and no instructions for confidential tip submission were found.' success=False files_to_display=[]
+2025-10-08 16:02:30,953 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to locate any information on where to submit confidential tips to AP News using only the apnews.com website. All attempts to access a tips page, the contact page, scroll to the footer, or use the site search returned empty content or errors, and no instructions for confidential tip submission were found.
+
+
+2025-10-08 16:02:30,954 - INFO - ❌ Task completed without success
+Creating Steel session with advanced stealth features...
+Steel session created with ID: 5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=5cd84ec0-8ecc-44f6-acdd-ee99e437c42b
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://apnews.com', extracted_content='🔗 Navigated to https://apnews.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 10 seconds', extracted_content='Waited for 10 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://apnews.com/\n</url>\n<query>\nconfidential tips submission AP News\n</query>\n<result>\nInformation on confidential tips submission for AP News is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://apnews.com/\n</url>\n<query>\nconfidential tips submission AP News\n</query>\n<result>\nInformation on confidential tips submission for AP News is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://apnews.com/tips', extracted_content='🔗 Navigated to https://apnews.com/tips', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1629.0, 'click_y': 298.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1629.0, 'click_y': 28.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://apnews.com/tips\n</url>\n<query>\nconfidential tip submission AP News how to submit tip\n</query>\n<result>\nInformation on how to submit a confidential tip to AP News is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://apnews.com/tips\n</url>\n<query>\nconfidential tip submission AP News how to submit tip\n</query>\n<result>\nInformation on how to submit a confidential tip to AP News is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://apnews.com', extracted_content='🔗 Navigated to https://apnews.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://apnews.com/\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not present in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://apnews.com/\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not present in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://apnews.com/\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://apnews.com/\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0\n</url>\n<query>\ntip\n</query>\n<result>\nInformation on tips is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0\n</url>\n<query>\ntip\n</query>\n<result>\nInformation on tips is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 20.0 pages (requested: 20.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dianomi.com/smartads.epl?id=87273&numAds=2&cf=3328.4195.apnews-feed&url=https%3A%2F%2Fapnews.com%2F&unitCount=1&unitId=dianomi-87273-aObtM_x8cM_tc8u3FyN90QAAAAE0&isWaterfall=false&responsiveHeight=1&contextfeedFrameId=4195-653&canCookie=true&gdpr=0&gdpr_consent=&cmp_id=&canServeAds=true&partner_tcf_status=2.0&partnerTcfStatus=2.0\n</url>\n<query>\nconfidential tip submission AP News\n</query>\n<result>\nInformation on confidential tip submission for AP News is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://apnews.com/contact', extracted_content='🔗 Navigated to https://apnews.com/contact', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to locate any information on where to submit confidential tips to AP News using only th - 218 more characters', extracted_content='I was unable to locate any information on where to submit confidential tips to AP News using only the apnews.com website. All attempts to access a tips page, the contact page, scroll to the footer, or use the site search returned empty content or errors, and no instructions for confidential tip submission were found.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://apnews.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tips submission AP News', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://apnews.com/tips', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 21}, 'interacted_element': DOMInteractedElement(node_id=25636, backend_node_id=30409, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'SearchOverlay-search-button'}, bounds=DOMRect(x=1618.0, y=278.0, width=22.0, height=40.0), x_path='html/body/div[5]/div[1]/bsp-header/div[1]/div[3]/div/bsp-search-overlay/button', element_hash=2102883820366873408)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 29}, 'interacted_element': DOMInteractedElement(node_id=34395, backend_node_id=30409, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'SearchOverlay-search-button'}, bounds=DOMRect(x=1618.0, y=8.0, width=22.0, height=40.0), x_path='html/body/div[5]/div[1]/bsp-header/div[1]/div[3]/div/bsp-search-overlay/button', element_hash=2102883820366873408)}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission AP News how to submit tip', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://apnews.com', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission AP News', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission AP News', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission AP News', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'tip', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 20.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission AP News', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# AP News Confidential Tip Submission Task\n\n## Goal\nFind where to submit confidential tips to AP News using only apnews.com.\n\n## Steps\n- [ ] Navigate to https://apnews.com/contact\n- [ ] Extract information about confidential tip submission\n- [ ] If not found, search the site for "tip" or "confidential tip"\n- [ ] Record the submission method/location\n- [ ] Summarize findings for the user\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://apnews.com/contact', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://apnews.com/search?query=tip', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission AP News', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://apnews.com/search?query=tip', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://apnews.com/search?q=tip', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'confidential tip submission', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to locate any information on where to submit confidential tips to AP News using only the apnews.com website. All attempts to access a tips page, the contact page, scroll to the footer, or use the site search returned empty content or errors, and no instructions for confidential tip submission were found.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-08 16:02:31,166 - ERROR - CDP Error for request 267: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:31,167 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#a89d)] ❌ Failed (0.02s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-08 16:02:31,184 - ERROR - CDP Error for request 268: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-08 16:02:31,184 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#a89d)] ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_SaveStorageStateEvent(SaveStorageStateEvent#a89d)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-08 16:02:31,185 - ERROR - ❌ EventBus_1c37f606🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#a89d ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 5cd84ec0-8ecc-44f6-acdd-ee99e437c42b...
+Steel session 5cd84ec0-8ecc-44f6-acdd-ee99e437c42b released successfully
+Steel session recording URL: https://app.steel.dev/sessions/5cd84ec0-8ecc-44f6-acdd-ee99e437c42b

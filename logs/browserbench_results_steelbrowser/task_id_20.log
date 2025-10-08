@@ -1,0 +1,139 @@
+2025-10-08 13:44:49,678 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 13:44:49,690 - INFO - 🔗 Found URL in task: https://www.costco.com, adding as initial action...
+2025-10-08 13:44:49,694 - INFO - [34m🚀 Task: Where is Costco's San Francisco warehouse located? You must complete the task only using the starting website. Begin task on the following url: https://www.costco.com[0m
+2025-10-08 13:44:49,739 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 13:44:49,741 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 13:44:49,746 - INFO - ────────────────────────────────────────
+2025-10-08 13:44:49,746 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 13:44:49,746 - INFO -     👉  browser-use auth
+2025-10-08 13:44:49,746 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 13:44:49,746 - INFO - ────────────────────────────────────────
+
+2025-10-08 13:44:49,946 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 13:44:49,970 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=1b25a2e3-2d41-4a8b-b241-8d7c2b40c47f
+2025-10-08 13:44:50,511 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.costco.com, new_tab: False
+2025-10-08 13:44:52,082 - INFO - 🔗 Navigated to https://www.costco.com
+2025-10-08 13:44:54,434 - INFO - 
+
+2025-10-08 13:44:54,434 - INFO - 📍 Step 1:
+2025-10-08 13:44:55,802 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:44:55,815 - INFO -   [32m👍 Eval: Successfully loaded the Costco homepage. Verdict: Success[0m
+2025-10-08 13:44:55,815 - INFO -   [34m🎯 Next goal: Navigate to the Locations page by clicking the 'Locations' link.[0m
+2025-10-08 13:44:55,816 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 46, while_holding_ctrl: None
+2025-10-08 13:44:58,018 - ERROR - CDP Error for request 70: {'code': -32000, 'message': 'Could not compute box model.'}
+2025-10-08 13:44:58,240 - WARNING - No visible quad found, using first quad
+2025-10-08 13:44:58,419 - ERROR - CDP Error for request 73: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-08 13:45:00,329 - INFO - 🖱️ Clicked element
+2025-10-08 13:45:01,620 - INFO - 
+
+2025-10-08 13:45:01,620 - INFO - 📍 Step 2:
+2025-10-08 13:45:03,055 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:03,057 - INFO -   [31m⚠️ Eval: Failure: Click on 'Locations' did not lead to the locations page; ended on an error page.[0m
+2025-10-08 13:45:03,057 - INFO -   [34m🎯 Next goal: Navigate to Costco's warehouse locations page.[0m
+2025-10-08 13:45:03,058 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.costco.com/warehouse-locations.html, new_tab: False
+2025-10-08 13:45:09,885 - INFO - 🔗 Navigated to https://www.costco.com/warehouse-locations.html
+2025-10-08 13:45:11,261 - INFO - 
+
+2025-10-08 13:45:11,261 - INFO - 📍 Step 3:
+2025-10-08 13:45:12,482 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:12,484 - INFO -   ❔ Eval: The navigation to the warehouse locations page succeeded (URL loaded), but the page content is not yet visible. Verdict: Uncertain
+2025-10-08 13:45:12,484 - INFO -   [34m🎯 Next goal: Wait for the page to load fully, then extract the San Francisco warehouse address.[0m
+2025-10-08 13:45:12,485 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-08 13:45:12,506 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 13:45:15,008 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: San Francisco warehouse address, extract_links: False, start_from_char: 0
+2025-10-08 13:45:15,527 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:15,552 - INFO - 📄 <url>
+https://www.costco.com/warehouse-locations.html
+</url>
+<query>
+San Francisco warehouse address
+</query>
+<result>
+Information unavailable.
+</result>
+2025-10-08 13:45:16,990 - INFO - 
+
+2025-10-08 13:45:16,990 - INFO - 📍 Step 4:
+2025-10-08 13:45:18,753 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:18,755 - INFO -   [31m⚠️ Eval: Failure: The warehouse locations page did not load, resulting in an error page.[0m
+2025-10-08 13:45:18,755 - INFO -   [34m🎯 Next goal: Return to the Costco homepage to prepare for a site search.[0m
+2025-10-08 13:45:18,755 - INFO -   🦾 [34m[ACTION 1/1][0m go_back:
+2025-10-08 13:45:19,463 - INFO - 🔙 Navigated back to https://www.costco.com/ninja-slushi-professional-frozen-drink-maker--96-oz--capacity--5-preset-programs.product.4000368757.html
+2025-10-08 13:45:19,464 - INFO - 🔙  Navigated back
+2025-10-08 13:45:20,928 - INFO - 
+
+2025-10-08 13:45:20,928 - INFO - 📍 Step 5:
+2025-10-08 13:45:22,651 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:22,653 - INFO -   [31m⚠️ Eval: Failure: The attempt to navigate back did not return to a functional page; we remain on an error page.[0m
+2025-10-08 13:45:22,654 - INFO -   [34m🎯 Next goal: Load the Costco homepage to access the search bar.[0m
+2025-10-08 13:45:22,654 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.costco.com, new_tab: False
+2025-10-08 13:45:23,499 - INFO - 🔗 Navigated to https://www.costco.com
+2025-10-08 13:45:28,931 - INFO - 
+
+2025-10-08 13:45:28,932 - INFO - 📍 Step 6:
+2025-10-08 13:45:31,215 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:31,218 - INFO -   [31m⚠️ Eval: Previous step ended on the homepage without the needed information. Verdict: Failure (need to perform search).[0m
+2025-10-08 13:45:31,218 - INFO -   [34m🎯 Next goal: Search for "San Francisco warehouse" using the site search.[0m
+2025-10-08 13:45:31,219 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 21, text: San Francisco warehouse, clear_existing: True
+2025-10-08 13:45:31,348 - ERROR - CDP Error for request 261: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-08 13:45:31,348 - WARNING - ⚠️ Failed to focus the page cdp_client=<cdp_use.client.CDPClient object at 0x114f10440> target_id='C5869769F7A64C727CAE1611BBA42F12' session_id='8197913098C49BE7804BB7FF9D52D8D8' title='about:blank' url='about:blank' owns_cdp_client=False and scroll element [<input>#?:21] into view before typing in text: RuntimeError: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-08 13:45:31,387 - ERROR - CDP Error for request 263: {'code': -32000, 'message': 'Element is not focusable'}
+2025-10-08 13:45:33,555 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-08 13:45:33,555 - INFO - ⌨️ Typed "San Francisco warehouse" into element with index 21
+2025-10-08 13:45:35,463 - INFO - Something new appeared after action 1 / 2: actions click_element_by_index were not executed
+2025-10-08 13:45:37,979 - INFO - 
+
+2025-10-08 13:45:37,979 - INFO - 📍 Step 7:
+2025-10-08 13:45:40,239 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:40,241 - INFO -   [32m👍 Eval: Previous step input text succeeded but click actions were not executed; the suggestion list is now visible. Verdict: Partial success (input succeeded, click pending).[0m
+2025-10-08 13:45:40,242 - INFO -   [34m🎯 Next goal: Click the San Francisco Warehouse suggestion (index 33) to open its location page.[0m
+2025-10-08 13:45:40,242 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 33, while_holding_ctrl: None
+2025-10-08 13:45:43,737 - INFO - 🖱️ Clicked element
+2025-10-08 13:45:45,063 - INFO - 
+
+2025-10-08 13:45:45,063 - INFO - 📍 Step 8:
+2025-10-08 13:45:46,833 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:46,835 - INFO -   [31m⚠️ Eval: Clicking the suggestion resulted in an error page; verdict: Failure.[0m
+2025-10-08 13:45:46,835 - INFO -   [34m🎯 Next goal: Navigate to the Costco homepage to prepare for a new site search.[0m
+2025-10-08 13:45:46,836 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.costco.com, new_tab: False
+2025-10-08 13:45:47,730 - INFO - 🔗 Navigated to https://www.costco.com
+2025-10-08 13:45:53,603 - INFO - 
+
+2025-10-08 13:45:53,603 - INFO - 📍 Step 9:
+2025-10-08 13:45:55,161 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:45:55,163 - INFO -   ❔ Eval: Previous attempt to click a suggestion failed, resulting in an error page. No address obtained.
+2025-10-08 13:45:55,163 - INFO -   [34m🎯 Next goal: Enter the query "San Francisco warehouse" into the search box and click the search button to load the results page.[0m
+2025-10-08 13:45:55,164 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 21, text: San Francisco warehouse, clear_existing: True
+2025-10-08 13:45:55,268 - ERROR - CDP Error for request 483: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-08 13:45:55,268 - WARNING - ⚠️ Failed to focus the page cdp_client=<cdp_use.client.CDPClient object at 0x114f10440> target_id='C5869769F7A64C727CAE1611BBA42F12' session_id='8197913098C49BE7804BB7FF9D52D8D8' title='about:blank' url='about:blank' owns_cdp_client=False and scroll element [<input>#?:21] into view before typing in text: RuntimeError: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-08 13:45:55,306 - ERROR - CDP Error for request 485: {'code': -32000, 'message': 'Element is not focusable'}
+2025-10-08 13:45:57,902 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-08 13:45:57,902 - INFO - ⌨️ Typed "San Francisco warehouse" into element with index 21
+2025-10-08 13:45:59,666 - INFO - Page changed after action: actions click_element_by_index are not yet executed
+2025-10-08 13:46:01,655 - INFO - 
+
+2025-10-08 13:46:01,655 - INFO - 📍 Step 10:
+2025-10-08 13:46:03,662 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 13:46:03,664 - INFO -   [32m👍 Eval: Partial success: search input succeeded and address appears in suggestion list, click action failed.[0m
+2025-10-08 13:46:03,664 - INFO -   [34m🎯 Next goal: Provide the user with the Costco San Francisco warehouse location.[0m
+2025-10-08 13:46:03,665 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Costcos San Francisco warehouse is located at:\n\n**450 10th St, San Francisco, CA 94103-4304**, success: True, file
+2025-10-08 13:46:03,686 - INFO - 
+📄 [32m Final Result:[0m 
+Costco's San Francisco warehouse is located at:
+
+**450 10th St, San Francisco, CA 94103-4304**
+
+
+2025-10-08 13:46:03,691 - INFO - ✅ Task completed successfully
+Creating Steel session with advanced stealth features...
+Steel session created with ID: 1b25a2e3-2d41-4a8b-b241-8d7c2b40c47f
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=1b25a2e3-2d41-4a8b-b241-8d7c2b40c47f
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.costco.com', extracted_content='🔗 Navigated to https://www.costco.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.costco.com/warehouse-locations.html', extracted_content='🔗 Navigated to https://www.costco.com/warehouse-locations.html', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.costco.com/warehouse-locations.html\n</url>\n<query>\nSan Francisco warehouse address\n</query>\n<result>\nInformation unavailable.\n</result>', extracted_content='<url>\nhttps://www.costco.com/warehouse-locations.html\n</url>\n<query>\nSan Francisco warehouse address\n</query>\n<result>\nInformation unavailable.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Navigated back', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.costco.com', extracted_content='🔗 Navigated to https://www.costco.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'San Francisco warehouse' into element 21.", extracted_content="Input 'San Francisco warehouse' into element 21.", include_extracted_content_only_once=False, metadata={'input_x': 864.453125, 'input_y': 112.890625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 803.0859375, 'click_y': 363.890625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.costco.com', extracted_content='🔗 Navigated to https://www.costco.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'San Francisco warehouse' into element 21.", extracted_content="Input 'San Francisco warehouse' into element 21.", include_extracted_content_only_once=False, metadata={'input_x': 864.453125, 'input_y': 112.890625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index are not yet executed', extracted_content='Page changed after action: actions click_element_by_index are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory="Task completed: True - Costco's San Francisco warehouse is located at:\n\n**450 10th St, San Francisco, CA 94103-4304**", extracted_content="Costco's San Francisco warehouse is located at:\n\n**450 10th St, San Francisco, CA 94103-4304**", include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.costco.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 46}, 'interacted_element': DOMInteractedElement(node_id=800, backend_node_id=810, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'MuiButtonBase-root MuiButton-root MuiButton-text-button MuiButton-text-buttonPrimary MuiButton-sizeMedium MuiButton-text-buttonSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text-button MuiButton-text-buttonPrimary MuiButton-sizeMedium MuiButton-text-buttonSizeMedium MuiButton-colorPrimary mui-163ru13', 'tabindex': '0', 'id': 'Button_button-default', 'data-testid': 'Button', 'href': 'https://www.costco.com/warehouse-locations?langId=-1&storeId=10301&catalogId=10701', 'aria-label': 'Locations'}, bounds=DOMRect(x=1362.578125, y=161.890625, width=76.5, height=44.0), x_path='html/body/div[2]/header/div/div[2]/div/nav/ul/li[12]/div/a', element_hash=573010075830162392)}, {'go_to_url': {'url': 'https://www.costco.com/warehouse-locations.html', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'San Francisco warehouse address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_back': {}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.costco.com', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 21, 'text': 'San Francisco warehouse', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=457, backend_node_id=476, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'aria-invalid': 'false', 'aria-describedby': 'typeahead-search-field-description', 'autocomplete': 'off', 'id': ':Rktail8rkvfa:', 'placeholder': 'Search Costco', 'type': 'text', 'class': 'MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused mui-s43tfo', 'aria-autocomplete': 'both', 'aria-controls': 'suggestions-list', 'aria-expanded': 'false', 'autocapitalize': 'none', 'spellcheck': 'false', 'role': 'combobox', 'aria-label': 'Search Costco', 'data-private': 'true', 'value': ''}, bounds=DOMRect(x=461.625, y=92.890625, width=805.65625, height=40.0), x_path='html/body/div[2]/header/div/div[1]/div/div[3]/div[3]/div/div[2]/div/div[1]/input', element_hash=2100237258514702206)}, {'click_element_by_index': {'index': 22}, 'interacted_element': DOMInteractedElement(node_id=463, backend_node_id=478, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'MuiButtonBase-root MuiButton-root MuiButton-tertiary MuiButton-tertiaryPrimary MuiButton-sizeMedium MuiButton-tertiarySizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-tertiary MuiButton-tertiaryPrimary MuiButton-sizeMedium MuiButton-tertiarySizeMedium MuiButton-colorPrimary mui-1kup72y', 'tabindex': '0', 'type': 'button', 'id': 'Button_button-default', 'data-testid': 'SearchButton', 'aria-label': 'Search'}, bounds=DOMRect(x=1312.28125, y=92.890625, width=45.0, height=40.0), x_path='html/body/div[2]/header/div/div[1]/div/div[3]/div[3]/div/div[2]/div/div[2]/button', element_hash=5129702168133741150)}, {'click_element_by_index': {'index': 33}, 'interacted_element': DOMInteractedElement(node_id=8131, backend_node_id=6994, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'class': 'MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiAutocomplete-option mui-1ap9te5', 'tabindex': '-1', 'role': 'option', 'id': ':r12:-option-5', 'data-option-index': '5', 'aria-disabled': 'false', 'aria-selected': 'false', 'automation-id': 'suggestion-Warehouse', 'data-bi-private': 'false', 'data-private': 'false'}, bounds=DOMRect(x=461.625, y=345.890625, width=682.921875, height=36.0), x_path='html/body/div[2]/header/div/div[1]/div/div[3]/div[3]/div/div[2]/div/div[1]/div/div/div/li[6]', element_hash=1335762291844515354)}, {'go_to_url': {'url': 'https://www.costco.com', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 21, 'text': 'San Francisco warehouse', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=462, backend_node_id=475, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'aria-invalid': 'false', 'aria-describedby': 'typeahead-search-field-description', 'autocomplete': 'off', 'id': ':Rktail8rkvfa:', 'placeholder': 'Search Costco', 'type': 'text', 'class': 'MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused mui-s43tfo', 'aria-autocomplete': 'both', 'aria-controls': 'suggestions-list', 'aria-expanded': 'false', 'autocapitalize': 'none', 'spellcheck': 'false', 'role': 'combobox', 'aria-label': 'Search Costco', 'data-private': 'true', 'value': ''}, bounds=DOMRect(x=461.625, y=92.890625, width=805.65625, height=40.0), x_path='html/body/div[2]/header/div/div[1]/div/div[3]/div[3]/div/div[2]/div/div[1]/input', element_hash=2100237258514702206)}, {'click_element_by_index': {'index': 22}, 'interacted_element': DOMInteractedElement(node_id=468, backend_node_id=477, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'MuiButtonBase-root MuiButton-root MuiButton-tertiary MuiButton-tertiaryPrimary MuiButton-sizeMedium MuiButton-tertiarySizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-tertiary MuiButton-tertiaryPrimary MuiButton-sizeMedium MuiButton-tertiarySizeMedium MuiButton-colorPrimary mui-1kup72y', 'tabindex': '0', 'type': 'button', 'id': 'Button_button-default', 'data-testid': 'SearchButton', 'aria-label': 'Search'}, bounds=DOMRect(x=1312.28125, y=92.890625, width=45.0, height=40.0), x_path='html/body/div[2]/header/div/div[1]/div/div[3]/div[3]/div/div[2]/div/div[2]/button', element_hash=5129702168133741150)}, {'done': {'text': "Costco's San Francisco warehouse is located at:\n\n**450 10th St, San Francisco, CA 94103-4304**", 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 1b25a2e3-2d41-4a8b-b241-8d7c2b40c47f...
+Steel session 1b25a2e3-2d41-4a8b-b241-8d7c2b40c47f released successfully
+Steel session recording URL: https://app.steel.dev/sessions/1b25a2e3-2d41-4a8b-b241-8d7c2b40c47f

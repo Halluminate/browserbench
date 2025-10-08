@@ -1,0 +1,598 @@
+2025-10-08 15:59:26,146 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 15:59:26,162 - INFO - 🔗 Found URL in task: https://healthline.com, adding as initial action...
+2025-10-08 15:59:26,167 - INFO - [34m🚀 Task: What is the New York office mailing address for Health Line? You must complete the task only using the starting website. Begin task on the following url: healthline.com[0m
+2025-10-08 15:59:26,213 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 15:59:26,216 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 15:59:26,221 - INFO - ────────────────────────────────────────
+2025-10-08 15:59:26,221 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 15:59:26,221 - INFO -     👉  browser-use auth
+2025-10-08 15:59:26,221 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 15:59:26,221 - INFO - ────────────────────────────────────────
+
+2025-10-08 15:59:26,432 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 15:59:26,472 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=3d960c04-d10d-474c-9504-822e1cb0869a
+2025-10-08 15:59:27,077 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://healthline.com, new_tab: False
+2025-10-08 15:59:29,049 - INFO - 🔗 Navigated to https://healthline.com
+2025-10-08 15:59:32,162 - INFO - 
+
+2025-10-08 15:59:32,163 - INFO - 📍 Step 1:
+2025-10-08 15:59:33,379 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:59:33,391 - INFO -   [32m👍 Eval: Successfully navigated to https://www.healthline.com/. Verdict: Success[0m
+2025-10-08 15:59:33,391 - INFO -   [34m🎯 Next goal: Click the 'Connect' button to open the contact menu and then locate the New York mailing address.[0m
+2025-10-08 15:59:33,392 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 6, while_holding_ctrl: None
+2025-10-08 15:59:39,537 - INFO - 🖱️ Clicked element
+2025-10-08 15:59:47,938 - INFO - 
+
+2025-10-08 15:59:47,938 - INFO - 📍 Step 2:
+2025-10-08 15:59:49,578 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:59:49,580 - INFO -   [32m👍 Eval: Clicked Connect button, menu opened but address not yet visible. Verdict: Partial success (menu opened).[0m
+2025-10-08 15:59:49,580 - INFO -   [34m🎯 Next goal: Scroll down to reveal more of the Connect menu and extract the New York office mailing address.[0m
+2025-10-08 15:59:49,581 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 15:59:50,051 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 15:59:50,553 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the New York office mailing address for Healthline?, extract_links: False, start_from_cha
+2025-10-08 15:59:51,096 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:59:51,114 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+What is the New York office mailing address for Healthline?
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 15:59:52,917 - INFO - 
+
+2025-10-08 15:59:52,918 - INFO - 📍 Step 3:
+2025-10-08 15:59:54,566 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:59:54,567 - INFO -   [32m👍 Eval: Previous scroll loaded more of the page but address still not visible. Verdict: Partial success.[0m
+2025-10-08 15:59:54,568 - INFO -   [34m🎯 Next goal: Scroll further down to load the footer where the address likely resides and then extract the New York mailing address.[0m
+2025-10-08 15:59:54,568 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 4.0, frame_element_index: None
+2025-10-08 15:59:56,280 - INFO - 🔍 Scrolled down the page by 4.0 pages (requested: 4.0, 992px per page)
+2025-10-08 15:59:56,782 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address for Healthline, extract_links: False, start_from_char: 0
+2025-10-08 15:59:57,382 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:59:57,402 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+New York office mailing address for Healthline
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 15:59:59,188 - INFO - 
+
+2025-10-08 15:59:59,188 - INFO - 📍 Step 4:
+2025-10-08 16:00:00,407 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:00,408 - INFO -   ❔ Eval: Previous scroll loaded more content but address not found; need to scroll further down.
+2025-10-08 16:00:00,408 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the page to load the footer where the address is likely located.[0m
+2025-10-08 16:00:00,409 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 16:00:00,876 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 16:00:02,501 - INFO - 
+
+2025-10-08 16:00:02,501 - INFO - 📍 Step 5:
+2025-10-08 16:00:04,079 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:04,080 - INFO -   [32m👍 Eval: Partial success: scroll actions loaded more content but the address was still not visible.[0m
+2025-10-08 16:00:04,080 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to reveal the footer and then extract the New York office mailing address.[0m
+2025-10-08 16:00:04,081 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.5, frame_element_index: None
+2025-10-08 16:00:04,625 - INFO - 🔍 Scrolled down the page by 1.5 pages (requested: 1.5, 992px per page)
+2025-10-08 16:00:06,239 - INFO - 
+
+2025-10-08 16:00:06,239 - INFO - 📍 Step 6:
+2025-10-08 16:00:07,759 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:07,760 - INFO -   [32m👍 Eval: Previous scroll actions loaded more content but the address was still not visible. Verdict: Partial success.[0m
+2025-10-08 16:00:07,760 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to load the footer and then extract the New York office mailing address.[0m
+2025-10-08 16:00:07,761 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-08 16:00:09,793 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)
+2025-10-08 16:00:10,295 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the New York office mailing address for Healthline?, extract_links: False, start_from_cha
+2025-10-08 16:00:10,890 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:10,919 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+What is the New York office mailing address for Healthline?
+</query>
+<result>
+The New York office mailing address for Healthline is not provided in the available webpage content.
+</result>
+2025-10-08 16:00:12,447 - INFO - 
+
+2025-10-08 16:00:12,447 - INFO - 📍 Step 7:
+2025-10-08 16:00:14,222 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:14,224 - INFO -   [32m👍 Eval: Previous scroll actions did not reach the footer; address not found. Verdict: Partial success.[0m
+2025-10-08 16:00:14,224 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page to load the footer containing the New York office mailing address.[0m
+2025-10-08 16:00:14,225 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-08 16:00:18,194 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)
+2025-10-08 16:00:19,778 - INFO - 
+
+2025-10-08 16:00:19,778 - INFO - 📍 Step 8:
+2025-10-08 16:00:21,613 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:21,615 - INFO -   ❔ Eval: Previous scroll actions did not reveal the address; need to scroll further to the bottom.
+2025-10-08 16:00:21,615 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the page and extract the New York office mailing address.[0m
+2025-10-08 16:00:21,616 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 20.0, frame_element_index: None
+2025-10-08 16:00:29,713 - INFO - 🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 992px per page)
+2025-10-08 16:00:30,214 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the New York office mailing address for Healthline?, extract_links: False, start_from_cha
+2025-10-08 16:00:30,795 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:30,817 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+What is the New York office mailing address for Healthline?
+</query>
+<result>
+The New York office mailing address for Healthline is not provided in the available webpage content.
+</result>
+2025-10-08 16:00:32,427 - INFO - 
+
+2025-10-08 16:00:32,427 - INFO - 📍 Step 9:
+2025-10-08 16:00:34,287 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:34,289 - INFO -   ❔ Eval: Previous scroll actions did not reveal the address; still missing.
+2025-10-08 16:00:34,289 - INFO -   [34m🎯 Next goal: Extract the New York office mailing address from the page source using extract_structured_data.[0m
+2025-10-08 16:00:34,289 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: New York office mailing address for Healthline, extract_links: False, start_from_char: 0
+2025-10-08 16:00:34,866 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:34,885 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+New York office mailing address for Healthline
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 16:00:36,443 - INFO - 
+
+2025-10-08 16:00:36,443 - INFO - 📍 Step 10:
+2025-10-08 16:00:39,373 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:39,375 - INFO -   ❔ Eval: Previous attempts scrolled the main page and did not reveal the address; need to scroll within the Connect dropdown.
+2025-10-08 16:00:39,375 - INFO -   [34m🎯 Next goal: Scroll within the Connect dropdown container to reveal the New York mailing address and then extract it.[0m
+2025-10-08 16:00:39,376 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: 12
+2025-10-08 16:00:41,624 - INFO - 🔍 Scrolled down element 12 by 5.0 pages (requested: 5.0, 992px per page)
+2025-10-08 16:00:42,125 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:00:42,726 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:42,746 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-08 16:00:44,374 - INFO - 
+
+2025-10-08 16:00:44,374 - INFO - 📍 Step 11:
+2025-10-08 16:00:46,357 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:46,359 - INFO -   ❔ Eval: Previous scroll within Connect container (5 pages) did not reveal address; need more scrolling.
+2025-10-08 16:00:46,360 - INFO -   [34m🎯 Next goal: Scroll the Connect dropdown container further down and extract the New York office mailing address.[0m
+2025-10-08 16:00:46,360 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: 12
+2025-10-08 16:00:50,743 - INFO - 🔍 Scrolled down element 12 by 10.0 pages (requested: 10.0, 992px per page)
+2025-10-08 16:00:51,245 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address for Healthline, extract_links: False, start_from_char: 0
+2025-10-08 16:00:51,788 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:51,809 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+New York office mailing address for Healthline
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 16:00:53,397 - INFO - 
+
+2025-10-08 16:00:53,397 - INFO - 📍 Step 12:
+2025-10-08 16:00:55,002 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:00:55,004 - INFO -   [32m👍 Eval: Partial success: previous scrolls within Connect container did not reveal the address.[0m
+2025-10-08 16:00:55,004 - INFO -   [34m🎯 Next goal: Scroll further down within the Connect dropdown container (index 12) to reveal the New York office mailing address.[0m
+2025-10-08 16:00:55,005 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 20.0, frame_element_index: 12
+2025-10-08 16:01:03,758 - INFO - 🔍 Scrolled down element 12 by 20.0 pages (requested: 20.0, 992px per page)
+2025-10-08 16:01:05,366 - INFO - 
+
+2025-10-08 16:01:05,366 - INFO - 📍 Step 13:
+2025-10-08 16:01:07,273 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:07,275 - INFO -   ❔ Eval: Previous scroll within Connect container did not reveal address; need more scrolling.
+2025-10-08 16:01:07,275 - INFO -   [34m🎯 Next goal: Scroll further down within the Connect dropdown container (index 12) to reveal the New York office mailing address.[0m
+2025-10-08 16:01:07,276 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 30.0, frame_element_index: 12
+2025-10-08 16:01:20,557 - INFO - 🔍 Scrolled down element 12 by 30.0 pages (requested: 30.0, 992px per page)
+2025-10-08 16:01:22,144 - INFO - 
+
+2025-10-08 16:01:22,144 - INFO - 📍 Step 14:
+2025-10-08 16:01:24,034 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:24,036 - INFO -   ❔ Eval: Previous scroll actions did not reveal the address; address still missing.
+2025-10-08 16:01:24,036 - INFO -   [34m🎯 Next goal: Extract any text containing "New York" from the page source to obtain the mailing address.[0m
+2025-10-08 16:01:24,037 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Find any occurrence of New York on the page and return the surrounding address text., extract_lin
+2025-10-08 16:01:24,613 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:24,631 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+Find any occurrence of 'New York' on the page and return the surrounding address text.
+</query>
+<result>
+No occurrence of “New York” was found in the provided page content.
+</result>
+2025-10-08 16:01:26,220 - INFO - 
+
+2025-10-08 16:01:26,220 - INFO - 📍 Step 15:
+2025-10-08 16:01:27,638 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:27,639 - INFO -   ❔ Eval: Previous scroll actions did not reveal the address; need to explore further within Connect menu.
+2025-10-08 16:01:27,639 - INFO -   [34m🎯 Next goal: Click the button at index 32 within the Connect dropdown to open the contact page and then locate the New York office mailing address.[0m
+2025-10-08 16:01:27,639 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 32, while_holding_ctrl: None
+2025-10-08 16:01:27,770 - WARNING - No visible quad found, using first quad
+2025-10-08 16:01:29,008 - INFO - 🖱️ Clicked element
+2025-10-08 16:01:30,604 - INFO - 
+
+2025-10-08 16:01:30,604 - INFO - 📍 Step 16:
+2025-10-08 16:01:32,445 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:32,448 - INFO -   ❔ Eval: Clicked element index 32; likely opened the contact page, but we have not yet confirmed the new content.
+2025-10-08 16:01:32,448 - INFO -   [34m🎯 Next goal: Wait for the contact page to load, then extract the New York office mailing address using extract_structured_data.[0m
+2025-10-08 16:01:32,449 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-08 16:01:32,468 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:01:32,968 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address Healthline, extract_links: False, start_from_char: 0
+2025-10-08 16:01:33,558 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:33,581 - INFO - 📄 <url>
+https://www.healthline.com/
+</url>
+<query>
+New York office mailing address Healthline
+</query>
+<result>
+Information not available in the provided page.
+</result>
+2025-10-08 16:01:35,138 - INFO - 
+
+2025-10-08 16:01:35,138 - INFO - 📍 Step 17:
+2025-10-08 16:01:37,953 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:37,955 - INFO -   [31m⚠️ Eval: Failure: Clicking index 32 did not reveal the New York address and the page URL remained unchanged.[0m
+2025-10-08 16:01:37,955 - INFO -   [34m🎯 Next goal: Navigate to Healthline's contact page and extract the New York office mailing address.[0m
+2025-10-08 16:01:37,956 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.healthline.com/contact-us, new_tab: False
+2025-10-08 16:01:39,513 - INFO - 🔗 Navigated to https://www.healthline.com/contact-us
+2025-10-08 16:01:40,013 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-08 16:01:40,038 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:01:40,540 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:01:41,524 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:41,586 - INFO - 📄 <url>
+https://www.healthline.com/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-08 16:01:43,156 - INFO - 
+
+2025-10-08 16:01:43,156 - INFO - 📍 Step 18:
+2025-10-08 16:01:44,988 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:44,990 - INFO -   ❔ Eval: Previous attempt to navigate to /contact-us resulted in a 404 error page; address not found.
+2025-10-08 16:01:44,990 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' footer link (index 24) and then extract the New York office mailing address.[0m
+2025-10-08 16:01:44,991 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 24, while_holding_ctrl: None
+2025-10-08 16:01:47,367 - INFO - 🖱️ Clicked element
+2025-10-08 16:01:47,869 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-08 16:01:47,890 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:01:48,391 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:01:49,515 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:49,535 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 16:01:51,003 - INFO - 
+
+2025-10-08 16:01:51,003 - INFO - 📍 Step 19:
+2025-10-08 16:01:52,893 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:52,895 - INFO -   [31m⚠️ Eval: Failure: Clicking index 32 did not reveal the New York address and the URL remained unchanged.[0m
+2025-10-08 16:01:52,895 - INFO -   [34m🎯 Next goal: Click the footer 'Contact Us' link (index 26), wait for the page to load, and extract the New York office mailing address.[0m
+2025-10-08 16:01:52,895 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 26, while_holding_ctrl: None
+2025-10-08 16:01:55,144 - INFO - 🖱️ Clicked element
+2025-10-08 16:01:55,646 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-08 16:01:55,667 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:01:56,168 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:01:57,144 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:01:57,166 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-08 16:01:58,636 - INFO - 
+
+2025-10-08 16:01:58,636 - INFO - 📍 Step 20:
+2025-10-08 16:02:00,622 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:00,624 - INFO -   ❔ Eval: Previous actions failed to locate the address; we are now on the contact-us page with no address visible.
+2025-10-08 16:02:00,624 - INFO -   [34m🎯 Next goal: Scroll down the contact-us page to reveal the New York office mailing address.[0m
+2025-10-08 16:02:00,624 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 16:02:01,096 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 16:02:02,772 - INFO - 
+
+2025-10-08 16:02:02,772 - INFO - 📍 Step 21:
+2025-10-08 16:02:04,690 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:04,691 - INFO -   ❔ Eval: Previous action (scroll within Connect dropdown) did not reveal the address; we are now on the contact-us page with no address visible.
+2025-10-08 16:02:04,692 - INFO -   [34m🎯 Next goal: Scroll down the contact-us page to load more content and locate the New York office mailing address.[0m
+2025-10-08 16:02:04,692 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:02:05,544 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:02:06,985 - INFO - 
+
+2025-10-08 16:02:06,985 - INFO - 📍 Step 22:
+2025-10-08 16:02:08,917 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:08,919 - INFO -   ❔ Eval: Previous attempts to locate the address failed; we are still on the contact-us page without the address.
+2025-10-08 16:02:08,919 - INFO -   [34m🎯 Next goal: Scroll down the contact-us page to reveal more content, then extract the New York office mailing address.[0m
+2025-10-08 16:02:08,920 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 16:02:09,393 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 16:02:09,894 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:02:10,458 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:10,479 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information unavailable.
+</result>
+2025-10-08 16:02:12,007 - INFO - 
+
+2025-10-08 16:02:12,007 - INFO - 📍 Step 23:
+2025-10-08 16:02:14,311 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:14,313 - INFO -   [32m👍 Eval: Previous scroll down by one page did not reveal the address. Verdict: Partial success.[0m
+2025-10-08 16:02:14,313 - INFO -   [34m🎯 Next goal: Scroll further down the contact-us page to reveal the New York office mailing address, then extract it.[0m
+2025-10-08 16:02:14,314 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:02:15,176 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:02:15,679 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address for Healthline, extract_links: False, start_from_char: 0
+2025-10-08 16:02:16,185 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:16,206 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address for Healthline
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 16:02:17,650 - INFO - 
+
+2025-10-08 16:02:17,651 - INFO - 📍 Step 24:
+2025-10-08 16:02:20,132 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:20,135 - INFO -   [32m👍 Eval: Previous attempts to locate the address via scrolling and direct navigation were unsuccessful; address not found.[0m
+2025-10-08 16:02:20,135 - INFO -   [34m🎯 Next goal: Expand the Connect menu to reveal its options and locate the New York office mailing address or a link to it.[0m
+2025-10-08 16:02:20,135 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 6, while_holding_ctrl: None
+2025-10-08 16:02:22,384 - INFO - 🖱️ Clicked element
+2025-10-08 16:02:23,988 - INFO - 
+
+2025-10-08 16:02:23,988 - INFO - 📍 Step 25:
+2025-10-08 16:02:26,178 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:26,180 - INFO -   ❔ Eval: Previous attempts to locate the address via scrolling and navigation failed; address not found.
+2025-10-08 16:02:26,180 - INFO -   [34m🎯 Next goal: Click the 'About Us' link (index 37) to navigate to the About page and then extract the New York office mailing address.[0m
+2025-10-08 16:02:26,180 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 37, while_holding_ctrl: None
+2025-10-08 16:02:28,296 - INFO - 🖱️ Clicked element
+2025-10-08 16:02:29,901 - INFO - 
+
+2025-10-08 16:02:29,901 - INFO - 📍 Step 26:
+2025-10-08 16:02:31,717 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:31,719 - INFO -   [32m👍 Eval: Previous scroll actions on the homepage and Connect dropdown failed; we are now on the contact-us page with no address visible. Verdict: Partial success (page loaded but address not found).[0m
+2025-10-08 16:02:31,719 - INFO -   [34m🎯 Next goal: Scroll down the contact-us page to reveal the New York office mailing address.[0m
+2025-10-08 16:02:31,720 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:02:32,625 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:02:34,073 - INFO - 
+
+2025-10-08 16:02:34,073 - INFO - 📍 Step 27:
+2025-10-08 16:02:35,762 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:35,764 - INFO -   ❔ Eval: Previous scroll actions on the contact-us page did not reveal the address; we need more scrolling.
+2025-10-08 16:02:35,764 - INFO -   [34m🎯 Next goal: Scroll down the contact-us page to reveal the New York office mailing address and then extract it.[0m
+2025-10-08 16:02:35,765 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:02:36,623 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:02:37,124 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:02:37,753 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:37,775 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information unavailable.
+</result>
+2025-10-08 16:02:39,400 - INFO - 
+
+2025-10-08 16:02:39,400 - INFO - 📍 Step 28:
+2025-10-08 16:02:41,010 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:41,012 - INFO -   ❔ Eval: Previous steps failed to locate the address on the homepage and contact page.
+2025-10-08 16:02:41,012 - INFO -   [34m🎯 Next goal: Switch to tab 9EA6 and extract the New York office mailing address.[0m
+2025-10-08 16:02:41,013 - INFO -   🦾 [34m[ACTION 1/2][0m switch_tab: tab_id: 9EA6
+2025-10-08 16:02:41,083 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=3d960c04-d10d-474c-9504-822e1cb0869a
+2025-10-08 16:02:41,736 - INFO - 🔄  Switched to tab #9EA6
+2025-10-08 16:02:42,238 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:02:43,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:43,152 - INFO - 📄 <url>
+https://www.healthline.com/about/additional-information
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-08 16:02:44,618 - INFO - 
+
+2025-10-08 16:02:44,618 - INFO - 📍 Step 29:
+2025-10-08 16:02:46,347 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:46,349 - INFO -   ❔ Eval: Previous action was clicking the Connect menu; address not found. Current page is the Additional Information page with no address visible yet.
+2025-10-08 16:02:46,349 - INFO -   [34m🎯 Next goal: Scroll down the Additional Information page to reveal the footer and then extract the New York office mailing address.[0m
+2025-10-08 16:02:46,349 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-08 16:02:48,408 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)
+2025-10-08 16:02:49,883 - INFO - 
+
+2025-10-08 16:02:49,884 - INFO - 📍 Step 30:
+2025-10-08 16:02:51,520 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:51,522 - INFO -   ❔ Eval: Previous scroll actions on other pages failed to locate the address; we are now on the Additional Information page with no address visible.
+2025-10-08 16:02:51,522 - INFO -   [34m🎯 Next goal: Scroll down the Additional Information page to reveal the footer and then extract the New York office mailing address.[0m
+2025-10-08 16:02:51,522 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-08 16:02:53,523 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)
+2025-10-08 16:02:54,025 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:02:54,585 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:54,606 - INFO - 📄 <url>
+https://www.healthline.com/about/additional-information
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information unavailable.
+</result>
+2025-10-08 16:02:56,086 - INFO - 
+
+2025-10-08 16:02:56,086 - INFO - 📍 Step 31:
+2025-10-08 16:02:57,902 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:57,904 - INFO -   ❔ Eval: Previous scroll actions on the Additional Information page did not reveal the address; we need to scroll further down.
+2025-10-08 16:02:57,904 - INFO -   [34m🎯 Next goal: Scroll further down the Additional Information page to reveal the footer and then extract the New York office mailing address.[0m
+2025-10-08 16:02:57,905 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 16:02:58,371 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 16:02:58,874 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address for Healthline, extract_links: False, start_from_char: 0
+2025-10-08 16:02:59,504 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:59,524 - INFO - 📄 <url>
+https://www.healthline.com/about/additional-information
+</url>
+<query>
+New York office mailing address for Healthline
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 16:03:00,976 - INFO - 
+
+2025-10-08 16:03:00,977 - INFO - 📍 Step 32:
+2025-10-08 16:03:02,837 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:02,838 - INFO -   ❔ Eval: Previous steps failed to locate the address; we are ready to navigate to the Contact Us page.
+2025-10-08 16:03:02,838 - INFO -   [34m🎯 Next goal: Open the Contact Us page via footer link and extract the New York office mailing address.[0m
+2025-10-08 16:03:02,838 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 15, while_holding_ctrl: None
+2025-10-08 16:03:05,229 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:05,731 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-08 16:03:05,752 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:03:06,253 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:03:06,946 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:06,971 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-08 16:03:08,418 - INFO - 
+
+2025-10-08 16:03:08,418 - INFO - 📍 Step 33:
+2025-10-08 16:03:09,971 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:09,975 - INFO -   ❔ Eval: Previous action scrolled the Additional Information page but did not reveal the address; still missing.
+2025-10-08 16:03:09,975 - INFO -   [34m🎯 Next goal: Scroll down the Contact Us page to reveal the New York office mailing address.[0m
+2025-10-08 16:03:09,975 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 16:03:10,458 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 16:03:11,921 - INFO - 
+
+2025-10-08 16:03:11,921 - INFO - 📍 Step 34:
+2025-10-08 16:03:14,281 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:14,282 - INFO -   ❔ Eval: Previous scroll actions on the Contact Us page did not reveal the address; still missing.
+2025-10-08 16:03:14,282 - INFO -   [34m🎯 Next goal: Scroll further down the Contact Us page to reveal the New York office mailing address and then extract it.[0m
+2025-10-08 16:03:14,283 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-08 16:03:14,757 - INFO - 🔍 Scrolled down the page by one page (992px)
+2025-10-08 16:03:15,260 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address for Healthline, extract_links: False, start_from_char: 0
+2025-10-08 16:03:15,765 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:15,790 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address for Healthline
+</query>
+<result>
+Information not available in the provided webpage content.
+</result>
+2025-10-08 16:03:17,401 - INFO - 
+
+2025-10-08 16:03:17,401 - INFO - 📍 Step 35:
+2025-10-08 16:03:19,103 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:19,105 - INFO -   ❔ Eval: Previous scroll actions did not reveal the address; still missing.
+2025-10-08 16:03:19,105 - INFO -   [34m🎯 Next goal: Scroll further down the Contact Us page to reveal the New York office mailing address.[0m
+2025-10-08 16:03:19,106 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:03:19,975 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:03:21,488 - INFO - 
+
+2025-10-08 16:03:21,488 - INFO - 📍 Step 36:
+2025-10-08 16:03:23,126 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:23,128 - INFO -   ❔ Eval: Previous scroll actions on contact-us page did not reveal the address; still missing.
+2025-10-08 16:03:23,128 - INFO -   [34m🎯 Next goal: Click the 'See additional information' link (index 24) to navigate to the page that may contain the New York office mailing address.[0m
+2025-10-08 16:03:23,128 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 24, while_holding_ctrl: None
+2025-10-08 16:03:25,273 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:26,795 - INFO - 
+
+2025-10-08 16:03:26,795 - INFO - 📍 Step 37:
+2025-10-08 16:03:28,980 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:28,983 - INFO -   [31m⚠️ Eval: Previous scroll action did not reveal the New York address; verdict: failure.[0m
+2025-10-08 16:03:28,983 - INFO -   [34m🎯 Next goal: Scroll further down the Contact Us page to reveal the New York office mailing address and then extract it.[0m
+2025-10-08 16:03:28,983 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:03:29,866 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:03:30,367 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:03:30,963 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:30,990 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information not available in the provided page.
+</result>
+2025-10-08 16:03:32,501 - INFO - 
+
+2025-10-08 16:03:32,501 - INFO - 📍 Step 38:
+2025-10-08 16:03:34,273 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:34,276 - INFO -   [31m⚠️ Eval: Scrolling actions on the Contact Us page did not reveal the New York address; failure to locate the address.[0m
+2025-10-08 16:03:34,276 - INFO -   [34m🎯 Next goal: Extract the New York office mailing address from the current Contact Us page using extract_structured_data.[0m
+2025-10-08 16:03:34,277 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: New York office mailing address, extract_links: False, start_from_char: 0
+2025-10-08 16:03:34,842 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:34,863 - INFO - 📄 <url>
+https://www.healthline.com/about/contact-us
+</url>
+<query>
+New York office mailing address
+</query>
+<result>
+Information not available in the provided page.
+</result>
+2025-10-08 16:03:36,326 - INFO - 
+
+2025-10-08 16:03:36,326 - INFO - 📍 Step 39:
+2025-10-08 16:03:38,734 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:38,735 - INFO -   [31m⚠️ Eval: Scrolling the Contact Us page did not reveal the New York address; verdict: failure.[0m
+2025-10-08 16:03:38,735 - INFO -   [34m🎯 Next goal: Expand the Connect menu by clicking the Connect button (index 6) to reveal its contents and locate the New York office mailing address.[0m
+2025-10-08 16:03:38,736 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 6, while_holding_ctrl: None
+2025-10-08 16:03:40,573 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:42,102 - INFO - 
+
+2025-10-08 16:03:42,102 - INFO - 📍 Step 40:
+2025-10-08 16:03:43,576 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:43,578 - INFO -   ❔ Eval: Failed to locate the New York office mailing address after extensive scrolling and navigation; address not present in page content.
+2025-10-08 16:03:43,578 - INFO - 
+2025-10-08 16:03:43,579 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to find the New York office mailing address for Healthline on the healthline.com website. Multiple navigation attempts (scrolling, expanding the Connect menu, visiting contact pages, and extracting page source) did not reveal any address information. Therefore, the requested information could not be retrieved.' success=False files_to_display=[]
+2025-10-08 16:03:43,601 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to find the New York office mailing address for Healthline on the healthline.com website. Multiple navigation attempts (scrolling, expanding the Connect menu, visiting contact pages, and extracting page source) did not reveal any address information. Therefore, the requested information could not be retrieved.
+
+
+2025-10-08 16:03:43,604 - INFO - ❌ Task completed without success
+Creating Steel session with advanced stealth features...
+Steel session created with ID: 3d960c04-d10d-474c-9504-822e1cb0869a
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=3d960c04-d10d-474c-9504-822e1cb0869a
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://healthline.com', extracted_content='🔗 Navigated to https://healthline.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 759.71875, 'click_y': 37.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nWhat is the New York office mailing address for Healthline?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nWhat is the New York office mailing address for Healthline?\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 4.0 pages (requested: 4.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 4.0 pages (requested: 4.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 1.5 pages (requested: 1.5, 992px per page)', extracted_content='🔍 Scrolled down the page by 1.5 pages (requested: 1.5, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nWhat is the New York office mailing address for Healthline?\n</query>\n<result>\nThe New\u202fYork office mailing address for Healthline is not provided in the available webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nWhat is the New York office mailing address for Healthline?\n</query>\n<result>\nThe New\u202fYork office mailing address for Healthline is not provided in the available webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 20.0 pages (requested: 20.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nWhat is the New York office mailing address for Healthline?\n</query>\n<result>\nThe New\u202fYork office mailing address for Healthline is not provided in the available webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nWhat is the New York office mailing address for Healthline?\n</query>\n<result>\nThe New\u202fYork office mailing address for Healthline is not provided in the available webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down element 12 by 5.0 pages (requested: 5.0, 992px per page)', extracted_content='🔍 Scrolled down element 12 by 5.0 pages (requested: 5.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down element 12 by 10.0 pages (requested: 10.0, 992px per page)', extracted_content='🔍 Scrolled down element 12 by 10.0 pages (requested: 10.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down element 12 by 20.0 pages (requested: 20.0, 992px per page)', extracted_content='🔍 Scrolled down element 12 by 20.0 pages (requested: 20.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down element 12 by 30.0 pages (requested: 30.0, 992px per page)', extracted_content='🔍 Scrolled down element 12 by 30.0 pages (requested: 30.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://www.healthline.com/\n</url>\n<query>\nFind any occurrence of 'New York' on the page and return the surrounding address text.\n</query>\n<result>\nNo occurrence of “New York” was found in the provided page content.\n</result>", extracted_content="<url>\nhttps://www.healthline.com/\n</url>\n<query>\nFind any occurrence of 'New York' on the page and return the surrounding address text.\n</query>\n<result>\nNo occurrence of “New York” was found in the provided page content.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 410.0, 'click_y': 530.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address Healthline\n</query>\n<result>\nInformation not available in the provided page.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/\n</url>\n<query>\nNew York office mailing address Healthline\n</query>\n<result>\nInformation not available in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.healthline.com/contact-us', extracted_content='🔗 Navigated to https://www.healthline.com/contact-us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1094.59375, 'click_y': 978.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1094.59375, 'click_y': 740.15625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 759.71875, 'click_y': 37.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 556.203125, 'click_y': 790.625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #9EA6', extracted_content='Switched to tab #9EA6', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/additional-information\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/additional-information\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/additional-information\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/additional-information\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/additional-information\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/additional-information\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1094.59375, 'click_y': 554.546875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (992px)', extracted_content='🔍 Scrolled down the page by one page (992px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address for Healthline\n</query>\n<result>\nInformation not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 556.203125, 'click_y': 790.625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided page.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided page.\n</result>', extracted_content='<url>\nhttps://www.healthline.com/about/contact-us\n</url>\n<query>\nNew York office mailing address\n</query>\n<result>\nInformation not available in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 759.71875, 'click_y': 37.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to find the New York office mailing address for Healthline on the healthline.com websit - 224 more characters', extracted_content='I was unable to find the New York office mailing address for Healthline on the healthline.com website. Multiple navigation attempts (scrolling, expanding the Connect menu, visiting contact pages, and extracting page source) did not reveal any address information. Therefore, the requested information could not be retrieved.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://healthline.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 6}, 'interacted_element': DOMInteractedElement(node_id=542, backend_node_id=589, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'css-184ra2y', 'role': 'menuitem', 'tabindex': '0', 'aria-haspopup': 'true', 'aria-label': 'Expand Connect options', 'aria-controls': 'nav-panel-flyout', 'type': 'button', 'aria-expanded': 'false'}, bounds=DOMRect(x=719.203125, y=23.0, width=81.03125, height=28.0), x_path='html/body/div[3]/div[1]/div[3]/div[1]/div[1]/div/div/div[4]/ul/li[5]/button', element_hash=1171662470491822616)}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the New York office mailing address for Healthline?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 4.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address for Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the New York office mailing address for Healthline?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 20.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the New York office mailing address for Healthline?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address for Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0, 'frame_element_index': 12}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0, 'frame_element_index': 12}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address for Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 20.0, 'frame_element_index': 12}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 30.0, 'frame_element_index': 12}, 'interacted_element': None}, {'extract_structured_data': {'query': "Find any occurrence of 'New York' on the page and return the surrounding address text.", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 32}, 'interacted_element': DOMInteractedElement(node_id=29847, backend_node_id=3186, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'css-noy73n', 'aria-hidden': 'true', 'type': 'button'}, bounds=DOMRect(x=410.0, y=530.0, width=0.0, height=0.0), x_path='html/body/div[3]/div[1]/div[3]/div[1]/div[2]/div/div[2]/div/div[2]/button[2]', element_hash=917361976332519337)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.healthline.com/contact-us', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 24}, 'interacted_element': DOMInteractedElement(node_id=723, backend_node_id=4483, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'css-1c2ok3c css-1drrl05', 'href': 'https://www.healthline.com/about/contact-us'}, bounds=DOMRect(x=1060.0, y=964.5, width=69.1875, height=28.0), x_path='html/body/div[3]/footer/div[1]/div/div[2]/div/div/ul[1]/li[2]/a', element_hash=139933576673965713)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 26}, 'interacted_element': DOMInteractedElement(node_id=1612, backend_node_id=5636, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'css-1c2ok3c css-1drrl05', 'href': 'https://www.healthline.com/about/contact-us'}, bounds=DOMRect(x=1060.0, y=726.15625, width=69.1875, height=28.0), x_path='html/body/div[3]/footer/div[1]/div/div[2]/div/div/ul[1]/li[2]/a', element_hash=139933576673965713)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address for Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 6}, 'interacted_element': DOMInteractedElement(node_id=5965, backend_node_id=6783, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'css-184ra2y', 'role': 'menuitem', 'tabindex': '0', 'aria-haspopup': 'true', 'aria-label': 'Expand Connect options', 'aria-controls': 'nav-panel-flyout', 'type': 'button', 'aria-expanded': 'false'}, bounds=DOMRect(x=719.203125, y=23.0, width=81.03125, height=28.0), x_path='html/body/div[3]/div[1]/div[3]/div[1]/div[1]/div/div/div[4]/ul/li[5]/button', element_hash=1171662470491822616)}, {'click_element_by_index': {'index': 37}, 'interacted_element': DOMInteractedElement(node_id=7157, backend_node_id=6924, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'css-1gey6dm', 'target': '_blank', 'rel': 'noopener noreferrer', 'href': 'https://www.healthline.com/additional-information'}, bounds=DOMRect(x=475.96875, y=783.625, width=160.46875, height=14.0), x_path='html/body/div[3]/footer/div[1]/div/div[1]/div/a', element_hash=258605582020457240)}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'switch_tab': {'tab_id': '9EA6'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address for Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 15}, 'interacted_element': DOMInteractedElement(node_id=2999, backend_node_id=689, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'css-1c2ok3c css-1drrl05', 'href': 'https://www.healthline.com/about/contact-us'}, bounds=DOMRect(x=1060.0, y=540.546875, width=69.1875, height=28.0), x_path='html/body/div[3]/footer/div[1]/div/div[2]/div/div/ul[1]/li[2]/a', element_hash=139933576673965713)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address for Healthline', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 24}, 'interacted_element': DOMInteractedElement(node_id=3432, backend_node_id=1587, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'css-1gey6dm', 'target': '_blank', 'rel': 'noopener noreferrer', 'href': 'https://www.healthline.com/additional-information'}, bounds=DOMRect(x=475.96875, y=783.625, width=160.46875, height=14.0), x_path='html/body/div[3]/footer/div[1]/div/div[1]/div/a', element_hash=258605582020457240)}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'New York office mailing address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 6}, 'interacted_element': DOMInteractedElement(node_id=6031, backend_node_id=1495, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'css-184ra2y', 'role': 'menuitem', 'tabindex': '0', 'aria-haspopup': 'true', 'aria-label': 'Expand Connect options', 'aria-controls': 'nav-panel-flyout', 'type': 'button', 'aria-expanded': 'false'}, bounds=DOMRect(x=719.203125, y=23.0, width=81.03125, height=28.0), x_path='html/body/div[3]/div[1]/div[3]/div[1]/div[1]/div/div/div[4]/ul/li[5]/button', element_hash=1171662470491822616)}, {'done': {'text': 'I was unable to find the New York office mailing address for Healthline on the healthline.com website. Multiple navigation attempts (scrolling, expanding the Connect menu, visiting contact pages, and extracting page source) did not reveal any address information. Therefore, the requested information could not be retrieved.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 3d960c04-d10d-474c-9504-822e1cb0869a...
+Steel session 3d960c04-d10d-474c-9504-822e1cb0869a released successfully
+Steel session recording URL: https://app.steel.dev/sessions/3d960c04-d10d-474c-9504-822e1cb0869a

@@ -1,0 +1,123 @@
+2025-10-08 15:58:00,372 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 15:58:00,389 - INFO - 🔗 Found URL in task: https://people.com, adding as initial action...
+2025-10-08 15:58:00,394 - INFO - [34m🚀 Task: Where can I find information on sweepstakes competitions? You must complete the task only using the starting website. Begin task on the following url: people.com[0m
+2025-10-08 15:58:00,445 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 15:58:00,447 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 15:58:00,452 - INFO - ────────────────────────────────────────
+2025-10-08 15:58:00,452 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 15:58:00,452 - INFO -     👉  browser-use auth
+2025-10-08 15:58:00,452 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 15:58:00,452 - INFO - ────────────────────────────────────────
+
+2025-10-08 15:58:00,668 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 15:58:00,714 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=774d4664-34c0-4e06-8e6f-0b335badac1c
+2025-10-08 15:58:01,234 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://people.com, new_tab: False
+2025-10-08 15:58:03,489 - INFO - 🔗 Navigated to https://people.com
+2025-10-08 15:58:06,579 - INFO - 
+
+2025-10-08 15:58:06,579 - INFO - 📍 Step 1:
+2025-10-08 15:58:08,011 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:08,023 - INFO -   [31m⚠️ Eval: The page loaded as empty, indicating the content has not rendered yet. Verdict: Failure[0m
+2025-10-08 15:58:08,023 - INFO -   [34m🎯 Next goal: Wait for the People.com homepage to fully load so that interactive elements become available.[0m
+2025-10-08 15:58:08,023 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-08 15:58:08,041 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 15:58:11,707 - INFO - 
+
+2025-10-08 15:58:11,707 - INFO - 📍 Step 2:
+2025-10-08 15:58:13,219 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:13,220 - INFO -   [32m👍 Eval: Waited 5 seconds and the homepage loaded with interactive elements; Verdict: Success[0m
+2025-10-08 15:58:13,220 - INFO -   [34m🎯 Next goal: Click the 'Sweepstakes' link to open the sweepstakes page.[0m
+2025-10-08 15:58:13,220 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 12, while_holding_ctrl: None
+2025-10-08 15:58:14,891 - INFO - 🖱️ Clicked element
+2025-10-08 15:58:16,678 - INFO - 
+
+2025-10-08 15:58:16,678 - INFO - 📍 Step 3:
+2025-10-08 15:58:18,154 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:18,155 - INFO -   ❔ Eval: Uncertain – the click may have triggered navigation but the page content has not changed yet.
+2025-10-08 15:58:18,155 - INFO -   [34m🎯 Next goal: Wait for the sweepstakes page to load and then verify its content.[0m
+2025-10-08 15:58:18,156 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-08 15:58:18,173 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 15:58:21,187 - ERROR - CDP Error for request 163: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 15:58:21,188 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 15:58:21,188 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-08 15:58:21,188 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-08 15:58:21,565 - INFO - 
+
+2025-10-08 15:58:21,565 - INFO - 📍 Step 4:
+2025-10-08 15:58:23,116 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:23,118 - INFO -   ❔ Eval: Uncertain – after clicking the sweepstakes link and waiting, the page still appears empty.
+2025-10-08 15:58:23,118 - INFO -   [34m🎯 Next goal: Wait for the sweepstakes page to load fully and then extract the list of sweepstakes competitions.[0m
+2025-10-08 15:58:23,118 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-08 15:58:23,137 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 15:58:25,640 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: List all sweepstakes competitions on the People.com sweepstakes page with their entry deadlines and b
+2025-10-08 15:58:26,091 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:26,111 - INFO - 📄 <url>
+https://people.com/sweepstakes
+</url>
+<query>
+List all sweepstakes competitions on the People.com sweepstakes page with their entry deadlines and brief descriptions.
+</query>
+<result>
+Information on sweepstakes competitions, including their entry deadlines and descriptions, is not available in the provided page content.
+</result>
+2025-10-08 15:58:27,202 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=774d4664-34c0-4e06-8e6f-0b335badac1c
+2025-10-08 15:58:27,930 - INFO - 
+
+2025-10-08 15:58:27,931 - INFO - 📍 Step 5:
+2025-10-08 15:58:30,265 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:30,267 - INFO -   [31m⚠️ Eval: Failure – after clicking the sweepstakes link and waiting, the sweepstakes listings were not visible.[0m
+2025-10-08 15:58:30,268 - INFO -   [34m🎯 Next goal: Scroll down inside the sweepstakes iframe to load the list of sweepstakes competitions.[0m
+2025-10-08 15:58:30,268 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 2.0, frame_element_index: 23
+2025-10-08 15:58:30,549 - ERROR - CDP Error for request 31: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-08 15:58:30,618 - ERROR - CDP Error for request 34: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-08 15:58:31,301 - ERROR - CDP Error for request 40: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-08 15:58:31,376 - ERROR - CDP Error for request 43: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-08 15:58:31,743 - INFO - 🔍 Scrolled down element 23 by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 15:58:32,719 - ERROR - CDP Error for request 55: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 15:58:32,786 - ERROR - CDP Error for request 61: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 15:58:32,787 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 15:58:32,839 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#51d8)]         ❌ Failed (0.12s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-08 15:58:32,861 - ERROR - ❌ EventBus_b8bd0b5a🟢(⏳ 0 | ▶️ 1 | ✅ 33 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#51d8 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-08 15:58:32,861 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 15:58:32,861 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-08 15:58:32,942 - INFO - 
+
+2025-10-08 15:58:32,942 - INFO - 📍 Step 6:
+2025-10-08 15:58:36,432 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 15:58:36,434 - INFO -   [32m👍 Eval: Success – scrolling revealed the sweepstakes listings.[0m
+2025-10-08 15:58:36,434 - INFO -   [34m🎯 Next goal: Provide the user with the location of sweepstakes information and a summary of the competitions.[0m
+2025-10-08 15:58:36,435 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: You can find information on sweepstakes competitions on People.com under the Sweepstakes section: https://people.com/swee
+2025-10-08 15:58:36,455 - INFO - 
+📄 [32m Final Result:[0m 
+You can find information on sweepstakes competitions on People.com under the Sweepstakes section: https://people.com/sweepstakes. The page lists the current sweepstakes competitions with their entry deadlines and brief descriptions:
+
+1. **People – You Deserve a Break Sweepstakes** – "Planning a trip? A party? Or a style change? Enter for a chance to win $25,000 to get the break you deserve!" – 1 entry per day – Ends **January 31, 2026**.
+2. **Southern Living – Head Start on Holidays Giveaway** – "The best gift givers shop early! Enter daily for a chance to win a $100 Walmart eGift Card to get a head start on holiday shopping." – 1 entry per day – Ends **October 31, 2025**.
+3. **Dreamy Island Getaway to RIU Palace Punta Cana** – "Enter for a chance to win a 4-night all‑inclusive stay for two to RIU Palace Punta Cana." – 1 entry per person – Ends **October 31, 2025**.
+4. **Simply Recipes – Fall Food Favorites Sweepstakes** – "Celebrate the flavors of the season! Enter for a chance to win $2.5k to enjoy cozy fall meals." – 1 entry per day – Ends **October 31, 2025**.
+5. **Midwest Living – The Touchdown‑Worthy Tailgate Sweepstakes** – "Enter for a chance to win $1,000 towards your next tailgate!" – 1 entry per person – Ends **November 20, 2025**.
+6. **Byrdie – Foliage & Fun Sweepstakes** – "Fall is for friendship! Enter for a chance to win $2.5k for fall‑inspired fun!" – 1 entry per day – Ends **October 31, 2025**.
+7. **Verywell Mind – Fall For Fall Sweepstakes** – "Get ready to embrace the cozy vibes of the fall season when you enter for a chance to win $2.5k." – 1 entry per day – Ends **October 31, 2025**.
+8. **Entertainment Weekly – Art of Entertaining Sweepstakes** – "Enter for a chance to win $25,000 & get ready to do the most epic home theater makeover you've seen." – 1 entry per day – Ends **January 31, 2026**.
+9. **Real Simple – Drab to Fab Sweepstakes** – "Freshen up your living space! Enter for a chance to win $25,000 to flip your home from drab to fab." – 1 entry per day – Ends **January 31, 2026**.
+10. **Shape – Reset Your Ways Giveaway** – "Enter for a chance to win $25,000 to reset your body & clear your mind." – 1 entry per day – Ends **January 31, 2026**.
+
+These entries provide the requested information on sweepstakes competitions, their deadlines, and brief descriptions.
+
+
+2025-10-08 15:58:36,456 - INFO - ✅ Task completed successfully
+Creating Steel session with advanced stealth features...
+Steel session created with ID: 774d4664-34c0-4e06-8e6f-0b335badac1c
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=774d4664-34c0-4e06-8e6f-0b335badac1c
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://people.com', extracted_content='🔗 Navigated to https://people.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1490.34375, 'click_y': 55.890625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://people.com/sweepstakes\n</url>\n<query>\nList all sweepstakes competitions on the People.com sweepstakes page with their entry deadlines and brief descriptions.\n</query>\n<result>\nInformation on sweepstakes competitions, including their entry deadlines and descriptions, is not available in the provided page content.\n</result>', extracted_content='<url>\nhttps://people.com/sweepstakes\n</url>\n<query>\nList all sweepstakes competitions on the People.com sweepstakes page with their entry deadlines and brief descriptions.\n</query>\n<result>\nInformation on sweepstakes competitions, including their entry deadlines and descriptions, is not available in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down element 23 by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down element 23 by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - You can find information on sweepstakes competitions on People.com under the Sweepstakes section: ht - 2224 more characters', extracted_content='You can find information on sweepstakes competitions on People.com under the Sweepstakes section: https://people.com/sweepstakes. The page lists the current sweepstakes competitions with their entry deadlines and brief descriptions:\n\n1. **People – You Deserve a Break Sweepstakes** – "Planning a trip? A party? Or a style change? Enter for a chance to win $25,000 to get the break you deserve!" – 1 entry per day – Ends **January 31, 2026**.\n2. **Southern Living – Head Start on Holidays Giveaway** – "The best gift givers shop early! Enter daily for a chance to win a $100 Walmart eGift Card to get a head start on holiday shopping." – 1 entry per day – Ends **October 31, 2025**.\n3. **Dreamy Island Getaway to RIU Palace Punta Cana** – "Enter for a chance to win a 4-night all‑inclusive stay for two to RIU Palace Punta Cana." – 1 entry per person – Ends **October 31, 2025**.\n4. **Simply Recipes – Fall Food Favorites Sweepstakes** – "Celebrate the flavors of the season! Enter for a chance to win $2.5k to enjoy cozy fall meals." – 1 entry per day – Ends **October 31, 2025**.\n5. **Midwest Living – The Touchdown‑Worthy Tailgate Sweepstakes** – "Enter for a chance to win $1,000 towards your next tailgate!" – 1 entry per person – Ends **November 20, 2025**.\n6. **Byrdie – Foliage & Fun Sweepstakes** – "Fall is for friendship! Enter for a chance to win $2.5k for fall‑inspired fun!" – 1 entry per day – Ends **October 31, 2025**.\n7. **Verywell Mind – Fall For Fall Sweepstakes** – "Get ready to embrace the cozy vibes of the fall season when you enter for a chance to win $2.5k." – 1 entry per day – Ends **October 31, 2025**.\n8. **Entertainment Weekly – Art of Entertaining Sweepstakes** – "Enter for a chance to win $25,000 & get ready to do the most epic home theater makeover you\'ve seen." – 1 entry per day – Ends **January 31, 2026**.\n9. **Real Simple – Drab to Fab Sweepstakes** – "Freshen up your living space! Enter for a chance to win $25,000 to flip your home from drab to fab." – 1 entry per day – Ends **January 31, 2026**.\n10. **Shape – Reset Your Ways Giveaway** – "Enter for a chance to win $25,000 to reset your body & clear your mind." – 1 entry per day – Ends **January 31, 2026**.\n\nThese entries provide the requested information on sweepstakes competitions, their deadlines, and brief descriptions.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://people.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 12}, 'interacted_element': DOMInteractedElement(node_id=527, backend_node_id=501, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/sweepstakes', 'rel': 'nocaes'}, bounds=DOMRect(x=1450.6875, y=46.890625, width=79.3125, height=18.0), x_path='html/body/header/div[1]/div[3]/ul/li[6]/a', element_hash=185112614355547971)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'List all sweepstakes competitions on the People.com sweepstakes page with their entry deadlines and brief descriptions.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0, 'frame_element_index': 23}, 'interacted_element': None}, {'done': {'text': 'You can find information on sweepstakes competitions on People.com under the Sweepstakes section: https://people.com/sweepstakes. The page lists the current sweepstakes competitions with their entry deadlines and brief descriptions:\n\n1. **People – You Deserve a Break Sweepstakes** – "Planning a trip? A party? Or a style change? Enter for a chance to win $25,000 to get the break you deserve!" – 1 entry per day – Ends **January 31, 2026**.\n2. **Southern Living – Head Start on Holidays Giveaway** – "The best gift givers shop early! Enter daily for a chance to win a $100 Walmart eGift Card to get a head start on holiday shopping." – 1 entry per day – Ends **October 31, 2025**.\n3. **Dreamy Island Getaway to RIU Palace Punta Cana** – "Enter for a chance to win a 4-night all‑inclusive stay for two to RIU Palace Punta Cana." – 1 entry per person – Ends **October 31, 2025**.\n4. **Simply Recipes – Fall Food Favorites Sweepstakes** – "Celebrate the flavors of the season! Enter for a chance to win $2.5k to enjoy cozy fall meals." – 1 entry per day – Ends **October 31, 2025**.\n5. **Midwest Living – The Touchdown‑Worthy Tailgate Sweepstakes** – "Enter for a chance to win $1,000 towards your next tailgate!" – 1 entry per person – Ends **November 20, 2025**.\n6. **Byrdie – Foliage & Fun Sweepstakes** – "Fall is for friendship! Enter for a chance to win $2.5k for fall‑inspired fun!" – 1 entry per day – Ends **October 31, 2025**.\n7. **Verywell Mind – Fall For Fall Sweepstakes** – "Get ready to embrace the cozy vibes of the fall season when you enter for a chance to win $2.5k." – 1 entry per day – Ends **October 31, 2025**.\n8. **Entertainment Weekly – Art of Entertaining Sweepstakes** – "Enter for a chance to win $25,000 & get ready to do the most epic home theater makeover you\'ve seen." – 1 entry per day – Ends **January 31, 2026**.\n9. **Real Simple – Drab to Fab Sweepstakes** – "Freshen up your living space! Enter for a chance to win $25,000 to flip your home from drab to fab." – 1 entry per day – Ends **January 31, 2026**.\n10. **Shape – Reset Your Ways Giveaway** – "Enter for a chance to win $25,000 to reset your body & clear your mind." – 1 entry per day – Ends **January 31, 2026**.\n\nThese entries provide the requested information on sweepstakes competitions, their deadlines, and brief descriptions.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 774d4664-34c0-4e06-8e6f-0b335badac1c...
+Steel session 774d4664-34c0-4e06-8e6f-0b335badac1c released successfully
+Steel session recording URL: https://app.steel.dev/sessions/774d4664-34c0-4e06-8e6f-0b335badac1c

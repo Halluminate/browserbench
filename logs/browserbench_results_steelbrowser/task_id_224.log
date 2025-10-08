@@ -1,0 +1,147 @@
+2025-10-08 16:02:36,273 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 16:02:36,288 - INFO - 🔗 Found URL in task: https://ndtv.com, adding as initial action...
+2025-10-08 16:02:36,293 - INFO - [34m🚀 Task: When was NDTV profit launched ? You must complete the task only using the starting website. Begin task on the following url: ndtv.com[0m
+2025-10-08 16:02:36,338 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 16:02:36,341 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 16:02:36,347 - INFO - ────────────────────────────────────────
+2025-10-08 16:02:36,347 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 16:02:36,347 - INFO -     👉  browser-use auth
+2025-10-08 16:02:36,347 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 16:02:36,347 - INFO - ────────────────────────────────────────
+
+2025-10-08 16:02:36,551 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 16:02:36,589 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=9720eed8-b070-406b-a207-e7f252173e51
+2025-10-08 16:02:37,121 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://ndtv.com, new_tab: False
+2025-10-08 16:02:40,268 - INFO - 🔗 Navigated to https://ndtv.com
+2025-10-08 16:02:42,517 - INFO - 
+
+2025-10-08 16:02:42,517 - INFO - 📍 Step 1:
+2025-10-08 16:02:43,722 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:43,735 - INFO -   ❔ Eval: The navigation to ndtv.com succeeded but the page content has not loaded yet. Verdict: Uncertain
+2025-10-08 16:02:43,735 - INFO -   [34m🎯 Next goal: Wait for the NDTV homepage to load fully.[0m
+2025-10-08 16:02:43,735 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-08 16:02:43,754 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 16:02:48,204 - INFO - 
+
+2025-10-08 16:02:48,204 - INFO - 📍 Step 2:
+2025-10-08 16:02:50,071 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:50,073 - INFO -   [32m👍 Eval: Previous wait likely loaded the NDTV homepage; content is now visible. Verdict: Success[0m
+2025-10-08 16:02:50,073 - INFO -   [34m🎯 Next goal: Click the 'Profit' link to navigate to the NDTV Profit page and then extract the launch date.[0m
+2025-10-08 16:02:50,074 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 4, while_holding_ctrl: None
+2025-10-08 16:02:54,167 - INFO - 🖱️ Clicked element
+2025-10-08 16:02:56,219 - INFO - 
+
+2025-10-08 16:02:56,219 - INFO - 📍 Step 3:
+2025-10-08 16:02:57,730 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:02:57,737 - INFO -   [32m👍 Eval: Previous click on the Profit link succeeded, landing on NDTV Profit homepage. Verdict: Success[0m
+2025-10-08 16:02:57,737 - INFO -   [34m🎯 Next goal: Scroll down to load more content and then extract the launch date information.[0m
+2025-10-08 16:02:57,738 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-08 16:02:58,647 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)
+2025-10-08 16:02:59,149 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was NDTV Profit launched? Provide the launch date., extract_links: False, start_from_char:
+2025-10-08 16:03:00,016 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:00,038 - INFO - 📄 <url>
+https://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav
+</url>
+<query>
+When was NDTV Profit launched? Provide the launch date.
+</query>
+<result>
+The launch date of NDTV Profit is not provided in the available webpage content.
+</result>
+2025-10-08 16:03:01,639 - INFO - 
+
+2025-10-08 16:03:01,639 - INFO - 📍 Step 4:
+2025-10-08 16:03:02,941 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:02,941 - INFO -   ❔ Eval: Previous scroll did not reveal launch date; need to extract from page content.
+2025-10-08 16:03:02,941 - INFO -   [34m🎯 Next goal: Extract the NDTV Profit launch date from the page using structured data extraction.[0m
+2025-10-08 16:03:02,941 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: When was NDTV Profit launched? Provide the launch date., extract_links: False, start_from_char:
+2025-10-08 16:03:03,645 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:03,668 - INFO - 📄 <url>
+https://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav
+</url>
+<query>
+When was NDTV Profit launched? Provide the launch date.
+</query>
+<result>
+Information on the launch date of NDTV Profit is not available in the provided webpage content.
+</result>
+2025-10-08 16:03:05,446 - INFO - 
+
+2025-10-08 16:03:05,446 - INFO - 📍 Step 5:
+2025-10-08 16:03:07,134 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:07,135 - INFO -   [31m⚠️ Eval: Previous attempts to locate the launch date on the homepage failed; no launch date was found. Verdict: Failure[0m
+2025-10-08 16:03:07,135 - INFO -   [34m🎯 Next goal: Navigate to the 'About us' page to locate the NDTV Profit launch date.[0m
+2025-10-08 16:03:07,137 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 174, while_holding_ctrl: None
+2025-10-08 16:03:07,324 - WARNING - No visible quad found, using first quad
+2025-10-08 16:03:09,129 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:10,894 - INFO - 
+
+2025-10-08 16:03:10,895 - INFO - 📍 Step 6:
+2025-10-08 16:03:12,120 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:12,122 - INFO -   [31m⚠️ Eval: Previous attempt to find launch date on homepage failed; no launch date found. Verdict: Failure[0m
+2025-10-08 16:03:12,122 - INFO -   [34m🎯 Next goal: Click the 'About us' link to open the About us page and then locate the NDTV Profit launch date.[0m
+2025-10-08 16:03:12,123 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 153, while_holding_ctrl: None
+2025-10-08 16:03:12,363 - WARNING - No visible quad found, using first quad
+2025-10-08 16:03:14,051 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:16,008 - INFO - 
+
+2025-10-08 16:03:16,008 - INFO - 📍 Step 7:
+2025-10-08 16:03:18,022 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:18,023 - INFO -   [31m⚠️ Eval: Previous attempts to click an 'About us' link did not change the page; launch date still not found. Verdict: Failure[0m
+2025-10-08 16:03:18,023 - INFO -   [34m🎯 Next goal: Navigate to the About us page by clicking the link at index 261 to locate the NDTV Profit launch date.[0m
+2025-10-08 16:03:18,025 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 261, while_holding_ctrl: None
+2025-10-08 16:03:18,225 - WARNING - No visible quad found, using first quad
+2025-10-08 16:03:19,940 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:21,728 - INFO - 
+
+2025-10-08 16:03:21,728 - INFO - 📍 Step 8:
+2025-10-08 16:03:23,450 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:23,450 - INFO -   [31m⚠️ Eval: Previous attempts to click an 'About us' link (indices 174, 153, 261) did not navigate to the correct page; launch date still not found. Verdict: Failure[0m
+2025-10-08 16:03:23,450 - INFO -   [34m🎯 Next goal: Click the 'About us' link (index 254) to open the About us page and then extract the NDTV Profit launch date.[0m
+2025-10-08 16:03:23,451 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 254, while_holding_ctrl: None
+2025-10-08 16:03:25,328 - INFO - 🖱️ Clicked element
+2025-10-08 16:03:27,476 - INFO - 
+
+2025-10-08 16:03:27,476 - INFO - 📍 Step 9:
+2025-10-08 16:03:29,649 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:29,652 - INFO -   [31m⚠️ Eval: Failure – clicking the About us link at index 254 did not change the current page, but an About us page is already open in another tab.[0m
+2025-10-08 16:03:29,652 - INFO -   [34m🎯 Next goal: Switch to the About us tab (ID 6D72) and extract the NDTV Profit launch date using structured data extraction.[0m
+2025-10-08 16:03:29,654 - INFO -   🦾 [34m[ACTION 1/2][0m switch_tab: tab_id: 6D72
+2025-10-08 16:03:29,730 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=9720eed8-b070-406b-a207-e7f252173e51
+2025-10-08 16:03:30,354 - INFO - 🔄  Switched to tab #6D72
+2025-10-08 16:03:30,858 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was NDTV Profit launched?, extract_links: False, start_from_char: 0
+2025-10-08 16:03:31,521 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:31,544 - INFO - 📄 <url>
+https://www.ndtvprofit.com/about-us
+</url>
+<query>
+When was NDTV Profit launched?
+</query>
+<result>
+NDTV Profit was launched on 17 January 2005.
+</result>
+2025-10-08 16:03:33,309 - INFO - 
+
+2025-10-08 16:03:33,309 - INFO - 📍 Step 10:
+2025-10-08 16:03:34,839 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:03:34,841 - INFO -   [32m👍 Eval: Success – the launch date was extracted from the About Us page.[0m
+2025-10-08 16:03:34,841 - INFO -   [34m🎯 Next goal: Provide the launch date answer to the user and finish the task.[0m
+2025-10-08 16:03:34,842 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: NDTV Profit was launched on 17 January 2005., success: True, files_to_display: []
+2025-10-08 16:03:34,870 - INFO - 
+📄 [32m Final Result:[0m 
+NDTV Profit was launched on 17 January 2005.
+
+
+2025-10-08 16:03:34,873 - INFO - ✅ Task completed successfully
+Creating Steel session with advanced stealth features...
+Steel session created with ID: 9720eed8-b070-406b-a207-e7f252173e51
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=9720eed8-b070-406b-a207-e7f252173e51
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://ndtv.com', extracted_content='🔗 Navigated to https://ndtv.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 406.21875, 'click_y': 13.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav\n</url>\n<query>\nWhen was NDTV Profit launched? Provide the launch date.\n</query>\n<result>\nThe launch date of NDTV Profit is not provided in the available webpage content.\n</result>', extracted_content='<url>\nhttps://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav\n</url>\n<query>\nWhen was NDTV Profit launched? Provide the launch date.\n</query>\n<result>\nThe launch date of NDTV Profit is not provided in the available webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav\n</url>\n<query>\nWhen was NDTV Profit launched? Provide the launch date.\n</query>\n<result>\nInformation on the launch date of NDTV Profit is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav\n</url>\n<query>\nWhen was NDTV Profit launched? Provide the launch date.\n</query>\n<result>\nInformation on the launch date of NDTV Profit is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 456.828125, 'click_y': 991, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 456.828125, 'click_y': 991, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 456.828125, 'click_y': 991, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 456.828125, 'click_y': 962.09375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #6D72', extracted_content='Switched to tab #6D72', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.ndtvprofit.com/about-us\n</url>\n<query>\nWhen was NDTV Profit launched?\n</query>\n<result>\nNDTV Profit was launched on 17\u202fJanuary\u202f2005.\n</result>', extracted_content='<url>\nhttps://www.ndtvprofit.com/about-us\n</url>\n<query>\nWhen was NDTV Profit launched?\n</query>\n<result>\nNDTV Profit was launched on 17\u202fJanuary\u202f2005.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - NDTV Profit was launched on 17 January 2005.', extracted_content='NDTV Profit was launched on 17 January 2005.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://ndtv.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=321, backend_node_id=270, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'TpGnAd_lnk', 'title': 'Business News', 'href': 'https://www.ndtvprofit.com/?pfrom=home-ndtv_globalnav'}, bounds=DOMRect(x=383.578125, y=1.0, width=45.28125, height=24.0), x_path='html/body/div[3]/div[1]/div/div/div/nav/ul/li[3]/a', element_hash=3586284835565371786)}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was NDTV Profit launched? Provide the launch date.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was NDTV Profit launched? Provide the launch date.', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 174}, 'interacted_element': DOMInteractedElement(node_id=4996, backend_node_id=1570, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'link-list-m__item__Yeon2', 'href': '/about-us', 'target': '_blank', 'rel': 'noopener noreferrer', 'style': 'font-weight:400;height:20px'}, bounds=DOMRect(x=425.0, y=1467.640625, width=63.65625, height=20.0), x_path='html/body/div[6]/div[2]/div/div/div/div[2]/div/div/a[1]', element_hash=6912898796595321114)}, {'click_element_by_index': {'index': 153}, 'interacted_element': DOMInteractedElement(node_id=6975, backend_node_id=1570, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'link-list-m__item__Yeon2', 'href': '/about-us', 'target': '_blank', 'rel': 'noopener noreferrer', 'style': 'font-weight:400;height:20px'}, bounds=DOMRect(x=425.0, y=951.640625, width=63.65625, height=20.0), x_path='html/body/div[6]/div[2]/div/div/div/div[2]/div/div/a[1]', element_hash=6912898796595321114)}, {'click_element_by_index': {'index': 261}, 'interacted_element': DOMInteractedElement(node_id=9677, backend_node_id=1570, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'link-list-m__item__Yeon2', 'href': '/about-us', 'target': '_blank', 'rel': 'noopener noreferrer', 'style': 'font-weight:400;height:20px'}, bounds=DOMRect(x=425.0, y=1584.09375, width=63.65625, height=20.0), x_path='html/body/div[6]/div[2]/div/div/div/div[2]/div/div/a[1]', element_hash=6912898796595321114)}, {'click_element_by_index': {'index': 254}, 'interacted_element': DOMInteractedElement(node_id=12353, backend_node_id=1570, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'link-list-m__item__Yeon2', 'href': '/about-us', 'target': '_blank', 'rel': 'noopener noreferrer', 'style': 'font-weight:400;height:20px'}, bounds=DOMRect(x=425.0, y=952.09375, width=63.65625, height=20.0), x_path='html/body/div[6]/div[2]/div/div/div/div[2]/div/div/a[1]', element_hash=6912898796595321114)}, {'switch_tab': {'tab_id': '6D72'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was NDTV Profit launched?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'NDTV Profit was launched on 17 January 2005.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 9720eed8-b070-406b-a207-e7f252173e51...
+Steel session 9720eed8-b070-406b-a207-e7f252173e51 released successfully
+Steel session recording URL: https://app.steel.dev/sessions/9720eed8-b070-406b-a207-e7f252173e51

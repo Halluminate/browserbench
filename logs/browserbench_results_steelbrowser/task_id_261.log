@@ -1,0 +1,78 @@
+2025-10-08 16:20:10,703 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 16:20:10,718 - INFO - 🔗 Found URL in task: https://www.agoda.com, adding as initial action...
+2025-10-08 16:20:10,723 - INFO - [34m🚀 Task: Is it possible to book flights and hotels on Agoda? You must complete the task only using the starting website. Begin task on the following url: www.agoda.com[0m
+2025-10-08 16:20:10,772 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 16:20:10,774 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 16:20:10,778 - INFO - ────────────────────────────────────────
+2025-10-08 16:20:10,778 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 16:20:10,778 - INFO -     👉  browser-use auth
+2025-10-08 16:20:10,778 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 16:20:10,778 - INFO - ────────────────────────────────────────
+
+2025-10-08 16:20:10,990 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 16:20:11,028 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=bf413167-ffa7-44e6-8aeb-eb9027891bd1
+2025-10-08 16:20:11,631 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.agoda.com, new_tab: False
+2025-10-08 16:20:13,547 - INFO - 🔗 Navigated to https://www.agoda.com
+2025-10-08 16:20:15,705 - INFO - 
+
+2025-10-08 16:20:15,705 - INFO - 📍 Step 1:
+2025-10-08 16:20:16,658 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:20:16,670 - INFO -   ❔ Eval: The previous navigation loaded an empty page, likely due to loading delay. Verdict: Uncertain
+2025-10-08 16:20:16,670 - INFO -   [34m🎯 Next goal: Wait for the page to load and then check for interactive elements such as search fields or navigation menus.[0m
+2025-10-08 16:20:16,670 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-08 16:20:16,693 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 16:20:20,820 - INFO - 
+
+2025-10-08 16:20:20,821 - INFO - 📍 Step 2:
+2025-10-08 16:20:22,626 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:20:22,627 - INFO -   [32m👍 Eval: Waited for 5 seconds; page load completed. Verdict: Success[0m
+2025-10-08 16:20:22,627 - INFO -   [34m🎯 Next goal: Dismiss the cookie banner and open the Flights tab to verify flight booking availability.[0m
+2025-10-08 16:20:22,627 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 2, while_holding_ctrl: None
+2025-10-08 16:20:24,401 - INFO - 🖱️ Clicked element
+2025-10-08 16:20:25,634 - INFO - Something new appeared after action 1 / 2: actions click_element_by_index were not executed
+2025-10-08 16:20:27,287 - INFO - 
+
+2025-10-08 16:20:27,287 - INFO - 📍 Step 3:
+2025-10-08 16:20:29,003 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:20:29,006 - INFO -   [31m⚠️ Eval: Previous click actions were not executed; the cookie banner remains. Verdict: Failure[0m
+2025-10-08 16:20:29,006 - INFO -   [34m🎯 Next goal: Click the Dismiss button to close the cookie banner.[0m
+2025-10-08 16:20:29,007 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 2, while_holding_ctrl: None
+2025-10-08 16:20:35,151 - ERROR - CDP Error for request 165: {'code': -32000, 'message': 'Could not compute box model.'}
+2025-10-08 16:20:35,292 - WARNING - No visible quad found, using first quad
+2025-10-08 16:20:35,310 - ERROR - CDP Error for request 168: {'code': -32000, 'message': 'Node is detached from document'}
+2025-10-08 16:20:36,810 - INFO - 🖱️ Clicked element
+2025-10-08 16:20:38,610 - INFO - 
+
+2025-10-08 16:20:38,610 - INFO - 📍 Step 4:
+2025-10-08 16:20:41,244 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:20:41,246 - INFO -   [31m⚠️ Eval: Failure – the cookie banner was not dismissed after clicking index 2.[0m
+2025-10-08 16:20:41,246 - INFO -   [34m🎯 Next goal: Click the Flights tab (index 56) to open the flight booking interface and then wait for the page to load.[0m
+2025-10-08 16:20:41,247 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 56, while_holding_ctrl: None
+2025-10-08 16:20:43,165 - INFO - 🖱️ Clicked element
+2025-10-08 16:20:43,668 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-08 16:20:43,687 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 16:20:45,384 - INFO - 
+
+2025-10-08 16:20:45,384 - INFO - 📍 Step 5:
+2025-10-08 16:20:46,951 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 16:20:46,953 - INFO -   [32m👍 Eval: Clicked the Flights tab and waited; flight booking interface appeared – Verdict: Success[0m
+2025-10-08 16:20:46,954 - INFO -   [34m🎯 Next goal: Provide the user with a concise answer confirming that Agoda allows booking both flights and hotels.[0m
+2025-10-08 16:20:46,954 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, Agoda lets you book both flights and hotels. On the site you can switch between the Flights tab to search and book
+2025-10-08 16:20:46,974 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, Agoda lets you book both flights and hotels. On the site you can switch between the "Flights" tab to search and book airline tickets and the "Hotels & Homes" (or similar) tabs to reserve accommodation.
+
+
+2025-10-08 16:20:46,982 - INFO - ✅ Task completed successfully
+Creating Steel session with advanced stealth features...
+Steel session created with ID: bf413167-ffa7-44e6-8aeb-eb9027891bd1
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=bf413167-ffa7-44e6-8aeb-eb9027891bd1
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.agoda.com', extracted_content='🔗 Navigated to https://www.agoda.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1865.0, 'click_y': 943.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1007.59375, 'click_y': 161.1875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, Agoda lets you book both flights and hotels. On the site you can switch between the "Flights" t - 106 more characters', extracted_content='Yes, Agoda lets you book both flights and hotels. On the site you can switch between the "Flights" tab to search and book airline tickets and the "Hotels & Homes" (or similar) tabs to reserve accommodation.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.agoda.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 2}, 'interacted_element': DOMInteractedElement(node_id=201, backend_node_id=534, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'BtnPair__RejectBtn', 'data-element-name': 'consent-banner-reject-btn', 'data-modal-action': 'continue'}, bounds=DOMRect(x=1823.0, y=928.5, width=84.0, height=30.0), x_path='html/body/div[7]/div/div[2]/div/button', element_hash=4174650792675423427)}, {'click_element_by_index': {'index': 56}, 'interacted_element': DOMInteractedElement(node_id=365, backend_node_id=482, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='LI', attributes={'id': 'tab-flight-tab', 'role': 'tab', 'tabindex': '-1', 'aria-selected': 'false', 'aria-controls': 'tabpanel-flight-tab', 'data-element-name': 'flight-tab', 'data-selenium': 'agodaFlightsTab', 'data-element-index': '3', 'data-selected': 'false', 'class': 'Box-sc-kv6pi1-0 yueiq LinkComponent__Container'}, bounds=DOMRect(x=972.03125, y=135.1875, width=71.125, height=48.0), x_path='html/body/div[8]/div[2]/main/section/section/div/div[2]/div[1]/ul/li[4]', element_hash=209454471279822196)}, {'click_element_by_index': {'index': 2}, 'interacted_element': DOMInteractedElement(node_id=1925, backend_node_id=534, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'BtnPair__RejectBtn', 'data-element-name': 'consent-banner-reject-btn', 'data-modal-action': 'continue'}, bounds=DOMRect(x=1823.0, y=928.5, width=84.0, height=30.0), x_path='html/body/div[7]/div/div[2]/div/button', element_hash=4174650792675423427)}, {'click_element_by_index': {'index': 56}, 'interacted_element': DOMInteractedElement(node_id=3383, backend_node_id=459, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={'class': 'aa503-box aa503-fill-inherit aa503-text-inherit aa503-items-center aa503-flex      '}, bounds=DOMRect(x=972.03125, y=151.1875, width=71.125, height=20.0), x_path='html/body/div[8]/div[2]/main/section/section/div/div[2]/div[1]/ul/li[4]/div/div', element_hash=6322130201554411663)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'done': {'text': 'Yes, Agoda lets you book both flights and hotels. On the site you can switch between the "Flights" tab to search and book airline tickets and the "Hotels & Homes" (or similar) tabs to reserve accommodation.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session bf413167-ffa7-44e6-8aeb-eb9027891bd1...
+Steel session bf413167-ffa7-44e6-8aeb-eb9027891bd1 released successfully
+Steel session recording URL: https://app.steel.dev/sessions/bf413167-ffa7-44e6-8aeb-eb9027891bd1

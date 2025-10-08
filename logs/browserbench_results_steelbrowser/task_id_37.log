@@ -1,0 +1,78 @@
+2025-10-08 14:25:25,605 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 14:25:25,621 - INFO - 🔗 Found URL in task: https://www.cosmopolitan.com, adding as initial action...
+2025-10-08 14:25:25,625 - INFO - [34m🚀 Task: When was Cosmopolitan first established? You must complete the task only using the starting website. Begin task on the following url: https://www.cosmopolitan.com[0m
+2025-10-08 14:25:25,721 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 14:25:25,723 - INFO - 📦 Newer version available: 0.7.11 (current: 0.7.10). Upgrade with: uv add browser-use@0.7.11
+2025-10-08 14:25:25,729 - INFO - ────────────────────────────────────────
+2025-10-08 14:25:25,729 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 14:25:25,729 - INFO -     👉  browser-use auth
+2025-10-08 14:25:25,729 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 14:25:25,729 - INFO - ────────────────────────────────────────
+
+2025-10-08 14:25:25,940 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 14:25:25,970 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=ff86e21e-32d8-478d-8a74-d3befd2f4a07
+2025-10-08 14:25:26,478 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.cosmopolitan.com, new_tab: False
+2025-10-08 14:25:30,199 - INFO - 🔗 Navigated to https://www.cosmopolitan.com
+2025-10-08 14:25:31,917 - INFO - 
+
+2025-10-08 14:25:31,917 - INFO - 📍 Step 1:
+2025-10-08 14:25:33,393 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 14:25:33,406 - INFO -   [32m👍 Eval: Successfully navigated to the Cosmopolitan homepage. Verdict: Success[0m
+2025-10-08 14:25:33,406 - INFO -   [34m🎯 Next goal: Open the site search field by clicking the search button.[0m
+2025-10-08 14:25:33,407 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 11, while_holding_ctrl: None
+2025-10-08 14:25:36,547 - INFO - 🖱️ Clicked element
+2025-10-08 14:25:38,187 - INFO - 
+
+2025-10-08 14:25:38,187 - INFO - 📍 Step 2:
+2025-10-08 14:25:40,008 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 14:25:40,010 - INFO -   [32m👍 Eval: Search field opened successfully after clicking the search icon. Verdict: Success[0m
+2025-10-08 14:25:40,010 - INFO -   [34m🎯 Next goal: Enter the query "Cosmopolitan first established" into the search input and submit the search.[0m
+2025-10-08 14:25:40,010 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 11, text: Cosmopolitan first established, clear_existing: True
+2025-10-08 14:25:42,668 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-08 14:25:42,668 - INFO - ⌨️ Typed "Cosmopolitan first established" into element with index 11
+2025-10-08 14:25:44,400 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 10, while_holding_ctrl: None
+2025-10-08 14:25:46,245 - INFO - 🖱️ Clicked element
+2025-10-08 14:25:47,844 - INFO - 
+
+2025-10-08 14:25:47,844 - INFO - 📍 Step 3:
+2025-10-08 14:25:49,100 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 14:25:49,102 - INFO -   ❔ Eval: Previous actions entered the query and clicked search, but no result data is visible yet. Verdict: Uncertain
+2025-10-08 14:25:49,102 - INFO -   [34m🎯 Next goal: Wait for the search results to load and extract the establishment date.[0m
+2025-10-08 14:25:49,103 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-08 14:25:49,123 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 14:25:49,624 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was Cosmopolitan first established?, extract_links: False, start_from_char: 0
+2025-10-08 14:25:50,174 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 14:25:50,193 - INFO - 📄 <url>
+https://www.cosmopolitan.com/
+</url>
+<query>
+When was Cosmopolitan first established?
+</query>
+<result>
+1965
+</result>
+2025-10-08 14:25:51,822 - INFO - 
+
+2025-10-08 14:25:51,822 - INFO - 📍 Step 4:
+2025-10-08 14:25:53,348 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 14:25:53,350 - INFO -   [32m👍 Eval: Successfully retrieved the establishment date (1965) from the search result. Verdict: Success[0m
+2025-10-08 14:25:53,350 - INFO -   [34m🎯 Next goal: Provide the answer to the user and finish the task.[0m
+2025-10-08 14:25:53,350 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Cosmopolitan was first established in 1965., success: True, files_to_display: []
+2025-10-08 14:25:53,369 - INFO - 
+📄 [32m Final Result:[0m 
+Cosmopolitan was first established in 1965.
+
+
+2025-10-08 14:25:53,376 - INFO - ✅ Task completed successfully
+Creating Steel session with advanced stealth features...
+Steel session created with ID: ff86e21e-32d8-478d-8a74-d3befd2f4a07
+Features enabled: solveCaptcha=True, useProxy=True, blockAds=True
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=ff86e21e-32d8-478d-8a74-d3befd2f4a07
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.cosmopolitan.com', extracted_content='🔗 Navigated to https://www.cosmopolitan.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1545.0, 'click_y': 29.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Cosmopolitan first established' into element 11.", extracted_content="Input 'Cosmopolitan first established' into element 11.", include_extracted_content_only_once=False, metadata={'input_x': 1404.0, 'input_y': 28.5}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1252.15625, 'click_y': 28.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.cosmopolitan.com/\n</url>\n<query>\nWhen was Cosmopolitan first established?\n</query>\n<result>\n1965\n</result>', extracted_content='<url>\nhttps://www.cosmopolitan.com/\n</url>\n<query>\nWhen was Cosmopolitan first established?\n</query>\n<result>\n1965\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Cosmopolitan was first established in 1965.', extracted_content='Cosmopolitan was first established in 1965.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.cosmopolitan.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 11}, 'interacted_element': DOMInteractedElement(node_id=238, backend_node_id=391, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'data-theme-key': 'button-primary', 'role': 'button', 'aria-label': 'search', 'aria-expanded': 'false', 'class': 'e1s66evm4 css-ri94yz e12nq69g1'}, bounds=DOMRect(x=1530.0, y=14.5, width=30.0, height=30.0), x_path='html/body/div[1]/nav/div/button[2]', element_hash=4088699308732314343)}, {'input_text': {'index': 11, 'text': 'Cosmopolitan first established', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=1253, backend_node_id=1391, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'id': 'icon-input', 'type': 'search', 'name': 'icon', 'placeholder': 'Search...', 'aria-labelledby': 'icon-input-label', 'aria-invalid': 'false', 'aria-required': 'false', 'data-theme-key': 'form-input-field', 'role': 'search', 'aria-label': 'search', 'class': 'e1s66evm6 css-lmck8j e1h8blpf1'}, bounds=DOMRect(x=1268.3125, y=8.5, width=271.375, height=40.0), x_path='html/body/div[1]/nav/div/div[2]/form/div/div/input', element_hash=1555822638086885659)}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=1252, backend_node_id=1384, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='IMG', attributes={'data-dynamic-svg': 'true', 'src': '/_assets/design-tokens/fre/static/icons/search.f1c199c.svg?primary=%2523000000', 'loading': 'lazy', 'data-testid': 'dynamic-svg-base', 'height': '16', 'width': '16', 'alt': 'Search', 'role': 'button', 'tabindex': '0', 'class': 'css-24rk8n e1s66evm2'}, bounds=DOMRect(x=1244.15625, y=20.5, width=16.0, height=16.0), x_path='html/body/div[1]/nav/div/div[2]/form/div/div/img[1]', element_hash=4715526327520908056)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was Cosmopolitan first established?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'Cosmopolitan was first established in 1965.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session ff86e21e-32d8-478d-8a74-d3befd2f4a07...
+Steel session ff86e21e-32d8-478d-8a74-d3befd2f4a07 released successfully
+Steel session recording URL: https://app.steel.dev/sessions/ff86e21e-32d8-478d-8a74-d3befd2f4a07
