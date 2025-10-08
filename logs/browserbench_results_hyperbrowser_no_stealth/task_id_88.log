@@ -1,0 +1,179 @@
+2025-10-07 16:35:07,560 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 16:35:07,570 - INFO - 🔗 Found URL in task: https://www.today.com, adding as initial action...
+2025-10-07 16:35:07,574 - INFO - [34m🚀 Task: Where can I send story ideas to be featured on TODAY? You must complete the task only using the starting website. Begin task on the following url: https://www.today.com[0m
+2025-10-07 16:35:07,620 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 16:35:07,628 - INFO - ────────────────────────────────────────
+2025-10-07 16:35:07,628 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 16:35:07,628 - INFO -     👉  browser-use auth
+2025-10-07 16:35:07,628 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 16:35:07,628 - INFO - ────────────────────────────────────────
+
+2025-10-07 16:35:07,836 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 16:35:07,875 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiIwNzU5YmI0ZC05MTYyLTQyYzUtYmVlZS01N2ZhMmQxOGY0MmUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODAxMDcsImV4cCI6MTc1OTkyMzMwN30.idoYrQ6L4425_6ABr6XUR8dIZhHvhNuOFD8iePFzdBs
+2025-10-07 16:35:09,053 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.today.com, new_tab: False
+2025-10-07 16:35:09,961 - INFO - 🔗 Navigated to https://www.today.com
+2025-10-07 16:35:12,953 - ERROR - CDP Error for request 54: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 16:35:12,956 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 16:35:12,956 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 16:35:12,956 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 16:35:13,740 - INFO - 
+
+2025-10-07 16:35:13,740 - INFO - 📍 Step 1:
+2025-10-07 16:35:15,077 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:35:15,089 - INFO -   ❔ Eval: The previous navigation loaded the homepage but no content is visible yet. Verdict: Uncertain
+2025-10-07 16:35:15,089 - INFO -   [34m🎯 Next goal: Wait for the page to load and then extract the location/contact method for submitting story ideas on TODAY.[0m
+2025-10-07 16:35:15,089 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 16:35:15,147 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 16:35:17,650 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Where can I send story ideas to be featured on TODAY?, extract_links: False, start_from_char: 0
+2025-10-07 16:35:19,806 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:35:19,863 - INFO - 📄 <url>
+https://www.today.com/
+</url>
+<query>
+Where can I send story ideas to be featured on TODAY?
+</query>
+<result>
+The webpage does not provide a specific email address or submission form for sending story ideas to be featured on TODAY. It only lists a generic “Contact” link in the footer, but no detailed contact information for story submissions is included.
+</result>
+2025-10-07 16:35:24,394 - INFO - 
+
+2025-10-07 16:35:24,395 - INFO - 📍 Step 2:
+2025-10-07 16:35:26,673 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:35:26,674 - INFO -   [31m⚠️ Eval: Failure: The query did not reveal a specific email or submission form for story ideas.[0m
+2025-10-07 16:35:26,674 - INFO -   [34m🎯 Next goal: Open the 'About TODAY' page to look for story idea submission details.[0m
+2025-10-07 16:35:26,675 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # TODAY.com Story Idea Submission Task\n\n## Goal: Identify where to send story ideas to
+2025-10-07 16:35:26,733 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 16:35:31,138 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 5, while_holding_ctrl: None
+2025-10-07 16:35:31,538 - WARNING - No visible quad found, using first quad
+2025-10-07 16:35:32,539 - INFO - 🖱️ Clicked element
+2025-10-07 16:35:36,622 - INFO - 
+
+2025-10-07 16:35:36,623 - INFO - 📍 Step 3:
+2025-10-07 16:35:38,773 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:35:38,774 - INFO -   ❔ Eval: Previous click on 'About TODAY' was uncertain; the page did not change in the provided browser state.
+2025-10-07 16:35:38,774 - INFO -   [34m🎯 Next goal: Click the 'About TODAY' link (index 5), wait for the page to load, then extract story idea submission contact information.[0m
+2025-10-07 16:35:38,775 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 5, while_holding_ctrl: None
+2025-10-07 16:35:39,175 - WARNING - No visible quad found, using first quad
+2025-10-07 16:35:40,086 - INFO - 🖱️ Clicked element
+2025-10-07 16:35:40,586 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 16:35:40,644 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 16:35:43,146 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: How can I submit a story idea to TODAY.com? Provide email address, form link, or instructions., ext
+2025-10-07 16:35:45,742 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:35:45,800 - INFO - 📄 <url>
+https://www.today.com/
+</url>
+<query>
+How can I submit a story idea to TODAY.com? Provide email address, form link, or instructions.
+</query>
+<result>
+The provided page does not list a specific email address or submission form for story ideas. The only relevant contact point shown is the “Help” link, which leads to the TODAY.com support center:
+
+- Help/Contact: https://nbcnews.zendesk.com/hc/en-us/categories/1260801682809-TODAY
+
+No other email address or direct submission form is mentioned in the page content. If you need to submit a story idea, you may need to use the support center linked above or look for a dedicated “Tips” or “Contact Us” page elsewhere on the TODAY.com site.
+</result>
+2025-10-07 16:35:49,971 - INFO - 
+
+2025-10-07 16:35:49,971 - INFO - 📍 Step 4:
+2025-10-07 16:35:52,104 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:35:52,105 - INFO -   [31m⚠️ Eval: Failure: Clicking 'About TODAY' did not navigate to a new page and no submission info was found.[0m
+2025-10-07 16:35:52,105 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the TODAY.com homepage and extract any story idea submission contact details.[0m
+2025-10-07 16:35:52,106 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 30.0, frame_element_index: None
+2025-10-07 16:36:08,703 - INFO - 🔍 Scrolled down the page by 30.0 pages (requested: 30.0, 632px per page)
+2025-10-07 16:36:09,205 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Provide email address, form link, or instructions for submitting story ideas to TODAY.com, extract_
+2025-10-07 16:36:11,241 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:36:11,298 - INFO - 📄 <url>
+https://www.today.com/
+</url>
+<query>
+Provide email address, form link, or instructions for submitting story ideas to TODAY.com
+</query>
+<result>
+Information on how to submit story ideas to TODAY.com (email address, submission form link, or specific instructions) is not present in the provided webpage content.
+</result>
+2025-10-07 16:36:15,619 - INFO - 
+
+2025-10-07 16:36:15,619 - INFO - 📍 Step 5:
+2025-10-07 16:36:17,190 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:36:17,191 - INFO -   [31m⚠️ Eval: Previous attempts did not locate submission info; failure.[0m
+2025-10-07 16:36:17,191 - INFO -   [34m🎯 Next goal: Navigate to https://www.today.com/contact-us and extract story idea submission contact information.[0m
+2025-10-07 16:36:17,192 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.today.com/contact-us, new_tab: False
+2025-10-07 16:36:18,493 - INFO - 🔗 Navigated to https://www.today.com/contact-us
+2025-10-07 16:36:21,186 - INFO - 
+
+2025-10-07 16:36:21,186 - INFO - 📍 Step 6:
+2025-10-07 16:36:23,744 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:36:23,747 - INFO -   [31m⚠️ Eval: Failure: The contact-us page showed a 404 error and did not contain story idea submission details.[0m
+2025-10-07 16:36:23,747 - INFO -   [34m🎯 Next goal: Click the 'Contact' link (index 84) and wait for the page to load to locate email, form link, or instructions for submitting story ideas.[0m
+2025-10-07 16:36:23,747 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 84, while_holding_ctrl: None
+2025-10-07 16:36:24,135 - WARNING - No visible quad found, using first quad
+2025-10-07 16:36:25,045 - INFO - 🖱️ Clicked element
+2025-10-07 16:36:25,546 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 16:36:25,652 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 16:36:30,656 - INFO - 
+
+2025-10-07 16:36:30,657 - INFO - 📍 Step 7:
+2025-10-07 16:36:32,505 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:36:32,506 - INFO -   ❔ Eval: Previous click on 'Contact' (index 84) was uncertain; page remained a 404. Now we will click the proper 'Contact' link (index 83).
+2025-10-07 16:36:32,506 - INFO -   [34m🎯 Next goal: Open the 'Contact' page via index 83 and extract any email address, form link, or instructions for submitting story ideas.[0m
+2025-10-07 16:36:32,506 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 83, while_holding_ctrl: None
+2025-10-07 16:36:34,189 - INFO - 🖱️ Clicked element
+2025-10-07 16:36:34,690 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 16:36:34,746 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 16:36:45,635 - INFO - 
+
+2025-10-07 16:36:45,635 - INFO - 📍 Step 8:
+2025-10-07 16:36:47,027 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:36:47,027 - INFO -   ❔ Eval: Previous actions did not locate submission info; we are now on the About page with a clear Contact Us link available.
+2025-10-07 16:36:47,028 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' link (index 93) and wait for the page to load.[0m
+2025-10-07 16:36:47,028 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 93, while_holding_ctrl: None
+2025-10-07 16:36:47,415 - WARNING - No visible quad found, using first quad
+2025-10-07 16:36:48,325 - INFO - 🖱️ Clicked element
+2025-10-07 16:36:48,826 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 16:36:48,882 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 16:36:56,632 - INFO - 
+
+2025-10-07 16:36:56,633 - INFO - 📍 Step 9:
+2025-10-07 16:36:58,626 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:36:58,627 - INFO -   [31m⚠️ Eval: Failure: Clicking index 93 did not navigate to a contact page; the page remained the About page.[0m
+2025-10-07 16:36:58,628 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' link (index 108) and wait for the page to load, then extract any email address, form link, or instructions for submitting story ideas.[0m
+2025-10-07 16:36:58,629 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 108, while_holding_ctrl: None
+2025-10-07 16:36:59,015 - WARNING - No visible quad found, using first quad
+2025-10-07 16:36:59,920 - INFO - 🖱️ Clicked element
+2025-10-07 16:37:00,421 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-07 16:37:00,480 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 16:37:08,434 - INFO - 
+
+2025-10-07 16:37:08,434 - INFO - 📍 Step 10:
+2025-10-07 16:37:10,395 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:37:10,397 - INFO -   [31m⚠️ Eval: Failure: Clicking index 108 did not navigate to a contact page and no story idea submission details were found.[0m
+2025-10-07 16:37:10,397 - INFO -   [34m🎯 Next goal: Click the 'Contact Us' link (index 103) to open the contact page where story idea submission details may be provided.[0m
+2025-10-07 16:37:10,397 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 103, while_holding_ctrl: None
+2025-10-07 16:37:11,730 - INFO - 🖱️ Clicked element
+2025-10-07 16:37:16,955 - INFO - 
+
+2025-10-07 16:37:16,956 - INFO - 📍 Step 11:
+2025-10-07 16:37:18,947 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:37:18,949 - INFO -   [32m👍 Eval: Success: The email address for story ideas was found after clicking the Contact Us link.[0m
+2025-10-07 16:37:18,949 - INFO -   [34m🎯 Next goal: Provide the found email address to the user and complete the task.[0m
+2025-10-07 16:37:18,950 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: You can submit story ideas to TODAY by emailing **today.stories@nbcuni.com**. Include your name, your story idea, and the
+2025-10-07 16:37:19,007 - INFO - 
+📄 [32m Final Result:[0m 
+You can submit story ideas to TODAY by emailing **today.stories@nbcuni.com**. Include your name, your story idea, and the best way to contact you.
+
+This information was found on the TODAY.com "Contact Us" section.
+
+
+2025-10-07 16:37:19,012 - INFO - ✅ Task completed successfully
+Creating standard Hyperbrowser session...
+Hyperbrowser session created with ID: 0759bb4d-9162-42c5-beee-57fa2d18f42e
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiIwNzU5YmI0ZC05MTYyLTQyYzUtYmVlZS01N2ZhMmQxOGY0MmUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODAxMDcsImV4cCI6MTc1OTkyMzMwN30.idoYrQ6L4425_6ABr6XUR8dIZhHvhNuOFD8iePFzdBs
+Session URL: https://app.hyperbrowser.ai/features/sessions/0759bb4d-9162-42c5-beee-57fa2d18f42e
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.today.com', extracted_content='🔗 Navigated to https://www.today.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.today.com/\n</url>\n<query>\nWhere can I send story ideas to be featured on TODAY?\n</query>\n<result>\nThe webpage does not provide a specific email address or submission form for sending story ideas to be featured on\u202fTODAY. It only lists a generic “Contact” link in the footer, but no detailed contact information for story submissions is included.\n</result>', extracted_content='<url>\nhttps://www.today.com/\n</url>\n<query>\nWhere can I send story ideas to be featured on TODAY?\n</query>\n<result>\nThe webpage does not provide a specific email address or submission form for sending story ideas to be featured on\u202fTODAY. It only lists a generic “Contact” link in the footer, but no detailed contact information for story submissions is included.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 352.546875, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 352.546875, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.today.com/\n</url>\n<query>\nHow can I submit a story idea to TODAY.com? Provide email address, form link, or instructions.\n</query>\n<result>\nThe provided page does not list a specific email address or submission form for story ideas. The only relevant contact point shown is the “Help” link, which leads to the TODAY.com support center:\n\n- Help/Contact:\u202fhttps://nbcnews.zendesk.com/hc/en-us/categories/1260801682809-TODAY\n\nNo other email address or direct submission form is mentioned in the page content. If you need to submit a story idea, you may need to use the support center linked above or look for a dedicated “Tips” or “Contact Us” page elsewhere on the TODAY.com site.\n</result>', extracted_content='<url>\nhttps://www.today.com/\n</url>\n<query>\nHow can I submit a story idea to TODAY.com? Provide email address, form link, or instructions.\n</query>\n<result>\nThe provided page does not list a specific email address or submission form for story ideas. The only relevant contact point shown is the “Help” link, which leads to the TODAY.com support center:\n\n- Help/Contact:\u202fhttps://nbcnews.zendesk.com/hc/en-us/categories/1260801682809-TODAY\n\nNo other email address or direct submission form is mentioned in the page content. If you need to submit a story idea, you may need to use the support center linked above or look for a dedicated “Tips” or “Contact Us” page elsewhere on the TODAY.com site.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 30.0 pages (requested: 30.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 30.0 pages (requested: 30.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.today.com/\n</url>\n<query>\nProvide email address, form link, or instructions for submitting story ideas to TODAY.com\n</query>\n<result>\nInformation on how to submit story ideas to TODAY.com (email address, submission form link, or specific instructions) is not present in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.today.com/\n</url>\n<query>\nProvide email address, form link, or instructions for submitting story ideas to TODAY.com\n</query>\n<result>\nInformation on how to submit story ideas to TODAY.com (email address, submission form link, or specific instructions) is not present in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.today.com/contact-us', extracted_content='🔗 Navigated to https://www.today.com/contact-us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 132.0859375, 'click_y': 631, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 132.0859375, 'click_y': 373.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 980.2265625, 'click_y': 631, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 980.2265625, 'click_y': 631, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 980.2265625, 'click_y': 458.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - You can submit story ideas to TODAY by emailing **today.stories@nbcuni.com**. Include your name, you - 113 more characters', extracted_content='You can submit story ideas to TODAY by emailing **today.stories@nbcuni.com**. Include your name, your story idea, and the best way to contact you.\n\nThis information was found on the TODAY.com "Contact Us" section.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.today.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Where can I send story ideas to be featured on TODAY?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': "# TODAY.com Story Idea Submission Task\n\n## Goal: Identify where to send story ideas to be featured on TODAY.com\n\n## Tasks:\n- [ ] Click 'About TODAY' (index 5) to open the About page\n- [ ] Locate contact or submission information for story ideas\n- [ ] Record the email address, form link, or instructions\n- [ ] Verify the information is current\n- [ ] Summarize findings for the user\n", 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 5}, 'interacted_element': DOMInteractedElement(node_id=6118, backend_node_id=853, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'role': 'menuitem', 'href': 'https://www.today.com/about/today/about-today-nbc-rcna150631', 'target': '_self', 'tabindex': '-1', 'data-track-menu-name': 'About TODAY', 'class': 'shortcuts-dropdown-item-link'}, bounds=DOMRect(x=236.0, y=-361.0, width=233.09375, height=48.0), x_path='html/body/div[2]/div/div[2]/div[2]/nav/div[1]/div/div[3]/div[1]/ul/li[1]/ul/li/ul/li[1]/a', element_hash=7979141453291771742)}, {'click_element_by_index': {'index': 5}, 'interacted_element': DOMInteractedElement(node_id=17621, backend_node_id=853, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'role': 'menuitem', 'href': 'https://www.today.com/about/today/about-today-nbc-rcna150631', 'target': '_self', 'tabindex': '-1', 'data-track-menu-name': 'About TODAY', 'class': 'shortcuts-dropdown-item-link'}, bounds=DOMRect(x=236.0, y=-361.0, width=233.09375, height=48.0), x_path='html/body/div[2]/div/div[2]/div[2]/nav/div[1]/div/div[3]/div[1]/ul/li[1]/ul/li/ul/li[1]/a', element_hash=7979141453291771742)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'How can I submit a story idea to TODAY.com? Provide email address, form link, or instructions.', 'extract_links': True, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 30.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Provide email address, form link, or instructions for submitting story ideas to TODAY.com', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.today.com/contact-us', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 84}, 'interacted_element': DOMInteractedElement(node_id=36582, backend_node_id=21562, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.today.com/information/contact-us-send-today-your-questions-comments-t215381'}, bounds=DOMRect(x=110.0, y=707.0, width=44.171875, height=15.0), x_path='html/body/div[2]/div/div[3]/footer/div/nav/ul/li[2]/a', element_hash=3699598823552262478)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 83}, 'interacted_element': DOMInteractedElement(node_id=37990, backend_node_id=21562, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.today.com/information/contact-us-send-today-your-questions-comments-t215381'}, bounds=DOMRect(x=110.0, y=366.0, width=44.171875, height=15.0), x_path='html/body/div[2]/div/div[3]/footer/div/nav/ul/li[2]/a', element_hash=3699598823552262478)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 93}, 'interacted_element': DOMInteractedElement(node_id=39882, backend_node_id=26411, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'styles_jumpLinkList__itemLink__WKl6G', 'data-testid': 'jump-link-list__item-link-7', 'href': '#anchor-76d8f0'}, bounds=DOMRect(x=939.5, y=1211.5, width=81.453125, height=23.0), x_path='html/body/div[2]/div/div[3]/div/article/div[1]/div/div[2]/div[2]/div/div/div/div/div/ul/li[8]/a', element_hash=2263294629210242974)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 108}, 'interacted_element': DOMInteractedElement(node_id=42874, backend_node_id=26411, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'styles_jumpLinkList__itemLink__WKl6G', 'data-testid': 'jump-link-list__item-link-7', 'href': '#anchor-76d8f0'}, bounds=DOMRect(x=939.5, y=997.40625, width=81.453125, height=23.0), x_path='html/body/div[2]/div/div[3]/div/article/div[1]/div/div[2]/div[2]/div/div[2]/div/div/div/ul/li[8]/a', element_hash=2263294629210242974)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 103}, 'interacted_element': DOMInteractedElement(node_id=46744, backend_node_id=26411, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'styles_jumpLinkList__itemLink__WKl6G', 'data-testid': 'jump-link-list__item-link-7', 'href': '#anchor-76d8f0'}, bounds=DOMRect(x=939.5, y=447.0, width=81.453125, height=23.0), x_path='html/body/div[2]/div/div[3]/div/article/div[1]/div/div[2]/div[2]/div/div[2]/div/div/div/ul/li[8]/a', element_hash=2263294629210242974)}, {'done': {'text': 'You can submit story ideas to TODAY by emailing **today.stories@nbcuni.com**. Include your name, your story idea, and the best way to contact you.\n\nThis information was found on the TODAY.com "Contact Us" section.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 0759bb4d-9162-42c5-beee-57fa2d18f42e...
+Hyperbrowser session 0759bb4d-9162-42c5-beee-57fa2d18f42e stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/0759bb4d-9162-42c5-beee-57fa2d18f42e

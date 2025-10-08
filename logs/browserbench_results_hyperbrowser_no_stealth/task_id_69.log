@@ -1,0 +1,172 @@
+2025-10-07 16:26:55,010 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 16:26:55,020 - INFO - 🔗 Found URL in task: https://www.airbnb.com, adding as initial action...
+2025-10-07 16:26:55,023 - INFO - [34m🚀 Task: How many baths does the listing "Heavenly Hollow" in South Lake Tahoe, California have? You must complete the task only using the starting website. Begin task on the following url: https://www.airbnb.com[0m
+2025-10-07 16:26:55,071 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 16:26:55,077 - INFO - ────────────────────────────────────────
+2025-10-07 16:26:55,077 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 16:26:55,077 - INFO -     👉  browser-use auth
+2025-10-07 16:26:55,077 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 16:26:55,077 - INFO - ────────────────────────────────────────
+
+2025-10-07 16:26:55,302 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 16:26:55,331 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2ZTFlMThmNi1hMDBiLTRmODItYmQ5NC0xZjc4ODdiYjNmNWUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4Nzk2MTQsImV4cCI6MTc1OTkyMjgxNH0.j49C5S8Y_z_R9G_Xjhh6KrNvCWB6_Qc4FaGZaC3Gp8A
+2025-10-07 16:26:56,468 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.airbnb.com, new_tab: False
+2025-10-07 16:26:57,684 - INFO - 🔗 Navigated to https://www.airbnb.com
+2025-10-07 16:27:00,259 - INFO - 
+
+2025-10-07 16:27:00,260 - INFO - 📍 Step 1:
+2025-10-07 16:27:02,493 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:02,503 - INFO -   [32m👍 Eval: Previous step only loaded the Airbnb homepage; no specific action taken yet. Verdict: Success (homepage loaded).[0m
+2025-10-07 16:27:02,503 - INFO -   [34m🎯 Next goal: Navigate to the South Lake Tahoe search results page on Airbnb.[0m
+2025-10-07 16:27:02,504 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.airbnb.com/s/South-Lake-Tahoe--CA/homes, new_tab: False
+2025-10-07 16:27:06,544 - INFO - 🔗 Navigated to https://www.airbnb.com/s/South-Lake-Tahoe--CA/homes
+2025-10-07 16:27:09,167 - INFO - 
+
+2025-10-07 16:27:09,167 - INFO - 📍 Step 2:
+2025-10-07 16:27:11,602 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:11,603 - INFO -   [32m👍 Eval: Successfully navigated to the South Lake Tahoe search results page.[0m
+2025-10-07 16:27:11,603 - INFO -   [34m🎯 Next goal: Open the Airbnb listing page for "Heavenly Hollow" in South Lake Tahoe.[0m
+2025-10-07 16:27:11,603 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes, new_tab: False
+2025-10-07 16:27:14,380 - INFO - 🔗 Navigated to https://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes
+2025-10-07 16:27:16,707 - INFO - 
+
+2025-10-07 16:27:16,707 - INFO - 📍 Step 3:
+2025-10-07 16:27:18,698 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:18,699 - INFO -   [32m👍 Eval: Previous navigation succeeded; we are on the Heavenly Hollow search results page but listing details are not yet loaded. Verdict: Success (navigation) but info not yet available.[0m
+2025-10-07 16:27:18,699 - INFO -   [34m🎯 Next goal: Scroll down to load the listing details and then extract the number of baths using structured data extraction.[0m
+2025-10-07 16:27:18,699 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 2.0, frame_element_index: None
+2025-10-07 16:27:20,112 - INFO - 🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 632px per page)
+2025-10-07 16:27:20,613 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: How many baths does the listing Heavenly Hollow in South Lake Tahoe, California have?, extract_li
+2025-10-07 16:27:22,045 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:22,105 - INFO - 📄 <url>
+https://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes
+</url>
+<query>
+How many baths does the listing "Heavenly Hollow" in South Lake Tahoe, California have?
+</query>
+<result>
+The webpage does not provide the number of baths for the “Heavenly Hollow” listing.
+</result>
+2025-10-07 16:27:25,977 - INFO - 
+
+2025-10-07 16:27:25,978 - INFO - 📍 Step 4:
+2025-10-07 16:27:28,694 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:28,695 - INFO -   ❔ Eval: Failed to retrieve bath count from the search results page; the information was not present.
+2025-10-07 16:27:28,695 - INFO -   [34m🎯 Next goal: Open the "Heavenly Hollow" listing detail page by clicking its link.[0m
+2025-10-07 16:27:28,696 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 98, while_holding_ctrl: False
+2025-10-07 16:27:29,080 - WARNING - No visible quad found, using first quad
+2025-10-07 16:27:29,978 - INFO - 🖱️ Clicked element
+2025-10-07 16:27:33,696 - INFO - 
+
+2025-10-07 16:27:33,697 - INFO - 📍 Step 5:
+2025-10-07 16:27:37,179 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:37,179 - INFO -   [32m👍 Eval: Previous click action resulted in a generic success message but we have not confirmed the correct page; verdict: uncertain.[0m
+2025-10-07 16:27:37,179 - INFO -   [34m🎯 Next goal: Open the "Heavenly Hollow" listing detail page by clicking its link (index 118).[0m
+2025-10-07 16:27:37,181 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 118, while_holding_ctrl: None
+2025-10-07 16:27:38,462 - INFO - 🖱️ Clicked element
+2025-10-07 16:27:43,221 - INFO - 
+
+2025-10-07 16:27:43,221 - INFO - 📍 Step 6:
+2025-10-07 16:27:45,340 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:45,340 - INFO -   [31m⚠️ Eval: Previous click action was uncertain and did not confirm opening the listing detail page. Verdict: Failure[0m
+2025-10-07 16:27:45,340 - INFO -   [34m🎯 Next goal: Click the listing link (index 112) to open the Heavenly Hollow detail page, then wait for the page to load.[0m
+2025-10-07 16:27:45,342 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 112, while_holding_ctrl: None
+2025-10-07 16:27:46,635 - INFO - 🖱️ Clicked element
+2025-10-07 16:27:47,136 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 16:27:47,191 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 16:27:51,465 - INFO - 
+
+2025-10-07 16:27:51,465 - INFO - 📍 Step 7:
+2025-10-07 16:27:53,310 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:27:53,311 - INFO -   [32m👍 Eval: Previous attempts to open the listing were uncertain; we have not yet successfully navigated to the detail page.[0m
+2025-10-07 16:27:53,311 - INFO -   [34m🎯 Next goal: Open the Heavenly Hollow listing detail page by clicking element 112 and wait for the page to load.[0m
+2025-10-07 16:27:53,313 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 112, while_holding_ctrl: None
+2025-10-07 16:27:54,658 - INFO - 🖱️ Clicked element
+2025-10-07 16:27:55,159 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 16:27:55,213 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 16:27:59,308 - INFO - 
+
+2025-10-07 16:27:59,308 - INFO - 📍 Step 8:
+2025-10-07 16:28:01,347 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:01,348 - INFO -   ❔ Eval: Previous attempts to open the listing failed; the detail page was not reached.
+2025-10-07 16:28:01,348 - INFO -   [34m🎯 Next goal: Open the "Heavenly Hollow" listing detail page by clicking element 112 and wait for it to load.[0m
+2025-10-07 16:28:01,350 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 112, while_holding_ctrl: None
+2025-10-07 16:28:02,648 - INFO - 🖱️ Clicked element
+2025-10-07 16:28:03,149 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 16:28:03,209 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 16:28:08,339 - INFO - 
+
+2025-10-07 16:28:08,339 - INFO - 📍 Step 9:
+2025-10-07 16:28:10,109 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:10,110 - INFO -   [31m⚠️ Eval: Failure - previous click attempts did not open the listing detail page.[0m
+2025-10-07 16:28:10,110 - INFO -   [34m🎯 Next goal: Click the listing link (index 112) to open the Heavenly Hollow detail page and wait for it to load.[0m
+2025-10-07 16:28:10,111 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 112, while_holding_ctrl: None
+2025-10-07 16:28:11,397 - INFO - 🖱️ Clicked element
+2025-10-07 16:28:11,899 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 16:28:11,954 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 16:28:18,073 - INFO - 
+
+2025-10-07 16:28:18,073 - INFO - 📍 Step 10:
+2025-10-07 16:28:19,945 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:19,945 - INFO -   [31m⚠️ Eval: Previous attempts to click index 112 were uncertain and did not confirm navigation; verdict: failure.[0m
+2025-10-07 16:28:19,945 - INFO -   [34m🎯 Next goal: Open the Heavenly Hollow listing detail page by clicking element 112 and wait for it to load.[0m
+2025-10-07 16:28:19,947 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 112, while_holding_ctrl: None
+2025-10-07 16:28:21,257 - INFO - 🖱️ Clicked element
+2025-10-07 16:28:21,758 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 16:28:21,814 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 16:28:27,082 - INFO - 
+
+2025-10-07 16:28:27,082 - INFO - 📍 Step 11:
+2025-10-07 16:28:30,117 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:30,117 - INFO -   [31m⚠️ Eval: Failure – previous attempts to click element 112 did not open the listing detail page.[0m
+2025-10-07 16:28:30,117 - INFO -   [34m🎯 Next goal: Open the Heavenly Hollow listing detail page by clicking element 112 (Ctrl+click) and wait for the page to load.[0m
+2025-10-07 16:28:30,118 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 112, while_holding_ctrl: True
+2025-10-07 16:28:31,646 - INFO - 🔗 New tab opened - switching to it
+2025-10-07 16:28:31,647 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-07 16:28:32,148 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 16:28:32,221 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 16:28:37,277 - INFO - 
+
+2025-10-07 16:28:37,277 - INFO - 📍 Step 12:
+2025-10-07 16:28:39,486 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:39,487 - INFO -   [32m👍 Eval: Previous attempts to click the listing link failed to navigate within the current tab, but a new tab (87B6) was opened containing the listing detail page. Verdict: Partial success – the detail page is likely loaded in a new tab.[0m
+2025-10-07 16:28:39,488 - INFO -   [34m🎯 Next goal: Switch to tab 87B6 and extract the number of baths from the listing detail page.[0m
+2025-10-07 16:28:39,490 - INFO -   🦾 [34m[ACTION 1/2][0m switch_tab: tab_id: 87B6
+2025-10-07 16:28:39,658 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2ZTFlMThmNi1hMDBiLTRmODItYmQ5NC0xZjc4ODdiYjNmNWUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4Nzk2MTQsImV4cCI6MTc1OTkyMjgxNH0.j49C5S8Y_z_R9G_Xjhh6KrNvCWB6_Qc4FaGZaC3Gp8A
+2025-10-07 16:28:40,591 - INFO - 🔄  Switched to tab #87B6
+2025-10-07 16:28:41,092 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: How many baths does the listing Heavenly Hollow in South Lake Tahoe have?, extract_links: False
+2025-10-07 16:28:42,373 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:42,428 - INFO - 📄 <url>
+https://www.airbnb.com/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490
+</url>
+<query>
+How many baths does the listing "Heavenly Hollow" in South Lake Tahoe have?
+</query>
+<result>
+1 bath
+</result>
+2025-10-07 16:28:45,177 - INFO - 
+
+2025-10-07 16:28:45,177 - INFO - 📍 Step 13:
+2025-10-07 16:28:46,948 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 16:28:46,949 - INFO -   [32m👍 Eval: Success – switched to the listing detail tab and extracted the bath count as 1 bath.[0m
+2025-10-07 16:28:46,949 - INFO -   [34m🎯 Next goal: Provide the bath count answer to the user and finish the task.[0m
+2025-10-07 16:28:46,949 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The listing Heavenly Hollow in South Lake Tahoe, California has 1 bath., success: True, files_to_display: []
+2025-10-07 16:28:47,012 - INFO - 
+📄 [32m Final Result:[0m 
+The listing "Heavenly Hollow" in South Lake Tahoe, California has 1 bath.
+
+
+2025-10-07 16:28:47,015 - INFO - ✅ Task completed successfully
+Creating standard Hyperbrowser session...
+Hyperbrowser session created with ID: 6e1e18f6-a00b-4f82-bd94-1f7887bb3f5e
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2ZTFlMThmNi1hMDBiLTRmODItYmQ5NC0xZjc4ODdiYjNmNWUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4Nzk2MTQsImV4cCI6MTc1OTkyMjgxNH0.j49C5S8Y_z_R9G_Xjhh6KrNvCWB6_Qc4FaGZaC3Gp8A
+Session URL: https://app.hyperbrowser.ai/features/sessions/6e1e18f6-a00b-4f82-bd94-1f7887bb3f5e
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.airbnb.com', extracted_content='🔗 Navigated to https://www.airbnb.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.airbnb.com/s/South-Lake-Tahoe--CA/homes', extracted_content='🔗 Navigated to https://www.airbnb.com/s/South-Lake-Tahoe--CA/homes', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes', extracted_content='🔗 Navigated to https://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 2.0 pages (requested: 2.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 2.0 pages (requested: 2.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes\n</url>\n<query>\nHow many baths does the listing "Heavenly Hollow" in South Lake Tahoe, California have?\n</query>\n<result>\nThe webpage does not provide the number of baths for the “Heavenly Hollow” listing.\n</result>', extracted_content='<url>\nhttps://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes\n</url>\n<query>\nHow many baths does the listing "Heavenly Hollow" in South Lake Tahoe, California have?\n</query>\n<result>\nThe webpage does not provide the number of baths for the “Heavenly Hollow” listing.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 156.15625, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1237.71875, 'click_y': 316.2421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 316.2421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 316.2421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 316.2421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 316.2421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 0, 'click_y': 316.2421875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 156.15625, 'click_y': 316.2421875, 'new_tab_opened': True}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #87B6', extracted_content='Switched to tab #87B6', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.airbnb.com/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490\n</url>\n<query>\nHow many baths does the listing "Heavenly Hollow" in South Lake Tahoe have?\n</query>\n<result>\n1 bath\n</result>', extracted_content='<url>\nhttps://www.airbnb.com/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490\n</url>\n<query>\nHow many baths does the listing "Heavenly Hollow" in South Lake Tahoe have?\n</query>\n<result>\n1 bath\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The listing "Heavenly Hollow" in South Lake Tahoe, California has 1 bath.', extracted_content='The listing "Heavenly Hollow" in South Lake Tahoe, California has 1 bath.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.airbnb.com', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.airbnb.com/s/South-Lake-Tahoe--CA/homes', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.airbnb.com/s/Heavenly%20Hollow--South-Lake-Tahoe--CA/homes', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 2.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'How many baths does the listing "Heavenly Hollow" in South Lake Tahoe, California have?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 98, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=7878, backend_node_id=22756, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=48.0, y=-726.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[1]', element_hash=935686287697482678)}, {'click_element_by_index': {'index': 118}, 'interacted_element': DOMInteractedElement(node_id=13483, backend_node_id=22761, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=1129.5625, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[6]', element_hash=935686287697482678)}, {'click_element_by_index': {'index': 112}, 'interacted_element': DOMInteractedElement(node_id=19097, backend_node_id=22760, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=-168.75, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[5]', element_hash=935686287697482678)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 112}, 'interacted_element': DOMInteractedElement(node_id=24779, backend_node_id=22759, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=-168.0625, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[4]', element_hash=935686287697482678)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 112}, 'interacted_element': DOMInteractedElement(node_id=30448, backend_node_id=22758, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=-168.375, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[3]', element_hash=935686287697482678)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 112}, 'interacted_element': DOMInteractedElement(node_id=36117, backend_node_id=22757, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=-168.6875, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[2]', element_hash=935686287697482678)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 112}, 'interacted_element': DOMInteractedElement(node_id=41786, backend_node_id=22756, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=-168.0, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[1]', element_hash=935686287697482678)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 112, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=47461, backend_node_id=22756, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-hidden': 'true', 'tabindex': '-1', 'class': 'rfexzly atm_9s_1ulexfb atm_7l_1j28jx2 atm_e2_1osqo2v dir dir-ltr', 'href': '/rooms/1485566048590189812?search_mode=regular_search&adults=1&check_in=2026-03-28&check_out=2026-04-02&children=0&infants=0&pets=0&source_impression_id=p3_1759879638_P3RwnPkhx9MMPHi5&previous_page_section_name=1000&federated_search_id=3f8efeca-17ea-4c46-b53e-84d3649db490', 'rel': 'noopener noreferrer nofollow', 'target': 'listing_1485566048590189812'}, bounds=DOMRect(x=48.0, y=213.5, width=216.3125, height=205.484375), x_path='html/body/div[5]/div/div/div[1]/div/div/div/div[2]/div[1]/main/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div/div/div/div/a[1]', element_hash=935686287697482678)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'switch_tab': {'tab_id': '87B6'}, 'interacted_element': None}, {'extract_structured_data': {'query': 'How many baths does the listing "Heavenly Hollow" in South Lake Tahoe have?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The listing "Heavenly Hollow" in South Lake Tahoe, California has 1 bath.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 6e1e18f6-a00b-4f82-bd94-1f7887bb3f5e...
+Hyperbrowser session 6e1e18f6-a00b-4f82-bd94-1f7887bb3f5e stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/6e1e18f6-a00b-4f82-bd94-1f7887bb3f5e

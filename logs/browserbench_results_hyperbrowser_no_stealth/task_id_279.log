@@ -1,0 +1,68 @@
+2025-10-07 19:00:49,862 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 19:00:49,872 - INFO - 🔗 Found URL in task: https://www.cornell.edu, adding as initial action...
+2025-10-07 19:00:49,876 - INFO - [34m🚀 Task: Does Cornell University provide an academic calendar? You must complete the task only using the starting website. Begin task on the following url: www.cornell.edu[0m
+2025-10-07 19:00:49,926 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 19:00:49,932 - INFO - ────────────────────────────────────────
+2025-10-07 19:00:49,932 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 19:00:49,932 - INFO -     👉  browser-use auth
+2025-10-07 19:00:49,932 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 19:00:49,932 - INFO - ────────────────────────────────────────
+
+2025-10-07 19:00:50,131 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 19:00:50,165 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI5MGI2NDVmZS05NzFmLTQ3OTEtYTUyNC02OTBmNGM3NjYyOTQiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODg4NDksImV4cCI6MTc1OTkzMjA0OX0.DfoNTcmujVebCgyEIt_O21ctEceU65Ww88-qSXKMxj4
+2025-10-07 19:00:51,349 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.cornell.edu, new_tab: False
+2025-10-07 19:00:52,075 - INFO - 🔗 Navigated to https://www.cornell.edu
+2025-10-07 19:00:54,632 - INFO - 
+
+2025-10-07 19:00:54,632 - INFO - 📍 Step 1:
+2025-10-07 19:00:56,292 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:00:56,297 - INFO -   [32m👍 Eval: Successfully navigated to the Cornell homepage. Verdict: Success[0m
+2025-10-07 19:00:56,297 - INFO -   [34m🎯 Next goal: Expand the Academics submenu to reveal its links.[0m
+2025-10-07 19:00:56,297 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 8, while_holding_ctrl: None
+2025-10-07 19:00:56,727 - WARNING - No visible quad found, using first quad
+2025-10-07 19:00:57,681 - INFO - 🖱️ Clicked element
+2025-10-07 19:01:00,004 - INFO - 
+
+2025-10-07 19:01:00,004 - INFO - 📍 Step 2:
+2025-10-07 19:01:01,777 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:01:01,777 - INFO -   [31m⚠️ Eval: Failure: Academics submenu did not expand after previous click.[0m
+2025-10-07 19:01:01,777 - INFO -   [34m🎯 Next goal: Expand the Academics submenu by clicking the Academics toggle button.[0m
+2025-10-07 19:01:01,778 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 8, while_holding_ctrl: None
+2025-10-07 19:01:02,172 - WARNING - No visible quad found, using first quad
+2025-10-07 19:01:03,231 - INFO - 🖱️ Clicked element
+2025-10-07 19:01:05,682 - INFO - 
+
+2025-10-07 19:01:05,682 - INFO - 📍 Step 3:
+2025-10-07 19:01:07,752 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:01:07,753 - INFO -   [31m⚠️ Eval: Failure: Academics submenu did not expand after clicking the toggle button.[0m
+2025-10-07 19:01:07,754 - INFO -   [34m🎯 Next goal: Search the Cornell site for "academic calendar" using the search box.[0m
+2025-10-07 19:01:07,754 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 24, text: academic calendar, clear_existing: True
+2025-10-07 19:01:11,537 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 19:01:11,537 - INFO - ⌨️ Typed "academic calendar" into element with index 24
+2025-10-07 19:01:13,949 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 25, while_holding_ctrl: None
+2025-10-07 19:01:15,469 - INFO - 🖱️ Clicked element
+2025-10-07 19:01:18,229 - INFO - 
+
+2025-10-07 19:01:18,229 - INFO - 📍 Step 4:
+2025-10-07 19:01:19,709 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:01:19,710 - INFO -   [32m👍 Eval: Search for "academic calendar" succeeded and returned relevant results, including the official Academic Calendar link. Verdict: Success[0m
+2025-10-07 19:01:19,710 - INFO -   [34m🎯 Next goal: Provide the answer to the user confirming that Cornell University provides an academic calendar and include the link.[0m
+2025-10-07 19:01:19,711 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, Cornell University provides an academic calendar. You can view it here: https://registrar.cornell.edu/academic-calen
+2025-10-07 19:01:19,785 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, Cornell University provides an academic calendar. You can view it here: https://registrar.cornell.edu/academic-calendar
+
+
+2025-10-07 19:01:19,786 - INFO - ✅ Task completed successfully
+Creating standard Hyperbrowser session...
+Hyperbrowser session created with ID: 90b645fe-971f-4791-a524-690f4c766294
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI5MGI2NDVmZS05NzFmLTQ3OTEtYTUyNC02OTBmNGM3NjYyOTQiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODg4NDksImV4cCI6MTc1OTkzMjA0OX0.DfoNTcmujVebCgyEIt_O21ctEceU65Ww88-qSXKMxj4
+Session URL: https://app.hyperbrowser.ai/features/sessions/90b645fe-971f-4791-a524-690f4c766294
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.cornell.edu', extracted_content='🔗 Navigated to https://www.cornell.edu', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 545.5, 'click_y': 160.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 545.5, 'click_y': 160.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'academic calendar' into element 24.", extracted_content="Input 'academic calendar' into element 24.", include_extracted_content_only_once=False, metadata={'input_x': 1153.5, 'input_y': 21.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1223.5, 'click_y': 21.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, Cornell University provides an academic calendar. You can view it here: https://registrar.corne - 24 more characters', extracted_content='Yes, Cornell University provides an academic calendar. You can view it here: https://registrar.cornell.edu/academic-calendar', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.cornell.edu', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 8}, 'interacted_element': DOMInteractedElement(node_id=205, backend_node_id=523, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'arrow_button', 'aria-expanded': 'false', 'aria-haspopup': 'menu', 'aria-label': 'toggle the Academics sub-menu'}, bounds=DOMRect(x=545.5, y=149.0, width=0.0, height=23.0), x_path='html/body/header/nav/ul/li[3]/span/button', element_hash=6779419588025417299)}, {'click_element_by_index': {'index': 8}, 'interacted_element': DOMInteractedElement(node_id=1528, backend_node_id=523, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'arrow_button', 'aria-expanded': 'false', 'aria-haspopup': 'menu', 'aria-label': 'toggle the Academics sub-menu'}, bounds=DOMRect(x=545.5, y=149.0, width=0.0, height=23.0), x_path='html/body/header/nav/ul/li[3]/span/button', element_hash=6779419588025417299)}, {'input_text': {'index': 24, 'text': 'academic calendar', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=3066, backend_node_id=682, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'autocomplete': 'off', 'id': 'search-query', 'name': 'q', 'placeholder': 'Search', 'required': '', 'type': 'search', 'title': 'Search', 'tabindex': '11'}, bounds=DOMRect(x=1103.5, y=5.0, width=100.0, height=32.0), x_path='html/body/header/nav/div/form/div/input', element_hash=7393042691113939482)}, {'click_element_by_index': {'index': 25}, 'interacted_element': DOMInteractedElement(node_id=3074, backend_node_id=688, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'icon-search search-submit', 'type': 'submit', 'name': 'submit-search', 'tabindex': '12'}, bounds=DOMRect(x=1207.5, y=5.0, width=32.0, height=32.0), x_path='html/body/header/nav/div/form/div/button', element_hash=3720043923288594148)}, {'done': {'text': 'Yes, Cornell University provides an academic calendar. You can view it here: https://registrar.cornell.edu/academic-calendar', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 90b645fe-971f-4791-a524-690f4c766294...
+Hyperbrowser session 90b645fe-971f-4791-a524-690f4c766294 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/90b645fe-971f-4791-a524-690f4c766294

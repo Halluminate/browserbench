@@ -1,0 +1,286 @@
+2025-10-07 18:03:44,882 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 18:03:44,895 - INFO - 🔗 Found URL in task: https://www.indiatoday.in, adding as initial action...
+2025-10-07 18:03:44,900 - INFO - [34m🚀 Task: When was the India Today Group founded? You must complete the task only using the starting website. Begin task on the following url: https://www.indiatoday.in[0m
+2025-10-07 18:03:44,958 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 18:03:44,966 - INFO - ────────────────────────────────────────
+2025-10-07 18:03:44,966 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 18:03:44,966 - INFO -     👉  browser-use auth
+2025-10-07 18:03:44,966 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 18:03:44,966 - INFO - ────────────────────────────────────────
+
+2025-10-07 18:03:45,205 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 18:03:45,243 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:03:46,835 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.indiatoday.in, new_tab: False
+2025-10-07 18:03:47,577 - INFO - 🔗 Navigated to https://www.indiatoday.in
+2025-10-07 18:03:52,490 - WARNING - Received duplicate response for request 46 - ignoring
+2025-10-07 18:03:54,640 - INFO - 
+
+2025-10-07 18:03:54,640 - INFO - 📍 Step 1:
+2025-10-07 18:03:56,711 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:03:56,716 - INFO -   [34m🎯 Next goal: Navigate to the internal search results page for the query about India Today Group founding and extract the answer.[0m
+2025-10-07 18:03:56,717 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded, new_tab: False
+2025-10-07 18:03:57,938 - INFO - 🔗 Navigated to https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded
+2025-10-07 18:03:58,440 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was the India Today Group founded?, extract_links: False, start_from_char: 0
+2025-10-07 18:03:59,747 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:03:59,803 - INFO - 📄 <url>
+https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded
+</url>
+<query>
+When was the India Today Group founded?
+</query>
+<result>
+The webpage does not provide information about when the India Today Group was founded.
+</result>
+2025-10-07 18:04:02,087 - ERROR - CDP Error for request 104: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:02,088 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:02,089 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 18:04:02,089 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 18:04:02,770 - INFO - 
+
+2025-10-07 18:04:02,770 - INFO - 📍 Step 2:
+2025-10-07 18:04:04,073 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:04,074 - INFO -   ❔ Eval: The navigation to the search page succeeded, but the page content did not load (empty DOM). Verdict: Uncertain
+2025-10-07 18:04:04,074 - INFO -   [34m🎯 Next goal: Wait for the page to load and then extract structured data to find the founding date.[0m
+2025-10-07 18:04:04,074 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 18:04:04,128 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 18:04:06,631 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was the India Today Group founded?, extract_links: False, start_from_char: 0
+2025-10-07 18:04:08,174 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:08,246 - INFO - 📄 <url>
+https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded
+</url>
+<query>
+When was the India Today Group founded?
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-07 18:04:11,447 - INFO - 
+
+2025-10-07 18:04:11,448 - INFO - 📍 Step 3:
+2025-10-07 18:04:13,377 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:13,379 - INFO -   ❔ Eval: Uncertain – the search page loaded a 404 and provided no information.
+2025-10-07 18:04:13,379 - INFO -   [34m🎯 Next goal: Navigate to the India Today homepage to find the About/India Today Group page.[0m
+2025-10-07 18:04:13,381 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.indiatoday.in, new_tab: False
+2025-10-07 18:04:14,027 - INFO - 🔗 Navigated to https://www.indiatoday.in
+2025-10-07 18:04:18,113 - INFO - 
+
+2025-10-07 18:04:18,113 - INFO - 📍 Step 4:
+2025-10-07 18:04:19,933 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:19,934 - INFO -   [32m👍 Eval: Successfully navigated to the India Today homepage. Verdict: Success[0m
+2025-10-07 18:04:19,934 - INFO -   [34m🎯 Next goal: Scroll down near the bottom of the homepage to reveal footer/Corporate info.[0m
+2025-10-07 18:04:19,934 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 18:04:26,401 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 270: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 271: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 272: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 273: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 274: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 275: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 276: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,129 - ERROR - CDP Error for request 277: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 278: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 279: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 280: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 281: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 282: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 283: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,130 - ERROR - CDP Error for request 284: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,132 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 18:04:29,133 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 18:04:29,133 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 18:04:29,740 - INFO - 
+
+2025-10-07 18:04:29,740 - INFO - 📍 Step 5:
+2025-10-07 18:04:31,131 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:31,132 - INFO -   [31m⚠️ Eval: Previous scroll action did not reveal content; page still appears empty. Verdict: Failure[0m
+2025-10-07 18:04:31,132 - INFO -   [34m🎯 Next goal: Navigate to the India Today About page and extract the founding date.[0m
+2025-10-07 18:04:31,132 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.indiatoday.in/about-us, new_tab: False
+2025-10-07 18:04:32,668 - INFO - 🔗 Navigated to https://www.indiatoday.in/about-us
+2025-10-07 18:04:33,170 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 18:04:33,227 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 18:04:35,730 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: When was the India Today Group founded?, extract_links: False, start_from_char: 0
+2025-10-07 18:04:36,777 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:36,837 - INFO - 📄 <url>
+https://www.aajtak.in/investor
+</url>
+<query>
+When was the India Today Group founded?
+</query>
+<result>
+Information on the founding date of the India Today Group is not available in the provided webpage content.
+</result>
+2025-10-07 18:04:38,758 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:39,211 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:39,755 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:40,247 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:40,750 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:41,251 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:41,749 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:42,253 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:42,746 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:43,244 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:43,740 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:44,199 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+2025-10-07 18:04:46,677 - ERROR - CDP Error for request 389: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:04:48,967 - INFO - 
+
+2025-10-07 18:04:48,968 - INFO - 📍 Step 6:
+2025-10-07 18:04:50,982 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:50,983 - INFO -   [31m⚠️ Eval: Previous step attempted to locate about page but ended on investor page; no founding info yet. Verdict: Failure[0m
+2025-10-07 18:04:50,983 - INFO -   [34m🎯 Next goal: Click the 'Corporate Information' link (index 111) to navigate to the corporate info page and then extract the founding date.[0m
+2025-10-07 18:04:50,984 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 111, while_holding_ctrl: None
+2025-10-07 18:04:52,292 - INFO - 🖱️ Clicked element
+2025-10-07 18:04:53,671 - ERROR - CDP Error for request 50: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 18:04:53,864 - ERROR - CDP Error for request 57: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 18:04:53,864 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 18:04:54,036 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#d689)]         ❌ Failed (0.36s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-07 18:04:54,092 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#d689 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-07 18:04:54,092 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 18:04:54,092 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 18:04:54,321 - INFO - 
+
+2025-10-07 18:04:54,321 - INFO - 📍 Step 7:
+2025-10-07 18:04:55,658 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:55,659 - INFO -   ❔ Eval: Previous action clicked 'Corporate Information' but did not yield the founding date; we need to go to the main India Today About page.
+2025-10-07 18:04:55,659 - INFO -   [34m🎯 Next goal: Navigate to https://www.indiatoday.in/about-us to locate the founding date of the India Today Group.[0m
+2025-10-07 18:04:55,660 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.indiatoday.in/about-us, new_tab: False
+2025-10-07 18:04:56,209 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:04:56,341 - ERROR - CDP Error for request 66: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:56,341 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#db22)]      ❌ Failed (0.13s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 18:04:56,396 - ERROR - CDP Error for request 67: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:56,396 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#db22)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#db22)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:04:56,399 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#db22 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 18:04:56,402 - INFO - 🔗 Navigated to https://www.indiatoday.in/about-us
+2025-10-07 18:04:56,786 - ERROR - CDP Error for request 68: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:56,862 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:04:56,863 - INFO - 
+
+2025-10-07 18:04:56,863 - INFO - 📍 Step 8:
+2025-10-07 18:04:59,058 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:04:59,060 - INFO -   [31m⚠️ Eval: Previous attempt to load the About page resulted in an empty page; no founding information found. Verdict: Failure[0m
+2025-10-07 18:04:59,060 - INFO -   [34m🎯 Next goal: Load the India Today About Us page, wait for content, and extract the founding date using structured data extraction.[0m
+2025-10-07 18:04:59,061 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.indiatoday.in/about-us, new_tab: False
+2025-10-07 18:04:59,251 - ERROR - CDP Error for request 69: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:04:59,251 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:04:59,312 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:04:59,430 - ERROR - CDP Error for request 70: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:59,431 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#b369)]      ❌ Failed (0.12s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 18:04:59,487 - ERROR - CDP Error for request 71: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:59,487 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#b369)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#b369)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:04:59,488 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#b369 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 18:04:59,488 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#d819)]          ❌ Failed (0.36s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 18:04:59,543 - ERROR - CDP Error for request 72: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:59,543 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#d819)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#d819)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:04:59,544 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#d819 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 18:04:59,545 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:04:59,851 - ERROR - CDP Error for request 73: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:04:59,919 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:04:59,920 - INFO - 
+
+2025-10-07 18:04:59,920 - INFO - 📍 Step 9:
+2025-10-07 18:05:01,548 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:05:01,549 - INFO -   ❔ Eval: Previous navigation to about-us resulted in an empty page; uncertain if content loaded.
+2025-10-07 18:05:01,549 - INFO -   [34m🎯 Next goal: Reload the India Today About Us page, wait for full load, then extract the founding date.[0m
+2025-10-07 18:05:01,549 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.indiatoday.in/about-us, new_tab: False
+2025-10-07 18:05:01,999 - ERROR - CDP Error for request 74: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:05:02,000 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:05:02,139 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:05:02,316 - ERROR - CDP Error for request 75: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:02,317 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#c276)]      ❌ Failed (0.18s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 18:05:02,372 - ERROR - CDP Error for request 76: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:02,372 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#c276)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#c276)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:05:02,375 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#c276 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 18:05:02,376 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#ec01)]          ❌ Failed (0.73s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 18:05:02,432 - ERROR - CDP Error for request 77: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:02,432 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#ec01)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#ec01)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:05:02,434 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#ec01 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 18:05:02,437 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:05:02,831 - ERROR - CDP Error for request 78: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:02,928 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:05:02,929 - INFO - 
+
+2025-10-07 18:05:02,929 - INFO - 📍 Step 10:
+2025-10-07 18:05:04,918 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:05:04,918 - INFO -   ❔ Eval: Previous actions failed to retrieve content; we need a new approach.
+2025-10-07 18:05:04,918 - INFO -   [34m🎯 Next goal: Load the India Today homepage and extract the founding date using structured data extraction.[0m
+2025-10-07 18:05:04,919 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.indiatoday.in, new_tab: False
+2025-10-07 18:05:05,155 - ERROR - CDP Error for request 79: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:05:05,155 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:05:05,213 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:05:05,327 - ERROR - CDP Error for request 80: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:05,327 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#2498)]      ❌ Failed (0.11s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 18:05:05,382 - ERROR - CDP Error for request 81: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:05,383 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#2498)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#2498)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:05:05,384 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#2498 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 18:05:05,385 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#fae2)]          ❌ Failed (0.35s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 18:05:05,439 - ERROR - CDP Error for request 82: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:05,440 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#fae2)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#fae2)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:05:05,442 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#fae2 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 18:05:05,444 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 18:05:05,731 - ERROR - CDP Error for request 83: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:05,802 - WARNING - [DownloadsWatchdog] No target info found for CDCC948DBF929F0FB19AD1905AAB05B4
+2025-10-07 18:05:05,805 - INFO - 
+
+2025-10-07 18:05:05,805 - INFO - 📍 Step 11:
+2025-10-07 18:05:06,942 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:05:06,943 - INFO -   ❔ Eval: Failed to retrieve the founding date after multiple navigation attempts.
+2025-10-07 18:05:06,944 - INFO - 
+2025-10-07 18:05:06,944 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to find the founding date of the India Today Group on the India Today website. All navigation attempts (search results, homepage, investor page, and about-us page) returned empty content or did not contain the required information.' success=False files_to_display=[]
+2025-10-07 18:05:07,066 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to find the founding date of the India Today Group on the India Today website. All navigation attempts (search results, homepage, investor page, and about-us page) returned empty content or did not contain the required information.
+
+
+2025-10-07 18:05:07,066 - INFO - ❌ Task completed without success
+Creating standard Hyperbrowser session...
+Hyperbrowser session created with ID: cd593687-aa78-43a1-85a2-0f3d0b7b4ac0
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZDU5MzY4Ny1hYTc4LTQzYTEtODVhMi0wZjNkMGI3YjRhYzAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODU0MjQsImV4cCI6MTc1OTkyODYyNH0.J2-GV6RU3-5jQTG7DKcXK3i8jXlIdV8n3OJfBfZMloA
+Session URL: https://app.hyperbrowser.ai/features/sessions/cd593687-aa78-43a1-85a2-0f3d0b7b4ac0
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.indiatoday.in', extracted_content='🔗 Navigated to https://www.indiatoday.in', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded', extracted_content='🔗 Navigated to https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded\n</url>\n<query>\nWhen was the India Today Group founded?\n</query>\n<result>\nThe webpage does not provide information about when the India Today Group was founded.\n</result>', extracted_content='<url>\nhttps://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded\n</url>\n<query>\nWhen was the India Today Group founded?\n</query>\n<result>\nThe webpage does not provide information about when the India Today Group was founded.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded\n</url>\n<query>\nWhen was the India Today Group founded?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded\n</url>\n<query>\nWhen was the India Today Group founded?\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.indiatoday.in', extracted_content='🔗 Navigated to https://www.indiatoday.in', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.indiatoday.in/about-us', extracted_content='🔗 Navigated to https://www.indiatoday.in/about-us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.aajtak.in/investor\n</url>\n<query>\nWhen was the India Today Group founded?\n</query>\n<result>\nInformation on the founding date of the India Today Group is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.aajtak.in/investor\n</url>\n<query>\nWhen was the India Today Group founded?\n</query>\n<result>\nInformation on the founding date of the India Today Group is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 68.5546875, 'click_y': 233.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.indiatoday.in/about-us', extracted_content='🔗 Navigated to https://www.indiatoday.in/about-us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to find the founding date of the India Today Group on the India Today website. All navi - 144 more characters', extracted_content='I was unable to find the founding date of the India Today Group on the India Today website. All navigation attempts (search results, homepage, investor page, and about-us page) returned empty content or did not contain the required information.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.indiatoday.in', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.indiatoday.in/search.html?q=India%20Today%20Group%20founded', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was the India Today Group founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was the India Today Group founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.indiatoday.in', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.indiatoday.in/about-us', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was the India Today Group founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 111}, 'interacted_element': DOMInteractedElement(node_id=45, backend_node_id=73, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'corporate_new.html', 'target': 'aajtakInvetor', 'onclick': "javascript:ok('conduct');"}, bounds=DOMRect(x=8.0, y=226.0, width=121.109375, height=14.0), x_path='html/body/table/tbody/tr/td[1]/table/tbody/tr[5]/td/div/a', element_hash=1319280522732482414)}, {'go_to_url': {'url': 'https://www.indiatoday.in/about-us', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.indiatoday.in/about-us', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was the India Today Group founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.indiatoday.in/about-us', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was the India Today Group founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.indiatoday.in', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was the India Today Group founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to find the founding date of the India Today Group on the India Today website. All navigation attempts (search results, homepage, investor page, and about-us page) returned empty content or did not contain the required information.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-07 18:05:07,194 - ERROR - CDP Error for request 84: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:07,194 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#4d72)] ❌ Failed (0.06s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 18:05:07,249 - ERROR - CDP Error for request 85: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 18:05:07,249 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#4d72)] ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_SaveStorageStateEvent(SaveStorageStateEvent#4d72)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 18:05:07,250 - ERROR - ❌ EventBus_52984633🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#4d72 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session cd593687-aa78-43a1-85a2-0f3d0b7b4ac0...
+Hyperbrowser session cd593687-aa78-43a1-85a2-0f3d0b7b4ac0 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/cd593687-aa78-43a1-85a2-0f3d0b7b4ac0

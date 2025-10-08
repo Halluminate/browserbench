@@ -1,0 +1,124 @@
+2025-10-07 18:21:33,353 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 18:21:33,368 - INFO - 🔗 Found URL in task: https://www.worldbank.org/ext/en/home, adding as initial action...
+2025-10-07 18:21:33,373 - INFO - [34m🚀 Task: What is the HEADQUARTERS address of the World Bank? You must complete the task only using the starting website. Begin task on the following url: https://www.worldbank.org/ext/en/home[0m
+2025-10-07 18:21:33,424 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 18:21:33,431 - INFO - ────────────────────────────────────────
+2025-10-07 18:21:33,431 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 18:21:33,431 - INFO -     👉  browser-use auth
+2025-10-07 18:21:33,431 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 18:21:33,431 - INFO - ────────────────────────────────────────
+
+2025-10-07 18:21:33,643 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 18:21:33,675 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZWIzZDNiZS1kODRiLTQ5YmUtYmIyYi0wNmEyZjUzYjJiNTEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODY0OTMsImV4cCI6MTc1OTkyOTY5M30.EagVXfeJBNeGtDSxklBYTMHFmq0mhMLHvMdwnD3KkRc
+2025-10-07 18:21:34,796 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.worldbank.org/ext/en/home, new_tab: False
+2025-10-07 18:21:35,606 - INFO - 🔗 Navigated to https://www.worldbank.org/ext/en/home
+2025-10-07 18:21:38,024 - INFO - 
+
+2025-10-07 18:21:38,024 - INFO - 📍 Step 1:
+2025-10-07 18:21:39,110 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:21:39,122 - INFO -   ❔ Eval: Previous step only loaded the homepage; no action taken yet. Verdict: N/A
+2025-10-07 18:21:39,122 - INFO -   [34m🎯 Next goal: Navigate to the About Us page by clicking the 'About Us' link.[0m
+2025-10-07 18:21:39,122 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 18, while_holding_ctrl: None
+2025-10-07 18:21:39,506 - WARNING - No visible quad found, using first quad
+2025-10-07 18:21:40,430 - INFO - 🖱️ Clicked element
+2025-10-07 18:21:42,737 - INFO - 
+
+2025-10-07 18:21:42,737 - INFO - 📍 Step 2:
+2025-10-07 18:21:44,310 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:21:44,312 - INFO -   ❔ Eval: Uncertain – the previous click did not clearly navigate to the About Us page.
+2025-10-07 18:21:44,312 - INFO -   [34m🎯 Next goal: Click the 'About Us' link to open the About Us page.[0m
+2025-10-07 18:21:44,313 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 34, while_holding_ctrl: None
+2025-10-07 18:21:45,682 - INFO - 🖱️ Clicked element
+2025-10-07 18:21:48,037 - INFO - 
+
+2025-10-07 18:21:48,037 - INFO - 📍 Step 3:
+2025-10-07 18:21:49,472 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:21:49,473 - INFO -   ❔ Eval: Previous click on About Us did not navigate; we are now on the Who We Are page but address not yet found.
+2025-10-07 18:21:49,473 - INFO -   [34m🎯 Next goal: Scroll down to load the footer containing the headquarters address, then extract the address.[0m
+2025-10-07 18:21:49,473 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 18:21:52,363 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 18:21:52,866 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the headquarters address of the World Bank?, extract_links: False, start_from_char: 0
+2025-10-07 18:21:53,793 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:21:53,850 - INFO - 📄 <url>
+https://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext
+</url>
+<query>
+What is the headquarters address of the World Bank?
+</query>
+<result>
+The webpage does not provide the headquarters address of the World Bank.
+</result>
+2025-10-07 18:21:56,131 - INFO - 
+
+2025-10-07 18:21:56,131 - INFO - 📍 Step 4:
+2025-10-07 18:21:57,483 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:21:57,484 - INFO -   ❔ Eval: Previous scroll did not reach the footer; address not found.
+2025-10-07 18:21:57,484 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the page to load the footer, then extract the headquarters address.[0m
+2025-10-07 18:21:57,484 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 18:22:00,376 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 18:22:00,877 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the headquarters address of the World Bank?, extract_links: False, start_from_char: 0
+2025-10-07 18:22:01,745 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:22:01,800 - INFO - 📄 <url>
+https://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext
+</url>
+<query>
+What is the headquarters address of the World Bank?
+</query>
+<result>
+The webpage does not provide the headquarters address of the World Bank.
+</result>
+2025-10-07 18:22:04,015 - INFO - 
+
+2025-10-07 18:22:04,015 - INFO - 📍 Step 5:
+2025-10-07 18:22:05,281 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:22:05,281 - INFO -   ❔ Eval: Previous scroll actions did not reveal the address; address still not found.
+2025-10-07 18:22:05,282 - INFO -   [34m🎯 Next goal: Extract the World Bank headquarters address from the current page using structured data extraction.[0m
+2025-10-07 18:22:05,282 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: World Bank headquarters address, extract_links: False, start_from_char: 0
+2025-10-07 18:22:06,079 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:22:06,135 - INFO - 📄 <url>
+https://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext
+</url>
+<query>
+World Bank headquarters address
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-07 18:22:08,420 - INFO - 
+
+2025-10-07 18:22:08,420 - INFO - 📍 Step 6:
+2025-10-07 18:22:10,195 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:22:10,197 - INFO -   ❔ Eval: Previous attempts to find the address via scrolling and extraction on the Who We Are page failed to locate the headquarters address.
+2025-10-07 18:22:10,197 - INFO -   [34m🎯 Next goal: Click the 'Contact' link (index 28) to navigate to the contact page and then extract the World Bank headquarters address.[0m
+2025-10-07 18:22:10,198 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 28, while_holding_ctrl: None
+2025-10-07 18:22:11,572 - INFO - 🖱️ Clicked element
+2025-10-07 18:22:14,515 - INFO - 
+
+2025-10-07 18:22:14,515 - INFO - 📍 Step 7:
+2025-10-07 18:22:16,106 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 18:22:16,108 - INFO -   [32m👍 Eval: Clicked the 'Contact' link successfully and loaded the contacts page. Verdict: Success[0m
+2025-10-07 18:22:16,108 - INFO -   [34m🎯 Next goal: Provide the headquarters address to the user and finish the task.[0m
+2025-10-07 18:22:16,109 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The World Bank Headquarters address is:\n\nThe World Bank\n1818 H Street, NW\nWashington, DC 20433\nUSA, success: True
+2025-10-07 18:22:16,164 - INFO - 
+📄 [32m Final Result:[0m 
+The World Bank Headquarters address is:
+
+The World Bank
+1818 H Street, NW
+Washington, DC 20433
+USA
+
+
+2025-10-07 18:22:16,169 - INFO - ✅ Task completed successfully
+Creating standard Hyperbrowser session...
+Hyperbrowser session created with ID: ceb3d3be-d84b-49be-bb2b-06a2f53b2b51
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJjZWIzZDNiZS1kODRiLTQ5YmUtYmIyYi0wNmEyZjUzYjJiNTEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4ODY0OTMsImV4cCI6MTc1OTkyOTY5M30.EagVXfeJBNeGtDSxklBYTMHFmq0mhMLHvMdwnD3KkRc
+Session URL: https://app.hyperbrowser.ai/features/sessions/ceb3d3be-d84b-49be-bb2b-06a2f53b2b51
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.worldbank.org/ext/en/home', extracted_content='🔗 Navigated to https://www.worldbank.org/ext/en/home', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 877.4921875, 'click_y': 631, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 877.4921875, 'click_y': 315.59375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext\n</url>\n<query>\nWhat is the headquarters address of the World Bank?\n</query>\n<result>\nThe webpage does not provide the headquarters address of the World Bank.\n</result>', extracted_content='<url>\nhttps://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext\n</url>\n<query>\nWhat is the headquarters address of the World Bank?\n</query>\n<result>\nThe webpage does not provide the headquarters address of the World Bank.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext\n</url>\n<query>\nWhat is the headquarters address of the World Bank?\n</query>\n<result>\nThe webpage does not provide the headquarters address of the World Bank.\n</result>', extracted_content='<url>\nhttps://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext\n</url>\n<query>\nWhat is the headquarters address of the World Bank?\n</query>\n<result>\nThe webpage does not provide the headquarters address of the World Bank.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext\n</url>\n<query>\nWorld Bank headquarters address\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext\n</url>\n<query>\nWorld Bank headquarters address\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 100.7421875, 'click_y': 371.953125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The World Bank Headquarters address is:\n\nThe World Bank\n1818 H Street, NW\nWashington, DC 20433\nUSA', extracted_content='The World Bank Headquarters address is:\n\nThe World Bank\n1818 H Street, NW\nWashington, DC 20433\nUSA', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.worldbank.org/ext/en/home', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 18}, 'interacted_element': DOMInteractedElement(node_id=256, backend_node_id=1809, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'id': 'button', 'href': 'https://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext', 'class': 'button dark-bg'}, bounds=DOMRect(x=809.109375, y=1346.59375, width=136.765625, height=60.0), x_path='html/body/main/div[2]/div/div/div/div[2]/div[3]/div/a', element_hash=4559050661985852704)}, {'click_element_by_index': {'index': 34}, 'interacted_element': DOMInteractedElement(node_id=1229, backend_node_id=1809, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'id': 'button', 'href': 'https://www.worldbank.org/ext/en/who-we-are?intcid=ecr_hp_about_en_ext', 'class': 'button dark-bg'}, bounds=DOMRect(x=809.109375, y=285.59375, width=136.765625, height=60.0), x_path='html/body/main/div[2]/div/div/div/div[2]/div[3]/div/a', element_hash=4559050661985852704)}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the headquarters address of the World Bank?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the headquarters address of the World Bank?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'World Bank headquarters address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 28}, 'interacted_element': DOMInteractedElement(node_id=3162, backend_node_id=4511, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': 'https://www.worldbank.org/en/about/contacts', 'title': 'Contact'}, bounds=DOMRect(x=72.0, y=360.953125, width=57.484375, height=22.0), x_path='html/body/footer/div/section/div[2]/div[1]/ul/li[4]/a', element_hash=876531074695242098)}, {'done': {'text': 'The World Bank Headquarters address is:\n\nThe World Bank\n1818 H Street, NW\nWashington, DC 20433\nUSA', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session ceb3d3be-d84b-49be-bb2b-06a2f53b2b51...
+Hyperbrowser session ceb3d3be-d84b-49be-bb2b-06a2f53b2b51 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/ceb3d3be-d84b-49be-bb2b-06a2f53b2b51
