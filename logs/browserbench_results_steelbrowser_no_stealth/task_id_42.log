@@ -1,0 +1,174 @@
+2025-10-08 10:02:44,061 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 10:02:44,075 - INFO - 🔗 Found URL in task: https://flickr.com, adding as initial action...
+2025-10-08 10:02:44,080 - INFO - [34m🚀 Task: When was Flickr founded? You must complete the task only using the starting website. Begin task on the following url: https://flickr.com[0m
+2025-10-08 10:02:44,128 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 10:02:44,136 - INFO - ────────────────────────────────────────
+2025-10-08 10:02:44,136 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 10:02:44,136 - INFO -     👉  browser-use auth
+2025-10-08 10:02:44,136 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 10:02:44,136 - INFO - ────────────────────────────────────────
+
+2025-10-08 10:02:44,352 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 10:02:44,385 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=1403d4c7-7aad-45e2-b559-64b0a6e75d0d
+2025-10-08 10:02:45,106 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://flickr.com, new_tab: False
+2025-10-08 10:02:45,781 - INFO - 🔗 Navigated to https://flickr.com
+2025-10-08 10:02:48,458 - ERROR - CDP Error for request 54: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 10:02:48,458 - ERROR - CDP Error for request 55: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 10:02:48,458 - ERROR - CDP Error for request 56: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 10:02:48,458 - ERROR - CDP Error for request 57: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 10:02:48,458 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 10:02:48,459 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-08 10:02:48,459 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-08 10:02:49,262 - INFO - 
+
+2025-10-08 10:02:49,262 - INFO - 📍 Step 1:
+2025-10-08 10:02:51,000 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:02:51,005 - INFO -   ❔ Eval: The page loaded but displayed no content; likely still loading. Verdict: Uncertain
+2025-10-08 10:02:51,005 - INFO -   [34m🎯 Next goal: Wait for the Flickr homepage to load fully.[0m
+2025-10-08 10:02:51,005 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-08 10:02:51,024 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 10:02:54,767 - INFO - 
+
+2025-10-08 10:02:54,767 - INFO - 📍 Step 2:
+2025-10-08 10:02:56,833 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:02:56,835 - INFO -   [32m👍 Eval: Successfully waited for the Flickr homepage to load; page elements are now visible. Verdict: Success[0m
+2025-10-08 10:02:56,835 - INFO -   [34m🎯 Next goal: Dismiss the cookie consent banner by clicking the 'Accept All' button.[0m
+2025-10-08 10:02:56,835 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 36, while_holding_ctrl: None
+2025-10-08 10:02:58,187 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:02,547 - INFO - 
+
+2025-10-08 10:03:02,547 - INFO - 📍 Step 3:
+2025-10-08 10:03:03,993 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:03,994 - INFO -   [32m👍 Eval: Success[0m
+2025-10-08 10:03:03,994 - INFO -   [34m🎯 Next goal: Extract the founding date of Flickr from the page using a structured data query.[0m
+2025-10-08 10:03:03,995 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: When was Flickr founded?, extract_links: False, start_from_char: 0
+2025-10-08 10:03:04,712 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:04,736 - INFO - 📄 <url>
+https://flickr.com/
+</url>
+<query>
+When was Flickr founded?
+</query>
+<result>
+The webpage does not provide information about when Flickr was founded.
+</result>
+2025-10-08 10:03:06,454 - INFO - 
+
+2025-10-08 10:03:06,454 - INFO - 📍 Step 4:
+2025-10-08 10:03:08,127 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:08,129 - INFO -   [31m⚠️ Eval: Attempt to extract founding date from homepage failed; no relevant information found. Verdict: Failure[0m
+2025-10-08 10:03:08,129 - INFO -   [34m🎯 Next goal: Open the 'Company' dropdown to reveal links that may contain Flickr's founding date.[0m
+2025-10-08 10:03:08,129 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 19, while_holding_ctrl: None
+2025-10-08 10:03:08,891 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:10,612 - INFO - 
+
+2025-10-08 10:03:10,612 - INFO - 📍 Step 5:
+2025-10-08 10:03:12,588 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:12,590 - INFO -   [32m👍 Eval: Successfully clicked the 'Company' dropdown; new menu items should be visible.[0m
+2025-10-08 10:03:12,590 - INFO -   [34m🎯 Next goal: Click the company page link (index 21) to navigate to the company information page.[0m
+2025-10-08 10:03:12,590 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 21, while_holding_ctrl: None
+2025-10-08 10:03:13,370 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:15,060 - INFO - 
+
+2025-10-08 10:03:15,060 - INFO - 📍 Step 6:
+2025-10-08 10:03:16,587 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:16,589 - INFO -   ❔ Eval: Clicked the company page link; need to confirm navigation and extract founding date.
+2025-10-08 10:03:16,589 - INFO -   [34m🎯 Next goal: Wait for the company page to load and extract the founding date using a structured data query.[0m
+2025-10-08 10:03:16,589 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 3
+2025-10-08 10:03:16,607 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 10:03:17,109 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was Flickr founded?, extract_links: False, start_from_char: 0
+2025-10-08 10:03:17,601 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:17,626 - INFO - 📄 <url>
+https://flickr.com/
+</url>
+<query>
+When was Flickr founded?
+</query>
+<result>
+Information about the founding date of Flickr is not available in the provided webpage content.
+</result>
+2025-10-08 10:03:19,299 - INFO - 
+
+2025-10-08 10:03:19,299 - INFO - 📍 Step 7:
+2025-10-08 10:03:21,440 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:21,441 - INFO -   ❔ Eval: Previous click on index 21 did not navigate; likely need to retry clicking the link.
+2025-10-08 10:03:21,441 - INFO -   [34m🎯 Next goal: Click the company link (index 21) to navigate to the company information page and then extract the founding date.[0m
+2025-10-08 10:03:21,442 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 21, while_holding_ctrl: False
+2025-10-08 10:03:22,085 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:22,587 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-08 10:03:22,605 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 10:03:25,108 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: When was Flickr founded?, extract_links: False, start_from_char: 0
+2025-10-08 10:03:25,797 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:25,817 - INFO - 📄 <url>
+https://flickr.com/
+</url>
+<query>
+When was Flickr founded?
+</query>
+<result>
+The webpage does not provide information about when Flickr was founded.
+</result>
+2025-10-08 10:03:27,734 - INFO - 
+
+2025-10-08 10:03:27,734 - INFO - 📍 Step 8:
+2025-10-08 10:03:29,891 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:30,113 - INFO -   [31m⚠️ Eval: Failure: Clicking index 21 did not navigate to a new page, likely because the dropdown was not expanded.[0m
+2025-10-08 10:03:30,113 - INFO -   [34m🎯 Next goal: Expand the Company dropdown by clicking element index 20.[0m
+2025-10-08 10:03:30,114 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-08 10:03:31,175 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:32,886 - INFO - 
+
+2025-10-08 10:03:32,886 - INFO - 📍 Step 9:
+2025-10-08 10:03:34,583 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:34,585 - INFO -   [32m👍 Eval: Success: The previous step correctly identified that the Company dropdown needs to be expanded.[0m
+2025-10-08 10:03:34,585 - INFO -   [34m🎯 Next goal: Expand the Company dropdown and extract Flickr's founding date.[0m
+2025-10-08 10:03:34,585 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 21, while_holding_ctrl: None
+2025-10-08 10:03:35,347 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:35,848 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 3
+2025-10-08 10:03:35,868 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-08 10:03:36,369 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: When was Flickr founded?, extract_links: False, start_from_char: 0
+2025-10-08 10:03:36,878 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:36,899 - INFO - 📄 <url>
+https://flickr.com/
+</url>
+<query>
+When was Flickr founded?
+</query>
+<result>
+The webpage does not provide information about when Flickr was founded.
+</result>
+2025-10-08 10:03:38,710 - INFO - 
+
+2025-10-08 10:03:38,710 - INFO - 📍 Step 10:
+2025-10-08 10:03:40,495 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:40,496 - INFO -   [31m⚠️ Eval: Failure: Clicking the Company dropdown did not navigate to a page with founding information; we only expanded the menu.[0m
+2025-10-08 10:03:40,496 - INFO -   [34m🎯 Next goal: Navigate to the About Us page by clicking index 21 and wait for it to load, then extract Flickr's founding date.[0m
+2025-10-08 10:03:40,496 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 21, while_holding_ctrl: None
+2025-10-08 10:03:41,752 - INFO - 🖱️ Clicked element
+2025-10-08 10:03:42,253 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-08 10:03:42,276 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 10:03:46,261 - INFO - 
+
+2025-10-08 10:03:46,261 - INFO - 📍 Step 11:
+2025-10-08 10:03:48,475 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 10:03:48,476 - INFO -   [32m👍 Eval: Success[0m
+2025-10-08 10:03:48,476 - INFO -   [34m🎯 Next goal: Provide the founding year of Flickr and complete the task.[0m
+2025-10-08 10:03:48,476 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Flickr was founded in 2004., success: True, files_to_display: []
+2025-10-08 10:03:48,497 - INFO - 
+📄 [32m Final Result:[0m 
+Flickr was founded in 2004.
+
+
+2025-10-08 10:03:48,500 - INFO - ✅ Task completed successfully
+Creating standard Steel session...
+Steel session created with ID: 1403d4c7-7aad-45e2-b559-64b0a6e75d0d
+Features: Standard session (no advanced stealth)
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=1403d4c7-7aad-45e2-b559-64b0a6e75d0d
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://flickr.com', extracted_content='🔗 Navigated to https://flickr.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1803.5859375, 'click_y': 787.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nThe webpage does not provide information about when Flickr was founded.\n</result>', extracted_content='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nThe webpage does not provide information about when Flickr was founded.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1109.6484375, 'click_y': 111.1484375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1561.28125, 'click_y': 111.140625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nInformation about the founding date of Flickr is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nInformation about the founding date of Flickr is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1561.28125, 'click_y': 207.140625, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nThe webpage does not provide information about when Flickr was founded.\n</result>', extracted_content='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nThe webpage does not provide information about when Flickr was founded.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1109.6484375, 'click_y': 207.1484375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1109.6484375, 'click_y': 207.1484375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nThe webpage does not provide information about when Flickr was founded.\n</result>', extracted_content='<url>\nhttps://flickr.com/\n</url>\n<query>\nWhen was Flickr founded?\n</query>\n<result>\nThe webpage does not provide information about when Flickr was founded.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1129.140625, 'click_y': 282.046875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Flickr was founded in 2004.', extracted_content='Flickr was founded in 2004.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://flickr.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'click_element_by_index': {'index': 36}, 'interacted_element': DOMInteractedElement(node_id=1379, backend_node_id=852, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'tabindex': '0', 'class': 'trustarc-agree-btn', 'id': 'truste-consent-button', 'type': 'button'}, bounds=DOMRect(x=1717.171875, y=770.0, width=172.828125, height=34.0), x_path='html/body/div[2]/div/div[1]/div[2]/button[1]', element_hash=707949735003669128)}, {'extract_structured_data': {'query': 'When was Flickr founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 19}, 'interacted_element': DOMInteractedElement(node_id=2255, backend_node_id=1005, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={'class': 'dropdown-toggle-2 w-dropdown-toggle', 'id': 'w-dropdown-toggle-1', 'aria-controls': 'w-dropdown-list-1', 'aria-haspopup': 'menu', 'aria-expanded': 'false', 'role': 'button', 'tabindex': '0'}, bounds=DOMRect(x=1033.140625, y=84.203125, width=153.015625, height=53.890625), x_path='html/body/div[1]/div[2]/div[1]/div[3]/nav/div[2]/div', element_hash=608008062483450794)}, {'click_element_by_index': {'index': 21}, 'interacted_element': DOMInteractedElement(node_id=2960, backend_node_id=1029, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'data-w-id': '753ff597-be21-bb62-d3b1-c2eb7ff064a2', 'href': '#', 'class': 'search w-inline-block'}, bounds=DOMRect(x=1542.78125, y=96.34375, width=37.0, height=29.59375), x_path='html/body/div[1]/div[2]/div[1]/div[3]/div[2]/div/a[1]', element_hash=2167181537018043921)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was Flickr founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 21, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=4314, backend_node_id=1029, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'data-w-id': '753ff597-be21-bb62-d3b1-c2eb7ff064a2', 'href': '#', 'class': 'search w-inline-block'}, bounds=DOMRect(x=1542.78125, y=192.34375, width=37.0, height=29.59375), x_path='html/body/div[1]/div[2]/div[1]/div[3]/div[2]/div/a[1]', element_hash=2167181537018043921)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was Flickr founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=4963, backend_node_id=1005, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={'class': 'dropdown-toggle-2 w-dropdown-toggle', 'id': 'w-dropdown-toggle-1', 'aria-controls': 'w-dropdown-list-1', 'aria-haspopup': 'menu', 'aria-expanded': 'false', 'role': 'button', 'tabindex': '0'}, bounds=DOMRect(x=1033.140625, y=180.203125, width=153.015625, height=53.890625), x_path='html/body/div[1]/div[2]/div[1]/div[3]/nav/div[2]/div', element_hash=608008062483450794)}, {'click_element_by_index': {'index': 21}, 'interacted_element': DOMInteractedElement(node_id=5645, backend_node_id=1005, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='DIV', attributes={'class': 'dropdown-toggle-2 w-dropdown-toggle', 'id': 'w-dropdown-toggle-1', 'aria-controls': 'w-dropdown-list-1', 'aria-haspopup': 'menu', 'aria-expanded': 'false', 'role': 'button', 'tabindex': '0'}, bounds=DOMRect(x=1033.140625, y=180.203125, width=153.015625, height=53.890625), x_path='html/body/div[1]/div[2]/div[1]/div[3]/nav/div[2]/div', element_hash=608008062483450794)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was Flickr founded?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 21}, 'interacted_element': DOMInteractedElement(node_id=6333, backend_node_id=1011, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/company/about-us', 'class': 'dropdown-link w-inline-block', 'tabindex': '0'}, bounds=DOMRect(x=950.140625, y=245.09375, width=358.0, height=73.90625), x_path='html/body/div[1]/div[2]/div[1]/div[3]/nav/div[2]/nav/div/div[1]/a[1]', element_hash=6956636136168847723)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'done': {'text': 'Flickr was founded in 2004.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 1403d4c7-7aad-45e2-b559-64b0a6e75d0d...
+Steel session 1403d4c7-7aad-45e2-b559-64b0a6e75d0d released successfully
+Steel session recording URL: https://app.steel.dev/sessions/1403d4c7-7aad-45e2-b559-64b0a6e75d0d

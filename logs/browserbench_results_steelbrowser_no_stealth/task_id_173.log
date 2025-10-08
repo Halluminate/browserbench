@@ -1,0 +1,753 @@
+2025-10-08 11:02:38,023 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 11:02:38,040 - INFO - 🔗 Found URL in task: https://www.oxfordlearnersdictionaries.com/us, adding as initial action...
+2025-10-08 11:02:38,046 - INFO - [34m🚀 Task: How can I make a product safety inquiry with Oxford University Press? You must complete the task only using the starting website. Begin task on the following url: https://www.oxfordlearnersdictionaries.com/us[0m
+2025-10-08 11:02:38,103 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 11:02:38,110 - INFO - ────────────────────────────────────────
+2025-10-08 11:02:38,110 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 11:02:38,110 - INFO -     👉  browser-use auth
+2025-10-08 11:02:38,110 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 11:02:38,110 - INFO - ────────────────────────────────────────
+
+2025-10-08 11:02:38,318 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 11:02:38,368 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:02:38,873 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.oxfordlearnersdictionaries.com/us, new_tab: False
+2025-10-08 11:02:40,463 - INFO - 🔗 Navigated to https://www.oxfordlearnersdictionaries.com/us
+2025-10-08 11:02:42,898 - INFO - 
+
+2025-10-08 11:02:42,898 - INFO - 📍 Step 1:
+2025-10-08 11:02:45,112 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:02:45,120 - INFO -   ❔ Eval: No previous actions in this step yet.
+2025-10-08 11:02:45,120 - INFO -   [34m🎯 Next goal: Create a todo.md file with the plan and then click the Help link to navigate to the support page.[0m
+2025-10-08 11:02:45,120 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Product Safety Inquiry Task\n\n## Goal: Find instructions on how to make a product saf
+2025-10-08 11:02:45,142 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-08 11:02:46,561 - INFO - Something new appeared after action 1 / 2: actions click_element_by_index were not executed
+2025-10-08 11:02:48,119 - INFO - 
+
+2025-10-08 11:02:48,122 - INFO - 📍 Step 2:
+2025-10-08 11:02:49,549 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:02:49,551 - INFO -   [31m⚠️ Eval: Failure: Help link click was not executed.[0m
+2025-10-08 11:02:49,551 - INFO -   [34m🎯 Next goal: Click the 'Help' link (index 4) to open the support page.[0m
+2025-10-08 11:02:49,551 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 4, while_holding_ctrl: None
+2025-10-08 11:02:51,426 - INFO - 🖱️ Clicked element
+2025-10-08 11:02:53,573 - ERROR - CDP Error for request 177: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 11:02:53,574 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 11:02:53,574 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-08 11:02:53,575 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-08 11:02:54,680 - INFO - 
+
+2025-10-08 11:02:54,680 - INFO - 📍 Step 3:
+2025-10-08 11:02:56,494 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:02:56,495 - INFO -   [32m👍 Eval: Success: The Help link was clicked and navigation occurred.[0m
+2025-10-08 11:02:56,495 - INFO -   [34m🎯 Next goal: Wait for the FAQ page to load fully, then extract product safety inquiry instructions.[0m
+2025-10-08 11:02:56,496 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-08 11:02:56,517 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 11:02:59,019 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: How to make a product safety inquiry with Oxford University Press on the Oxford Learners Dictionarie
+2025-10-08 11:03:00,233 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:03:00,257 - INFO - 📄 <url>
+https://www.oxfordlearnersdictionaries.com/us/faq/
+</url>
+<query>
+How to make a product safety inquiry with Oxford University Press on the Oxford Learner's Dictionaries site. Provide contact details or form information.
+</query>
+<result>
+Contact the Oxford Learner’s Dictionaries team (Oxford University Press) for product‑safety inquiries using the general support details provided:
+
+- **Email:** eltdict.help@oup.com  
+- **Telephone:** +44 (0)1865 521498 (available 08:00 – 17:00 GMT, Monday‑Friday)
+
+The site does not list a separate product‑safety form or dedicated contact; use the above general customer‑support channels.
+</result>
+2025-10-08 11:03:01,953 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:05,331 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:08,482 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:10,062 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:12,075 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:15,295 - WARNING - ⚠️ EventBus_00724b43🟢(⏳ 0 | ▶️ 1 | ✅ 27 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#c802 🏃)
+2025-10-08 11:03:16,709 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:19,135 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:20,220 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:24,385 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:28,421 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:30,263 - ERROR - ❌ Result failed 1/4 times:
+ 
+2025-10-08 11:03:30,296 - WARNING - ================================================================================
+2025-10-08 11:03:30,296 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_00724b43.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#c802 ✅)
+2025-10-08 11:03:30,296 - WARNING - ================================================================================
+2025-10-08 11:03:30,296 - WARNING - 📣 BrowserStateRequestEvent#c802                                       [93m30s[0m
+2025-10-08 11:03:30,296 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#c802)    [92m 0s[0m/30s   ✓
+2025-10-08 11:03:30,296 - WARNING -       📣 NavigationCompleteEvent#0efb                                  [93m29s[0m
+2025-10-08 11:03:30,297 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#0efb)    [92m 0s[0m/30s   ✓
+2025-10-08 11:03:30,297 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#0efb)    [92m 0s[0m/30s   ✓
+2025-10-08 11:03:30,297 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#c802) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-08 11:03:30,297 - WARNING -       📣 ScreenshotEvent#b81f                                          [91m29s[0m
+2025-10-08 11:03:30,297 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#b81f)    [92m 1s[0m/ 8s   ✓
+2025-10-08 11:03:30,297 - WARNING - 
+================================================================================
+
+2025-10-08 11:03:30,624 - WARNING - Received duplicate response for request 8 - ignoring
+2025-10-08 11:03:42,280 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:44,477 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:45,387 - WARNING - ⚠️ EventBus_00724b43🟢(⏳ 0 | ▶️ 1 | ✅ 30 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#9bc8 🏃)
+2025-10-08 11:03:48,124 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:48,981 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:50,560 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:56,274 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:03:59,235 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:00,269 - ERROR - ❌ Result failed 2/4 times:
+ 
+2025-10-08 11:04:00,387 - WARNING - ================================================================================
+2025-10-08 11:04:00,387 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_00724b43.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#9bc8 ✅)
+2025-10-08 11:04:00,388 - WARNING - ================================================================================
+2025-10-08 11:04:00,388 - WARNING - 📣 BrowserStateRequestEvent#9bc8                                       [93m30s[0m
+2025-10-08 11:04:00,388 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#9bc8)    [92m 0s[0m/30s   ✓
+2025-10-08 11:04:00,388 - WARNING -       📣 NavigationCompleteEvent#37c3                                  [93m29s[0m
+2025-10-08 11:04:00,388 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#37c3)    [92m 0s[0m/30s   ✓
+2025-10-08 11:04:00,388 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#37c3)    [92m 0s[0m/30s   ✓
+2025-10-08 11:04:00,388 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#9bc8) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-08 11:04:00,389 - WARNING -       📣 ScreenshotEvent#ba3b                                          [91m29s[0m
+2025-10-08 11:04:00,389 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#ba3b)    [92m 1s[0m/ 8s   ✓
+2025-10-08 11:04:00,389 - WARNING - 
+================================================================================
+
+2025-10-08 11:04:02,334 - WARNING - Received duplicate response for request 8 - ignoring
+2025-10-08 11:04:14,162 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:15,433 - WARNING - ⚠️ EventBus_00724b43🟢(⏳ 0 | ▶️ 1 | ✅ 33 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#45c4 🏃)
+2025-10-08 11:04:15,713 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:21,865 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:22,519 - ERROR - CDP Error for request 296: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,537 - ERROR - CDP Error for request 297: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,557 - ERROR - CDP Error for request 298: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,575 - ERROR - CDP Error for request 299: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,593 - ERROR - CDP Error for request 300: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,613 - ERROR - CDP Error for request 301: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,643 - ERROR - CDP Error for request 302: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,670 - ERROR - CDP Error for request 303: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,688 - ERROR - CDP Error for request 304: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,711 - ERROR - CDP Error for request 305: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,731 - ERROR - CDP Error for request 306: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,749 - ERROR - CDP Error for request 307: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,767 - ERROR - CDP Error for request 308: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,785 - ERROR - CDP Error for request 309: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,803 - ERROR - CDP Error for request 310: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,839 - ERROR - CDP Error for request 311: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,862 - ERROR - CDP Error for request 312: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,880 - ERROR - CDP Error for request 313: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,898 - ERROR - CDP Error for request 314: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,916 - ERROR - CDP Error for request 315: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,933 - ERROR - CDP Error for request 316: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,951 - ERROR - CDP Error for request 317: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,968 - ERROR - CDP Error for request 318: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:22,986 - ERROR - CDP Error for request 319: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,009 - ERROR - CDP Error for request 320: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,046 - ERROR - CDP Error for request 321: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,066 - ERROR - CDP Error for request 322: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,085 - ERROR - CDP Error for request 323: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,104 - ERROR - CDP Error for request 324: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,122 - ERROR - CDP Error for request 325: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,143 - ERROR - CDP Error for request 326: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,161 - ERROR - CDP Error for request 327: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,180 - ERROR - CDP Error for request 328: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,198 - ERROR - CDP Error for request 329: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,219 - ERROR - CDP Error for request 330: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,237 - ERROR - CDP Error for request 331: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,257 - ERROR - CDP Error for request 332: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,277 - ERROR - CDP Error for request 333: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,295 - ERROR - CDP Error for request 334: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,313 - ERROR - CDP Error for request 335: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,331 - ERROR - CDP Error for request 336: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,351 - ERROR - CDP Error for request 337: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,370 - ERROR - CDP Error for request 338: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,393 - ERROR - CDP Error for request 339: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,412 - ERROR - CDP Error for request 340: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,431 - ERROR - CDP Error for request 341: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,455 - ERROR - CDP Error for request 342: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,480 - ERROR - CDP Error for request 343: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,498 - ERROR - CDP Error for request 344: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,517 - ERROR - CDP Error for request 345: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,535 - ERROR - CDP Error for request 346: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,554 - ERROR - CDP Error for request 347: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,571 - ERROR - CDP Error for request 348: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,589 - ERROR - CDP Error for request 349: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,606 - ERROR - CDP Error for request 350: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,633 - ERROR - CDP Error for request 351: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,652 - ERROR - CDP Error for request 352: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,671 - ERROR - CDP Error for request 353: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,690 - ERROR - CDP Error for request 354: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,711 - ERROR - CDP Error for request 355: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,730 - ERROR - CDP Error for request 356: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,750 - ERROR - CDP Error for request 357: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,791 - ERROR - CDP Error for request 358: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,810 - ERROR - CDP Error for request 359: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,828 - ERROR - CDP Error for request 360: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,847 - ERROR - CDP Error for request 361: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,894 - ERROR - CDP Error for request 362: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,951 - ERROR - CDP Error for request 363: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:23,989 - ERROR - CDP Error for request 364: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,010 - ERROR - CDP Error for request 365: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,031 - ERROR - CDP Error for request 366: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,061 - ERROR - CDP Error for request 367: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,107 - ERROR - CDP Error for request 368: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,125 - ERROR - CDP Error for request 369: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,163 - ERROR - CDP Error for request 370: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,251 - ERROR - CDP Error for request 371: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,324 - ERROR - CDP Error for request 372: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,358 - ERROR - CDP Error for request 373: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,465 - ERROR - CDP Error for request 374: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,527 - ERROR - CDP Error for request 375: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,546 - ERROR - CDP Error for request 376: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,565 - ERROR - CDP Error for request 377: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,625 - ERROR - CDP Error for request 378: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,650 - ERROR - CDP Error for request 379: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,952 - ERROR - CDP Error for request 380: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:24,988 - ERROR - CDP Error for request 381: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,027 - ERROR - CDP Error for request 382: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,075 - ERROR - CDP Error for request 383: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,104 - ERROR - CDP Error for request 384: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,125 - ERROR - CDP Error for request 385: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,161 - ERROR - CDP Error for request 386: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,230 - ERROR - CDP Error for request 387: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,278 - ERROR - CDP Error for request 388: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,317 - ERROR - CDP Error for request 389: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,354 - ERROR - CDP Error for request 390: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,378 - ERROR - CDP Error for request 391: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,396 - ERROR - CDP Error for request 392: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,414 - ERROR - CDP Error for request 393: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,451 - ERROR - CDP Error for request 394: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,470 - ERROR - CDP Error for request 395: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,493 - ERROR - CDP Error for request 396: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,511 - ERROR - CDP Error for request 397: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,544 - ERROR - CDP Error for request 398: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,576 - ERROR - CDP Error for request 399: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,599 - ERROR - CDP Error for request 400: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,623 - ERROR - CDP Error for request 401: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,651 - ERROR - CDP Error for request 402: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,682 - ERROR - CDP Error for request 403: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,706 - ERROR - CDP Error for request 404: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,727 - ERROR - CDP Error for request 405: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,763 - ERROR - CDP Error for request 406: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,799 - ERROR - CDP Error for request 407: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,873 - ERROR - CDP Error for request 408: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,906 - ERROR - CDP Error for request 409: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,953 - ERROR - CDP Error for request 410: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:25,981 - ERROR - CDP Error for request 411: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,013 - ERROR - CDP Error for request 412: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,036 - ERROR - CDP Error for request 413: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,059 - ERROR - CDP Error for request 414: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,076 - ERROR - CDP Error for request 415: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,098 - ERROR - CDP Error for request 416: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,127 - ERROR - CDP Error for request 417: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,145 - ERROR - CDP Error for request 418: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,164 - ERROR - CDP Error for request 419: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,183 - ERROR - CDP Error for request 420: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,201 - ERROR - CDP Error for request 421: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,219 - ERROR - CDP Error for request 422: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,250 - ERROR - CDP Error for request 423: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,272 - ERROR - CDP Error for request 424: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,290 - ERROR - CDP Error for request 425: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,312 - ERROR - CDP Error for request 426: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,333 - ERROR - CDP Error for request 427: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,353 - ERROR - CDP Error for request 428: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,372 - ERROR - CDP Error for request 429: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,390 - ERROR - CDP Error for request 430: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,411 - ERROR - CDP Error for request 431: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,433 - ERROR - CDP Error for request 432: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,458 - ERROR - CDP Error for request 433: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,475 - ERROR - CDP Error for request 434: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,493 - ERROR - CDP Error for request 435: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,510 - ERROR - CDP Error for request 436: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,528 - ERROR - CDP Error for request 437: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,548 - ERROR - CDP Error for request 438: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,566 - ERROR - CDP Error for request 439: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,585 - ERROR - CDP Error for request 440: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,615 - ERROR - CDP Error for request 441: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,657 - ERROR - CDP Error for request 442: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,700 - ERROR - CDP Error for request 443: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,784 - ERROR - CDP Error for request 444: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,807 - ERROR - CDP Error for request 445: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,880 - ERROR - CDP Error for request 446: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,907 - ERROR - CDP Error for request 447: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,935 - ERROR - CDP Error for request 448: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,953 - ERROR - CDP Error for request 449: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,973 - ERROR - CDP Error for request 450: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:26,991 - ERROR - CDP Error for request 451: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,009 - ERROR - CDP Error for request 452: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,028 - ERROR - CDP Error for request 453: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,047 - ERROR - CDP Error for request 454: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,066 - ERROR - CDP Error for request 455: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,093 - ERROR - CDP Error for request 456: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,147 - ERROR - CDP Error for request 457: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,368 - ERROR - CDP Error for request 458: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,431 - ERROR - CDP Error for request 459: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,511 - ERROR - CDP Error for request 460: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,530 - ERROR - CDP Error for request 461: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,548 - ERROR - CDP Error for request 462: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,811 - ERROR - CDP Error for request 473: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,829 - ERROR - CDP Error for request 474: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,848 - ERROR - CDP Error for request 475: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,872 - ERROR - CDP Error for request 476: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,890 - ERROR - CDP Error for request 477: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,908 - ERROR - CDP Error for request 478: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,926 - ERROR - CDP Error for request 479: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,947 - ERROR - CDP Error for request 480: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,965 - ERROR - CDP Error for request 481: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:27,984 - ERROR - CDP Error for request 482: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,001 - ERROR - CDP Error for request 483: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,027 - ERROR - CDP Error for request 484: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,047 - ERROR - CDP Error for request 485: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,084 - ERROR - CDP Error for request 486: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,108 - ERROR - CDP Error for request 487: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,126 - ERROR - CDP Error for request 488: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,147 - ERROR - CDP Error for request 489: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,165 - ERROR - CDP Error for request 490: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,188 - ERROR - CDP Error for request 491: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,226 - ERROR - CDP Error for request 492: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,249 - ERROR - CDP Error for request 493: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,267 - ERROR - CDP Error for request 494: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,289 - ERROR - CDP Error for request 495: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,317 - ERROR - CDP Error for request 496: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,346 - ERROR - CDP Error for request 497: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,364 - ERROR - CDP Error for request 498: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,383 - ERROR - CDP Error for request 499: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,400 - ERROR - CDP Error for request 500: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,418 - ERROR - CDP Error for request 501: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,436 - ERROR - CDP Error for request 502: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,456 - ERROR - CDP Error for request 503: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,474 - ERROR - CDP Error for request 504: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,493 - ERROR - CDP Error for request 505: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,512 - ERROR - CDP Error for request 506: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,539 - ERROR - CDP Error for request 507: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,558 - ERROR - CDP Error for request 508: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,575 - ERROR - CDP Error for request 509: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,595 - ERROR - CDP Error for request 510: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,616 - ERROR - CDP Error for request 511: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,634 - ERROR - CDP Error for request 512: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,656 - ERROR - CDP Error for request 513: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,675 - ERROR - CDP Error for request 514: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,695 - ERROR - CDP Error for request 515: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,712 - ERROR - CDP Error for request 516: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,735 - ERROR - CDP Error for request 517: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,754 - ERROR - CDP Error for request 518: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,771 - ERROR - CDP Error for request 519: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,790 - ERROR - CDP Error for request 520: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,811 - ERROR - CDP Error for request 521: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,833 - ERROR - CDP Error for request 522: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,852 - ERROR - CDP Error for request 523: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,870 - ERROR - CDP Error for request 524: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,888 - ERROR - CDP Error for request 525: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,908 - ERROR - CDP Error for request 526: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,925 - ERROR - CDP Error for request 527: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,943 - ERROR - CDP Error for request 528: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,961 - ERROR - CDP Error for request 529: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:28,980 - ERROR - CDP Error for request 530: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,031 - ERROR - CDP Error for request 531: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,089 - ERROR - CDP Error for request 532: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,155 - ERROR - CDP Error for request 533: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,173 - ERROR - CDP Error for request 534: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,192 - ERROR - CDP Error for request 535: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,211 - ERROR - CDP Error for request 536: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,229 - ERROR - CDP Error for request 537: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,247 - ERROR - CDP Error for request 538: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,264 - ERROR - CDP Error for request 539: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,282 - ERROR - CDP Error for request 540: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,326 - ERROR - CDP Error for request 541: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,357 - ERROR - CDP Error for request 542: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,378 - ERROR - CDP Error for request 543: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,396 - ERROR - CDP Error for request 544: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,417 - ERROR - CDP Error for request 545: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,435 - ERROR - CDP Error for request 546: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,459 - ERROR - CDP Error for request 547: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,481 - ERROR - CDP Error for request 548: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,498 - ERROR - CDP Error for request 549: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,517 - ERROR - CDP Error for request 550: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,535 - ERROR - CDP Error for request 551: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,553 - ERROR - CDP Error for request 552: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,573 - ERROR - CDP Error for request 553: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,602 - ERROR - CDP Error for request 554: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,664 - ERROR - CDP Error for request 555: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,693 - ERROR - CDP Error for request 556: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,722 - ERROR - CDP Error for request 557: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,746 - ERROR - CDP Error for request 558: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,763 - ERROR - CDP Error for request 559: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,781 - ERROR - CDP Error for request 560: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,797 - ERROR - CDP Error for request 561: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,815 - ERROR - CDP Error for request 562: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,835 - ERROR - CDP Error for request 563: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,854 - ERROR - CDP Error for request 564: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,877 - ERROR - CDP Error for request 565: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,928 - ERROR - CDP Error for request 566: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:29,975 - ERROR - CDP Error for request 567: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,008 - ERROR - CDP Error for request 568: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,034 - ERROR - CDP Error for request 569: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,076 - ERROR - CDP Error for request 570: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,101 - ERROR - CDP Error for request 571: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,120 - ERROR - CDP Error for request 572: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,137 - ERROR - CDP Error for request 573: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,162 - ERROR - CDP Error for request 574: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,179 - ERROR - CDP Error for request 575: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,204 - ERROR - CDP Error for request 576: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,222 - ERROR - CDP Error for request 577: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,242 - ERROR - CDP Error for request 578: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,270 - ERROR - ❌ Result failed 3/4 times:
+ 
+2025-10-08 11:04:30,322 - ERROR - CDP Error for request 581: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,364 - ERROR - CDP Error for request 582: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,391 - ERROR - CDP Error for request 583: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,412 - ERROR - CDP Error for request 584: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:30,440 - WARNING - ================================================================================
+2025-10-08 11:04:30,440 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_00724b43.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#45c4 ✅)
+2025-10-08 11:04:30,440 - WARNING - ================================================================================
+2025-10-08 11:04:30,440 - WARNING - 📣 BrowserStateRequestEvent#45c4                                       [93m30s[0m
+2025-10-08 11:04:30,440 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#45c4)    [92m 0s[0m/30s   ✓
+2025-10-08 11:04:30,440 - WARNING -       📣 NavigationCompleteEvent#efce                                  [93m29s[0m
+2025-10-08 11:04:30,440 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#efce)    [92m 0s[0m/30s   ✓
+2025-10-08 11:04:30,440 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#efce)    [92m 0s[0m/30s   ✓
+2025-10-08 11:04:30,440 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#45c4) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-08 11:04:30,440 - WARNING -       📣 ScreenshotEvent#71c3                                          [91m29s[0m
+2025-10-08 11:04:30,440 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#71c3)    [92m 1s[0m/ 8s   ✓
+2025-10-08 11:04:30,440 - WARNING - 
+================================================================================
+
+2025-10-08 11:04:30,450 - WARNING - Received duplicate response for request 586 - ignoring
+2025-10-08 11:04:37,865 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:38,194 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:38,473 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:38,752 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+2025-10-08 11:04:39,230 - ERROR - CDP Error for request 631: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,247 - ERROR - CDP Error for request 632: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,264 - ERROR - CDP Error for request 633: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,282 - ERROR - CDP Error for request 634: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,299 - ERROR - CDP Error for request 635: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,318 - ERROR - CDP Error for request 636: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,336 - ERROR - CDP Error for request 637: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,354 - ERROR - CDP Error for request 638: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,371 - ERROR - CDP Error for request 639: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,389 - ERROR - CDP Error for request 640: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,407 - ERROR - CDP Error for request 641: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,426 - ERROR - CDP Error for request 642: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,443 - ERROR - CDP Error for request 643: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,461 - ERROR - CDP Error for request 644: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,479 - ERROR - CDP Error for request 645: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,496 - ERROR - CDP Error for request 646: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,514 - ERROR - CDP Error for request 647: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,532 - ERROR - CDP Error for request 648: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,551 - ERROR - CDP Error for request 649: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,569 - ERROR - CDP Error for request 650: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,587 - ERROR - CDP Error for request 651: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,607 - ERROR - CDP Error for request 652: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,624 - ERROR - CDP Error for request 653: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,642 - ERROR - CDP Error for request 654: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,661 - ERROR - CDP Error for request 655: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,681 - ERROR - CDP Error for request 656: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,699 - ERROR - CDP Error for request 657: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,716 - ERROR - CDP Error for request 658: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,734 - ERROR - CDP Error for request 659: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,753 - ERROR - CDP Error for request 660: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,772 - ERROR - CDP Error for request 661: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,794 - ERROR - CDP Error for request 662: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,813 - ERROR - CDP Error for request 663: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,831 - ERROR - CDP Error for request 664: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,849 - ERROR - CDP Error for request 665: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,867 - ERROR - CDP Error for request 666: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,884 - ERROR - CDP Error for request 667: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,902 - ERROR - CDP Error for request 668: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,921 - ERROR - CDP Error for request 669: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,939 - ERROR - CDP Error for request 670: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,958 - ERROR - CDP Error for request 671: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,975 - ERROR - CDP Error for request 672: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:39,993 - ERROR - CDP Error for request 673: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,012 - ERROR - CDP Error for request 674: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,029 - ERROR - CDP Error for request 675: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,234 - ERROR - CDP Error for request 686: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,253 - ERROR - CDP Error for request 687: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,270 - ERROR - CDP Error for request 688: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,290 - ERROR - CDP Error for request 689: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,310 - ERROR - CDP Error for request 690: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,328 - ERROR - CDP Error for request 691: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,345 - ERROR - CDP Error for request 692: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,364 - ERROR - CDP Error for request 693: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,382 - ERROR - CDP Error for request 694: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,408 - ERROR - CDP Error for request 695: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,429 - ERROR - CDP Error for request 696: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,448 - ERROR - CDP Error for request 697: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,466 - ERROR - CDP Error for request 698: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,484 - ERROR - CDP Error for request 699: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,504 - ERROR - CDP Error for request 700: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,523 - ERROR - CDP Error for request 701: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,542 - ERROR - CDP Error for request 702: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,560 - ERROR - CDP Error for request 703: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,578 - ERROR - CDP Error for request 704: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,596 - ERROR - CDP Error for request 705: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,615 - ERROR - CDP Error for request 706: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,633 - ERROR - CDP Error for request 707: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,653 - ERROR - CDP Error for request 708: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,671 - ERROR - CDP Error for request 709: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,690 - ERROR - CDP Error for request 710: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,708 - ERROR - CDP Error for request 711: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,726 - ERROR - CDP Error for request 712: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,743 - ERROR - CDP Error for request 713: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,761 - ERROR - CDP Error for request 714: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,779 - ERROR - CDP Error for request 715: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,796 - ERROR - CDP Error for request 716: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,819 - ERROR - CDP Error for request 717: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,837 - ERROR - CDP Error for request 718: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,856 - ERROR - CDP Error for request 719: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,876 - ERROR - CDP Error for request 720: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,893 - ERROR - CDP Error for request 721: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,912 - ERROR - CDP Error for request 722: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,929 - ERROR - CDP Error for request 723: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,948 - ERROR - CDP Error for request 724: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,966 - ERROR - CDP Error for request 725: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:40,984 - ERROR - CDP Error for request 726: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,002 - ERROR - CDP Error for request 727: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,020 - ERROR - CDP Error for request 728: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,038 - ERROR - CDP Error for request 729: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,057 - ERROR - CDP Error for request 730: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,075 - ERROR - CDP Error for request 731: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,092 - ERROR - CDP Error for request 732: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,110 - ERROR - CDP Error for request 733: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,128 - ERROR - CDP Error for request 734: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,146 - ERROR - CDP Error for request 735: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,165 - ERROR - CDP Error for request 736: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,183 - ERROR - CDP Error for request 737: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,202 - ERROR - CDP Error for request 738: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,220 - ERROR - CDP Error for request 739: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,238 - ERROR - CDP Error for request 740: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,258 - ERROR - CDP Error for request 741: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,277 - ERROR - CDP Error for request 742: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,294 - ERROR - CDP Error for request 743: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,312 - ERROR - CDP Error for request 744: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,332 - ERROR - CDP Error for request 745: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,352 - ERROR - CDP Error for request 746: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,370 - ERROR - CDP Error for request 747: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,389 - ERROR - CDP Error for request 748: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,410 - ERROR - CDP Error for request 749: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,433 - ERROR - CDP Error for request 750: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,451 - ERROR - CDP Error for request 751: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,470 - ERROR - CDP Error for request 752: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,489 - ERROR - CDP Error for request 753: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,510 - ERROR - CDP Error for request 754: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,527 - ERROR - CDP Error for request 755: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,559 - ERROR - CDP Error for request 756: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,577 - ERROR - CDP Error for request 757: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,595 - ERROR - CDP Error for request 758: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,614 - ERROR - CDP Error for request 759: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,632 - ERROR - CDP Error for request 760: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,650 - ERROR - CDP Error for request 761: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,668 - ERROR - CDP Error for request 762: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,686 - ERROR - CDP Error for request 763: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,706 - ERROR - CDP Error for request 764: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,725 - ERROR - CDP Error for request 765: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,743 - ERROR - CDP Error for request 766: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,759 - ERROR - CDP Error for request 767: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,778 - ERROR - CDP Error for request 768: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,797 - ERROR - CDP Error for request 769: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,814 - ERROR - CDP Error for request 770: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,833 - ERROR - CDP Error for request 771: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,852 - ERROR - CDP Error for request 772: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,869 - ERROR - CDP Error for request 773: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,888 - ERROR - CDP Error for request 774: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,907 - ERROR - CDP Error for request 775: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,926 - ERROR - CDP Error for request 776: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,951 - ERROR - CDP Error for request 777: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,969 - ERROR - CDP Error for request 778: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:41,987 - ERROR - CDP Error for request 779: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,006 - ERROR - CDP Error for request 780: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,024 - ERROR - CDP Error for request 781: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,042 - ERROR - CDP Error for request 782: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,061 - ERROR - CDP Error for request 783: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,078 - ERROR - CDP Error for request 784: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,096 - ERROR - CDP Error for request 785: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,114 - ERROR - CDP Error for request 786: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,146 - ERROR - CDP Error for request 787: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,258 - ERROR - CDP Error for request 788: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,276 - ERROR - CDP Error for request 789: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,294 - ERROR - CDP Error for request 790: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,312 - ERROR - CDP Error for request 791: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,331 - ERROR - CDP Error for request 792: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,348 - ERROR - CDP Error for request 793: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,366 - ERROR - CDP Error for request 794: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,383 - ERROR - CDP Error for request 795: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,400 - ERROR - CDP Error for request 796: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,419 - ERROR - CDP Error for request 797: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,436 - ERROR - CDP Error for request 798: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,455 - ERROR - CDP Error for request 799: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,473 - ERROR - CDP Error for request 800: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,492 - ERROR - CDP Error for request 801: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,510 - ERROR - CDP Error for request 802: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,528 - ERROR - CDP Error for request 803: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,546 - ERROR - CDP Error for request 804: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,563 - ERROR - CDP Error for request 805: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,581 - ERROR - CDP Error for request 806: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,599 - ERROR - CDP Error for request 807: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,616 - ERROR - CDP Error for request 808: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,633 - ERROR - CDP Error for request 809: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,652 - ERROR - CDP Error for request 810: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,670 - ERROR - CDP Error for request 811: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,688 - ERROR - CDP Error for request 812: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,708 - ERROR - CDP Error for request 813: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,725 - ERROR - CDP Error for request 814: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,742 - ERROR - CDP Error for request 815: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,760 - ERROR - CDP Error for request 816: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,777 - ERROR - CDP Error for request 817: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,794 - ERROR - CDP Error for request 818: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,813 - ERROR - CDP Error for request 819: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,831 - ERROR - CDP Error for request 820: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,848 - ERROR - CDP Error for request 821: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,868 - ERROR - CDP Error for request 822: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,885 - ERROR - CDP Error for request 823: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,903 - ERROR - CDP Error for request 824: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,922 - ERROR - CDP Error for request 825: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,943 - ERROR - CDP Error for request 826: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,960 - ERROR - CDP Error for request 827: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,978 - ERROR - CDP Error for request 828: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:42,996 - ERROR - CDP Error for request 829: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,015 - ERROR - CDP Error for request 830: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,032 - ERROR - CDP Error for request 831: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,051 - ERROR - CDP Error for request 832: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,068 - ERROR - CDP Error for request 833: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,086 - ERROR - CDP Error for request 834: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,107 - ERROR - CDP Error for request 835: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,125 - ERROR - CDP Error for request 836: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,146 - ERROR - CDP Error for request 837: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,164 - ERROR - CDP Error for request 838: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,182 - ERROR - CDP Error for request 839: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,201 - ERROR - CDP Error for request 840: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,219 - ERROR - CDP Error for request 841: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,237 - ERROR - CDP Error for request 842: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,266 - ERROR - CDP Error for request 843: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,284 - ERROR - CDP Error for request 844: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,304 - ERROR - CDP Error for request 845: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,323 - ERROR - CDP Error for request 846: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,341 - ERROR - CDP Error for request 847: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,378 - ERROR - CDP Error for request 848: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,406 - ERROR - CDP Error for request 849: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,423 - ERROR - CDP Error for request 850: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,442 - ERROR - CDP Error for request 851: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,464 - ERROR - CDP Error for request 852: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,481 - ERROR - CDP Error for request 853: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,499 - ERROR - CDP Error for request 854: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,516 - ERROR - CDP Error for request 855: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,534 - ERROR - CDP Error for request 856: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,554 - ERROR - CDP Error for request 857: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,572 - ERROR - CDP Error for request 858: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,590 - ERROR - CDP Error for request 859: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,610 - ERROR - CDP Error for request 860: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,628 - ERROR - CDP Error for request 861: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,646 - ERROR - CDP Error for request 862: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,665 - ERROR - CDP Error for request 863: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,686 - ERROR - CDP Error for request 864: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,705 - ERROR - CDP Error for request 865: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,722 - ERROR - CDP Error for request 866: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,741 - ERROR - CDP Error for request 867: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,759 - ERROR - CDP Error for request 868: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,777 - ERROR - CDP Error for request 869: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,795 - ERROR - CDP Error for request 870: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,812 - ERROR - CDP Error for request 871: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,834 - ERROR - CDP Error for request 872: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,853 - ERROR - CDP Error for request 873: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,880 - ERROR - CDP Error for request 874: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,900 - ERROR - CDP Error for request 875: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,919 - ERROR - CDP Error for request 876: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,946 - ERROR - CDP Error for request 877: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,964 - ERROR - CDP Error for request 878: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:43,983 - ERROR - CDP Error for request 879: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,000 - ERROR - CDP Error for request 880: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,018 - ERROR - CDP Error for request 881: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,037 - ERROR - CDP Error for request 882: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,056 - ERROR - CDP Error for request 883: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,074 - ERROR - CDP Error for request 884: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,092 - ERROR - CDP Error for request 885: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,112 - ERROR - CDP Error for request 886: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,167 - ERROR - CDP Error for request 889: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,185 - ERROR - CDP Error for request 890: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,203 - ERROR - CDP Error for request 891: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,222 - ERROR - CDP Error for request 892: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,276 - ERROR - CDP Error for request 895: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,299 - ERROR - CDP Error for request 896: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,316 - ERROR - CDP Error for request 897: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,334 - ERROR - CDP Error for request 898: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,465 - ERROR - CDP Error for request 905: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,482 - ERROR - CDP Error for request 906: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,539 - ERROR - CDP Error for request 909: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,559 - ERROR - CDP Error for request 910: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,578 - ERROR - CDP Error for request 911: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,595 - ERROR - CDP Error for request 912: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,626 - ERROR - CDP Error for request 913: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,645 - ERROR - CDP Error for request 914: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,664 - ERROR - CDP Error for request 915: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,686 - ERROR - CDP Error for request 916: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,704 - ERROR - CDP Error for request 917: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,722 - ERROR - CDP Error for request 918: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,742 - ERROR - CDP Error for request 919: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,759 - ERROR - CDP Error for request 920: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:44,776 - ERROR - CDP Error for request 921: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,024 - ERROR - CDP Error for request 932: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,047 - ERROR - CDP Error for request 933: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,069 - ERROR - CDP Error for request 934: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,093 - ERROR - CDP Error for request 935: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,111 - ERROR - CDP Error for request 936: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,136 - ERROR - CDP Error for request 937: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,157 - ERROR - CDP Error for request 938: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,175 - ERROR - CDP Error for request 939: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,193 - ERROR - CDP Error for request 940: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,218 - ERROR - CDP Error for request 941: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,238 - ERROR - CDP Error for request 942: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,256 - ERROR - CDP Error for request 943: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,273 - ERROR - CDP Error for request 944: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,290 - ERROR - CDP Error for request 945: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,311 - ERROR - CDP Error for request 946: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,331 - ERROR - CDP Error for request 947: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,352 - ERROR - CDP Error for request 948: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,370 - ERROR - CDP Error for request 949: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,388 - ERROR - CDP Error for request 950: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,407 - ERROR - CDP Error for request 951: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,425 - ERROR - CDP Error for request 952: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,443 - ERROR - CDP Error for request 953: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,461 - ERROR - CDP Error for request 954: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,468 - WARNING - ⚠️ EventBus_00724b43🟢(⏳ 0 | ▶️ 1 | ✅ 36 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#92d8 🏃)
+2025-10-08 11:04:45,480 - ERROR - CDP Error for request 955: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,505 - ERROR - CDP Error for request 956: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,523 - ERROR - CDP Error for request 957: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,546 - ERROR - CDP Error for request 958: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,563 - ERROR - CDP Error for request 959: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,581 - ERROR - CDP Error for request 960: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,599 - ERROR - CDP Error for request 961: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,618 - ERROR - CDP Error for request 962: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,636 - ERROR - CDP Error for request 963: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,656 - ERROR - CDP Error for request 964: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:45,674 - ERROR - CDP Error for request 965: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-08 11:04:46,093 - INFO - 
+
+2025-10-08 11:04:46,093 - INFO - 📍 Step 7:
+2025-10-08 11:04:49,681 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:04:49,683 - INFO -   [32m👍 Eval: The previous attempt to locate product safety inquiry information on the FAQ page was unsuccessful; the page does not contain the needed details.[0m
+2025-10-08 11:04:49,683 - INFO -   [34m🎯 Next goal: Provide a summary of findings and indicate inability to locate specific product safety inquiry instructions.[0m
+2025-10-08 11:04:49,684 - INFO -   🦾 [34m[ACTION 1/1][0m text='I visited the Oxford Learner\'s Dictionaries FAQ page (https://www.oxfordlearnersdictionaries.com/us/faq/) to find instructions for making a product safety inquiry with Oxford University Press. The page contains many general FAQ entries but does not include a specific product safety inquiry section or form. The closest relevant item is the \'Contact\' link (index 61) titled "How can I contact the Oxford Learner\'s Dictionaries team?" which may lead to contact details, but I was unable to follow it within the fi...
+2025-10-08 11:04:49,706 - INFO - 
+📄 [31m Final Result:[0m 
+I visited the Oxford Learner's Dictionaries FAQ page (https://www.oxfordlearnersdictionaries.com/us/faq/) to find instructions for making a product safety inquiry with Oxford University Press. The page contains many general FAQ entries but does not include a specific product safety inquiry section or form. The closest relevant item is the 'Contact' link (index 61) titled "How can I contact the Oxford Learner's Dictionaries team?" which may lead to contact details, but I was unable to follow it within the final step. Therefore, I could not retrieve explicit product safety inquiry instructions from the starting website.
+
+If you need to contact Oxford University Press regarding product safety, you may use the general contact information available via the 'Contact' link on the FAQ page or visit the Oxford University Press website directly for dedicated product safety channels.
+
+
+2025-10-08 11:04:49,712 - INFO - ❌ Task completed without success
+Creating standard Steel session...
+Steel session created with ID: 605d7a7f-8e7e-495f-bd47-7056027c55a8
+Features: Standard session (no advanced stealth)
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=605d7a7f-8e7e-495f-bd47-7056027c55a8
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.oxfordlearnersdictionaries.com/us', extracted_content='🔗 Navigated to https://www.oxfordlearnersdictionaries.com/us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1407.1484375, 'click_y': 24.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="<url>\nhttps://www.oxfordlearnersdictionaries.com/us/faq/\n</url>\n<query>\nHow to make a product safety inquiry with Oxford University Press on the Oxford Learner's Dictionaries site. Provide contact details or form information.\n</query>\n<result>\nContact the Oxford Learner’s Dictionaries team (Oxford University Press) for product‑safety inquiries using the general support details provided:\n\n- **Email:**\u202feltdict.help@oup.com  \n- **Telephone:**\u202f+44\u202f(0)1865\u202f521498 (available 08:00\u202f–\u202f17:00\u202fGMT, Monday‑Friday)\n\nThe site does not list a separate product‑safety form or dedicated contact; use the above general customer‑support channels.\n</result>", extracted_content="<url>\nhttps://www.oxfordlearnersdictionaries.com/us/faq/\n</url>\n<query>\nHow to make a product safety inquiry with Oxford University Press on the Oxford Learner's Dictionaries site. Provide contact details or form information.\n</query>\n<result>\nContact the Oxford Learner’s Dictionaries team (Oxford University Press) for product‑safety inquiries using the general support details provided:\n\n- **Email:**\u202feltdict.help@oup.com  \n- **Telephone:**\u202f+44\u202f(0)1865\u202f521498 (available 08:00\u202f–\u202f17:00\u202fGMT, Monday‑Friday)\n\nThe site does not list a separate product‑safety form or dedicated contact; use the above general customer‑support channels.\n</result>", include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory="Task completed: False - I visited the Oxford Learner's Dictionaries FAQ page (https://www.oxfordlearnersdictionaries.com/us/ - 785 more characters", extracted_content='I visited the Oxford Learner\'s Dictionaries FAQ page (https://www.oxfordlearnersdictionaries.com/us/faq/) to find instructions for making a product safety inquiry with Oxford University Press. The page contains many general FAQ entries but does not include a specific product safety inquiry section or form. The closest relevant item is the \'Contact\' link (index 61) titled "How can I contact the Oxford Learner\'s Dictionaries team?" which may lead to contact details, but I was unable to follow it within the final step. Therefore, I could not retrieve explicit product safety inquiry instructions from the starting website.\n\nIf you need to contact Oxford University Press regarding product safety, you may use the general contact information available via the \'Contact\' link on the FAQ page or visit the Oxford University Press website directly for dedicated product safety channels.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.oxfordlearnersdictionaries.com/us', 'new_tab': False}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': "# Product Safety Inquiry Task\n\n## Goal: Find instructions on how to make a product safety inquiry with Oxford University Press using the Oxford Learner's Dictionaries site.\n\n## Tasks:\n- [ ] Click the 'Help' link (index 4) to open the support page.\n- [ ] Locate contact information or a specific product safety inquiry form.\n- [ ] Extract the relevant instructions or contact details.\n- [ ] Record the findings in results.md.\n- [ ] Verify the information and finalize the answer.\n", 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=93, backend_node_id=263, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'id': 'h-help', 'href': 'https://www.oxfordlearnersdictionaries.com/us/faq/', 'class': 'main_nav responsive_hide_on_smartphone flex-header-links'}, bounds=DOMRect(x=1380.484375, y=9.0, width=53.328125, height=30.0), x_path='html/body/div/div[1]/div[1]/div/a[4]', element_hash=45273042160619260)}, {'click_element_by_index': {'index': 4}, 'interacted_element': DOMInteractedElement(node_id=1861, backend_node_id=263, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'id': 'h-help', 'href': 'https://www.oxfordlearnersdictionaries.com/us/faq/', 'class': 'main_nav responsive_hide_on_smartphone flex-header-links'}, bounds=DOMRect(x=1380.484375, y=9.0, width=53.328125, height=30.0), x_path='html/body/div[1]/div[1]/div[1]/div/a[4]', element_hash=45273042160619260)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': "How to make a product safety inquiry with Oxford University Press on the Oxford Learner's Dictionaries site. Provide contact details or form information.", 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I visited the Oxford Learner\'s Dictionaries FAQ page (https://www.oxfordlearnersdictionaries.com/us/faq/) to find instructions for making a product safety inquiry with Oxford University Press. The page contains many general FAQ entries but does not include a specific product safety inquiry section or form. The closest relevant item is the \'Contact\' link (index 61) titled "How can I contact the Oxford Learner\'s Dictionaries team?" which may lead to contact details, but I was unable to follow it within the final step. Therefore, I could not retrieve explicit product safety inquiry instructions from the starting website.\n\nIf you need to contact Oxford University Press regarding product safety, you may use the general contact information available via the \'Contact\' link on the FAQ page or visit the Oxford University Press website directly for dedicated product safety channels.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 605d7a7f-8e7e-495f-bd47-7056027c55a8...
+Steel session 605d7a7f-8e7e-495f-bd47-7056027c55a8 released successfully
+Steel session recording URL: https://app.steel.dev/sessions/605d7a7f-8e7e-495f-bd47-7056027c55a8

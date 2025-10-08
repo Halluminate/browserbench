@@ -1,0 +1,127 @@
+2025-10-08 11:25:30,667 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-08 11:25:30,683 - INFO - 🔗 Found URL in task: https://poshmark.com, adding as initial action...
+2025-10-08 11:25:30,688 - INFO - [34m🚀 Task: Who are the founders of Poshmark? You must complete the task only using the starting website. Begin task on the following url: poshmark.com[0m
+2025-10-08 11:25:30,734 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-08 11:25:30,741 - INFO - ────────────────────────────────────────
+2025-10-08 11:25:30,741 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-08 11:25:30,741 - INFO -     👉  browser-use auth
+2025-10-08 11:25:30,741 - INFO -     or: python -m browser_use.cli auth
+2025-10-08 11:25:30,741 - INFO - ────────────────────────────────────────
+
+2025-10-08 11:25:30,951 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 401 Unauthorized"
+2025-10-08 11:25:30,972 - INFO - Connecting to wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=891f23d2-fbce-4f44-b8bf-88e757c1a067
+2025-10-08 11:25:31,478 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://poshmark.com, new_tab: False
+2025-10-08 11:25:32,079 - INFO - 🔗 Navigated to https://poshmark.com
+2025-10-08 11:25:34,672 - ERROR - CDP Error for request 53: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 11:25:34,673 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-08 11:25:34,674 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-08 11:25:34,674 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-08 11:25:36,183 - INFO - 
+
+2025-10-08 11:25:36,183 - INFO - 📍 Step 1:
+2025-10-08 11:25:37,466 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:25:37,472 - INFO -   ❔ Eval: The page appears empty; likely the content hasn't loaded yet. Verdict: Uncertain
+2025-10-08 11:25:37,472 - INFO -   [34m🎯 Next goal: Wait for the homepage to load, then extract the founders information from the page.[0m
+2025-10-08 11:25:37,472 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-08 11:25:37,490 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 11:25:39,996 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who are the founders of Poshmark?, extract_links: False, start_from_char: 0
+2025-10-08 11:25:40,853 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:25:40,874 - INFO - 📄 <url>
+https://poshmark.com/
+</url>
+<query>
+Who are the founders of Poshmark?
+</query>
+<result>
+Information about the founders of Poshmark is not available in the provided webpage content.
+</result>
+2025-10-08 11:25:42,657 - INFO - 
+
+2025-10-08 11:25:42,657 - INFO - 📍 Step 2:
+2025-10-08 11:25:44,521 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:25:44,523 - INFO -   [31m⚠️ Eval: Previous step was waiting for homepage load; no founder info found. Verdict: Failure (information not obtained).[0m
+2025-10-08 11:25:44,523 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the homepage to reveal footer links and possible About page.[0m
+2025-10-08 11:25:44,523 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 3.0, frame_element_index: None
+2025-10-08 11:25:47,103 - INFO - 🔍 Scrolled down the page by 3.0 pages (requested: 3.0, 992px per page)
+2025-10-08 11:25:48,951 - INFO - 
+
+2025-10-08 11:25:48,951 - INFO - 📍 Step 3:
+2025-10-08 11:25:50,280 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:25:50,281 - INFO -   [32m👍 Eval: Previous goal to scroll down was successful; we are now at the footer with the 'About' link.[0m
+2025-10-08 11:25:50,282 - INFO -   [34m🎯 Next goal: Click the 'About' link to navigate to the About page and wait for it to load.[0m
+2025-10-08 11:25:50,283 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 194, while_holding_ctrl: None
+2025-10-08 11:25:50,422 - WARNING - No visible quad found, using first quad
+2025-10-08 11:25:51,013 - INFO - 🖱️ Clicked element
+2025-10-08 11:25:51,515 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-08 11:25:51,533 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 11:25:55,083 - INFO - 
+
+2025-10-08 11:25:55,083 - INFO - 📍 Step 4:
+2025-10-08 11:25:56,919 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:25:56,921 - INFO -   ❔ Eval: Uncertain – clicked the About link and waited, but the page content appears unchanged.
+2025-10-08 11:25:56,921 - INFO -   [34m🎯 Next goal: Extract the founders of Poshmark from the current page.[0m
+2025-10-08 11:25:56,923 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Who are the founders of Poshmark?, extract_links: False, start_from_char: 0
+2025-10-08 11:25:57,625 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:25:57,646 - INFO - 📄 <url>
+https://poshmark.com/
+</url>
+<query>
+Who are the founders of Poshmark?
+</query>
+<result>
+Information about the founders of Poshmark is not available in the provided webpage content.
+</result>
+2025-10-08 11:25:59,158 - INFO - 
+
+2025-10-08 11:25:59,158 - INFO - 📍 Step 5:
+2025-10-08 11:26:09,561 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:26:09,563 - INFO -   [31m⚠️ Eval: Failure – clicking the About link did not change the page; still on the homepage.[0m
+2025-10-08 11:26:09,563 - INFO -   [34m🎯 Next goal: Open the About page by clicking the 'About' link (index 205) and wait for it to load.[0m
+2025-10-08 11:26:09,565 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 205, while_holding_ctrl: None
+2025-10-08 11:26:10,954 - INFO - 🖱️ Clicked element
+2025-10-08 11:26:11,455 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 5
+2025-10-08 11:26:11,471 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-08 11:26:16,176 - INFO - 
+
+2025-10-08 11:26:16,176 - INFO - 📍 Step 6:
+2025-10-08 11:26:17,611 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:26:17,612 - INFO -   ❔ Eval: Previous scroll action succeeded; we are still on the About page but need more content.
+2025-10-08 11:26:17,612 - INFO -   [34m🎯 Next goal: Scroll further down the About page to reveal founder information, then extract it.[0m
+2025-10-08 11:26:17,612 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.5, frame_element_index: None
+2025-10-08 11:26:18,146 - INFO - 🔍 Scrolled down the page by 1.5 pages (requested: 1.5, 992px per page)
+2025-10-08 11:26:18,648 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who are the founders of Poshmark?, extract_links: False, start_from_char: 0
+2025-10-08 11:26:19,395 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:26:19,414 - INFO - 📄 <url>
+https://poshmark.com/about
+</url>
+<query>
+Who are the founders of Poshmark?
+</query>
+<result>
+Manish Chandra, Chetan Pungaliya, Gautam Golwala, and Tracy Sun.
+</result>
+2025-10-08 11:26:20,953 - INFO - 
+
+2025-10-08 11:26:20,953 - INFO - 📍 Step 7:
+2025-10-08 11:26:22,416 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-08 11:26:22,417 - INFO -   [32m👍 Eval: Success – founder names were extracted from the About page.[0m
+2025-10-08 11:26:22,417 - INFO -   [34m🎯 Next goal: Provide the founder names to the user and finish the task.[0m
+2025-10-08 11:26:22,418 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The founders of Poshmark are Manish Chandra, Chetan Pungaliya, Gautam Golwala, and Tracy Sun., success: True, files_t
+2025-10-08 11:26:22,434 - INFO - 
+📄 [32m Final Result:[0m 
+The founders of Poshmark are Manish Chandra, Chetan Pungaliya, Gautam Golwala, and Tracy Sun.
+
+
+2025-10-08 11:26:22,435 - INFO - ✅ Task completed successfully
+Creating standard Steel session...
+Steel session created with ID: 891f23d2-fbce-4f44-b8bf-88e757c1a067
+Features: Standard session (no advanced stealth)
+CDP URL: wss://connect.steel.dev?apiKey=ste-B64kMWkrwKcojc3fBq8qrEDQjyZUWYQc3lrwUOBsQTuBoZ9xihsNHuyIKFr9kHO9OYcE0HXzUZcvAfTrm4poVhP5kzFYoQTqS6U&sessionId=891f23d2-fbce-4f44-b8bf-88e757c1a067
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://poshmark.com', extracted_content='🔗 Navigated to https://poshmark.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://poshmark.com/\n</url>\n<query>\nWho are the founders of Poshmark?\n</query>\n<result>\nInformation about the founders of Poshmark is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://poshmark.com/\n</url>\n<query>\nWho are the founders of Poshmark?\n</query>\n<result>\nInformation about the founders of Poshmark is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 3.0 pages (requested: 3.0, 992px per page)', extracted_content='🔍 Scrolled down the page by 3.0 pages (requested: 3.0, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1181.4765625, 'click_y': 991, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://poshmark.com/\n</url>\n<query>\nWho are the founders of Poshmark?\n</query>\n<result>\nInformation about the founders of Poshmark is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://poshmark.com/\n</url>\n<query>\nWho are the founders of Poshmark?\n</query>\n<result>\nInformation about the founders of Poshmark is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1181.4765625, 'click_y': 502.546875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 1.5 pages (requested: 1.5, 992px per page)', extracted_content='🔍 Scrolled down the page by 1.5 pages (requested: 1.5, 992px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://poshmark.com/about\n</url>\n<query>\nWho are the founders of Poshmark?\n</query>\n<result>\nManish\u202fChandra,\u202fChetan\u202fPungaliya,\u202fGautam\u202fGolwala,\u202fand\u202fTracy\u202fSun.\n</result>', extracted_content='<url>\nhttps://poshmark.com/about\n</url>\n<query>\nWho are the founders of Poshmark?\n</query>\n<result>\nManish\u202fChandra,\u202fChetan\u202fPungaliya,\u202fGautam\u202fGolwala,\u202fand\u202fTracy\u202fSun.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The founders of Poshmark are Manish Chandra, Chetan Pungaliya, Gautam Golwala, and Tracy Sun.', extracted_content='The founders of Poshmark are Manish Chandra, Chetan Pungaliya, Gautam Golwala, and Tracy Sun.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://poshmark.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who are the founders of Poshmark?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 3.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 194}, 'interacted_element': DOMInteractedElement(node_id=7068, backend_node_id=475, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/about', 'data-et-name': 'about', 'data-et-prop-location': 'footer'}, bounds=DOMRect(x=1162.46875, y=1055.546875, width=38.015625, height=16.0), x_path='html/body/div[1]/footer/div/div[1]/div/div[1]/ul[3]/li[2]/a', element_hash=6509056994488170505)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who are the founders of Poshmark?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 205}, 'interacted_element': DOMInteractedElement(node_id=12521, backend_node_id=475, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/about', 'data-et-name': 'about', 'data-et-prop-location': 'footer'}, bounds=DOMRect(x=1162.46875, y=494.546875, width=38.015625, height=16.0), x_path='html/body/div[1]/footer/div/div[1]/div/div[1]/ul[3]/li[2]/a', element_hash=6509056994488170505)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who are the founders of Poshmark?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'The founders of Poshmark are Manish Chandra, Chetan Pungaliya, Gautam Golwala, and Tracy Sun.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Releasing Steel session 891f23d2-fbce-4f44-b8bf-88e757c1a067...
+Steel session 891f23d2-fbce-4f44-b8bf-88e757c1a067 released successfully
+Steel session recording URL: https://app.steel.dev/sessions/891f23d2-fbce-4f44-b8bf-88e757c1a067
