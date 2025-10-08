@@ -1,0 +1,180 @@
+2025-10-07 20:04:14,194 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 20:04:14,204 - INFO - 🔗 Found URL in task: https://www.bestbuy.com, adding as initial action...
+2025-10-07 20:04:14,207 - INFO - [34m🚀 Task: What is the address of the Best Buy store in Honolulu, Hawaii? You must complete the task only using the starting website. Begin task on the following url: https://www.bestbuy.com[0m
+2025-10-07 20:04:14,255 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 20:04:14,262 - INFO - ────────────────────────────────────────
+2025-10-07 20:04:14,263 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 20:04:14,263 - INFO -     👉  browser-use auth
+2025-10-07 20:04:14,263 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 20:04:14,263 - INFO - ────────────────────────────────────────
+
+2025-10-07 20:04:14,473 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 20:04:14,511 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2MThlODNkNC1lYjBhLTQxYTEtYjk0YS02YmY3MzEwMDBlZmUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTI2NTQsImV4cCI6MTc1OTkzNTg1NH0.k-xSIuGE4C7aKW8XPP_dSh9b7jPc0Fin0vTUTNeLJcQ
+2025-10-07 20:04:15,662 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.bestbuy.com, new_tab: False
+2025-10-07 20:04:20,539 - INFO - 🔗 Navigated to https://www.bestbuy.com
+2025-10-07 20:04:22,839 - INFO - 
+
+2025-10-07 20:04:22,839 - INFO - 📍 Step 1:
+2025-10-07 20:04:24,749 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:04:24,760 - INFO -   [32m👍 Eval: Successfully navigated to https://www.bestbuy.com and loaded the homepage. Verdict: Success[0m
+2025-10-07 20:04:24,760 - INFO -   [34m🎯 Next goal: Create a todo.md file outlining the steps to find the Honolulu store address.[0m
+2025-10-07 20:04:24,761 - INFO -   🦾 [34m[ACTION 1/1][0m write_file: file_name: todo.md, content: # Task: Find Best Buy store address in Honolulu, Hawaii\n\n## Steps\n- [ ] Write plan to
+2025-10-07 20:04:24,818 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 20:04:29,365 - WARNING - Received duplicate response for request 77 - ignoring
+2025-10-07 20:04:31,558 - INFO - 
+
+2025-10-07 20:04:31,558 - INFO - 📍 Step 2:
+2025-10-07 20:04:33,019 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:04:33,020 - INFO -   [32m👍 Eval: Previous step created todo.md successfully. Verdict: Success[0m
+2025-10-07 20:04:33,020 - INFO -   [34m🎯 Next goal: Search for "Honolulu" using the site search bar and submit the query.[0m
+2025-10-07 20:04:33,020 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 9, text: Honolulu, clear_existing: True
+2025-10-07 20:04:35,005 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 20:04:35,005 - INFO - ⌨️ Typed "Honolulu" into element with index 9
+2025-10-07 20:04:40,132 - INFO - Something new appeared after action 1 / 2: actions click_element_by_index were not executed
+2025-10-07 20:04:44,399 - ERROR - CDP Error for request 164: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 20:04:44,401 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 20:04:44,401 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 20:04:44,401 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 20:04:45,107 - INFO - 
+
+2025-10-07 20:04:45,107 - INFO - 📍 Step 3:
+2025-10-07 20:04:46,275 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:04:46,277 - INFO -   [31m⚠️ Eval: Failure: The input action did not succeed because the page is currently empty and no search bar is visible.[0m
+2025-10-07 20:04:46,277 - INFO -   [34m🎯 Next goal: Wait for the Best Buy homepage to load so the search bar becomes available.[0m
+2025-10-07 20:04:46,277 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-07 20:04:46,333 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 20:04:53,992 - INFO - 
+
+2025-10-07 20:04:53,993 - INFO - 📍 Step 4:
+2025-10-07 20:04:55,755 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:04:55,758 - INFO -   ❔ Eval: Previous wait action succeeded (page loaded), but the earlier input attempt failed; we now have a functional search bar.
+2025-10-07 20:04:55,758 - INFO -   [34m🎯 Next goal: Enter "Honolulu" into the search bar and submit the search to reach the store locator results.[0m
+2025-10-07 20:04:55,759 - INFO -   🦾 [34m[ACTION 1/2][0m input_text: index: 9, text: Honolulu, clear_existing: True
+2025-10-07 20:04:57,769 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 20:04:57,769 - INFO - ⌨️ Typed "Honolulu" into element with index 9
+2025-10-07 20:05:01,691 - INFO - Something new appeared after action 1 / 2: actions click_element_by_index were not executed
+2025-10-07 20:05:06,074 - INFO - 
+
+2025-10-07 20:05:06,074 - INFO - 📍 Step 5:
+2025-10-07 20:05:07,725 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:05:07,729 - INFO -   ❔ Eval: Previous input into the main search bar failed; the homepage is now fully loaded with a functional search bar and store button.
+2025-10-07 20:05:07,730 - INFO -   [34m🎯 Next goal: Open the store locator by clicking the 'Your Store' button and wait for the locator interface to appear.[0m
+2025-10-07 20:05:07,730 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 14, while_holding_ctrl: None
+2025-10-07 20:05:09,034 - INFO - 🖱️ Clicked element
+2025-10-07 20:05:09,536 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 20:05:09,594 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 20:05:17,729 - INFO - 
+
+2025-10-07 20:05:17,730 - INFO - 📍 Step 6:
+2025-10-07 20:05:19,232 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:05:19,232 - INFO -   [32m👍 Eval: Previous step attempted to click the 'Your Store' button but did not confirm success; need to retry clicking index 18.[0m
+2025-10-07 20:05:19,232 - INFO -   [34m🎯 Next goal: Click the 'Your Store' button (index 18) to open the store locator.[0m
+2025-10-07 20:05:19,233 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 18, while_holding_ctrl: None
+2025-10-07 20:05:20,519 - INFO - 🖱️ Clicked element
+2025-10-07 20:05:21,022 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 20:05:21,080 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 20:05:26,372 - WARNING - Received duplicate response for request 384 - ignoring
+2025-10-07 20:05:28,378 - INFO - 
+
+2025-10-07 20:05:28,378 - INFO - 📍 Step 7:
+2025-10-07 20:05:30,382 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:05:30,384 - INFO -   ❔ Eval: Previous click on 'Your Store' button was uncertain; no confirmation that the locator opened.
+2025-10-07 20:05:30,384 - INFO -   [34m🎯 Next goal: Open the store locator by clicking the 'Your Store' button and wait for the interface to load.[0m
+2025-10-07 20:05:30,384 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 18, while_holding_ctrl: None
+2025-10-07 20:05:31,688 - INFO - 🖱️ Clicked element
+2025-10-07 20:05:32,188 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 20:05:32,244 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 20:05:37,649 - INFO - 
+
+2025-10-07 20:05:37,649 - INFO - 📍 Step 8:
+2025-10-07 20:05:39,364 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:05:39,365 - INFO -   ❔ Eval: Previous attempt to open store locator was uncertain; the popup shows Casper store info but not the locator search. Verdict: Uncertain
+2025-10-07 20:05:39,365 - INFO -   [34m🎯 Next goal: Click the 'Find Another Store' button to open the store locator and then wait for it to load.[0m
+2025-10-07 20:05:39,365 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 20, while_holding_ctrl: None
+2025-10-07 20:05:41,488 - INFO - 🖱️ Clicked element
+2025-10-07 20:05:41,990 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 20:05:42,045 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 20:05:45,566 - INFO - 
+
+2025-10-07 20:05:45,566 - INFO - 📍 Step 9:
+2025-10-07 20:05:47,917 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:05:47,920 - INFO -   ❔ Eval: Uncertain: The previous attempt to open the store locator via 'Find Another Store' did not clearly result in the locator interface being displayed.
+2025-10-07 20:05:47,920 - INFO -   [34m🎯 Next goal: Search for "Honolulu, HI" using the store locator input and submit to display the Honolulu store details.[0m
+2025-10-07 20:05:47,921 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 26, text: Honolulu, HI, clear_existing: True
+2025-10-07 20:05:50,582 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 20:05:50,582 - INFO - ⌨️ Typed "Honolulu, HI" into element with index 26
+2025-10-07 20:05:53,454 - INFO - Page changed after action: actions click_element_by_index, wait, replace_file_str are not yet executed
+2025-10-07 20:05:56,713 - INFO - 
+
+2025-10-07 20:05:56,713 - INFO - 📍 Step 10:
+2025-10-07 20:05:58,442 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:05:58,443 - INFO -   ❔ Eval: The previous input of "Honolulu, HI" into the locator field succeeded; the page changed, indicating the value was accepted.
+2025-10-07 20:05:58,443 - INFO -   [34m🎯 Next goal: Submit the Honolulu query by clicking the Update button and wait for the results to appear.[0m
+2025-10-07 20:05:58,443 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 30, while_holding_ctrl: None
+2025-10-07 20:05:59,748 - INFO - 🖱️ Clicked element
+2025-10-07 20:06:00,249 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 20:06:00,303 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 20:06:02,999 - INFO - 
+
+2025-10-07 20:06:02,999 - INFO - 📍 Step 11:
+2025-10-07 20:06:04,460 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:06:04,460 - INFO -   ❔ Eval: Previous click on Update succeeded, but the Honolulu store was not visible yet. Verdict: Uncertain
+2025-10-07 20:06:04,460 - INFO -   [34m🎯 Next goal: Scroll down to reveal more store results and then extract the Honolulu store address.[0m
+2025-10-07 20:06:04,461 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 20:06:05,236 - INFO - 🔍 Scrolled down the page by one page (632px)
+2025-10-07 20:06:05,738 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Honolulu Best Buy store address, extract_links: False, start_from_char: 0
+2025-10-07 20:06:06,868 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:06:06,925 - INFO - 📄 <url>
+https://www.bestbuy.com/site/store-locator
+</url>
+<query>
+Honolulu Best Buy store address
+</query>
+<result>
+Honolulu Best Buy store address: 478 Alakawa St, Honolulu, HI 96817.
+</result>
+2025-10-07 20:06:09,870 - INFO - 
+
+2025-10-07 20:06:09,870 - INFO - 📍 Step 12:
+2025-10-07 20:06:11,874 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:06:11,877 - INFO -   [32m👍 Eval: Success: Scrolled and confirmed the Honolulu store address is visible.[0m
+2025-10-07 20:06:11,877 - INFO -   [34m🎯 Next goal: Write the found address to a results.md file.[0m
+2025-10-07 20:06:11,878 - INFO -   🦾 [34m[ACTION 1/1][0m write_file: file_name: results.md, content: Best Buy Honolulu Store Address:\n478 Alakawa St\nHonolulu, HI 96817, append: Fals
+2025-10-07 20:06:11,937 - INFO - 💾 Data written to file results.md successfully.
+2025-10-07 20:06:15,453 - INFO - 
+
+2025-10-07 20:06:15,453 - INFO - 📍 Step 13:
+2025-10-07 20:06:17,294 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:06:17,295 - INFO -   [32m👍 Eval: Success: Scrolled and confirmed the Honolulu store address is visible.[0m
+2025-10-07 20:06:17,295 - INFO -   [34m🎯 Next goal: Return the address to the user and finish the task.[0m
+2025-10-07 20:06:17,295 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The Best Buy store in Honolulu, Hawaii is located at:\n\n478 Alakawa St\nHonolulu, HI 96817, success: True, files_to_
+2025-10-07 20:06:17,351 - INFO - 
+📄 [32m Final Result:[0m 
+The Best Buy store in Honolulu, Hawaii is located at:
+
+478 Alakawa St
+Honolulu, HI 96817
+
+Attachments:
+
+results.md:
+Best Buy Honolulu Store Address:
+478 Alakawa St
+Honolulu, HI 96817
+
+
+
+2025-10-07 20:06:17,352 - INFO - 👉 Attachment : /var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e5d4a-e323-768f-8000-0a753be91ff2_1759892654/browseruse_agent_data/results.md
+2025-10-07 20:06:17,353 - INFO - ✅ Task completed successfully
+Creating Hyperbrowser session with stealth features...
+Hyperbrowser session created with ID: 618e83d4-eb0a-41a1-b94a-6bf731000efe
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI2MThlODNkNC1lYjBhLTQxYTEtYjk0YS02YmY3MzEwMDBlZmUiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTI2NTQsImV4cCI6MTc1OTkzNTg1NH0.k-xSIuGE4C7aKW8XPP_dSh9b7jPc0Fin0vTUTNeLJcQ
+Session URL: https://app.hyperbrowser.ai/features/sessions/618e83d4-eb0a-41a1-b94a-6bf731000efe
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.bestbuy.com', extracted_content='🔗 Navigated to https://www.bestbuy.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Honolulu' into element 9.", extracted_content="Input 'Honolulu' into element 9.", include_extracted_content_only_once=False, metadata={'input_x': 659.0, 'input_y': 77.890625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Honolulu' into element 9.", extracted_content="Input 'Honolulu' into element 9.", include_extracted_content_only_once=False, metadata={'input_x': 605.5234375, 'input_y': 77.890625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', extracted_content='Something new appeared after action 1 / 2: actions click_element_by_index were not executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1086.5234375, 'click_y': 77.8828125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1086.5234375, 'click_y': 77.8828125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1086.5234375, 'click_y': 77.8828125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1086.546875, 'click_y': 268.59375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Honolulu, HI' into element 26.", extracted_content="Input 'Honolulu, HI' into element 26.", include_extracted_content_only_once=False, metadata={'input_x': 126.5234375, 'input_y': 294.078125}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Page changed after action: actions click_element_by_index, wait, replace_file_str are not yet executed', extracted_content='Page changed after action: actions click_element_by_index, wait, replace_file_str are not yet executed', include_extracted_content_only_once=False, metadata=None, include_in_memory=True), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 269.3984375, 'click_y': 294.078125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (632px)', extracted_content='🔍 Scrolled down the page by one page (632px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.bestbuy.com/site/store-locator\n</url>\n<query>\nHonolulu Best Buy store address\n</query>\n<result>\nHonolulu Best\u202fBuy store address:\u202f478\u202fAlakawa\u202fSt, Honolulu, HI\u202f96817.\n</result>', extracted_content='<url>\nhttps://www.bestbuy.com/site/store-locator\n</url>\n<query>\nHonolulu Best Buy store address\n</query>\n<result>\nHonolulu Best\u202fBuy store address:\u202f478\u202fAlakawa\u202fSt, Honolulu, HI\u202f96817.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file results.md successfully.', extracted_content='Data written to file results.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=['/var/folders/t8/7vk5qmnd04z9fn7y0q8bynyh0000gn/T/browser_use_agent_068e5d4a-e323-768f-8000-0a753be91ff2_1759892654/browseruse_agent_data/results.md'], long_term_memory='Task completed: True - The Best Buy store in Honolulu, Hawaii is located at:\n\n478 Alakawa St\nHonolulu, HI 96817', extracted_content='The Best Buy store in Honolulu, Hawaii is located at:\n\n478 Alakawa St\nHonolulu, HI 96817\n\nAttachments:\n\nresults.md:\nBest Buy Honolulu Store Address:\n478 Alakawa St\nHonolulu, HI 96817\n', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.bestbuy.com', 'new_tab': False}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': '# Task: Find Best Buy store address in Honolulu, Hawaii\n\n## Steps\n- [ ] Write plan to locate store (use store locator or search)\n- [ ] Search for "Honolulu" using the site search bar\n- [ ] Identify the store listing for Honolulu, Hawaii\n- [ ] Extract the store address details\n- [ ] Save the address to results.md\n- [ ] Verify the address is correct\n- [ ] Mark task as completed\n', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'input_text': {'index': 9, 'text': 'Honolulu', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=750, backend_node_id=159, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='TEXTAREA', attributes={'aria-label': 'Search', 'class': 'sugg-search-bar-input-adjust', 'placeholder': 'Search Best Buy', 'id': 'autocomplete-search-bar'}, bounds=DOMRect(x=250.0, y=57.890625, width=818.0, height=40.0), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[2]/div/div/div/textarea', element_hash=647608105447235777)}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=763, backend_node_id=170, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'id': 'autocomplete-search-button', 'aria-label': 'Search-Button', 'aria-busy': 'false', 'style': 'min-width:auto;min-height:auto', 'class': 'relative border-xs justify-center items-center self-start flex flex-row bg-comp-surface-transparent border-transparent p-0 w-300 h-300 border-none rounded-md cursor-pointer sugg-magnifier'}, bounds=DOMRect(x=1068.0, y=57.890625, width=40.0, height=40.0), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[2]/div/div/div/div/div[2]/button', element_hash=1571866988563774991)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'input_text': {'index': 9, 'text': 'Honolulu', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=8903, backend_node_id=159, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='TEXTAREA', attributes={'aria-label': 'Search', 'class': 'sugg-search-bar-input-adjust', 'placeholder': 'Search Best Buy', 'id': 'autocomplete-search-bar', 'maxlength': '280'}, bounds=DOMRect(x=250.0, y=57.890625, width=711.046875, height=40.0), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[2]/div/div/div/textarea', element_hash=647608105447235777)}, {'click_element_by_index': {'index': 10}, 'interacted_element': DOMInteractedElement(node_id=8918, backend_node_id=170, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'id': 'autocomplete-search-button', 'aria-label': 'Search-Button', 'aria-busy': 'false', 'style': 'min-width:auto;min-height:auto', 'class': 'relative border-xs justify-center items-center self-start flex flex-row bg-comp-surface-transparent border-transparent p-0 w-300 h-300 border-none rounded-md cursor-pointer sugg-magnifier'}, bounds=DOMRect(x=961.046875, y=57.890625, width=40.0, height=40.0), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[2]/div/div/div/div/div[2]/button', element_hash=1571866988563774991)}, {'click_element_by_index': {'index': 14}, 'interacted_element': DOMInteractedElement(node_id=15111, backend_node_id=4085, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'c-button-unstyled store-loc-btn', 'type': 'button', 'aria-label': 'Your Store: Casper', 'data-cy': 'location-tooltip-lv-button', 'aria-expanded': 'false', 'aria-controls': 'store-loc-overlay'}, bounds=DOMRect(x=1033.046875, y=59.9375, width=106.953125, height=35.890625), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[3]/div/div/div/div/div/div/span/span/button', element_hash=5672857434769753400)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 18}, 'interacted_element': DOMInteractedElement(node_id=18191, backend_node_id=4085, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'c-button-unstyled store-loc-btn', 'type': 'button', 'aria-label': 'Your Store: Casper', 'data-cy': 'location-tooltip-lv-button', 'aria-expanded': 'true', 'aria-controls': 'store-loc-overlay'}, bounds=DOMRect(x=1033.046875, y=59.9375, width=106.953125, height=35.890625), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[3]/div/div/div/div/div/div/span/span/button', element_hash=5672857434769753400)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 18}, 'interacted_element': DOMInteractedElement(node_id=21271, backend_node_id=4085, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'c-button-unstyled store-loc-btn', 'type': 'button', 'aria-label': 'Your Store: Casper', 'data-cy': 'location-tooltip-lv-button', 'aria-expanded': 'false', 'aria-controls': 'store-loc-overlay'}, bounds=DOMRect(x=1033.046875, y=59.9375, width=106.953125, height=35.890625), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[3]/div/div/div/div/div/div/span/span/button', element_hash=5672857434769753400)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'click_element_by_index': {'index': 20}, 'interacted_element': DOMInteractedElement(node_id=24378, backend_node_id=4087, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'aria-disabled': 'false', 'class': 'c-button c-button-outline c-button-sm find-store-btn', 'href': '/site/store-locator', 'role': 'button', 'tabindex': '0'}, bounds=DOMRect(x=940.046875, y=253.59375, width=293.0, height=30.0), x_path='html/body/div[3]/div/div/div[1]/header/div[3]/div/div[3]/div/div/div/div/div/div/span/div/div[1]/div/a', element_hash=154679934793021854)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'input_text': {'index': 26, 'text': 'Honolulu, HI', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=27504, backend_node_id=4853, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'type': 'text', 'class': 'tb-input form-control zip-code-input v-medium', 'aria-describedby': 'error-<csi:text><csi:vars>$(csi.instances.shop.location-zip-code-form.v1.id)</csi:vars></csi:text>', 'aria-invalid': 'false', 'aria-label': 'Enter city and state or zip code', 'aria-required': 'true', 'data-cy': 'ZipCodeInputComponent', 'id': 'input-<csi:text><csi:vars>$(csi.instances.shop.location-zip-code-form.v1.id)</csi:vars></csi:text>', 'placeholder': 'Search by ZIP, City or State', 'tabindex': '0', 'title': 'Search by ZIP, City or State', 'value': '', 'autocomplete': 'off'}, bounds=DOMRect(x=48.0, y=276.578125, width=157.046875, height=35.0), x_path='html/body/div[2]/main/div/div/div[1]/div[1]/div/div/div/form/fieldset/div/input', element_hash=1144984674993295818)}, {'click_element_by_index': {'index': 27}, 'interacted_element': DOMInteractedElement(node_id=27509, backend_node_id=4856, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'c-button c-button-secondary c-button-md location-zip-code-form-update-btn', 'type': 'submit', 'data-cy': 'SubmitButton', 'data-track': 'Store Locator Results: Search by Location'}, bounds=DOMRect(x=215.046875, y=276.578125, width=108.703125, height=35.0), x_path='html/body/div[2]/main/div/div/div[1]/div[1]/div/div/div/form/fieldset/div/button', element_hash=220279105431415910)}, {'wait': {'seconds': 4}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Search for "Honolulu" using the site search bar', 'new_str': '- [x] Search for "Honolulu" using the site search bar'}, 'interacted_element': None}, {'click_element_by_index': {'index': 30}, 'interacted_element': DOMInteractedElement(node_id=34160, backend_node_id=4856, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='BUTTON', attributes={'class': 'c-button c-button-secondary c-button-md location-zip-code-form-update-btn', 'type': 'submit', 'data-cy': 'SubmitButton', 'data-track': 'Store Locator Results: Search by Location'}, bounds=DOMRect(x=215.046875, y=276.578125, width=108.703125, height=35.0), x_path='html/body/div[2]/main/div/div/div[1]/div[1]/div/div/div/form/fieldset/div/button', element_hash=220279105431415910)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Honolulu Best Buy store address', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'results.md', 'content': 'Best Buy Honolulu Store Address:\n478 Alakawa St\nHonolulu, HI 96817', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'done': {'text': 'The Best Buy store in Honolulu, Hawaii is located at:\n\n478 Alakawa St\nHonolulu, HI 96817', 'success': True, 'files_to_display': ['results.md']}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 618e83d4-eb0a-41a1-b94a-6bf731000efe...
+Hyperbrowser session 618e83d4-eb0a-41a1-b94a-6bf731000efe stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/618e83d4-eb0a-41a1-b94a-6bf731000efe

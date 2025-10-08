@@ -1,0 +1,68 @@
+2025-10-07 21:15:18,948 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 21:15:18,963 - INFO - 🔗 Found URL in task: https://theconversation.com, adding as initial action...
+2025-10-07 21:15:18,968 - INFO - [34m🚀 Task: When did the Conversation begin & where was it created? You must complete the task only using the starting website. Begin task on the following url: theconversation.com[0m
+2025-10-07 21:15:19,031 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 21:15:19,041 - INFO - ────────────────────────────────────────
+2025-10-07 21:15:19,041 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 21:15:19,041 - INFO -     👉  browser-use auth
+2025-10-07 21:15:19,041 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 21:15:19,041 - INFO - ────────────────────────────────────────
+
+2025-10-07 21:15:19,256 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 21:15:19,277 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI0NTBkZTc5ZS05NmJhLTQwNzQtYTk1OC0yYjkwMDk2ZDkzODAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTY5MTgsImV4cCI6MTc1OTk0MDExOH0.K0VVhdLpoLURZ5RxDms2psaTCX8fFo8pAeKj5SddKIk
+2025-10-07 21:15:20,489 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://theconversation.com, new_tab: False
+2025-10-07 21:15:22,447 - INFO - 🔗 Navigated to https://theconversation.com
+2025-10-07 21:15:25,022 - INFO - 
+
+2025-10-07 21:15:25,023 - INFO - 📍 Step 1:
+2025-10-07 21:15:27,243 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:15:27,255 - INFO -   [32m👍 Eval: Successfully loaded the initial homepage at https://theconversation.com/us. Verdict: Success[0m
+2025-10-07 21:15:27,255 - INFO -   [34m🎯 Next goal: Open the About page of The Conversation and extract the founding date and location.[0m
+2025-10-07 21:15:27,256 - INFO -   🦾 [34m[ACTION 1/2][0m go_to_url: url: https://theconversation.com/about, new_tab: False
+2025-10-07 21:15:28,337 - INFO - 🔗 Navigated to https://theconversation.com/about
+2025-10-07 21:15:28,839 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: When was The Conversation founded and where was it created?, extract_links: False, start_from_cha
+2025-10-07 21:15:29,951 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:15:30,008 - INFO - 📄 <url>
+https://theconversation.com/about
+</url>
+<query>
+When was The Conversation founded and where was it created?
+</query>
+<result>
+Founded: 2010  
+Created in: United States (The Conversation US, Inc.)
+</result>
+2025-10-07 21:15:32,329 - INFO - 
+
+2025-10-07 21:15:32,329 - INFO - 📍 Step 2:
+2025-10-07 21:15:34,119 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:15:34,123 - INFO -   [31m⚠️ Eval: Previous attempt to load /about resulted in a 404 page not found. Verdict: Failure to reach about page.[0m
+2025-10-07 21:15:34,123 - INFO -   [34m🎯 Next goal: Click the 'Who we are' link (index 35) to navigate to a page that likely contains the founding date and location.[0m
+2025-10-07 21:15:34,123 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 35, while_holding_ctrl: None
+2025-10-07 21:15:35,702 - INFO - 🖱️ Clicked element
+2025-10-07 21:15:37,303 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI0NTBkZTc5ZS05NmJhLTQwNzQtYTk1OC0yYjkwMDk2ZDkzODAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTY5MTgsImV4cCI6MTc1OTk0MDExOH0.K0VVhdLpoLURZ5RxDms2psaTCX8fFo8pAeKj5SddKIk
+2025-10-07 21:15:39,054 - INFO - 
+
+2025-10-07 21:15:39,054 - INFO - 📍 Step 3:
+2025-10-07 21:15:40,799 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:15:40,801 - INFO -   [32m👍 Eval: Successfully retrieved the 'Who we are' page which contains the founding information. Verdict: Success[0m
+2025-10-07 21:15:40,801 - INFO -   [34m🎯 Next goal: Provide the answer to the user with the founding year and location.[0m
+2025-10-07 21:15:40,802 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The Conversation was founded in 2011 in Australia. The U.S. edition launched later in October 2014, with its main newsroo
+2025-10-07 21:15:40,860 - INFO - 
+📄 [32m Final Result:[0m 
+The Conversation was founded in 2011 in Australia. The U.S. edition launched later in October 2014, with its main newsroom based in Boston, USA.
+
+
+2025-10-07 21:15:40,864 - INFO - ✅ Task completed successfully
+Creating Hyperbrowser session with stealth features...
+Hyperbrowser session created with ID: 450de79e-96ba-4074-a958-2b90096d9380
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI0NTBkZTc5ZS05NmJhLTQwNzQtYTk1OC0yYjkwMDk2ZDkzODAiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTY5MTgsImV4cCI6MTc1OTk0MDExOH0.K0VVhdLpoLURZ5RxDms2psaTCX8fFo8pAeKj5SddKIk
+Session URL: https://app.hyperbrowser.ai/features/sessions/450de79e-96ba-4074-a958-2b90096d9380
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://theconversation.com', extracted_content='🔗 Navigated to https://theconversation.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://theconversation.com/about', extracted_content='🔗 Navigated to https://theconversation.com/about', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://theconversation.com/about\n</url>\n<query>\nWhen was The Conversation founded and where was it created?\n</query>\n<result>\nFounded: 2010  \nCreated in: United States (The Conversation US, Inc.)\n</result>', extracted_content='<url>\nhttps://theconversation.com/about\n</url>\n<query>\nWhen was The Conversation founded and where was it created?\n</query>\n<result>\nFounded: 2010  \nCreated in: United States (The Conversation US, Inc.)\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 506.1875, 'click_y': 548.6875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The Conversation was founded in 2011 in Australia. The U.S. edition launched later in October 2014,  - 44 more characters', extracted_content='The Conversation was founded in 2011 in Australia. The U.S. edition launched later in October 2014, with its main newsroom based in Boston, USA.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://theconversation.com', 'new_tab': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://theconversation.com/about', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'When was The Conversation founded and where was it created?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 35}, 'interacted_element': DOMInteractedElement(node_id=2245, backend_node_id=2248, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/us/who-we-are'}, bounds=DOMRect(x=463.5, y=534.59375, width=85.375, height=28.1875), x_path='html/body/div[2]/div[3]/section/div/section[2]/nav/ul/li[1]/a', element_hash=3572568405202726497)}, {'done': {'text': 'The Conversation was founded in 2011 in Australia. The U.S. edition launched later in October 2014, with its main newsroom based in Boston, USA.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 450de79e-96ba-4074-a958-2b90096d9380...
+Hyperbrowser session 450de79e-96ba-4074-a958-2b90096d9380 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/450de79e-96ba-4074-a958-2b90096d9380

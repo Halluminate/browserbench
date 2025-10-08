@@ -1,0 +1,796 @@
+2025-10-07 21:37:49,321 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 21:37:49,335 - INFO - 🔗 Found URL in task: https://www.dailymail.co.uk/ushome/index.html, adding as initial action...
+2025-10-07 21:37:49,340 - INFO - [34m🚀 Task: What is the address of Daily Mail Associated Newspapers Ltd? You must complete the task only using the starting website. Begin task on the following url: www.dailymail.co.uk/ushome/index.html[0m
+2025-10-07 21:37:49,395 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 21:37:49,403 - INFO - ────────────────────────────────────────
+2025-10-07 21:37:49,403 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 21:37:49,403 - INFO -     👉  browser-use auth
+2025-10-07 21:37:49,403 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 21:37:49,403 - INFO - ────────────────────────────────────────
+
+2025-10-07 21:37:49,610 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 21:37:49,649 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:37:50,789 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.dailymail.co.uk/ushome/index.html, new_tab: False
+2025-10-07 21:37:53,603 - INFO - 🔗 Navigated to https://www.dailymail.co.uk/ushome/index.html
+2025-10-07 21:37:56,394 - INFO - 
+
+2025-10-07 21:37:56,394 - INFO - 📍 Step 1:
+2025-10-07 21:37:57,620 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:37:57,628 - INFO -   [32m👍 Eval: Successfully loaded the Daily Mail US homepage; no address found yet.[0m
+2025-10-07 21:37:57,628 - INFO -   [34m🎯 Next goal: Extract the address of Daily Mail Associated Newspapers Ltd from the current page using extract_structured_data.[0m
+2025-10-07 21:37:57,629 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:37:59,176 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:37:59,234 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-07 21:38:02,036 - INFO - 
+
+2025-10-07 21:38:02,037 - INFO - 📍 Step 2:
+2025-10-07 21:38:03,610 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:03,611 - INFO -   ❔ Eval: Failed to retrieve address from homepage; address not present on that page.
+2025-10-07 21:38:03,611 - INFO -   [34m🎯 Next goal: Click the 'Privacy Policy' link (index 39) to open the page that should contain the corporate address.[0m
+2025-10-07 21:38:03,612 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 39, while_holding_ctrl: None
+2025-10-07 21:38:07,568 - INFO - 🖱️ Clicked element
+2025-10-07 21:38:10,033 - INFO - 
+
+2025-10-07 21:38:10,033 - INFO - 📍 Step 3:
+2025-10-07 21:38:11,347 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:11,347 - INFO -   [32m👍 Eval: Clicked the 'Privacy Policy' link successfully. Verdict: Success[0m
+2025-10-07 21:38:11,347 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the privacy policy page to reveal the footer where the address should be listed.[0m
+2025-10-07 21:38:11,347 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 21:38:14,298 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 21:38:17,054 - INFO - 
+
+2025-10-07 21:38:17,054 - INFO - 📍 Step 4:
+2025-10-07 21:38:18,492 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:18,493 - INFO -   [32m👍 Eval: Scrolled down 5 pages; address not yet visible. Verdict: Partial success, need more scrolling.[0m
+2025-10-07 21:38:18,493 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the page to reveal the footer containing the corporate address.[0m
+2025-10-07 21:38:18,493 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 21:38:24,115 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)
+2025-10-07 21:38:26,932 - INFO - 
+
+2025-10-07 21:38:26,932 - INFO - 📍 Step 5:
+2025-10-07 21:38:28,560 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:28,562 - INFO -   [32m👍 Eval: Partial success: scrolled down 10 pages but footer with address not yet visible.[0m
+2025-10-07 21:38:28,562 - INFO -   [34m🎯 Next goal: Scroll further down to the bottom of the privacy page to reveal the footer containing the corporate address.[0m
+2025-10-07 21:38:28,562 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 20.0, frame_element_index: None
+2025-10-07 21:38:39,612 - INFO - 🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 632px per page)
+2025-10-07 21:38:42,498 - INFO - 
+
+2025-10-07 21:38:42,498 - INFO - 📍 Step 6:
+2025-10-07 21:38:44,248 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:44,251 - INFO -   [31m⚠️ Eval: Previous scroll of 20 pages did not reach the footer; address not found. Verdict: Failure[0m
+2025-10-07 21:38:44,251 - INFO -   [34m🎯 Next goal: Scroll to the very bottom of the privacy page and extract the corporate address.[0m
+2025-10-07 21:38:44,251 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 4.0, frame_element_index: None
+2025-10-07 21:38:46,698 - INFO - 🔍 Scrolled down the page by 4.0 pages (requested: 4.0, 632px per page)
+2025-10-07 21:38:47,200 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:38:49,254 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:49,370 - INFO - 📄 <url>
+https://www.dailymail.co.uk/privacy
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+The provided portion of the webpage does not contain the address of Daily Mail Associated Newspapers Ltd. The content ends before any contact or address details are listed. To obtain the address, you will need to continue reading the page beyond the current truncation point (use `start_from_char=29953`).
+</result>
+2025-10-07 21:38:55,417 - INFO - 
+
+2025-10-07 21:38:55,418 - INFO - 📍 Step 7:
+2025-10-07 21:38:57,041 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:38:57,043 - INFO -   [31m⚠️ Eval: Scrolling to the bottom of the privacy page did not reveal the address; verdict: Failure[0m
+2025-10-07 21:38:57,044 - INFO -   [34m🎯 Next goal: Click the 'Contact us' link (index 67) to open the contact page where the address should be listed.[0m
+2025-10-07 21:38:57,044 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 67, while_holding_ctrl: False
+2025-10-07 21:38:59,809 - INFO - 🖱️ Clicked element
+2025-10-07 21:39:03,132 - ERROR - CDP Error for request 545: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:39:03,132 - ERROR - CDP Error for request 547: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:39:03,135 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:39:03,135 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:39:03,136 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:39:03,651 - INFO - 
+
+2025-10-07 21:39:03,651 - INFO - 📍 Step 8:
+2025-10-07 21:39:04,829 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:39:04,831 - INFO -   [32m👍 Eval: Clicked the 'Contact us' link successfully, but the page content is not yet loaded. Verdict: Partial success.[0m
+2025-10-07 21:39:04,831 - INFO -   [34m🎯 Next goal: Wait for the Contact Us page to load and then extract the address of Daily Mail Associated Newspapers Ltd.[0m
+2025-10-07 21:39:04,832 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 21:39:04,890 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:39:07,393 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:39:09,068 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:39:09,129 - INFO - 📄 <url>
+https://www.dailymail.co.uk/home/contactus/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-07 21:39:14,130 - INFO - 
+
+2025-10-07 21:39:14,130 - INFO - 📍 Step 9:
+2025-10-07 21:39:15,619 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:39:15,621 - INFO -   ❔ Eval: Previous extraction attempt failed; address not found on the loaded portion of the Contact Us page.
+2025-10-07 21:39:15,621 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the Contact Us page to reveal the footer containing the corporate address, then extract the address.[0m
+2025-10-07 21:39:15,622 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 60.0, frame_element_index: None
+2025-10-07 21:39:49,179 - INFO - 🔍 Scrolled down the page by 60.0 pages (requested: 60.0, 632px per page)
+2025-10-07 21:39:51,394 - ERROR - CDP Error for request 931: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:39:51,395 - ERROR - CDP Error for request 932: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:39:51,397 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:39:51,397 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:39:51,398 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:39:51,859 - INFO - 
+
+2025-10-07 21:39:51,859 - INFO - 📍 Step 10:
+2025-10-07 21:39:53,404 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:39:53,407 - INFO -   ❔ Eval: Previous attempts to locate the address on privacy and contact pages failed; address not found.
+2025-10-07 21:39:53,407 - INFO -   [34m🎯 Next goal: Navigate to the Daily Mail US homepage, scroll to the bottom, and extract the corporate address.[0m
+2025-10-07 21:39:53,407 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.dailymail.co.uk/ushome/index.html, new_tab: False
+2025-10-07 21:39:55,483 - INFO - 🔗 Navigated to https://www.dailymail.co.uk/ushome/index.html
+2025-10-07 21:39:55,983 - INFO -   🦾 [34m[ACTION 2/3][0m scroll: down: True, num_pages: 100.0, frame_element_index: None
+2025-10-07 21:40:53,164 - INFO - 🔍 Scrolled down the page by 100.0 pages (requested: 100.0, 632px per page)
+2025-10-07 21:40:53,666 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:40:55,170 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:40:55,237 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-07 21:41:05,092 - WARNING - Received duplicate response for request 1390 - ignoring
+2025-10-07 21:41:08,436 - WARNING - CDP request ax_tree timed out
+2025-10-07 21:41:08,436 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:41:08,437 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:41:09,478 - WARNING - Received duplicate response for request 1393 - ignoring
+2025-10-07 21:41:09,690 - WARNING - Received duplicate response for request 1394 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1395 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1396 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1397 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1398 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1399 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1400 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1401 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1402 - ignoring
+2025-10-07 21:41:09,691 - WARNING - Received duplicate response for request 1403 - ignoring
+2025-10-07 21:41:09,700 - WARNING - Received duplicate response for request 1404 - ignoring
+2025-10-07 21:41:09,700 - WARNING - Received duplicate response for request 1405 - ignoring
+2025-10-07 21:41:09,700 - WARNING - Received duplicate response for request 1406 - ignoring
+2025-10-07 21:41:09,700 - WARNING - Received duplicate response for request 1407 - ignoring
+2025-10-07 21:41:09,701 - WARNING - Received duplicate response for request 1408 - ignoring
+2025-10-07 21:41:09,701 - WARNING - Received duplicate response for request 1409 - ignoring
+2025-10-07 21:41:09,701 - WARNING - Received duplicate response for request 1410 - ignoring
+2025-10-07 21:41:09,701 - WARNING - Received duplicate response for request 1411 - ignoring
+2025-10-07 21:41:09,701 - WARNING - Received duplicate response for request 1412 - ignoring
+2025-10-07 21:41:09,701 - WARNING - Received duplicate response for request 1413 - ignoring
+2025-10-07 21:41:09,703 - WARNING - Received duplicate response for request 1414 - ignoring
+2025-10-07 21:41:09,804 - WARNING - Received duplicate response for request 1415 - ignoring
+2025-10-07 21:41:09,804 - WARNING - Received duplicate response for request 1416 - ignoring
+2025-10-07 21:41:09,804 - WARNING - Received duplicate response for request 1417 - ignoring
+2025-10-07 21:41:09,805 - WARNING - Received duplicate response for request 1418 - ignoring
+2025-10-07 21:41:09,805 - WARNING - Received duplicate response for request 1419 - ignoring
+2025-10-07 21:41:09,805 - WARNING - Received duplicate response for request 1420 - ignoring
+2025-10-07 21:41:09,805 - WARNING - Received duplicate response for request 1421 - ignoring
+2025-10-07 21:41:09,805 - WARNING - Received duplicate response for request 1422 - ignoring
+2025-10-07 21:41:09,805 - WARNING - Received duplicate response for request 1423 - ignoring
+2025-10-07 21:41:09,806 - WARNING - Received duplicate response for request 1424 - ignoring
+2025-10-07 21:41:09,806 - WARNING - Received duplicate response for request 1425 - ignoring
+2025-10-07 21:41:09,806 - WARNING - Received duplicate response for request 1426 - ignoring
+2025-10-07 21:41:09,816 - WARNING - Received duplicate response for request 1427 - ignoring
+2025-10-07 21:41:09,831 - WARNING - Received duplicate response for request 1428 - ignoring
+2025-10-07 21:41:09,872 - WARNING - Received duplicate response for request 1429 - ignoring
+2025-10-07 21:41:09,873 - WARNING - Received duplicate response for request 1430 - ignoring
+2025-10-07 21:41:09,873 - WARNING - Received duplicate response for request 1431 - ignoring
+2025-10-07 21:41:09,873 - WARNING - Received duplicate response for request 1432 - ignoring
+2025-10-07 21:41:09,873 - WARNING - Received duplicate response for request 1433 - ignoring
+2025-10-07 21:41:09,874 - WARNING - Received duplicate response for request 1434 - ignoring
+2025-10-07 21:41:09,874 - WARNING - Received duplicate response for request 1435 - ignoring
+2025-10-07 21:41:09,874 - WARNING - Received duplicate response for request 1436 - ignoring
+2025-10-07 21:41:09,894 - WARNING - Received duplicate response for request 1437 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1438 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1439 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1440 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1441 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1442 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1443 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1444 - ignoring
+2025-10-07 21:41:09,930 - WARNING - Received duplicate response for request 1445 - ignoring
+2025-10-07 21:41:09,971 - WARNING - Received duplicate response for request 1446 - ignoring
+2025-10-07 21:41:09,971 - WARNING - Received duplicate response for request 1447 - ignoring
+2025-10-07 21:41:09,971 - WARNING - Received duplicate response for request 1448 - ignoring
+2025-10-07 21:41:09,971 - WARNING - Received duplicate response for request 1449 - ignoring
+2025-10-07 21:41:09,971 - WARNING - Received duplicate response for request 1450 - ignoring
+2025-10-07 21:41:09,988 - WARNING - Received duplicate response for request 1451 - ignoring
+2025-10-07 21:41:09,988 - WARNING - Received duplicate response for request 1452 - ignoring
+2025-10-07 21:41:09,988 - WARNING - Received duplicate response for request 1453 - ignoring
+2025-10-07 21:41:09,988 - WARNING - Received duplicate response for request 1454 - ignoring
+2025-10-07 21:41:10,007 - WARNING - Received duplicate response for request 1455 - ignoring
+2025-10-07 21:41:10,007 - WARNING - Received duplicate response for request 1456 - ignoring
+2025-10-07 21:41:10,007 - WARNING - Received duplicate response for request 1457 - ignoring
+2025-10-07 21:41:10,007 - WARNING - Received duplicate response for request 1458 - ignoring
+2025-10-07 21:41:10,007 - WARNING - Received duplicate response for request 1459 - ignoring
+2025-10-07 21:41:10,007 - WARNING - Received duplicate response for request 1460 - ignoring
+2025-10-07 21:41:10,029 - WARNING - Received duplicate response for request 1461 - ignoring
+2025-10-07 21:41:10,029 - WARNING - Received duplicate response for request 1462 - ignoring
+2025-10-07 21:41:10,030 - WARNING - Received duplicate response for request 1463 - ignoring
+2025-10-07 21:41:10,063 - WARNING - Received duplicate response for request 1464 - ignoring
+2025-10-07 21:41:10,063 - WARNING - Received duplicate response for request 1465 - ignoring
+2025-10-07 21:41:10,142 - WARNING - Received duplicate response for request 1466 - ignoring
+2025-10-07 21:41:10,142 - WARNING - Received duplicate response for request 1467 - ignoring
+2025-10-07 21:41:10,142 - WARNING - Received duplicate response for request 1468 - ignoring
+2025-10-07 21:41:10,142 - WARNING - Received duplicate response for request 1469 - ignoring
+2025-10-07 21:41:10,269 - WARNING - Received duplicate response for request 1470 - ignoring
+2025-10-07 21:41:10,269 - WARNING - Received duplicate response for request 1471 - ignoring
+2025-10-07 21:41:10,270 - WARNING - Received duplicate response for request 1472 - ignoring
+2025-10-07 21:41:10,270 - WARNING - Received duplicate response for request 1473 - ignoring
+2025-10-07 21:41:10,270 - WARNING - Received duplicate response for request 1474 - ignoring
+2025-10-07 21:41:10,270 - WARNING - Received duplicate response for request 1475 - ignoring
+2025-10-07 21:41:10,270 - WARNING - Received duplicate response for request 1476 - ignoring
+2025-10-07 21:41:10,270 - WARNING - Received duplicate response for request 1477 - ignoring
+2025-10-07 21:41:10,311 - WARNING - ⚠️ EventBus_6cf795f4🟢(⏳ 1 | ▶️ 2 | ✅ 47 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#080c 🏃)
+2025-10-07 21:41:10,332 - WARNING - Received duplicate response for request 1479 - ignoring
+2025-10-07 21:41:10,427 - WARNING - ================================================================================
+2025-10-07 21:41:10,427 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_6cf795f4.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#8174 ✅)
+2025-10-07 21:41:10,427 - WARNING - ================================================================================
+2025-10-07 21:41:10,428 - WARNING - 📣 BrowserStateRequestEvent#080c                                       [93m15s[0m
+2025-10-07 21:41:10,428 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#080c)    [92m 0s[0m/30s   ✓
+2025-10-07 21:41:10,428 - WARNING -       📣 NavigationCompleteEvent#4a23                                  [93m14s[0m
+2025-10-07 21:41:10,428 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#4a23)    [92m 0s[0m/30s   ✓
+2025-10-07 21:41:10,428 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#4a23)    [92m 0s[0m/30s   ✓
+2025-10-07 21:41:10,428 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#080c) ⏳ [93m15s[0m/30s  
+2025-10-07 21:41:10,428 - WARNING -       📣 ScreenshotEvent#8174                                          [91m14s[0m
+2025-10-07 21:41:10,428 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#8174) ⌛️ [91m14s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 21:41:10,428 - WARNING -       📣 BrowserErrorEvent#c66a                                        [91m 2s[0m
+2025-10-07 21:41:10,428 - WARNING - 
+================================================================================
+
+2025-10-07 21:41:10,429 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 21:41:10,429 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#5920(?▶ ScreenshotEvent#8174 🏃) timed out after 8.0s
+2025-10-07 21:41:10,912 - INFO - 
+
+2025-10-07 21:41:10,912 - INFO - 📍 Step 11:
+2025-10-07 21:41:12,391 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:12,396 - INFO -   [31m⚠️ Eval: Previous scroll actions did not reveal the address; the page DOM remains empty. Verdict: Failure[0m
+2025-10-07 21:41:12,396 - INFO -   [34m🎯 Next goal: Wait for the homepage to fully load, then use extract_structured_data to query the address of Daily Mail Associated Newspapers Ltd.[0m
+2025-10-07 21:41:12,396 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 10
+2025-10-07 21:41:12,626 - INFO - 🕒 waited for 7 seconds + 3 seconds for LLM call
+2025-10-07 21:41:20,126 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:41:23,812 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:24,041 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided webpage content.
+</result>
+2025-10-07 21:41:30,042 - WARNING - Received duplicate response for request 1507 - ignoring
+2025-10-07 21:41:35,766 - WARNING - Received duplicate response for request 1511 - ignoring
+2025-10-07 21:41:35,846 - WARNING - Received duplicate response for request 1512 - ignoring
+2025-10-07 21:41:35,846 - WARNING - Received duplicate response for request 1513 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1514 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1515 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1516 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1517 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1518 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1519 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1520 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1521 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1522 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1523 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1524 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1525 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1526 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1527 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1528 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1529 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1530 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1531 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1532 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1533 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1534 - ignoring
+2025-10-07 21:41:35,847 - WARNING - Received duplicate response for request 1535 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1536 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1537 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1538 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1539 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1540 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1541 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1542 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1543 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1544 - ignoring
+2025-10-07 21:41:35,848 - WARNING - Received duplicate response for request 1545 - ignoring
+2025-10-07 21:41:35,898 - WARNING - Received duplicate response for request 1546 - ignoring
+2025-10-07 21:41:35,901 - WARNING - Received duplicate response for request 1547 - ignoring
+2025-10-07 21:41:35,901 - WARNING - Received duplicate response for request 1548 - ignoring
+2025-10-07 21:41:35,901 - WARNING - Received duplicate response for request 1549 - ignoring
+2025-10-07 21:41:35,904 - WARNING - Received duplicate response for request 1550 - ignoring
+2025-10-07 21:41:35,904 - WARNING - Received duplicate response for request 1551 - ignoring
+2025-10-07 21:41:35,904 - WARNING - Received duplicate response for request 1552 - ignoring
+2025-10-07 21:41:35,904 - WARNING - Received duplicate response for request 1553 - ignoring
+2025-10-07 21:41:35,907 - WARNING - Received duplicate response for request 1554 - ignoring
+2025-10-07 21:41:35,910 - WARNING - Received duplicate response for request 1555 - ignoring
+2025-10-07 21:41:35,911 - WARNING - Received duplicate response for request 1556 - ignoring
+2025-10-07 21:41:35,911 - WARNING - Received duplicate response for request 1557 - ignoring
+2025-10-07 21:41:35,914 - WARNING - Received duplicate response for request 1558 - ignoring
+2025-10-07 21:41:35,914 - WARNING - Received duplicate response for request 1559 - ignoring
+2025-10-07 21:41:35,914 - WARNING - Received duplicate response for request 1560 - ignoring
+2025-10-07 21:41:35,914 - WARNING - Received duplicate response for request 1561 - ignoring
+2025-10-07 21:41:35,917 - WARNING - Received duplicate response for request 1562 - ignoring
+2025-10-07 21:41:35,917 - WARNING - Received duplicate response for request 1563 - ignoring
+2025-10-07 21:41:35,917 - WARNING - Received duplicate response for request 1564 - ignoring
+2025-10-07 21:41:35,918 - WARNING - Received duplicate response for request 1565 - ignoring
+2025-10-07 21:41:35,918 - WARNING - Received duplicate response for request 1566 - ignoring
+2025-10-07 21:41:35,918 - WARNING - Received duplicate response for request 1567 - ignoring
+2025-10-07 21:41:35,920 - WARNING - Received duplicate response for request 1568 - ignoring
+2025-10-07 21:41:35,921 - WARNING - Received duplicate response for request 1569 - ignoring
+2025-10-07 21:41:35,926 - WARNING - Received duplicate response for request 1570 - ignoring
+2025-10-07 21:41:35,926 - WARNING - Received duplicate response for request 1571 - ignoring
+2025-10-07 21:41:35,929 - WARNING - Received duplicate response for request 1572 - ignoring
+2025-10-07 21:41:35,929 - WARNING - Received duplicate response for request 1573 - ignoring
+2025-10-07 21:41:35,929 - WARNING - Received duplicate response for request 1574 - ignoring
+2025-10-07 21:41:35,929 - WARNING - Received duplicate response for request 1575 - ignoring
+2025-10-07 21:41:35,929 - WARNING - Received duplicate response for request 1576 - ignoring
+2025-10-07 21:41:35,930 - WARNING - Received duplicate response for request 1577 - ignoring
+2025-10-07 21:41:35,932 - WARNING - Received duplicate response for request 1578 - ignoring
+2025-10-07 21:41:35,932 - WARNING - Received duplicate response for request 1579 - ignoring
+2025-10-07 21:41:35,934 - WARNING - Received duplicate response for request 1580 - ignoring
+2025-10-07 21:41:35,934 - WARNING - Received duplicate response for request 1581 - ignoring
+2025-10-07 21:41:35,934 - WARNING - Received duplicate response for request 1582 - ignoring
+2025-10-07 21:41:35,934 - WARNING - Received duplicate response for request 1583 - ignoring
+2025-10-07 21:41:35,934 - WARNING - Received duplicate response for request 1584 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1585 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1586 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1587 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1588 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1589 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1590 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1591 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1592 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1593 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1594 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1595 - ignoring
+2025-10-07 21:41:35,935 - WARNING - Received duplicate response for request 1596 - ignoring
+2025-10-07 21:41:36,614 - WARNING - ================================================================================
+2025-10-07 21:41:36,615 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_6cf795f4.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#065e ✅)
+2025-10-07 21:41:36,615 - WARNING - ================================================================================
+2025-10-07 21:41:36,615 - WARNING - 📣 BrowserStateRequestEvent#6b30                                       [93m13s[0m
+2025-10-07 21:41:36,615 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#6b30)    [92m 0s[0m/30s   ✓
+2025-10-07 21:41:36,615 - WARNING -       📣 NavigationCompleteEvent#9cc4                                  [93m11s[0m
+2025-10-07 21:41:36,615 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#9cc4)    [93m 3s[0m/30s   ✓
+2025-10-07 21:41:36,615 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#9cc4)    [92m 0s[0m/30s   ✓
+2025-10-07 21:41:36,616 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#6b30) ⏳ [93m12s[0m/30s  
+2025-10-07 21:41:36,616 - WARNING -       📣 ScreenshotEvent#065e                                          [91m 8s[0m
+2025-10-07 21:41:36,616 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#065e) ⌛️ [91m 8s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 21:41:36,616 - WARNING - 
+================================================================================
+
+2025-10-07 21:41:36,617 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 21:41:37,319 - WARNING - Received duplicate response for request 1686 - ignoring
+2025-10-07 21:41:37,773 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#5920(?▶ ScreenshotEvent#065e 🏃) timed out after 8.0s
+2025-10-07 21:41:38,017 - INFO - 
+
+2025-10-07 21:41:38,017 - INFO - 📍 Step 12:
+2025-10-07 21:41:39,936 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:39,937 - INFO -   ❔ Eval: Previous actions (scrolling and waiting) did not reveal the address; need a new approach.
+2025-10-07 21:41:39,937 - INFO -   [34m🎯 Next goal: Extract the corporate address from the homepage using extract_structured_data with a refined query.[0m
+2025-10-07 21:41:39,938 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the corporate address of Daily Mail Associated Newspapers Ltd?, extract_links: False, sta
+2025-10-07 21:41:41,484 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:41,607 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the corporate address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information not available in the provided portion of the page. Use start_from_char=29959 to retrieve the next part of the content where the corporate address may appear.
+</result>
+2025-10-07 21:41:46,972 - INFO - 
+
+2025-10-07 21:41:46,972 - INFO - 📍 Step 13:
+2025-10-07 21:41:49,236 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:49,237 - INFO -   ❔ Eval: Previous attempts to scroll and extract the address on various pages failed; address not found.
+2025-10-07 21:41:49,237 - INFO -   [34m🎯 Next goal: Extract the corporate address from the homepage by calling extract_structured_data with a start_from_char offset.[0m
+2025-10-07 21:41:49,237 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:41:50,925 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:51,097 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided webpage content.
+</result>
+2025-10-07 21:41:57,175 - INFO - 
+
+2025-10-07 21:41:57,175 - INFO - 📍 Step 14:
+2025-10-07 21:41:59,144 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:41:59,146 - INFO -   ❔ Eval: Previous scroll actions and extractions failed to locate the address; the page content was truncated.
+2025-10-07 21:41:59,147 - INFO -   [34m🎯 Next goal: Extract the corporate address from the homepage by calling extract_structured_data with a start_from_char offset.[0m
+2025-10-07 21:41:59,147 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:42:00,822 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:01,040 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided content.
+</result>
+2025-10-07 21:42:07,009 - INFO - 
+
+2025-10-07 21:42:07,010 - INFO - 📍 Step 15:
+2025-10-07 21:42:08,730 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:08,732 - INFO -   ❔ Eval: Previous attempts to locate the address via scrolling and extraction on various pages failed; no address found.
+2025-10-07 21:42:08,732 - INFO -   [34m🎯 Next goal: Click the 'About Daily Mail' link (index 76) to navigate to a page likely containing the corporate address.[0m
+2025-10-07 21:42:08,732 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 76, while_holding_ctrl: None
+2025-10-07 21:42:10,144 - INFO - 🖱️ Clicked element
+2025-10-07 21:42:15,750 - ERROR - CDP Error for request 2183: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:42:15,750 - ERROR - CDP Error for request 2184: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:42:15,755 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:42:15,755 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:42:15,756 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:42:16,346 - INFO - 
+
+2025-10-07 21:42:16,346 - INFO - 📍 Step 16:
+2025-10-07 21:42:18,845 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:18,849 - INFO -   [32m👍 Eval: Clicked the 'About Daily Mail' link successfully. Verdict: Success[0m
+2025-10-07 21:42:18,849 - INFO -   [34m🎯 Next goal: Wait for the About page to load, then extract the address of Daily Mail Associated Newspapers Ltd using extract_structured_data with a start_from_char offset.[0m
+2025-10-07 21:42:18,850 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 21:42:18,919 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:42:21,421 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:42:23,104 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:23,278 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided webpage content.
+</result>
+2025-10-07 21:42:28,819 - WARNING - Received duplicate response for request 2214 - ignoring
+2025-10-07 21:42:32,827 - INFO - 
+
+2025-10-07 21:42:32,827 - INFO - 📍 Step 17:
+2025-10-07 21:42:34,634 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:34,636 - INFO -   [31m⚠️ Eval: Failure - previous extraction attempts on About page returned no address.[0m
+2025-10-07 21:42:34,636 - INFO -   [34m🎯 Next goal: Extract the corporate address from the homepage using extract_structured_data with a start_from_char offset.[0m
+2025-10-07 21:42:34,636 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:42:36,890 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:37,120 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided webpage content.
+</result>
+2025-10-07 21:42:47,290 - WARNING - Received duplicate response for request 2340 - ignoring
+2025-10-07 21:42:47,406 - WARNING - ================================================================================
+2025-10-07 21:42:47,407 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 8.0s for EventBus_6cf795f4.browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#3ee4 ✅)
+2025-10-07 21:42:47,407 - WARNING - ================================================================================
+2025-10-07 21:42:47,407 - WARNING - 📣 BrowserStateRequestEvent#4878                                       [93m10s[0m
+2025-10-07 21:42:47,407 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#4878)    [92m 0s[0m/30s   ✓
+2025-10-07 21:42:47,407 - WARNING -       📣 NavigationCompleteEvent#75fb                                  [93m 9s[0m
+2025-10-07 21:42:47,407 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#75fb)    [92m 0s[0m/30s   ✓
+2025-10-07 21:42:47,407 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#75fb)    [92m 0s[0m/30s   ✓
+2025-10-07 21:42:47,407 - WARNING -    ➡️ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#4878) ⏳ [93m10s[0m/30s  
+2025-10-07 21:42:47,407 - WARNING -       📣 ScreenshotEvent#3ee4                                          [91m 9s[0m
+2025-10-07 21:42:47,407 - WARNING -          ⏰ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#3ee4) ⌛️ [91m 9s[0m/[91m 8s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 21:42:47,407 - WARNING - 
+================================================================================
+
+2025-10-07 21:42:47,407 - WARNING - 📸 Clean screenshot timed out after 6 seconds - no handler registered or slow page?
+2025-10-07 21:42:47,407 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: Event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent#5920(?▶ ScreenshotEvent#3ee4 🏃) timed out after 8.0s
+2025-10-07 21:42:47,681 - INFO - 
+
+2025-10-07 21:42:47,681 - INFO - 📍 Step 18:
+2025-10-07 21:42:49,570 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:49,572 - INFO -   ❔ Eval: Previous attempts to extract the address via scrolling and extract_structured_data without start offset failed; no address found.
+2025-10-07 21:42:49,572 - INFO -   [34m🎯 Next goal: Extract the corporate address from the homepage by calling extract_structured_data with a start_from_char offset of 50000.[0m
+2025-10-07 21:42:49,573 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:42:52,152 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:42:52,377 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page content.
+</result>
+2025-10-07 21:43:03,329 - INFO - 
+
+2025-10-07 21:43:03,330 - INFO - 📍 Step 19:
+2025-10-07 21:43:05,193 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:43:05,193 - INFO -   ❔ Eval: Previous scroll and extraction attempts failed to find the address; need to retrieve deeper page content.
+2025-10-07 21:43:05,194 - INFO -   [34m🎯 Next goal: Extract the corporate address from the Contact Us page using extract_structured_data with a start_from_char offset.[0m
+2025-10-07 21:43:05,194 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:43:07,350 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:43:07,525 - INFO - 📄 <url>
+https://www.dailymail.co.uk/ushome/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page content.
+</result>
+2025-10-07 21:43:16,360 - INFO - 
+
+2025-10-07 21:43:16,360 - INFO - 📍 Step 20:
+2025-10-07 21:43:18,685 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:43:18,686 - INFO -   ❔ Eval: Previous attempts to scroll and extract address failed; no address found.
+2025-10-07 21:43:18,686 - INFO -   [34m🎯 Next goal: Extract the corporate address from the homepage using a large start_from_char offset.[0m
+2025-10-07 21:43:18,687 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:43:28,065 - INFO - 
+
+2025-10-07 21:43:28,066 - INFO - 📍 Step 21:
+2025-10-07 21:43:30,393 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:43:30,394 - INFO -   ❔ Eval: Previous attempts to extract the address from various pages failed; no address found.
+2025-10-07 21:43:30,394 - INFO -   [34m🎯 Next goal: Navigate to the Contact Us page and extract the corporate address.[0m
+2025-10-07 21:43:30,395 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.dailymail.co.uk/home/contactus/index.html, new_tab: False
+2025-10-07 21:43:33,531 - INFO - 🔗 Navigated to https://www.dailymail.co.uk/home/contactus/index.html
+2025-10-07 21:43:34,033 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 21:43:34,089 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:43:36,592 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:43:38,851 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:43:38,915 - INFO - 📄 <url>
+https://www.dailymail.co.uk/home/contactus/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-07 21:43:44,282 - INFO - 
+
+2025-10-07 21:43:44,282 - INFO - 📍 Step 22:
+2025-10-07 21:43:45,689 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:43:45,692 - INFO -   ❔ Eval: Previous scroll actions did not reach the bottom; address not found.
+2025-10-07 21:43:45,692 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the Contact Us page and extract the corporate address.[0m
+2025-10-07 21:43:45,693 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 60.0, frame_element_index: None
+2025-10-07 21:44:20,187 - INFO - 🔍 Scrolled down the page by 60.0 pages (requested: 60.0, 632px per page)
+2025-10-07 21:44:20,689 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:44:23,446 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:44:23,620 - INFO - 📄 <url>
+https://www.dailymail.co.uk/home/contactus/index.html
+</url>
+<query>
+What is the address of Daily Mail Associated Newspapers Ltd?
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-07 21:44:28,786 - WARNING - Received duplicate response for request 3132 - ignoring
+2025-10-07 21:44:30,346 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:30,833 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:31,326 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:31,829 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:32,425 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:33,067 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:33,540 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:34,009 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:34,478 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:35,007 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:35,529 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:36,038 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:36,529 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:37,083 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:37,616 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:38,106 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:38,609 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:38,747 - WARNING - ⚠️ EventBus_6cf795f4🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#d3fa 🏃)
+2025-10-07 21:44:39,114 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:39,607 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:40,106 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:40,631 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:41,086 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:41,867 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:42,374 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:43,081 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:43,575 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:44,103 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:44,605 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:45,096 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:45,622 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:46,138 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:46,647 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:47,102 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:47,614 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:48,076 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:48,593 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:49,098 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:49,568 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:50,078 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:50,686 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:51,181 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:51,636 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:52,162 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:52,682 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:53,160 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:53,627 - ERROR - ❌ Result failed 1/4 times:
+ 
+2025-10-07 21:44:53,716 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:44:53,746 - WARNING - ================================================================================
+2025-10-07 21:44:53,746 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_6cf795f4.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#d3fa ✅)
+2025-10-07 21:44:53,746 - WARNING - ================================================================================
+2025-10-07 21:44:53,746 - WARNING - 📣 BrowserStateRequestEvent#d3fa                                       [93m30s[0m
+2025-10-07 21:44:53,746 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#d3fa)    [92m 0s[0m/30s   ✓
+2025-10-07 21:44:53,746 - WARNING -       📣 NavigationCompleteEvent#50ef                                  [93m29s[0m
+2025-10-07 21:44:53,746 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#50ef)    [93m 3s[0m/30s   ✓
+2025-10-07 21:44:53,746 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#50ef)    [92m 0s[0m/30s   ✓
+2025-10-07 21:44:53,746 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#d3fa) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 21:44:53,746 - WARNING -       📣 ScreenshotEvent#78a4                                          [91m26s[0m
+2025-10-07 21:44:53,746 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#78a4)    [92m 2s[0m/ 8s   ✓
+2025-10-07 21:44:53,746 - WARNING - 
+================================================================================
+
+2025-10-07 21:44:58,512 - WARNING - Received duplicate response for request 3200 - ignoring
+2025-10-07 21:45:01,541 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:02,351 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:04,102 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:04,776 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:05,279 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:05,785 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:06,250 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:06,745 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:07,272 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:07,787 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:08,237 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:08,791 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:08,932 - WARNING - ⚠️ EventBus_6cf795f4🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#930f 🏃)
+2025-10-07 21:45:09,285 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:09,792 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:10,307 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:10,815 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:11,280 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:11,743 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:12,266 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:12,783 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:13,480 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:14,025 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:14,540 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:15,037 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:15,516 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:16,054 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:16,611 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:17,114 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:17,628 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:18,096 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:18,640 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:19,148 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:19,614 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:20,172 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:20,678 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:21,192 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:21,695 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+2025-10-07 21:45:23,630 - ERROR - ❌ Result failed 2/4 times:
+ 
+2025-10-07 21:45:23,931 - WARNING - ================================================================================
+2025-10-07 21:45:23,931 - WARNING - ⏱️  TIMEOUT ERROR - Handling took more than 30.0s for EventBus_6cf795f4.browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#930f ✅)
+2025-10-07 21:45:23,931 - WARNING - ================================================================================
+2025-10-07 21:45:23,931 - WARNING - 📣 BrowserStateRequestEvent#930f                                       [93m30s[0m
+2025-10-07 21:45:23,931 - WARNING -    ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_BrowserStateRequestEvent(#930f)    [92m 0s[0m/30s   ✓
+2025-10-07 21:45:23,931 - WARNING -       📣 NavigationCompleteEvent#7ecc                                  [93m29s[0m
+2025-10-07 21:45:23,931 - WARNING -          ☑️ browser_use.browser.watchdog_base.DownloadsWatchdog.on_NavigationCompleteEvent(#7ecc)    [93m 3s[0m/30s   ✓
+2025-10-07 21:45:23,931 - WARNING -          ☑️ browser_use.browser.watchdog_base.SecurityWatchdog.on_NavigationCompleteEvent(#7ecc)    [92m 0s[0m/30s   ✓
+2025-10-07 21:45:23,931 - WARNING -    ⏰ browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(#930f) ⌛️ [91m30s[0m/[91m30s[0m   ⬅️ [91mTIMEOUT HERE[0m ⏰
+2025-10-07 21:45:23,931 - WARNING -       📣 ScreenshotEvent#62b3                                          [91m26s[0m
+2025-10-07 21:45:23,931 - WARNING -          ☑️ browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(#62b3)    [92m 2s[0m/ 8s   ✓
+2025-10-07 21:45:23,931 - WARNING - 
+================================================================================
+
+2025-10-07 21:45:23,988 - WARNING - Received duplicate response for request 3295 - ignoring
+2025-10-07 21:45:39,117 - WARNING - ⚠️ EventBus_6cf795f4🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) handler browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent() has been running for >15s on event. Possible slow processing or deadlock.
+(handler could be trying to await its own result or could be blocked by another async task).
+browser_use.browser.watchdog_base.DOMWatchdog.on_BrowserStateRequestEvent(?▶ BrowserStateRequestEvent#96d9 🏃)
+2025-10-07 21:45:41,038 - ERROR - CDP Error for request 3480: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:42,772 - ERROR - CDP Error for request 3509: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:42,951 - ERROR - CDP Error for request 3512: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,013 - ERROR - CDP Error for request 3513: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,192 - ERROR - CDP Error for request 3516: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,249 - ERROR - CDP Error for request 3517: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,305 - ERROR - CDP Error for request 3518: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,361 - ERROR - CDP Error for request 3519: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,417 - ERROR - CDP Error for request 3520: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,472 - ERROR - CDP Error for request 3521: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,528 - ERROR - CDP Error for request 3522: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,584 - ERROR - CDP Error for request 3523: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,642 - ERROR - CDP Error for request 3524: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,698 - ERROR - CDP Error for request 3525: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,758 - ERROR - CDP Error for request 3526: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,817 - ERROR - CDP Error for request 3527: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,877 - ERROR - CDP Error for request 3528: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,935 - ERROR - CDP Error for request 3529: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:43,993 - ERROR - CDP Error for request 3530: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:44,049 - ERROR - CDP Error for request 3531: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:44,220 - ERROR - CDP Error for request 3534: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:44,276 - ERROR - CDP Error for request 3535: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:45,257 - ERROR - CDP Error for request 3552: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:46,007 - ERROR - CDP Error for request 3565: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:47,244 - ERROR - CDP Error for request 3586: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:47,301 - ERROR - CDP Error for request 3587: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:47,358 - ERROR - CDP Error for request 3588: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:47,414 - ERROR - CDP Error for request 3589: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:48,416 - ERROR - CDP Error for request 3602: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:48,472 - ERROR - CDP Error for request 3603: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:48,530 - ERROR - CDP Error for request 3604: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:48,589 - ERROR - CDP Error for request 3605: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:48,651 - ERROR - CDP Error for request 3606: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:48,709 - ERROR - CDP Error for request 3607: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,126 - ERROR - CDP Error for request 3614: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,186 - ERROR - CDP Error for request 3615: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,243 - ERROR - CDP Error for request 3616: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,301 - ERROR - CDP Error for request 3617: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,358 - ERROR - CDP Error for request 3618: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,414 - ERROR - CDP Error for request 3619: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,471 - ERROR - CDP Error for request 3620: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,526 - ERROR - CDP Error for request 3621: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,698 - ERROR - CDP Error for request 3624: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,755 - ERROR - CDP Error for request 3625: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,815 - ERROR - CDP Error for request 3626: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,875 - ERROR - CDP Error for request 3627: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:49,932 - ERROR - CDP Error for request 3628: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 21:45:51,588 - INFO - 
+
+2025-10-07 21:45:51,588 - INFO - 📍 Step 25:
+2025-10-07 21:45:53,467 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:45:53,470 - INFO -   ❔ Eval: Previous attempts to scroll and extract address failed; address not found.
+2025-10-07 21:45:53,470 - INFO -   [34m🎯 Next goal: Extract the corporate address from the Contact Us page using extract_structured_data with start_from_char near the end of the page.[0m
+2025-10-07 21:45:53,471 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: What is the address of Daily Mail Associated Newspapers Ltd?, extract_links: False, start_from_ch
+2025-10-07 21:45:56,372 - ERROR - CDP Error for request 39: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 21:45:57,048 - ERROR - CDP Error for request 45: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 21:45:57,049 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 21:45:57,217 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#b175)]         ❌ Failed (0.84s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-07 21:45:57,280 - ERROR - ❌ EventBus_6cf795f4🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#b175 ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-07 21:45:57,281 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 21:45:57,281 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 21:45:57,695 - INFO - 
+
+2025-10-07 21:45:57,695 - INFO - 📍 Step 26:
+2025-10-07 21:45:59,047 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:45:59,048 - INFO -   ❔ Eval: Failed to retrieve the corporate address after numerous navigation, scrolling, and extraction attempts.
+2025-10-07 21:45:59,048 - INFO - 
+2025-10-07 21:45:59,048 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to locate the address of Daily Mail Associated Newspapers Ltd on the Daily Mail website (www.dailymail.co.uk/ushome/index.html) despite extensive navigation, scrolling, and data extraction attempts across the homepage, privacy policy, contact us, and about pages. All attempts returned no address information. Consequently, the task could not be completed.' success=False files_to_display=[]
+2025-10-07 21:45:59,345 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to locate the address of Daily Mail Associated Newspapers Ltd on the Daily Mail website (www.dailymail.co.uk/ushome/index.html) despite extensive navigation, scrolling, and data extraction attempts across the homepage, privacy policy, contact us, and about pages. All attempts returned no address information. Consequently, the task could not be completed.
+
+
+2025-10-07 21:45:59,346 - INFO - ❌ Task completed without success
+Creating Hyperbrowser session with stealth features...
+Hyperbrowser session created with ID: f011f125-2e1e-49fd-bd36-c95be5752137
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJmMDExZjEyNS0yZTFlLTQ5ZmQtYmQzNi1jOTViZTU3NTIxMzciLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTgyNjksImV4cCI6MTc1OTk0MTQ2OX0.rDHE9TCJO9fwFgxa8YjX11ZnY85fFuCpXfSF8wcrSyc
+Session URL: https://app.hyperbrowser.ai/features/sessions/f011f125-2e1e-49fd-bd36-c95be5752137
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.dailymail.co.uk/ushome/index.html', extracted_content='🔗 Navigated to https://www.dailymail.co.uk/ushome/index.html', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 307.9296875, 'click_y': 13.109375, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 20.0 pages (requested: 20.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 4.0 pages (requested: 4.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 4.0 pages (requested: 4.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/privacy\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nThe provided portion of the webpage does not contain the address of Daily\u202fMail\u202fAssociated\u202fNewspapers\u202fLtd. The content ends before any contact or address details are listed. To obtain the address, you will need to continue reading the page beyond the current truncation point (use `start_from_char=29953`).\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/privacy\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nThe provided portion of the webpage does not contain the address of Daily\u202fMail\u202fAssociated\u202fNewspapers\u202fLtd. The content ends before any contact or address details are listed. To obtain the address, you will need to continue reading the page beyond the current truncation point (use `start_from_char=29953`).\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 207.234375, 'click_y': 595.78125, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/home/contactus/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/home/contactus/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 60.0 pages (requested: 60.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 60.0 pages (requested: 60.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dailymail.co.uk/ushome/index.html', extracted_content='🔗 Navigated to https://www.dailymail.co.uk/ushome/index.html', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 100.0 pages (requested: 100.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 100.0 pages (requested: 100.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 10 seconds', extracted_content='Waited for 10 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the corporate address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation not available in the provided portion of the page. Use\u202fstart_from_char=29959\u202fto retrieve the next part of the content where the corporate address may appear.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the corporate address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation not available in the provided portion of the page. Use\u202fstart_from_char=29959\u202fto retrieve the next part of the content where the corporate address may appear.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1100.0234375, 'click_y': 612.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page content.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/ushome/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='start_from_char (100000) exceeds content length (86677). Content has 86677 characters after filtering.', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.dailymail.co.uk/home/contactus/index.html', extracted_content='🔗 Navigated to https://www.dailymail.co.uk/home/contactus/index.html', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/home/contactus/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/home/contactus/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 60.0 pages (requested: 60.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 60.0 pages (requested: 60.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.dailymail.co.uk/home/contactus/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://www.dailymail.co.uk/home/contactus/index.html\n</url>\n<query>\nWhat is the address of Daily Mail Associated Newspapers Ltd?\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='start_from_char (80000) exceeds content length (2268). Content has 2268 characters after filtering.', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to locate the address of Daily Mail Associated Newspapers Ltd on the Daily Mail website - 269 more characters', extracted_content='I was unable to locate the address of Daily Mail Associated Newspapers Ltd on the Daily Mail website (www.dailymail.co.uk/ushome/index.html) despite extensive navigation, scrolling, and data extraction attempts across the homepage, privacy policy, contact us, and about pages. All attempts returned no address information. Consequently, the task could not be completed.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.dailymail.co.uk/ushome/index.html', 'new_tab': False}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 39}, 'interacted_element': DOMInteractedElement(node_id=783, backend_node_id=373, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/privacy'}, bounds=DOMRect(x=262.84375, y=5.609375, width=94.171875, height=15.0), x_path='html/body/div[3]/div[2]/div[2]/div[3]/div[1]/div[2]/a[1]', element_hash=6501918256637954810)}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 20.0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 4.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 67, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=32500, backend_node_id=28629, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/home/contactus/index.html'}, bounds=DOMRect(x=179.109375, y=588.78125, width=71.25, height=14.0), x_path='html/body/div[3]/div[2]/div[6]/a[2]', element_hash=2295127548659951812)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 60.0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dailymail.co.uk/ushome/index.html', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 100.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the corporate address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 30000}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 30000}, 'interacted_element': None}, {'click_element_by_index': {'index': 76}, 'interacted_element': DOMInteractedElement(node_id=109889, backend_node_id=56815, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/home/article-10538781/About-MailOnline.html'}, bounds=DOMRect(x=550.34375, y=606.0, width=577.65625, height=24.0), x_path='html/body/div[3]/div[2]/div[7]/a[11]', element_hash=7396877080729410225)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 30000}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 30000}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 50000}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 30000}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 100000}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.dailymail.co.uk/home/contactus/index.html', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 60.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the address of Daily Mail Associated Newspapers Ltd?', 'extract_links': False, 'start_from_char': 80000}, 'interacted_element': None}, {'done': {'text': 'I was unable to locate the address of Daily Mail Associated Newspapers Ltd on the Daily Mail website (www.dailymail.co.uk/ushome/index.html) despite extensive navigation, scrolling, and data extraction attempts across the homepage, privacy policy, contact us, and about pages. All attempts returned no address information. Consequently, the task could not be completed.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session f011f125-2e1e-49fd-bd36-c95be5752137...
+Hyperbrowser session f011f125-2e1e-49fd-bd36-c95be5752137 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/f011f125-2e1e-49fd-bd36-c95be5752137

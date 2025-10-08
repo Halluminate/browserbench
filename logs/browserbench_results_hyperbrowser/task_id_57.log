@@ -1,0 +1,128 @@
+2025-10-07 19:44:47,617 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 19:44:47,638 - INFO - [34m🚀 Task: Does bing.com have a flight search feature? You must complete the task only using the starting website. Begin task on the following url: https://www.bing.com[0m
+2025-10-07 19:44:47,690 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 19:44:47,696 - INFO - ────────────────────────────────────────
+2025-10-07 19:44:47,696 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 19:44:47,696 - INFO -     👉  browser-use auth
+2025-10-07 19:44:47,696 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 19:44:47,696 - INFO - ────────────────────────────────────────
+
+2025-10-07 19:44:47,907 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 19:44:47,949 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI3OWQzMDdmYy1hOGM0LTQ2NjEtYTg1OS1lZTY3MGM1MzhlMTEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTE0ODcsImV4cCI6MTc1OTkzNDY4N30.-Hkk6IGKrA_OYh5-8_sElRcSszNgCdjBzz2IjeEWJbw
+2025-10-07 19:44:49,100 - INFO - 🧠 Starting a browser-use version 0.7.10 with model=openai/gpt-oss-120b
+2025-10-07 19:44:49,602 - INFO - 
+
+2025-10-07 19:44:49,602 - INFO - 📍 Step 1:
+2025-10-07 19:44:51,082 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:44:51,094 - INFO -   [34m🎯 Next goal: Wait for the Bing homepage to load fully before inspecting for a flight search feature.[0m
+2025-10-07 19:44:51,094 - INFO -   🦾 [34m[ACTION 1/1][0m wait: seconds: 5
+2025-10-07 19:44:51,149 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 19:44:53,661 - INFO - 
+
+2025-10-07 19:44:53,661 - INFO - 📍 Step 2:
+2025-10-07 19:44:55,142 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:44:55,144 - INFO -   [31m⚠️ Eval: Failure: Page remained empty after waiting, so the flight search feature could not be inspected.[0m
+2025-10-07 19:44:55,145 - INFO -   [34m🎯 Next goal: Reload the Bing homepage, wait for it to load, then extract structured data to determine if a flight search feature exists.[0m
+2025-10-07 19:44:55,145 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.bing.com, new_tab: False
+2025-10-07 19:44:56,850 - INFO - 🔗 Navigated to https://www.bing.com
+2025-10-07 19:44:57,350 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 19:44:57,406 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 19:44:59,909 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: flight search feature, extract_links: False, start_from_char: 0
+2025-10-07 19:45:00,763 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:00,817 - INFO - 📄 <url>
+https://www.bing.com/
+</url>
+<query>
+flight search feature
+</query>
+<result>
+Information about a flight search feature is not available in the provided webpage content.
+</result>
+2025-10-07 19:45:03,402 - INFO - 
+
+2025-10-07 19:45:03,402 - INFO - 📍 Step 3:
+2025-10-07 19:45:05,388 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:05,390 - INFO -   [31m⚠️ Eval: Previous attempt to locate a flight search feature on the homepage failed; no such feature was visible. Verdict: Failure[0m
+2025-10-07 19:45:05,390 - INFO -   [34m🎯 Next goal: Search for "flights" using the search bar and extract page content to verify the presence of a flight search feature.[0m
+2025-10-07 19:45:05,390 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 32, text: flights, clear_existing: True
+2025-10-07 19:45:07,226 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 19:45:07,226 - INFO - ⌨️ Typed "flights" into element with index 32
+2025-10-07 19:45:07,728 - INFO -   🦾 [34m[ACTION 2/4][0m send_keys: keys: Enter
+2025-10-07 19:45:08,062 - INFO - ⌨️ Sent keys: Enter
+2025-10-07 19:45:08,164 - INFO - ⌨️  Sent keys: Enter
+2025-10-07 19:45:08,666 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 19:45:08,722 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 19:45:11,227 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Does the page contain a flight search widget or flight booking feature?, extract_links: False, st
+2025-10-07 19:45:13,282 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:13,341 - INFO - 📄 <url>
+https://www.bing.com/search?q=flights&form=QBLH&sp=-1&lq=0&pq=flights&sc=12-7&qs=n&sk=&cvid=F3EA474B31C14E64B9953F4B19F1F011
+</url>
+<query>
+Does the page contain a flight search widget or flight booking feature?
+</query>
+<result>
+The page does not contain a flight search widget or flight booking feature.
+</result>
+2025-10-07 19:45:17,151 - INFO - 
+
+2025-10-07 19:45:17,151 - INFO - 📍 Step 4:
+2025-10-07 19:45:19,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:19,055 - INFO -   [31m⚠️ Eval: Failure: The search results page did not contain a Bing flight search widget.[0m
+2025-10-07 19:45:19,056 - INFO -   [34m🎯 Next goal: Click the "Flights" navigation link (index 23) and then inspect the resulting page for a Bing flight search feature.[0m
+2025-10-07 19:45:19,056 - INFO -   🦾 [34m[ACTION 1/2][0m click_element_by_index: index: 23, while_holding_ctrl: None
+2025-10-07 19:45:20,366 - INFO - 🖱️ Clicked element
+2025-10-07 19:45:20,867 - INFO -   🦾 [34m[ACTION 2/2][0m wait: seconds: 3
+2025-10-07 19:45:20,922 - INFO - 🕒 waited for 0 seconds + 3 seconds for LLM call
+2025-10-07 19:45:24,430 - INFO - 
+
+2025-10-07 19:45:24,431 - INFO - 📍 Step 5:
+2025-10-07 19:45:26,025 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:26,026 - INFO -   ❔ Eval: Previous step clicked the 'Flights' navigation link but did not verify the resulting page; need to switch to the new tab to check for a flight search widget.
+2025-10-07 19:45:26,026 - INFO -   [34m🎯 Next goal: Switch to the Bing Travel tab (ID 46E2) and examine the page for a flight search widget.[0m
+2025-10-07 19:45:26,026 - INFO -   🦾 [34m[ACTION 1/1][0m switch_tab: tab_id: 46E2
+2025-10-07 19:45:26,191 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI3OWQzMDdmYy1hOGM0LTQ2NjEtYTg1OS1lZTY3MGM1MzhlMTEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTE0ODcsImV4cCI6MTc1OTkzNDY4N30.-Hkk6IGKrA_OYh5-8_sElRcSszNgCdjBzz2IjeEWJbw
+2025-10-07 19:45:27,025 - INFO - 🔄  Switched to tab #46E2
+2025-10-07 19:45:29,298 - INFO - 
+
+2025-10-07 19:45:29,298 - INFO - 📍 Step 6:
+2025-10-07 19:45:30,624 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:30,625 - INFO -   [32m👍 Eval: Success: Switched to the Bing Travel tab, but the page is still loading.[0m
+2025-10-07 19:45:30,625 - INFO -   [34m🎯 Next goal: Wait for the Bing Travel page to load fully, then extract structured data to check for a flight search widget.[0m
+2025-10-07 19:45:30,625 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 19:45:30,680 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 19:45:33,181 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Does this page contain a flight search form or widget for searching flights?, extract_links: False
+2025-10-07 19:45:34,742 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:34,796 - INFO - 📄 <url>
+https://www.bing.com/travel/flights?src=&q=flights+from+-&form=FBSCOP&entrypoint=FBSCOP
+</url>
+<query>
+Does this page contain a flight search form or widget for searching flights?
+</query>
+<result>
+No. The page does not include a flight‑search form or widget with input fields for entering origin, destination, dates, etc.; it only displays a list of pre‑selected flight routes and pricing information.
+</result>
+2025-10-07 19:45:37,244 - INFO - 
+
+2025-10-07 19:45:37,244 - INFO - 📍 Step 7:
+2025-10-07 19:45:39,312 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 19:45:39,315 - INFO -   [31m⚠️ Eval: The previous extraction incorrectly stated no flight search widget; however, the page clearly contains a flight search form. Verdict: Failure of that extraction.[0m
+2025-10-07 19:45:39,315 - INFO -   [34m🎯 Next goal: Provide the final answer to the user confirming the presence of the flight search feature.[0m
+2025-10-07 19:45:39,317 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: Yes, bing.com does have a flight search feature. When you navigate to the Bing Travel flights page (https://www.bing.com/
+2025-10-07 19:45:39,376 - INFO - 
+📄 [32m Final Result:[0m 
+Yes, bing.com does have a flight search feature. When you navigate to the Bing Travel flights page (https://www.bing.com/travel/flights), you are presented with a flight search form that includes fields for "Leaving from?", "Going to?", departure and return dates, trip type, class of service, passenger count, and a Search button to find flights. This confirms that Bing offers an integrated flight search capability.
+
+
+2025-10-07 19:45:39,381 - INFO - ✅ Task completed successfully
+Creating Hyperbrowser session with stealth features...
+Hyperbrowser session created with ID: 79d307fc-a8c4-4661-a859-ee670c538e11
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI3OWQzMDdmYy1hOGM0LTQ2NjEtYTg1OS1lZTY3MGM1MzhlMTEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTE0ODcsImV4cCI6MTc1OTkzNDY4N30.-Hkk6IGKrA_OYh5-8_sElRcSszNgCdjBzz2IjeEWJbw
+Session URL: https://app.hyperbrowser.ai/features/sessions/79d307fc-a8c4-4661-a859-ee670c538e11
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.bing.com', extracted_content='🔗 Navigated to https://www.bing.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.bing.com/\n</url>\n<query>\nflight search feature\n</query>\n<result>\nInformation about a flight search feature is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.bing.com/\n</url>\n<query>\nflight search feature\n</query>\n<result>\nInformation about a flight search feature is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'flights' into element 32.", extracted_content="Input 'flights' into element 32.", include_extracted_content_only_once=False, metadata={'input_x': 621.5, 'input_y': 151.390625}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.bing.com/search?q=flights&form=QBLH&sp=-1&lq=0&pq=flights&sc=12-7&qs=n&sk=&cvid=F3EA474B31C14E64B9953F4B19F1F011\n</url>\n<query>\nDoes the page contain a flight search widget or flight booking feature?\n</query>\n<result>\nThe page does not contain a flight search widget or flight booking feature.\n</result>', extracted_content='<url>\nhttps://www.bing.com/search?q=flights&form=QBLH&sp=-1&lq=0&pq=flights&sc=12-7&qs=n&sk=&cvid=F3EA474B31C14E64B9953F4B19F1F011\n</url>\n<query>\nDoes the page contain a flight search widget or flight booking feature?\n</query>\n<result>\nThe page does not contain a flight search widget or flight booking feature.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 372.4609375, 'click_y': 99.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 3 seconds', extracted_content='Waited for 3 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #46E2', extracted_content='Switched to tab #46E2', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.bing.com/travel/flights?src=&q=flights+from+-&form=FBSCOP&entrypoint=FBSCOP\n</url>\n<query>\nDoes this page contain a flight search form or widget for searching flights?\n</query>\n<result>\nNo. The page does not include a flight‑search form or widget with input fields for entering origin, destination, dates, etc.; it only displays a list of pre‑selected flight routes and pricing information.\n</result>', extracted_content='<url>\nhttps://www.bing.com/travel/flights?src=&q=flights+from+-&form=FBSCOP&entrypoint=FBSCOP\n</url>\n<query>\nDoes this page contain a flight search form or widget for searching flights?\n</query>\n<result>\nNo. The page does not include a flight‑search form or widget with input fields for entering origin, destination, dates, etc.; it only displays a list of pre‑selected flight routes and pricing information.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - Yes, bing.com does have a flight search feature. When you navigate to the Bing Travel flights page ( - 318 more characters', extracted_content='Yes, bing.com does have a flight search feature. When you navigate to the Bing Travel flights page (https://www.bing.com/travel/flights), you are presented with a flight search form that includes fields for "Leaving from?", "Going to?", departure and return dates, trip type, class of service, passenger count, and a Search button to find flights. This confirms that Bing offers an integrated flight search capability.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'wait': {'seconds': 5}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.bing.com', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'flight search feature', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'input_text': {'index': 32, 'text': 'flights', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=253, backend_node_id=10, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='TEXTAREA', attributes={'id': 'sb_form_q', 'class': 'sb_form_q', 'name': 'q', 'type': 'search', 'inputmode': 'search', 'maxlength': '2000', 'autocomplete': 'off', 'autofocus': '', 'aria-autocomplete': 'both', 'placeholder': '', 'aria-label': '0 characters out of 2000', 'spellcheck': 'false', 'autocorrect': 'off', 'autocapitalize': 'none', 'rows': '1', 'enterkeyhint': 'search', 'style': 'width: 843px;'}, bounds=DOMRect(x=200.0, y=140.390625, width=843.0, height=22.0), x_path='html/body/div[1]/div/div[3]/div[2]/form/div[1]/div/textarea', element_hash=1305352374966711927)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Does the page contain a flight search widget or flight booking feature?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 23}, 'interacted_element': DOMInteractedElement(node_id=1398, backend_node_id=3890, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': '', 'aria-current': 'false', 'disableredirectlink': 'False', 'href': '/travel/search?q=flights&m=flights&FORM=FBSCOP', 'h': 'ID=SERP,5038.1', 'target': '_blank'}, bounds=DOMRect(x=341.234375, y=84.0, width=62.453125, height=30.0), x_path='html/body/header/nav/ul/li[3]/a', element_hash=3427294718389620070)}, {'wait': {'seconds': 3}, 'interacted_element': None}, {'switch_tab': {'tab_id': '46E2'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Does this page contain a flight search form or widget for searching flights?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'Yes, bing.com does have a flight search feature. When you navigate to the Bing Travel flights page (https://www.bing.com/travel/flights), you are presented with a flight search form that includes fields for "Leaving from?", "Going to?", departure and return dates, trip type, class of service, passenger count, and a Search button to find flights. This confirms that Bing offers an integrated flight search capability.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 79d307fc-a8c4-4661-a859-ee670c538e11...
+Hyperbrowser session 79d307fc-a8c4-4661-a859-ee670c538e11 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/79d307fc-a8c4-4661-a859-ee670c538e11

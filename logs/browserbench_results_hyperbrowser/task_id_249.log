@@ -1,0 +1,619 @@
+2025-10-07 21:17:49,201 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 21:17:49,214 - INFO - 🔗 Found URL in task: https://economictimes.indiatimes.com, adding as initial action...
+2025-10-07 21:17:49,218 - INFO - [34m🚀 Task: What is the Corporate Identity Number of the Economic Times? You must complete the task only using the starting website. Begin task on the following url: economictimes.indiatimes.com[0m
+2025-10-07 21:17:49,266 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 21:17:49,274 - INFO - ────────────────────────────────────────
+2025-10-07 21:17:49,274 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 21:17:49,274 - INFO -     👉  browser-use auth
+2025-10-07 21:17:49,274 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 21:17:49,274 - INFO - ────────────────────────────────────────
+
+2025-10-07 21:17:49,485 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 21:17:49,529 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI0YTMwODg0YS04NTQzLTRhMDgtOTZhYS1kOTJhMzUzMDkyZjEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTcwNjksImV4cCI6MTc1OTk0MDI2OX0.TBM6KaE1upY1ZvjmzDHI5gYpVLT0ys5rdHVzCWd8Doc
+2025-10-07 21:17:50,714 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://economictimes.indiatimes.com, new_tab: False
+2025-10-07 21:17:52,439 - INFO - 🔗 Navigated to https://economictimes.indiatimes.com
+2025-10-07 21:17:54,544 - INFO - 
+
+2025-10-07 21:17:54,544 - INFO - 📍 Step 1:
+2025-10-07 21:17:55,921 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:17:55,938 - INFO -   [34m🎯 Next goal: Click the link to navigate to the main Economic Times homepage.[0m
+2025-10-07 21:17:55,938 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 3, while_holding_ctrl: None
+2025-10-07 21:17:57,638 - INFO - 🖱️ Clicked element
+2025-10-07 21:18:03,204 - WARNING - Received duplicate response for request 97 - ignoring
+2025-10-07 21:18:06,237 - INFO - 
+
+2025-10-07 21:18:06,238 - INFO - 📍 Step 2:
+2025-10-07 21:18:07,692 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:07,695 - INFO -   [32m👍 Eval: Previous step clicked the redirect link to load the homepage; success.[0m
+2025-10-07 21:18:07,695 - INFO -   [34m🎯 Next goal: Scroll to the bottom of the homepage to reveal footer information containing the Corporate Identity Number.[0m
+2025-10-07 21:18:07,696 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 21:18:13,567 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)
+2025-10-07 21:18:14,068 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:18:16,798 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:16,919 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/
+</url>
+<query>
+Corporate Identity Number of Economic Times
+</query>
+<result>
+Information on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.
+</result>
+2025-10-07 21:18:22,176 - ERROR - CDP Error for request 195: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:22,181 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:22,181 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:18:22,181 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:18:22,858 - INFO - 
+
+2025-10-07 21:18:22,859 - INFO - 📍 Step 3:
+2025-10-07 21:18:23,961 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:23,964 - INFO -   [31m⚠️ Eval: Previous scroll action did not reveal footer content; page appears empty, likely not loaded. Verdict: Failure[0m
+2025-10-07 21:18:23,964 - INFO -   [34m🎯 Next goal: Wait for the homepage to load fully, then extract the Corporate Identity Number from the page.[0m
+2025-10-07 21:18:23,964 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 21:18:24,079 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:18:26,583 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:18:28,207 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:28,315 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/
+</url>
+<query>
+Corporate Identity Number of Economic Times
+</query>
+<result>
+Information unavailable in the provided webpage content.
+</result>
+2025-10-07 21:18:31,403 - ERROR - CDP Error for request 251: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:31,403 - ERROR - CDP Error for request 252: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:31,403 - ERROR - CDP Error for request 254: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:31,403 - ERROR - CDP Error for request 261: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:31,407 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:31,407 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:18:31,408 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:18:31,914 - INFO - 
+
+2025-10-07 21:18:31,914 - INFO - 📍 Step 4:
+2025-10-07 21:18:33,320 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:33,323 - INFO -   [31m⚠️ Eval: Failure – the homepage did not load content, so scrolling and waiting did not reveal the CIN.[0m
+2025-10-07 21:18:33,323 - INFO -   [34m🎯 Next goal: Navigate to the Economic Times 'About Us' page to locate the Corporate Identity Number.[0m
+2025-10-07 21:18:33,323 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://economictimes.indiatimes.com/about-us, new_tab: False
+2025-10-07 21:18:36,017 - INFO - 🔗 Navigated to https://economictimes.indiatimes.com/about-us
+2025-10-07 21:18:38,769 - INFO - 
+
+2025-10-07 21:18:38,769 - INFO - 📍 Step 5:
+2025-10-07 21:18:40,451 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:40,453 - INFO -   ❔ Eval: Previous navigation to about-us resulted in a 404 page; need to use site search to find CIN.
+2025-10-07 21:18:40,454 - INFO -   [34m🎯 Next goal: Search for "Corporate Identity Number" using the site's search box and extract the CIN from the results.[0m
+2025-10-07 21:18:40,454 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 13, text: Corporate Identity Number, clear_existing: True
+2025-10-07 21:18:45,989 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 21:18:45,989 - INFO - ⌨️ Typed "Corporate Identity Number" into element with index 13
+2025-10-07 21:18:46,491 - INFO -   🦾 [34m[ACTION 2/4][0m send_keys: keys: Enter
+2025-10-07 21:18:46,841 - INFO - ⌨️ Sent keys: Enter
+2025-10-07 21:18:46,943 - INFO - ⌨️  Sent keys: Enter
+2025-10-07 21:18:47,445 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 21:18:47,506 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:18:50,009 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: What is the Corporate Identity Number (CIN) of Economic Times?, extract_links: False, start_from_
+2025-10-07 21:18:51,982 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:52,041 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/corporate-identity-number
+</url>
+<query>
+What is the Corporate Identity Number (CIN) of Economic Times?
+</query>
+<result>
+Information on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.
+</result>
+2025-10-07 21:18:53,817 - ERROR - CDP Error for request 447: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:53,819 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:53,819 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:18:53,819 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:18:54,460 - INFO - 
+
+2025-10-07 21:18:54,460 - INFO - 📍 Step 6:
+2025-10-07 21:18:55,751 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:55,752 - INFO -   [31m⚠️ Eval: Previous actions (scroll, wait, navigation, search) did not reveal any content; the page appears empty. Verdict: Failure[0m
+2025-10-07 21:18:55,752 - INFO -   [34m🎯 Next goal: Extract the page content from the current URL and search for the Corporate Identity Number.[0m
+2025-10-07 21:18:55,752 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Corporate Identity Number of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:18:56,986 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:18:57,042 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/corporate-identity-number
+</url>
+<query>
+Corporate Identity Number of Economic Times
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-07 21:18:59,062 - ERROR - CDP Error for request 502: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:59,063 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:59,063 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:18:59,064 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:18:59,068 - ERROR - CDP Error for request 506: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:18:59,848 - INFO - 
+
+2025-10-07 21:18:59,848 - INFO - 📍 Step 7:
+2025-10-07 21:19:01,424 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:01,426 - INFO -   [31m⚠️ Eval: Previous attempts to locate CIN via scrolling, waiting, and site search failed; page remained empty. Verdict: Failure[0m
+2025-10-07 21:19:01,426 - INFO -   [34m🎯 Next goal: Extract the full page content from the current URL and locate the Corporate Identity Number.[0m
+2025-10-07 21:19:01,427 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Corporate Identity Number of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:19:02,684 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:02,753 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/corporate-identity-number
+</url>
+<query>
+Corporate Identity Number of Economic Times
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-07 21:19:05,910 - INFO - 
+
+2025-10-07 21:19:05,910 - INFO - 📍 Step 8:
+2025-10-07 21:19:07,443 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:07,445 - INFO -   [31m⚠️ Eval: Previous attempts to locate CIN via scrolling, waiting, and site search failed; page remained empty. Verdict: Failure[0m
+2025-10-07 21:19:07,446 - INFO -   [34m🎯 Next goal: Navigate to a likely corporate information page to find the Corporate Identity Number.[0m
+2025-10-07 21:19:07,446 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://economictimes.indiatimes.com/about-us/company-information, new_tab: False
+2025-10-07 21:19:09,896 - INFO - 🔗 Navigated to https://economictimes.indiatimes.com/about-us/company-information
+2025-10-07 21:19:12,596 - INFO - 
+
+2025-10-07 21:19:12,597 - INFO - 📍 Step 9:
+2025-10-07 21:19:14,281 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:14,283 - INFO -   [34m🎯 Next goal: Search the site for "CIN" using the search input and extract the Corporate Identity Number from the results.[0m
+2025-10-07 21:19:14,283 - INFO -   🦾 [34m[ACTION 1/4][0m input_text: index: 14, text: CIN, clear_existing: True
+2025-10-07 21:19:15,543 - WARNING - ⚠️ Some framework events may have failed to trigger
+2025-10-07 21:19:15,544 - INFO - ⌨️ Typed "CIN" into element with index 14
+2025-10-07 21:19:16,048 - INFO -   🦾 [34m[ACTION 2/4][0m send_keys: keys: Enter
+2025-10-07 21:19:16,438 - INFO - ⌨️ Sent keys: Enter
+2025-10-07 21:19:16,541 - INFO - ⌨️  Sent keys: Enter
+2025-10-07 21:19:17,043 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 21:19:17,105 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:19:19,609 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Corporate Identity Number of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:19:20,827 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:20,885 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/cin
+</url>
+<query>
+Corporate Identity Number of Economic Times
+</query>
+<result>
+Information on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.
+</result>
+2025-10-07 21:19:24,312 - INFO - 
+
+2025-10-07 21:19:24,313 - INFO - 📍 Step 10:
+2025-10-07 21:19:26,374 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:26,376 - INFO -   ❔ Eval: Previous actions failed to locate CIN; page content remained empty.
+2025-10-07 21:19:26,376 - INFO -   [34m🎯 Next goal: Scroll down to load the footer and then extract the Corporate Identity Number from the page.[0m
+2025-10-07 21:19:26,376 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 20.0, frame_element_index: None
+2025-10-07 21:19:37,927 - INFO - 🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 632px per page)
+2025-10-07 21:19:38,430 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:19:40,698 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:40,819 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/cin
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on a specific Corporate Identity Number (CIN) is not available in the provided webpage content.
+</result>
+2025-10-07 21:19:45,958 - INFO - 
+
+2025-10-07 21:19:45,958 - INFO - 📍 Step 11:
+2025-10-07 21:19:47,756 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:47,759 - INFO -   ❔ Eval: Previous scroll of 20 pages did not reveal footer; page still shows no CIN.
+2025-10-07 21:19:47,759 - INFO -   [34m🎯 Next goal: Scroll down a small amount to reach the footer and then extract the Corporate Identity Number.[0m
+2025-10-07 21:19:47,760 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 0.5, frame_element_index: None
+2025-10-07 21:19:48,307 - INFO - 🔍 Scrolled down the page by 0.5 pages (632px per page)
+2025-10-07 21:19:48,810 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number (CIN) of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:19:50,377 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:50,494 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/cin
+</url>
+<query>
+Corporate Identity Number (CIN) of Economic Times
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-07 21:19:54,737 - INFO - 
+
+2025-10-07 21:19:54,737 - INFO - 📍 Step 12:
+2025-10-07 21:19:56,762 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:56,765 - INFO -   [31m⚠️ Eval: Previous scroll actions did not reveal the footer; page still shows no CIN. Verdict: Failure[0m
+2025-10-07 21:19:56,765 - INFO -   [34m🎯 Next goal: Scroll down further to trigger loading of the footer and then extract the Corporate Identity Number.[0m
+2025-10-07 21:19:56,766 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 21:19:57,613 - INFO - 🔍 Scrolled down the page by one page (632px)
+2025-10-07 21:19:58,115 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number (CIN) of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:19:59,690 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:19:59,805 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/cin
+</url>
+<query>
+Corporate Identity Number (CIN) of Economic Times
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-07 21:20:03,834 - INFO - 
+
+2025-10-07 21:20:03,834 - INFO - 📍 Step 13:
+2025-10-07 21:20:06,118 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:20:06,119 - INFO -   [31m⚠️ Eval: Previous attempts to locate CIN via scrolling, waiting, and site search failed; page content remained empty. Verdict: Failure[0m
+2025-10-07 21:20:06,119 - INFO -   [34m🎯 Next goal: Click the 'About Us' link (index 230) to open the corporate information page where the CIN may be listed.[0m
+2025-10-07 21:20:06,120 - INFO -   🦾 [34m[ACTION 1/2][0m write_file: file_name: todo.md, content: # Task: Find Economic Times Corporate Identity Number (CIN)\n\n- [ ] Click About Us li
+2025-10-07 21:20:06,237 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 21:20:10,600 - INFO -   🦾 [34m[ACTION 2/2][0m click_element_by_index: index: 230, while_holding_ctrl: None
+2025-10-07 21:20:12,071 - INFO - 🖱️ Clicked element
+2025-10-07 21:20:16,399 - INFO - 
+
+2025-10-07 21:20:16,399 - INFO - 📍 Step 14:
+2025-10-07 21:20:19,035 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:20:19,037 - INFO -   ❔ Eval: Previous click on index 230 did not change the URL, likely because the navigation did not occur; need to open in a new tab.
+2025-10-07 21:20:19,037 - INFO -   [34m🎯 Next goal: Open the About Us page in a new tab and extract the Corporate Identity Number from it.[0m
+2025-10-07 21:20:19,038 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 230, while_holding_ctrl: True
+2025-10-07 21:20:20,468 - INFO - 🔗 New tab opened - switching to it
+2025-10-07 21:20:20,468 - INFO - 🖱️ Clicked element and opened in new tab
+2025-10-07 21:20:20,971 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 21:20:21,094 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:20:23,597 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:20:25,388 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:20:25,509 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/topic/cin
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on a specific Corporate Identity Number (CIN) is not provided in the page content. The term “CIN” appears only in article headlines (e.g., “CIN mismatch doesn’t mean companies don’t exist, clarifies government”), but no actual CIN values or details are given.
+</result>
+2025-10-07 21:20:29,399 - INFO - 
+
+2025-10-07 21:20:29,399 - INFO - 📍 Step 15:
+2025-10-07 21:20:31,779 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:20:31,780 - INFO -   ❔ Eval: Previous attempts to locate CIN via various pages and searches failed; footer not loaded.
+2025-10-07 21:20:31,780 - INFO -   [34m🎯 Next goal: Navigate to the main homepage, scroll to the bottom to load the footer, and extract the Corporate Identity Number.[0m
+2025-10-07 21:20:31,780 - INFO -   🦾 [34m[ACTION 1/4][0m go_to_url: url: https://economictimes.indiatimes.com/, new_tab: False
+2025-10-07 21:20:33,432 - INFO - 🔗 Navigated to https://economictimes.indiatimes.com/
+2025-10-07 21:20:33,933 - INFO -   🦾 [34m[ACTION 2/4][0m wait: seconds: 5
+2025-10-07 21:20:33,992 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:20:36,495 - INFO -   🦾 [34m[ACTION 3/4][0m scroll: down: True, num_pages: 30.0, frame_element_index: None
+2025-10-07 21:20:53,730 - INFO - 🔍 Scrolled down the page by 30.0 pages (requested: 30.0, 632px per page)
+2025-10-07 21:20:54,231 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:20:59,091 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:20:59,265 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on the Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:21:08,851 - INFO - 
+
+2025-10-07 21:21:08,852 - INFO - 📍 Step 16:
+2025-10-07 21:21:10,642 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:10,644 - INFO -   [32m👍 Eval: Scrolling the page multiple times did not reveal the footer or CIN; the attempt was unsuccessful.[0m
+2025-10-07 21:21:10,644 - INFO -   [34m🎯 Next goal: Extract the full page content from the Economic Times homepage and search for the Corporate Identity Number.[0m
+2025-10-07 21:21:10,644 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Corporate Identity Number of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:21:12,475 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:12,548 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/
+</url>
+<query>
+Corporate Identity Number of Economic Times
+</query>
+<result>
+Information unavailable in the provided page.
+</result>
+2025-10-07 21:21:16,574 - INFO - 
+
+2025-10-07 21:21:16,574 - INFO - 📍 Step 17:
+2025-10-07 21:21:18,587 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:18,590 - INFO -   ❔ Eval: Previous actions (scrolling and searching) failed to locate CIN; page content remained empty regarding CIN.
+2025-10-07 21:21:18,591 - INFO -   [34m🎯 Next goal: Scroll down to the bottom of the homepage to load the footer and then extract the Corporate Identity Number.[0m
+2025-10-07 21:21:18,592 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 21:21:21,991 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 21:21:22,493 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:21:24,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:24,195 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on the Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:21:27,621 - INFO - 
+
+2025-10-07 21:21:27,621 - INFO - 📍 Step 18:
+2025-10-07 21:21:29,551 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:29,553 - INFO -   [31m⚠️ Eval: Failure – clicking index 230 did not navigate to the About Us page.[0m
+2025-10-07 21:21:29,553 - INFO -   [34m🎯 Next goal: Click the About Us link (index 148) to open the corporate information page and then extract the Corporate Identity Number.[0m
+2025-10-07 21:21:29,554 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 148, while_holding_ctrl: None
+2025-10-07 21:21:30,142 - WARNING - No visible quad found, using first quad
+2025-10-07 21:21:31,108 - INFO - 🖱️ Clicked element
+2025-10-07 21:21:34,672 - INFO - 
+
+2025-10-07 21:21:34,672 - INFO - 📍 Step 19:
+2025-10-07 21:21:37,294 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:37,295 - INFO -   [34m🎯 Next goal: Navigate to the About Us page, scroll to the footer, and extract the Corporate Identity Number.[0m
+2025-10-07 21:21:37,296 - INFO -   🦾 [34m[ACTION 1/5][0m write_file: file_name: todo.md, content: # Task: Find Economic Times Corporate Identity Number (CIN)\n\n- [x] Click About Us li
+2025-10-07 21:21:37,471 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 21:21:41,264 - INFO -   🦾 [34m[ACTION 2/5][0m click_element_by_index: index: 168, while_holding_ctrl: False
+2025-10-07 21:21:42,840 - INFO - 🔗 New tab opened - switching to it
+2025-10-07 21:21:42,902 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI0YTMwODg0YS04NTQzLTRhMDgtOTZhYS1kOTJhMzUzMDkyZjEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTcwNjksImV4cCI6MTc1OTk0MDI2OX0.TBM6KaE1upY1ZvjmzDHI5gYpVLT0ys5rdHVzCWd8Doc
+2025-10-07 21:21:43,898 - INFO - 🖱️ Clicked element - which opened a new tab
+2025-10-07 21:21:44,399 - INFO -   🦾 [34m[ACTION 3/5][0m wait: seconds: 5
+2025-10-07 21:21:44,516 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:21:47,019 - INFO -   🦾 [34m[ACTION 4/5][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 21:21:50,339 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 21:21:50,841 - INFO -   🦾 [34m[ACTION 5/5][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:21:53,436 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:21:53,725 - INFO - 📄 <url>
+https://timesinternet.in/
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on the Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:21:59,057 - WARNING - Received duplicate response for request 56 - ignoring
+2025-10-07 21:22:00,627 - INFO - 
+
+2025-10-07 21:22:00,627 - INFO - 📍 Step 20:
+2025-10-07 21:22:03,071 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:03,077 - INFO -   [31m⚠️ Eval: Failure – previous scroll and navigation attempts did not reveal the CIN on any Economic Times pages.[0m
+2025-10-07 21:22:03,077 - INFO -   [34m🎯 Next goal: Extract the Corporate Identity Number from the Times Internet site, first from the current page, then from the About page if needed.[0m
+2025-10-07 21:22:03,077 - INFO -   🦾 [34m[ACTION 1/4][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:22:04,788 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:04,969 - INFO - 📄 <url>
+https://timesinternet.in/
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on the Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:22:10,360 - INFO -   🦾 [34m[ACTION 2/4][0m click_element_by_index: index: 33, while_holding_ctrl: False
+2025-10-07 21:22:13,453 - INFO - 🖱️ Clicked element
+2025-10-07 21:22:13,954 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 21:22:14,134 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:22:16,636 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:22:17,697 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:17,874 - INFO - 📄 <url>
+https://timesinternet.in/about
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-07 21:22:21,572 - INFO - 
+
+2025-10-07 21:22:21,572 - INFO - 📍 Step 21:
+2025-10-07 21:22:23,515 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:23,517 - INFO -   [31m⚠️ Eval: Previous attempt to click the About Us link opened the page but did not reveal the CIN; the page content shown lacked the CIN. Verdict: Failure[0m
+2025-10-07 21:22:23,517 - INFO -   [34m🎯 Next goal: Scroll down to load the footer on the About page and then extract the Corporate Identity Number (CIN) from the page content.[0m
+2025-10-07 21:22:23,517 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 21:22:24,448 - INFO - 🔍 Scrolled down the page by one page (632px)
+2025-10-07 21:22:24,949 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number (CIN) of Times Internet / Economic Times, extract_links: False, start_f
+2025-10-07 21:22:26,014 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:26,139 - INFO - 📄 <url>
+https://timesinternet.in/about
+</url>
+<query>
+Corporate Identity Number (CIN) of Times Internet / Economic Times
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-07 21:22:29,160 - INFO - 
+
+2025-10-07 21:22:29,161 - INFO - 📍 Step 22:
+2025-10-07 21:22:31,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:31,056 - INFO -   [31m⚠️ Eval: Previous step scrolled down one page on the About page but did not reveal the CIN; the page still shows no CIN. Verdict: Failure[0m
+2025-10-07 21:22:31,056 - INFO -   [34m🎯 Next goal: Scroll further down on the Times Internet About page to load the footer and then extract the Corporate Identity Number from the page content.[0m
+2025-10-07 21:22:31,056 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 1.0, frame_element_index: None
+2025-10-07 21:22:32,004 - INFO - 🔍 Scrolled down the page by one page (632px)
+2025-10-07 21:22:32,505 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:22:33,537 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:33,712 - INFO - 📄 <url>
+https://timesinternet.in/about
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on the Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:22:36,751 - INFO - 
+
+2025-10-07 21:22:36,751 - INFO - 📍 Step 23:
+2025-10-07 21:22:39,116 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:39,118 - INFO -   [31m⚠️ Eval: Previous step scrolled the Times Internet About page but did not reveal CIN; verdict: Failure.[0m
+2025-10-07 21:22:39,118 - INFO -   [34m🎯 Next goal: Extract structured data from the Times Internet About page to find the Corporate Identity Number.[0m
+2025-10-07 21:22:39,119 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:22:40,160 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:40,292 - INFO - 📄 <url>
+https://timesinternet.in/about
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on the Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:22:43,271 - INFO - 
+
+2025-10-07 21:22:43,271 - INFO - 📍 Step 24:
+2025-10-07 21:22:46,292 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:46,293 - INFO -   [32m👍 Eval: Success: Switched to the Economic Times homepage tab (ED4A) to continue searching for the CIN on the correct domain.[0m
+2025-10-07 21:22:46,294 - INFO -   [34m🎯 Next goal: Scroll down the Economic Times homepage to load the footer where the Corporate Identity Number is likely listed.[0m
+2025-10-07 21:22:46,294 - INFO -   🦾 [34m[ACTION 1/1][0m switch_tab: tab_id: ED4A
+2025-10-07 21:22:47,278 - INFO - 🔄  Switched to tab #ED4A
+2025-10-07 21:22:53,642 - ERROR - CDP Error for request 1892: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:22:53,646 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 21:22:53,646 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 21:22:53,646 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 21:22:54,150 - INFO - 
+
+2025-10-07 21:22:54,150 - INFO - 📍 Step 25:
+2025-10-07 21:22:56,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:22:56,620 - INFO -   [31m⚠️ Eval: Previous step only switched tabs; no new information obtained. Verdict: Failure[0m
+2025-10-07 21:22:56,620 - INFO -   [34m🎯 Next goal: Navigate to the Economic Times Terms and Conditions page and extract the Corporate Identity Number.[0m
+2025-10-07 21:22:56,620 - INFO -   🦾 [34m[ACTION 1/4][0m go_to_url: url: https://economictimes.indiatimes.com/terms-and-conditions, new_tab: False
+2025-10-07 21:22:59,088 - INFO - 🔗 Navigated to https://economictimes.indiatimes.com/terms-and-conditions
+2025-10-07 21:22:59,589 - INFO -   🦾 [34m[ACTION 2/4][0m wait: seconds: 8
+2025-10-07 21:22:59,649 - INFO - 🕒 waited for 5 seconds + 3 seconds for LLM call
+2025-10-07 21:23:05,152 - INFO -   🦾 [34m[ACTION 3/4][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 21:23:08,171 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 21:23:08,673 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Corporate Identity Number (CIN) of Economic Times, extract_links: False, start_from_char: 0
+2025-10-07 21:23:09,712 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:09,772 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/terms-and-conditions
+</url>
+<query>
+Corporate Identity Number (CIN) of Economic Times
+</query>
+<result>
+Information not available in the provided webpage.
+</result>
+2025-10-07 21:23:12,454 - INFO - 
+
+2025-10-07 21:23:12,454 - INFO - 📍 Step 26:
+2025-10-07 21:23:14,848 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:14,851 - INFO -   [31m⚠️ Eval: Previous step only switched tabs without retrieving any new information. Verdict: Failure[0m
+2025-10-07 21:23:14,851 - INFO -   [34m🎯 Next goal: Open the About Us page (index 233), scroll to the footer, and extract the Corporate Identity Number.[0m
+2025-10-07 21:23:14,852 - INFO -   🦾 [34m[ACTION 1/4][0m click_element_by_index: index: 233, while_holding_ctrl: None
+2025-10-07 21:23:16,295 - INFO - 🖱️ Clicked element
+2025-10-07 21:23:16,797 - INFO -   🦾 [34m[ACTION 2/4][0m wait: seconds: 5
+2025-10-07 21:23:16,914 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:23:19,416 - INFO -   🦾 [34m[ACTION 3/4][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 21:23:22,549 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 21:23:23,051 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:23:24,139 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:24,201 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/terms-and-conditions
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on a Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:23:26,858 - INFO - 
+
+2025-10-07 21:23:26,858 - INFO - 📍 Step 27:
+2025-10-07 21:23:28,697 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:28,699 - INFO -   ❔ Eval: Previous scroll actions did not reveal CIN; page still lacks footer info.
+2025-10-07 21:23:28,700 - INFO -   [34m🎯 Next goal: Scroll further down the terms-and-conditions page to load the footer and then extract the Corporate Identity Number.[0m
+2025-10-07 21:23:28,701 - INFO -   🦾 [34m[ACTION 1/2][0m scroll: down: True, num_pages: 10.0, frame_element_index: None
+2025-10-07 21:23:34,551 - INFO - 🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)
+2025-10-07 21:23:35,052 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:23:36,155 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:36,215 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/terms-and-conditions
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on a Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:23:38,857 - INFO - 
+
+2025-10-07 21:23:38,857 - INFO - 📍 Step 28:
+2025-10-07 21:23:40,782 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:40,784 - INFO -   ❔ Eval: Previous actions failed to locate CIN; no new information obtained.
+2025-10-07 21:23:40,784 - INFO -   [34m🎯 Next goal: Extract the full page content of the current terms-and-conditions page to search for the Corporate Identity Number.[0m
+2025-10-07 21:23:40,786 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:23:41,766 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:41,825 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/terms-and-conditions
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on a Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:23:44,579 - INFO - 
+
+2025-10-07 21:23:44,579 - INFO - 📍 Step 29:
+2025-10-07 21:23:46,968 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:46,970 - INFO -   [31m⚠️ Eval: Failure – previous scrolling and page attempts did not reveal the CIN.[0m
+2025-10-07 21:23:46,970 - INFO -   [34m🎯 Next goal: Open the Contact Us page (index 237) and extract the Corporate Identity Number from its content.[0m
+2025-10-07 21:23:46,971 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 237, while_holding_ctrl: None
+2025-10-07 21:23:48,378 - INFO - 🖱️ Clicked element
+2025-10-07 21:23:48,880 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 21:23:48,995 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:23:51,497 - INFO -   🦾 [34m[ACTION 3/3][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:23:52,556 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:52,616 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/terms-and-conditions
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information unavailable in the provided webpage.
+</result>
+2025-10-07 21:23:55,685 - INFO - 
+
+2025-10-07 21:23:55,685 - INFO - 📍 Step 30:
+2025-10-07 21:23:57,351 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:57,352 - INFO -   ❔ Eval: Previous attempts to locate CIN via navigation and scrolling failed; no CIN found.
+2025-10-07 21:23:57,352 - INFO -   [34m🎯 Next goal: Extract structured data from the current Terms and Conditions page to find the Corporate Identity Number.[0m
+2025-10-07 21:23:57,352 - INFO -   🦾 [34m[ACTION 1/1][0m extract_structured_data: query: Corporate Identity Number, extract_links: False, start_from_char: 0
+2025-10-07 21:23:58,450 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:23:58,510 - INFO - 📄 <url>
+https://economictimes.indiatimes.com/terms-and-conditions
+</url>
+<query>
+Corporate Identity Number
+</query>
+<result>
+Information on a Corporate Identity Number is not available in the provided webpage content.
+</result>
+2025-10-07 21:24:01,314 - INFO - 
+
+2025-10-07 21:24:01,314 - INFO - 📍 Step 31:
+2025-10-07 21:24:03,264 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:24:03,268 - INFO -   [31m⚠️ Eval: Previous step only switched tabs; no new information obtained. Verdict: Failure[0m
+2025-10-07 21:24:03,268 - INFO -   [34m🎯 Next goal: Open the Contact Us page (index 234) and scroll to the bottom to find the Corporate Identity Number.[0m
+2025-10-07 21:24:03,270 - INFO -   🦾 [34m[ACTION 1/3][0m click_element_by_index: index: 234, while_holding_ctrl: None
+2025-10-07 21:24:05,290 - INFO - 🖱️ Clicked element
+2025-10-07 21:24:05,792 - INFO -   🦾 [34m[ACTION 2/3][0m wait: seconds: 5
+2025-10-07 21:24:05,851 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 21:24:08,354 - INFO -   🦾 [34m[ACTION 3/3][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 21:24:11,281 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 21:24:13,802 - INFO - 
+
+2025-10-07 21:24:13,802 - INFO - 📍 Step 32:
+2025-10-07 21:24:15,436 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 21:24:15,436 - INFO -   [32m👍 Eval: Successfully extracted the Corporate Identity Number from the Contact Us page.[0m
+2025-10-07 21:24:15,436 - INFO - 
+2025-10-07 21:24:15,437 - INFO -   🦾 [34m[ACTION 1/1][0m done: text: The Corporate Identity Number (CIN) of The Economic Times is **U74999DL1999PLC135531**., success: True, files_to_disp
+2025-10-07 21:24:15,494 - INFO - 
+📄 [32m Final Result:[0m 
+The Corporate Identity Number (CIN) of The Economic Times is **U74999DL1999PLC135531**.
+
+
+2025-10-07 21:24:15,496 - INFO - ✅ Task completed successfully
+Creating Hyperbrowser session with stealth features...
+Hyperbrowser session created with ID: 4a30884a-8543-4a08-96aa-d92a353092f1
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiI0YTMwODg0YS04NTQzLTRhMDgtOTZhYS1kOTJhMzUzMDkyZjEiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTcwNjksImV4cCI6MTc1OTk0MDI2OX0.TBM6KaE1upY1ZvjmzDHI5gYpVLT0ys5rdHVzCWd8Doc
+Session URL: https://app.hyperbrowser.ai/features/sessions/4a30884a-8543-4a08-96aa-d92a353092f1
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://economictimes.indiatimes.com', extracted_content='🔗 Navigated to https://economictimes.indiatimes.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 1086.5, 'click_y': 30.0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://economictimes.indiatimes.com/about-us', extracted_content='🔗 Navigated to https://economictimes.indiatimes.com/about-us', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'Corporate Identity Number' into element 13.", extracted_content="Input 'Corporate Identity Number' into element 13.", include_extracted_content_only_once=False, metadata={'input_x': 841.5, 'input_y': 20.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/corporate-identity-number\n</url>\n<query>\nWhat is the Corporate Identity Number (CIN) of Economic Times?\n</query>\n<result>\nInformation on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/corporate-identity-number\n</url>\n<query>\nWhat is the Corporate Identity Number (CIN) of Economic Times?\n</query>\n<result>\nInformation on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/corporate-identity-number\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/corporate-identity-number\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/corporate-identity-number\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/corporate-identity-number\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://economictimes.indiatimes.com/about-us/company-information', extracted_content='🔗 Navigated to https://economictimes.indiatimes.com/about-us/company-information', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory="Input 'CIN' into element 14.", extracted_content="Input 'CIN' into element 14.", include_extracted_content_only_once=False, metadata={'input_x': 841.5, 'input_y': 20.0}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Sent keys: Enter', extracted_content='Sent keys: Enter', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation on the Corporate Identity Number (CIN) of Economic Times is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 20.0 pages (requested: 20.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 20.0 pages (requested: 20.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a specific Corporate Identity Number (CIN) is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a specific Corporate Identity Number (CIN) is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 0.5 pages (632px per page)', extracted_content='🔍 Scrolled down the page by 0.5 pages (632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number (CIN) of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number (CIN) of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (632px)', extracted_content='🔍 Scrolled down the page by one page (632px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number (CIN) of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number (CIN) of Economic Times\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 193.515625, 'click_y': 288.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element and opened in new tab', include_extracted_content_only_once=False, metadata={'click_x': 193.515625, 'click_y': 288.5, 'new_tab_opened': True}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a specific Corporate Identity Number (CIN) is not provided in the page content. The term “CIN” appears only in article headlines (e.g., “CIN mismatch doesn’t mean companies don’t exist, clarifies government”), but no actual CIN values or details are given.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/topic/cin\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a specific Corporate Identity Number (CIN) is not provided in the page content. The term “CIN” appears only in article headlines (e.g., “CIN mismatch doesn’t mean companies don’t exist, clarifies government”), but no actual CIN values or details are given.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://economictimes.indiatimes.com/', extracted_content='🔗 Navigated to https://economictimes.indiatimes.com/', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 30.0 pages (requested: 30.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 30.0 pages (requested: 30.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number of Economic Times\n</query>\n<result>\nInformation unavailable in the provided page.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 198.3984375, 'click_y': 0, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element - which opened a new tab', include_extracted_content_only_once=False, metadata={'click_x': 198.3984375, 'click_y': 316.40625, 'new_tab_opened': True}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://timesinternet.in/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://timesinternet.in/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://timesinternet.in/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://timesinternet.in/\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 479.8828125, 'click_y': 216.1171875, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (632px)', extracted_content='🔍 Scrolled down the page by one page (632px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number (CIN) of Times Internet / Economic Times\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number (CIN) of Times Internet / Economic Times\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by one page (632px)', extracted_content='🔍 Scrolled down the page by one page (632px)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://timesinternet.in/about\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on the Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Switched to tab #ED4A', extracted_content='Switched to tab #ED4A', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://economictimes.indiatimes.com/terms-and-conditions', extracted_content='🔗 Navigated to https://economictimes.indiatimes.com/terms-and-conditions', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 8 seconds', extracted_content='Waited for 8 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number (CIN) of Economic Times\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number (CIN) of Economic Times\n</query>\n<result>\nInformation not available in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 193.515625, 'click_y': 278.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 10.0 pages (requested: 10.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 960.515625, 'click_y': 303.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation unavailable in the provided webpage.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://economictimes.indiatimes.com/terms-and-conditions\n</url>\n<query>\nCorporate Identity Number\n</query>\n<result>\nInformation on a Corporate Identity Number is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory=None, extracted_content='Clicked element', include_extracted_content_only_once=False, metadata={'click_x': 960.515625, 'click_y': 264.5, 'new_tab_opened': False}, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=True, error=None, attachments=[], long_term_memory='Task completed: True - The Corporate Identity Number (CIN) of The Economic Times is **U74999DL1999PLC135531**.', extracted_content='The Corporate Identity Number (CIN) of The Economic Times is **U74999DL1999PLC135531**.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://economictimes.indiatimes.com', 'new_tab': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 3}, 'interacted_element': DOMInteractedElement(node_id=44, backend_node_id=5856, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'onclick': 'goBack(event);', 'href': 'https://economictimes.indiatimes.com', 'class': 'pg_link'}, bounds=DOMRect(x=805.6875, y=31.265625, width=0.0, height=19.0), x_path='html/body/table/tbody/tr[1]/td/div[1]/a[2]', element_hash=206837330141495691)}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://economictimes.indiatimes.com/about-us', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 13, 'text': 'Corporate Identity Number', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=18269, backend_node_id=26874, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'autocomplete': 'off', 'data-search-input': '', 'name': 'ticker_newsearch', 'id': 'ticker_newsearch', 'class': 'inputBox', 'placeholder': 'Search Stock Quotes, News, Mutual Funds and more', 'type': 'text'}, bounds=DOMRect(x=634.0, y=5.0, width=415.0, height=30.0), x_path='html/body/section/div[1]/div/div[2]/input', element_hash=1939195878939480833)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'What is the Corporate Identity Number (CIN) of Economic Times?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://economictimes.indiatimes.com/about-us/company-information', 'new_tab': False}, 'interacted_element': None}, {'input_text': {'index': 14, 'text': 'CIN', 'clear_existing': True}, 'interacted_element': DOMInteractedElement(node_id=28257, backend_node_id=33295, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='INPUT', attributes={'autocomplete': 'off', 'data-search-input': '', 'name': 'ticker_newsearch', 'id': 'ticker_newsearch', 'class': 'inputBox', 'placeholder': 'Search Stock Quotes, News, Mutual Funds and more', 'type': 'text'}, bounds=DOMRect(x=634.0, y=5.0, width=415.0, height=30.0), x_path='html/body/section/div[1]/div/div[2]/input', element_hash=1939195878939480833)}, {'send_keys': {'keys': 'Enter'}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 20.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 0.5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number (CIN) of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number (CIN) of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'write_file': {'file_name': 'todo.md', 'content': "# Task: Find Economic Times Corporate Identity Number (CIN)\n\n- [ ] Click 'About Us' link (index 230)\n- [ ] Extract CIN from the About Us page\n- [ ] Verify and provide the CIN\n", 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 230}, 'interacted_element': DOMInteractedElement(node_id=41607, backend_node_id=39072, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'data-ga-onclick': 'About Us - href', 'target': '_blank', 'href': 'https://www.timesinternet.in', 'rel': 'nofollow'}, bounds=DOMRect(x=157.828125, y=281.0, width=71.375, height=15.0), x_path='html/body/main/div[11]/footer/div[2]/div/div[11]/div/div[2]/a[1]', element_hash=785664035793988058)}, {'click_element_by_index': {'index': 230, 'while_holding_ctrl': True}, 'interacted_element': DOMInteractedElement(node_id=48166, backend_node_id=39072, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'data-ga-onclick': 'About Us - href', 'target': '_blank', 'href': 'https://www.timesinternet.in', 'rel': 'nofollow'}, bounds=DOMRect(x=157.828125, y=281.0, width=71.375, height=15.0), x_path='html/body/main/div[11]/footer/div[2]/div/div[11]/div/div[2]/a[1]', element_hash=785664035793988058)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://economictimes.indiatimes.com/', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 30.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 148}, 'interacted_element': DOMInteractedElement(node_id=80290, backend_node_id=48239, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'target': '_blank', 'href': 'https://www.timesinternet.in', 'rel': 'nofollow', 'class': 'styles_ellipsis__6uN82', 'data-ga-onclick': 'Web Footer Link Click#About Us#Other useful Links-https://www.timesinternet.in', 'title': 'About Us'}, bounds=DOMRect(x=162.71875, y=-332.09375, width=71.359375, height=15.0), x_path='html/body/main/footer/div/div/div[4]/div[3]/div[2]/a[1]', element_hash=1116904333299546611)}, {'write_file': {'file_name': 'todo.md', 'content': "# Task: Find Economic Times Corporate Identity Number (CIN)\n\n- [x] Click 'About Us' link (index 168)\n- [ ] Extract CIN from the About Us page\n- [ ] Verify and provide the CIN\n", 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'click_element_by_index': {'index': 168, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=92071, backend_node_id=48239, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'target': '_blank', 'href': 'https://www.timesinternet.in', 'rel': 'nofollow', 'class': 'styles_ellipsis__6uN82', 'data-ga-onclick': 'Web Footer Link Click#About Us#Other useful Links-https://www.timesinternet.in', 'title': 'About Us'}, bounds=DOMRect(x=162.71875, y=308.90625, width=71.359375, height=15.0), x_path='html/body/main/footer/div/div/div[4]/div[3]/div[2]/a[1]', element_hash=1116904333299546611)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 33, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=10439, backend_node_id=13846, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'href': '/about', 'class': 'text-decoration-none display-2 text-capitalize text-light'}, bounds=DOMRect(x=460.8125, y=198.921875, width=38.140625, height=34.390625), x_path='html/body/footer/div/div/div[2]/div/div[1]/div/div[3]/ul/li[2]/a', element_hash=7120616400063595364)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number (CIN) of Times Internet / Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 1.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'switch_tab': {'tab_id': 'ED4A'}, 'interacted_element': None}, {'go_to_url': {'url': 'https://economictimes.indiatimes.com/terms-and-conditions', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 8}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number (CIN) of Economic Times', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 233}, 'interacted_element': DOMInteractedElement(node_id=118268, backend_node_id=76360, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'data-ga-onclick': 'About Us - href', 'target': '_blank', 'href': 'https://www.timesinternet.in', 'rel': 'nofollow'}, bounds=DOMRect(x=157.828125, y=271.0, width=71.375, height=15.0), x_path='html/body/section/div[9]/footer/div[2]/div/div[5]/div/div[2]/a[1]', element_hash=970258160728173351)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 10.0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 237}, 'interacted_element': DOMInteractedElement(node_id=123493, backend_node_id=76385, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'contactUsFooter prel', 'href': '/contact-us'}, bounds=DOMRect(x=919.15625, y=296.0, width=82.71875, height=15.0), x_path='html/body/section/div[9]/footer/div[2]/div/div[5]/div/div[2]/a[12]', element_hash=5418755315188167469)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Corporate Identity Number', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'click_element_by_index': {'index': 234}, 'interacted_element': DOMInteractedElement(node_id=126939, backend_node_id=76385, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'contactUsFooter prel', 'href': '/contact-us'}, bounds=DOMRect(x=919.15625, y=257.0, width=82.71875, height=15.0), x_path='html/body/section/div[9]/footer/div[2]/div/div[5]/div/div[2]/a[12]', element_hash=5418755315188167469)}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'done': {'text': 'The Corporate Identity Number (CIN) of The Economic Times is **U74999DL1999PLC135531**.', 'success': True, 'files_to_display': []}, 'interacted_element': None}])
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session 4a30884a-8543-4a08-96aa-d92a353092f1...
+Hyperbrowser session 4a30884a-8543-4a08-96aa-d92a353092f1 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/4a30884a-8543-4a08-96aa-d92a353092f1

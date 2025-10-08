@@ -1,0 +1,297 @@
+2025-10-07 20:40:39,078 - INFO - Using anonymized telemetry, see https://docs.browser-use.com/development/telemetry.
+2025-10-07 20:40:39,090 - INFO - 🔗 Found URL in task: https://www.nerdwallet.com, adding as initial action...
+2025-10-07 20:40:39,094 - INFO - [34m🚀 Task: Who started Nedwallet in 2009? You must complete the task only using the starting website. Begin task on the following url: https://www.nerdwallet.com[0m
+2025-10-07 20:40:39,272 - INFO - HTTP Request: GET https://pypi.org/pypi/browser-use/json "HTTP/1.1 200 OK"
+2025-10-07 20:40:39,306 - INFO - ────────────────────────────────────────
+2025-10-07 20:40:39,306 - INFO - 🔐 To view this run in Browser Use Cloud, authenticate with:
+2025-10-07 20:40:39,306 - INFO -     👉  browser-use auth
+2025-10-07 20:40:39,306 - INFO -     or: python -m browser_use.cli auth
+2025-10-07 20:40:39,306 - INFO - ────────────────────────────────────────
+
+2025-10-07 20:40:39,533 - INFO - HTTP Request: POST https://api.browser-use.com/api/v1/events "HTTP/1.1 200 OK"
+2025-10-07 20:40:39,591 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:40:40,927 - INFO -   🦾 [34m[ACTION 1/1][0m go_to_url: url: https://www.nerdwallet.com, new_tab: False
+2025-10-07 20:40:43,056 - INFO - 🔗 Navigated to https://www.nerdwallet.com
+2025-10-07 20:40:45,913 - INFO - 
+
+2025-10-07 20:40:45,913 - INFO - 📍 Step 1:
+2025-10-07 20:40:47,377 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:40:47,389 - INFO -   [32m👍 Eval: Successfully loaded the NerdWallet homepage. Verdict: Success[0m
+2025-10-07 20:40:47,389 - INFO -   [34m🎯 Next goal: Scroll down the page to reveal the footer and locate an About link.[0m
+2025-10-07 20:40:47,390 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 20:40:50,597 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 20:40:52,740 - ERROR - CDP Error for request 108: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 20:40:52,741 - WARNING - CDP request ax_tree failed with exception: {'code': -32602, 'message': 'Frame with the given frameId is not found.'}
+2025-10-07 20:40:52,741 - ERROR - Failed to build DOM tree without highlights: CDP requests failed or timed out: ax_tree
+2025-10-07 20:40:52,742 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: DOM build failed: CDP requests failed or timed out: ax_tree, using minimal state
+2025-10-07 20:40:53,430 - INFO - 
+
+2025-10-07 20:40:53,430 - INFO - 📍 Step 2:
+2025-10-07 20:40:55,145 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:40:55,148 - INFO -   [31m⚠️ Eval: Scrolling did not reveal any content; page remains empty. Verdict: Failure[0m
+2025-10-07 20:40:55,148 - INFO -   [34m🎯 Next goal: Wait for the NerdWallet homepage to load, then extract founder information from the page.[0m
+2025-10-07 20:40:55,149 - INFO -   🦾 [34m[ACTION 1/2][0m wait: seconds: 5
+2025-10-07 20:40:55,208 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 20:40:57,711 - INFO -   🦾 [34m[ACTION 2/2][0m extract_structured_data: query: Who founded NerdWallet and in what year?, extract_links: False, start_from_char: 0
+2025-10-07 20:40:59,126 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:40:59,189 - INFO - 📄 <url>
+https://www.nerdwallet.com/
+</url>
+<query>
+Who founded NerdWallet and in what year?
+</query>
+<result>
+Information about who founded NerdWallet and the year it was founded is not available in the provided webpage content.
+</result>
+2025-10-07 20:41:01,769 - INFO - 
+
+2025-10-07 20:41:01,769 - INFO - 📍 Step 3:
+2025-10-07 20:41:03,360 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:03,362 - INFO -   [31m⚠️ Eval: Previous scroll attempt failed to reveal new content; page remained empty. Verdict: Failure[0m
+2025-10-07 20:41:03,363 - INFO -   [34m🎯 Next goal: Scroll further down to reveal the footer and locate an About link.[0m
+2025-10-07 20:41:03,363 - INFO -   🦾 [34m[ACTION 1/1][0m scroll: down: True, num_pages: 5.0, frame_element_index: None
+2025-10-07 20:41:06,366 - INFO - 🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)
+2025-10-07 20:41:09,097 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:41:09,608 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:41:10,125 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:41:10,651 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:41:11,162 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:41:11,711 - INFO - Connecting to wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+2025-10-07 20:41:16,777 - INFO - 
+
+2025-10-07 20:41:16,777 - INFO - 📍 Step 4:
+2025-10-07 20:41:18,336 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:18,339 - INFO -   [31m⚠️ Eval: Previous scroll attempts did not reveal new content; the page remained unchanged. Verdict: Failure[0m
+2025-10-07 20:41:18,339 - INFO -   [34m🎯 Next goal: Click the 'Leadership' link to navigate to the leadership page where founder information can be found.[0m
+2025-10-07 20:41:18,340 - INFO -   🦾 [34m[ACTION 1/1][0m click_element_by_index: index: 20, while_holding_ctrl: False
+2025-10-07 20:41:18,761 - ERROR - CDP Error for request 30: {'code': -32000, 'message': 'No node found for given backend id'}
+2025-10-07 20:41:18,820 - ERROR - CDP Error for request 31: {'code': -32000, 'message': 'No node found for given backend id'}
+2025-10-07 20:41:18,878 - ERROR - CDP Error for request 32: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-07 20:41:18,878 - WARNING - ⚠️ Could not get element geometry from any method, falling back to JavaScript click
+2025-10-07 20:41:18,934 - ERROR - CDP Error for request 33: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-07 20:41:18,935 - ERROR - CDP JavaScript click also failed: {'code': -32000, 'message': 'No node with given id found'}
+2025-10-07 20:41:18,935 - ERROR - [91m🚌 [DefaultActionWatchdog.on_ClickElementEvent(#055d)]    ❌ Failed (0.53s): BrowserError: Failed to click element: Failed to click element: {'code': -32000, 'message': 'No node with given id found'}[0m
+2025-10-07 20:41:20,442 - ERROR - CDP Error for request 43: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 20:41:20,633 - ERROR - CDP Error for request 49: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 20:41:20,633 - ERROR - [ScreenshotWatchdog] Screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 20:41:20,806 - ERROR - [91m🚌 [ScreenshotWatchdog.on_ScreenshotEvent(#b6ec)]         ❌ Failed (0.36s): RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}[0m
+2025-10-07 20:41:20,868 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 38 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.ScreenshotWatchdog.on_ScreenshotEvent(?▶ ScreenshotEvent#b6ec ✅) -> 
+[91mRuntimeError({'code': -32000, 'message': 'Command can only be executed on top-level targets'})[0m
+RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+
+2025-10-07 20:41:20,869 - WARNING - 📸 Clean screenshot failed: RuntimeError: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 20:41:20,870 - WARNING - 🔍 DOMWatchdog.on_BrowserStateRequestEvent: Clean screenshot failed: {'code': -32000, 'message': 'Command can only be executed on top-level targets'}
+2025-10-07 20:41:21,107 - INFO - 
+
+2025-10-07 20:41:21,107 - INFO - 📍 Step 5:
+2025-10-07 20:41:23,367 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:23,370 - INFO -   ❔ Eval: Previous scroll and click attempts on the homepage failed; no founder info obtained.
+2025-10-07 20:41:23,370 - INFO -   [34m🎯 Next goal: Create a todo file, navigate to the NerdWallet About page, wait for load, and extract founder information.[0m
+2025-10-07 20:41:23,370 - INFO -   🦾 [34m[ACTION 1/4][0m write_file: file_name: todo.md, content: # NerdWallet Founder Extraction Task\n\n- [ ] Navigate to NerdWallet About page (https:/
+2025-10-07 20:41:23,436 - INFO - 💾 Data written to file todo.md successfully.
+2025-10-07 20:41:23,938 - INFO -   🦾 [34m[ACTION 2/4][0m go_to_url: url: https://www.nerdwallet.com/about, new_tab: False
+2025-10-07 20:41:24,671 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:24,805 - ERROR - CDP Error for request 58: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:24,805 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#d4f0)]      ❌ Failed (0.13s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:24,861 - ERROR - CDP Error for request 59: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:24,861 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#d4f0)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#d4f0)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:24,867 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 42 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#d4f0 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 20:41:24,869 - INFO - 🔗 Navigated to https://www.nerdwallet.com/about
+2025-10-07 20:41:25,371 - INFO -   🦾 [34m[ACTION 3/4][0m wait: seconds: 5
+2025-10-07 20:41:25,429 - INFO - 🕒 waited for 2 seconds + 3 seconds for LLM call
+2025-10-07 20:41:27,932 - INFO -   🦾 [34m[ACTION 4/4][0m extract_structured_data: query: Who founded NerdWallet and in what year?, extract_links: False, start_from_char: 0
+2025-10-07 20:41:28,048 - ERROR - CDP Error for request 60: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:28,049 - ERROR - Action 'extract_structured_data' failed with error: Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError
+2025-10-07 20:41:28,366 - ERROR - CDP Error for request 61: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:28,449 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:28,450 - INFO - 
+
+2025-10-07 20:41:28,450 - INFO - 📍 Step 6:
+2025-10-07 20:41:30,085 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:30,088 - INFO -   [31m⚠️ Eval: Previous attempts to load and scroll the homepage failed; the page remained empty. Verdict: Failure[0m
+2025-10-07 20:41:30,088 - INFO -   [34m🎯 Next goal: Navigate to the NerdWallet About page, wait for it to load, and extract founder name and founding year.[0m
+2025-10-07 20:41:30,088 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.nerdwallet.com/about, new_tab: False
+2025-10-07 20:41:30,275 - ERROR - CDP Error for request 62: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:30,275 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:30,341 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:30,461 - ERROR - CDP Error for request 63: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:30,461 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#247f)]      ❌ Failed (0.12s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:30,520 - ERROR - CDP Error for request 64: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:30,520 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#247f)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#247f)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:30,521 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 48 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#247f ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 20:41:30,521 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#9b3d)]          ❌ Failed (0.37s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 20:41:30,576 - ERROR - CDP Error for request 65: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:30,576 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#9b3d)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#9b3d)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:30,577 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 48 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#9b3d 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 20:41:30,578 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:30,897 - ERROR - CDP Error for request 66: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:30,975 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:30,977 - INFO - 
+
+2025-10-07 20:41:30,977 - INFO - 📍 Step 7:
+2025-10-07 20:41:32,655 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:32,657 - INFO -   [31m⚠️ Eval: Previous attempts to load and scroll the homepage failed; page remained empty. Verdict: Failure[0m
+2025-10-07 20:41:32,657 - INFO -   [34m🎯 Next goal: Load the NerdWallet About page, wait for it to render, and extract founder name and founding year.[0m
+2025-10-07 20:41:32,657 - INFO -   🦾 [34m[ACTION 1/4][0m replace_file_str: file_name: todo.md, old_str: - [ ] Navigate to NerdWallet About page (https://www.nerdwallet.com/about), new_
+2025-10-07 20:41:32,720 - INFO - 💾 Successfully replaced all occurrences of "- [ ] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)" with "- [x] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)" in file todo.md
+2025-10-07 20:41:33,221 - INFO -   🦾 [34m[ACTION 2/4][0m go_to_url: url: https://www.nerdwallet.com/about, new_tab: False
+2025-10-07 20:41:33,414 - ERROR - CDP Error for request 67: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:33,415 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:33,483 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:33,609 - ERROR - CDP Error for request 68: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:33,609 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#ce34)]      ❌ Failed (0.12s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:33,666 - ERROR - CDP Error for request 69: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:33,667 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#ce34)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#ce34)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:33,668 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#ce34 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 20:41:33,669 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#e892)]          ❌ Failed (0.38s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 20:41:33,726 - ERROR - CDP Error for request 70: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:33,727 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#e892)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#e892)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:33,728 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#e892 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 20:41:33,730 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:34,046 - ERROR - CDP Error for request 71: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:34,121 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:34,123 - INFO - 
+
+2025-10-07 20:41:34,123 - INFO - 📍 Step 8:
+2025-10-07 20:41:36,027 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:36,028 - INFO -   [31m⚠️ Eval: Previous attempts to load and scroll the homepage failed; page remained empty. Verdict: Failure[0m
+2025-10-07 20:41:36,028 - INFO -   [34m🎯 Next goal: Open the NerdWallet About page in a new tab, wait for it to load, and extract founder name and founding year.[0m
+2025-10-07 20:41:36,028 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.nerdwallet.com/about, new_tab: True
+2025-10-07 20:41:36,282 - ERROR - CDP Error for request 72: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:36,282 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:36,349 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:36,472 - ERROR - CDP Error for request 73: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:36,472 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#aa85)]      ❌ Failed (0.12s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:36,531 - ERROR - CDP Error for request 74: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:36,531 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#aa85)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#aa85)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:36,531 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#aa85 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 20:41:36,531 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#f197)]          ❌ Failed (0.44s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 20:41:36,588 - ERROR - CDP Error for request 75: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:36,588 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#f197)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#f197)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:36,589 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#f197 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 20:41:36,590 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:36,904 - ERROR - CDP Error for request 76: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:36,981 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:36,982 - INFO - 
+
+2025-10-07 20:41:36,983 - INFO - 📍 Step 9:
+2025-10-07 20:41:38,618 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:38,621 - INFO -   [31m⚠️ Eval: Previous attempts to load pages failed; no content was visible. Verdict: Failure[0m
+2025-10-07 20:41:38,621 - INFO -   [34m🎯 Next goal: Open the NerdWallet About page in a new tab, wait for it to load, then extract founder name and founding year.[0m
+2025-10-07 20:41:38,621 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.nerdwallet.com/about, new_tab: True
+2025-10-07 20:41:38,875 - ERROR - CDP Error for request 77: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:38,876 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:38,949 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:39,074 - ERROR - CDP Error for request 78: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:39,074 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#032e)]      ❌ Failed (0.12s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:39,130 - ERROR - CDP Error for request 79: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:39,130 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#032e)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#032e)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:39,130 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#032e ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 20:41:39,131 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#94b8)]          ❌ Failed (0.44s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 20:41:39,188 - ERROR - CDP Error for request 80: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:39,188 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#94b8)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#94b8)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:39,189 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#94b8 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 20:41:39,190 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:39,499 - ERROR - CDP Error for request 81: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:39,576 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:39,577 - INFO - 
+
+2025-10-07 20:41:39,577 - INFO - 📍 Step 10:
+2025-10-07 20:41:40,801 - ERROR - CDP Error for request 82: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:41,192 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:41,194 - INFO -   [31m⚠️ Eval: Previous attempts to load pages failed; no content was visible. Verdict: Failure[0m
+2025-10-07 20:41:41,194 - INFO -   [34m🎯 Next goal: Open the NerdWallet About page in a new tab, wait for it to load, and extract founder name and founding year.[0m
+2025-10-07 20:41:41,194 - INFO -   🦾 [34m[ACTION 1/3][0m go_to_url: url: https://www.nerdwallet.com/about, new_tab: True
+2025-10-07 20:41:41,450 - ERROR - CDP Error for request 83: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:41,451 - ERROR - Navigation failed: RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:41,516 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:41,639 - ERROR - CDP Error for request 84: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:41,639 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#94e5)]      ❌ Failed (0.12s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:41,717 - ERROR - CDP Error for request 85: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:41,717 - ERROR - [91m🚌 [BrowserSession.on_AgentFocusChangedEvent(#94e5)]      ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_AgentFocusChangedEvent(AgentFocusChangedEvent#94e5)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:41,718 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_AgentFocusChangedEvent(?▶ AgentFocusChangedEvent#94e5 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+2025-10-07 20:41:41,718 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#9641)]          ❌ Failed (0.46s): RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}[0m
+2025-10-07 20:41:41,774 - ERROR - CDP Error for request 86: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:41,774 - ERROR - [91m🚌 [BrowserSession.on_NavigateToUrlEvent(#9641)]          ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}" in [96mon_NavigateToUrlEvent(NavigateToUrlEvent#9641)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:41,774 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 1 | ✅ 49 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.BrowserSession.on_NavigateToUrlEvent(?▶ NavigateToUrlEvent#9641 🏃) -> 
+[91mRuntimeError({'code': -32001, 'message': 'Session with given id not found.'})[0m
+RuntimeError: {'code': -32001, 'message': 'Session with given id not found.'}
+
+2025-10-07 20:41:41,775 - ERROR - ❌ Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}
+2025-10-07 20:41:42,085 - ERROR - CDP Error for request 87: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:42,175 - WARNING - [DownloadsWatchdog] No target info found for F6CF0FBBF3913D90358FF9D1CAD66880
+2025-10-07 20:41:42,176 - INFO - 
+
+2025-10-07 20:41:42,176 - INFO - 📍 Step 11:
+2025-10-07 20:41:43,328 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-07 20:41:43,329 - INFO -   [31m⚠️ Eval: All attempts to load the NerdWallet page and extract founder data failed; the page remained empty. Verdict: Failure[0m
+2025-10-07 20:41:43,329 - INFO - 
+2025-10-07 20:41:43,329 - INFO -   🦾 [34m[ACTION 1/1][0m text='I was unable to retrieve the founder information for NerdWallet from the website. All attempts to load the About page resulted in an empty page with no content, so the founder name and founding year could not be extracted.' success=False files_to_display=[]
+2025-10-07 20:41:43,390 - INFO - 
+📄 [31m Final Result:[0m 
+I was unable to retrieve the founder information for NerdWallet from the website. All attempts to load the About page resulted in an empty page with no content, so the founder name and founding year could not be extracted.
+
+
+2025-10-07 20:41:43,390 - INFO - ❌ Task completed without success
+Creating Hyperbrowser session with stealth features...
+Hyperbrowser session created with ID: a589c3f1-bf48-4f9c-b889-29ed4fceb0d9
+CDP URL: wss://connect-us-central-1.hyperbrowser.ai/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSWQiOiJhNTg5YzNmMS1iZjQ4LTRmOWMtYjg4OS0yOWVkNGZjZWIwZDkiLCJ0ZWFtSWQiOiJmOWMwMTY0MC1jODhkLTQzNmYtODdmOS01NjA2MmNmOGI0NWIiLCJpYXQiOjE3NTk4OTQ4MzksImV4cCI6MTc1OTkzODAzOX0.WDjqSmzn1KGr5mt2_2Fakl6SA8r07B8_LB8E22RpZy4
+Session URL: https://app.hyperbrowser.ai/features/sessions/a589c3f1-bf48-4f9c-b889-29ed4fceb0d9
+History: AgentHistoryList(all_results=[ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Found initial url and automatically loaded it. Navigated to https://www.nerdwallet.com', extracted_content='🔗 Navigated to https://www.nerdwallet.com', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='<url>\nhttps://www.nerdwallet.com/\n</url>\n<query>\nWho founded NerdWallet and in what year?\n</query>\n<result>\nInformation about who founded NerdWallet and the year it was founded is not available in the provided webpage content.\n</result>', extracted_content='<url>\nhttps://www.nerdwallet.com/\n</url>\n<query>\nWho founded NerdWallet and in what year?\n</query>\n<result>\nInformation about who founded NerdWallet and the year it was founded is not available in the provided webpage content.\n</result>', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', extracted_content='🔍 Scrolled down the page by 5.0 pages (requested: 5.0, 632px per page)', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Failed to click element <a index=20>. The element may not be interactable or visible.', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Data written to file todo.md successfully.', extracted_content='Data written to file todo.md successfully.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Navigated to https://www.nerdwallet.com/about', extracted_content='🔗 Navigated to https://www.nerdwallet.com/about', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Waited for 5 seconds', extracted_content='Waited for 5 seconds', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error='Error executing action extract_structured_data: Could not extract clean markdown: RuntimeError', attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error=None, attachments=None, long_term_memory='Successfully replaced all occurrences of "- [ ] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)" with "- [x] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)" in file todo.md', extracted_content='Successfully replaced all occurrences of "- [ ] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)" with "- [x] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)" in file todo.md', include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=False, success=None, error="Navigation failed: {'code': -32001, 'message': 'Session with given id not found.'}", attachments=None, long_term_memory=None, extracted_content=None, include_extracted_content_only_once=False, metadata=None, include_in_memory=False), ActionResult(is_done=True, success=False, error=None, attachments=[], long_term_memory='Task completed: False - I was unable to retrieve the founder information for NerdWallet from the website. All attempts to lo - 122 more characters', extracted_content='I was unable to retrieve the founder information for NerdWallet from the website. All attempts to load the About page resulted in an empty page with no content, so the founder name and founding year could not be extracted.', include_extracted_content_only_once=False, metadata=None, include_in_memory=False)], all_model_outputs=[{'go_to_url': {'url': 'https://www.nerdwallet.com', 'new_tab': False}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'scroll': {'down': True, 'num_pages': 5.0}, 'interacted_element': None}, {'click_element_by_index': {'index': 20, 'while_holding_ctrl': False}, 'interacted_element': DOMInteractedElement(node_id=13360, backend_node_id=2296, frame_id=None, node_type=<NodeType.ELEMENT_NODE: 1>, node_value='', node_name='A', attributes={'class': 'LBxXTdL', 'href': 'https://www.nerdwallet.com/leadership'}, bounds=DOMRect(x=529.0, y=-984.921875, width=171.5, height=29.53125), x_path='html/body/div[3]/div/div/footer/div[2]/a[2]', element_hash=122720871401842747)}, {'write_file': {'file_name': 'todo.md', 'content': '# NerdWallet Founder Extraction Task\n\n- [ ] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)\n- [ ] Wait for page to fully load\n- [ ] Extract founder name and founding year\n- [ ] Record result in results.md\n- [ ] Mark task as complete', 'append': False, 'trailing_newline': True, 'leading_newline': False}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.nerdwallet.com/about', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.nerdwallet.com/about', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'replace_file_str': {'file_name': 'todo.md', 'old_str': '- [ ] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)', 'new_str': '- [x] Navigate to NerdWallet About page (https://www.nerdwallet.com/about)'}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.nerdwallet.com/about', 'new_tab': False}, 'interacted_element': None}, {'wait': {'seconds': 10}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.nerdwallet.com/about', 'new_tab': True}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.nerdwallet.com/about', 'new_tab': True}, 'interacted_element': None}, {'wait': {'seconds': 7}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'go_to_url': {'url': 'https://www.nerdwallet.com/about', 'new_tab': True}, 'interacted_element': None}, {'wait': {'seconds': 5}, 'interacted_element': None}, {'extract_structured_data': {'query': 'Who founded NerdWallet and in what year?', 'extract_links': False, 'start_from_char': 0}, 'interacted_element': None}, {'done': {'text': 'I was unable to retrieve the founder information for NerdWallet from the website. All attempts to load the About page resulted in an empty page with no content, so the founder name and founding year could not be extracted.', 'success': False, 'files_to_display': []}, 'interacted_element': None}])2025-10-07 20:41:43,497 - ERROR - CDP Error for request 88: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:43,497 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#7471)] ❌ Failed (0.06s): RuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+2025-10-07 20:41:43,554 - ERROR - CDP Error for request 89: {'code': -32602, 'message': 'No target with given id found'}
+2025-10-07 20:41:43,554 - ERROR - [91m🚌 [StorageStateWatchdog.on_SaveStorageStateEvent(#7471)] ❌ CDP connected but failed to re-create CDP session after error "RuntimeError: {'code': -32602, 'message': 'No target with given id found'}" in [96mon_SaveStorageStateEvent(SaveStorageStateEvent#7471)[0m: due to [91mRuntimeError: {'code': -32602, 'message': 'No target with given id found'}[0m
+
+2025-10-07 20:41:43,556 - ERROR - ❌ EventBus_5775e67c🟢(⏳ 0 | ▶️ 0 | ✅ 50 ➡️ 30 👂) Error in event handler browser_use.browser.watchdog_base.StorageStateWatchdog.on_SaveStorageStateEvent(?▶ SaveStorageStateEvent#7471 ✅) -> 
+[91mRuntimeError({'code': -32602, 'message': 'No target with given id found'})[0m
+RuntimeError: {'code': -32602, 'message': 'No target with given id found'}
+
+
+History type: <class 'browser_use.agent.views.AgentHistoryList'>
+History attributes: ['__abstractmethods__', '__annotations__', '__class__', '__class_getitem__', '__class_vars__', '__copy__', '__deepcopy__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__fields__', '__fields_set__', '__firstlineno__', '__format__', '__ge__', '__get_pydantic_core_schema__', '__get_pydantic_json_schema__', '__getattr__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__pretty__', '__private_attributes__', '__pydantic_complete__', '__pydantic_computed_fields__', '__pydantic_core_schema__', '__pydantic_custom_init__', '__pydantic_decorators__', '__pydantic_extra__', '__pydantic_fields__', '__pydantic_fields_set__', '__pydantic_generic_metadata__', '__pydantic_init_subclass__', '__pydantic_parent_namespace__', '__pydantic_post_init__', '__pydantic_private__', '__pydantic_root_model__', '__pydantic_serializer__', '__pydantic_setattr_handlers__', '__pydantic_validator__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__repr_args__', '__repr_name__', '__repr_recursion__', '__repr_str__', '__rich_repr__', '__setattr__', '__setstate__', '__signature__', '__sizeof__', '__slots__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', '_calculate_keys', '_copy_and_set_values', '_get_value', '_iter', '_setattr_handler', 'action_history', 'action_names', 'action_results', 'add_item', 'construct', 'copy', 'dict', 'errors', 'extracted_content', 'final_result', 'from_orm', 'has_errors', 'history', 'is_done', 'is_successful', 'json', 'last_action', 'load_from_file', 'model_actions', 'model_actions_filtered', 'model_computed_fields', 'model_config', 'model_construct', 'model_copy', 'model_dump', 'model_dump_json', 'model_extra', 'model_fields', 'model_fields_set', 'model_json_schema', 'model_outputs', 'model_parametrized_name', 'model_post_init', 'model_rebuild', 'model_thoughts', 'model_validate', 'model_validate_json', 'model_validate_strings', 'number_of_steps', 'parse_file', 'parse_obj', 'parse_raw', 'save_to_file', 'schema', 'schema_json', 'screenshot_paths', 'screenshots', 'structured_output', 'total_duration_seconds', 'update_forward_refs', 'urls', 'usage', 'validate']
+Stopping browser session...
+Browser session stopped successfully
+Stopping Hyperbrowser session a589c3f1-bf48-4f9c-b889-29ed4fceb0d9...
+Hyperbrowser session a589c3f1-bf48-4f9c-b889-29ed4fceb0d9 stopped successfully
+Hyperbrowser session URL: https://app.hyperbrowser.ai/features/sessions/a589c3f1-bf48-4f9c-b889-29ed4fceb0d9
